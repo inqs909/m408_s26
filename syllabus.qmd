@@ -1,0 +1,201 @@
+---
+title: "Syllabus"
+editor: source
+format:
+  html: 
+    code-fold: true
+    html-math-method: katex
+  typst:
+    margin:
+      x: 1cm
+      y: 1cm
+---
+
+## Math 408: Advanced Data Analysis
+
+### Course Information
+
+**Term:** Spring 2026
+
+**Instructor:** Isaac Quintanilla Salinas
+
+**Contact:** isaac.qs\@csuci.edu
+
+**Office Location:** Marin 2326
+
+**Office Hours:**
+
+**Course Website:** [m408.inqs.info](https://m408.inqs.info/) AND Canvas
+
+### Course Description
+
+Students will learn how to construct machine learning models using current data science programming languages. Topics will include nonparametric models, deep learning models, and neural networks. This is a programming intensive course
+
+### Learning Outcomes
+
+- Apply appropriate machine learning techniques given the data set and research goal.
+- Evaluate model performance using standard methods such as cross-validation or simulation studies.
+- Design data workflows to execute machine learning algorithms using standard statistical software.
+- Build machine learning models to be used to predict outcomes from new observations of data.
+
+
+### Recommended Texts
+
+*All books should be available for free online:*
+
+-  An Introduction to Statistical Learning
+    -   Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani
+    -   Available to download from the Broome Library
+    -   [www.statlearning.com](https://www.statlearning.com/)
+    
+-  Deep Learning and Scientific Computing with R torch
+    - Sigrid Keydana
+    - Available here: https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/
+
+-  Bayesian Statistical Modeling with Stan, R, and Python
+    - Kentaro Matsuura
+    - Available for download from the Broome Library
+
+### Required Software
+
+For this course, we will use several different statistical programs to analyze data and construct machine learning models. **This course will primarily be taught and support R.** However, students may complete assignments and projects in Python. Additionally, students are required to use Quarto, Torch, and Stan in the course. Lastly, students may use any [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment), but the course will only support Positron. **All software is available for free.** In class, we will download and setup your computing environment on your laptop with the following tools:
+
+
+-  **Quarto** is an open source scientific documentation system that allows you to embed code and text in one text file. More information can be found here: [quarto.org](https://quarto.org/)
+    - We will install this in class for R.
+    - Comes Installed with **Positron** and **RStudio**
+
+-  **Stan** is a Bayesian analysis software with Hamiltonian Monte Carlo Methods. More information can be found here: [mc-stan.org](https://mc-stan.org/)
+    - We will install this in class for R: [cmdstanr](https://mc-stan.org/cmdstanr/).
+    - For Python users: [cmdstanpy](https://mc-stan.org/cmdstanpy/)
+
+
+-  **Torch** is a set of packages designed to develop and implement neural networks.
+    - We will install this in class for R.
+    - More information on torch for R: [torch.mlverse.org](https://torch.mlverse.org/)
+    - More information on torch for python: [pytorch.org](https://pytorch.org/)
+
+
+#### Choose One Programming Language
+
+
+-   **R (Recommended)** is a statistical package that is available for download at: [r-project.org](https://www.r-project.org/).
+
+-   **Python** is a general programming langauge that is available to download at: [python.org](https://www.python.org/)
+
+#### Choose One IDE
+
+-  **Positron (Recommended)** provides free and open source tools for your data analysis in R: [positron.posit.co/download](http://positron.posit.co/download.html)
+    - Quarto easily integrates with this IDE.
+
+-  **RStudio** provides free and open source tools for your data analysis in R: [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+
+-  **VS Code** provides free and open source tools for your data analysis in R: [code.visualstudio.com](https://code.visualstudio.com/)
+
+
+### Course Grading
+
+| Category           | Percentage |
+|:-------------------|:-----------|
+| Assignments        | 50%        |
+| Final Project      | 25%        |
+| Final Presentation | 25%        |
+
+
+At the end of the quarter, course grades will be assigned according to the following scale:
+
+|         |            |        |            |         |            |         |            |       |       |
+|:--------|:-----------|:-------|:-----------|:--------|:-----------|:--------|:-----------|:------|:------|
+| **A+**  | 98 -- 100  | **B+** | 87 -- \<90 | **C+**  | 77 -- \<80 | **D+**  | 67 -- \<70 |       |       |
+| **A**   | 93 -- \<98 | **B**  | 83 -- \<87 | **C**   | 73 -- \<77 | **D**   | 63 -- \<67 | **F** | \< 60 |
+| **A--** | 90 - \<93  | **B-** | 80 -- \<83 | **C--** | 70 -- \<73 | **D--** | 60 -- \<63 |       |       |
+
+#### Assignments
+
+Assignments will be assigned on a regular basis and posted [here](hw.html) and Canvas. The homework is to help you practice the concepts learned in lecture and to help you study. You must turn in your own individual homework and show your understanding of the material. At the end of the semester, the two lowest homework grades will be dropped. Late work will be accepted, but with a 50% point penalty. The last day late work will be accepted is on DATE.
+
+#### Final Project and Presentation
+
+#### Extra Credit
+
+There will be **4** extra credit opportunities worth a total of 10% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found [here](ec.html).
+
+### Class Schedule
+
+The following outline may be subject to change. Any changes will be announced in class.
+
+| Week | Topic                                              |
+|:-----|:---------------------------------------------------|
+| 1    | Intro to Course/Intro to R                         |
+| 2    | Bayesian Analysis                                  |
+| 3    | Bayesian Linear Regression                         |
+| 4    | Bayesian Generalized Linear Models                 |
+| 5    | Bayesian Zero-Inflated and Hurdle Models           |
+| 6    | Bayesian Survival Analysis                         |
+| 7    | Tree-Based Methods & Support Vector Machines       |
+| --   | Spring Break                                       |
+| 8    | Neural Networks                                    |
+| 9    | Layers, Optimizers, Loss, and Activation Functions |
+| 10   | Prediction with Neural Networks                    |
+| 11   | Recurrent Neural Networks                          |
+| 12   | Recurrent Neural Networks                          |
+| 13   | Convolutional Neural Networks                      |
+| 14   | Convolutional Neural Networks                      |             
+| 15   | Final Presentation                                 |             
+| 16   | Final Presentation                                 |             
+
+### Generative Artificial Intelligence Policy
+
+The use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.
+
+#### Permitted Uses
+
+You may use AI for:
+
+- Obtain clarification 
+
+- Brainstorming ideas, examples, outlines, and strategies
+
+- Generating questions for practice or exploration
+
+- Identifying keywords or phrasing to match professional goals
+
+#### Prohibited Uses
+
+You may not:
+
+- Submit AI-generated work 
+
+- Use AI to complete assignments, quizzes, exams, or other assessments meant to reflect your own work
+
+- Use AI to generate code
+
+Any AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.
+
+**You may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini.  Exceptions are allowed for [DASS](https://www.csuci.edu/dass/)-approved services.**
+
+
+## University Policies
+
+### Syllabus Policies and Assistance
+
+CSUCI’s [Syllabus Policies and Assistance Website](https://www.csuci.edu/studentsupport/syllabus.htm) provides important details about academic policies, campus expectations, and student support services that are all highly applicable to your success as a student both in and outside of the classroom. Ensure that you review this site on a regular basis to stay informed about the policies and resources that support your success, as campus resources or policies may change semester to semester.
+
+### Academic Honesty
+
+Conduct yourself with honesty and integrity. Do not submit others' work as your own. Foassignments and quizzes that allow you to work with a group, only put your name on what the group submits if you genuinely contributed to the work. Work completely independently on exams, using only the materials that are indicated as allowed. Failure to observe academic honesty results in substantial penalties that can include failing the course.
+
+### CSUCI Basic Need
+
+Please use the link to the Basic Needs Program on the Syllabus Policies and Assistance website (<go.csuci.edu/syllabuspolicies>) for information on emergency food, housing accommodations, toiletries, and connections to critical resources. 
+
+
+### CSUCI Disability Statement
+
+If you are a student with a disability requesting reasonable accommodations in this course, you need to contact Disability Accommodations and Support Services (DASS) located on the second floor of Arroyo Hall, via email accommodations\@csuci.edu or call 805-437-3331. All requests for reasonable accommodations require registration with DASS in advance of need: <https://www.csuci.edu/dass/students/apply-for-services.htm>. Faculty, students and DASS will work together regarding classroom accommodations. You are encouraged to discuss approved.
+
+### Disruption
+
+1.  **If I Am Out:** I will communicate via email and will hold classes asynchronously.
+2.  **If You Are Out:** Contact me as soon as possible to talk about your options. Reasonable accommodations will be provided for a brief absence. With proper documentation, extended accommodations will be provided.
+

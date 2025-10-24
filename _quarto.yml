@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: docs
+  render: 
+    - "*.qmd"
+    - "!files/"
+    - "files/functions.qmd"
+    - "files/dshs.qmd"
+
+  resources:
+    - "*.json"
+    - "files"
+    - "_extensions"
+    - "!lectures/cifar-100-binary/"
+    - "!lectures/mnist/"
+
+
+execute:
+  freeze: auto
+
+
+website:
+  repo-url: https://github.com/inqs909/m408_s24
+  title: "MATH 408"
+  site-url: www.inqs.info/m408_s24
+  navbar:
+    right:
+      - syllabus.qmd
+      - hw.qmd
+      - ec.qmd
+      - books.qmd
+
+
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: true
+
+
+

@@ -1,0 +1,243 @@
+---
+title: "Books"
+---
+
+A list of recommended books to learn more about Statistics, the majority are freely available from the Broome Library:
+
+## Basics
+
+-   Introduction to Statistics and Data Analysis
+
+    -   Heumann and Shalabh
+
+-   Statistical Foundations, Reasoning and Inference
+
+    -   Kauermann, Küchenhoff, and Heumann
+
+## Regression
+
+-   **Generalized Linear Models With Examples in R**
+
+    -   Dunn and Smyth
+
+    -   Graduate
+
+-   Linear and Generalized Linear Mixed Models and Their Applications (2nd Edition)
+
+    -   Jiang and Nguyen
+
+    -   Graudate
+
+-   Regression Modeling Strategies
+
+    -   Harrell
+
+    -   Undergraduate
+
+-   Vector Generalized Linear and Additive Models
+
+    -   Yee
+
+    -   Graduate
+
+## Nonparametric
+
+-   Semiparametric Regression with R
+
+    -   Harezlak, Ruppert, and Wand
+
+    -   Graduate
+
+## Computational
+
+-   Bootstrap Methods with applications in R
+
+    -   Dikta and Scheer
+
+    -   Graduate
+
+-   Modern Optimization with R (2nd Edition)
+
+    -   Cortez
+
+    -   Graduate
+
+-   Computational Statistics
+
+    -   Gentle
+
+-   Monte Carlo and Quasi-Monte Carlo Sampling
+
+    -   Lemieux
+
+-   Statistics With Julia
+
+    -   Nazarathy andKlok
+
+-   **Introducing Monte Carlo Methods in R**
+
+    -   Robert and Casella
+
+-   Permutation Statistical Methods with R
+
+    -   Berry, Kvamme, Johnston, and Mielke
+
+-   Monte Carlo Strategies in Scientific Computing
+
+    -   Liu
+
+## Bayesian
+
+-   Introduction to Bayesian Inference, Methods and Computation
+
+    -   Heard
+
+-   Applied Bayesian Statistics
+
+    -   Cowles
+
+-   **Bayesian Statistical Modeling with Stan, R, and Python**
+
+    -   Matsuura
+
+-   Bayesian Essentials in R
+
+    -   Marin and Robert
+
+## Theoretical
+
+-   Essentials of Stochastic Processes (3rd Edition)
+
+    -   Durrett
+
+    -   Graduate
+
+-   A Concise Introduction to Measure Theory
+
+    -   Shirali
+
+    -   Graduate
+
+-   Large Sample Techniques for Statistics (2nd Edition)
+
+    -   Jiang
+
+    -   Graduate
+
+-   A Course in Mathematical Statistics and Large Sample Theory
+
+    -   Bhattacharya, Lin, and Patrangenaru
+
+    -   Graduate
+
+-   Mixture and Hidden Markov Models with R
+
+    -   Visser and Speekenbrink
+
+    -   Undergraduate
+
+-   **Modern Mathematical Statistics (3rd Edition)**
+
+    -   Devore, Berk, and Carlton
+
+    -   Undergraduate
+
+-   Probability Theory (3rd Edition)
+
+    -   Klenke
+
+    -   Graduate
+
+-   Testing Statistical Hypotheses (4th Edition)
+
+    -   Lehmann and Romano
+
+    -   Graduate
+
+-   **Theory of Point Estimation**
+
+    -   Lehmann and Casella
+
+    -   Graduate
+
+    -   May not be available
+
+## Longitudinal Data Analysis
+
+-   Longitudinal Categorical Data Analysis
+
+    -   Sutradhar
+
+## Survival Analysis
+
+-   Statistical Modelling of Survival Data with Random Effects
+
+    -   Ha, Jeong, and Lee
+
+-   Survival Analysis (3rd Edition)
+
+    -   Kleinbaum and Klein
+
+-   Applied Survival Analysis in R
+
+    -   Moore
+
+-   Bayesian Survival Analysis
+
+    -   Ibrahim, Chen, and Sinha
+
+-   **Survival Analysis Techniques for Censored and Truncated Data (2nd Edition)**
+
+    -   Klein and Moeschberger
+
+## Machine Learning
+
+-   Fundamental of High-Dimensional Statistics
+
+    -   Lederer
+
+-   **An Introduction to Statistical Learning (2nd Edition)**
+
+    -   James, Witten, Hastie and Tibshirani
+
+-   Statistical Learning from a Regression Perspective (2nd Edition)
+
+    -   Berk
+
+-   Elements of Statistical Learning
+
+    -   Hastie, Friedman, and Tibshirani
+
+-   Statistics for High Dimensional Data
+
+    -   Bühlmann and van der Geer
+
+-   Probability and Statistics for Machine Learning
+
+    -   Das Gupta
+
+## Time-Series
+
+-   Introduction to Time Series and Forcasting (3rd Edition)
+
+    -   Brockwell and Davis
+
+-   Time Series Analysis and Its Applications
+
+    -   Shumway and Stoffer
+
+-   Time Series Analysis for the State-Space Model with R/Stan
+
+    -   Hagiwara
+
+## Study Desing and Causal Inference
+
+-   Causal Inference What IF
+
+    -   Hernán and Robins
+
+-   Design of Observational Studies
+
+    -   Rosenbaum
+
+**Bolded Titles, I have read thoroughly.**
