@@ -1,0 +1,15 @@
+{
+  "hash": "1a243d334f0a423300b024e6875e96d1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Title\"\nauthor: \"Name Here\"\ndate: \"10-24-2025\"\nformat: \n  html:\n    toc: true\n    toc-depth: 2\n    code-fold: true\n    code-tools: true\n    code-line-numbers: true\n    embed-resources: true\n    include-in-header: \n      - file: \"math.jax\"\nknitr:\n  opts_chunk:\n    echo: true\n    message: false\n    warning: false\n    error: true\n    tidy: styler\n    R.options:\n      digits: 3\n      max.print: 100\n---\n\n## Problem 1\n\n$$\\bbeta = 5$$\n\n\n::: {.cell}\n\n```{.r .cell-code}\npenguins\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n   species    island bill_len bill_dep flipper_len body_mass    sex year\n1   Adelie Torgersen     39.1     18.7         181      3750   male 2007\n2   Adelie Torgersen     39.5     17.4         186      3800 female 2007\n3   Adelie Torgersen     40.3     18.0         195      3250 female 2007\n4   Adelie Torgersen       NA       NA          NA        NA   <NA> 2007\n5   Adelie Torgersen     36.7     19.3         193      3450 female 2007\n6   Adelie Torgersen     39.3     20.6         190      3650   male 2007\n7   Adelie Torgersen     38.9     17.8         181      3625 female 2007\n8   Adelie Torgersen     39.2     19.6         195      4675   male 2007\n9   Adelie Torgersen     34.1     18.1         193      3475   <NA> 2007\n10  Adelie Torgersen     42.0     20.2         190      4250   <NA> 2007\n11  Adelie Torgersen     37.8     17.1         186      3300   <NA> 2007\n12  Adelie Torgersen     37.8     17.3         180      3700   <NA> 2007\n [ reached 'max' / getOption(\"max.print\") -- omitted 332 rows ]\n```\n\n\n:::\n:::\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrnorm(100000)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n  [1]  1.6383 -1.1881 -0.7544 -0.8313 -0.4414 -0.3619  0.0948 -2.9212  0.7506\n [10] -0.6387 -2.4094  0.1211  0.4434 -1.0323 -0.6546 -0.3860 -1.0959  0.2918\n [19]  1.4809  0.2844  0.5671 -1.4633  0.3550  0.2723  0.3760  0.3135 -0.5646\n [28]  0.2714 -0.9874  0.8806  0.0120  0.5420  0.7555 -1.2598  0.9309  1.6754\n [37]  0.6869 -0.6989  0.0112  0.7589 -0.2243  0.6561  1.0646  0.7208  0.1553\n [46]  1.2479 -0.9115 -3.0087 -1.4246  0.0223  0.0949 -0.0498  1.4489 -1.2816\n [55]  0.1701 -0.6156 -0.2114 -0.8810  0.6184  1.2981  0.4480  0.8647 -0.6918\n [64]  0.5024 -2.2198  0.5140  0.4229  1.1344  1.1342  0.7453  0.5830 -1.4000\n [73]  1.6182  0.5600 -1.3026 -1.1485 -0.9855 -0.2250 -0.3810  0.3526 -0.5163\n [82]  1.6468  1.6493 -0.1103  2.0127  0.5669  0.1306  0.3195  1.0527 -0.6750\n [91]  0.8719 -0.6003  1.2471 -0.3993 -0.8346  1.1155 -1.2187  0.7220 -0.9294\n[100]  1.2767\n [ reached 'max' / getOption(\"max.print\") -- omitted 99900 entries ]\n```\n\n\n:::\n:::\n\n\n## Problem 2\n\n## Problem 3\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -11,7 +11,7 @@ format:
       y: 1cm
 ---
 
-## Math 408: Advanced Data Analysis
+## Math 408: Machine Learning
 
 ### Course Information
 
@@ -52,9 +52,20 @@ Students will learn how to construct machine learning models using current data 
     - Sigrid Keydana
     - Available here: https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/
 
+- Pytorch Tutorials
+    - Available here: https://docs.pytorch.org/tutorials/index.html
+
 -  Bayesian Statistical Modeling with Stan, R, and Python
     - Kentaro Matsuura
     - Available for download from the Broome Library
+
+- Bayesian Data Analysis
+    - Andrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald Rubin
+    - Available here: https://sites.stat.columbia.edu/gelman/book/
+
+- Deep Learning
+    - Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+    - Available here: https://www.deeplearningbook.org/
 
 ### Required Software
 
@@ -85,12 +96,14 @@ For this course, we will use several different statistical programs to analyze d
 
 #### Choose One IDE
 
--  **Positron (Recommended)** provides free and open source tools for your data analysis in R: [positron.posit.co/download](http://positron.posit.co/download.html)
+-  **Positron (Recommended)** provides free and open source tools for your data analysis in R and/or Python: [positron.posit.co/download](http://positron.posit.co/download.html)
     - Quarto easily integrates with this IDE.
 
 -  **RStudio** provides free and open source tools for your data analysis in R: [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
 
--  **VS Code** provides free and open source tools for your data analysis in R: [code.visualstudio.com](https://code.visualstudio.com/)
+-  **VS Code** provides tools for software development as well as data analysis: [code.visualstudio.com](https://code.visualstudio.com/)
+
+- You may use any other IDE that connects to R/Python, Torch, and Quarto. 
 
 
 ### Course Grading
@@ -116,6 +129,8 @@ Assignments will be assigned on a regular basis and posted [here](hw.html) and C
 
 #### Final Project and Presentation
 
+The final project and presentation will involve students to build a neural network to classify or predict an outcome of interest. You may use any data available to predict any outcome of interest. You may work individually or groups of 2. More information about the project and presentation will be available later in the semester.
+
 #### Extra Credit
 
 There will be **4** extra credit opportunities worth a total of 10% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found [here](ec.html).
@@ -126,21 +141,21 @@ The following outline may be subject to change. Any changes will be announced in
 
 | Week | Topic                                              |
 |:-----|:---------------------------------------------------|
-| 1    | Intro to Course/Intro to R                         |
-| 2    | Bayesian Analysis                                  |
-| 3    | Bayesian Linear Regression                         |
-| 4    | Bayesian Generalized Linear Models                 |
-| 5    | Bayesian Zero-Inflated and Hurdle Models           |
-| 6    | Bayesian Survival Analysis                         |
-| 7    | Tree-Based Methods & Support Vector Machines       |
+| 1    | Intro to Course/Computational Set Up               |
+| 2    | Neural Networks                                    |
+| 3    | Layers, Optimizers, Loss, and Activation Functions |
+| 4    | Recurrent Neural Networks                          |
+| 5    | Convolutional Neural Networks                      |
+| 6    | Tabular Data Analysis                              |
+| 7    | Image Classification                               |
 | --   | Spring Break                                       |
-| 8    | Neural Networks                                    |
-| 9    | Layers, Optimizers, Loss, and Activation Functions |
-| 10   | Prediction with Neural Networks                    |
-| 11   | Recurrent Neural Networks                          |
-| 12   | Recurrent Neural Networks                          |
-| 13   | Convolutional Neural Networks                      |
-| 14   | Convolutional Neural Networks                      |             
+| 8    | Time-Series Analysis                               |
+| 9    | Audio Classification                               |
+| 10   | Tree-based Analysis & Support Vector Machines      |
+| 11   | Bayesian Analysis                                  |
+| 12   | Bayesian Linear Regression                         |
+| 13   | Bayesian Generalized Linear Models                 |
+| 14   | Bayesian Survival Analysis                         |             
 | 15   | Final Presentation                                 |             
 | 16   | Final Presentation                                 |             
 
