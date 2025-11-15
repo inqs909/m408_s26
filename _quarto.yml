@@ -32,7 +32,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: false
-    content: "**Alert** - this is course is still under construction"
+    content: "**Alert** - this course is still under construction"
     type: danger
     position: below-navbar
 
