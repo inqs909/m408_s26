@@ -12,51 +12,10 @@ Welcome to the course! This is the home page of the course where I will provide 
 
 ### Quarto Template for HW
 
-Download it here: [Github Repo](https://github.com/inqs909/m408_s24/blob/main/files/template.qmd)
-
-**OR** Type this in the RStudio terminal:
-
 ```
-quarto use template inqs909/m408_hw
+quarto use template inqs909/qs_hw
 ```
 
-Type `Y` for the trust author. Type a name of a new directory in where to save the file. For example, type `hw1`.
-
-**OR** Save this in an empty source quarto document:
-
-```default
----
-title: "Title"
-author: "Name Here"
-date: "`r format(Sys.time(),'%m-%d-%Y')`"
-format: 
-  html:
-    toc: true
-    toc-depth: 2
-    code-fold: true
-    code-tools: true
-    code-line-numbers: true
-    embed-resources: true
-knitr:
-  opts_chunk:
-    echo: true
-    message: false
-    warning: false
-    error: true
-    tidy: styler
-    R.options:
-      digits: 3
-      max.print: 100
----
-
-## Problem 1
-
-## Problem 2
-
-## Problem 3
-
-
-```
 
 
 :::

@@ -29,6 +29,12 @@ website:
       - hw.qmd
       - ec.qmd
       - books.qmd
+  announcement: 
+    icon: info-circle
+    dismissable: false
+    content: "**Alert** - this is course is still under construction"
+    type: danger
+    position: below-navbar
 
 
 format:
