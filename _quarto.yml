@@ -23,7 +23,9 @@ website:
   repo-url: https://github.com/inqs909/m408_s26
   title: "MATH 408"
   site-url: www.inqs.info/m408_s26
+  favicon: img/favicon.svg
   navbar:
+    logo: img/favicon.svg
     right:
       - syllabus.qmd
       - hw.qmd
@@ -39,8 +41,8 @@ website:
 
 format:
   html:
-    theme: flatly
-    css: styles.css
+    theme:
+      light: theme.scss
     toc: true
 
 
