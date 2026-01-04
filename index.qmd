@@ -16,8 +16,6 @@ Welcome to the course! This is the home page of the course where I will provide 
 quarto use template inqs909/qs_hw
 ```
 
-
-
 :::
 
 ::: {.callout-note collapse="true" icon="false"}

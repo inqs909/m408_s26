@@ -29,7 +29,7 @@ format:
 
 ### Course Description
 
-Students will learn how to construct machine learning models using current data science programming languages. Topics will include nonparametric models, deep learning models, and neural networks. This is a programming intensive course
+Students will learn how to construct machine learning models using current data science programming languages. Topics will include nonparametric models, deep learning models, and neural networks. This is a programming intensive course.
 
 ### Learning Outcomes
 
@@ -133,7 +133,7 @@ The final project and presentation will involve students to build a neural netwo
 
 #### Extra Credit
 
-There will be **4** extra credit opportunities worth a total of 10% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found [here](ec.html).
+There will be **3** extra credit opportunities worth a total of 5% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found [here](ec.html).
 
 ### Class Schedule
 
@@ -142,22 +142,22 @@ The following outline may be subject to change. Any changes will be announced in
 | Week | Topic                                              |
 |:-----|:---------------------------------------------------|
 | 1    | Intro to Course/Computational Set Up               |
-| 2    | Neural Networks                                    |
-| 3    | Layers, Optimizers, Loss, and Activation Functions |
-| 4    | Recurrent Neural Networks                          |
-| 5    | Convolutional Neural Networks                      |
-| 6    | Tabular Data Analysis                              |
-| 7    | Image Classification                               |
+| 2    | Programming in R                                   |
+| 3    | Neural Networks                                    |
+| 4    | Layers, Optimizers, Loss, and Activation Functions |
+| 5    | Recurrent Neural Networks                          |
+| 6    | Convolutional Neural Networks                      |
+| 7    | Tabular Data Analysis                              |
 | --   | Spring Break                                       |
-| 8    | Time-Series Analysis                               |
-| 9    | Audio Classification                               |
-| 10   | Tree-based Analysis & Support Vector Machines      |
+| 8    | Image Classification                               |
+| 9    | Time-Series Analysis                               |
+| 10   | Audio Classification                               |
 | 11   | Bayesian Analysis                                  |
 | 12   | Bayesian Linear Regression                         |
 | 13   | Bayesian Generalized Linear Models                 |
-| 14   | Bayesian Survival Analysis                         |             
-| 15   | Final Presentation                                 |             
-| 16   | Final Presentation                                 |             
+| 14   | Bayesian Survival Analysis                         |
+| 15   | Final Presentation                                 |        
+| 16   | Final Presentation                                 |
 
 ### Generative Artificial Intelligence Policy
 
