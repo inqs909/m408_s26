@@ -1,0 +1,99 @@
+/*-- scss:defaults --*/
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic);
+
+// fonts
+
+// colors
+$body-bg: #F7FCFE !default;
+$body-color: #222 !default;
+$link-color: #0d5151ff !default;
+$selection-bg: $link-color !default;
+$selection-color: #fff !default;
+$input-panel-bg: rgba(233, 236, 239, 0.2) !default;
+$presentation-heading-color: #0d5151ff !default;
+$code-block-bg: #FCFCFC  !default;
+
+// headings
+$presentation-heading-font-weight: 700 !default;
+$presentation-heading-text-shadow: 2px 2px 2px $body-bg !default;
+
+$presentation-heading-text-transform: uppercase !default;
+
+/*-- scss:rules --*/
+
+.reveal p {
+  font-weight: 300;
+  text-shadow: 1px 1px $body-bg;
+}
+
+.reveal p code {
+  display: inline-block;
+  border-radius: 7px;
+}
+
+.reveal small code {
+  vertical-align: baseline;
+}
+
+section.has-light-background {
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-shadow: none;
+  }
+}
+
+h2 {
+  font-size: 0.95em;
+}
+
+.columns h3 {
+  font-size: 0.95em;
+  color: #043838ff;
+}
+
+
+
+.reveal .slides section .subtitle {
+  color: #0d5151ff;
+  font-size: 1.5em;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top: -10px;
+}
+
+.agenda {
+}
+
+.agenda-slide h1 {
+  size: 0em;
+  display: none;
+}
+
+.agenda-inactive {
+  opacity: 0.25;
+  margin-top: -0.5em;
+  margin-bottom: -0.5em;
+}
+
+.agenda-active {
+  color: #043838ff;
+  font-size: 1.5em;
+  margin-top: -0.5em;
+  margin-bottom: -0.5em;
+}
+
+.reveal .controls button {
+  transform: scale(0.5) !important;       /* adjust size: 0.7 = 70% */
+}
+
+.figure-caption, figcaption {
+  text-align: center !important;
+}
+
+a {
+  text-decoration: underline !important;
+}

@@ -1,0 +1,271 @@
+---
+title: "Math 408"
+subtitle: "Machine Learning"
+format:
+  revealjs:
+    width: 1200
+    scrollable: false
+    footer: m408.inqs.info/lectures/1a
+    theme: [default, styles.scss]
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: true
+    message: false
+    code-fold: true
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+
+# Introductions
+
+## Introductions
+
+-   San Bernardino, CA
+
+-   CSU Monterey Bay
+
+    -   BS Biology
+
+-   San Diego State University
+
+    -   Master's in Public Health
+
+-   UC Riverside
+
+    -   PhD in Applied Statistics
+
+## Introductions
+
+::: nonincremental
+-   Name
+
+-   Year
+
+-   Major
+
+-   Fun Fact
+
+-   Career Goal
+:::
+
+
+# Class Setup
+
+## Class Setup
+
+-   Homework Assignments
+-   Final Presentation
+-   Final Write Up
+-   Extra Credit
+
+## Study Expectations
+
+For every 1 unit of class you take, you are expected to spend 2-3 hours outside of class for the course.
+
+## Syllabus
+
+[m408.inqs.info/syllabus](https://www.inqs.info/m408_s26/syllabus)
+
+## R Programming
+
+This utilized the R programming to conduct data analysis.
+
+R is a powerful tool that allows you to program complex tasks.
+
+Learning R is difficult, but it is the best teacher to teach you how to overcome challenges. Don't give up when it gets hard and seek out help when needed.
+
+# Use of Generative AI
+
+## Use of Generative AI
+
+The use of generative artificial intelligence (AI) to complete any part or all of an assignment/exam is strictly prohibited in this class. This includes, but not limited to, ChatGPT, Claude, Meta AI, and Google Gemini.
+
+::: fragment
+
+You may use AI to enhance you understanding of the material.
+
+:::
+
+::: fragment
+
+You may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini.  Exceptions are allowed for [DASS](https://www.csuci.edu/dass/)-approved services.
+
+
+:::
+
+## Use of AI
+
+There are consequences when you use of AI:
+
+- Educational Mislearning
+- Trusting AI
+- Stolen Work
+- Privacy Concerns
+- Environmental Impacts
+- Working Exploitation
+
+
+
+## Educational Mislearning
+
+The purpose of this class, and college, is for you to learn about critical thinking skills and perseverance. Using AI will only teach you how to get an answer, which may or may not be correct. 
+
+::: fragment
+You will not develop the skills needed to problem solve a challenge. Additionally, developing grit is essential to become successful in college and life. There is no easy way out and AI is an illusion to your success in life.
+:::
+
+
+::: fragment
+To learn something, it requires hours of work! If not years!
+:::
+
+## Trusting AI
+
+When using AI, you must acknowledge its limitations:
+
+::: incremental
+
+- Responses provided may be incorrect
+
+- Responses may not be fair
+
+- Companies may manipulate responses and/or terms of service for their benefit
+
+- Companies may not have your best interst in mind
+:::
+
+::: fragment
+
+**You should always proceed with caution utilizing these tools!**
+
+:::
+
+
+
+
+## Stolen Work
+
+::: fragment
+Additionally, all these individuals are not receiving any royalties for the work to be used in creating generative AI models.
+:::
+
+
+::: fragment
+[Inside Higher Ed](https://www.insidehighered.com/news/faculty-issues/research/2024/07/29/taylor-francis-ai-deal-sets-worrying-precedent) and [The New Yorker](https://www.newyorker.com/culture/infinite-scroll/is-ai-art-stealing-from-artists) highlight individual's concern of their work being used to train AI models.
+:::
+
+
+## Privacy Concerns
+
+The use of generative AI raises concerns of what data is being harvested from us, possibly without informed consent. 
+
+::: fragment
+When you use any large language models, you do not know what information is being harvested from you.
+:::
+
+::: fragment
+Do you want to upload your thoughts and ideas to a company that can monetize, and possibly exploit you.
+:::
+
+::: fragment
+Does your Professors consent with you uploading their assignments to large language models?
+:::
+
+::: fragment
+Stanford provided a [report](https://hai.stanford.edu/news/privacy-ai-era-how-do-we-protect-our-personal-information) highlighting the risks of our personal data use in large language models.
+:::
+
+## Environmental Impact
+
+In order to run these large language models, companies need to use a large amounts of energy. This is because large servers are needed to both train and execute a model. 
+
+::: fragment
+The [LA Times](https://www.latimes.com/opinion/story/2024-08-15/editorial-generative-ai-is-a-leading-contributor-to-our-energy-consumption-how-will-this-impact-our-climate) reports the potential impact that running AI models in California.
+:::
+
+::: fragment
+Additionally, [Time](https://time.com/6987773/ai-data-centers-energy-usage-climate-change/) reports that a ChatGPT query uses ten times more energy than a Google search query, and global AI demands can consume of 1 trillion gallons of water by 2027.
+:::
+
+::: fragment
+There are also environmental justice questions about where these data centers are constructed.
+:::
+
+## Worker Exploitation
+
+The [Washington Post](https://www.washingtonpost.com/world/2023/08/28/scale-ai-remotasks-philippines-artificial-intelligence/) and Time ([Article 1](https://time.com/6147458/facebook-africa-content-moderation-employee-treatment/) and [Article 2](https://time.com/6247678/openai-chatgpt-kenya-workers/)) reported that AI companies utilize "digital sweatshops" to classify data points for model training. 
+
+::: fragment
+There is a human cost from the Global South, both financially and mentally, to develop the AI models for users in the United States and Europe.
+:::
+
+::: fragment
+We must be conscious consumers and demand more from these companies to provide safe working conditions and livable wages.
+:::
+
+
+## Is Using AI Bad?
+
+::: fragment
+NO
+:::
+
+::: fragment
+But, we need to acknowledge the consequences of using AI!
+:::
+
+::: fragment
+And, we need to demand companies to create and implement AI in an ethical manner!
+:::
+
+
+## Resources on Labor Violations
+
+- [The Emotional Labor Behind AI Intimacy](https://data-workers.org/michael/)
+- [How thousands of ‘overworked, underpaid' humans train Google’s AI to seem smart](https://www.theguardian.com/technology/2025/sep/11/google-gemini-ai-training-humans)
+
+## Affecting Communities
+
+- [AI surveillance and data colonialism shape African conflicts](https://africainfact.com/ai-surveillance-and-data-colonialism-shape-african-conflicts/)
+- [African workers are taking on Meta and the world should pay attention](https://www.aljazeera.com/opinions/2025/4/1/african-workers-are-taking-on-meta-and-the-world-should-pay-attention)
+- [‘It’s destroyed me completely’: Kenyan moderators decry toll of training of AI models](https://www.theguardian.com/technology/2023/aug/02/ai-chatbot-training-human-toll-content-moderator-meta-openai)
+
+- [The AI Industry Is Traumatizing Desperate Contractors in the Developing World for Pennies](https://futurism.com/artificial-intelligence/ai-industry-traumatizing-contractors)
+
+## Resources on Ideas and Learning
+
+- [Student's Right to Refuse AI](https://refusal.blog/2025/08/29/a-students-right-to-refuse-generative-ai/)
+
+- [AI is homogenizing your thoughts](https://www.newyorker.com/culture/infinite-scroll/ai-is-homogenizing-our-thoughts?utm_source=facebook&utm_medium=social&utm_campaign=dhfacebook&utm_content=app.dashsocial.com/newyorkermag/library/media/546600666)
+
+- [The Incuriosity Engine](https://cooperlund.medium.com/the-incuriosity-engine-16bdf41e229d)
+
+- [New Junior Developers Can't Actually Code](https://nmn.gl/blog/ai-and-learning)
+
+
+# Extra Credits
+
+
+# Field Trip

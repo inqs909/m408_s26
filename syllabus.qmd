@@ -93,6 +93,7 @@ For this course, we will use several different statistical programs to analyze d
 -   **R (Recommended)** is a statistical package that is available for download at: [r-project.org](https://www.r-project.org/).
 
 -   **Python** is a general programming langauge that is available to download at: [python.org](https://www.python.org/)
+    - Highly recommend using a python environment such as [uv](https://docs.astral.sh/uv/).
 
 #### Choose One IDE
 

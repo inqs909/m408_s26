@@ -1,0 +1,32 @@
+---
+title: "Week 1"
+date: 01-23-26
+description: This week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.
+editor: source
+---
+
+
+## Learning Outcomes
+
+### First Lecture
+
+- Welcome to the course!
+
+### First/Second Lecture
+
+-   Installing R and RStudio
+
+-   Scripts
+
+-   R Calculator
+
+-   R Objects
+
+-   R Packages
+
+## Resources
+
+| Lecture | Slides                   | Videos  |
+|---------|--------------------------|---------|
+| 1       | [Slides](../lectures/1a) | NA      |
+| 2       | [Slides](../lectures/1b) | NA      |
