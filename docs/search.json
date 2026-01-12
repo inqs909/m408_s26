@@ -42,13 +42,6 @@
     "text": "Class Setup\n\nHomework Assignments\nFinal Presentation\nFinal Write Up\nExtra Credit"
   },
   {
-    "objectID": "lectures/1a.html#study-expectations",
-    "href": "lectures/1a.html#study-expectations",
-    "title": "Math 408",
-    "section": "Study Expectations",
-    "text": "Study Expectations\nFor every 1 unit of class you take, you are expected to spend 2-3 hours outside of class for the course."
-  },
-  {
     "objectID": "lectures/1a.html#syllabus",
     "href": "lectures/1a.html#syllabus",
     "title": "Math 408",
@@ -123,7 +116,7 @@
     "href": "lectures/1a.html#is-using-ai-bad",
     "title": "Math 408",
     "section": "Is Using AI Bad?",
-    "text": "Is Using AI Bad?\n\nNO\n\n\nBut, we need to acknowledge the consequences of using AI!\n\n\nAnd, we need to demand companies to create and implement AI in an ethical manner!"
+    "text": "Is Using AI Bad?\n\nYes/No/I don’t know\n\n\nBut, we need to acknowledge the consequences of using AI!\n\n\nAnd, we need to demand companies to create and implement AI in an ethical manner!"
   },
   {
     "objectID": "lectures/1a.html#resources-on-labor-violations",
@@ -235,7 +228,7 @@
     "href": "index.html",
     "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "Brief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/"
+    "text": "Brief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 23, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/week_1.html",

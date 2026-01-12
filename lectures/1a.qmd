@@ -80,10 +80,6 @@ editor: source
 -   Final Write Up
 -   Extra Credit
 
-## Study Expectations
-
-For every 1 unit of class you take, you are expected to spend 2-3 hours outside of class for the course.
-
 ## Syllabus
 
 [m408.inqs.info/syllabus](https://www.inqs.info/m408_s26/syllabus)
@@ -229,7 +225,7 @@ We must be conscious consumers and demand more from these companies to provide s
 ## Is Using AI Bad?
 
 ::: fragment
-NO
+Yes/No/I don't know
 :::
 
 ::: fragment
