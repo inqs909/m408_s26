@@ -1,0 +1,83 @@
+---
+title: "Extra Credit 3"
+description: Instructions for extra credit three.
+date: 01-15-2026
+editor: source
+draft: false
+format:
+  html: 
+    code-fold: true
+    html-math-method: katex
+---
+
+After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use is visual aids, such as a powerpoint presentation, to highlight your main findings. All books should be available through the Broome Library.
+
+**Books:**
+
+-   Empire of AI
+    -   Karen Hao
+
+-   The Last Human Job
+    -   Allison Pugh
+
+-   The Book of Why
+
+    -   Judea Pearl
+
+-   Algorithms of Oppression
+
+    -   Safiya Umoja Noble
+
+-   Data Feminism
+
+    -   Catherine D'Ignazio and Lauren Klein
+
+-   Weapons of Math Destruction
+
+    -   Cathy O'Niel
+
+-   Invisible Women: Data bias in a world designed for men
+
+    -   Caroline Criado Perez
+
+-   Factfulness: Ten Reasons We're Wrong About the World... and Why Things are Better Than You Think
+
+    -   Hans Rosling
+
+-   Artificial Unintelligence: How Computers Misunderstand the World
+
+    -   Merideth Broussard
+
+-   Technically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech
+
+    -   Sara Wachter-Boettcher
+
+-   Unmasking AI
+    -   Joy Buolamwini
+
+-   Race After Technology
+    -   Ruha Benjamin
+
+-   Cloud Ethics
+    -   Louise Amoore
+
+-   More than a Glitch
+    -   Meridith Broussard
+
+-   Digitizing Race
+    - Lisa Nammura
+
+
+-   **OR ANY Book Approved By Me (Deadline for Approval by March 29, 2026)**
+
+**Video Essay Guidelines:**
+
+-   10 Minutes Long
+
+-   Use of visual aids
+
+-   Narrated by your own voice
+
+-   **Due 5/15/2026**
+
+**Worth 2 final grade percentage points.**

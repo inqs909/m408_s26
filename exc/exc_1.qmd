@@ -1,0 +1,24 @@
+---
+title: "Extra Credit 1"
+description: Instructions for extra credit one.
+date: 01-15-2026
+editor: source
+format:
+  html: 
+    code-fold: true
+    html-math-method: katex
+---
+
+Write a 2-page report practices related to self care. As you move on through college and your future careers, it is important to practice self care. For this extra credit assignments, write about what are some practices you will do to for your well being.
+
+**Worth 1 percent points.**
+
+Report guidelines
+
+-   2 Pages
+
+-   Double Spaced
+
+-   12 point font
+
+-   Due 02/15/2026

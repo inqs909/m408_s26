@@ -1,0 +1,47 @@
+---
+title: "Extra Credit 2"
+description: Instructions for extra credit two.
+date: 01-15-2026
+editor: source
+format:
+  html: 
+    code-fold: true
+    html-math-method: katex
+---
+
+After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use visual aids, such as a powerpoint presentation, to highlight your main findings, and how it relates to your own life. All books should be available through the Broome Library.
+
+**Books:**
+
+-   Make it Stick: The Science of Successful Learning
+    -   Peter Brown
+
+-   Teach Yourself How to Learn: Strategies you can use to ace any course
+    -   Saundra McGuire
+
+-  Limitless Mind
+    -  Jo Boaler
+
+-   Happiness: A Guide to Developing Life's
+
+    -   Matthieu Ricard
+
+-   Grit: The Power of Passion and Perserverance
+
+    -   Angela Duckworth
+
+-   Mindset: The New Psychology of Success
+
+    -   Carol Dweck
+
+**Video Essay Guidelines:**
+
+-   10 Minutes Long
+
+-   Use of visual aids
+
+-   Narrated by your own voice
+
+-   **Due 5/15/2026**
+
+**Worth 2 final grade percentage points.**
