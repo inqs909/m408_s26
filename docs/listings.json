@@ -1,16 +1,16 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/posts/week_1.html"
+    ]
+  },
+  {
     "listing": "/exc.html",
     "items": [
       "/exc/exc_1.html",
       "/exc/exc_2.html",
       "/exc/exc_3.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/posts/week_1.html"
     ]
   }
 ]

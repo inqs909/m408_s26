@@ -21,137 +21,116 @@
     "text": "University Policies\n\nSyllabus Policies and Assistance\nCSUCI’s Syllabus Policies and Assistance Website provides important details about academic policies, campus expectations, and student support services that are all highly applicable to your success as a student both in and outside of the classroom. Ensure that you review this site on a regular basis to stay informed about the policies and resources that support your success, as campus resources or policies may change semester to semester.\n\n\nAcademic Honesty\nConduct yourself with honesty and integrity. Do not submit others’ work as your own. Foassignments and quizzes that allow you to work with a group, only put your name on what the group submits if you genuinely contributed to the work. Work completely independently on exams, using only the materials that are indicated as allowed. Failure to observe academic honesty results in substantial penalties that can include failing the course.\n\n\nCSUCI Basic Need\nPlease use the link to the Basic Needs Program on the Syllabus Policies and Assistance website (&lt;go.csuci.edu/syllabuspolicies&gt;) for information on emergency food, housing accommodations, toiletries, and connections to critical resources.\n\n\nCSUCI Disability Statement\nIf you are a student with a disability requesting reasonable accommodations in this course, you need to contact Disability Accommodations and Support Services (DASS) located on the second floor of Arroyo Hall, via email accommodations@csuci.edu or call 805-437-3331. All requests for reasonable accommodations require registration with DASS in advance of need: https://www.csuci.edu/dass/students/apply-for-services.htm. Faculty, students and DASS will work together regarding classroom accommodations. You are encouraged to discuss approved.\n\n\nDisruption\n\nIf I Am Out: I will communicate via email and will hold classes asynchronously.\nIf You Are Out: Contact me as soon as possible to talk about your options. Reasonable accommodations will be provided for a brief absence. With proper documentation, extended accommodations will be provided."
   },
   {
-    "objectID": "lectures/1a.html#introductions-1",
-    "href": "lectures/1a.html#introductions-1",
-    "title": "Math 408",
-    "section": "Introductions",
-    "text": "Introductions\n\nSan Bernardino, CA\nCSU Monterey Bay\n\nBS Biology\n\nSan Diego State University\n\nMaster’s in Public Health\n\nUC Riverside\n\nPhD in Applied Statistics"
-  },
-  {
-    "objectID": "lectures/1a.html#introductions-2",
-    "href": "lectures/1a.html#introductions-2",
-    "title": "Math 408",
-    "section": "Introductions",
-    "text": "Introductions\n\nName\nYear\nMajor\nFun Fact\nCareer Goal"
-  },
-  {
-    "objectID": "lectures/1a.html#class-setup-1",
-    "href": "lectures/1a.html#class-setup-1",
-    "title": "Math 408",
-    "section": "Class Setup",
-    "text": "Class Setup\n\nHomework Assignments\nFinal Presentation\nFinal Write Up\nExtra Credit"
-  },
-  {
-    "objectID": "lectures/1a.html#syllabus",
-    "href": "lectures/1a.html#syllabus",
-    "title": "Math 408",
-    "section": "Syllabus",
-    "text": "Syllabus\nm408.inqs.info/syllabus"
-  },
-  {
-    "objectID": "lectures/1a.html#r-programming",
-    "href": "lectures/1a.html#r-programming",
+    "objectID": "lectures/1b.html#r-programming",
+    "href": "lectures/1b.html#r-programming",
     "title": "Math 408",
     "section": "R Programming",
-    "text": "R Programming\nThis utilized the R programming to conduct data analysis.\nR is a powerful tool that allows you to program complex tasks.\nLearning R is difficult, but it is the best teacher to teach you how to overcome challenges. Don’t give up when it gets hard and seek out help when needed."
+    "text": "R Programming\nR is a statistical programming package that allows you to conduct different types of analysis.\nR\n\n\n\n\n\n\nNote\n\n\nWindows Users: Install RTools"
   },
   {
-    "objectID": "lectures/1a.html#use-of-generative-ai-1",
-    "href": "lectures/1a.html#use-of-generative-ai-1",
+    "objectID": "lectures/1b.html#positron",
+    "href": "lectures/1b.html#positron",
     "title": "Math 408",
-    "section": "Use of Generative AI",
-    "text": "Use of Generative AI\nThe use of generative artificial intelligence (AI) to complete any part or all of an assignment/exam is strictly prohibited in this class. This includes, but not limited to, ChatGPT, Claude, Meta AI, and Google Gemini.\n\nYou may use AI to enhance you understanding of the material.\n\n\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
+    "section": "Positron",
+    "text": "Positron\nA piece of software that organizes how you conduct statistical analysis in R.\nPositron\n\n\n\n\n\n\nNote\n\n\nWindows Users: Use system-level package If you cannot work with R, install Visual C++ Redistributable"
   },
   {
-    "objectID": "lectures/1a.html#use-of-ai",
-    "href": "lectures/1a.html#use-of-ai",
+    "objectID": "lectures/1b.html#rstudio",
+    "href": "lectures/1b.html#rstudio",
     "title": "Math 408",
-    "section": "Use of AI",
-    "text": "Use of AI\nThere are consequences when you use of AI:\n\nEducational Mislearning\nTrusting AI\nStolen Work\nPrivacy Concerns\nEnvironmental Impacts\nWorking Exploitation"
+    "section": "RStudio",
+    "text": "RStudio\nIf Positron does not work, install RStudio instead."
   },
   {
-    "objectID": "lectures/1a.html#educational-mislearning",
-    "href": "lectures/1a.html#educational-mislearning",
+    "objectID": "lectures/1b.html#installing-torch",
+    "href": "lectures/1b.html#installing-torch",
     "title": "Math 408",
-    "section": "Educational Mislearning",
-    "text": "Educational Mislearning\nThe purpose of this class, and college, is for you to learn about critical thinking skills and perseverance. Using AI will only teach you how to get an answer, which may or may not be correct.\n\nYou will not develop the skills needed to problem solve a challenge. Additionally, developing grit is essential to become successful in college and life. There is no easy way out and AI is an illusion to your success in life.\n\n\nTo learn something, it requires hours of work! If not years!"
+    "section": "Installing Torch",
+    "text": "Installing Torch\nIn R, install torch with:\ninstall.packages(\"torch\")\n\n\n\n\n\n\nNote\n\n\nNvidia-Users\noptions(timeout = 600) # increasing timeout is recommended since we will be downloading a 2GB file.\n# For Windows and Linux: \"cpu\", \"cu128\" are the only currently supported\n# For MacOS the supported are: \"cpu-intel\" or \"cpu-m1\"\nkind &lt;- \"cpu\"\nversion &lt;- available.packages()[\"torch\",\"Version\"]\noptions(repos = c(\n  torch = sprintf(\"https://torch-cdn.mlverse.org/packages/%s/%s/\", kind, version),\n  CRAN = \"https://cloud.r-project.org\" # or any other from which you want to install the other R dependencies.\n))\ninstall.packages(\"torch\")"
   },
   {
-    "objectID": "lectures/1a.html#trusting-ai",
-    "href": "lectures/1a.html#trusting-ai",
+    "objectID": "lectures/1b.html#installing-stan",
+    "href": "lectures/1b.html#installing-stan",
     "title": "Math 408",
-    "section": "Trusting AI",
-    "text": "Trusting AI\nWhen using AI, you must acknowledge its limitations:\n\nResponses provided may be incorrect\nResponses may not be fair\nCompanies may manipulate responses and/or terms of service for their benefit\nCompanies may not have your best interst in mind\n\n\nYou should always proceed with caution utilizing these tools!"
+    "section": "Installing Stan",
+    "text": "Installing Stan\ninstall.packages(\"cmdstanr\", \n    repos = c('https://stan-dev.r-universe.dev', getOption(\"repos\")))\ncmdstanr::check_cmdstan_toolchain()\ncmdstanr::install_cmdstan(cores = 2)"
   },
   {
-    "objectID": "lectures/1a.html#stolen-work",
-    "href": "lectures/1a.html#stolen-work",
+    "objectID": "lectures/1b.html#other-r-packages",
+    "href": "lectures/1b.html#other-r-packages",
     "title": "Math 408",
-    "section": "Stolen Work",
-    "text": "Stolen Work\n\nAdditionally, all these individuals are not receiving any royalties for the work to be used in creating generative AI models.\n\n\nInside Higher Ed and The New Yorker highlight individual’s concern of their work being used to train AI models."
+    "section": "Other R Packages",
+    "text": "Other R Packages\n\nCore PackagesCourse PackagesMisc Packages\n\n\n\nTidyverse\n\n\n\n\n\n\nISLR2\nleaps\ngam\ntree\n\n\n\ngbm\ne1071\nglmnet\ntorch\n\n\n\n\n\nRMarkdown\nQuarto\nextraInserts (GitHub Package)"
   },
   {
-    "objectID": "lectures/1a.html#privacy-concerns",
-    "href": "lectures/1a.html#privacy-concerns",
+    "objectID": "lectures/1b.html#load-r-package",
+    "href": "lectures/1b.html#load-r-package",
     "title": "Math 408",
-    "section": "Privacy Concerns",
-    "text": "Privacy Concerns\nThe use of generative AI raises concerns of what data is being harvested from us, possibly without informed consent.\n\nWhen you use any large language models, you do not know what information is being harvested from you.\n\n\nDo you want to upload your thoughts and ideas to a company that can monetize, and possibly exploit you.\n\n\nDoes your Professors consent with you uploading their assignments to large language models?\n\n\nStanford provided a report highlighting the risks of our personal data use in large language models."
+    "section": "Load R Package",
+    "text": "Load R Package\nlibrary(tidyverse)\nlibrary(torch)\n\nYou must load packages every new R Session"
   },
   {
-    "objectID": "lectures/1a.html#environmental-impact",
-    "href": "lectures/1a.html#environmental-impact",
+    "objectID": "lectures/1b.html#r-as-a-calculator",
+    "href": "lectures/1b.html#r-as-a-calculator",
     "title": "Math 408",
-    "section": "Environmental Impact",
-    "text": "Environmental Impact\nIn order to run these large language models, companies need to use a large amounts of energy. This is because large servers are needed to both train and execute a model.\n\nThe LA Times reports the potential impact that running AI models in California.\n\n\nAdditionally, Time reports that a ChatGPT query uses ten times more energy than a Google search query, and global AI demands can consume of 1 trillion gallons of water by 2027.\n\n\nThere are also environmental justice questions about where these data centers are constructed."
+    "section": "R as a calculator",
+    "text": "R as a calculator\nR can evaluate different expressions in the console tab.\nTry the following:\n\n\\(4(4+2)/34\\)\n\\(6^3\\)\n\\(3-1\\)\n\\(4+4/3+45(32*34-54)\\)"
   },
   {
-    "objectID": "lectures/1a.html#worker-exploitation",
-    "href": "lectures/1a.html#worker-exploitation",
+    "objectID": "lectures/1b.html#r-functions",
+    "href": "lectures/1b.html#r-functions",
     "title": "Math 408",
-    "section": "Worker Exploitation",
-    "text": "Worker Exploitation\nThe Washington Post and Time (Article 1 and Article 2) reported that AI companies utilize “digital sweatshops” to classify data points for model training.\n\nThere is a human cost from the Global South, both financially and mentally, to develop the AI models for users in the United States and Europe.\n\n\nWe must be conscious consumers and demand more from these companies to provide safe working conditions and livable wages."
+    "section": "R Functions",
+    "text": "R Functions\nR functions performs tasks to specific data values.\nEvaluate the following values in R:\n\n\\(\\sqrt{3}\\)\n\\(e^3\\)\n\\(\\ln(53)\\)\n\\(\\log(324)\\)\n\\(\\sin(3)\\)\n\\(\\sin(3\\pi)\\)"
   },
   {
-    "objectID": "lectures/1a.html#is-using-ai-bad",
-    "href": "lectures/1a.html#is-using-ai-bad",
+    "objectID": "lectures/1b.html#types-of-data",
+    "href": "lectures/1b.html#types-of-data",
     "title": "Math 408",
-    "section": "Is Using AI Bad?",
-    "text": "Is Using AI Bad?\n\nYes/No/I don’t know\n\n\nBut, we need to acknowledge the consequences of using AI!\n\n\nAnd, we need to demand companies to create and implement AI in an ethical manner!"
+    "section": "Types of Data",
+    "text": "Types of Data\n\nNumeric\nCharacter\nLogical\nMissing\n\nEvaluate the following code:\nis.numeric(1)\nis.numeric(\"1\")\nis.numeric(T)\nis.numeric(NA)"
   },
   {
-    "objectID": "lectures/1a.html#resources-on-labor-violations",
-    "href": "lectures/1a.html#resources-on-labor-violations",
+    "objectID": "lectures/1b.html#types-of-objects",
+    "href": "lectures/1b.html#types-of-objects",
     "title": "Math 408",
-    "section": "Resources on Labor Violations",
-    "text": "Resources on Labor Violations\n\nThe Emotional Labor Behind AI Intimacy\nHow thousands of ‘overworked, underpaid’ humans train Google’s AI to seem smart"
+    "section": "Types of Objects",
+    "text": "Types of Objects\nIn R, an object contains a set of data. The most common types are vectors and matrix.\nRun this code and print out the objects in the console:\nx &lt;- 3:34\ny &lt;- matrix(1:20, nrow = 4)"
   },
   {
-    "objectID": "lectures/1a.html#affecting-communities",
-    "href": "lectures/1a.html#affecting-communities",
+    "objectID": "lectures/1b.html#data-frames",
+    "href": "lectures/1b.html#data-frames",
     "title": "Math 408",
-    "section": "Affecting Communities",
-    "text": "Affecting Communities\n\nAI surveillance and data colonialism shape African conflicts\nAfrican workers are taking on Meta and the world should pay attention\n‘It’s destroyed me completely’: Kenyan moderators decry toll of training of AI models\nThe AI Industry Is Traumatizing Desperate Contractors in the Developing World for Pennies"
+    "section": "Data Frames",
+    "text": "Data Frames\nData frames can be thought of as R’s version of a data set.\nPlay around with mtcars:\n\n\nCode\nmtcars \n\n\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2"
   },
   {
-    "objectID": "lectures/1a.html#resources-on-ideas-and-learning",
-    "href": "lectures/1a.html#resources-on-ideas-and-learning",
+    "objectID": "lectures/1b.html#lists",
+    "href": "lectures/1b.html#lists",
     "title": "Math 408",
-    "section": "Resources on Ideas and Learning",
-    "text": "Resources on Ideas and Learning\n\nStudent’s Right to Refuse AI\nAI is homogenizing your thoughts\nThe Incuriosity Engine\nNew Junior Developers Can’t Actually Code"
+    "section": "Lists",
+    "text": "Lists\nList can be thought as an extended vector, but each element is a different R object.\nTry playing with this R object:\n\n\nCode\nlist_one &lt;- list(mtcars, rep(0, 4),\n                 diag(rep(1, 3)))\nlist_one\n\n\n#&gt; [[1]]\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n#&gt; \n#&gt; [[2]]\n#&gt; [1] 0 0 0 0\n#&gt; \n#&gt; [[3]]\n#&gt;      [,1] [,2] [,3]\n#&gt; [1,]    1    0    0\n#&gt; [2,]    0    1    0\n#&gt; [3,]    0    0    1"
   },
   {
-    "objectID": "exc/exc_3.html",
-    "href": "exc/exc_3.html",
-    "title": "Extra Credit 3",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use is visual aids, such as a powerpoint presentation, to highlight your main findings. All books should be available through the Broome Library.\nBooks:\n\nEmpire of AI\n\nKaren Hao\n\nThe Last Human Job\n\nAllison Pugh\n\nThe Book of Why\n\nJudea Pearl\n\nAlgorithms of Oppression\n\nSafiya Umoja Noble\n\nData Feminism\n\nCatherine D’Ignazio and Lauren Klein\n\nWeapons of Math Destruction\n\nCathy O’Niel\n\nInvisible Women: Data bias in a world designed for men\n\nCaroline Criado Perez\n\nFactfulness: Ten Reasons We’re Wrong About the World… and Why Things are Better Than You Think\n\nHans Rosling\n\nArtificial Unintelligence: How Computers Misunderstand the World\n\nMerideth Broussard\n\nTechnically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech\n\nSara Wachter-Boettcher\n\nUnmasking AI\n\nJoy Buolamwini\n\nRace After Technology\n\nRuha Benjamin\n\nCloud Ethics\n\nLouise Amoore\n\nMore than a Glitch\n\nMeridith Broussard\n\nDigitizing Race\n\nLisa Nammura\n\nOR ANY Book Approved By Me (Deadline for Approval by March 29, 2026)\n\nVideo Essay Guidelines:\n\n10 Minutes Long\nUse of visual aids\nNarrated by your own voice\nDue 5/15/2026\n\nWorth 2 final grade percentage points."
+    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 23, 2026\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "exc/exc_1.html",
-    "href": "exc/exc_1.html",
-    "title": "Extra Credit 1",
+    "objectID": "exc/exc_2.html",
+    "href": "exc/exc_2.html",
+    "title": "Extra Credit 2",
     "section": "",
-    "text": "Write a 2-page report practices related to self care. As you move on through college and your future careers, it is important to practice self care. For this extra credit assignments, write about what are some practices you will do to for your well being.\nWorth 1 percent points.\nReport guidelines\n\n2 Pages\nDouble Spaced\n12 point font\nDue 02/15/2026"
+    "text": "After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use visual aids, such as a powerpoint presentation, to highlight your main findings, and how it relates to your own life. All books should be available through the Broome Library.\nBooks:\n\nMake it Stick: The Science of Successful Learning\n\nPeter Brown\n\nTeach Yourself How to Learn: Strategies you can use to ace any course\n\nSaundra McGuire\n\nLimitless Mind\n\nJo Boaler\n\nHappiness: A Guide to Developing Life’s\n\nMatthieu Ricard\n\nGrit: The Power of Passion and Perserverance\n\nAngela Duckworth\n\nMindset: The New Psychology of Success\n\nCarol Dweck\n\n\nVideo Essay Guidelines:\n\n10 Minutes Long\nUse of visual aids\nNarrated by your own voice\nDue 5/15/2026\n\nWorth 2 final grade percentage points."
+  },
+  {
+    "objectID": "exc.html",
+    "href": "exc.html",
+    "title": "Extra Credit",
+    "section": "",
+    "text": "Extra Credit is designed to expand on different topics that related to Machine Learning, but are not necessarily required for the course. Additionally, these opportunities provide students relief when unexpected situations occur during the semester. While it is not required, I encourage everyone to attempt each opportunity.\nBelow is more information on each assignment.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 1\n\n\nInstructions for extra credit one.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 2\n\n\nInstructions for extra credit two.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 3\n\n\nInstructions for extra credit three.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "books.html",
@@ -238,25 +217,151 @@
     "text": "Study Desing and Causal Inference\n\nCausal Inference What IF\n\nHernán and Robins\n\nDesign of Observational Studies\n\nRosenbaum\n\n\nBolded Titles, I have read thoroughly."
   },
   {
-    "objectID": "exc.html",
-    "href": "exc.html",
-    "title": "Extra Credit",
+    "objectID": "exc/exc_1.html",
+    "href": "exc/exc_1.html",
+    "title": "Extra Credit 1",
     "section": "",
-    "text": "Extra Credit is designed to expand on different topics that related to Machine Learning, but are not necessarily required for the course. Additionally, these opportunities provide students relief when unexpected situations occur during the semester. While it is not required, I encourage everyone to attempt each opportunity.\nBelow is more information on each assignment.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 1\n\n\nInstructions for extra credit one.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 2\n\n\nInstructions for extra credit two.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 3\n\n\nInstructions for extra credit three.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Write a 2-page report practices related to self care. As you move on through college and your future careers, it is important to practice self care. For this extra credit assignments, write about what are some practices you will do to for your well being.\nWorth 1 percent points.\nReport guidelines\n\n2 Pages\nDouble Spaced\n12 point font\nDue 02/15/2026"
   },
   {
-    "objectID": "exc/exc_2.html",
-    "href": "exc/exc_2.html",
-    "title": "Extra Credit 2",
+    "objectID": "exc/exc_3.html",
+    "href": "exc/exc_3.html",
+    "title": "Extra Credit 3",
     "section": "",
-    "text": "After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use visual aids, such as a powerpoint presentation, to highlight your main findings, and how it relates to your own life. All books should be available through the Broome Library.\nBooks:\n\nMake it Stick: The Science of Successful Learning\n\nPeter Brown\n\nTeach Yourself How to Learn: Strategies you can use to ace any course\n\nSaundra McGuire\n\nLimitless Mind\n\nJo Boaler\n\nHappiness: A Guide to Developing Life’s\n\nMatthieu Ricard\n\nGrit: The Power of Passion and Perserverance\n\nAngela Duckworth\n\nMindset: The New Psychology of Success\n\nCarol Dweck\n\n\nVideo Essay Guidelines:\n\n10 Minutes Long\nUse of visual aids\nNarrated by your own voice\nDue 5/15/2026\n\nWorth 2 final grade percentage points."
+    "text": "After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use is visual aids, such as a powerpoint presentation, to highlight your main findings. All books should be available through the Broome Library.\nBooks:\n\nEmpire of AI\n\nKaren Hao\n\nThe Last Human Job\n\nAllison Pugh\n\nThe Book of Why\n\nJudea Pearl\n\nAlgorithms of Oppression\n\nSafiya Umoja Noble\n\nData Feminism\n\nCatherine D’Ignazio and Lauren Klein\n\nWeapons of Math Destruction\n\nCathy O’Niel\n\nInvisible Women: Data bias in a world designed for men\n\nCaroline Criado Perez\n\nFactfulness: Ten Reasons We’re Wrong About the World… and Why Things are Better Than You Think\n\nHans Rosling\n\nArtificial Unintelligence: How Computers Misunderstand the World\n\nMerideth Broussard\n\nTechnically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech\n\nSara Wachter-Boettcher\n\nUnmasking AI\n\nJoy Buolamwini\n\nRace After Technology\n\nRuha Benjamin\n\nCloud Ethics\n\nLouise Amoore\n\nMore than a Glitch\n\nMeridith Broussard\n\nDigitizing Race\n\nLisa Nammura\n\nOR ANY Book Approved By Me (Deadline for Approval by March 29, 2026)\n\nVideo Essay Guidelines:\n\n10 Minutes Long\nUse of visual aids\nNarrated by your own voice\nDue 5/15/2026\n\nWorth 2 final grade percentage points."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to Machine Learning!",
-    "section": "",
-    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 23, 2026\n\n\n\n\n\nNo matching items"
+    "objectID": "lectures/1a.html#introductions-1",
+    "href": "lectures/1a.html#introductions-1",
+    "title": "Math 408",
+    "section": "Introductions",
+    "text": "Introductions\n\nSan Bernardino, CA\nCSU Monterey Bay\n\nBS Biology\n\nSan Diego State University\n\nMaster’s in Public Health\n\nUC Riverside\n\nPhD in Applied Statistics"
+  },
+  {
+    "objectID": "lectures/1a.html#introductions-2",
+    "href": "lectures/1a.html#introductions-2",
+    "title": "Math 408",
+    "section": "Introductions",
+    "text": "Introductions\n\nName\nYear\nMajor\nFun Fact\nCareer Goal"
+  },
+  {
+    "objectID": "lectures/1a.html#class-setup-1",
+    "href": "lectures/1a.html#class-setup-1",
+    "title": "Math 408",
+    "section": "Class Setup",
+    "text": "Class Setup\n\nHomework Assignments\nFinal Presentation\nFinal Write Up\nExtra Credit"
+  },
+  {
+    "objectID": "lectures/1a.html#syllabus",
+    "href": "lectures/1a.html#syllabus",
+    "title": "Math 408",
+    "section": "Syllabus",
+    "text": "Syllabus\nm408.inqs.info/syllabus"
+  },
+  {
+    "objectID": "lectures/1a.html#tools",
+    "href": "lectures/1a.html#tools",
+    "title": "Math 408",
+    "section": "Tools",
+    "text": "Tools\n\nR\nTorch\nStan\nQuarto"
+  },
+  {
+    "objectID": "lectures/1a.html#ide",
+    "href": "lectures/1a.html#ide",
+    "title": "Math 408",
+    "section": "IDE",
+    "text": "IDE\n\nPositron\nVS Code\nVS Codium\nRStudio"
+  },
+  {
+    "objectID": "lectures/1a.html#use-of-generative-ai-policy",
+    "href": "lectures/1a.html#use-of-generative-ai-policy",
+    "title": "Math 408",
+    "section": "Use of Generative AI Policy",
+    "text": "Use of Generative AI Policy\nThe use of generative artificial intelligence (AI) to complete any part or all of an assignment/exam is strictly prohibited in this class. This includes, but not limited to, ChatGPT, Claude, Meta AI, and Google Gemini.\n\nYou may use AI to enhance you understanding of the material.\n\n\nYou may not use AI to complete assignments.\n\n\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
+  },
+  {
+    "objectID": "lectures/1a.html#use-of-ai",
+    "href": "lectures/1a.html#use-of-ai",
+    "title": "Math 408",
+    "section": "Use of AI",
+    "text": "Use of AI\nThere are consequences when you use of AI:\n\nEducational Mislearning\nTrusting AI\nStolen Work\nPrivacy Concerns\nEnvironmental Impacts\nWorking Exploitation"
+  },
+  {
+    "objectID": "lectures/1a.html#educational-mislearning",
+    "href": "lectures/1a.html#educational-mislearning",
+    "title": "Math 408",
+    "section": "Educational Mislearning",
+    "text": "Educational Mislearning\nThe purpose of this class, and college, is for you to learn about critical thinking skills and perseverance. Using AI will only teach you how to get an answer, which may or may not be correct.\n\nYou will not develop the skills needed to problem solve a challenge. Additionally, developing grit is essential to become successful in college and life. There is no easy way out and AI is an illusion to your success in life.\n\n\nTo learn something, it requires hours of work! If not years!"
+  },
+  {
+    "objectID": "lectures/1a.html#trusting-ai",
+    "href": "lectures/1a.html#trusting-ai",
+    "title": "Math 408",
+    "section": "Trusting AI",
+    "text": "Trusting AI\nWhen using AI, you must acknowledge its limitations:\n\nResponses provided may be incorrect\nResponses may not be fair\nCompanies may manipulate responses and/or terms of service for their benefit\nCompanies may not have your best interst in mind\n\n\nYou should always proceed with caution utilizing these tools!"
+  },
+  {
+    "objectID": "lectures/1a.html#stolen-work",
+    "href": "lectures/1a.html#stolen-work",
+    "title": "Math 408",
+    "section": "Stolen Work",
+    "text": "Stolen Work\n\nAdditionally, all these individuals are not receiving any royalties for the work to be used in creating generative AI models.\n\n\nInside Higher Ed and The New Yorker highlight individual’s concern of their work being used to train AI models."
+  },
+  {
+    "objectID": "lectures/1a.html#privacy-concerns",
+    "href": "lectures/1a.html#privacy-concerns",
+    "title": "Math 408",
+    "section": "Privacy Concerns",
+    "text": "Privacy Concerns\nThe use of generative AI raises concerns of what data is being harvested from us, possibly without informed consent.\n\nWhen you use any large language models, you do not know what information is being harvested from you.\n\n\nDo you want to upload your thoughts and ideas to a company that can monetize, and possibly exploit you.\n\n\nDoes your Professors consent with you uploading their assignments to large language models?\n\n\nStanford provided a report highlighting the risks of our personal data use in large language models."
+  },
+  {
+    "objectID": "lectures/1a.html#environmental-impact",
+    "href": "lectures/1a.html#environmental-impact",
+    "title": "Math 408",
+    "section": "Environmental Impact",
+    "text": "Environmental Impact\nIn order to run these large language models, companies need to use a large amounts of energy. This is because large servers are needed to both train and execute a model.\n\nThe LA Times reports the potential impact that running AI models in California.\n\n\nAdditionally, Time reports that a ChatGPT query uses ten times more energy than a Google search query, and global AI demands can consume of 1 trillion gallons of water by 2027.\n\n\nThere are also environmental justice questions about where these data centers are constructed."
+  },
+  {
+    "objectID": "lectures/1a.html#worker-exploitation",
+    "href": "lectures/1a.html#worker-exploitation",
+    "title": "Math 408",
+    "section": "Worker Exploitation",
+    "text": "Worker Exploitation\nThe Washington Post and Time (Article 1 and Article 2) reported that AI companies utilize “digital sweatshops” to classify data points for model training.\n\nThere is a human cost from the Global South, both financially and mentally, to develop the AI models for users in the United States and Europe.\n\n\nWe must be conscious consumers and demand more from these companies to provide safe working conditions and livable wages."
+  },
+  {
+    "objectID": "lectures/1a.html#is-using-ai-bad",
+    "href": "lectures/1a.html#is-using-ai-bad",
+    "title": "Math 408",
+    "section": "Is Using AI Bad?",
+    "text": "Is Using AI Bad?\n\nYes/No/I don’t know\n\n\nBut, we need to acknowledge the consequences of using AI!\n\n\nAnd, we need to demand companies to create and implement AI in an ethical manner!"
+  },
+  {
+    "objectID": "lectures/1a.html#resources-on-labor-violations",
+    "href": "lectures/1a.html#resources-on-labor-violations",
+    "title": "Math 408",
+    "section": "Resources on Labor Violations",
+    "text": "Resources on Labor Violations\n\nThe Emotional Labor Behind AI Intimacy\nHow thousands of ‘overworked, underpaid’ humans train Google’s AI to seem smart"
+  },
+  {
+    "objectID": "lectures/1a.html#affecting-communities",
+    "href": "lectures/1a.html#affecting-communities",
+    "title": "Math 408",
+    "section": "Affecting Communities",
+    "text": "Affecting Communities\n\nAI surveillance and data colonialism shape African conflicts\nAfrican workers are taking on Meta and the world should pay attention\n‘It’s destroyed me completely’: Kenyan moderators decry toll of training of AI models\nThe AI Industry Is Traumatizing Desperate Contractors in the Developing World for Pennies"
+  },
+  {
+    "objectID": "lectures/1a.html#resources-on-ideas-and-learning",
+    "href": "lectures/1a.html#resources-on-ideas-and-learning",
+    "title": "Math 408",
+    "section": "Resources on Ideas and Learning",
+    "text": "Resources on Ideas and Learning\n\nStudent’s Right to Refuse AI\nAI is homogenizing your thoughts\nThe Incuriosity Engine\nNew Junior Developers Can’t Actually Code"
+  },
+  {
+    "objectID": "lectures/1a.html#extra-credits-1",
+    "href": "lectures/1a.html#extra-credits-1",
+    "title": "Math 408",
+    "section": "Extra Credits",
+    "text": "Extra Credits\n\nExtra Credit 1\nExtra Credit 2\nExtra Credit 3"
   },
   {
     "objectID": "posts/week_1.html",

@@ -32,6 +32,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-6b80500f8df77a44afd5a29b3f9273b2.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -143,321 +209,328 @@
 
 </section>
 <section>
-<section id="introductions" class="title-slide slide level1 agenda-slide center">
-<h1>Introductions</h1>
+<section id="installation" class="title-slide slide level1 agenda-slide center">
+<h1>Installation</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-active">
-<p>Introductions</p>
+<p>Installation</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Class Setup</p>
+<p>Workspaces</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Generative AI</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Extra Credits</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Field Trip</p>
+<p>R Basics</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="introductions-1" class="slide level2">
-<h2>Introductions</h2>
-<ul>
-<li><p>San Bernardino, CA</p></li>
-<li><p>CSU Monterey Bay</p>
-<ul>
-<li>BS Biology</li>
-</ul></li>
-<li><p>San Diego State University</p>
-<ul>
-<li>Master’s in Public Health</li>
-</ul></li>
-<li><p>UC Riverside</p>
-<ul>
-<li>PhD in Applied Statistics</li>
-</ul></li>
-</ul>
+<section id="r-programming" class="slide level2">
+<h2>R Programming</h2>
+<p>R is a statistical programming package that allows you to conduct different types of analysis.</p>
+<p><a href="https://www.r-project.org/">R</a></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Windows Users: Install <a href="https://cran.r-project.org/bin/windows/Rtools/">RTools</a></p>
+</div>
+</div>
+</div>
 </section>
-<section id="introductions-2" class="slide level2">
-<h2>Introductions</h2>
+<section id="positron" class="slide level2">
+<h2>Positron</h2>
+<p>A piece of software that organizes how you conduct statistical analysis in R.</p>
+<p><a href="http://positron.posit.co/download.html">Positron</a></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Windows Users: Use system-level package If you cannot work with R, install <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version">Visual C++ Redistributable</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="rstudio" class="slide level2">
+<h2>RStudio</h2>
+<p>If Positron does not work, install <a href="https://posit.co/downloads/">RStudio</a> instead.</p>
+</section>
+<section id="installing-torch" class="slide level2">
+<h2>Installing Torch</h2>
+<p>In R, install torch with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"torch"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Nvidia-Users</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">options</span>(<span class="at">timeout =</span> <span class="dv">600</span>) <span class="co"># increasing timeout is recommended since we will be downloading a 2GB file.</span></span>
+<span id="cb2-2"><a></a><span class="co"># For Windows and Linux: "cpu", "cu128" are the only currently supported</span></span>
+<span id="cb2-3"><a></a><span class="co"># For MacOS the supported are: "cpu-intel" or "cpu-m1"</span></span>
+<span id="cb2-4"><a></a>kind <span class="ot">&lt;-</span> <span class="st">"cpu"</span></span>
+<span id="cb2-5"><a></a>version <span class="ot">&lt;-</span> <span class="fu">available.packages</span>()[<span class="st">"torch"</span>,<span class="st">"Version"</span>]</span>
+<span id="cb2-6"><a></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(</span>
+<span id="cb2-7"><a></a>  <span class="at">torch =</span> <span class="fu">sprintf</span>(<span class="st">"https://torch-cdn.mlverse.org/packages/%s/%s/"</span>, kind, version),</span>
+<span id="cb2-8"><a></a>  <span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span> <span class="co"># or any other from which you want to install the other R dependencies.</span></span>
+<span id="cb2-9"><a></a>))</span>
+<span id="cb2-10"><a></a><span class="fu">install.packages</span>(<span class="st">"torch"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="installing-stan" class="slide level2">
+<h2>Installing Stan</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">install.packages</span>(<span class="st">"cmdstanr"</span>, </span>
+<span id="cb3-2"><a></a>    <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">'https://stan-dev.r-universe.dev'</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>)))</span>
+<span id="cb3-3"><a></a>cmdstanr<span class="sc">::</span><span class="fu">check_cmdstan_toolchain</span>()</span>
+<span id="cb3-4"><a></a>cmdstanr<span class="sc">::</span><span class="fu">install_cmdstan</span>(<span class="at">cores =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="other-r-packages" class="slide level2">
+<h2>Other R Packages</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Core Packages</a></li><li><a href="#tabset-1-2">Course Packages</a></li><li><a href="#tabset-1-3">Misc Packages</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
 <ul>
-<li><p>Name</p></li>
-<li><p>Year</p></li>
-<li><p>Major</p></li>
-<li><p>Fun Fact</p></li>
-<li><p>Career Goal</p></li>
+<li>Tidyverse</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>ISLR2</p></li>
+<li><p>leaps</p></li>
+<li><p>gam</p></li>
+<li><p>tree</p></li>
+</ul>
+</div><div class="column">
+<ul>
+<li><p>gbm</p></li>
+<li><p>e1071</p></li>
+<li><p>glmnet</p></li>
+<li><p>torch</p></li>
+</ul>
+</div></div>
+</div>
+<div id="tabset-1-3">
+<ul>
+<li><p>RMarkdown</p></li>
+<li><p>Quarto</p></li>
+<li><p>extraInserts (GitHub Package)</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="load-r-package" class="slide level2">
+<h2>Load R Package</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a></a><span class="fu">library</span>(torch)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>You must load packages every new R Session</li>
 </ul>
 </section></section>
+<section id="workspaces" class="title-slide slide level1 agenda-slide center">
+<h1>Workspaces</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Installation</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Workspaces</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>R Basics</p>
+</div></li>
+</ul>
+</div>
+</section>
+
 <section>
-<section id="class-setup" class="title-slide slide level1 agenda-slide center">
-<h1>Class Setup</h1>
+<section id="r-basics" class="title-slide slide level1 agenda-slide center">
+<h1>R Basics</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Introductions</p>
+<p>Installation</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Workspaces</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Class Setup</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Generative AI</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Extra Credits</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Field Trip</p>
+<p>R Basics</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="class-setup-1" class="slide level2">
-<h2>Class Setup</h2>
+<section id="r-as-a-calculator" class="slide level2">
+<h2>R as a calculator</h2>
+<p>R can evaluate different expressions in the console tab.</p>
+<p>Try the following:</p>
+<ol type="1">
+<li><span class="math inline">\(4(4+2)/34\)</span></li>
+<li><span class="math inline">\(6^3\)</span></li>
+<li><span class="math inline">\(3-1\)</span></li>
+<li><span class="math inline">\(4+4/3+45(32*34-54)\)</span></li>
+</ol>
+</section>
+<section id="r-functions" class="slide level2">
+<h2>R Functions</h2>
+<p>R functions performs tasks to specific data values.</p>
+<p>Evaluate the following values in R:</p>
+<ol type="1">
+<li><span class="math inline">\(\sqrt{3}\)</span></li>
+<li><span class="math inline">\(e^3\)</span></li>
+<li><span class="math inline">\(\ln(53)\)</span></li>
+<li><span class="math inline">\(\log(324)\)</span></li>
+<li><span class="math inline">\(\sin(3)\)</span></li>
+<li><span class="math inline">\(\sin(3\pi)\)</span></li>
+</ol>
+</section>
+<section id="types-of-data" class="slide level2">
+<h2>Types of Data</h2>
 <ul>
-<li>Homework Assignments</li>
-<li>Final Presentation</li>
-<li>Final Write Up</li>
-<li>Extra Credit</li>
+<li><p>Numeric</p></li>
+<li><p>Character</p></li>
+<li><p>Logical</p></li>
+<li><p>Missing</p></li>
 </ul>
+<p>Evaluate the following code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">is.numeric</span>(<span class="dv">1</span>)</span>
+<span id="cb5-2"><a></a><span class="fu">is.numeric</span>(<span class="st">"1"</span>)</span>
+<span id="cb5-3"><a></a><span class="fu">is.numeric</span>(T)</span>
+<span id="cb5-4"><a></a><span class="fu">is.numeric</span>(<span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="syllabus" class="slide level2">
-<h2>Syllabus</h2>
-<p><a href="https://www.inqs.info/m408_s26/syllabus">m408.inqs.info/syllabus</a></p>
+<section id="types-of-objects" class="slide level2">
+<h2>Types of Objects</h2>
+<p>In R, an object contains a set of data. The most common types are <code>vectors</code> and <code>matrix</code>.</p>
+<p>Run this code and print out the objects in the console:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">34</span></span>
+<span id="cb6-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">nrow =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="tools" class="slide level2">
-<h2>Tools</h2>
-<ul>
-<li><a href="https://www.r-project.org/">R</a></li>
-<li><a href="https://torch.mlverse.org/">Torch</a></li>
-<li><a href="https://mc-stan.org/">Stan</a></li>
-<li><a href="https://quarto.org/">Quarto</a></li>
-</ul>
-</section>
-<section id="ide" class="slide level2">
-<h2>IDE</h2>
-<ul>
-<li><a href="https://positron.posit.co/">Positron</a></li>
-<li><a href="https://visualstudio.microsoft.com/downloads/">VS Code</a></li>
-<li><a href="https://vscodium.com/">VS Codium</a></li>
-<li><a href="https://posit.co/downloads/">RStudio</a></li>
-</ul>
-</section></section>
-<section>
-<section id="generative-ai" class="title-slide slide level1 agenda-slide center">
-<h1>Generative AI</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Introductions</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Class Setup</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Generative AI</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Extra Credits</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Field Trip</p>
-</div></li>
-</ul>
+<section id="data-frames" class="slide level2">
+<h2>Data Frames</h2>
+<p>Data frames can be thought of as R’s version of a data set.</p>
+<p>Play around with mtcars:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mtcars </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
 </div>
-</section>
-<section id="use-of-generative-ai-policy" class="slide level2">
-<h2>Use of Generative AI Policy</h2>
-<p>The use of generative artificial intelligence (AI) to complete any part or all of an assignment/exam is strictly prohibited in this class. This includes, but not limited to, ChatGPT, Claude, Meta AI, and Google Gemini.</p>
-<div class="fragment">
-<p>You may use AI to enhance you understanding of the material.</p>
-</div>
-<div class="fragment">
-<p>You may not use AI to complete assignments.</p>
-</div>
-<div class="fragment">
-<p>You may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for <a href="https://www.csuci.edu/dass/">DASS</a>-approved services.</p>
-</div>
-</section>
-<section id="use-of-ai" class="slide level2">
-<h2>Use of AI</h2>
-<p>There are consequences when you use of AI:</p>
-<ul>
-<li>Educational Mislearning</li>
-<li>Trusting AI</li>
-<li>Stolen Work</li>
-<li>Privacy Concerns</li>
-<li>Environmental Impacts</li>
-<li>Working Exploitation</li>
-</ul>
-</section>
-<section id="educational-mislearning" class="slide level2">
-<h2>Educational Mislearning</h2>
-<p>The purpose of this class, and college, is for you to learn about critical thinking skills and perseverance. Using AI will only teach you how to get an answer, which may or may not be correct.</p>
-<div class="fragment">
-<p>You will not develop the skills needed to problem solve a challenge. Additionally, developing grit is essential to become successful in college and life. There is no easy way out and AI is an illusion to your success in life.</p>
-</div>
-<div class="fragment">
-<p>To learn something, it requires hours of work! If not years!</p>
 </div>
 </section>
-<section id="trusting-ai" class="slide level2">
-<h2>Trusting AI</h2>
-<p>When using AI, you must acknowledge its limitations:</p>
-<ul>
-<li class="fragment"><p>Responses provided may be incorrect</p></li>
-<li class="fragment"><p>Responses may not be fair</p></li>
-<li class="fragment"><p>Companies may manipulate responses and/or terms of service for their benefit</p></li>
-<li class="fragment"><p>Companies may not have your best interst in mind</p></li>
-</ul>
-<div class="fragment">
-<p><strong>You should always proceed with caution utilizing these tools!</strong></p>
+<section id="lists" class="slide level2">
+<h2>Lists</h2>
+<p>List can be thought as an extended vector, but each element is a different R object.</p>
+<p>Try playing with this R object:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>list_one <span class="ot">&lt;-</span> <span class="fu">list</span>(mtcars, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>),</span>
+<span id="cb9-2"><a></a>                 <span class="fu">diag</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">3</span>)))</span>
+<span id="cb9-3"><a></a>list_one</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [[1]]
+#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+#&gt; 
+#&gt; [[2]]
+#&gt; [1] 0 0 0 0
+#&gt; 
+#&gt; [[3]]
+#&gt;      [,1] [,2] [,3]
+#&gt; [1,]    1    0    0
+#&gt; [2,]    0    1    0
+#&gt; [3,]    0    0    1</code></pre>
 </div>
-</section>
-<section id="stolen-work" class="slide level2">
-<h2>Stolen Work</h2>
-<div class="fragment">
-<p>Additionally, all these individuals are not receiving any royalties for the work to be used in creating generative AI models.</p>
-</div>
-<div class="fragment">
-<p><a href="https://www.insidehighered.com/news/faculty-issues/research/2024/07/29/taylor-francis-ai-deal-sets-worrying-precedent">Inside Higher Ed</a> and <a href="https://www.newyorker.com/culture/infinite-scroll/is-ai-art-stealing-from-artists">The New Yorker</a> highlight individual’s concern of their work being used to train AI models.</p>
-</div>
-</section>
-<section id="privacy-concerns" class="slide level2">
-<h2>Privacy Concerns</h2>
-<p>The use of generative AI raises concerns of what data is being harvested from us, possibly without informed consent.</p>
-<div class="fragment">
-<p>When you use any large language models, you do not know what information is being harvested from you.</p>
-</div>
-<div class="fragment">
-<p>Do you want to upload your thoughts and ideas to a company that can monetize, and possibly exploit you.</p>
-</div>
-<div class="fragment">
-<p>Does your Professors consent with you uploading their assignments to large language models?</p>
-</div>
-<div class="fragment">
-<p>Stanford provided a <a href="https://hai.stanford.edu/news/privacy-ai-era-how-do-we-protect-our-personal-information">report</a> highlighting the risks of our personal data use in large language models.</p>
-</div>
-</section>
-<section id="environmental-impact" class="slide level2">
-<h2>Environmental Impact</h2>
-<p>In order to run these large language models, companies need to use a large amounts of energy. This is because large servers are needed to both train and execute a model.</p>
-<div class="fragment">
-<p>The <a href="https://www.latimes.com/opinion/story/2024-08-15/editorial-generative-ai-is-a-leading-contributor-to-our-energy-consumption-how-will-this-impact-our-climate">LA Times</a> reports the potential impact that running AI models in California.</p>
-</div>
-<div class="fragment">
-<p>Additionally, <a href="https://time.com/6987773/ai-data-centers-energy-usage-climate-change/">Time</a> reports that a ChatGPT query uses ten times more energy than a Google search query, and global AI demands can consume of 1 trillion gallons of water by 2027.</p>
-</div>
-<div class="fragment">
-<p>There are also environmental justice questions about where these data centers are constructed.</p>
-</div>
-</section>
-<section id="worker-exploitation" class="slide level2">
-<h2>Worker Exploitation</h2>
-<p>The <a href="https://www.washingtonpost.com/world/2023/08/28/scale-ai-remotasks-philippines-artificial-intelligence/">Washington Post</a> and Time (<a href="https://time.com/6147458/facebook-africa-content-moderation-employee-treatment/">Article 1</a> and <a href="https://time.com/6247678/openai-chatgpt-kenya-workers/">Article 2</a>) reported that AI companies utilize “digital sweatshops” to classify data points for model training.</p>
-<div class="fragment">
-<p>There is a human cost from the Global South, both financially and mentally, to develop the AI models for users in the United States and Europe.</p>
-</div>
-<div class="fragment">
-<p>We must be conscious consumers and demand more from these companies to provide safe working conditions and livable wages.</p>
-</div>
-</section>
-<section id="is-using-ai-bad" class="slide level2">
-<h2>Is Using AI Bad?</h2>
-<div class="fragment">
-<p>Yes/No/I don’t know</p>
-</div>
-<div class="fragment">
-<p>But, we need to acknowledge the consequences of using AI!</p>
-</div>
-<div class="fragment">
-<p>And, we need to demand companies to create and implement AI in an ethical manner!</p>
-</div>
-</section>
-<section id="resources-on-labor-violations" class="slide level2">
-<h2>Resources on Labor Violations</h2>
-<ul>
-<li><a href="https://data-workers.org/michael/">The Emotional Labor Behind AI Intimacy</a></li>
-<li><a href="https://www.theguardian.com/technology/2025/sep/11/google-gemini-ai-training-humans">How thousands of ‘overworked, underpaid’ humans train Google’s AI to seem smart</a></li>
-</ul>
-</section>
-<section id="affecting-communities" class="slide level2">
-<h2>Affecting Communities</h2>
-<ul>
-<li><p><a href="https://africainfact.com/ai-surveillance-and-data-colonialism-shape-african-conflicts/">AI surveillance and data colonialism shape African conflicts</a></p></li>
-<li><p><a href="https://www.aljazeera.com/opinions/2025/4/1/african-workers-are-taking-on-meta-and-the-world-should-pay-attention">African workers are taking on Meta and the world should pay attention</a></p></li>
-<li><p><a href="https://www.theguardian.com/technology/2023/aug/02/ai-chatbot-training-human-toll-content-moderator-meta-openai">‘It’s destroyed me completely’: Kenyan moderators decry toll of training of AI models</a></p></li>
-<li><p><a href="https://futurism.com/artificial-intelligence/ai-industry-traumatizing-contractors">The AI Industry Is Traumatizing Desperate Contractors in the Developing World for Pennies</a></p></li>
-</ul>
-</section>
-<section id="resources-on-ideas-and-learning" class="slide level2">
-<h2>Resources on Ideas and Learning</h2>
-<ul>
-<li><p><a href="https://refusal.blog/2025/08/29/a-students-right-to-refuse-generative-ai/">Student’s Right to Refuse AI</a></p></li>
-<li><p><a href="https://www.newyorker.com/culture/infinite-scroll/ai-is-homogenizing-our-thoughts?utm_source=facebook&amp;utm_medium=social&amp;utm_campaign=dhfacebook&amp;utm_content=app.dashsocial.com/newyorkermag/library/media/546600666">AI is homogenizing your thoughts</a></p></li>
-<li><p><a href="https://cooperlund.medium.com/the-incuriosity-engine-16bdf41e229d">The Incuriosity Engine</a></p></li>
-<li><p><a href="https://nmn.gl/blog/ai-and-learning">New Junior Developers Can’t Actually Code</a></p></li>
-</ul>
-</section></section>
-<section>
-<section id="extra-credits" class="title-slide slide level1 agenda-slide center">
-<h1>Extra Credits</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Introductions</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Class Setup</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Generative AI</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Extra Credits</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Field Trip</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="extra-credits-1" class="slide level2">
-<h2>Extra Credits</h2>
-<ul>
-<li><a href="https://m408.inqs.info/exc/exc_1">Extra Credit 1</a></li>
-<li><a href="https://m408.inqs.info/exc/exc_2">Extra Credit 2</a></li>
-<li><a href="https://m408.inqs.info/exc/exc_3">Extra Credit 3</a></li>
-</ul>
-</section></section>
-<section id="field-trip" class="title-slide slide level1 agenda-slide center">
-<h1>Field Trip</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Introductions</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Class Setup</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Generative AI</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Extra Credits</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Field Trip</p>
-</div></li>
-</ul>
 </div>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
