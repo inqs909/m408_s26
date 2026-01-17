@@ -24,6 +24,7 @@ website:
     right:
       - syllabus.qmd
       - books.qmd
+      - exc.qmd
   announcement: 
     icon: info-circle
     dismissable: false

@@ -1,0 +1,248 @@
+---
+title: "Math 408"
+subtitle: "Machine Learning"
+format:
+  revealjs:
+    width: 1200
+    scrollable: false
+    footer: m408.inqs.info/lectures/1a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: true
+    message: false
+    code-fold: true
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+# Installation
+
+## R Programming
+
+R is a statistical programming package that allows you to conduct different types of analysis.
+
+[R](https://www.r-project.org/)
+
+::: callout-note
+Windows Users: Install [RTools](https://cran.r-project.org/bin/windows/Rtools/)
+:::
+
+## Positron
+
+A piece of software that organizes how you conduct statistical analysis in R.
+
+[Positron](http://positron.posit.co/download.html)
+
+::: callout-note
+Windows Users: Use system-level package
+If you cannot work with R, install [Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version)
+:::
+
+## RStudio
+
+If Positron does not work, install [RStudio](https://posit.co/downloads/) instead.
+
+## Installing Torch
+
+In R, install torch with:
+
+```r
+install.packages("torch")
+```
+
+::: callout-note
+
+Nvidia-Users
+
+```r
+options(timeout = 600) # increasing timeout is recommended since we will be downloading a 2GB file.
+# For Windows and Linux: "cpu", "cu128" are the only currently supported
+# For MacOS the supported are: "cpu-intel" or "cpu-m1"
+kind <- "cpu"
+version <- available.packages()["torch","Version"]
+options(repos = c(
+  torch = sprintf("https://torch-cdn.mlverse.org/packages/%s/%s/", kind, version),
+  CRAN = "https://cloud.r-project.org" # or any other from which you want to install the other R dependencies.
+))
+install.packages("torch")
+```
+:::
+
+## Installing Stan
+
+```r
+install.packages("cmdstanr", 
+    repos = c('https://stan-dev.r-universe.dev', getOption("repos")))
+cmdstanr::check_cmdstan_toolchain()
+cmdstanr::install_cmdstan(cores = 2)
+```
+
+## Other R Packages
+
+
+:::: panel-tabset
+
+### Core Packages
+
+-   Tidyverse
+
+
+### Course Packages
+
+
+:::: columns
+
+::: column
+
+- ISLR2
+
+- leaps
+
+- gam
+
+- tree
+
+
+:::
+
+::: column
+
+- gbm
+
+- e1071
+
+- glmnet
+
+- torch
+
+:::
+
+::::
+
+### Misc Packages
+
+- RMarkdown
+
+- Quarto
+
+- extraInserts (GitHub Package)
+
+::::
+
+## Load R Package
+
+```r
+library(tidyverse)
+library(torch)
+```
+
+
+- You must load packages every new R Session
+
+# Workspaces
+
+# R Basics
+
+## R as a calculator
+
+R can evaluate different expressions in the console tab.
+
+Try the following:
+
+1.  $4(4+2)/34$
+2.  $6^3$
+3.  $3-1$
+4.  $4+4/3+45(32*34-54)$
+
+
+## R Functions
+
+R functions performs tasks to specific data values.
+
+Evaluate the following values in R:
+
+1.  $\sqrt{3}$
+2.  $e^3$
+3.  $\ln(53)$
+4.  $\log(324)$
+5.  $\sin(3)$
+6.  $\sin(3\pi)$
+
+## Types of Data
+
+-   Numeric
+
+-   Character
+
+-   Logical
+
+-   Missing
+
+Evaluate the following code:
+
+```r
+is.numeric(1)
+is.numeric("1")
+is.numeric(T)
+is.numeric(NA)
+
+```
+
+## Types of Objects
+
+In R, an object contains a set of data. The most common types are `vectors` and `matrix`.
+
+Run this code and print out the objects in the console:
+
+```r
+x <- 3:34
+y <- matrix(1:20, nrow = 4)
+```
+
+
+## Data Frames
+
+Data frames can be thought of as R's version of a data set.
+
+Play around with mtcars:
+
+```{r}
+#| eval: true
+mtcars 
+```
+
+## Lists
+
+List can be thought as an extended vector, but each element is a different R object.
+
+Try playing with this R object:
+
+```{r}
+list_one <- list(mtcars, rep(0, 4),
+                 diag(rep(1, 3)))
+list_one
+```
+

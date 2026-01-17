@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Syllabus – MATH 408</title>
+<title>Extra Credit – MATH 408</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./img/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -69,7 +71,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -95,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./syllabus.html" aria-current="page"> 
+    <a class="nav-link" href="./syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
@@ -103,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exc.html"> 
+    <a class="nav-link active" href="./exc.html" aria-current="page"> 
 <span class="menu-text">Extra Credit</span></a>
   </li>  
 </ul>
@@ -120,39 +180,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#math-408-machine-learning" id="toc-math-408-machine-learning" class="nav-link active" data-scroll-target="#math-408-machine-learning">Math 408: Machine Learning</a>
-  <ul class="collapse">
-  <li><a href="#course-information" id="toc-course-information" class="nav-link" data-scroll-target="#course-information">Course Information</a></li>
-  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course Description</a></li>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
-  <li><a href="#recommended-texts" id="toc-recommended-texts" class="nav-link" data-scroll-target="#recommended-texts">Recommended Texts</a></li>
-  <li><a href="#required-software" id="toc-required-software" class="nav-link" data-scroll-target="#required-software">Required Software</a></li>
-  <li><a href="#course-grading" id="toc-course-grading" class="nav-link" data-scroll-target="#course-grading">Course Grading</a></li>
-  <li><a href="#class-schedule" id="toc-class-schedule" class="nav-link" data-scroll-target="#class-schedule">Class Schedule</a></li>
-  <li><a href="#generative-artificial-intelligence-policy" id="toc-generative-artificial-intelligence-policy" class="nav-link" data-scroll-target="#generative-artificial-intelligence-policy">Generative Artificial Intelligence Policy</a></li>
-  </ul></li>
-  <li><a href="#university-policies" id="toc-university-policies" class="nav-link" data-scroll-target="#university-policies">University Policies</a>
-  <ul class="collapse">
-  <li><a href="#syllabus-policies-and-assistance" id="toc-syllabus-policies-and-assistance" class="nav-link" data-scroll-target="#syllabus-policies-and-assistance">Syllabus Policies and Assistance</a></li>
-  <li><a href="#academic-honesty" id="toc-academic-honesty" class="nav-link" data-scroll-target="#academic-honesty">Academic Honesty</a></li>
-  <li><a href="#csuci-basic-need" id="toc-csuci-basic-need" class="nav-link" data-scroll-target="#csuci-basic-need">CSUCI Basic Need</a></li>
-  <li><a href="#csuci-disability-statement" id="toc-csuci-disability-statement" class="nav-link" data-scroll-target="#csuci-disability-statement">CSUCI Disability Statement</a></li>
-  <li><a href="#disruption" id="toc-disruption" class="nav-link" data-scroll-target="#disruption">Disruption</a></li>
-  </ul></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="syllabus.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Syllabus</h1>
+<h1 class="title">Extra Credit</h1>
 </div>
 
 
@@ -169,338 +205,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="math-408-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="math-408-machine-learning">Math 408: Machine Learning</h2>
-<section id="course-information" class="level3">
-<h3 class="anchored" data-anchor-id="course-information">Course Information</h3>
-<p><strong>Term:</strong> Spring 2026</p>
-<p><strong>Instructor:</strong> Isaac Quintanilla Salinas</p>
-<p><strong>Contact:</strong> isaac.qs@csuci.edu</p>
-<p><strong>Office Location:</strong> Marin 2326</p>
-<p><strong>Office Hours:</strong></p>
-<p><strong>Course Website:</strong> <a href="https://m408.inqs.info/">m408.inqs.info</a> <strong>AND</strong> Canvas</p>
-</section>
-<section id="course-description" class="level3">
-<h3 class="anchored" data-anchor-id="course-description">Course Description</h3>
-<p>Students will learn how to construct machine learning models using current data science programming languages. Topics will include nonparametric models, deep learning models, and neural networks. This is a programming intensive course.</p>
-</section>
-<section id="learning-outcomes" class="level3">
-<h3 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h3>
-<ul>
-<li>Apply appropriate machine learning techniques given the data set and research goal.</li>
-<li>Evaluate model performance using standard methods such as cross-validation or simulation studies.</li>
-<li>Design data workflows to execute machine learning algorithms using standard statistical software.</li>
-<li>Build machine learning models to be used to predict outcomes from new observations of data.</li>
-</ul>
-</section>
-<section id="recommended-texts" class="level3">
-<h3 class="anchored" data-anchor-id="recommended-texts">Recommended Texts</h3>
-<p><em>All books should be available for free online:</em></p>
-<ul>
-<li>An Introduction to Statistical Learning
-<ul>
-<li>Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani</li>
-<li>Available to download from the Broome Library</li>
-<li><a href="https://www.statlearning.com/">www.statlearning.com</a></li>
-</ul></li>
-<li>Deep Learning and Scientific Computing with R torch
-<ul>
-<li>Sigrid Keydana</li>
-<li>Available here: https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/</li>
-</ul></li>
-<li>Pytorch Tutorials
-<ul>
-<li>Available here: https://docs.pytorch.org/tutorials/index.html</li>
-</ul></li>
-<li>Bayesian Statistical Modeling with Stan, R, and Python
-<ul>
-<li>Kentaro Matsuura</li>
-<li>Available for download from the Broome Library</li>
-</ul></li>
-<li>Bayesian Data Analysis
-<ul>
-<li>Andrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald Rubin</li>
-<li>Available here: https://sites.stat.columbia.edu/gelman/book/</li>
-</ul></li>
-<li>Deep Learning
-<ul>
-<li>Ian Goodfellow, Yoshua Bengio, and Aaron Courville</li>
-<li>Available here: https://www.deeplearningbook.org/</li>
-</ul></li>
-</ul>
-</section>
-<section id="required-software" class="level3">
-<h3 class="anchored" data-anchor-id="required-software">Required Software</h3>
-<p>For this course, we will use several different statistical programs to analyze data and construct machine learning models. <strong>This course will primarily be taught and support R.</strong> However, students may complete assignments and projects in Python. Additionally, students are required to use Quarto, Torch, and Stan in the course. Lastly, students may use any <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a>, but the course will only support Positron. <strong>All software is available for free.</strong> In class, we will download and setup your computing environment on your laptop with the following tools:</p>
-<ul>
-<li><strong>Quarto</strong> is an open source scientific documentation system that allows you to embed code and text in one text file. More information can be found here: <a href="https://quarto.org/">quarto.org</a>
-<ul>
-<li>We will install this in class for R.</li>
-<li>Comes Installed with <strong>Positron</strong> and <strong>RStudio</strong></li>
-</ul></li>
-<li><strong>Stan</strong> is a Bayesian analysis software with Hamiltonian Monte Carlo Methods. More information can be found here: <a href="https://mc-stan.org/">mc-stan.org</a>
-<ul>
-<li>We will install this in class for R: <a href="https://mc-stan.org/cmdstanr/">cmdstanr</a>.</li>
-<li>For Python users: <a href="https://mc-stan.org/cmdstanpy/">cmdstanpy</a></li>
-</ul></li>
-<li><strong>Torch</strong> is a set of packages designed to develop and implement neural networks.
-<ul>
-<li>We will install this in class for R.</li>
-<li>More information on torch for R: <a href="https://torch.mlverse.org/">torch.mlverse.org</a></li>
-<li>More information on torch for python: <a href="https://pytorch.org/">pytorch.org</a></li>
-</ul></li>
-</ul>
-<section id="choose-one-programming-language" class="level4">
-<h4 class="anchored" data-anchor-id="choose-one-programming-language">Choose One Programming Language</h4>
-<ul>
-<li><p><strong>R (Recommended)</strong> is a statistical package that is available for download at: <a href="https://www.r-project.org/">r-project.org</a>.</p></li>
-<li><p><strong>Python</strong> is a general programming langauge that is available to download at: <a href="https://www.python.org/">python.org</a></p>
-<ul>
-<li>Recommend using tools to create python environments such as <a href="https://docs.astral.sh/uv/guides/install-python/">uv</a></li>
-</ul></li>
-</ul>
-</section>
-<section id="choose-one-ide" class="level4">
-<h4 class="anchored" data-anchor-id="choose-one-ide">Choose One IDE</h4>
-<ul>
-<li><p><strong>Positron (Recommended)</strong> provides free and open source tools for your data analysis in R and/or Python: <a href="http://positron.posit.co/download.html">positron.posit.co/download</a></p>
-<ul>
-<li>Quarto easily integrates with this IDE.</li>
-</ul></li>
-<li><p><strong>RStudio</strong> provides free and open source tools for your data analysis in R: <a href="https://posit.co/download/rstudio-desktop/">posit.co/download/rstudio-desktop/</a></p></li>
-<li><p><strong>VS Code</strong> provides tools for software development as well as data analysis: <a href="https://code.visualstudio.com/">code.visualstudio.com</a></p></li>
-<li><p>You may use any other IDE that connects to R/Python, Torch, and Quarto.</p></li>
-</ul>
-</section>
-</section>
-<section id="course-grading" class="level3">
-<h3 class="anchored" data-anchor-id="course-grading">Course Grading</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Category</th>
-<th style="text-align: left;">Percentage</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Assignments</td>
-<td style="text-align: left;">50%</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Final Project</td>
-<td style="text-align: left;">25%</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Final Presentation</td>
-<td style="text-align: left;">25%</td>
-</tr>
-</tbody>
-</table>
-<p>At the end of the quarter, course grades will be assigned according to the following scale:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 9%">
-<col style="width: 12%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 9%">
-<col style="width: 12%">
-<col style="width: 9%">
-<col style="width: 12%">
-<col style="width: 7%">
-<col style="width: 7%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>A+</strong></td>
-<td style="text-align: left;">98 – 100</td>
-<td style="text-align: left;"><strong>B+</strong></td>
-<td style="text-align: left;">87 – &lt;90</td>
-<td style="text-align: left;"><strong>C+</strong></td>
-<td style="text-align: left;">77 – &lt;80</td>
-<td style="text-align: left;"><strong>D+</strong></td>
-<td style="text-align: left;">67 – &lt;70</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>A</strong></td>
-<td style="text-align: left;">93 – &lt;98</td>
-<td style="text-align: left;"><strong>B</strong></td>
-<td style="text-align: left;">83 – &lt;87</td>
-<td style="text-align: left;"><strong>C</strong></td>
-<td style="text-align: left;">73 – &lt;77</td>
-<td style="text-align: left;"><strong>D</strong></td>
-<td style="text-align: left;">63 – &lt;67</td>
-<td style="text-align: left;"><strong>F</strong></td>
-<td style="text-align: left;">&lt; 60</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>A–</strong></td>
-<td style="text-align: left;">90 - &lt;93</td>
-<td style="text-align: left;"><strong>B-</strong></td>
-<td style="text-align: left;">80 – &lt;83</td>
-<td style="text-align: left;"><strong>C–</strong></td>
-<td style="text-align: left;">70 – &lt;73</td>
-<td style="text-align: left;"><strong>D–</strong></td>
-<td style="text-align: left;">60 – &lt;63</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-<section id="assignments" class="level4">
-<h4 class="anchored" data-anchor-id="assignments">Assignments</h4>
-<p>Assignments will be assigned on a regular basis and posted <a href="hw.html">here</a> and Canvas. The homework is to help you practice the concepts learned in lecture and to help you study. You must turn in your own individual homework and show your understanding of the material. At the end of the semester, the two lowest homework grades will be dropped. Late work will be accepted, but with a 50% point penalty. The last day late work will be accepted is on DATE.</p>
-</section>
-<section id="final-project-and-presentation" class="level4">
-<h4 class="anchored" data-anchor-id="final-project-and-presentation">Final Project and Presentation</h4>
-<p>The final project and presentation will involve students to build a neural network to classify or predict an outcome of interest. You may use any data available to predict any outcome of interest. You may work individually or groups of 2. More information about the project and presentation will be available later in the semester.</p>
-</section>
-<section id="extra-credit" class="level4">
-<h4 class="anchored" data-anchor-id="extra-credit">Extra Credit</h4>
-<p>There will be <strong>3</strong> extra credit opportunities worth a total of 5% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found <a href="ec.html">here</a>.</p>
-</section>
-</section>
-<section id="class-schedule" class="level3">
-<h3 class="anchored" data-anchor-id="class-schedule">Class Schedule</h3>
-<p>The following outline may be subject to change. Any changes will be announced in class.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Week</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Intro to Course/Computational Set Up</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Programming in R</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Derivatives and Minimization</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Neural Networks</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">Layers, Optimizers, Loss, and Activation Functions</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">Convolutional Neural Networks</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">Recurrent Neural Networks</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">–</td>
-<td style="text-align: left;">Spring Break</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">Image Classification</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">Audio Classification</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Audio Classification</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">Bayesian Analysis</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">Bayesian Linear Regression</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">13</td>
-<td style="text-align: left;">Bayesian Generalized Linear Models</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">Bayesian Survival Analysis</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">Final Presentation</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">Final Presentation</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="generative-artificial-intelligence-policy" class="level3">
-<h3 class="anchored" data-anchor-id="generative-artificial-intelligence-policy">Generative Artificial Intelligence Policy</h3>
-<p>The use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.</p>
-<section id="permitted-uses" class="level4">
-<h4 class="anchored" data-anchor-id="permitted-uses">Permitted Uses</h4>
-<p>You may use AI for:</p>
-<ul>
-<li><p>Obtain clarification</p></li>
-<li><p>Brainstorming ideas, examples, outlines, and strategies</p></li>
-<li><p>Generating questions for practice or exploration</p></li>
-<li><p>Identifying keywords or phrasing to match professional goals</p></li>
-</ul>
-</section>
-<section id="prohibited-uses" class="level4">
-<h4 class="anchored" data-anchor-id="prohibited-uses">Prohibited Uses</h4>
-<p>You may not:</p>
-<ul>
-<li><p>Submit AI-generated work</p></li>
-<li><p>Use AI to complete assignments, quizzes, exams, or other assessments meant to reflect your own work</p></li>
-<li><p>Use AI to generate code</p></li>
-</ul>
-<p>Any AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.</p>
-<p><strong>You may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for <a href="https://www.csuci.edu/dass/">DASS</a>-approved services.</strong></p>
-</section>
-</section>
-</section>
-<section id="university-policies" class="level2">
-<h2 class="anchored" data-anchor-id="university-policies">University Policies</h2>
-<section id="syllabus-policies-and-assistance" class="level3">
-<h3 class="anchored" data-anchor-id="syllabus-policies-and-assistance">Syllabus Policies and Assistance</h3>
-<p>CSUCI’s <a href="https://www.csuci.edu/studentsupport/syllabus.htm">Syllabus Policies and Assistance Website</a> provides important details about academic policies, campus expectations, and student support services that are all highly applicable to your success as a student both in and outside of the classroom. Ensure that you review this site on a regular basis to stay informed about the policies and resources that support your success, as campus resources or policies may change semester to semester.</p>
-</section>
-<section id="academic-honesty" class="level3">
-<h3 class="anchored" data-anchor-id="academic-honesty">Academic Honesty</h3>
-<p>Conduct yourself with honesty and integrity. Do not submit others’ work as your own. Foassignments and quizzes that allow you to work with a group, only put your name on what the group submits if you genuinely contributed to the work. Work completely independently on exams, using only the materials that are indicated as allowed. Failure to observe academic honesty results in substantial penalties that can include failing the course.</p>
-</section>
-<section id="csuci-basic-need" class="level3">
-<h3 class="anchored" data-anchor-id="csuci-basic-need">CSUCI Basic Need</h3>
-<p>Please use the link to the Basic Needs Program on the Syllabus Policies and Assistance website (&lt;go.csuci.edu/syllabuspolicies&gt;) for information on emergency food, housing accommodations, toiletries, and connections to critical resources.</p>
-</section>
-<section id="csuci-disability-statement" class="level3">
-<h3 class="anchored" data-anchor-id="csuci-disability-statement">CSUCI Disability Statement</h3>
-<p>If you are a student with a disability requesting reasonable accommodations in this course, you need to contact Disability Accommodations and Support Services (DASS) located on the second floor of Arroyo Hall, via email accommodations@csuci.edu or call 805-437-3331. All requests for reasonable accommodations require registration with DASS in advance of need: <a href="https://www.csuci.edu/dass/students/apply-for-services.htm" class="uri">https://www.csuci.edu/dass/students/apply-for-services.htm</a>. Faculty, students and DASS will work together regarding classroom accommodations. You are encouraged to discuss approved.</p>
-</section>
-<section id="disruption" class="level3">
-<h3 class="anchored" data-anchor-id="disruption">Disruption</h3>
-<ol type="1">
-<li><strong>If I Am Out:</strong> I will communicate via email and will hold classes asynchronously.</li>
-<li><strong>If You Are Out:</strong> Contact me as soon as possible to talk about your options. Reasonable accommodations will be provided for a brief absence. With proper documentation, extended accommodations will be provided.</li>
-</ol>
+<p>Extra Credit is designed to expand on different topics that related to Machine Learning, but are not necessarily required for the course. Additionally, these opportunities provide students relief when unexpected situations occur during the semester. While it is not required, I encourage everyone to attempt each opportunity.</p>
+<p>Below is more information on each assignment.</p>
 
 
-</section>
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1768464000000" data-listing-file-modified-sort="1768424185024" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66">
+<div class="thumbnail"><a href="./exc/exc_1.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./exc/exc_1.html" class="no-external">Extra Credit 1</a>
+</h3>
+<div class="delink listing-description"><a href="./exc/exc_1.html" class="no-external">
+<p>Instructions for extra credit one.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./exc/exc_1.html" class="no-external">
+<div class="listing-date">
+Jan 15, 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1768464000000" data-listing-file-modified-sort="1768424943199" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="207">
+<div class="thumbnail"><a href="./exc/exc_2.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./exc/exc_2.html" class="no-external">Extra Credit 2</a>
+</h3>
+<div class="delink listing-description"><a href="./exc/exc_2.html" class="no-external">
+<p>Instructions for extra credit two.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./exc/exc_2.html" class="no-external">
+<div class="listing-date">
+Jan 15, 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1768464000000" data-listing-file-modified-sort="1768424943199" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="346">
+<div class="thumbnail"><a href="./exc/exc_3.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./exc/exc_3.html" class="no-external">Extra Credit 3</a>
+</h3>
+<div class="delink listing-description"><a href="./exc/exc_3.html" class="no-external">
+<p>Instructions for extra credit three.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./exc/exc_3.html" class="no-external">
+<div class="listing-date">
+Jan 15, 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

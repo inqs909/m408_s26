@@ -25,7 +25,7 @@ format:
 
 **Office Hours:**
 
-**Course Website:** [m408.inqs.info](https://m408.inqs.info/) AND Canvas
+**Course Website:** [m408.inqs.info](https://m408.inqs.info/) **AND** Canvas
 
 ### Course Description
 
@@ -93,7 +93,7 @@ For this course, we will use several different statistical programs to analyze d
 -   **R (Recommended)** is a statistical package that is available for download at: [r-project.org](https://www.r-project.org/).
 
 -   **Python** is a general programming langauge that is available to download at: [python.org](https://www.python.org/)
-    - Highly recommend using a python environment such as [uv](https://docs.astral.sh/uv/).
+    - Recommend using tools to create python environments such as [uv](https://docs.astral.sh/uv/guides/install-python/)
 
 #### Choose One IDE
 
@@ -144,14 +144,14 @@ The following outline may be subject to change. Any changes will be announced in
 |:-----|:---------------------------------------------------|
 | 1    | Intro to Course/Computational Set Up               |
 | 2    | Programming in R                                   |
-| 3    | Neural Networks                                    |
-| 4    | Layers, Optimizers, Loss, and Activation Functions |
-| 5    | Recurrent Neural Networks                          |
+| 3    | Derivatives and Minimization                       |
+| 4    | Neural Networks                                    |
+| 5    | Layers, Optimizers, Loss, and Activation Functions |
 | 6    | Convolutional Neural Networks                      |
-| 7    | Tabular Data Analysis                              |
+| 7    | Recurrent Neural Networks                          |
 | --   | Spring Break                                       |
 | 8    | Image Classification                               |
-| 9    | Time-Series Analysis                               |
+| 9    | Audio Classification                               |
 | 10   | Audio Classification                               |
 | 11   | Bayesian Analysis                                  |
 | 12   | Bayesian Linear Regression                         |

@@ -7,6 +7,7 @@ format:
     scrollable: false
     footer: m408.inqs.info/lectures/1a
     theme: [default, styles.scss]
+    preview-links: true
     navigation-mode: vertical
     controls-layout: edges
     controls-tutorial: true
@@ -84,17 +85,23 @@ editor: source
 
 [m408.inqs.info/syllabus](https://www.inqs.info/m408_s26/syllabus)
 
-## R Programming
+## Tools
 
-This utilized the R programming to conduct data analysis.
+- [R](https://www.r-project.org/)
+- [Torch](https://torch.mlverse.org/)
+- [Stan](https://mc-stan.org/)
+- [Quarto](https://quarto.org/)
 
-R is a powerful tool that allows you to program complex tasks.
+## IDE
 
-Learning R is difficult, but it is the best teacher to teach you how to overcome challenges. Don't give up when it gets hard and seek out help when needed.
+- [Positron](https://positron.posit.co/)
+- [VS Code](https://visualstudio.microsoft.com/downloads/)
+- [VS Codium](https://vscodium.com/)
+- [RStudio](https://posit.co/downloads/)
 
-# Use of Generative AI
+# Generative AI
 
-## Use of Generative AI
+## Use of Generative AI Policy
 
 The use of generative artificial intelligence (AI) to complete any part or all of an assignment/exam is strictly prohibited in this class. This includes, but not limited to, ChatGPT, Claude, Meta AI, and Google Gemini.
 
@@ -106,8 +113,14 @@ You may use AI to enhance you understanding of the material.
 
 ::: fragment
 
-You may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini.  Exceptions are allowed for [DASS](https://www.csuci.edu/dass/)-approved services.
+You may not use AI to complete assignments.
 
+:::
+
+
+::: fragment
+
+You may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini.  Exceptions are allowed for [DASS](https://www.csuci.edu/dass/)-approved services.
 
 :::
 
@@ -273,6 +286,12 @@ And, we need to demand companies to create and implement AI in an ethical manner
 - ['I can't drink the water' - life next to a US data centre](https://www.bbc.com/news/articles/cy8gy7lv448o)
 
 # Extra Credits
+
+## Extra Credits
+
+- [Extra Credit 1](https://m408.inqs.info/exc/exc_1)
+- [Extra Credit 2](https://m408.inqs.info/exc/exc_2)
+- [Extra Credit 3](https://m408.inqs.info/exc/exc_3)
 
 
 # Field Trip
