@@ -1,0 +1,32 @@
+---
+title: "Week 2"
+date: 01-26-26
+description: This week looks at R basics in terms of functions and tensors.
+editor: source
+---
+
+
+## Learning Outcomes
+
+### First Lecture
+
+- Welcome to the course!
+
+### First/Second Lecture
+
+-   Installing R and RStudio
+
+-   Scripts
+
+-   R Calculator
+
+-   R Objects
+
+-   R Packages
+
+## Resources
+
+| Lecture | Slides                   | Videos  |
+|---------|--------------------------|---------|
+| 1       | [Slides](../lectures/2a) | NA      |
+| 2       | [Slides](../lectures/2b) | NA      |

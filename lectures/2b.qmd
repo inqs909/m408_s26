@@ -1,0 +1,336 @@
+---
+title: "Torch Basics"
+subtitle: "Tensors"
+format:
+  revealjs:
+    width: 1200
+    scrollable: false
+    include-in-header: "math.html"
+    footer: m408.inqs.info/lectures/1a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: true
+    message: false
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## R Packages
+
+```{r}
+library(tidyverse)
+library(torch)
+library(mvtnorm)
+```
+
+# Tensors
+
+## What are Tensors?
+
+
+:::: {.columns}
+::: {.column}
+
+::: {.callout-note icon=false}
+
+### Mathematics
+
+A [tensor](https://en.wikipedia.org/wiki/Tensor) describes a relationship between algebraic objects.
+
+:::
+
+:::
+::: {.column}
+
+::: {.callout-tip icon=false} 
+
+### Torch
+
+An n-dimensional array with optimized operations.
+
+:::
+:::
+:::: 
+
+## Creating Tensors
+
+```{r}
+t1 <- torch_tensor(matrix(1:9, ncol = 3))
+t2 <- torch_tensor(1:3)
+t3 <- torch_tensor(array(1:24, dim = c(4, 3, 2)))
+```
+
+## Tensor Operations
+
+## Dimensions
+
+```{r}
+t1$shape
+t2$shape
+t3$shape
+```
+
+## Type
+
+```{r}
+t1$dtype
+t2$dtype
+t3$dtype
+```
+
+
+## Changing Type
+
+```{r}
+t1$to(dtype = torch_float())
+t2$to(dtype = torch_float())
+t3$to(dtype = torch_float())
+```
+
+## Set Type
+
+```{r}
+t1 <- torch_tensor(matrix(1:9, ncol = 3), dtype = torch_float())
+t2 <- torch_tensor(1:3, dtype = torch_float())
+t3 <- torch_tensor(array(1:24, dim = c(4, 3, 2)), dtype = torch_float())
+```
+
+## Device
+
+```{r}
+t1$device
+t2$device
+t3$device
+```
+
+## Set Device
+
+```r
+t1 <- torch_tensor(matrix(1:9, ncol = 3), device = "cuda")
+t2 <- torch_tensor(1:3, device = "cuda")
+t3 <- torch_tensor(array(1:24, dim = c(4, 3, 2)), device = "cuda")
+```
+::: {.callout-note}
+Use if cuda is installed (Nvidia users)
+:::
+
+# Vector Operations
+
+## Vectors
+
+```{r}
+t1 <- torch_tensor(1:6)
+t2 <- torch_tensor(7:12)
+t3 <- torch_tensor(1:3)
+t1; t2; t3
+```
+
+
+## Addition/Subtraction
+
+```{r}
+t1$add(t2)
+```
+
+## Scalar Multiplication
+
+```{r}
+10*t1
+```
+
+## Elementwise Multiplication
+```{r}
+t1$multiply(t2)
+```
+
+## Dot Product
+
+```{r}
+t1$dot(t2)
+```
+
+# Matrix Operations
+
+## Matrix
+
+```{r}
+t1 <- torch_tensor(matrix(1:9, ncol = 3), dtype = torch_float())
+t2 <- torch_tensor(matrix(rpois(9, 3), ncol = 3), dtype = torch_float())
+t3 <- torch_tensor(matrix(1:3, nrow = 3), dtype = torch_float())
+
+t1; t2; t3
+```
+
+
+## Transpose
+
+```{r}
+t1$t()
+t2$t()
+t3$t()
+```
+
+
+## Addition/Subtraction
+
+```{r}
+t1$add(t2)
+t1$subtract(t2)
+```
+
+## Scalar Multiplication
+
+```{r}
+10*t1
+```
+
+## Element-wise Multiplications
+
+```{r}
+t1; t2
+t1$multiply(t2)
+```
+
+## Matrix Multiplication
+
+```{r}
+t1$matmul(t2)
+t2$matmul(t1)
+t3$t()$matmul(t1)
+```
+
+## Determinant
+
+```{r}
+t1$det()
+```
+
+## Inverse
+```{r}
+t2$inverse()
+```
+
+
+## Diagonal Elements
+
+```{r}
+t1$diag()
+torch_diag(1:3)
+```
+
+
+## Matrix of 0/1
+
+```{r}
+torch_zeros(3,3)
+torch_ones(2,3)
+```
+
+## Identity Matrix
+
+```{r}
+torch_eye(n = 4)
+```
+
+# Linear Regression
+
+## Linear Regression
+
+$$
+Y_i = 3.85 + 12.3 X_1 - 9.7 X_2 + \varepsilon_i
+$$
+
+$$
+\varepsilon \sim N(0, 2.4)
+$$
+
+
+```{r}
+beta <- c(3.85, 12.3, -9.7)
+x <- rmvnorm(500, c(3, 8))
+xx <- cbind(1, x)
+y <- xx%*%beta + rnorm(500, sd = sqrt(2.4))
+
+```
+
+## OLS Estimator
+
+$$
+\hat\bbeta = (\bX^\mrT\bX)\inv\bX^\mrT\bY
+$$
+
+::: {.columns}
+::: {.column}
+$$
+\bX =\left(
+\begin{array}{ccc}
+1 & X_{1,1} & X_{2,1} \\
+1 & X_{1,2} & X_{2,2} \\
+\vdots & \vdots & \vdots \\
+1 & X_{1,500} & X_{2,500} \\
+\end{array}
+\right)
+$$
+
+:::
+::: {.column}
+$$
+\bY =\left(
+\begin{array}{ccc}
+Y_1 \\
+Y_2 \\
+\vdots \\
+Y_{500}
+\end{array}
+\right)
+$$
+
+:::
+:::
+
+## Using R
+
+$$
+\hat\bbeta = (\bX^\mrT\bX)\inv\bX^\mrT\bY
+$$
+
+```{r}
+lm(y ~ x)
+solve(t(xx)%*%xx)%*%t(xx)%*%y
+```
+
+## Using torch
+
+$$
+\hat\bbeta = (\bX^\mrT\bX)\inv\bX^\mrT\bY
+$$
+
+```{r}
+xxt <- torch_tensor(xx)
+yt <- torch_tensor(y)
+
+xxt$t()$matmul(xxt)$inverse()$matmul(xxt$t())$matmul(yt)
+```

@@ -14,7 +14,7 @@
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>MATH 408 – Math 408</title>
+  <title>MATH 408 – R Basics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -195,411 +195,483 @@
       margin-right: 0; 
     }
   </style>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        Macros: {
+          //Bold Lowecase Greek Letters
+          'balpha': '\\boldsymbol \\alpha',
+          'bbeta': '\\boldsymbol \\beta',
+          'bgamma': '\\boldsymbol \\gamma', 
+          'bdelta': '\\boldsymbol \\delta',
+          'bepsilon': '\\boldsymbol \\epsilon',
+          'bzeta': '\\boldsymbol \\zeta',
+          'boeta': '\\boldsymbol \\eta',
+          'btheta': '\\boldsymbol \\theta',
+          'biota': '\\boldsymbol \\iota',
+          'bkappa': '\\boldsymbol \\kappa',
+          'blambda': '\\boldsymbol \\lambda',
+          'bmu': '\\boldsymbol \\mu',
+          'bnu': '\\boldsymbol \\nu',
+          'bxi': '\\boldsymbol \\xi',
+          'bomicron': '\\boldsymbol \\omicron',
+          'bpi': '\\boldsymbol \\pi',
+          'brho': '\\boldsymbol \\rho',
+          'bsigma': '\\boldsymbol \\sigma',
+          'btau': '\\boldsymbol \\tau',
+          'bupsilon': '\\boldsymbol \\upsilon',
+          'bphi': '\\boldsymbol \\phi',
+          'bchi': '\\boldsymbol \\chi',
+          'bpsi': '\\boldsymbol \\psi',
+          'bomega': '\\boldsymbol \\omega',
+          //Bold Uppercase Greek Letters
+          'bGamma': '\\boldsymbol \\Gamma', 
+          'bDelta': '\\boldsymbol \\Delta',
+          'bTheta': '\\boldsymbol \\Theta',
+          'bLambda': '\\boldsymbol \\Lambda',
+          'bXi': '\\boldsymbol \\Xi',
+          'bPi': '\\boldsymbol \\Pi',
+          'bSigma': '\\boldsymbol \\Sigma',
+          'bPhi': '\\boldsymbol \\Phi',
+          'bPsi': '\\boldsymbol \\Psi',
+          'bOmega': '\\boldsymbol \\Omega',
+          // Bold Vars
+          'bvarphi': '\\boldsymbol \\varphi',
+          'bvarrho': '\\boldsymbol \\varrho',
+          'bvartheta': '\\boldsymbol \\vartheta',
+          // Math Remove
+          'mrT': '\\mathrm T',
+          'mrth': '\\mathrm{th}',
+          'inv': '\^{-1}',
+          'tr': '\\mathrm{tr}',
+          'Cov': '\\mathrm{Cov}',
+          'Cor': '\\mathrm{Cor}',
+          'Var': '\\mathrm{Var}',
+          'E': '\\mathrm{E}',
+          'mrTr': '\^\\mathrm T',
+          // Bold Letters
+          'bX': '\\boldsymbol X',
+          'bx': '\\boldsymbol x',
+          'bF': '\\boldsymbol F',
+          'bY': '\\boldsymbol Y',
+          'by': '\\boldsymbol y',
+          'bK': '\\boldsymbol K',
+          'bZ': '\\boldsymbol Z',
+          'bT': '\\boldsymbol T',
+          'bz': '\\boldsymbol z',
+          'bB': '\\boldsymbol B',
+          'ba': '\\boldsymbol a',
+          'bb': '\\boldsymbol b',
+          'bI': '\\boldsymbol I',
+          'bR': '\\boldsymbol R',
+          'bc': '\\boldsymbol c',
+          'bW': '\\boldsymbol W',
+          'bt': '\\boldsymbol t',
+          'bd': '\\boldsymbol d',
+          'bD': '\\boldsymbol D',
+          'bG': '\\boldsymbol G',
+          'bJ': '\\boldsymbol J',
+          'bS': '\\boldsymbol S',
+          'bV': '\\boldsymbol V',
+          'bH': '\\boldsymbol H',
+          'bA': '\\boldsymbol A',
+          'bU': '\\boldsymbol U',
+          'bu': '\\boldsymbol u',
+          'bv': '\\boldsymbol v',
+          'bP': '\\boldsymbol P',
+          'bw': '\\boldsymbol w',
+          'br': '\\boldsymbol r',
+          // MathCal
+          // Regular
+          'mcA': '\\mathcal{A}',
+          'mcB': '\\mathcal{B}',
+          'mcC': '\\mathcal{C}',
+          'mcD': '\\mathcal{D}',
+          'mcJ': '\\mathcal{J}',
+          'mcL': '\\mathcal{L}',
+          'mcM': '\\mathcal{M}',
+          'mcR': '\\mathcal{R}',
+          'mcP': '\\mathcal{P}',
+          'mcX': '\\mathcal{X}',
+          'mcZ': '\\mathcal{Z}',
+          'mcb': '\\mathcal{b}',
+          'mcp': '\\mathcal{p}',
+          // bold
+          'bmcH': '\\boldsymbol{\\mathcal{H}}',
+          'bmcS': '\\boldsymbol{\\mathcal{S}}',
+          'bmcV': '\\boldsymbol{\\mathcal{V}}',
+          'bmcX': '\\boldsymbol{\\mathcal{X}}',
+          'bmcD': '\\boldsymbol{\\mathcal{D}}',
+          'bmcU': '\\boldsymbol{\\mathcal{U}}',
+          'bmcG': '\\boldsymbol{\\mathcal{G}}',
+          'bmcI': '\\boldsymbol{\\mathcal{I}}',
+          'bmcZ': '\\boldsymbol{\\mathcal{Z}}',
+          'bmcb': '\\mathbcal{\\boldsymbol{b}}',
+          'bmcp': '\\mathbcal{\\boldsymbol{p}}',
+          
+          // Script Fonts
+          'msL': '\\mathscr{L}',
+          'msF': '\\mathscr{F}',
+          'msG': '\\mathscr{G}',
+          'msP': '\\mathscr{P}',
+          'msV': '\\mathscr{V}',
+          'msX': '\\mathscr{X}',
+          'msY': '\\mathscr{Y}',
+          'msZ': '\\mathscr{Z}',
+          
+          // Fraktur Fonts
+          'mfL': '\\mathfrak{L}',
+          'mfF': '\\mathfrak{F}',
+          'mfG': '\\mathfrak{G}',
+          'mfP': '\\mathfrak{P}',
+          'mfV': '\\mathfrak{V}',
+          'mfX': '\\mathfrak{X}',
+          'mfY': '\\mathfrak{Y}',
+          'mfZ': '\\mathfrak{Z}',
+          
+          //Bold Numbers
+          'bzero': '\\boldsymbol{0}',
+          'bone': '\\boldsymbol{1}',
+
+        }
+      }
+    });
+  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Math 408</h1>
-  <p class="subtitle">Machine Learning</p>
+  <h1 class="title">R Basics</h1>
+  <p class="subtitle">Functions</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
+<section id="r-packages" class="slide level2">
+<h2>R Packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section>
-<section id="installation" class="title-slide slide level1 agenda-slide center">
-<h1>Installation</h1>
+<section id="indexing" class="title-slide slide level1 agenda-slide center">
+<h1>Indexing</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-active">
-<p>Installation</p>
+<p>Indexing</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Workspaces</p>
+<p><code>if</code>/<code>else</code> Statements</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R Basics</p>
+<p>Built-in Functions</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Comparing Numbers</p>
+<p>User-built functions</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="r-programming" class="slide level2">
-<h2>R Programming</h2>
-<p>R is a statistical programming package that allows you to conduct different types of analysis.</p>
-<p><a href="https://www.r-project.org/">R</a></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Windows Users: Install <a href="https://cran.r-project.org/bin/windows/Rtools/">RTools</a></p>
-</div>
-</div>
-</div>
+<section id="indexing-1" class="slide level2">
+<h2>Indexing</h2>
+<p>Within an R object, you can access an element by indexing it.</p>
+<p>Indexing tells R which values to output.</p>
 </section>
-<section id="positron" class="slide level2">
-<h2>Positron</h2>
-<p>A piece of software that organizes how you conduct statistical analysis in R.</p>
-<p><a href="http://positron.posit.co/download.html">Positron</a></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Windows Users: Use system-level package If you cannot work with R, install <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version">Visual C++ Redistributable</a></p>
-</div>
-</div>
-</div>
+<section id="vectors" class="slide level2">
+<h2>Vectors</h2>
+<p>A vector can be indexed by adding <code>[]</code> after the object’s name and specifying the number of each element.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>letters</span>
+<span id="cb2-2"><a></a>letters[13]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="rstudio" class="slide level2">
-<h2>RStudio</h2>
-<p>If Positron does not work, install <a href="https://posit.co/downloads/">RStudio</a> instead.</p>
-</section>
-<section id="installing-torch" class="slide level2">
-<h2>Installing Torch</h2>
-<p>In R, install torch with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"torch"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Nvidia-Users</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">options</span>(<span class="at">timeout =</span> <span class="dv">600</span>) <span class="co"># increasing timeout is recommended since we will be downloading a 2GB file.</span></span>
-<span id="cb2-2"><a></a><span class="co"># For Windows and Linux: "cpu", "cu128" are the only currently supported</span></span>
-<span id="cb2-3"><a></a><span class="co"># For MacOS the supported are: "cpu-intel" or "cpu-m1"</span></span>
-<span id="cb2-4"><a></a>kind <span class="ot">&lt;-</span> <span class="st">"cpu"</span></span>
-<span id="cb2-5"><a></a>version <span class="ot">&lt;-</span> <span class="fu">available.packages</span>()[<span class="st">"torch"</span>,<span class="st">"Version"</span>]</span>
-<span id="cb2-6"><a></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(</span>
-<span id="cb2-7"><a></a>  <span class="at">torch =</span> <span class="fu">sprintf</span>(<span class="st">"https://torch-cdn.mlverse.org/packages/%s/%s/"</span>, kind, version),</span>
-<span id="cb2-8"><a></a>  <span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span> <span class="co"># or any other from which you want to install the other R dependencies.</span></span>
-<span id="cb2-9"><a></a>))</span>
-<span id="cb2-10"><a></a><span class="fu">install.packages</span>(<span class="st">"torch"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="installing-stan" class="slide level2">
-<h2>Installing Stan</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">install.packages</span>(<span class="st">"cmdstanr"</span>, </span>
-<span id="cb3-2"><a></a>    <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">'https://stan-dev.r-universe.dev'</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>)))</span>
-<span id="cb3-3"><a></a>cmdstanr<span class="sc">::</span><span class="fu">check_cmdstan_toolchain</span>()</span>
-<span id="cb3-4"><a></a>cmdstanr<span class="sc">::</span><span class="fu">install_cmdstan</span>(<span class="at">cores =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="other-r-packages" class="slide level2">
-<h2>Other R Packages</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Core Packages</a></li><li><a href="#tabset-1-2">Course Packages</a></li><li><a href="#tabset-1-3">Misc Packages</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<ul>
-<li>Tidyverse</li>
-<li>Torch</li>
-<li>cmdstanr</li>
-</ul>
-</div>
-<div id="tabset-1-2">
-<ul>
-<li>mvtnorm</li>
-</ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>More packages will be added throughout the course if necessary.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-1-3">
-<ul>
-<li><p>Knitr</p></li>
-<li><p>RMarkdown</p></li>
-<li><p>Quarto</p></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="load-r-package" class="slide level2">
-<h2>Load R Package</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-2"><a></a><span class="fu">library</span>(torch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>You must load packages every new R Session</li>
-</ul>
-</section></section>
-<section id="workspaces" class="title-slide slide level1 agenda-slide center">
-<h1>Workspaces</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Installation</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Workspaces</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>R Basics</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Comparing Numbers</p>
-</div></li>
-</ul>
-</div>
-</section>
-
-<section>
-<section id="r-basics" class="title-slide slide level1 agenda-slide center">
-<h1>R Basics</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Installation</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Workspaces</p>
-</div></li>
-<li><div class="agenda-active">
-<p>R Basics</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Comparing Numbers</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="r-as-a-calculator" class="slide level2">
-<h2>R as a calculator</h2>
-<p>R can evaluate different expressions in the console tab.</p>
-<p>Try the following:</p>
-<ol type="1">
-<li><span class="math inline">\(4(4+2)/34\)</span></li>
-<li><span class="math inline">\(6^3\)</span></li>
-<li><span class="math inline">\(3-1\)</span></li>
-<li><span class="math inline">\(4+4/3+45(32*34-54)\)</span></li>
-</ol>
-</section>
-<section id="r-functions" class="slide level2">
-<h2>R Functions</h2>
-<p>R functions performs tasks to specific data values.</p>
-<p>Evaluate the following values in R:</p>
-<ol type="1">
-<li><span class="math inline">\(\sqrt{3}\)</span></li>
-<li><span class="math inline">\(e^3\)</span></li>
-<li><span class="math inline">\(\ln(53)\)</span></li>
-<li><span class="math inline">\(\log(324)\)</span></li>
-<li><span class="math inline">\(\sin(3)\)</span></li>
-<li><span class="math inline">\(\sin(3\pi)\)</span></li>
-</ol>
-</section>
-<section id="types-of-data" class="slide level2">
-<h2>Types of Data</h2>
-<ul>
-<li><p>Numeric</p></li>
-<li><p>Character</p></li>
-<li><p>Logical</p></li>
-<li><p>Missing</p></li>
-</ul>
-<p>Evaluate the following code:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">is.numeric</span>(<span class="dv">1</span>)</span>
-<span id="cb5-2"><a></a><span class="fu">is.numeric</span>(<span class="st">"1"</span>)</span>
-<span id="cb5-3"><a></a><span class="fu">is.numeric</span>(T)</span>
-<span id="cb5-4"><a></a><span class="fu">is.numeric</span>(<span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="types-of-objects" class="slide level2">
-<h2>Types of Objects</h2>
-<p>In R, an object contains a set of data. The most common types are <code>vectors</code> and <code>matrix</code>.</p>
-<p>Run this code and print out the objects in the console:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">34</span></span>
-<span id="cb6-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">nrow =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="matrices" class="slide level2">
+<h2>Matrices</h2>
+<p>A matrix can be indexed by adding <code>[]</code> after the object’s name and specifying the number of each element. Separate the values by commas for specific indexes.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>x &lt;- matrix(1:40, nrow = 4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-frames" class="slide level2">
 <h2>Data Frames</h2>
-<p>Data frames can be thought of as R’s version of a data set.</p>
-<p>Play around with mtcars:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mtcars </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
-#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
-#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
-#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
-#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
-#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
-#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
-#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
-#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
-#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
-#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
-#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
-#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
-#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
-#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
-#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
-#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
-#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
-#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
-#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
-</div>
-</div>
+<p>Data frames can be indexed using the <code>$</code> operator and <code>[]</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>mtcars[,"mpg"]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="lists" class="slide level2">
 <h2>Lists</h2>
-<p>List can be thought as an extended vector, but each element is a different R object.</p>
-<p>Try playing with this R object:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>list_one <span class="ot">&lt;-</span> <span class="fu">list</span>(mtcars, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>),</span>
-<span id="cb9-2"><a></a>                 <span class="fu">diag</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">3</span>)))</span>
-<span id="cb9-3"><a></a>list_one</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [[1]]
-#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
-#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
-#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
-#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
-#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
-#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
-#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
-#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
-#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
-#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
-#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
-#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
-#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
-#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
-#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
-#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
-#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
-#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
-#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
-#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
-#&gt; 
-#&gt; [[2]]
-#&gt; [1] 0 0 0 0
-#&gt; 
-#&gt; [[3]]
-#&gt;      [,1] [,2] [,3]
-#&gt; [1,]    1    0    0
-#&gt; [2,]    0    1    0
-#&gt; [3,]    0    0    1</code></pre>
-</div>
-</div>
+<p>Lists can be indexed using the <code>[[]]</code> for a specific element of a list.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>toy_list &lt;- list(x = letters,</span>
+<span id="cb5-2"><a></a>                 y = mtcars,</span>
+<span id="cb5-3"><a></a>                 z = list(x = diag(rep(1, 5),</span>
+<span id="cb5-4"><a></a>                          y = matrix(1:40, nrow = 5),</span>
+<span id="cb5-5"><a></a>                          z = band_members)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
-<section id="comparing-numbers" class="title-slide slide level1 agenda-slide center">
-<h1>Comparing Numbers</h1>
+<section id="ifelse-statements" class="title-slide slide level1 agenda-slide center">
+<h1><code>if</code>/<code>else</code> Statements</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Installation</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Workspaces</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>R Basics</p>
+<p>Indexing</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Comparing Numbers</p>
+<p><code>if</code>/<code>else</code> Statements</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Built-in Functions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>User-built functions</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="comparing-numbers-1" class="slide level2">
-<h2>Comparing Numbers</h2>
-<p>You can compare two numbers, or objects, that will result in a logical output.</p>
+<section id="ifelse-statements-1" class="slide level2">
+<h2>if/else Statements</h2>
+<p>if/else statements are used to conduct specific tasks depending on the conditions</p>
 </section>
-<section id="comparing-numbers-operators" class="slide level2">
-<h2>Comparing Numbers Operators</h2>
+<section id="if-statement" class="slide level2">
+<h2><code>if</code> Statement</h2>
+<p>An <code>if</code> statement is used to if you want R to perform a specific function if a certain condition is met. An <code>if</code> statement will only run a task if a logical is returned. You will need type <code>if</code>, followed by the condition (as a logical) in parentheses, then the task.</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>x &lt;- sample(-10:10,1)</span>
+<span id="cb6-2"><a></a>if (x &gt; 0){</span>
+<span id="cb6-3"><a></a>  print("Positive")</span>
+<span id="cb6-4"><a></a>}</span>
+<span id="cb6-5"><a></a>print(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="else-statement" class="slide level2">
+<h2>else statement</h2>
+<p>An <code>else</code> statement will conduct a different task if the <code>if</code> statement does not conduct the tasks.</p>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>x &lt;- sample(-10:10,1)</span>
+<span id="cb7-2"><a></a>if (x &gt; 0 ){</span>
+<span id="cb7-3"><a></a>  print("Positive")</span>
+<span id="cb7-4"><a></a>} else {</span>
+<span id="cb7-5"><a></a>  print("Non-positive")</span>
+<span id="cb7-6"><a></a>} </span>
+<span id="cb7-7"><a></a>print(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="chain-ifelse-statement" class="slide level2">
+<h2>Chain if/else statement</h2>
+<p>If you have more than two options, you can chain <code>if/else</code> statements by adding an <code>if</code> statement immediately after the word <code>else</code>.</p>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>x &lt;- sample(-10:10,1)</span>
+<span id="cb8-2"><a></a>if (x &gt; 0 ){</span>
+<span id="cb8-3"><a></a>  print("Positive")</span>
+<span id="cb8-4"><a></a>} else if (x == 0) {</span>
+<span id="cb8-5"><a></a>  print("Zero")</span>
+<span id="cb8-6"><a></a>} else {</span>
+<span id="cb8-7"><a></a>  print("Negative")</span>
+<span id="cb8-8"><a></a>}</span>
+<span id="cb8-9"><a></a>print(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="built-in-functions" class="title-slide slide level1 agenda-slide center">
+<h1>Built-in Functions</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Indexing</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p><code>if</code>/<code>else</code> Statements</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Built-in Functions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>User-built functions</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="built-in-functions-1" class="slide level2">
+<h2>Built-in Functions</h2>
+<p>There are several available functions in R to conduct specific statistical methods or tasks</p>
+</section>
+<section id="help-documentation" class="slide level2">
+<h2>Help Documentation</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Operator</th>
-<th>Description</th>
+<th style="text-align: left;">Section</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>&gt;</code></td>
-<td>Greater Than</td>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Provides a brief introduction of the function</td>
 </tr>
 <tr class="even">
-<td><code>&lt;</code></td>
-<td>Less Than</td>
+<td style="text-align: left;">Usage</td>
+<td style="text-align: left;">Provides potential usage of the function</td>
 </tr>
 <tr class="odd">
-<td><code>&gt;=</code></td>
-<td>Greater than or equal</td>
+<td style="text-align: left;">Arguments</td>
+<td style="text-align: left;">Arguments that the function can take</td>
 </tr>
 <tr class="even">
-<td><code>&lt;=</code></td>
-<td>Less than or equal</td>
+<td style="text-align: left;">Details</td>
+<td style="text-align: left;">An in depth description of the function</td>
 </tr>
 <tr class="odd">
-<td><code>==</code></td>
-<td>Equals</td>
+<td style="text-align: left;">Value</td>
+<td style="text-align: left;">Provides information of the output produced by the function</td>
 </tr>
 <tr class="even">
-<td><code>!=</code></td>
-<td>Not Equals</td>
+<td style="text-align: left;">Notes</td>
+<td style="text-align: left;">Any need to know information about the function</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Authors</td>
+<td style="text-align: left;">Developers of the function</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">References</td>
+<td style="text-align: left;">References to the model and function</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">See Also</td>
+<td style="text-align: left;">Provide information of supporting functions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Examples</td>
+<td style="text-align: left;">Examples of the function</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="generic-functions" class="slide level2">
+<h2>Generic Functions</h2>
+<p>Several R objects have a known class attached to it. A specialized object designed to be read by generic functions, such as <code>summary()</code> and <code>plot()</code>.</p>
+<p>For example, the <code>summary()</code> is a generic for several types of functions: <code>summary.aov()</code>, <code>summary.lm()</code>, <code>summary.glm()</code>, and many more.</p>
+</section>
+<section id="commonly-used-function" class="slide level2">
+<h2>Commonly-used Function</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Functions</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>aov()</code></td>
+<td style="text-align: left;">Fits an ANOVA Model</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>lm()</code></td>
+<td style="text-align: left;">Fits a linear model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>glm()</code></td>
+<td style="text-align: left;">Fits a general linear model</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>t.test()</code></td>
+<td style="text-align: left;">Conducts a t-test</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="user-built-functions" class="title-slide slide level1 agenda-slide center">
+<h1>User-built functions</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Indexing</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p><code>if</code>/<code>else</code> Statements</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Built-in Functions</p>
+</div></li>
+<li><div class="agenda-active">
+<p>User-built functions</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="user-built-functions-1" class="slide level2">
+<h2>User-built functions</h2>
+<ul>
+<li><p>Functions created by the user for analysis</p></li>
+<li><p>Needs to be ran once to the R environment</p></li>
+<li><p>Will be lost when R session is closed</p></li>
+</ul>
+</section>
+<section id="anatomy" class="slide level2">
+<h2>Anatomy</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="|1-3|4-5|6|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>name_of_function <span class="ot">&lt;-</span> <span class="cf">function</span>(data_1, <span class="at">data_2 =</span> <span class="cn">NULL</span>, </span>
+<span id="cb9-2"><a></a>                             argument_1, <span class="at">argument_2 =</span> <span class="cn">TRUE</span>, <span class="at">argument_3 =</span> <span class="cn">NULL</span>,</span>
+<span id="cb9-3"><a></a>                             ...){</span>
+<span id="cb9-4"><a></a>  <span class="co"># Conduct Task</span></span>
+<span id="cb9-5"><a></a>  <span class="co"># Conduct Task</span></span>
+<span id="cb9-6"><a></a>  output_object <span class="ot">&lt;-</span> Tasks</span>
+<span id="cb9-7"><a></a>  <span class="fu">return</span>(output_object)</span>
+<span id="cb9-8"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<ul>
+<li><p><code>function</code>: used to construct the function</p></li>
+<li><p><code>data1</code>: first data argument that needs to supplied</p></li>
+<li><p><code>data2</code>: second data argument that does not need to be supplied</p></li>
+<li><p><code>argument1</code>: first argument must be supplied to alter function</p></li>
+<li><p><code>argument2</code>: second argument to alter function, set to <code>TRUE</code></p></li>
+<li><p><code>argument3</code>: third argument that does not need to be supplied</p></li>
+<li><p><code>…</code>: additional arguments supplied to other functions</p></li>
+</ul>
+</div>
+</section>
+<section id="example-3" class="slide level2">
+<h2>Example</h2>
+<p>Create a function for</p>
+<p><span class="math display">\[
+y = \ln(x^2)
+\]</span></p>
+</section>
+<section id="example-4" class="slide level2">
+<h2>Example</h2>
+<p>Create a function for</p>
+<p><span class="math display">\[
+f(x) = \left\{\begin{array}{cc}
+x^3 &amp; x&lt;0\\
+x^2 + 5 &amp; \mathrm{otherwise}
+\end{array} \right.
+\]</span></p>
+</section>
+<section id="example-5" class="slide level2">
+<h2>Example</h2>
+<p>Create a function for</p>
+<p><span class="math display">\[
+f(x,y) = \left\{\begin{array}{cc}
+x^3 e^y &amp;  x&lt;0\ \\
+x^2 + 5 + \ln(y) &amp; \mathrm{otherwise}
+\end{array} \right.
+\]</span></p>
+</section>
+<section id="example-6" class="slide level2">
+<h2>Example</h2>
+<p>Create the function that allows your to compute the z-score of a specific value <code>x</code> using the sampling distribution from a set of data (<code>y</code> vector):</p>
+<p><span class="math display">\[
+z =  \frac{x-\bar y}{\sqrt{s^2_{y}/n_y}}
+\]</span></p>
 
 
 </section></section>
@@ -643,7 +715,7 @@
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
-'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
+'pointer': {"key":"q","color":"red","pointerSize":48,"alwaysVisible":false},
 'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
