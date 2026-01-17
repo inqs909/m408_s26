@@ -236,13 +236,17 @@ But, we need to acknowledge the consequences of using AI!
 And, we need to demand companies to create and implement AI in an ethical manner!
 :::
 
+## Privacy Concerns Links
 
-## Resources on Labor Violations
+- [OpenAI Says It’s Scanning Users’ ChatGPT Conversations and Reporting Content to the Police](https://futurism.com/openai-scanning-conversations-police)
+- [Privacy in an AI Era: How Do We Protect Our Personal Information?](https://hai.stanford.edu/news/privacy-ai-era-how-do-we-protect-our-personal-information)
+
+## Labor Violations Links
 
 - [The Emotional Labor Behind AI Intimacy](https://data-workers.org/michael/)
 - [How thousands of ‘overworked, underpaid' humans train Google’s AI to seem smart](https://www.theguardian.com/technology/2025/sep/11/google-gemini-ai-training-humans)
 
-## Affecting Communities
+## Affecting Communities Links
 
 - [AI surveillance and data colonialism shape African conflicts](https://africainfact.com/ai-surveillance-and-data-colonialism-shape-african-conflicts/)
 - [African workers are taking on Meta and the world should pay attention](https://www.aljazeera.com/opinions/2025/4/1/african-workers-are-taking-on-meta-and-the-world-should-pay-attention)
@@ -250,7 +254,11 @@ And, we need to demand companies to create and implement AI in an ethical manner
 
 - [The AI Industry Is Traumatizing Desperate Contractors in the Developing World for Pennies](https://futurism.com/artificial-intelligence/ai-industry-traumatizing-contractors)
 
-## Resources on Ideas and Learning
+- [ChatGPT advises women to ask for lower salaries, study finds](https://thenextweb.com/news/chatgpt-advises-women-to-ask-for-lower-salaries-finds-new-study)
+
+- [The Impact of the Use of AI on People with Disabilities](https://www.nycbar.org/reports/the-impact-of-the-use-of-ai-on-people-with-disabilities/)
+
+## Ideas and Learning Links
 
 - [Student's Right to Refuse AI](https://refusal.blog/2025/08/29/a-students-right-to-refuse-generative-ai/)
 
@@ -260,6 +268,9 @@ And, we need to demand companies to create and implement AI in an ethical manner
 
 - [New Junior Developers Can't Actually Code](https://nmn.gl/blog/ai-and-learning)
 
+## Environmental Costs
+
+- ['I can't drink the water' - life next to a US data centre](https://www.bbc.com/news/articles/cy8gy7lv448o)
 
 # Extra Credits
 
