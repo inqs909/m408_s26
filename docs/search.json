@@ -116,7 +116,7 @@
     "href": "index.html",
     "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 23, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Brief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 23, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "exc/exc_2.html",
@@ -336,25 +336,39 @@
     "text": "Is Using AI Bad?\n\nYes/No/I don’t know\n\n\nBut, we need to acknowledge the consequences of using AI!\n\n\nAnd, we need to demand companies to create and implement AI in an ethical manner!"
   },
   {
-    "objectID": "lectures/1a.html#resources-on-labor-violations",
-    "href": "lectures/1a.html#resources-on-labor-violations",
+    "objectID": "lectures/1a.html#privacy-concerns-links",
+    "href": "lectures/1a.html#privacy-concerns-links",
     "title": "Math 408",
-    "section": "Resources on Labor Violations",
-    "text": "Resources on Labor Violations\n\nThe Emotional Labor Behind AI Intimacy\nHow thousands of ‘overworked, underpaid’ humans train Google’s AI to seem smart"
+    "section": "Privacy Concerns Links",
+    "text": "Privacy Concerns Links\n\nOpenAI Says It’s Scanning Users’ ChatGPT Conversations and Reporting Content to the Police\nPrivacy in an AI Era: How Do We Protect Our Personal Information?"
   },
   {
-    "objectID": "lectures/1a.html#affecting-communities",
-    "href": "lectures/1a.html#affecting-communities",
+    "objectID": "lectures/1a.html#labor-violations-links",
+    "href": "lectures/1a.html#labor-violations-links",
     "title": "Math 408",
-    "section": "Affecting Communities",
-    "text": "Affecting Communities\n\nAI surveillance and data colonialism shape African conflicts\nAfrican workers are taking on Meta and the world should pay attention\n‘It’s destroyed me completely’: Kenyan moderators decry toll of training of AI models\nThe AI Industry Is Traumatizing Desperate Contractors in the Developing World for Pennies"
+    "section": "Labor Violations Links",
+    "text": "Labor Violations Links\n\nThe Emotional Labor Behind AI Intimacy\nHow thousands of ‘overworked, underpaid’ humans train Google’s AI to seem smart"
   },
   {
-    "objectID": "lectures/1a.html#resources-on-ideas-and-learning",
-    "href": "lectures/1a.html#resources-on-ideas-and-learning",
+    "objectID": "lectures/1a.html#affecting-communities-links",
+    "href": "lectures/1a.html#affecting-communities-links",
     "title": "Math 408",
-    "section": "Resources on Ideas and Learning",
-    "text": "Resources on Ideas and Learning\n\nStudent’s Right to Refuse AI\nAI is homogenizing your thoughts\nThe Incuriosity Engine\nNew Junior Developers Can’t Actually Code"
+    "section": "Affecting Communities Links",
+    "text": "Affecting Communities Links\n\nAI surveillance and data colonialism shape African conflicts\nAfrican workers are taking on Meta and the world should pay attention\n‘It’s destroyed me completely’: Kenyan moderators decry toll of training of AI models\nThe AI Industry Is Traumatizing Desperate Contractors in the Developing World for Pennies\nChatGPT advises women to ask for lower salaries, study finds\nThe Impact of the Use of AI on People with Disabilities"
+  },
+  {
+    "objectID": "lectures/1a.html#ideas-and-learning-links",
+    "href": "lectures/1a.html#ideas-and-learning-links",
+    "title": "Math 408",
+    "section": "Ideas and Learning Links",
+    "text": "Ideas and Learning Links\n\nStudent’s Right to Refuse AI\nAI is homogenizing your thoughts\nThe Incuriosity Engine\nNew Junior Developers Can’t Actually Code"
+  },
+  {
+    "objectID": "lectures/1a.html#environmental-costs",
+    "href": "lectures/1a.html#environmental-costs",
+    "title": "Math 408",
+    "section": "Environmental Costs",
+    "text": "Environmental Costs\n\n‘I can’t drink the water’ - life next to a US data centre"
   },
   {
     "objectID": "lectures/1a.html#extra-credits-1",

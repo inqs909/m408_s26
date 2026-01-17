@@ -7,12 +7,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>MATH 408 – Math 408</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -99,7 +99,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-6b80500f8df77a44afd5a29b3f9273b2.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3250d136a9637f5f47522e41b35ed4ce.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -268,7 +268,7 @@
 <section id="installing-torch" class="slide level2">
 <h2>Installing Torch</h2>
 <p>In R, install torch with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"torch"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"torch"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -279,7 +279,7 @@
 </div>
 <div class="callout-content">
 <p>Nvidia-Users</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">options</span>(<span class="at">timeout =</span> <span class="dv">600</span>) <span class="co"># increasing timeout is recommended since we will be downloading a 2GB file.</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">options</span>(<span class="at">timeout =</span> <span class="dv">600</span>) <span class="co"># increasing timeout is recommended since we will be downloading a 2GB file.</span></span>
 <span id="cb2-2"><a></a><span class="co"># For Windows and Linux: "cpu", "cu128" are the only currently supported</span></span>
 <span id="cb2-3"><a></a><span class="co"># For MacOS the supported are: "cpu-intel" or "cpu-m1"</span></span>
 <span id="cb2-4"><a></a>kind <span class="ot">&lt;-</span> <span class="st">"cpu"</span></span>
@@ -288,17 +288,17 @@
 <span id="cb2-7"><a></a>  <span class="at">torch =</span> <span class="fu">sprintf</span>(<span class="st">"https://torch-cdn.mlverse.org/packages/%s/%s/"</span>, kind, version),</span>
 <span id="cb2-8"><a></a>  <span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span> <span class="co"># or any other from which you want to install the other R dependencies.</span></span>
 <span id="cb2-9"><a></a>))</span>
-<span id="cb2-10"><a></a><span class="fu">install.packages</span>(<span class="st">"torch"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-10"><a></a><span class="fu">install.packages</span>(<span class="st">"torch"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="installing-stan" class="slide level2">
 <h2>Installing Stan</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">install.packages</span>(<span class="st">"cmdstanr"</span>, </span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">install.packages</span>(<span class="st">"cmdstanr"</span>, </span>
 <span id="cb3-2"><a></a>    <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">'https://stan-dev.r-universe.dev'</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>)))</span>
 <span id="cb3-3"><a></a>cmdstanr<span class="sc">::</span><span class="fu">check_cmdstan_toolchain</span>()</span>
-<span id="cb3-4"><a></a>cmdstanr<span class="sc">::</span><span class="fu">install_cmdstan</span>(<span class="at">cores =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-4"><a></a>cmdstanr<span class="sc">::</span><span class="fu">install_cmdstan</span>(<span class="at">cores =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="other-r-packages" class="slide level2">
 <h2>Other R Packages</h2>
@@ -340,8 +340,8 @@
 </section>
 <section id="load-r-package" class="slide level2">
 <h2>Load R Package</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-2"><a></a><span class="fu">library</span>(torch)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a></a><span class="fu">library</span>(torch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>You must load packages every new R Session</li>
 </ul>
@@ -413,17 +413,17 @@
 <li><p>Missing</p></li>
 </ul>
 <p>Evaluate the following code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">is.numeric</span>(<span class="dv">1</span>)</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">is.numeric</span>(<span class="dv">1</span>)</span>
 <span id="cb5-2"><a></a><span class="fu">is.numeric</span>(<span class="st">"1"</span>)</span>
 <span id="cb5-3"><a></a><span class="fu">is.numeric</span>(T)</span>
-<span id="cb5-4"><a></a><span class="fu">is.numeric</span>(<span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-4"><a></a><span class="fu">is.numeric</span>(<span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="types-of-objects" class="slide level2">
 <h2>Types of Objects</h2>
 <p>In R, an object contains a set of data. The most common types are <code>vectors</code> and <code>matrix</code>.</p>
 <p>Run this code and print out the objects in the console:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">34</span></span>
-<span id="cb6-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">nrow =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">34</span></span>
+<span id="cb6-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">nrow =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-frames" class="slide level2">
 <h2>Data Frames</h2>
@@ -432,7 +432,7 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mtcars </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mtcars </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
@@ -478,9 +478,9 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>list_one <span class="ot">&lt;-</span> <span class="fu">list</span>(mtcars, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>),</span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>list_one <span class="ot">&lt;-</span> <span class="fu">list</span>(mtcars, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>),</span>
 <span id="cb9-2"><a></a>                 <span class="fu">diag</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">3</span>)))</span>
-<span id="cb9-3"><a></a>list_one</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-3"><a></a>list_one</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; [[1]]
@@ -726,7 +726,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -838,14 +838,13 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
