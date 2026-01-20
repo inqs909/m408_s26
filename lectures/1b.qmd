@@ -109,15 +109,48 @@ cmdstanr::install_cmdstan(cores = 2)
 
 ### Core Packages
 
--   tidyverse
--   torch
--   cmdstanr
+-   Tidyverse
 
 
+### Course Packages
+
+
+:::: columns
+
+::: column
+
+- ISLR2
+
+- leaps
+
+- gam
+
+- tree
+
+
+:::
+
+::: column
+
+- gbm
+
+- e1071
+
+- glmnet
+
+- torch
+
+:::
+
+::::
 
 ### Misc Packages
 
+- RMarkdown
+
 - Quarto
+
+- extraInserts (GitHub Package)
 
 ::::
 
@@ -218,6 +251,23 @@ list_one <- list(mtcars, rep(0, 4),
                  diag(rep(1, 3)))
 list_one
 ```
+
+# Comparing Numbers
+
+## Comparing Numbers
+
+You can compare two numbers, or objects, that will result in a logical output.
+
+## Comparing Numbers Operators
+
+| Operator | Description           |
+|----------|-----------------------|
+| `>`      | Greater Than          |
+| `<`      | Less Than             |
+| `>=`     | Greater than or equal |
+| `<=`     | Less than or equal    |
+| `==`     | Equals                |
+| `!=`     | Not Equals            |
 
 ## Labeled Lists (Key-Value)
 

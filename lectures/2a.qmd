@@ -1,0 +1,264 @@
+---
+title: "R Basics"
+subtitle: "Functions"
+format:
+  revealjs:
+    width: 1200
+    scrollable: false
+    include-in-header: "math.html"
+    footer: m408.inqs.info/lectures/1a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: true
+    message: false
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## R Packages
+
+```{r}
+library(tidyverse)
+```
+
+# Indexing
+
+## Indexing
+
+Within an R object, you can access an element by indexing it.
+
+Indexing tells R which values to output.
+
+## Vectors
+
+A vector can be indexed by adding `[]` after the object's name and specifying the number of each element.
+
+```{webr-r}
+letters
+letters[13]
+```
+
+## Matrices
+
+A matrix can be indexed by adding `[]` after the object's name and specifying the number of each element. Separate the values by commas for specific indexes.
+
+```{webr-r}
+x <- matrix(1:40, nrow = 4)
+```
+
+## Data Frames
+
+Data frames can be indexed using the `$` operator and `[]`.
+
+```{webr-r}
+mtcars[,"mpg"]
+```
+
+## Lists
+
+Lists can be indexed using the `[[]]` for a specific element of a list.
+
+```{webr-r}
+toy_list <- list(x = letters,
+                 y = mtcars,
+                 z = list(x = diag(rep(1, 5),
+                          y = matrix(1:40, nrow = 5),
+                          z = band_members)))
+```
+
+# `if`/`else` Statements
+
+## if/else Statements
+
+if/else statements are used to conduct specific tasks depending on the conditions
+
+## `if` Statement
+
+An `if` statement is used to if you want R to perform a specific function if a certain condition is met. An `if` statement will only run a task if a logical is returned. You will need type `if`, followed by the condition (as a logical) in parentheses, then the task.
+
+## Example
+
+```{webr-r}
+x <- sample(-10:10,1)
+if (x > 0){
+  print("Positive")
+}
+print(x)
+
+```
+
+## else statement
+
+An `else` statement will conduct a different task if the `if` statement does not conduct the tasks.
+
+## Example
+
+```{webr-r}
+x <- sample(-10:10,1)
+if (x > 0 ){
+  print("Positive")
+} else {
+  print("Non-positive")
+} 
+print(x)
+
+```
+
+## Chain if/else statement
+
+If you have more than two options, you can chain `if/else` statements by adding an `if` statement immediately after the word `else`.
+
+## Example
+
+```{webr-r}
+x <- sample(-10:10,1)
+if (x > 0 ){
+  print("Positive")
+} else if (x == 0) {
+  print("Zero")
+} else {
+  print("Negative")
+}
+print(x)
+
+```
+
+# Built-in Functions
+
+## Built-in Functions
+
+There are several available functions in R to conduct specific statistical methods or tasks
+
+## Help Documentation
+
+| Section     | Description                                                 |
+|:-------------------|:---------------------------------------------------|
+| Description | Provides a brief introduction of the function               |
+| Usage       | Provides potential usage of the function                    |
+| Arguments   | Arguments that the function can take                        |
+| Details     | An in depth description of the function                     |
+| Value       | Provides information of the output produced by the function |
+| Notes       | Any need to know information about the function             |
+| Authors     | Developers of the function                                  |
+| References  | References to the model and function                        |
+| See Also    | Provide information of supporting functions                 |
+| Examples    | Examples of the function                                    |
+
+## Generic Functions
+
+Several R objects have a known class attached to it. A specialized object designed to be read by generic functions, such as `summary()` and `plot()`.
+
+For example, the `summary()` is a generic for several types of functions: `summary.aov()`, `summary.lm()`, `summary.glm()`, and many more.
+
+## Commonly-used Function
+
+| Functions  | Description                 |
+|:-----------|:----------------------------|
+| `aov()`    | Fits an ANOVA Model         |
+| `lm()`     | Fits a linear model         |
+| `glm()`    | Fits a general linear model |
+| `t.test()` | Conducts a t-test           |
+
+# User-built functions
+
+## User-built functions
+
+-   Functions created by the user for analysis
+
+-   Needs to be ran once to the R environment
+
+-   Will be lost when R session is closed
+
+## Anatomy
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|1-3|4-5|6|7"
+
+name_of_function <- function(data_1, data_2 = NULL, 
+                             argument_1, argument_2 = TRUE, argument_3 = NULL,
+                             ...){
+  # Conduct Task
+  # Conduct Task
+  output_object <- Tasks
+  return(output_object)
+}
+
+```
+
+::: fragment
+-   `function`: used to construct the function
+
+-   `data1`: first data argument that needs to supplied
+
+-   `data2`: second data argument that does not need to be supplied
+
+-   `argument1`: first argument must be supplied to alter function
+
+-   `argument2`: second argument to alter function, set to `TRUE`
+
+-   `argument3`: third argument that does not need to be supplied
+
+-   `…`: additional arguments supplied to other functions
+:::
+
+## Example
+
+Create a function for
+
+$$
+y = \ln(x^2)
+$$
+
+## Example
+
+Create a function for
+
+$$
+f(x) = \left\{\begin{array}{cc}
+x^3 & x<0\\
+x^2 + 5 & \mathrm{otherwise}
+\end{array} \right.
+$$
+
+## Example
+
+Create a function for
+
+$$
+f(x,y) = \left\{\begin{array}{cc}
+x^3 e^y &  x<0\ \\
+x^2 + 5 + \ln(y) & \mathrm{otherwise}
+\end{array} \right.
+$$
+
+## Example
+
+Create the function that allows your to compute the z-score of a specific value `x` using the sampling distribution from a set of data (`y` vector):
+
+$$
+z =  \frac{x-\bar y}{\sqrt{s^2_{y}/n_y}}
+$$

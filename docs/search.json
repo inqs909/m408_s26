@@ -21,6 +21,237 @@
     "text": "University Policies\n\nSyllabus Policies and Assistance\nCSUCI’s Syllabus Policies and Assistance Website provides important details about academic policies, campus expectations, and student support services that are all highly applicable to your success as a student both in and outside of the classroom. Ensure that you review this site on a regular basis to stay informed about the policies and resources that support your success, as campus resources or policies may change semester to semester.\n\n\nAcademic Honesty\nConduct yourself with honesty and integrity. Do not submit others’ work as your own. Foassignments and quizzes that allow you to work with a group, only put your name on what the group submits if you genuinely contributed to the work. Work completely independently on exams, using only the materials that are indicated as allowed. Failure to observe academic honesty results in substantial penalties that can include failing the course.\n\n\nCSUCI Basic Need\nPlease use the link to the Basic Needs Program on the Syllabus Policies and Assistance website (&lt;go.csuci.edu/syllabuspolicies&gt;) for information on emergency food, housing accommodations, toiletries, and connections to critical resources.\n\n\nCSUCI Disability Statement\nIf you are a student with a disability requesting reasonable accommodations in this course, you need to contact Disability Accommodations and Support Services (DASS) located on the second floor of Arroyo Hall, via email accommodations@csuci.edu or call 805-437-3331. All requests for reasonable accommodations require registration with DASS in advance of need: https://www.csuci.edu/dass/students/apply-for-services.htm. Faculty, students and DASS will work together regarding classroom accommodations. You are encouraged to discuss approved.\n\n\nDisruption\n\nIf I Am Out: I will communicate via email and will hold classes asynchronously.\nIf You Are Out: Contact me as soon as possible to talk about your options. Reasonable accommodations will be provided for a brief absence. With proper documentation, extended accommodations will be provided."
   },
   {
+    "objectID": "posts/week_1.html",
+    "href": "posts/week_1.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
+  },
+  {
+    "objectID": "posts/week_1.html#learning-outcomes",
+    "href": "posts/week_1.html#learning-outcomes",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
+  },
+  {
+    "objectID": "posts/week_1.html#resources",
+    "href": "posts/week_1.html#resources",
+    "title": "Week 1",
+    "section": "Resources",
+    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
+  },
+  {
+    "objectID": "lectures/2b.html#r-packages",
+    "href": "lectures/2b.html#r-packages",
+    "title": "Torch Basics",
+    "section": "R Packages",
+    "text": "R Packages\n\nlibrary(tidyverse)\nlibrary(torch)\nlibrary(mvtnorm)"
+  },
+  {
+    "objectID": "lectures/2b.html#what-are-tensors",
+    "href": "lectures/2b.html#what-are-tensors",
+    "title": "Torch Basics",
+    "section": "What are Tensors?",
+    "text": "What are Tensors?\n\n\n\n\n\nMathematics\n\n\nA tensor describes a relationship between algebraic objects.\n\n\n\n\n\n\n\nTorch\n\n\nAn n-dimensional array with optimized operations."
+  },
+  {
+    "objectID": "lectures/2b.html#creating-tensors",
+    "href": "lectures/2b.html#creating-tensors",
+    "title": "Torch Basics",
+    "section": "Creating Tensors",
+    "text": "Creating Tensors\n\nt1 &lt;- torch_tensor(matrix(1:9, ncol = 3))\nt2 &lt;- torch_tensor(1:3)\nt3 &lt;- torch_tensor(array(1:24, dim = c(4, 3, 2)))"
+  },
+  {
+    "objectID": "lectures/2b.html#tensor-operations",
+    "href": "lectures/2b.html#tensor-operations",
+    "title": "Torch Basics",
+    "section": "Tensor Operations",
+    "text": "Tensor Operations"
+  },
+  {
+    "objectID": "lectures/2b.html#dimensions",
+    "href": "lectures/2b.html#dimensions",
+    "title": "Torch Basics",
+    "section": "Dimensions",
+    "text": "Dimensions\n\nt1$shape\n\n#&gt; [1] 3 3\n\nt2$shape\n\n#&gt; [1] 3\n\nt3$shape\n\n#&gt; [1] 4 3 2"
+  },
+  {
+    "objectID": "lectures/2b.html#type",
+    "href": "lectures/2b.html#type",
+    "title": "Torch Basics",
+    "section": "Type",
+    "text": "Type\n\nt1$dtype\n\n#&gt; torch_Long\n\nt2$dtype\n\n#&gt; torch_Long\n\nt3$dtype\n\n#&gt; torch_Long"
+  },
+  {
+    "objectID": "lectures/2b.html#changing-type",
+    "href": "lectures/2b.html#changing-type",
+    "title": "Torch Basics",
+    "section": "Changing Type",
+    "text": "Changing Type\n\nt1$to(dtype = torch_float())\n\n#&gt; torch_tensor\n#&gt;  1  4  7\n#&gt;  2  5  8\n#&gt;  3  6  9\n#&gt; [ CPUFloatType{3,3} ]\n\nt2$to(dtype = torch_float())\n\n#&gt; torch_tensor\n#&gt;  1\n#&gt;  2\n#&gt;  3\n#&gt; [ CPUFloatType{3} ]\n\nt3$to(dtype = torch_float())\n\n#&gt; torch_tensor\n#&gt; (1,.,.) = \n#&gt;    1  13\n#&gt;    5  17\n#&gt;    9  21\n#&gt; \n#&gt; (2,.,.) = \n#&gt;    2  14\n#&gt;    6  18\n#&gt;   10  22\n#&gt; \n#&gt; (3,.,.) = \n#&gt;    3  15\n#&gt;    7  19\n#&gt;   11  23\n#&gt; \n#&gt; (4,.,.) = \n#&gt;    4  16\n#&gt;    8  20\n#&gt;   12  24\n#&gt; [ CPUFloatType{4,3,2} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#set-type",
+    "href": "lectures/2b.html#set-type",
+    "title": "Torch Basics",
+    "section": "Set Type",
+    "text": "Set Type\n\nt1 &lt;- torch_tensor(matrix(1:9, ncol = 3), dtype = torch_float())\nt2 &lt;- torch_tensor(1:3, dtype = torch_float())\nt3 &lt;- torch_tensor(array(1:24, dim = c(4, 3, 2)), dtype = torch_float())"
+  },
+  {
+    "objectID": "lectures/2b.html#device",
+    "href": "lectures/2b.html#device",
+    "title": "Torch Basics",
+    "section": "Device",
+    "text": "Device\n\nt1$device\n\n#&gt; torch_device(type='cpu')\n\nt2$device\n\n#&gt; torch_device(type='cpu')\n\nt3$device\n\n#&gt; torch_device(type='cpu')"
+  },
+  {
+    "objectID": "lectures/2b.html#set-device",
+    "href": "lectures/2b.html#set-device",
+    "title": "Torch Basics",
+    "section": "Set Device",
+    "text": "Set Device\nt1 &lt;- torch_tensor(matrix(1:9, ncol = 3), device = \"cuda\")\nt2 &lt;- torch_tensor(1:3, device = \"cuda\")\nt3 &lt;- torch_tensor(array(1:24, dim = c(4, 3, 2)), device = \"cuda\")\n\n\n\n\n\n\nNote\n\n\nUse if cuda is installed (Nvidia users)"
+  },
+  {
+    "objectID": "lectures/2b.html#vectors",
+    "href": "lectures/2b.html#vectors",
+    "title": "Torch Basics",
+    "section": "Vectors",
+    "text": "Vectors\n\nt1 &lt;- torch_tensor(1:6)\nt2 &lt;- torch_tensor(7:12)\nt3 &lt;- torch_tensor(1:3)\nt1; t2; t3\n\n#&gt; torch_tensor\n#&gt;  1\n#&gt;  2\n#&gt;  3\n#&gt;  4\n#&gt;  5\n#&gt;  6\n#&gt; [ CPULongType{6} ]\n\n\n#&gt; torch_tensor\n#&gt;   7\n#&gt;   8\n#&gt;   9\n#&gt;  10\n#&gt;  11\n#&gt;  12\n#&gt; [ CPULongType{6} ]\n\n\n#&gt; torch_tensor\n#&gt;  1\n#&gt;  2\n#&gt;  3\n#&gt; [ CPULongType{3} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#additionsubtraction",
+    "href": "lectures/2b.html#additionsubtraction",
+    "title": "Torch Basics",
+    "section": "Addition/Subtraction",
+    "text": "Addition/Subtraction\n\nt1$add(t2)\n\n#&gt; torch_tensor\n#&gt;   8\n#&gt;  10\n#&gt;  12\n#&gt;  14\n#&gt;  16\n#&gt;  18\n#&gt; [ CPULongType{6} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#scalar-multiplication",
+    "href": "lectures/2b.html#scalar-multiplication",
+    "title": "Torch Basics",
+    "section": "Scalar Multiplication",
+    "text": "Scalar Multiplication\n\n10*t1\n\n#&gt; torch_tensor\n#&gt;  10\n#&gt;  20\n#&gt;  30\n#&gt;  40\n#&gt;  50\n#&gt;  60\n#&gt; [ CPUFloatType{6} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#elementwise-multiplication",
+    "href": "lectures/2b.html#elementwise-multiplication",
+    "title": "Torch Basics",
+    "section": "Elementwise Multiplication",
+    "text": "Elementwise Multiplication\n\nt1$multiply(t2)\n\n#&gt; torch_tensor\n#&gt;   7\n#&gt;  16\n#&gt;  27\n#&gt;  40\n#&gt;  55\n#&gt;  72\n#&gt; [ CPULongType{6} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#dot-product",
+    "href": "lectures/2b.html#dot-product",
+    "title": "Torch Basics",
+    "section": "Dot Product",
+    "text": "Dot Product\n\nt1$dot(t2)\n\n#&gt; torch_tensor\n#&gt; 217\n#&gt; [ CPULongType{} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#matrix",
+    "href": "lectures/2b.html#matrix",
+    "title": "Torch Basics",
+    "section": "Matrix",
+    "text": "Matrix\n\nt1 &lt;- torch_tensor(matrix(1:9, ncol = 3), dtype = torch_float())\nt2 &lt;- torch_tensor(matrix(rpois(9, 3), ncol = 3), dtype = torch_float())\nt3 &lt;- torch_tensor(matrix(1:3, nrow = 3), dtype = torch_float())\n\nt1; t2; t3\n\n#&gt; torch_tensor\n#&gt;  1  4  7\n#&gt;  2  5  8\n#&gt;  3  6  9\n#&gt; [ CPUFloatType{3,3} ]\n\n\n#&gt; torch_tensor\n#&gt;  0  2  4\n#&gt;  2  5  0\n#&gt;  2  4  5\n#&gt; [ CPUFloatType{3,3} ]\n\n\n#&gt; torch_tensor\n#&gt;  1\n#&gt;  2\n#&gt;  3\n#&gt; [ CPUFloatType{3,1} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#transpose",
+    "href": "lectures/2b.html#transpose",
+    "title": "Torch Basics",
+    "section": "Transpose",
+    "text": "Transpose\n\nt1$t()\n\n#&gt; torch_tensor\n#&gt;  1  2  3\n#&gt;  4  5  6\n#&gt;  7  8  9\n#&gt; [ CPUFloatType{3,3} ]\n\nt2$t()\n\n#&gt; torch_tensor\n#&gt;  0  2  2\n#&gt;  2  5  4\n#&gt;  4  0  5\n#&gt; [ CPUFloatType{3,3} ]\n\nt3$t()\n\n#&gt; torch_tensor\n#&gt;  1  2  3\n#&gt; [ CPUFloatType{1,3} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#additionsubtraction-1",
+    "href": "lectures/2b.html#additionsubtraction-1",
+    "title": "Torch Basics",
+    "section": "Addition/Subtraction",
+    "text": "Addition/Subtraction\n\nt1$add(t2)\n\n#&gt; torch_tensor\n#&gt;   1   6  11\n#&gt;   4  10   8\n#&gt;   5  10  14\n#&gt; [ CPUFloatType{3,3} ]\n\nt1$subtract(t2)\n\n#&gt; torch_tensor\n#&gt;  1  2  3\n#&gt;  0  0  8\n#&gt;  1  2  4\n#&gt; [ CPUFloatType{3,3} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#scalar-multiplication-1",
+    "href": "lectures/2b.html#scalar-multiplication-1",
+    "title": "Torch Basics",
+    "section": "Scalar Multiplication",
+    "text": "Scalar Multiplication\n\n10*t1\n\n#&gt; torch_tensor\n#&gt;  10  40  70\n#&gt;  20  50  80\n#&gt;  30  60  90\n#&gt; [ CPUFloatType{3,3} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#element-wise-multiplications",
+    "href": "lectures/2b.html#element-wise-multiplications",
+    "title": "Torch Basics",
+    "section": "Element-wise Multiplications",
+    "text": "Element-wise Multiplications\n\nt1; t2\n\n#&gt; torch_tensor\n#&gt;  1  4  7\n#&gt;  2  5  8\n#&gt;  3  6  9\n#&gt; [ CPUFloatType{3,3} ]\n\n\n#&gt; torch_tensor\n#&gt;  0  2  4\n#&gt;  2  5  0\n#&gt;  2  4  5\n#&gt; [ CPUFloatType{3,3} ]\n\nt1$multiply(t2)\n\n#&gt; torch_tensor\n#&gt;   0   8  28\n#&gt;   4  25   0\n#&gt;   6  24  45\n#&gt; [ CPUFloatType{3,3} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#matrix-multiplication",
+    "href": "lectures/2b.html#matrix-multiplication",
+    "title": "Torch Basics",
+    "section": "Matrix Multiplication",
+    "text": "Matrix Multiplication\n\nt1$matmul(t2)\n\n#&gt; torch_tensor\n#&gt;  22  50  39\n#&gt;  26  61  48\n#&gt;  30  72  57\n#&gt; [ CPUFloatType{3,3} ]\n\nt2$matmul(t1)\n\n#&gt; torch_tensor\n#&gt;  16  34  52\n#&gt;  12  33  54\n#&gt;  25  58  91\n#&gt; [ CPUFloatType{3,3} ]\n\nt3$t()$matmul(t1)\n\n#&gt; torch_tensor\n#&gt;  14  32  50\n#&gt; [ CPUFloatType{1,3} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#determinant",
+    "href": "lectures/2b.html#determinant",
+    "title": "Torch Basics",
+    "section": "Determinant",
+    "text": "Determinant\n\nt1$det()\n\n#&gt; torch_tensor\n#&gt; 0\n#&gt; [ CPUFloatType{} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#inverse",
+    "href": "lectures/2b.html#inverse",
+    "title": "Torch Basics",
+    "section": "Inverse",
+    "text": "Inverse\n\nt2$inverse()\n\n#&gt; torch_tensor\n#&gt; -0.8929 -0.2143  0.7143\n#&gt;  0.3571  0.2857 -0.2857\n#&gt;  0.0714 -0.1429  0.1429\n#&gt; [ CPUFloatType{3,3} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#diagonal-elements",
+    "href": "lectures/2b.html#diagonal-elements",
+    "title": "Torch Basics",
+    "section": "Diagonal Elements",
+    "text": "Diagonal Elements\n\nt1$diag()\n\n#&gt; torch_tensor\n#&gt;  1\n#&gt;  5\n#&gt;  9\n#&gt; [ CPUFloatType{3} ]\n\ntorch_diag(1:3)\n\n#&gt; torch_tensor\n#&gt;  1  0  0\n#&gt;  0  2  0\n#&gt;  0  0  3\n#&gt; [ CPULongType{3,3} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#matrix-of-01",
+    "href": "lectures/2b.html#matrix-of-01",
+    "title": "Torch Basics",
+    "section": "Matrix of 0/1",
+    "text": "Matrix of 0/1\n\ntorch_zeros(3,3)\n\n#&gt; torch_tensor\n#&gt;  0  0  0\n#&gt;  0  0  0\n#&gt;  0  0  0\n#&gt; [ CPUFloatType{3,3} ]\n\ntorch_ones(2,3)\n\n#&gt; torch_tensor\n#&gt;  1  1  1\n#&gt;  1  1  1\n#&gt; [ CPUFloatType{2,3} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#identity-matrix",
+    "href": "lectures/2b.html#identity-matrix",
+    "title": "Torch Basics",
+    "section": "Identity Matrix",
+    "text": "Identity Matrix\n\ntorch_eye(n = 4)\n\n#&gt; torch_tensor\n#&gt;  1  0  0  0\n#&gt;  0  1  0  0\n#&gt;  0  0  1  0\n#&gt;  0  0  0  1\n#&gt; [ CPUFloatType{4,4} ]"
+  },
+  {
+    "objectID": "lectures/2b.html#linear-regression-1",
+    "href": "lectures/2b.html#linear-regression-1",
+    "title": "Torch Basics",
+    "section": "Linear Regression",
+    "text": "Linear Regression\n\\[\nY_i = 3.85 + 12.3 X_1 - 9.7 X_2 + \\varepsilon_i\n\\]\n\\[\n\\varepsilon \\sim N(0, 2.4)\n\\]\n\nbeta &lt;- c(3.85, 12.3, -9.7)\nx &lt;- rmvnorm(500, c(3, 8))\nxx &lt;- cbind(1, x)\ny &lt;- xx%*%beta + rnorm(500, sd = sqrt(2.4))"
+  },
+  {
+    "objectID": "lectures/2b.html#ols-estimator",
+    "href": "lectures/2b.html#ols-estimator",
+    "title": "Torch Basics",
+    "section": "OLS Estimator",
+    "text": "OLS Estimator\n\\[\n\\hat\\bbeta = (\\bX^\\mrT\\bX)\\inv\\bX^\\mrT\\bY\n\\]\n\n\n\\[\n\\bX =\\left(\n\\begin{array}{ccc}\n1 & X_{1,1} & X_{2,1} \\\\\n1 & X_{1,2} & X_{2,2} \\\\\n\\vdots & \\vdots & \\vdots \\\\\n1 & X_{1,500} & X_{2,500} \\\\\n\\end{array}\n\\right)\n\\]\n\n\\[\n\\bY =\\left(\n\\begin{array}{ccc}\nY_1 \\\\\nY_2 \\\\\n\\vdots \\\\\nY_{500}\n\\end{array}\n\\right)\n\\]"
+  },
+  {
+    "objectID": "lectures/2b.html#using-r",
+    "href": "lectures/2b.html#using-r",
+    "title": "Torch Basics",
+    "section": "Using R",
+    "text": "Using R\n\\[\n\\hat\\bbeta = (\\bX^\\mrT\\bX)\\inv\\bX^\\mrT\\bY\n\\]\n\nlm(y ~ x)\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = y ~ x)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)           x1           x2  \n#&gt;       3.272       12.207       -9.594\n\nsolve(t(xx)%*%xx)%*%t(xx)%*%y\n\n#&gt;           [,1]\n#&gt; [1,]  3.271945\n#&gt; [2,] 12.206737\n#&gt; [3,] -9.594003"
+  },
+  {
+    "objectID": "lectures/2b.html#using-torch",
+    "href": "lectures/2b.html#using-torch",
+    "title": "Torch Basics",
+    "section": "Using torch",
+    "text": "Using torch\n\\[\n\\hat\\bbeta = (\\bX^\\mrT\\bX)\\inv\\bX^\\mrT\\bY\n\\]\n\nxxt &lt;- torch_tensor(xx)\nyt &lt;- torch_tensor(y)\n\nxxt$t()$matmul(xxt)$inverse()$matmul(xxt$t())$matmul(yt)\n\n#&gt; torch_tensor\n#&gt;   3.2734\n#&gt;  12.2067\n#&gt;  -9.5942\n#&gt; [ CPUFloatType{3,1} ]"
+  },
+  {
     "objectID": "lectures/1b.html#r-programming",
     "href": "lectures/1b.html#r-programming",
     "title": "Computational Setup",
@@ -60,7 +291,7 @@
     "href": "lectures/1b.html#other-r-packages",
     "title": "Computational Setup",
     "section": "Other R Packages",
-    "text": "Other R Packages\n\nCore PackagesMisc Packages\n\n\n\ntidyverse\ntorch\ncmdstanr\n\n\n\n\nQuarto"
+    "text": "Other R Packages\n\nCore PackagesCourse PackagesMisc Packages\n\n\n\nTidyverse\n\n\n\n\n\n\nISLR2\nleaps\ngam\ntree\n\n\n\ngbm\ne1071\nglmnet\ntorch\n\n\n\n\n\nRMarkdown\nQuarto\nextraInserts (GitHub Package)"
   },
   {
     "objectID": "lectures/1b.html#load-r-package",
@@ -112,11 +343,25 @@
     "text": "Lists\nList can be thought as an extended vector, but each element is a different R object.\nTry playing with this R object:\n\n\nCode\nlist_one &lt;- list(mtcars, rep(0, 4),\n                 diag(rep(1, 3)))\nlist_one\n\n\n#&gt; [[1]]\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n#&gt; \n#&gt; [[2]]\n#&gt; [1] 0 0 0 0\n#&gt; \n#&gt; [[3]]\n#&gt;      [,1] [,2] [,3]\n#&gt; [1,]    1    0    0\n#&gt; [2,]    0    1    0\n#&gt; [3,]    0    0    1"
   },
   {
+    "objectID": "lectures/1b.html#comparing-numbers-1",
+    "href": "lectures/1b.html#comparing-numbers-1",
+    "title": "Math 408",
+    "section": "Comparing Numbers",
+    "text": "Comparing Numbers\nYou can compare two numbers, or objects, that will result in a logical output."
+  },
+  {
+    "objectID": "lectures/1b.html#comparing-numbers-operators",
+    "href": "lectures/1b.html#comparing-numbers-operators",
+    "title": "Math 408",
+    "section": "Comparing Numbers Operators",
+    "text": "Comparing Numbers Operators\n\n\n\nOperator\nDescription\n\n\n\n\n&gt;\nGreater Than\n\n\n&lt;\nLess Than\n\n\n&gt;=\nGreater than or equal\n\n\n&lt;=\nLess than or equal\n\n\n==\nEquals\n\n\n!=\nNot Equals"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 23, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Brief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 23, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "exc/exc_2.html",
@@ -336,25 +581,39 @@
     "text": "Is Using AI Bad?\n\nYes/No/I don’t know\n\n\nBut, we need to acknowledge the consequences of using AI!\n\n\nAnd, we need to demand companies to create and implement AI in an ethical manner!"
   },
   {
-    "objectID": "lectures/1a.html#resources-on-labor-violations",
-    "href": "lectures/1a.html#resources-on-labor-violations",
+    "objectID": "lectures/1a.html#privacy-concerns-links",
+    "href": "lectures/1a.html#privacy-concerns-links",
     "title": "Math 408",
-    "section": "Resources on Labor Violations",
-    "text": "Resources on Labor Violations\n\nThe Emotional Labor Behind AI Intimacy\nHow thousands of ‘overworked, underpaid’ humans train Google’s AI to seem smart"
+    "section": "Privacy Concerns Links",
+    "text": "Privacy Concerns Links\n\nOpenAI Says It’s Scanning Users’ ChatGPT Conversations and Reporting Content to the Police\nPrivacy in an AI Era: How Do We Protect Our Personal Information?"
   },
   {
-    "objectID": "lectures/1a.html#affecting-communities",
-    "href": "lectures/1a.html#affecting-communities",
+    "objectID": "lectures/1a.html#labor-violations-links",
+    "href": "lectures/1a.html#labor-violations-links",
     "title": "Math 408",
-    "section": "Affecting Communities",
-    "text": "Affecting Communities\n\nAI surveillance and data colonialism shape African conflicts\nAfrican workers are taking on Meta and the world should pay attention\n‘It’s destroyed me completely’: Kenyan moderators decry toll of training of AI models\nThe AI Industry Is Traumatizing Desperate Contractors in the Developing World for Pennies"
+    "section": "Labor Violations Links",
+    "text": "Labor Violations Links\n\nThe Emotional Labor Behind AI Intimacy\nHow thousands of ‘overworked, underpaid’ humans train Google’s AI to seem smart"
   },
   {
-    "objectID": "lectures/1a.html#resources-on-ideas-and-learning",
-    "href": "lectures/1a.html#resources-on-ideas-and-learning",
+    "objectID": "lectures/1a.html#affecting-communities-links",
+    "href": "lectures/1a.html#affecting-communities-links",
     "title": "Math 408",
-    "section": "Resources on Ideas and Learning",
-    "text": "Resources on Ideas and Learning\n\nStudent’s Right to Refuse AI\nAI is homogenizing your thoughts\nThe Incuriosity Engine\nNew Junior Developers Can’t Actually Code"
+    "section": "Affecting Communities Links",
+    "text": "Affecting Communities Links\n\nAI surveillance and data colonialism shape African conflicts\nAfrican workers are taking on Meta and the world should pay attention\n‘It’s destroyed me completely’: Kenyan moderators decry toll of training of AI models\nThe AI Industry Is Traumatizing Desperate Contractors in the Developing World for Pennies\nChatGPT advises women to ask for lower salaries, study finds\nThe Impact of the Use of AI on People with Disabilities"
+  },
+  {
+    "objectID": "lectures/1a.html#ideas-and-learning-links",
+    "href": "lectures/1a.html#ideas-and-learning-links",
+    "title": "Math 408",
+    "section": "Ideas and Learning Links",
+    "text": "Ideas and Learning Links\n\nStudent’s Right to Refuse AI\nAI is homogenizing your thoughts\nThe Incuriosity Engine\nNew Junior Developers Can’t Actually Code"
+  },
+  {
+    "objectID": "lectures/1a.html#environmental-costs",
+    "href": "lectures/1a.html#environmental-costs",
+    "title": "Math 408",
+    "section": "Environmental Costs",
+    "text": "Environmental Costs\n\n‘I can’t drink the water’ - life next to a US data centre"
   },
   {
     "objectID": "lectures/1a.html#extra-credits-1",
@@ -364,23 +623,198 @@
     "text": "Extra Credits\n\nExtra Credit 1\nExtra Credit 2\nExtra Credit 3"
   },
   {
-    "objectID": "posts/week_1.html",
-    "href": "posts/week_1.html",
-    "title": "Week 1",
+    "objectID": "lectures/2a.html#r-packages",
+    "href": "lectures/2a.html#r-packages",
+    "title": "R Basics",
+    "section": "R Packages",
+    "text": "R Packages\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "lectures/2a.html#indexing-1",
+    "href": "lectures/2a.html#indexing-1",
+    "title": "R Basics",
+    "section": "Indexing",
+    "text": "Indexing\nWithin an R object, you can access an element by indexing it.\nIndexing tells R which values to output."
+  },
+  {
+    "objectID": "lectures/2a.html#vectors",
+    "href": "lectures/2a.html#vectors",
+    "title": "R Basics",
+    "section": "Vectors",
+    "text": "Vectors\nA vector can be indexed by adding [] after the object’s name and specifying the number of each element.\nletters\nletters[13]"
+  },
+  {
+    "objectID": "lectures/2a.html#matrices",
+    "href": "lectures/2a.html#matrices",
+    "title": "R Basics",
+    "section": "Matrices",
+    "text": "Matrices\nA matrix can be indexed by adding [] after the object’s name and specifying the number of each element. Separate the values by commas for specific indexes.\nx &lt;- matrix(1:40, nrow = 4)"
+  },
+  {
+    "objectID": "lectures/2a.html#data-frames",
+    "href": "lectures/2a.html#data-frames",
+    "title": "R Basics",
+    "section": "Data Frames",
+    "text": "Data Frames\nData frames can be indexed using the $ operator and [].\nmtcars[,\"mpg\"]"
+  },
+  {
+    "objectID": "lectures/2a.html#lists",
+    "href": "lectures/2a.html#lists",
+    "title": "R Basics",
+    "section": "Lists",
+    "text": "Lists\nLists can be indexed using the [[]] for a specific element of a list.\ntoy_list &lt;- list(x = letters,\n                 y = mtcars,\n                 z = list(x = diag(rep(1, 5),\n                          y = matrix(1:40, nrow = 5),\n                          z = band_members)))"
+  },
+  {
+    "objectID": "lectures/2a.html#ifelse-statements-1",
+    "href": "lectures/2a.html#ifelse-statements-1",
+    "title": "R Basics",
+    "section": "if/else Statements",
+    "text": "if/else Statements\nif/else statements are used to conduct specific tasks depending on the conditions"
+  },
+  {
+    "objectID": "lectures/2a.html#if-statement",
+    "href": "lectures/2a.html#if-statement",
+    "title": "R Basics",
+    "section": "if Statement",
+    "text": "if Statement\nAn if statement is used to if you want R to perform a specific function if a certain condition is met. An if statement will only run a task if a logical is returned. You will need type if, followed by the condition (as a logical) in parentheses, then the task."
+  },
+  {
+    "objectID": "lectures/2a.html#example",
+    "href": "lectures/2a.html#example",
+    "title": "R Basics",
+    "section": "Example",
+    "text": "Example\nx &lt;- sample(-10:10,1)\nif (x &gt; 0){\n  print(\"Positive\")\n}\nprint(x)"
+  },
+  {
+    "objectID": "lectures/2a.html#else-statement",
+    "href": "lectures/2a.html#else-statement",
+    "title": "R Basics",
+    "section": "else statement",
+    "text": "else statement\nAn else statement will conduct a different task if the if statement does not conduct the tasks."
+  },
+  {
+    "objectID": "lectures/2a.html#example-1",
+    "href": "lectures/2a.html#example-1",
+    "title": "R Basics",
+    "section": "Example",
+    "text": "Example\nx &lt;- sample(-10:10,1)\nif (x &gt; 0 ){\n  print(\"Positive\")\n} else {\n  print(\"Non-positive\")\n} \nprint(x)"
+  },
+  {
+    "objectID": "lectures/2a.html#chain-ifelse-statement",
+    "href": "lectures/2a.html#chain-ifelse-statement",
+    "title": "R Basics",
+    "section": "Chain if/else statement",
+    "text": "Chain if/else statement\nIf you have more than two options, you can chain if/else statements by adding an if statement immediately after the word else."
+  },
+  {
+    "objectID": "lectures/2a.html#example-2",
+    "href": "lectures/2a.html#example-2",
+    "title": "R Basics",
+    "section": "Example",
+    "text": "Example\nx &lt;- sample(-10:10,1)\nif (x &gt; 0 ){\n  print(\"Positive\")\n} else if (x == 0) {\n  print(\"Zero\")\n} else {\n  print(\"Negative\")\n}\nprint(x)"
+  },
+  {
+    "objectID": "lectures/2a.html#built-in-functions-1",
+    "href": "lectures/2a.html#built-in-functions-1",
+    "title": "R Basics",
+    "section": "Built-in Functions",
+    "text": "Built-in Functions\nThere are several available functions in R to conduct specific statistical methods or tasks"
+  },
+  {
+    "objectID": "lectures/2a.html#help-documentation",
+    "href": "lectures/2a.html#help-documentation",
+    "title": "R Basics",
+    "section": "Help Documentation",
+    "text": "Help Documentation\n\n\n\n\n\n\n\nSection\nDescription\n\n\n\n\nDescription\nProvides a brief introduction of the function\n\n\nUsage\nProvides potential usage of the function\n\n\nArguments\nArguments that the function can take\n\n\nDetails\nAn in depth description of the function\n\n\nValue\nProvides information of the output produced by the function\n\n\nNotes\nAny need to know information about the function\n\n\nAuthors\nDevelopers of the function\n\n\nReferences\nReferences to the model and function\n\n\nSee Also\nProvide information of supporting functions\n\n\nExamples\nExamples of the function"
+  },
+  {
+    "objectID": "lectures/2a.html#generic-functions",
+    "href": "lectures/2a.html#generic-functions",
+    "title": "R Basics",
+    "section": "Generic Functions",
+    "text": "Generic Functions\nSeveral R objects have a known class attached to it. A specialized object designed to be read by generic functions, such as summary() and plot().\nFor example, the summary() is a generic for several types of functions: summary.aov(), summary.lm(), summary.glm(), and many more."
+  },
+  {
+    "objectID": "lectures/2a.html#commonly-used-function",
+    "href": "lectures/2a.html#commonly-used-function",
+    "title": "R Basics",
+    "section": "Commonly-used Function",
+    "text": "Commonly-used Function\n\n\n\nFunctions\nDescription\n\n\n\n\naov()\nFits an ANOVA Model\n\n\nlm()\nFits a linear model\n\n\nglm()\nFits a general linear model\n\n\nt.test()\nConducts a t-test"
+  },
+  {
+    "objectID": "lectures/2a.html#user-built-functions-1",
+    "href": "lectures/2a.html#user-built-functions-1",
+    "title": "R Basics",
+    "section": "User-built functions",
+    "text": "User-built functions\n\nFunctions created by the user for analysis\nNeeds to be ran once to the R environment\nWill be lost when R session is closed"
+  },
+  {
+    "objectID": "lectures/2a.html#anatomy",
+    "href": "lectures/2a.html#anatomy",
+    "title": "R Basics",
+    "section": "Anatomy",
+    "text": "Anatomy\n\nname_of_function &lt;- function(data_1, data_2 = NULL, \n                             argument_1, argument_2 = TRUE, argument_3 = NULL,\n                             ...){\n  # Conduct Task\n  # Conduct Task\n  output_object &lt;- Tasks\n  return(output_object)\n}\n\n\n\nfunction: used to construct the function\ndata1: first data argument that needs to supplied\ndata2: second data argument that does not need to be supplied\nargument1: first argument must be supplied to alter function\nargument2: second argument to alter function, set to TRUE\nargument3: third argument that does not need to be supplied\n…: additional arguments supplied to other functions"
+  },
+  {
+    "objectID": "lectures/2a.html#example-3",
+    "href": "lectures/2a.html#example-3",
+    "title": "R Basics",
+    "section": "Example",
+    "text": "Example\nCreate a function for\n\\[\ny = \\ln(x^2)\n\\]"
+  },
+  {
+    "objectID": "lectures/2a.html#example-4",
+    "href": "lectures/2a.html#example-4",
+    "title": "R Basics",
+    "section": "Example",
+    "text": "Example\nCreate a function for\n\\[\nf(x) = \\left\\{\\begin{array}{cc}\nx^3 & x&lt;0\\\\\nx^2 + 5 & \\mathrm{otherwise}\n\\end{array} \\right.\n\\]"
+  },
+  {
+    "objectID": "lectures/2a.html#example-5",
+    "href": "lectures/2a.html#example-5",
+    "title": "R Basics",
+    "section": "Example",
+    "text": "Example\nCreate a function for\n\\[\nf(x,y) = \\left\\{\\begin{array}{cc}\nx^3 e^y &  x&lt;0\\ \\\\\nx^2 + 5 + \\ln(y) & \\mathrm{otherwise}\n\\end{array} \\right.\n\\]"
+  },
+  {
+    "objectID": "lectures/2a.html#example-6",
+    "href": "lectures/2a.html#example-6",
+    "title": "R Basics",
+    "section": "Example",
+    "text": "Example\nCreate the function that allows your to compute the z-score of a specific value x using the sampling distribution from a set of data (y vector):\n\\[\nz =  \\frac{x-\\bar y}{\\sqrt{s^2_{y}/n_y}}\n\\]"
+  },
+  {
+    "objectID": "lectures/3a.html#r-packages",
+    "href": "lectures/3a.html#r-packages",
+    "title": "Torch Basics",
+    "section": "R Packages",
+    "text": "R Packages\n\nlibrary(tidyverse)\nlibrary(torch)\nlibrary(mvtnorm)"
+  },
+  {
+    "objectID": "lectures/3a.html#penguins",
+    "href": "lectures/3a.html#penguins",
+    "title": "Torch Basics",
+    "section": "Penguins",
+    "text": "Penguins"
+  },
+  {
+    "objectID": "posts/week_2.html",
+    "href": "posts/week_2.html",
+    "title": "Week 2",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_1.html#learning-outcomes",
-    "href": "posts/week_1.html#learning-outcomes",
-    "title": "Week 1",
+    "objectID": "posts/week_2.html#learning-outcomes",
+    "href": "posts/week_2.html#learning-outcomes",
+    "title": "Week 2",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_1.html#resources",
-    "href": "posts/week_1.html#resources",
-    "title": "Week 1",
+    "objectID": "posts/week_2.html#resources",
+    "href": "posts/week_2.html#resources",
+    "title": "Week 2",
     "section": "Resources",
     "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
   },

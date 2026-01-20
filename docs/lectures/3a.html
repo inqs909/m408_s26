@@ -14,7 +14,7 @@
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>MATH 408 – Computational Setup</title>
+  <title>MATH 408 – Torch Basics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -195,411 +195,213 @@
       margin-right: 0; 
     }
   </style>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        Macros: {
+          //Bold Lowecase Greek Letters
+          'balpha': '\\boldsymbol \\alpha',
+          'bbeta': '\\boldsymbol \\beta',
+          'bgamma': '\\boldsymbol \\gamma', 
+          'bdelta': '\\boldsymbol \\delta',
+          'bepsilon': '\\boldsymbol \\epsilon',
+          'bzeta': '\\boldsymbol \\zeta',
+          'boeta': '\\boldsymbol \\eta',
+          'btheta': '\\boldsymbol \\theta',
+          'biota': '\\boldsymbol \\iota',
+          'bkappa': '\\boldsymbol \\kappa',
+          'blambda': '\\boldsymbol \\lambda',
+          'bmu': '\\boldsymbol \\mu',
+          'bnu': '\\boldsymbol \\nu',
+          'bxi': '\\boldsymbol \\xi',
+          'bomicron': '\\boldsymbol \\omicron',
+          'bpi': '\\boldsymbol \\pi',
+          'brho': '\\boldsymbol \\rho',
+          'bsigma': '\\boldsymbol \\sigma',
+          'btau': '\\boldsymbol \\tau',
+          'bupsilon': '\\boldsymbol \\upsilon',
+          'bphi': '\\boldsymbol \\phi',
+          'bchi': '\\boldsymbol \\chi',
+          'bpsi': '\\boldsymbol \\psi',
+          'bomega': '\\boldsymbol \\omega',
+          //Bold Uppercase Greek Letters
+          'bGamma': '\\boldsymbol \\Gamma', 
+          'bDelta': '\\boldsymbol \\Delta',
+          'bTheta': '\\boldsymbol \\Theta',
+          'bLambda': '\\boldsymbol \\Lambda',
+          'bXi': '\\boldsymbol \\Xi',
+          'bPi': '\\boldsymbol \\Pi',
+          'bSigma': '\\boldsymbol \\Sigma',
+          'bPhi': '\\boldsymbol \\Phi',
+          'bPsi': '\\boldsymbol \\Psi',
+          'bOmega': '\\boldsymbol \\Omega',
+          // Bold Vars
+          'bvarphi': '\\boldsymbol \\varphi',
+          'bvarrho': '\\boldsymbol \\varrho',
+          'bvartheta': '\\boldsymbol \\vartheta',
+          // Math Remove
+          'mrT': '\\mathrm T',
+          'mrth': '\\mathrm{th}',
+          'inv': '\^{-1}',
+          'tr': '\\mathrm{tr}',
+          'Cov': '\\mathrm{Cov}',
+          'Cor': '\\mathrm{Cor}',
+          'Var': '\\mathrm{Var}',
+          'E': '\\mathrm{E}',
+          'mrTr': '\^\\mathrm T',
+          // Bold Letters
+          'bX': '\\boldsymbol X',
+          'bx': '\\boldsymbol x',
+          'bF': '\\boldsymbol F',
+          'bY': '\\boldsymbol Y',
+          'by': '\\boldsymbol y',
+          'bK': '\\boldsymbol K',
+          'bZ': '\\boldsymbol Z',
+          'bT': '\\boldsymbol T',
+          'bz': '\\boldsymbol z',
+          'bB': '\\boldsymbol B',
+          'ba': '\\boldsymbol a',
+          'bb': '\\boldsymbol b',
+          'bI': '\\boldsymbol I',
+          'bR': '\\boldsymbol R',
+          'bc': '\\boldsymbol c',
+          'bW': '\\boldsymbol W',
+          'bt': '\\boldsymbol t',
+          'bd': '\\boldsymbol d',
+          'bD': '\\boldsymbol D',
+          'bG': '\\boldsymbol G',
+          'bJ': '\\boldsymbol J',
+          'bS': '\\boldsymbol S',
+          'bV': '\\boldsymbol V',
+          'bH': '\\boldsymbol H',
+          'bA': '\\boldsymbol A',
+          'bU': '\\boldsymbol U',
+          'bu': '\\boldsymbol u',
+          'bv': '\\boldsymbol v',
+          'bP': '\\boldsymbol P',
+          'bw': '\\boldsymbol w',
+          'br': '\\boldsymbol r',
+          // MathCal
+          // Regular
+          'mcA': '\\mathcal{A}',
+          'mcB': '\\mathcal{B}',
+          'mcC': '\\mathcal{C}',
+          'mcD': '\\mathcal{D}',
+          'mcJ': '\\mathcal{J}',
+          'mcL': '\\mathcal{L}',
+          'mcM': '\\mathcal{M}',
+          'mcR': '\\mathcal{R}',
+          'mcP': '\\mathcal{P}',
+          'mcX': '\\mathcal{X}',
+          'mcZ': '\\mathcal{Z}',
+          'mcb': '\\mathcal{b}',
+          'mcp': '\\mathcal{p}',
+          // bold
+          'bmcH': '\\boldsymbol{\\mathcal{H}}',
+          'bmcS': '\\boldsymbol{\\mathcal{S}}',
+          'bmcV': '\\boldsymbol{\\mathcal{V}}',
+          'bmcX': '\\boldsymbol{\\mathcal{X}}',
+          'bmcD': '\\boldsymbol{\\mathcal{D}}',
+          'bmcU': '\\boldsymbol{\\mathcal{U}}',
+          'bmcG': '\\boldsymbol{\\mathcal{G}}',
+          'bmcI': '\\boldsymbol{\\mathcal{I}}',
+          'bmcZ': '\\boldsymbol{\\mathcal{Z}}',
+          'bmcb': '\\mathbcal{\\boldsymbol{b}}',
+          'bmcp': '\\mathbcal{\\boldsymbol{p}}',
+          
+          // Script Fonts
+          'msL': '\\mathscr{L}',
+          'msF': '\\mathscr{F}',
+          'msG': '\\mathscr{G}',
+          'msP': '\\mathscr{P}',
+          'msV': '\\mathscr{V}',
+          'msX': '\\mathscr{X}',
+          'msY': '\\mathscr{Y}',
+          'msZ': '\\mathscr{Z}',
+          
+          // Fraktur Fonts
+          'mfL': '\\mathfrak{L}',
+          'mfF': '\\mathfrak{F}',
+          'mfG': '\\mathfrak{G}',
+          'mfP': '\\mathfrak{P}',
+          'mfV': '\\mathfrak{V}',
+          'mfX': '\\mathfrak{X}',
+          'mfY': '\\mathfrak{Y}',
+          'mfZ': '\\mathfrak{Z}',
+          
+          //Bold Numbers
+          'bzero': '\\boldsymbol{0}',
+          'bone': '\\boldsymbol{1}',
+
+        }
+      }
+    });
+  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Computational Setup</h1>
-  <p class="subtitle">Installing Software</p>
+  <h1 class="title">Torch Basics</h1>
+  <p class="subtitle">Datasets</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section>
-<section id="installation" class="title-slide slide level1 agenda-slide center">
-<h1>Installation</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-active">
-<p>Installation</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Workspaces</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>R Basics</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Comparing Numbers</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="r-programming" class="slide level2">
-<h2>R Programming</h2>
-<p>R is a statistical programming package that allows you to conduct different types of analysis.</p>
-<p><a href="https://www.r-project.org/">R</a></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Windows Users</strong></p>
-</div>
-<div class="callout-content">
-<p>Install <a href="https://cran.r-project.org/bin/windows/Rtools/">RTools</a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="positron" class="slide level2">
-<h2>Positron</h2>
-<p>A piece of software that organizes how you conduct statistical analysis in R.</p>
-<p><a href="http://positron.posit.co/download.html">Positron</a></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Windows Users</strong></p>
-</div>
-<div class="callout-content">
-<p>Use system-level package If you cannot work with R, install <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version">Visual C++ Redistributable</a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="rstudio" class="slide level2">
-<h2>RStudio</h2>
-<p>If Positron does not work, install <a href="https://posit.co/downloads/">RStudio</a> instead.</p>
-</section>
-<section id="installing-torch" class="slide level2">
-<h2>Installing Torch</h2>
-<p>In R, install torch with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"torch"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Nvidia-Users</strong></p>
-</div>
-<div class="callout-content">
-<p>Nvidia-Users</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">options</span>(<span class="at">timeout =</span> <span class="dv">600</span>) <span class="co"># increasing timeout is recommended since we will be downloading a 2GB file.</span></span>
-<span id="cb2-2"><a></a><span class="co"># For Windows and Linux: "cpu", "cu128" are the only currently supported</span></span>
-<span id="cb2-3"><a></a><span class="co"># For MacOS the supported are: "cpu-intel" or "cpu-m1"</span></span>
-<span id="cb2-4"><a></a>kind <span class="ot">&lt;-</span> <span class="st">"cpu"</span></span>
-<span id="cb2-5"><a></a>version <span class="ot">&lt;-</span> <span class="fu">available.packages</span>()[<span class="st">"torch"</span>,<span class="st">"Version"</span>]</span>
-<span id="cb2-6"><a></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(</span>
-<span id="cb2-7"><a></a>  <span class="at">torch =</span> <span class="fu">sprintf</span>(<span class="st">"https://torch-cdn.mlverse.org/packages/%s/%s/"</span>, kind, version),</span>
-<span id="cb2-8"><a></a>  <span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span> <span class="co"># or any other from which you want to install the other R dependencies.</span></span>
-<span id="cb2-9"><a></a>))</span>
-<span id="cb2-10"><a></a><span class="fu">install.packages</span>(<span class="st">"torch"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="installing-stan" class="slide level2">
-<h2>Installing Stan</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">install.packages</span>(<span class="st">"cmdstanr"</span>, </span>
-<span id="cb3-2"><a></a>    <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">'https://stan-dev.r-universe.dev'</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>)))</span>
-<span id="cb3-3"><a></a>cmdstanr<span class="sc">::</span><span class="fu">check_cmdstan_toolchain</span>()</span>
-<span id="cb3-4"><a></a>cmdstanr<span class="sc">::</span><span class="fu">install_cmdstan</span>(<span class="at">cores =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="other-r-packages" class="slide level2">
-<h2>Other R Packages</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Core Packages</a></li><li><a href="#tabset-1-2">Misc Packages</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<ul>
-<li>Tidyverse</li>
-</ul>
-</div>
-<div id="tabset-1-2">
-<ul>
-<li><p>ISLR2</p></li>
-<li><p>leaps</p></li>
-<li><p>gam</p></li>
-<li><p>tree</p></li>
-</ul>
-</div><div class="column">
-<ul>
-<li><p>gbm</p></li>
-<li><p>e1071</p></li>
-<li><p>glmnet</p></li>
-<li><p>torch</p></li>
-</ul>
-</div></div>
-</div>
-<div id="tabset-1-3">
-<ul>
-<li><p>RMarkdown</p></li>
-<li><p>Quarto</p></li>
-<li><p>extraInserts (GitHub Package)</p></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="load-r-package" class="slide level2">
-<h2>Load R Package</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-2"><a></a><span class="fu">library</span>(torch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>You must load packages every new R Session</li>
-</ul>
-</section></section>
-<section>
-<section id="workspaces" class="title-slide slide level1 agenda-slide center">
-<h1>Workspaces</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Installation</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Workspaces</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>R Basics</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Comparing Numbers</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="workspaces-1" class="slide level2">
-<h2>Workspaces</h2>
-<p>Workspaces allows you to create locations on your computer and set up a computing environment in one location.</p>
-</section></section>
-<section>
-<section id="r-basics" class="title-slide slide level1 agenda-slide center">
-<h1>R Basics</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Installation</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Workspaces</p>
-</div></li>
-<li><div class="agenda-active">
-<p>R Basics</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Comparing Numbers</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="r-as-a-calculator" class="slide level2">
-<h2>R as a calculator</h2>
-<p>R can evaluate different expressions in the console tab.</p>
-<p>Try the following:</p>
-<ol type="1">
-<li><span class="math inline">\(4(4+2)/34\)</span></li>
-<li><span class="math inline">\(6^3\)</span></li>
-<li><span class="math inline">\(3-1\)</span></li>
-<li><span class="math inline">\(4+4/3+45(32*34-54)\)</span></li>
-</ol>
-</section>
-<section id="r-functions" class="slide level2">
-<h2>R Functions</h2>
-<p>R functions performs tasks to specific data values.</p>
-<p>Evaluate the following values in R:</p>
-<ol type="1">
-<li><span class="math inline">\(\sqrt{3}\)</span></li>
-<li><span class="math inline">\(e^3\)</span></li>
-<li><span class="math inline">\(\ln(53)\)</span></li>
-<li><span class="math inline">\(\log(324)\)</span></li>
-<li><span class="math inline">\(\sin(3)\)</span></li>
-<li><span class="math inline">\(\sin(3\pi)\)</span></li>
-</ol>
-</section>
-<section id="types-of-data" class="slide level2">
-<h2>Types of Data</h2>
-<ul>
-<li><p>Numeric</p></li>
-<li><p>Character</p></li>
-<li><p>Logical</p></li>
-<li><p>Missing</p></li>
-</ul>
-<p>Evaluate the following code:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">is.numeric</span>(<span class="dv">1</span>)</span>
-<span id="cb5-2"><a></a><span class="fu">is.numeric</span>(<span class="st">"1"</span>)</span>
-<span id="cb5-3"><a></a><span class="fu">is.numeric</span>(T)</span>
-<span id="cb5-4"><a></a><span class="fu">is.numeric</span>(<span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="types-of-objects" class="slide level2">
-<h2>Types of Objects</h2>
-<p>In R, an object contains a set of data. The most common types are <code>vectors</code> and <code>matrix</code>.</p>
-<p>Run this code and print out the objects in the console:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">34</span></span>
-<span id="cb6-2"><a></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">nrow =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="data-frames" class="slide level2">
-<h2>Data Frames</h2>
-<p>Data frames can be thought of as R’s version of a data set.</p>
-<p>Play around with mtcars:</p>
+<section id="r-packages" class="slide level2">
+<h2>R Packages</h2>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mtcars </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
-#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
-#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
-#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
-#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
-#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
-#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
-#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
-#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
-#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
-#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
-#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
-#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
-#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
-#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
-#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
-#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
-#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
-#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
-#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(torch)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(mvtnorm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="lists" class="slide level2">
-<h2>Lists</h2>
-<p>List can be thought as an extended vector, but each element is a different R object.</p>
-<p>Try playing with this R object:</p>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>list_one <span class="ot">&lt;-</span> <span class="fu">list</span>(mtcars, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>),</span>
-<span id="cb9-2"><a></a>                 <span class="fu">diag</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">3</span>)))</span>
-<span id="cb9-3"><a></a>list_one</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [[1]]
-#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
-#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
-#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
-#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
-#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
-#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
-#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
-#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
-#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
-#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
-#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
-#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
-#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
-#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
-#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
-#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
-#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
-#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
-#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
-#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
-#&gt; 
-#&gt; [[2]]
-#&gt; [1] 0 0 0 0
-#&gt; 
-#&gt; [[3]]
-#&gt;      [,1] [,2] [,3]
-#&gt; [1,]    1    0    0
-#&gt; [2,]    0    1    0
-#&gt; [3,]    0    0    1</code></pre>
-</div>
-</div>
-</section></section>
 <section>
-<section id="comparing-numbers" class="title-slide slide level1 agenda-slide center">
-<h1>Comparing Numbers</h1>
+<section id="data" class="title-slide slide level1 agenda-slide center">
+<h1>Data</h1>
 <div class="agenda">
 <ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Installation</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Workspaces</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>R Basics</p>
-</div></li>
 <li><div class="agenda-active">
-<p>Comparing Numbers</p>
+<p>Data</p>
 </div></li>
 </ul>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>JohnsonJohnson</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;       Qtr1  Qtr2  Qtr3  Qtr4
+#&gt; 1960  0.71  0.63  0.85  0.44
+#&gt; 1961  0.61  0.69  0.92  0.55
+#&gt; 1962  0.72  0.77  0.92  0.60
+#&gt; 1963  0.83  0.80  1.00  0.77
+#&gt; 1964  0.92  1.00  1.24  1.00
+#&gt; 1965  1.16  1.30  1.45  1.25
+#&gt; 1966  1.26  1.38  1.86  1.56
+#&gt; 1967  1.53  1.59  1.83  1.86
+#&gt; 1968  1.53  2.07  2.34  2.25
+#&gt; 1969  2.16  2.43  2.70  2.25
+#&gt; 1970  2.79  3.42  3.69  3.60
+#&gt; 1971  3.60  4.32  4.32  4.05
+#&gt; 1972  4.86  5.04  5.04  4.41
+#&gt; 1973  5.58  5.85  6.57  5.31
+#&gt; 1974  6.03  6.39  6.93  5.85
+#&gt; 1975  6.93  7.74  7.83  6.12
+#&gt; 1976  7.74  8.91  8.28  6.84
+#&gt; 1977  9.54 10.26  9.54  8.73
+#&gt; 1978 11.88 12.06 12.15  8.91
+#&gt; 1979 14.04 12.96 14.85  9.99
+#&gt; 1980 16.20 14.67 16.02 11.61</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">torch_tensor</span>(JohnsonJohnson)<span class="sc">$</span>shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 84</code></pre>
+</div>
+</div>
 </section>
-<section id="comparing-numbers-1" class="slide level2">
-<h2>Comparing Numbers</h2>
-<p>You can compare two numbers, or objects, that will result in a logical output.</p>
-</section>
-<section id="comparing-numbers-operators" class="slide level2">
-<h2>Comparing Numbers Operators</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Operator</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>&gt;</code></td>
-<td>Greater Than</td>
-</tr>
-<tr class="even">
-<td><code>&lt;</code></td>
-<td>Less Than</td>
-</tr>
-<tr class="odd">
-<td><code>&gt;=</code></td>
-<td>Greater than or equal</td>
-</tr>
-<tr class="even">
-<td><code>&lt;=</code></td>
-<td>Less than or equal</td>
-</tr>
-<tr class="odd">
-<td><code>==</code></td>
-<td>Equals</td>
-</tr>
-<tr class="even">
-<td><code>!=</code></td>
-<td>Not Equals</td>
-</tr>
-</tbody>
-</table>
+<section id="penguins" class="slide level2">
+<h2>Penguins</h2>
 
 
 </section></section>
