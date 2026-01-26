@@ -1,6 +1,6 @@
 ---
 title: "Week 1"
-date: 01-23-26
+date: 01-26-26
 description: This week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.
 editor: source
 ---

@@ -1,0 +1,87 @@
+---
+title: "Optimization"
+format:
+  revealjs:
+    width: 1200
+    scrollable: false
+    include-in-header: "math.html"
+    footer: m408.inqs.info/lectures/1a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: true
+    message: false
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## R Packages
+
+```{r}
+library(tidyverse)
+library(mvtnorm)
+library(numDeriv)
+```
+
+## Simulated Data
+
+$$
+Y_i = 3.85 + 12.3 X_1 - 9.7 X_2 + \varepsilon_i
+$$
+
+$$
+\varepsilon \sim N(0, 2.4)
+$$
+
+
+```{r}
+beta <- c(3.85, 12.3, -9.7)
+x <- rmvnorm(500, c(3, 8))
+xx <- cbind(1, x)
+y <- xx%*%beta + rnorm(500, sd = sqrt(2.4))
+```
+
+# Optimization
+
+## Optimization
+
+# Gradient Descent
+
+## Gradient Descent
+
+## Alternative Versions
+
+# Stochastic Gradient Descent
+
+## Stochastic Gradient Descent
+
+# Newton-Raphson
+
+## Newton-Raphson Algorithm
+
+# Quasi-Newton
+
+
+

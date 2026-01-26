@@ -115,6 +115,7 @@ cmdstanr::install_cmdstan(cores = 2)
 ### Course Packages
 
 - mvtnorm
+- luz
 
 ::: callout-note
 

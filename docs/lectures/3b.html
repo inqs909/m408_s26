@@ -14,7 +14,7 @@
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>MATH 408 – Torch Basics</title>
+  <title>MATH 408 – Optimization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -343,8 +343,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Torch Basics</h1>
-  <p class="subtitle">Datasets</p>
+  <h1 class="title">Optimization</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -354,57 +353,156 @@
 <h2>R Packages</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(torch)</span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(mvtnorm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a></a><span class="fu">library</span>(mvtnorm)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(numDeriv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="simulated-data" class="slide level2">
+<h2>Simulated Data</h2>
+<p><span class="math display">\[
+Y_i = 3.85 + 12.3 X_1 - 9.7 X_2 + \varepsilon_i
+\]</span></p>
+<p><span class="math display">\[
+\varepsilon \sim N(0, 2.4)
+\]</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>beta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.85</span>, <span class="fl">12.3</span>, <span class="sc">-</span><span class="fl">9.7</span>)</span>
+<span id="cb2-2"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(<span class="dv">500</span>, <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">8</span>))</span>
+<span id="cb2-3"><a></a>xx <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span>, x)</span>
+<span id="cb2-4"><a></a>y <span class="ot">&lt;-</span> xx<span class="sc">%*%</span>beta <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">2.4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section>
-<section id="data" class="title-slide slide level1 agenda-slide center">
-<h1>Data</h1>
+<section id="optimization" class="title-slide slide level1 agenda-slide center">
+<h1>Optimization</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-active">
-<p>Data</p>
+<p>Optimization</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Gradient Descent</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Stochastic Gradient Descent</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Newton-Raphson</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Quasi-Newton</p>
 </div></li>
 </ul>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>JohnsonJohnson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt;       Qtr1  Qtr2  Qtr3  Qtr4
-#&gt; 1960  0.71  0.63  0.85  0.44
-#&gt; 1961  0.61  0.69  0.92  0.55
-#&gt; 1962  0.72  0.77  0.92  0.60
-#&gt; 1963  0.83  0.80  1.00  0.77
-#&gt; 1964  0.92  1.00  1.24  1.00
-#&gt; 1965  1.16  1.30  1.45  1.25
-#&gt; 1966  1.26  1.38  1.86  1.56
-#&gt; 1967  1.53  1.59  1.83  1.86
-#&gt; 1968  1.53  2.07  2.34  2.25
-#&gt; 1969  2.16  2.43  2.70  2.25
-#&gt; 1970  2.79  3.42  3.69  3.60
-#&gt; 1971  3.60  4.32  4.32  4.05
-#&gt; 1972  4.86  5.04  5.04  4.41
-#&gt; 1973  5.58  5.85  6.57  5.31
-#&gt; 1974  6.03  6.39  6.93  5.85
-#&gt; 1975  6.93  7.74  7.83  6.12
-#&gt; 1976  7.74  8.91  8.28  6.84
-#&gt; 1977  9.54 10.26  9.54  8.73
-#&gt; 1978 11.88 12.06 12.15  8.91
-#&gt; 1979 14.04 12.96 14.85  9.99
-#&gt; 1980 16.20 14.67 16.02 11.61</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">torch_tensor</span>(JohnsonJohnson)<span class="sc">$</span>shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [1] 84</code></pre>
-</div>
+</section>
+<section id="optimization-1" class="slide level2">
+<h2>Optimization</h2>
+</section></section>
+<section>
+<section id="gradient-descent" class="title-slide slide level1 agenda-slide center">
+<h1>Gradient Descent</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Optimization</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Gradient Descent</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Stochastic Gradient Descent</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Newton-Raphson</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Quasi-Newton</p>
+</div></li>
+</ul>
 </div>
 </section>
-<section id="penguins" class="slide level2">
-<h2>Penguins</h2>
-
-
+<section id="gradient-descent-1" class="slide level2">
+<h2>Gradient Descent</h2>
+</section>
+<section id="alternative-versions" class="slide level2">
+<h2>Alternative Versions</h2>
 </section></section>
+<section>
+<section id="stochastic-gradient-descent" class="title-slide slide level1 agenda-slide center">
+<h1>Stochastic Gradient Descent</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Optimization</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Gradient Descent</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Stochastic Gradient Descent</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Newton-Raphson</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Quasi-Newton</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="stochastic-gradient-descent-1" class="slide level2">
+<h2>Stochastic Gradient Descent</h2>
+</section></section>
+<section>
+<section id="newton-raphson" class="title-slide slide level1 agenda-slide center">
+<h1>Newton-Raphson</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Optimization</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Gradient Descent</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Stochastic Gradient Descent</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Newton-Raphson</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Quasi-Newton</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="newton-raphson-algorithm" class="slide level2">
+<h2>Newton-Raphson Algorithm</h2>
+</section></section>
+<section id="quasi-newton" class="title-slide slide level1 agenda-slide center">
+<h1>Quasi-Newton</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Optimization</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Gradient Descent</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Stochastic Gradient Descent</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Newton-Raphson</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Quasi-Newton</p>
+</div></li>
+</ul>
+</div>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
