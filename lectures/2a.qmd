@@ -56,7 +56,7 @@ Indexing tells R which values to output.
 
 A vector can be indexed by adding `[]` after the object's name and specifying the number of each element.
 
-```{webr-r}
+```r
 letters
 letters[13]
 ```
@@ -65,7 +65,7 @@ letters[13]
 
 A matrix can be indexed by adding `[]` after the object's name and specifying the number of each element. Separate the values by commas for specific indexes.
 
-```{webr-r}
+```r
 x <- matrix(1:40, nrow = 4)
 ```
 
@@ -73,7 +73,7 @@ x <- matrix(1:40, nrow = 4)
 
 Data frames can be indexed using the `$` operator and `[]`.
 
-```{webr-r}
+```r
 mtcars[,"mpg"]
 ```
 
@@ -81,7 +81,7 @@ mtcars[,"mpg"]
 
 Lists can be indexed using the `[[]]` for a specific element of a list.
 
-```{webr-r}
+```r
 toy_list <- list(x = letters,
                  y = mtcars,
                  z = list(x = diag(rep(1, 5),
@@ -101,7 +101,7 @@ An `if` statement is used to if you want R to perform a specific function if a c
 
 ## Example
 
-```{webr-r}
+```r
 x <- sample(-10:10,1)
 if (x > 0){
   print("Positive")
@@ -116,7 +116,7 @@ An `else` statement will conduct a different task if the `if` statement does not
 
 ## Example
 
-```{webr-r}
+```r
 x <- sample(-10:10,1)
 if (x > 0 ){
   print("Positive")
@@ -133,7 +133,7 @@ If you have more than two options, you can chain `if/else` statements by adding 
 
 ## Example
 
-```{webr-r}
+```r
 x <- sample(-10:10,1)
 if (x > 0 ){
   print("Positive")

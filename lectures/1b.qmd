@@ -280,13 +280,6 @@ list_two
 list_two$vector
 ```
 
-
-## Indexing
-
-Indexing an object is the process selecting a specific element in an object. Below is 
-
-
-
 ## Resources in Programming
 
 [R Basics Material](https://www.inqs.info/stat_comp/r.html)

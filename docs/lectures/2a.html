@@ -7,12 +7,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+  <meta name="generator" content="quarto-1.8.26">
 
   <title>MATH 408 – R Basics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -99,7 +99,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3250d136a9637f5f47522e41b35ed4ce.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-6b80500f8df77a44afd5a29b3f9273b2.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -353,7 +353,7 @@
 <section id="r-packages" class="slide level2">
 <h2>R Packages</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section>
@@ -384,27 +384,27 @@
 <section id="vectors" class="slide level2">
 <h2>Vectors</h2>
 <p>A vector can be indexed by adding <code>[]</code> after the object’s name and specifying the number of each element.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>letters</span>
-<span id="cb2-2"><a></a>letters[13]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>letters</span>
+<span id="cb2-2"><a></a>letters[<span class="dv">13</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="matrices" class="slide level2">
 <h2>Matrices</h2>
 <p>A matrix can be indexed by adding <code>[]</code> after the object’s name and specifying the number of each element. Separate the values by commas for specific indexes.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>x &lt;- matrix(1:40, nrow = 4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>, <span class="at">nrow =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="data-frames" class="slide level2">
 <h2>Data Frames</h2>
 <p>Data frames can be indexed using the <code>$</code> operator and <code>[]</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>mtcars[,"mpg"]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>mtcars[,<span class="st">"mpg"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="lists" class="slide level2">
 <h2>Lists</h2>
 <p>Lists can be indexed using the <code>[[]]</code> for a specific element of a list.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>toy_list &lt;- list(x = letters,</span>
-<span id="cb5-2"><a></a>                 y = mtcars,</span>
-<span id="cb5-3"><a></a>                 z = list(x = diag(rep(1, 5),</span>
-<span id="cb5-4"><a></a>                          y = matrix(1:40, nrow = 5),</span>
-<span id="cb5-5"><a></a>                          z = band_members)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>toy_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">x =</span> letters,</span>
+<span id="cb5-2"><a></a>                 <span class="at">y =</span> mtcars,</span>
+<span id="cb5-3"><a></a>                 <span class="at">z =</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="fu">diag</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">5</span>),</span>
+<span id="cb5-4"><a></a>                          <span class="at">y =</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>, <span class="at">nrow =</span> <span class="dv">5</span>),</span>
+<span id="cb5-5"><a></a>                          <span class="at">z =</span> band_members)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="ifelse-statements" class="title-slide slide level1 agenda-slide center">
@@ -436,11 +436,11 @@
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>x &lt;- sample(-10:10,1)</span>
-<span id="cb6-2"><a></a>if (x &gt; 0){</span>
-<span id="cb6-3"><a></a>  print("Positive")</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span>)</span>
+<span id="cb6-2"><a></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>){</span>
+<span id="cb6-3"><a></a>  <span class="fu">print</span>(<span class="st">"Positive"</span>)</span>
 <span id="cb6-4"><a></a>}</span>
-<span id="cb6-5"><a></a>print(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a></a><span class="fu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="else-statement" class="slide level2">
 <h2>else statement</h2>
@@ -448,13 +448,13 @@
 </section>
 <section id="example-1" class="slide level2">
 <h2>Example</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>x &lt;- sample(-10:10,1)</span>
-<span id="cb7-2"><a></a>if (x &gt; 0 ){</span>
-<span id="cb7-3"><a></a>  print("Positive")</span>
-<span id="cb7-4"><a></a>} else {</span>
-<span id="cb7-5"><a></a>  print("Non-positive")</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span>)</span>
+<span id="cb7-2"><a></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span> ){</span>
+<span id="cb7-3"><a></a>  <span class="fu">print</span>(<span class="st">"Positive"</span>)</span>
+<span id="cb7-4"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb7-5"><a></a>  <span class="fu">print</span>(<span class="st">"Non-positive"</span>)</span>
 <span id="cb7-6"><a></a>} </span>
-<span id="cb7-7"><a></a>print(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-7"><a></a><span class="fu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="chain-ifelse-statement" class="slide level2">
 <h2>Chain if/else statement</h2>
@@ -462,15 +462,15 @@
 </section>
 <section id="example-2" class="slide level2">
 <h2>Example</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {webr-r} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>x &lt;- sample(-10:10,1)</span>
-<span id="cb8-2"><a></a>if (x &gt; 0 ){</span>
-<span id="cb8-3"><a></a>  print("Positive")</span>
-<span id="cb8-4"><a></a>} else if (x == 0) {</span>
-<span id="cb8-5"><a></a>  print("Zero")</span>
-<span id="cb8-6"><a></a>} else {</span>
-<span id="cb8-7"><a></a>  print("Negative")</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span>)</span>
+<span id="cb8-2"><a></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span> ){</span>
+<span id="cb8-3"><a></a>  <span class="fu">print</span>(<span class="st">"Positive"</span>)</span>
+<span id="cb8-4"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb8-5"><a></a>  <span class="fu">print</span>(<span class="st">"Zero"</span>)</span>
+<span id="cb8-6"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb8-7"><a></a>  <span class="fu">print</span>(<span class="st">"Negative"</span>)</span>
 <span id="cb8-8"><a></a>}</span>
-<span id="cb8-9"><a></a>print(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-9"><a></a><span class="fu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="built-in-functions" class="title-slide slide level1 agenda-slide center">
@@ -618,14 +618,14 @@
 <section id="anatomy" class="slide level2">
 <h2>Anatomy</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="|1-3|4-5|6|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>name_of_function <span class="ot">&lt;-</span> <span class="cf">function</span>(data_1, <span class="at">data_2 =</span> <span class="cn">NULL</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-code-line-numbers="|1-3|4-5|6|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>name_of_function <span class="ot">&lt;-</span> <span class="cf">function</span>(data_1, <span class="at">data_2 =</span> <span class="cn">NULL</span>, </span>
 <span id="cb9-2"><a></a>                             argument_1, <span class="at">argument_2 =</span> <span class="cn">TRUE</span>, <span class="at">argument_3 =</span> <span class="cn">NULL</span>,</span>
 <span id="cb9-3"><a></a>                             ...){</span>
 <span id="cb9-4"><a></a>  <span class="co"># Conduct Task</span></span>
 <span id="cb9-5"><a></a>  <span class="co"># Conduct Task</span></span>
 <span id="cb9-6"><a></a>  output_object <span class="ot">&lt;-</span> Tasks</span>
 <span id="cb9-7"><a></a>  <span class="fu">return</span>(output_object)</span>
-<span id="cb9-8"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-8"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <ul>
@@ -870,7 +870,7 @@ z =  \frac{x-\bar y}{\sqrt{s^2_{y}/n_y}}
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -982,13 +982,14 @@ z =  \frac{x-\bar y}{\sqrt{s^2_{y}/n_y}}
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

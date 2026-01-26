@@ -188,7 +188,7 @@ Additionally, all these individuals are not receiving any royalties for the work
 
 ## Privacy Concerns
 
-The use of generative AI raises concerns of what data is being harvested from us, possibly without informed consent. 
+The use of generative AI raises concerns of what data is being harvested from us, possibly without informed consent or knowledge of impacts. 
 
 ::: fragment
 When you use any large language models, you do not know what information is being harvested from you.
@@ -241,13 +241,6 @@ We must be conscious consumers and demand more from these companies to provide s
 Yes/No/I don't know
 :::
 
-::: fragment
-But, we need to acknowledge the consequences of using AI!
-:::
-
-::: fragment
-And, we need to demand companies to create and implement AI in an ethical manner!
-:::
 
 ## Privacy Concerns Links
 
