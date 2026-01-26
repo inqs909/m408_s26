@@ -14,7 +14,7 @@
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>MATH 408 – Math 408</title>
+  <title>MATH 408 – Computational Setup</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -201,8 +201,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Math 408</h1>
-  <p class="subtitle">Machine Learning</p>
+  <h1 class="title">Computational Setup</h1>
+  <p class="subtitle">Installing Software</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -238,10 +238,10 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<p><strong>Windows Users</strong></p>
 </div>
 <div class="callout-content">
-<p>Windows Users: Install <a href="https://cran.r-project.org/bin/windows/Rtools/">RTools</a></p>
+<p>Install <a href="https://cran.r-project.org/bin/windows/Rtools/">RTools</a></p>
 </div>
 </div>
 </div>
@@ -256,10 +256,10 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<p><strong>Windows Users</strong></p>
 </div>
 <div class="callout-content">
-<p>Windows Users: Use system-level package If you cannot work with R, install <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version">Visual C++ Redistributable</a></p>
+<p>Use system-level package If you cannot work with R, install <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version">Visual C++ Redistributable</a></p>
 </div>
 </div>
 </div>
@@ -278,7 +278,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<p><strong>Nvidia-Users</strong></p>
 </div>
 <div class="callout-content">
 <p>Nvidia-Users</p>
@@ -306,39 +306,39 @@
 <section id="other-r-packages" class="slide level2">
 <h2>Other R Packages</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Core Packages</a></li><li><a href="#tabset-1-2">Course Packages</a></li><li><a href="#tabset-1-3">Misc Packages</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Core Packages</a></li><li><a href="#tabset-1-2">Misc Packages</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <ul>
 <li>Tidyverse</li>
-<li>Torch</li>
-<li>cmdstanr</li>
 </ul>
 </div>
 <div id="tabset-1-2">
 <ul>
+<<<<<<< HEAD
 <li>mvtnorm</li>
 <li>luz</li>
+=======
+<li><p>ISLR2</p></li>
+<li><p>leaps</p></li>
+<li><p>gam</p></li>
+<li><p>tree</p></li>
+>>>>>>> bebb0f79a25fe1daa380379133aa05c50270e2b5
 </ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>More packages will be added throughout the course if necessary.</p>
-</div>
-</div>
-</div>
+</div><div class="column">
+<ul>
+<li><p>gbm</p></li>
+<li><p>e1071</p></li>
+<li><p>glmnet</p></li>
+<li><p>torch</p></li>
+</ul>
+</div></div>
 </div>
 <div id="tabset-1-3">
 <ul>
-<li><p>Knitr</p></li>
 <li><p>RMarkdown</p></li>
 <li><p>Quarto</p></li>
+<li><p>extraInserts (GitHub Package)</p></li>
 </ul>
 </div>
 </div>
@@ -352,6 +352,7 @@
 <li>You must load packages every new R Session</li>
 </ul>
 </section></section>
+<section>
 <section id="workspaces" class="title-slide slide level1 agenda-slide center">
 <h1>Workspaces</h1>
 <div class="agenda">
@@ -371,7 +372,10 @@
 </ul>
 </div>
 </section>
-
+<section id="workspaces-1" class="slide level2">
+<h2>Workspaces</h2>
+<p>Workspaces allows you to create locations on your computer and set up a computing environment in one location.</p>
+</section></section>
 <section>
 <section id="r-basics" class="title-slide slide level1 agenda-slide center">
 <h1>R Basics</h1>
@@ -442,7 +446,7 @@
 <p>Data frames can be thought of as R’s version of a data set.</p>
 <p>Play around with mtcars:</p>
 <div class="cell">
-<details class="code-fold">
+<details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mtcars </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -488,7 +492,7 @@
 <p>List can be thought as an extended vector, but each element is a different R object.</p>
 <p>Try playing with this R object:</p>
 <div class="cell">
-<details class="code-fold">
+<details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>list_one <span class="ot">&lt;-</span> <span class="fu">list</span>(mtcars, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>),</span>
 <span id="cb9-2"><a></a>                 <span class="fu">diag</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">3</span>)))</span>
@@ -644,7 +648,7 @@
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
-'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
+'pointer': {"key":"q","color":"red","pointerSize":48,"alwaysVisible":false},
 'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
