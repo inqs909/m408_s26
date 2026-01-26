@@ -1,6 +1,7 @@
 ---
 title: "Syllabus"
 editor: source
+navbar: false
 format:
   html: 
     code-fold: true
@@ -24,6 +25,11 @@ format:
 **Office Location:** Marin 2326
 
 **Office Hours:**
+
+- T/TH 1-2:30 PM
+- Wed 4-5 PM
+
+**Lecture:** Gateway Hall 3501 T/TH 10:30 - 11:45 PM
 
 **Course Website:** [m408.inqs.info](https://m408.inqs.info/) **AND** Canvas
 
@@ -144,14 +150,14 @@ The following outline may be subject to change. Any changes will be announced in
 |:-----|:---------------------------------------------------|
 | 1    | Intro to Course/Computational Set Up               |
 | 2    | Programming in R                                   |
-| 3    | Derivatives and Minimization                       |
+| 3    | Data and Minimization                              |
 | 4    | Neural Networks                                    |
-| 5    | Layers, Optimizers, Loss, and Activation Functions |
+| 5    | Modules                                            |
 | 6    | Convolutional Neural Networks                      |
 | 7    | Recurrent Neural Networks                          |
 | --   | Spring Break                                       |
-| 8    | Image Classification                               |
-| 9    | Audio Classification                               |
+| 8    | Generalizing Models                                |
+| 9    | Image Classification                               |
 | 10   | Audio Classification                               |
 | 11   | Bayesian Analysis                                  |
 | 12   | Bayesian Linear Regression                         |

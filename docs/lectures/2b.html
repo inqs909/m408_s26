@@ -7,14 +7,22 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<<<<<<< HEAD
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+=======
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+>>>>>>> f2634d5316bee2cf60dfa83f7b1242a2fb8bdfc3
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
+<<<<<<< HEAD
   <meta name="generator" content="quarto-1.8.26">
+=======
+  <meta name="generator" content="quarto-1.8.27">
+>>>>>>> f2634d5316bee2cf60dfa83f7b1242a2fb8bdfc3
 
-  <title>MATH 408 – Torch Basics</title>
+  <title>MATH 408 – Torch</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -343,7 +351,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Torch Basics</h1>
+  <h1 class="title">Torch</h1>
   <p class="subtitle">Tensors</p>
 
 <div class="quarto-title-authors">
@@ -691,9 +699,9 @@
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; torch_tensor
-#&gt;  0  2  4
-#&gt;  2  5  0
-#&gt;  2  4  5
+#&gt;  2  4  4
+#&gt;  4  3  3
+#&gt;  3  2  4
 #&gt; [ CPUFloatType{3,3} ]</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
@@ -719,9 +727,9 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>t2<span class="sc">$</span><span class="fu">t</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; torch_tensor
-#&gt;  0  2  2
-#&gt;  2  5  4
-#&gt;  4  0  5
+#&gt;  2  4  3
+#&gt;  4  3  2
+#&gt;  4  3  4
 #&gt; [ CPUFloatType{3,3} ]</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>t3<span class="sc">$</span><span class="fu">t</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -734,21 +742,22 @@
 </section>
 <section id="additionsubtraction-1" class="slide level2">
 <h2>Addition/Subtraction</h2>
+<p>More information on matrix arithmetic can be found <a href="https://shainarace.github.io/LinearAlgebra/mult.html#matrix-addition-subtraction-and-scalar-multiplication">here</a>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>t1<span class="sc">$</span><span class="fu">add</span>(t2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; torch_tensor
-#&gt;   1   6  11
-#&gt;   4  10   8
-#&gt;   5  10  14
+#&gt;   3   8  11
+#&gt;   6   8  11
+#&gt;   6   8  13
 #&gt; [ CPUFloatType{3,3} ]</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>t1<span class="sc">$</span><span class="fu">subtract</span>(t2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; torch_tensor
-#&gt;  1  2  3
-#&gt;  0  0  8
-#&gt;  1  2  4
+#&gt; -1  0  3
+#&gt; -2  2  5
+#&gt;  0  4  5
 #&gt; [ CPUFloatType{3,3} ]</code></pre>
 </div>
 </div>
@@ -779,38 +788,39 @@
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; torch_tensor
-#&gt;  0  2  4
-#&gt;  2  5  0
-#&gt;  2  4  5
+#&gt;  2  4  4
+#&gt;  4  3  3
+#&gt;  3  2  4
 #&gt; [ CPUFloatType{3,3} ]</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a>t1<span class="sc">$</span><span class="fu">multiply</span>(t2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; torch_tensor
-#&gt;   0   8  28
-#&gt;   4  25   0
-#&gt;   6  24  45
+#&gt;   2  16  28
+#&gt;   8  15  24
+#&gt;   9  12  36
 #&gt; [ CPUFloatType{3,3} ]</code></pre>
 </div>
 </div>
 </section>
 <section id="matrix-multiplication" class="slide level2">
 <h2>Matrix Multiplication</h2>
+<p>More information on matrix multiplication can be found <a href="https://shainarace.github.io/LinearAlgebra/mult.html#matrix-multiplication">here</a>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>t1<span class="sc">$</span><span class="fu">matmul</span>(t2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; torch_tensor
-#&gt;  22  50  39
-#&gt;  26  61  48
-#&gt;  30  72  57
+#&gt;  39  30  44
+#&gt;  48  39  55
+#&gt;  57  48  66
 #&gt; [ CPUFloatType{3,3} ]</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a>t2<span class="sc">$</span><span class="fu">matmul</span>(t1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; torch_tensor
-#&gt;  16  34  52
-#&gt;  12  33  54
-#&gt;  25  58  91
+#&gt;  22  52  82
+#&gt;  19  49  79
+#&gt;  19  46  73
 #&gt; [ CPUFloatType{3,3} ]</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a>t3<span class="sc">$</span><span class="fu">t</span>()<span class="sc">$</span><span class="fu">matmul</span>(t1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -838,9 +848,9 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a>t2<span class="sc">$</span><span class="fu">inverse</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; torch_tensor
-#&gt; -0.8929 -0.2143  0.7143
-#&gt;  0.3571  0.2857 -0.2857
-#&gt;  0.0714 -0.1429  0.1429
+#&gt; -0.3000  0.4000  0.0000
+#&gt;  0.3500  0.2000 -0.5000
+#&gt;  0.0500 -0.4000  0.5000
 #&gt; [ CPUFloatType{3,3} ]</code></pre>
 </div>
 </div>
@@ -979,14 +989,14 @@ Y_{500}
 #&gt; 
 #&gt; Coefficients:
 #&gt; (Intercept)           x1           x2  
-#&gt;       3.272       12.207       -9.594</code></pre>
+#&gt;       3.826       12.258       -9.690</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a><span class="fu">solve</span>(<span class="fu">t</span>(xx)<span class="sc">%*%</span>xx)<span class="sc">%*%</span><span class="fu">t</span>(xx)<span class="sc">%*%</span>y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;           [,1]
-#&gt; [1,]  3.271945
-#&gt; [2,] 12.206737
-#&gt; [3,] -9.594003</code></pre>
+#&gt; [1,]  3.825633
+#&gt; [2,] 12.257655
+#&gt; [3,] -9.690359</code></pre>
 </div>
 </div>
 </section>
@@ -1002,9 +1012,9 @@ Y_{500}
 <span id="cb87-4"><a></a>xxt<span class="sc">$</span><span class="fu">t</span>()<span class="sc">$</span><span class="fu">matmul</span>(xxt)<span class="sc">$</span><span class="fu">inverse</span>()<span class="sc">$</span><span class="fu">matmul</span>(xxt<span class="sc">$</span><span class="fu">t</span>())<span class="sc">$</span><span class="fu">matmul</span>(yt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; torch_tensor
-#&gt;   3.2734
-#&gt;  12.2067
-#&gt;  -9.5942
+#&gt;   3.8235
+#&gt;  12.2576
+#&gt;  -9.6900
 #&gt; [ CPUFloatType{3,1} ]</code></pre>
 </div>
 </div>

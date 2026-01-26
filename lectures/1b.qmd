@@ -114,35 +114,14 @@ cmdstanr::install_cmdstan(cores = 2)
 
 ### Course Packages
 
+- mvtnorm
+- luz
 
-:::: columns
+::: callout-note
 
-::: column
-
-- ISLR2
-
-- leaps
-
-- gam
-
-- tree
-
+More packages will be added throughout the course if necessary.
 
 :::
-
-::: column
-
-- gbm
-
-- e1071
-
-- glmnet
-
-- torch
-
-:::
-
-::::
 
 ### Misc Packages
 

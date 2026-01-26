@@ -25,13 +25,6 @@ website:
       - syllabus.qmd
       - books.qmd
       - exc.qmd
-  announcement: 
-    icon: info-circle
-    dismissable: false
-    content: "**Alert** - this course is still under construction"
-    type: danger
-    position: below-navbar
-
 
 format:
   html:

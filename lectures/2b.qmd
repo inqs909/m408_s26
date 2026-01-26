@@ -1,5 +1,5 @@
 ---
-title: "Torch Basics"
+title: "Torch"
 subtitle: "Tensors"
 format:
   revealjs:
@@ -196,6 +196,8 @@ t3$t()
 
 ## Addition/Subtraction
 
+More information on matrix arithmetic can be found [here](https://shainarace.github.io/LinearAlgebra/mult.html#matrix-addition-subtraction-and-scalar-multiplication).
+
 ```{r}
 t1$add(t2)
 t1$subtract(t2)
@@ -215,6 +217,8 @@ t1$multiply(t2)
 ```
 
 ## Matrix Multiplication
+
+More information on matrix multiplication can be found [here](https://shainarace.github.io/LinearAlgebra/mult.html#matrix-multiplication).
 
 ```{r}
 t1$matmul(t2)

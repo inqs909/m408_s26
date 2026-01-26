@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>www.inqs.info/m408_s26/syllabus.html</loc>
+<<<<<<< HEAD
     <lastmod>2026-01-14T22:52:44.448Z</lastmod>
   </url>
   <url>
@@ -27,12 +28,40 @@
   <url>
     <loc>www.inqs.info/m408_s26/exc.html</loc>
     <lastmod>2026-01-14T20:35:32.076Z</lastmod>
+=======
+    <lastmod>2026-01-26T17:47:09.530Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/posts/week_1.html</loc>
+    <lastmod>2026-01-17T22:53:17.307Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/lectures/3a.html</loc>
+    <lastmod>2026-01-17T22:49:54.824Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/lectures/2a.html</loc>
+    <lastmod>2026-01-17T22:49:19.918Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/lectures/1a.html</loc>
+    <lastmod>2026-01-26T17:46:25.577Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/exc/exc_3.html</loc>
+    <lastmod>2026-01-17T06:04:40.788Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/exc/exc_1.html</loc>
+    <lastmod>2026-01-17T06:04:40.788Z</lastmod>
+>>>>>>> f2634d5316bee2cf60dfa83f7b1242a2fb8bdfc3
   </url>
   <url>
     <loc>www.inqs.info/m408_s26/books.html</loc>
     <lastmod>2026-01-04T07:48:18.963Z</lastmod>
   </url>
   <url>
+<<<<<<< HEAD
     <loc>www.inqs.info/m408_s26/exc/exc_1.html</loc>
     <lastmod>2026-01-14T20:56:25.024Z</lastmod>
   </url>
@@ -55,5 +84,33 @@
   <url>
     <loc>www.inqs.info/m408_s26/posts/week_2.html</loc>
     <lastmod>2026-01-20T18:37:35.833Z</lastmod>
+=======
+    <loc>www.inqs.info/m408_s26/exc.html</loc>
+    <lastmod>2026-01-17T06:04:40.788Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/exc/exc_2.html</loc>
+    <lastmod>2026-01-17T06:04:40.788Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/index.html</loc>
+    <lastmod>2026-01-12T08:30:40.207Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/lectures/1b.html</loc>
+    <lastmod>2026-01-26T16:02:30.701Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/lectures/2b.html</loc>
+    <lastmod>2026-01-21T07:40:02.264Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/lectures/3b.html</loc>
+    <lastmod>2026-01-19T05:24:03.484Z</lastmod>
+  </url>
+  <url>
+    <loc>www.inqs.info/m408_s26/posts/week_2.html</loc>
+    <lastmod>2026-01-17T22:53:08.554Z</lastmod>
+>>>>>>> f2634d5316bee2cf60dfa83f7b1242a2fb8bdfc3
   </url>
 </urlset>
