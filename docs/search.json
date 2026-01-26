@@ -52,580 +52,8 @@
     "objectID": "lectures/3a.html#penguins",
     "href": "lectures/3a.html#penguins",
     "title": "Torch Basics",
-<<<<<<< HEAD
     "section": "Penguins",
     "text": "Penguins"
-=======
-    "section": "What are Tensors?",
-    "text": "What are Tensors?\n\n\n\n\n\nMathematics\n\n\nA tensor describes a relationship between algebraic objects.\n\n\n\n\n\n\n\nTorch\n\n\nAn n-dimensional array with optimized operations."
-  },
-  {
-    "objectID": "lectures/2b.html#creating-tensors",
-    "href": "lectures/2b.html#creating-tensors",
-    "title": "Torch Basics",
-    "section": "Creating Tensors",
-    "text": "Creating Tensors\n\nt1 &lt;- torch_tensor(matrix(1:9, ncol = 3))\nt2 &lt;- torch_tensor(1:3)\nt3 &lt;- torch_tensor(array(1:24, dim = c(4, 3, 2)))"
-  },
-  {
-    "objectID": "lectures/2b.html#tensor-operations",
-    "href": "lectures/2b.html#tensor-operations",
-    "title": "Torch Basics",
-    "section": "Tensor Operations",
-    "text": "Tensor Operations"
-  },
-  {
-    "objectID": "lectures/2b.html#dimensions",
-    "href": "lectures/2b.html#dimensions",
-    "title": "Torch Basics",
-    "section": "Dimensions",
-    "text": "Dimensions\n\nt1$shape\n\n#&gt; [1] 3 3\n\nt2$shape\n\n#&gt; [1] 3\n\nt3$shape\n\n#&gt; [1] 4 3 2"
-  },
-  {
-    "objectID": "lectures/2b.html#type",
-    "href": "lectures/2b.html#type",
-    "title": "Torch Basics",
-    "section": "Type",
-    "text": "Type\n\nt1$dtype\n\n#&gt; torch_Long\n\nt2$dtype\n\n#&gt; torch_Long\n\nt3$dtype\n\n#&gt; torch_Long"
-  },
-  {
-    "objectID": "lectures/2b.html#changing-type",
-    "href": "lectures/2b.html#changing-type",
-    "title": "Torch Basics",
-    "section": "Changing Type",
-    "text": "Changing Type\n\nt1$to(dtype = torch_float())\n\n#&gt; torch_tensor\n#&gt;  1  4  7\n#&gt;  2  5  8\n#&gt;  3  6  9\n#&gt; [ CPUFloatType{3,3} ]\n\nt2$to(dtype = torch_float())\n\n#&gt; torch_tensor\n#&gt;  1\n#&gt;  2\n#&gt;  3\n#&gt; [ CPUFloatType{3} ]\n\nt3$to(dtype = torch_float())\n\n#&gt; torch_tensor\n#&gt; (1,.,.) = \n#&gt;    1  13\n#&gt;    5  17\n#&gt;    9  21\n#&gt; \n#&gt; (2,.,.) = \n#&gt;    2  14\n#&gt;    6  18\n#&gt;   10  22\n#&gt; \n#&gt; (3,.,.) = \n#&gt;    3  15\n#&gt;    7  19\n#&gt;   11  23\n#&gt; \n#&gt; (4,.,.) = \n#&gt;    4  16\n#&gt;    8  20\n#&gt;   12  24\n#&gt; [ CPUFloatType{4,3,2} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#set-type",
-    "href": "lectures/2b.html#set-type",
-    "title": "Torch Basics",
-    "section": "Set Type",
-    "text": "Set Type\n\nt1 &lt;- torch_tensor(matrix(1:9, ncol = 3), dtype = torch_float())\nt2 &lt;- torch_tensor(1:3, dtype = torch_float())\nt3 &lt;- torch_tensor(array(1:24, dim = c(4, 3, 2)), dtype = torch_float())"
-  },
-  {
-    "objectID": "lectures/2b.html#device",
-    "href": "lectures/2b.html#device",
-    "title": "Torch Basics",
-    "section": "Device",
-    "text": "Device\n\nt1$device\n\n#&gt; torch_device(type='cpu')\n\nt2$device\n\n#&gt; torch_device(type='cpu')\n\nt3$device\n\n#&gt; torch_device(type='cpu')"
-  },
-  {
-    "objectID": "lectures/2b.html#set-device",
-    "href": "lectures/2b.html#set-device",
-    "title": "Torch Basics",
-    "section": "Set Device",
-    "text": "Set Device\nt1 &lt;- torch_tensor(matrix(1:9, ncol = 3), device = \"cuda\")\nt2 &lt;- torch_tensor(1:3, device = \"cuda\")\nt3 &lt;- torch_tensor(array(1:24, dim = c(4, 3, 2)), device = \"cuda\")\n\n\n\n\n\n\nNote\n\n\nUse if cuda is installed (Nvidia users)"
-  },
-  {
-    "objectID": "lectures/2b.html#vectors",
-    "href": "lectures/2b.html#vectors",
-    "title": "Torch Basics",
-    "section": "Vectors",
-    "text": "Vectors\n\nt1 &lt;- torch_tensor(1:6)\nt2 &lt;- torch_tensor(7:12)\nt3 &lt;- torch_tensor(1:3)\nt1; t2; t3\n\n#&gt; torch_tensor\n#&gt;  1\n#&gt;  2\n#&gt;  3\n#&gt;  4\n#&gt;  5\n#&gt;  6\n#&gt; [ CPULongType{6} ]\n\n\n#&gt; torch_tensor\n#&gt;   7\n#&gt;   8\n#&gt;   9\n#&gt;  10\n#&gt;  11\n#&gt;  12\n#&gt; [ CPULongType{6} ]\n\n\n#&gt; torch_tensor\n#&gt;  1\n#&gt;  2\n#&gt;  3\n#&gt; [ CPULongType{3} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#additionsubtraction",
-    "href": "lectures/2b.html#additionsubtraction",
-    "title": "Torch Basics",
-    "section": "Addition/Subtraction",
-    "text": "Addition/Subtraction\n\nt1$add(t2)\n\n#&gt; torch_tensor\n#&gt;   8\n#&gt;  10\n#&gt;  12\n#&gt;  14\n#&gt;  16\n#&gt;  18\n#&gt; [ CPULongType{6} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#scalar-multiplication",
-    "href": "lectures/2b.html#scalar-multiplication",
-    "title": "Torch Basics",
-    "section": "Scalar Multiplication",
-    "text": "Scalar Multiplication\n\n10*t1\n\n#&gt; torch_tensor\n#&gt;  10\n#&gt;  20\n#&gt;  30\n#&gt;  40\n#&gt;  50\n#&gt;  60\n#&gt; [ CPUFloatType{6} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#elementwise-multiplication",
-    "href": "lectures/2b.html#elementwise-multiplication",
-    "title": "Torch Basics",
-    "section": "Elementwise Multiplication",
-    "text": "Elementwise Multiplication\n\nt1$multiply(t2)\n\n#&gt; torch_tensor\n#&gt;   7\n#&gt;  16\n#&gt;  27\n#&gt;  40\n#&gt;  55\n#&gt;  72\n#&gt; [ CPULongType{6} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#dot-product",
-    "href": "lectures/2b.html#dot-product",
-    "title": "Torch Basics",
-    "section": "Dot Product",
-    "text": "Dot Product\n\nt1$dot(t2)\n\n#&gt; torch_tensor\n#&gt; 217\n#&gt; [ CPULongType{} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#matrix",
-    "href": "lectures/2b.html#matrix",
-    "title": "Torch Basics",
-    "section": "Matrix",
-    "text": "Matrix\n\nt1 &lt;- torch_tensor(matrix(1:9, ncol = 3), dtype = torch_float())\nt2 &lt;- torch_tensor(matrix(rpois(9, 3), ncol = 3), dtype = torch_float())\nt3 &lt;- torch_tensor(matrix(1:3, nrow = 3), dtype = torch_float())\n\nt1; t2; t3\n\n#&gt; torch_tensor\n#&gt;  1  4  7\n#&gt;  2  5  8\n#&gt;  3  6  9\n#&gt; [ CPUFloatType{3,3} ]\n\n\n#&gt; torch_tensor\n#&gt;  0  2  4\n#&gt;  2  5  0\n#&gt;  2  4  5\n#&gt; [ CPUFloatType{3,3} ]\n\n\n#&gt; torch_tensor\n#&gt;  1\n#&gt;  2\n#&gt;  3\n#&gt; [ CPUFloatType{3,1} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#transpose",
-    "href": "lectures/2b.html#transpose",
-    "title": "Torch Basics",
-    "section": "Transpose",
-    "text": "Transpose\n\nt1$t()\n\n#&gt; torch_tensor\n#&gt;  1  2  3\n#&gt;  4  5  6\n#&gt;  7  8  9\n#&gt; [ CPUFloatType{3,3} ]\n\nt2$t()\n\n#&gt; torch_tensor\n#&gt;  0  2  2\n#&gt;  2  5  4\n#&gt;  4  0  5\n#&gt; [ CPUFloatType{3,3} ]\n\nt3$t()\n\n#&gt; torch_tensor\n#&gt;  1  2  3\n#&gt; [ CPUFloatType{1,3} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#additionsubtraction-1",
-    "href": "lectures/2b.html#additionsubtraction-1",
-    "title": "Torch Basics",
-    "section": "Addition/Subtraction",
-    "text": "Addition/Subtraction\n\nt1$add(t2)\n\n#&gt; torch_tensor\n#&gt;   1   6  11\n#&gt;   4  10   8\n#&gt;   5  10  14\n#&gt; [ CPUFloatType{3,3} ]\n\nt1$subtract(t2)\n\n#&gt; torch_tensor\n#&gt;  1  2  3\n#&gt;  0  0  8\n#&gt;  1  2  4\n#&gt; [ CPUFloatType{3,3} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#scalar-multiplication-1",
-    "href": "lectures/2b.html#scalar-multiplication-1",
-    "title": "Torch Basics",
-    "section": "Scalar Multiplication",
-    "text": "Scalar Multiplication\n\n10*t1\n\n#&gt; torch_tensor\n#&gt;  10  40  70\n#&gt;  20  50  80\n#&gt;  30  60  90\n#&gt; [ CPUFloatType{3,3} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#element-wise-multiplications",
-    "href": "lectures/2b.html#element-wise-multiplications",
-    "title": "Torch Basics",
-    "section": "Element-wise Multiplications",
-    "text": "Element-wise Multiplications\n\nt1; t2\n\n#&gt; torch_tensor\n#&gt;  1  4  7\n#&gt;  2  5  8\n#&gt;  3  6  9\n#&gt; [ CPUFloatType{3,3} ]\n\n\n#&gt; torch_tensor\n#&gt;  0  2  4\n#&gt;  2  5  0\n#&gt;  2  4  5\n#&gt; [ CPUFloatType{3,3} ]\n\nt1$multiply(t2)\n\n#&gt; torch_tensor\n#&gt;   0   8  28\n#&gt;   4  25   0\n#&gt;   6  24  45\n#&gt; [ CPUFloatType{3,3} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#matrix-multiplication",
-    "href": "lectures/2b.html#matrix-multiplication",
-    "title": "Torch Basics",
-    "section": "Matrix Multiplication",
-    "text": "Matrix Multiplication\n\nt1$matmul(t2)\n\n#&gt; torch_tensor\n#&gt;  22  50  39\n#&gt;  26  61  48\n#&gt;  30  72  57\n#&gt; [ CPUFloatType{3,3} ]\n\nt2$matmul(t1)\n\n#&gt; torch_tensor\n#&gt;  16  34  52\n#&gt;  12  33  54\n#&gt;  25  58  91\n#&gt; [ CPUFloatType{3,3} ]\n\nt3$t()$matmul(t1)\n\n#&gt; torch_tensor\n#&gt;  14  32  50\n#&gt; [ CPUFloatType{1,3} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#determinant",
-    "href": "lectures/2b.html#determinant",
-    "title": "Torch Basics",
-    "section": "Determinant",
-    "text": "Determinant\n\nt1$det()\n\n#&gt; torch_tensor\n#&gt; 0\n#&gt; [ CPUFloatType{} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#inverse",
-    "href": "lectures/2b.html#inverse",
-    "title": "Torch Basics",
-    "section": "Inverse",
-    "text": "Inverse\n\nt2$inverse()\n\n#&gt; torch_tensor\n#&gt; -0.8929 -0.2143  0.7143\n#&gt;  0.3571  0.2857 -0.2857\n#&gt;  0.0714 -0.1429  0.1429\n#&gt; [ CPUFloatType{3,3} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#diagonal-elements",
-    "href": "lectures/2b.html#diagonal-elements",
-    "title": "Torch Basics",
-    "section": "Diagonal Elements",
-    "text": "Diagonal Elements\n\nt1$diag()\n\n#&gt; torch_tensor\n#&gt;  1\n#&gt;  5\n#&gt;  9\n#&gt; [ CPUFloatType{3} ]\n\ntorch_diag(1:3)\n\n#&gt; torch_tensor\n#&gt;  1  0  0\n#&gt;  0  2  0\n#&gt;  0  0  3\n#&gt; [ CPULongType{3,3} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#matrix-of-01",
-    "href": "lectures/2b.html#matrix-of-01",
-    "title": "Torch Basics",
-    "section": "Matrix of 0/1",
-    "text": "Matrix of 0/1\n\ntorch_zeros(3,3)\n\n#&gt; torch_tensor\n#&gt;  0  0  0\n#&gt;  0  0  0\n#&gt;  0  0  0\n#&gt; [ CPUFloatType{3,3} ]\n\ntorch_ones(2,3)\n\n#&gt; torch_tensor\n#&gt;  1  1  1\n#&gt;  1  1  1\n#&gt; [ CPUFloatType{2,3} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#identity-matrix",
-    "href": "lectures/2b.html#identity-matrix",
-    "title": "Torch Basics",
-    "section": "Identity Matrix",
-    "text": "Identity Matrix\n\ntorch_eye(n = 4)\n\n#&gt; torch_tensor\n#&gt;  1  0  0  0\n#&gt;  0  1  0  0\n#&gt;  0  0  1  0\n#&gt;  0  0  0  1\n#&gt; [ CPUFloatType{4,4} ]"
-  },
-  {
-    "objectID": "lectures/2b.html#linear-regression-1",
-    "href": "lectures/2b.html#linear-regression-1",
-    "title": "Torch Basics",
-    "section": "Linear Regression",
-    "text": "Linear Regression\n\\[\nY_i = 3.85 + 12.3 X_1 - 9.7 X_2 + \\varepsilon_i\n\\]\n\\[\n\\varepsilon \\sim N(0, 2.4)\n\\]\n\nbeta &lt;- c(3.85, 12.3, -9.7)\nx &lt;- rmvnorm(500, c(3, 8))\nxx &lt;- cbind(1, x)\ny &lt;- xx%*%beta + rnorm(500, sd = sqrt(2.4))"
-  },
-  {
-    "objectID": "lectures/2b.html#ols-estimator",
-    "href": "lectures/2b.html#ols-estimator",
-    "title": "Torch Basics",
-    "section": "OLS Estimator",
-    "text": "OLS Estimator\n\\[\n\\hat\\bbeta = (\\bX^\\mrT\\bX)\\inv\\bX^\\mrT\\bY\n\\]\n\n\n\\[\n\\bX =\\left(\n\\begin{array}{ccc}\n1 & X_{1,1} & X_{2,1} \\\\\n1 & X_{1,2} & X_{2,2} \\\\\n\\vdots & \\vdots & \\vdots \\\\\n1 & X_{1,500} & X_{2,500} \\\\\n\\end{array}\n\\right)\n\\]\n\n\\[\n\\bY =\\left(\n\\begin{array}{ccc}\nY_1 \\\\\nY_2 \\\\\n\\vdots \\\\\nY_{500}\n\\end{array}\n\\right)\n\\]"
-  },
-  {
-    "objectID": "lectures/2b.html#using-r",
-    "href": "lectures/2b.html#using-r",
-    "title": "Torch Basics",
-    "section": "Using R",
-    "text": "Using R\n\\[\n\\hat\\bbeta = (\\bX^\\mrT\\bX)\\inv\\bX^\\mrT\\bY\n\\]\n\nlm(y ~ x)\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = y ~ x)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)           x1           x2  \n#&gt;       3.272       12.207       -9.594\n\nsolve(t(xx)%*%xx)%*%t(xx)%*%y\n\n#&gt;           [,1]\n#&gt; [1,]  3.271945\n#&gt; [2,] 12.206737\n#&gt; [3,] -9.594003"
-  },
-  {
-    "objectID": "lectures/2b.html#using-torch",
-    "href": "lectures/2b.html#using-torch",
-    "title": "Torch Basics",
-    "section": "Using torch",
-    "text": "Using torch\n\\[\n\\hat\\bbeta = (\\bX^\\mrT\\bX)\\inv\\bX^\\mrT\\bY\n\\]\n\nxxt &lt;- torch_tensor(xx)\nyt &lt;- torch_tensor(y)\n\nxxt$t()$matmul(xxt)$inverse()$matmul(xxt$t())$matmul(yt)\n\n#&gt; torch_tensor\n#&gt;   3.2734\n#&gt;  12.2067\n#&gt;  -9.5942\n#&gt; [ CPUFloatType{3,1} ]"
-  },
-  {
-    "objectID": "lectures/1b.html#r-programming",
-    "href": "lectures/1b.html#r-programming",
-    "title": "Computational Setup",
-    "section": "R Programming",
-    "text": "R Programming\nR is a statistical programming package that allows you to conduct different types of analysis.\nR\n\n\n\n\n\n\nWindows Users\n\n\nInstall RTools"
-  },
-  {
-    "objectID": "lectures/1b.html#positron",
-    "href": "lectures/1b.html#positron",
-    "title": "Computational Setup",
-    "section": "Positron",
-    "text": "Positron\nA piece of software that organizes how you conduct statistical analysis in R.\nPositron\n\n\n\n\n\n\nWindows Users\n\n\nUse system-level package If you cannot work with R, install Visual C++ Redistributable"
-  },
-  {
-    "objectID": "lectures/1b.html#rstudio",
-    "href": "lectures/1b.html#rstudio",
-    "title": "Computational Setup",
-    "section": "RStudio",
-    "text": "RStudio\nIf Positron does not work, install RStudio instead."
-  },
-  {
-    "objectID": "lectures/1b.html#installing-torch",
-    "href": "lectures/1b.html#installing-torch",
-    "title": "Computational Setup",
-    "section": "Installing Torch",
-    "text": "Installing Torch\nIn R, install torch with:\ninstall.packages(\"torch\")\n\n\n\n\n\n\nNvidia-Users\n\n\noptions(timeout = 600) # increasing timeout is recommended since we will be downloading a 2GB file.\n# For Windows and Linux: \"cpu\", \"cu128\" are the only currently supported\n# For MacOS the supported are: \"cpu-intel\" or \"cpu-m1\"\nkind &lt;- \"cpu\"\nversion &lt;- available.packages()[\"torch\",\"Version\"]\noptions(repos = c(\n  torch = sprintf(\"https://torch-cdn.mlverse.org/packages/%s/%s/\", kind, version),\n  CRAN = \"https://cloud.r-project.org\" # or any other from which you want to install the other R dependencies.\n))\ninstall.packages(\"torch\")"
-  },
-  {
-    "objectID": "lectures/1b.html#installing-stan",
-    "href": "lectures/1b.html#installing-stan",
-    "title": "Computational Setup",
-    "section": "Installing Stan",
-    "text": "Installing Stan\ninstall.packages(\"cmdstanr\", \n    repos = c('https://stan-dev.r-universe.dev', getOption(\"repos\")))\ncmdstanr::check_cmdstan_toolchain()\ncmdstanr::install_cmdstan(cores = 2)"
-  },
-  {
-    "objectID": "lectures/1b.html#other-r-packages",
-    "href": "lectures/1b.html#other-r-packages",
-    "title": "Computational Setup",
-    "section": "Other R Packages",
-    "text": "Other R Packages\n\nCore PackagesCourse PackagesMisc Packages\n\n\n\nTidyverse\n\n\n\n\n\n\nISLR2\nleaps\ngam\ntree\n\n\n\ngbm\ne1071\nglmnet\ntorch\n\n\n\n\n\nRMarkdown\nQuarto\nextraInserts (GitHub Package)"
-  },
-  {
-    "objectID": "lectures/1b.html#load-r-package",
-    "href": "lectures/1b.html#load-r-package",
-    "title": "Computational Setup",
-    "section": "Load R Package",
-    "text": "Load R Package\nlibrary(tidyverse)\nlibrary(torch)\n\nYou must load packages every new R Session"
-  },
-  {
-    "objectID": "lectures/1b.html#r-as-a-calculator",
-    "href": "lectures/1b.html#r-as-a-calculator",
-    "title": "Computational Setup",
-    "section": "R as a calculator",
-    "text": "R as a calculator\nR can evaluate different expressions in the console tab.\nTry the following:\n\n\\(4(4+2)/34\\)\n\\(6^3\\)\n\\(3-1\\)\n\\(4+4/3+45(32*34-54)\\)"
-  },
-  {
-    "objectID": "lectures/1b.html#r-functions",
-    "href": "lectures/1b.html#r-functions",
-    "title": "Computational Setup",
-    "section": "R Functions",
-    "text": "R Functions\nR functions performs tasks to specific data values.\nEvaluate the following values in R:\n\n\\(\\sqrt{3}\\)\n\\(e^3\\)\n\\(\\ln(53)\\)\n\\(\\log(324)\\)\n\\(\\sin(3)\\)\n\\(\\sin(3\\pi)\\)"
-  },
-  {
-    "objectID": "lectures/1b.html#types-of-data",
-    "href": "lectures/1b.html#types-of-data",
-    "title": "Computational Setup",
-    "section": "Types of Data",
-    "text": "Types of Data\n\nNumeric\nCharacter\nLogical\nMissing\n\nEvaluate the following code:\nis.numeric(1)\nis.numeric(\"1\")\nis.numeric(T)\nis.numeric(NA)"
-  },
-  {
-    "objectID": "lectures/1b.html#types-of-objects",
-    "href": "lectures/1b.html#types-of-objects",
-    "title": "Computational Setup",
-    "section": "Types of Objects",
-    "text": "Types of Objects\nIn R, an object contains a set of data. The most common types are vectors and matrix.\nRun this code and print out the objects in the console:\nx &lt;- 3:34\ny &lt;- matrix(1:20, nrow = 4)"
-  },
-  {
-    "objectID": "lectures/1b.html#data-frames",
-    "href": "lectures/1b.html#data-frames",
-    "title": "Computational Setup",
-    "section": "Data Frames",
-    "text": "Data Frames\nData frames can be thought of as R’s version of a data set.\nPlay around with mtcars:\n\n\nCode\nmtcars \n\n\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2"
-  },
-  {
-    "objectID": "lectures/1b.html#lists",
-    "href": "lectures/1b.html#lists",
-    "title": "Computational Setup",
-    "section": "Lists",
-    "text": "Lists\nList can be thought as an extended vector, but each element is a different R object.\nTry playing with this R object:\n\n\nCode\nlist_one &lt;- list(mtcars, rep(0, 4),\n                 diag(rep(1, 3)))\nlist_one\n\n\n#&gt; [[1]]\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n#&gt; \n#&gt; [[2]]\n#&gt; [1] 0 0 0 0\n#&gt; \n#&gt; [[3]]\n#&gt;      [,1] [,2] [,3]\n#&gt; [1,]    1    0    0\n#&gt; [2,]    0    1    0\n#&gt; [3,]    0    0    1"
-  },
-  {
-    "objectID": "lectures/1b.html#comparing-numbers-1",
-    "href": "lectures/1b.html#comparing-numbers-1",
-    "title": "Math 408",
-    "section": "Comparing Numbers",
-    "text": "Comparing Numbers\nYou can compare two numbers, or objects, that will result in a logical output."
-  },
-  {
-    "objectID": "lectures/1b.html#comparing-numbers-operators",
-    "href": "lectures/1b.html#comparing-numbers-operators",
-    "title": "Math 408",
-    "section": "Comparing Numbers Operators",
-    "text": "Comparing Numbers Operators\n\n\n\nOperator\nDescription\n\n\n\n\n&gt;\nGreater Than\n\n\n&lt;\nLess Than\n\n\n&gt;=\nGreater than or equal\n\n\n&lt;=\nLess than or equal\n\n\n==\nEquals\n\n\n!=\nNot Equals"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to Machine Learning!",
-    "section": "",
-    "text": "Brief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 23, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "exc/exc_2.html",
-    "href": "exc/exc_2.html",
-    "title": "Extra Credit 2",
-    "section": "",
-    "text": "After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use visual aids, such as a powerpoint presentation, to highlight your main findings, and how it relates to your own life. All books should be available through the Broome Library.\nBooks:\n\nMake it Stick: The Science of Successful Learning\n\nPeter Brown\n\nTeach Yourself How to Learn: Strategies you can use to ace any course\n\nSaundra McGuire\n\nLimitless Mind\n\nJo Boaler\n\nHappiness: A Guide to Developing Life’s\n\nMatthieu Ricard\n\nGrit: The Power of Passion and Perserverance\n\nAngela Duckworth\n\nMindset: The New Psychology of Success\n\nCarol Dweck\n\n\nVideo Essay Guidelines:\n\n10 Minutes Long\nUse of visual aids\nNarrated by your own voice\nDue 5/15/2026\n\nWorth 2 final grade percentage points."
-  },
-  {
-    "objectID": "exc.html",
-    "href": "exc.html",
-    "title": "Extra Credit",
-    "section": "",
-    "text": "Extra Credit is designed to expand on different topics that related to Machine Learning, but are not necessarily required for the course. Additionally, these opportunities provide students relief when unexpected situations occur during the semester. While it is not required, I encourage everyone to attempt each opportunity.\nBelow is more information on each assignment.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 1\n\n\nInstructions for extra credit one.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 2\n\n\nInstructions for extra credit two.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 3\n\n\nInstructions for extra credit three.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "books.html",
-    "href": "books.html",
-    "title": "Books",
-    "section": "",
-    "text": "A list of recommended books to learn more about Statistics, the majority are freely available from the Broome Library:"
-  },
-  {
-    "objectID": "books.html#basics",
-    "href": "books.html#basics",
-    "title": "Books",
-    "section": "Basics",
-    "text": "Basics\n\nIntroduction to Statistics and Data Analysis\n\nHeumann and Shalabh\n\nStatistical Foundations, Reasoning and Inference\n\nKauermann, Küchenhoff, and Heumann"
-  },
-  {
-    "objectID": "books.html#regression",
-    "href": "books.html#regression",
-    "title": "Books",
-    "section": "Regression",
-    "text": "Regression\n\nGeneralized Linear Models With Examples in R\n\nDunn and Smyth\nGraduate\n\nLinear and Generalized Linear Mixed Models and Their Applications (2nd Edition)\n\nJiang and Nguyen\nGraudate\n\nRegression Modeling Strategies\n\nHarrell\nUndergraduate\n\nVector Generalized Linear and Additive Models\n\nYee\nGraduate"
-  },
-  {
-    "objectID": "books.html#nonparametric",
-    "href": "books.html#nonparametric",
-    "title": "Books",
-    "section": "Nonparametric",
-    "text": "Nonparametric\n\nSemiparametric Regression with R\n\nHarezlak, Ruppert, and Wand\nGraduate"
-  },
-  {
-    "objectID": "books.html#computational",
-    "href": "books.html#computational",
-    "title": "Books",
-    "section": "Computational",
-    "text": "Computational\n\nBootstrap Methods with applications in R\n\nDikta and Scheer\nGraduate\n\nModern Optimization with R (2nd Edition)\n\nCortez\nGraduate\n\nComputational Statistics\n\nGentle\n\nMonte Carlo and Quasi-Monte Carlo Sampling\n\nLemieux\n\nStatistics With Julia\n\nNazarathy andKlok\n\nIntroducing Monte Carlo Methods in R\n\nRobert and Casella\n\nPermutation Statistical Methods with R\n\nBerry, Kvamme, Johnston, and Mielke\n\nMonte Carlo Strategies in Scientific Computing\n\nLiu"
-  },
-  {
-    "objectID": "books.html#bayesian",
-    "href": "books.html#bayesian",
-    "title": "Books",
-    "section": "Bayesian",
-    "text": "Bayesian\n\nIntroduction to Bayesian Inference, Methods and Computation\n\nHeard\n\nApplied Bayesian Statistics\n\nCowles\n\nBayesian Statistical Modeling with Stan, R, and Python\n\nMatsuura\n\nBayesian Essentials in R\n\nMarin and Robert"
-  },
-  {
-    "objectID": "books.html#theoretical",
-    "href": "books.html#theoretical",
-    "title": "Books",
-    "section": "Theoretical",
-    "text": "Theoretical\n\nEssentials of Stochastic Processes (3rd Edition)\n\nDurrett\nGraduate\n\nA Concise Introduction to Measure Theory\n\nShirali\nGraduate\n\nLarge Sample Techniques for Statistics (2nd Edition)\n\nJiang\nGraduate\n\nA Course in Mathematical Statistics and Large Sample Theory\n\nBhattacharya, Lin, and Patrangenaru\nGraduate\n\nMixture and Hidden Markov Models with R\n\nVisser and Speekenbrink\nUndergraduate\n\nModern Mathematical Statistics (3rd Edition)\n\nDevore, Berk, and Carlton\nUndergraduate\n\nProbability Theory (3rd Edition)\n\nKlenke\nGraduate\n\nTesting Statistical Hypotheses (4th Edition)\n\nLehmann and Romano\nGraduate\n\nTheory of Point Estimation\n\nLehmann and Casella\nGraduate\nMay not be available"
-  },
-  {
-    "objectID": "books.html#longitudinal-data-analysis",
-    "href": "books.html#longitudinal-data-analysis",
-    "title": "Books",
-    "section": "Longitudinal Data Analysis",
-    "text": "Longitudinal Data Analysis\n\nLongitudinal Categorical Data Analysis\n\nSutradhar"
-  },
-  {
-    "objectID": "books.html#survival-analysis",
-    "href": "books.html#survival-analysis",
-    "title": "Books",
-    "section": "Survival Analysis",
-    "text": "Survival Analysis\n\nStatistical Modelling of Survival Data with Random Effects\n\nHa, Jeong, and Lee\n\nSurvival Analysis (3rd Edition)\n\nKleinbaum and Klein\n\nApplied Survival Analysis in R\n\nMoore\n\nBayesian Survival Analysis\n\nIbrahim, Chen, and Sinha\n\nSurvival Analysis Techniques for Censored and Truncated Data (2nd Edition)\n\nKlein and Moeschberger"
-  },
-  {
-    "objectID": "books.html#machine-learning",
-    "href": "books.html#machine-learning",
-    "title": "Books",
-    "section": "Machine Learning",
-    "text": "Machine Learning\n\nFundamental of High-Dimensional Statistics\n\nLederer\n\nAn Introduction to Statistical Learning (2nd Edition)\n\nJames, Witten, Hastie and Tibshirani\n\nStatistical Learning from a Regression Perspective (2nd Edition)\n\nBerk\n\nElements of Statistical Learning\n\nHastie, Friedman, and Tibshirani\n\nStatistics for High Dimensional Data\n\nBühlmann and van der Geer\n\nProbability and Statistics for Machine Learning\n\nDas Gupta"
-  },
-  {
-    "objectID": "books.html#time-series",
-    "href": "books.html#time-series",
-    "title": "Books",
-    "section": "Time-Series",
-    "text": "Time-Series\n\nIntroduction to Time Series and Forcasting (3rd Edition)\n\nBrockwell and Davis\n\nTime Series Analysis and Its Applications\n\nShumway and Stoffer\n\nTime Series Analysis for the State-Space Model with R/Stan\n\nHagiwara"
-  },
-  {
-    "objectID": "books.html#study-desing-and-causal-inference",
-    "href": "books.html#study-desing-and-causal-inference",
-    "title": "Books",
-    "section": "Study Desing and Causal Inference",
-    "text": "Study Desing and Causal Inference\n\nCausal Inference What IF\n\nHernán and Robins\n\nDesign of Observational Studies\n\nRosenbaum\n\n\nBolded Titles, I have read thoroughly."
-  },
-  {
-    "objectID": "exc/exc_1.html",
-    "href": "exc/exc_1.html",
-    "title": "Extra Credit 1",
-    "section": "",
-    "text": "Write a 2-page report practices related to self care. As you move on through college and your future careers, it is important to practice self care. For this extra credit assignments, write about what are some practices you will do to for your well being.\nWorth 1 percent points.\nReport guidelines\n\n2 Pages\nDouble Spaced\n12 point font\nDue 02/15/2026"
-  },
-  {
-    "objectID": "exc/exc_3.html",
-    "href": "exc/exc_3.html",
-    "title": "Extra Credit 3",
-    "section": "",
-    "text": "After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use is visual aids, such as a powerpoint presentation, to highlight your main findings. All books should be available through the Broome Library.\nBooks:\n\nEmpire of AI\n\nKaren Hao\n\nThe Last Human Job\n\nAllison Pugh\n\nThe Book of Why\n\nJudea Pearl\n\nAlgorithms of Oppression\n\nSafiya Umoja Noble\n\nData Feminism\n\nCatherine D’Ignazio and Lauren Klein\n\nWeapons of Math Destruction\n\nCathy O’Niel\n\nInvisible Women: Data bias in a world designed for men\n\nCaroline Criado Perez\n\nFactfulness: Ten Reasons We’re Wrong About the World… and Why Things are Better Than You Think\n\nHans Rosling\n\nArtificial Unintelligence: How Computers Misunderstand the World\n\nMerideth Broussard\n\nTechnically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech\n\nSara Wachter-Boettcher\n\nUnmasking AI\n\nJoy Buolamwini\n\nRace After Technology\n\nRuha Benjamin\n\nCloud Ethics\n\nLouise Amoore\n\nMore than a Glitch\n\nMeridith Broussard\n\nDigitizing Race\n\nLisa Nammura\n\nOR ANY Book Approved By Me (Deadline for Approval by March 29, 2026)\n\nVideo Essay Guidelines:\n\n10 Minutes Long\nUse of visual aids\nNarrated by your own voice\nDue 5/15/2026\n\nWorth 2 final grade percentage points."
-  },
-  {
-    "objectID": "lectures/1a.html#introductions-1",
-    "href": "lectures/1a.html#introductions-1",
-    "title": "Math 408",
-    "section": "Introductions",
-    "text": "Introductions\n\nSan Bernardino, CA\nCSU Monterey Bay\n\nBS Biology\n\nSan Diego State University\n\nMaster’s in Public Health\n\nUC Riverside\n\nPhD in Applied Statistics"
-  },
-  {
-    "objectID": "lectures/1a.html#introductions-2",
-    "href": "lectures/1a.html#introductions-2",
-    "title": "Math 408",
-    "section": "Introductions",
-    "text": "Introductions\n\nName\nYear\nMajor\nFun Fact\nCareer Goal"
-  },
-  {
-    "objectID": "lectures/1a.html#class-setup-1",
-    "href": "lectures/1a.html#class-setup-1",
-    "title": "Math 408",
-    "section": "Class Setup",
-    "text": "Class Setup\n\nHomework Assignments\nFinal Presentation\nFinal Write Up\nExtra Credit"
-  },
-  {
-    "objectID": "lectures/1a.html#syllabus",
-    "href": "lectures/1a.html#syllabus",
-    "title": "Math 408",
-    "section": "Syllabus",
-    "text": "Syllabus\nm408.inqs.info/syllabus"
-  },
-  {
-    "objectID": "lectures/1a.html#tools",
-    "href": "lectures/1a.html#tools",
-    "title": "Math 408",
-    "section": "Tools",
-    "text": "Tools\n\nR\nTorch\nStan\nQuarto"
-  },
-  {
-    "objectID": "lectures/1a.html#ide",
-    "href": "lectures/1a.html#ide",
-    "title": "Math 408",
-    "section": "IDE",
-    "text": "IDE\n\nPositron\nVS Code\nVS Codium\nRStudio"
-  },
-  {
-    "objectID": "lectures/1a.html#use-of-generative-ai-policy",
-    "href": "lectures/1a.html#use-of-generative-ai-policy",
-    "title": "Math 408",
-    "section": "Use of Generative AI Policy",
-    "text": "Use of Generative AI Policy\nThe use of generative artificial intelligence (AI) to complete any part or all of an assignment/exam is strictly prohibited in this class. This includes, but not limited to, ChatGPT, Claude, Meta AI, and Google Gemini.\n\nYou may use AI to enhance you understanding of the material.\n\n\nYou may not use AI to complete assignments.\n\n\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
-  },
-  {
-    "objectID": "lectures/1a.html#use-of-ai",
-    "href": "lectures/1a.html#use-of-ai",
-    "title": "Math 408",
-    "section": "Use of AI",
-    "text": "Use of AI\nThere are consequences when you use of AI:\n\nEducational Mislearning\nTrusting AI\nStolen Work\nPrivacy Concerns\nEnvironmental Impacts\nWorking Exploitation"
-  },
-  {
-    "objectID": "lectures/1a.html#educational-mislearning",
-    "href": "lectures/1a.html#educational-mislearning",
-    "title": "Math 408",
-    "section": "Educational Mislearning",
-    "text": "Educational Mislearning\nThe purpose of this class, and college, is for you to learn about critical thinking skills and perseverance. Using AI will only teach you how to get an answer, which may or may not be correct.\n\nYou will not develop the skills needed to problem solve a challenge. Additionally, developing grit is essential to become successful in college and life. There is no easy way out and AI is an illusion to your success in life.\n\n\nTo learn something, it requires hours of work! If not years!"
-  },
-  {
-    "objectID": "lectures/1a.html#trusting-ai",
-    "href": "lectures/1a.html#trusting-ai",
-    "title": "Math 408",
-    "section": "Trusting AI",
-    "text": "Trusting AI\nWhen using AI, you must acknowledge its limitations:\n\nResponses provided may be incorrect\nResponses may not be fair\nCompanies may manipulate responses and/or terms of service for their benefit\nCompanies may not have your best interst in mind\n\n\nYou should always proceed with caution utilizing these tools!"
-  },
-  {
-    "objectID": "lectures/1a.html#stolen-work",
-    "href": "lectures/1a.html#stolen-work",
-    "title": "Math 408",
-    "section": "Stolen Work",
-    "text": "Stolen Work\n\nAdditionally, all these individuals are not receiving any royalties for the work to be used in creating generative AI models.\n\n\nInside Higher Ed and The New Yorker highlight individual’s concern of their work being used to train AI models."
-  },
-  {
-    "objectID": "lectures/1a.html#privacy-concerns",
-    "href": "lectures/1a.html#privacy-concerns",
-    "title": "Math 408",
-    "section": "Privacy Concerns",
-    "text": "Privacy Concerns\nThe use of generative AI raises concerns of what data is being harvested from us, possibly without informed consent.\n\nWhen you use any large language models, you do not know what information is being harvested from you.\n\n\nDo you want to upload your thoughts and ideas to a company that can monetize, and possibly exploit you.\n\n\nDoes your Professors consent with you uploading their assignments to large language models?\n\n\nStanford provided a report highlighting the risks of our personal data use in large language models."
-  },
-  {
-    "objectID": "lectures/1a.html#environmental-impact",
-    "href": "lectures/1a.html#environmental-impact",
-    "title": "Math 408",
-    "section": "Environmental Impact",
-    "text": "Environmental Impact\nIn order to run these large language models, companies need to use a large amounts of energy. This is because large servers are needed to both train and execute a model.\n\nThe LA Times reports the potential impact that running AI models in California.\n\n\nAdditionally, Time reports that a ChatGPT query uses ten times more energy than a Google search query, and global AI demands can consume of 1 trillion gallons of water by 2027.\n\n\nThere are also environmental justice questions about where these data centers are constructed."
-  },
-  {
-    "objectID": "lectures/1a.html#worker-exploitation",
-    "href": "lectures/1a.html#worker-exploitation",
-    "title": "Math 408",
-    "section": "Worker Exploitation",
-    "text": "Worker Exploitation\nThe Washington Post and Time (Article 1 and Article 2) reported that AI companies utilize “digital sweatshops” to classify data points for model training.\n\nThere is a human cost from the Global South, both financially and mentally, to develop the AI models for users in the United States and Europe.\n\n\nWe must be conscious consumers and demand more from these companies to provide safe working conditions and livable wages."
-  },
-  {
-    "objectID": "lectures/1a.html#is-using-ai-bad",
-    "href": "lectures/1a.html#is-using-ai-bad",
-    "title": "Math 408",
-    "section": "Is Using AI Bad?",
-    "text": "Is Using AI Bad?\n\nYes/No/I don’t know\n\n\nBut, we need to acknowledge the consequences of using AI!\n\n\nAnd, we need to demand companies to create and implement AI in an ethical manner!"
-  },
-  {
-    "objectID": "lectures/1a.html#privacy-concerns-links",
-    "href": "lectures/1a.html#privacy-concerns-links",
-    "title": "Math 408",
-    "section": "Privacy Concerns Links",
-    "text": "Privacy Concerns Links\n\nOpenAI Says It’s Scanning Users’ ChatGPT Conversations and Reporting Content to the Police\nPrivacy in an AI Era: How Do We Protect Our Personal Information?"
-  },
-  {
-    "objectID": "lectures/1a.html#labor-violations-links",
-    "href": "lectures/1a.html#labor-violations-links",
-    "title": "Math 408",
-    "section": "Labor Violations Links",
-    "text": "Labor Violations Links\n\nThe Emotional Labor Behind AI Intimacy\nHow thousands of ‘overworked, underpaid’ humans train Google’s AI to seem smart"
-  },
-  {
-    "objectID": "lectures/1a.html#affecting-communities-links",
-    "href": "lectures/1a.html#affecting-communities-links",
-    "title": "Math 408",
-    "section": "Affecting Communities Links",
-    "text": "Affecting Communities Links\n\nAI surveillance and data colonialism shape African conflicts\nAfrican workers are taking on Meta and the world should pay attention\n‘It’s destroyed me completely’: Kenyan moderators decry toll of training of AI models\nThe AI Industry Is Traumatizing Desperate Contractors in the Developing World for Pennies\nChatGPT advises women to ask for lower salaries, study finds\nThe Impact of the Use of AI on People with Disabilities"
-  },
-  {
-    "objectID": "lectures/1a.html#ideas-and-learning-links",
-    "href": "lectures/1a.html#ideas-and-learning-links",
-    "title": "Math 408",
-    "section": "Ideas and Learning Links",
-    "text": "Ideas and Learning Links\n\nStudent’s Right to Refuse AI\nAI is homogenizing your thoughts\nThe Incuriosity Engine\nNew Junior Developers Can’t Actually Code"
-  },
-  {
-    "objectID": "lectures/1a.html#environmental-costs",
-    "href": "lectures/1a.html#environmental-costs",
-    "title": "Math 408",
-    "section": "Environmental Costs",
-    "text": "Environmental Costs\n\n‘I can’t drink the water’ - life next to a US data centre"
-  },
-  {
-    "objectID": "lectures/1a.html#extra-credits-1",
-    "href": "lectures/1a.html#extra-credits-1",
-    "title": "Math 408",
-    "section": "Extra Credits",
-    "text": "Extra Credits\n\nExtra Credit 1\nExtra Credit 2\nExtra Credit 3"
->>>>>>> bebb0f79a25fe1daa380379133aa05c50270e2b5
   },
   {
     "objectID": "lectures/2a.html#r-packages",
@@ -1057,107 +485,135 @@
   {
     "objectID": "lectures/1b.html#r-programming",
     "href": "lectures/1b.html#r-programming",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "R Programming",
-    "text": "R Programming\nR is a statistical programming package that allows you to conduct different types of analysis.\nR\n\n\n\n\n\n\nNote\n\n\nWindows Users: Install RTools"
+    "text": "R Programming\nR is a statistical programming package that allows you to conduct different types of analysis.\nR\n\n\n\n\n\n\nWindows Users\n\n\nInstall RTools"
   },
   {
     "objectID": "lectures/1b.html#positron",
     "href": "lectures/1b.html#positron",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Positron",
-    "text": "Positron\nA piece of software that organizes how you conduct statistical analysis in R.\nPositron\n\n\n\n\n\n\nNote\n\n\nWindows Users: Use system-level package If you cannot work with R, install Visual C++ Redistributable"
+    "text": "Positron\nA piece of software that organizes how you conduct statistical analysis in R.\nPositron\n\n\n\n\n\n\nWindows Users\n\n\nUse system-level package If you cannot work with R, install Visual C++ Redistributable"
   },
   {
     "objectID": "lectures/1b.html#rstudio",
     "href": "lectures/1b.html#rstudio",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "RStudio",
     "text": "RStudio\nIf Positron does not work, install RStudio instead."
   },
   {
     "objectID": "lectures/1b.html#installing-torch",
     "href": "lectures/1b.html#installing-torch",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Installing Torch",
-    "text": "Installing Torch\nIn R, install torch with:\ninstall.packages(\"torch\")\n\n\n\n\n\n\nNote\n\n\nNvidia-Users\noptions(timeout = 600) # increasing timeout is recommended since we will be downloading a 2GB file.\n# For Windows and Linux: \"cpu\", \"cu128\" are the only currently supported\n# For MacOS the supported are: \"cpu-intel\" or \"cpu-m1\"\nkind &lt;- \"cpu\"\nversion &lt;- available.packages()[\"torch\",\"Version\"]\noptions(repos = c(\n  torch = sprintf(\"https://torch-cdn.mlverse.org/packages/%s/%s/\", kind, version),\n  CRAN = \"https://cloud.r-project.org\" # or any other from which you want to install the other R dependencies.\n))\ninstall.packages(\"torch\")"
+    "text": "Installing Torch\nIn R, install torch with:\ninstall.packages(\"torch\")\n\n\n\n\n\n\nNvidia-Users\n\n\noptions(timeout = 600) # increasing timeout is recommended since we will be downloading a 2GB file.\n# For Windows and Linux: \"cpu\", \"cu128\" are the only currently supported\n# For MacOS the supported are: \"cpu-intel\" or \"cpu-m1\"\nkind &lt;- \"cpu\"\nversion &lt;- available.packages()[\"torch\",\"Version\"]\noptions(repos = c(\n  torch = sprintf(\"https://torch-cdn.mlverse.org/packages/%s/%s/\", kind, version),\n  CRAN = \"https://cloud.r-project.org\" # or any other from which you want to install the other R dependencies.\n))\ninstall.packages(\"torch\")"
   },
   {
     "objectID": "lectures/1b.html#installing-stan",
     "href": "lectures/1b.html#installing-stan",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Installing Stan",
     "text": "Installing Stan\ninstall.packages(\"cmdstanr\", \n    repos = c('https://stan-dev.r-universe.dev', getOption(\"repos\")))\ncmdstanr::check_cmdstan_toolchain()\ncmdstanr::install_cmdstan(cores = 2)"
   },
   {
     "objectID": "lectures/1b.html#other-r-packages",
     "href": "lectures/1b.html#other-r-packages",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Other R Packages",
-    "text": "Other R Packages\n\nCore PackagesCourse PackagesMisc Packages\n\n\n\nTidyverse\nTorch\ncmdstanr\n\n\n\n\nmvtnorm\nluz\n\n\n\n\n\n\n\nNote\n\n\nMore packages will be added throughout the course if necessary.\n\n\n\n\n\n\nKnitr\nRMarkdown\nQuarto"
+    "text": "Other R Packages\n\nCore PackagesCourse PackagesMisc Packages\n\n\n\nTidyverse\n\n\n\n\nmvtnorm\nluz\n\n\n\n\n\n\n\nNote\n\n\nMore packages will be added throughout the course if necessary.\n\n\n\n\n\n\nRMarkdown\nQuarto\nextraInserts (GitHub Package)"
   },
   {
     "objectID": "lectures/1b.html#load-r-package",
     "href": "lectures/1b.html#load-r-package",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Load R Package",
     "text": "Load R Package\nlibrary(tidyverse)\nlibrary(torch)\n\nYou must load packages every new R Session"
   },
   {
+    "objectID": "lectures/1b.html#workspaces-1",
+    "href": "lectures/1b.html#workspaces-1",
+    "title": "Computational Setup",
+    "section": "Workspaces",
+    "text": "Workspaces\nWorkspaces allows you to create locations on your computer and set up a computing environment in one location."
+  },
+  {
     "objectID": "lectures/1b.html#r-as-a-calculator",
     "href": "lectures/1b.html#r-as-a-calculator",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "R as a calculator",
     "text": "R as a calculator\nR can evaluate different expressions in the console tab.\nTry the following:\n\n\\(4(4+2)/34\\)\n\\(6^3\\)\n\\(3-1\\)\n\\(4+4/3+45(32*34-54)\\)"
   },
   {
     "objectID": "lectures/1b.html#r-functions",
     "href": "lectures/1b.html#r-functions",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "R Functions",
     "text": "R Functions\nR functions performs tasks to specific data values.\nEvaluate the following values in R:\n\n\\(\\sqrt{3}\\)\n\\(e^3\\)\n\\(\\ln(53)\\)\n\\(\\log(324)\\)\n\\(\\sin(3)\\)\n\\(\\sin(3\\pi)\\)"
   },
   {
     "objectID": "lectures/1b.html#types-of-data",
     "href": "lectures/1b.html#types-of-data",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Types of Data",
     "text": "Types of Data\n\nNumeric\nCharacter\nLogical\nMissing\n\nEvaluate the following code:\nis.numeric(1)\nis.numeric(\"1\")\nis.numeric(T)\nis.numeric(NA)"
   },
   {
     "objectID": "lectures/1b.html#types-of-objects",
     "href": "lectures/1b.html#types-of-objects",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Types of Objects",
     "text": "Types of Objects\nIn R, an object contains a set of data. The most common types are vectors and matrix.\nRun this code and print out the objects in the console:\nx &lt;- 3:34\ny &lt;- matrix(1:20, nrow = 4)"
   },
   {
     "objectID": "lectures/1b.html#data-frames",
     "href": "lectures/1b.html#data-frames",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Data Frames",
     "text": "Data Frames\nData frames can be thought of as R’s version of a data set.\nPlay around with mtcars:\n\n\nCode\nmtcars \n\n\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2"
   },
   {
     "objectID": "lectures/1b.html#lists",
     "href": "lectures/1b.html#lists",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Lists",
     "text": "Lists\nList can be thought as an extended vector, but each element is a different R object.\nTry playing with this R object:\n\n\nCode\nlist_one &lt;- list(mtcars, rep(0, 4),\n                 diag(rep(1, 3)))\nlist_one\n\n\n#&gt; [[1]]\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n#&gt; \n#&gt; [[2]]\n#&gt; [1] 0 0 0 0\n#&gt; \n#&gt; [[3]]\n#&gt;      [,1] [,2] [,3]\n#&gt; [1,]    1    0    0\n#&gt; [2,]    0    1    0\n#&gt; [3,]    0    0    1"
   },
   {
     "objectID": "lectures/1b.html#comparing-numbers-1",
     "href": "lectures/1b.html#comparing-numbers-1",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Comparing Numbers",
     "text": "Comparing Numbers\nYou can compare two numbers, or objects, that will result in a logical output."
   },
   {
     "objectID": "lectures/1b.html#comparing-numbers-operators",
     "href": "lectures/1b.html#comparing-numbers-operators",
-    "title": "Math 408",
+    "title": "Computational Setup",
     "section": "Comparing Numbers Operators",
     "text": "Comparing Numbers Operators\n\n\n\nOperator\nDescription\n\n\n\n\n&gt;\nGreater Than\n\n\n&lt;\nLess Than\n\n\n&gt;=\nGreater than or equal\n\n\n&lt;=\nLess than or equal\n\n\n==\nEquals\n\n\n!=\nNot Equals"
+  },
+  {
+    "objectID": "lectures/1b.html#labeled-lists-key-value",
+    "href": "lectures/1b.html#labeled-lists-key-value",
+    "title": "Computational Setup",
+    "section": "Labeled Lists (Key-Value)",
+    "text": "Labeled Lists (Key-Value)\n\n\nCode\nlist_two &lt;- list(data = mtcars, \n                 vector  = rep(0, 4),\n                 matricx = diag(rep(1, 3)))\nlist_two\n\n\n#&gt; $data\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n#&gt; \n#&gt; $vector\n#&gt; [1] 0 0 0 0\n#&gt; \n#&gt; $matricx\n#&gt;      [,1] [,2] [,3]\n#&gt; [1,]    1    0    0\n#&gt; [2,]    0    1    0\n#&gt; [3,]    0    0    1\n\n\nCode\nlist_two$vector\n\n\n#&gt; [1] 0 0 0 0"
+  },
+  {
+    "objectID": "lectures/1b.html#indexing",
+    "href": "lectures/1b.html#indexing",
+    "title": "Computational Setup",
+    "section": "Indexing",
+    "text": "Indexing\nIndexing an object is the process selecting a specific element in an object. Below is"
+  },
+  {
+    "objectID": "lectures/1b.html#resources-in-programming",
+    "href": "lectures/1b.html#resources-in-programming",
+    "title": "Computational Setup",
+    "section": "Resources in Programming",
+    "text": "Resources in Programming\nR Basics Material"
   },
   {
     "objectID": "lectures/2b.html#r-packages",
@@ -1438,12 +894,5 @@
     "title": "Week 2",
     "section": "Resources",
     "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
-  },
-  {
-    "objectID": "lectures/1b.html#workspaces-1",
-    "href": "lectures/1b.html#workspaces-1",
-    "title": "Computational Setup",
-    "section": "Workspaces",
-    "text": "Workspaces\nWorkspaces allows you to create locations on your computer and set up a computing environment in one location."
   }
 ]

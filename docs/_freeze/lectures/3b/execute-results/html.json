@@ -1,0 +1,19 @@
+{
+  "hash": "c2579c7b31b86bc54d83a11e93781a58",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Optimization\"\nformat:\n  revealjs:\n    width: 1200\n    scrollable: false\n    include-in-header: \"math.html\"\n    footer: m408.inqs.info/lectures/1a\n    theme: [default, styles.scss]\n    preview-links: true\n    navigation-mode: vertical\n    controls-layout: edges\n    controls-tutorial: true\n    slide-number: true\n    pointer:\n      pointerSize: 48\n    incremental: false \n    chalkboard:\n      theme: whiteboard\n      chalk-width: 4\nknitr:\n  opts_chunk: \n    echo: true\n    eval: true\n    message: false\n    warnings: false\n    comment: \"#>\" \n    \nrevealjs-plugins:\n  - pointer\n  - verticator\n  \nfilters: \n  - code-fullscreen\n  - reveal-auto-agenda\n\neditor: source\n---\n\n## R Packages\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(mvtnorm)\nlibrary(numDeriv)\n```\n:::\n\n\n## Simulated Data\n\n$$\nY_i = 3.85 + 12.3 X_1 - 9.7 X_2 + \\varepsilon_i\n$$\n\n$$\n\\varepsilon \\sim N(0, 2.4)\n$$\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nbeta <- c(3.85, 12.3, -9.7)\nx <- rmvnorm(500, c(3, 8))\nxx <- cbind(1, x)\ny <- xx%*%beta + rnorm(500, sd = sqrt(2.4))\n```\n:::\n\n\n# Optimization\n\n## Optimization\n\n# Gradient Descent\n\n## Gradient Descent\n\n## Alternative Versions\n\n# Stochastic Gradient Descent\n\n## Stochastic Gradient Descent\n\n# Newton-Raphson\n\n## Newton-Raphson Algorithm\n\n# Quasi-Newton\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
