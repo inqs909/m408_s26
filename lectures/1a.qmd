@@ -99,6 +99,8 @@ editor: source
 - [VS Codium](https://vscodium.com/)
 - [RStudio](https://posit.co/downloads/)
 
+# 
+
 # Generative AI
 
 ## Use of Generative AI Policy

@@ -1,6 +1,7 @@
 ---
 title: "Syllabus"
 editor: source
+navbar: false
 format:
   html: 
     code-fold: true
@@ -24,6 +25,11 @@ format:
 **Office Location:** Marin 2326
 
 **Office Hours:**
+
+- T/TH 1-2:30 PM
+- Wed 4-5 PM
+
+**Lecture:** Gateway Hall 3501 T/TH 10:30 - 11:45 PM
 
 **Course Website:** [m408.inqs.info](https://m408.inqs.info/) **AND** Canvas
 
