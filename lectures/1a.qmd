@@ -99,7 +99,46 @@ editor: source
 - [VS Codium](https://vscodium.com/)
 - [RStudio](https://posit.co/downloads/)
 
-# 
+# Final Project
+
+## The Final Project
+
+The final project is designed for you to demonstrate your understanding of neural networks. 
+
+## You may ...
+
+Build a neural network related to any data you are interested in to predict an outcome.
+
+## You may ...
+
+Use existing neural networks for classification, transcription or any other purpose.
+
+## You may ...
+
+Explore advance topics related to neural networks, such as
+
+- Physics-informend Neural Networks
+- Graph Neural Networks
+
+## For each project
+
+You will need to describe
+
+- The model used
+- Type of input data
+- Output of interest
+- A working example
+- Model Diagnostics
+
+## Final Presentation and Report
+
+You will demonstrate your results in a 10 minute during Week 15 or Finals Week.
+
+You written report will be due by the end of final's week.
+
+More information will be provided on a later date.
+
+
 
 # Generative AI
 

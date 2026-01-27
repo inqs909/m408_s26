@@ -7,20 +7,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<<<<<<< HEAD
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-=======
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
->>>>>>> f2634d5316bee2cf60dfa83f7b1242a2fb8bdfc3
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-<<<<<<< HEAD
   <meta name="generator" content="quarto-1.8.26">
-=======
-  <meta name="generator" content="quarto-1.8.27">
->>>>>>> f2634d5316bee2cf60dfa83f7b1242a2fb8bdfc3
 
   <title>MATH 408 – Computational Setup</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -321,8 +313,6 @@
 </ul>
 </div>
 <div id="tabset-1-2">
-<div class="columns">
-<div class="column">
 <ul>
 <li>mvtnorm</li>
 <li>luz</li>
@@ -677,13 +667,6 @@
 </div>
 </div>
 </section>
-<<<<<<< HEAD
-=======
-<section id="indexing" class="slide level2">
-<h2>Indexing</h2>
-<p>Indexing an object is the process selecting a specific element in an object. Below is</p>
-</section>
->>>>>>> f2634d5316bee2cf60dfa83f7b1242a2fb8bdfc3
 <section id="resources-in-programming" class="slide level2">
 <h2>Resources in Programming</h2>
 <p><a href="https://www.inqs.info/stat_comp/r.html">R Basics Material</a></p>
@@ -911,44 +894,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

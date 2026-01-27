@@ -7,20 +7,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<<<<<<< HEAD
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-=======
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
->>>>>>> f2634d5316bee2cf60dfa83f7b1242a2fb8bdfc3
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-<<<<<<< HEAD
   <meta name="generator" content="quarto-1.8.26">
-=======
-  <meta name="generator" content="quarto-1.8.27">
->>>>>>> f2634d5316bee2cf60dfa83f7b1242a2fb8bdfc3
 
   <title>MATH 408 – Math 408</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -162,7 +154,7 @@
 <p>Class Setup</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-
+<p>Final Project</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Generative AI</p>
@@ -216,7 +208,7 @@
 <p>Class Setup</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-
+<p>Final Project</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Generative AI</p>
@@ -261,8 +253,9 @@
 <li><a href="https://posit.co/downloads/">RStudio</a></li>
 </ul>
 </section></section>
-<section id="section" class="title-slide slide level1 agenda-slide center">
-<h1></h1>
+<section>
+<section id="final-project" class="title-slide slide level1 agenda-slide center">
+<h1>Final Project</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
@@ -272,7 +265,7 @@
 <p>Class Setup</p>
 </div></li>
 <li><div class="agenda-active">
-
+<p>Final Project</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Generative AI</p>
@@ -286,7 +279,43 @@
 </ul>
 </div>
 </section>
-
+<section id="the-final-project" class="slide level2">
+<h2>The Final Project</h2>
+<p>The final project is designed for you to demonstrate your understanding of neural networks.</p>
+</section>
+<section id="you-may" class="slide level2">
+<h2>You may …</h2>
+<p>Build a neural network related to any data you are interested in to predict an outcome.</p>
+</section>
+<section id="you-may-1" class="slide level2">
+<h2>You may …</h2>
+<p>Use existing neural networks for classification, transcription or any other purpose.</p>
+</section>
+<section id="you-may-2" class="slide level2">
+<h2>You may …</h2>
+<p>Explore advance topics related to neural networks, such as</p>
+<ul>
+<li>Physics-informend Neural Networks</li>
+<li>Graph Neural Networks</li>
+</ul>
+</section>
+<section id="for-each-project" class="slide level2">
+<h2>For each project</h2>
+<p>You will need to describe</p>
+<ul>
+<li>The model used</li>
+<li>Type of input data</li>
+<li>Output of interest</li>
+<li>A working example</li>
+<li>Model Diagnostics</li>
+</ul>
+</section>
+<section id="final-presentation-and-report" class="slide level2">
+<h2>Final Presentation and Report</h2>
+<p>You will demonstrate your results in a 10 minute during Week 15 or Finals Week.</p>
+<p>You written report will be due by the end of final’s week.</p>
+<p>More information will be provided on a later date.</p>
+</section></section>
 <section>
 <section id="generative-ai" class="title-slide slide level1 agenda-slide center">
 <h1>Generative AI</h1>
@@ -299,7 +328,7 @@
 <p>Class Setup</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-
+<p>Final Project</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Generative AI</p>
@@ -467,7 +496,7 @@
 <p>Class Setup</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-
+<p>Final Project</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Generative AI</p>
@@ -500,7 +529,7 @@
 <p>Class Setup</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-
+<p>Final Project</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Generative AI</p>
@@ -737,44 +766,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
