@@ -110,7 +110,12 @@ They help turn vague intentions into concrete plans.
 
 ## Homework 0
 
-Write a paragraph of what you want to achieve in this course, and create one smart goal to achieve by next Thursday.
+Provide some background information about your experience in computing. Have you coded any algorithms? Have you've done any statistical analysis? What programming languages have used before? 
+
+Write a paragraph of what you want to achieve in this machine learning course, and create one smart goal to achieve by next Thursday.
+
+Provide a description of what you want to do for your project.
+
 
 
 # Workspaces
