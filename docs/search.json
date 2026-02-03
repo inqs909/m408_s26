@@ -63,6 +63,146 @@
     "text": "R Packages\n\nlibrary(tidyverse)"
   },
   {
+    "objectID": "lectures/2a.html#class-setup-modifications",
+    "href": "lectures/2a.html#class-setup-modifications",
+    "title": "R Basics",
+    "section": "Class Setup Modifications",
+    "text": "Class Setup Modifications\n\nTuesday\n\nLecture on Neural Networks\n\nThursday\n\nWork on Project\nWork on Goals that leads to the completion of your project.\n\n\n\nThis will begin next week."
+  },
+  {
+    "objectID": "lectures/2a.html#why-the-change",
+    "href": "lectures/2a.html#why-the-change",
+    "title": "R Basics",
+    "section": "Why the change",
+    "text": "Why the change\nThis will help ensure projects get done, and students to learn at their own pace."
+  },
+  {
+    "objectID": "lectures/2a.html#goals",
+    "href": "lectures/2a.html#goals",
+    "title": "R Basics",
+    "section": "Goals",
+    "text": "Goals\nEvery week, your homework is to create one SMART Goal and provide evidence that you reached that goal.\n\nIf you were not able to reach your goal, provide clear steps on how to achieve it the following week."
+  },
+  {
+    "objectID": "lectures/2a.html#smart-goals",
+    "href": "lectures/2a.html#smart-goals",
+    "title": "R Basics",
+    "section": "SMART Goals",
+    "text": "SMART Goals\nSMART goals are a structured way to set clear, achievable objectives.\nThey help turn vague intentions into concrete plans."
+  },
+  {
+    "objectID": "lectures/2a.html#what-does-smart-stand-for",
+    "href": "lectures/2a.html#what-does-smart-stand-for",
+    "title": "R Basics",
+    "section": "What Does SMART Stand For?",
+    "text": "What Does SMART Stand For?\n\nSpecific: Be clear and focused.\nMeasurable: A criteria to track progress.\nAchievable: Be realistic and attainable.\nRelevant: Make it align with your priorities.\nTime-bound: Have a clear deadline."
+  },
+  {
+    "objectID": "lectures/2a.html#example-not-smart",
+    "href": "lectures/2a.html#example-not-smart",
+    "title": "R Basics",
+    "section": "Example (Not SMART)",
+    "text": "Example (Not SMART)\n\nI want to get better at R programming."
+  },
+  {
+    "objectID": "lectures/2a.html#example-smart",
+    "href": "lectures/2a.html#example-smart",
+    "title": "R Basics",
+    "section": "Example (SMART)",
+    "text": "Example (SMART)\n\nI will learn how to use for loops in R by writing at least one loop-based script in a week that performs tasks such as iterating over vectors and data frames."
+  },
+  {
+    "objectID": "lectures/2a.html#why-use-smart-goals",
+    "href": "lectures/2a.html#why-use-smart-goals",
+    "title": "R Basics",
+    "section": "Why Use SMART Goals?",
+    "text": "Why Use SMART Goals?\n\nImproves focus and motivation\nMakes progress measurable\nIncreases likelihood of success\nReduces ambiguity"
+  },
+  {
+    "objectID": "lectures/2a.html#homework-0",
+    "href": "lectures/2a.html#homework-0",
+    "title": "R Basics",
+    "section": "Homework 0",
+    "text": "Homework 0\nWrite a paragraph of what you want to achieve in this course, and create one smart goal to achieve by next Thursday."
+  },
+  {
+    "objectID": "lectures/2a.html#workspaces-1",
+    "href": "lectures/2a.html#workspaces-1",
+    "title": "R Basics",
+    "section": "Workspaces",
+    "text": "Workspaces\nWorkspaces allows you to create locations on your computer and set up a computing environment in one location."
+  },
+  {
+    "objectID": "lectures/2a.html#r-as-a-calculator",
+    "href": "lectures/2a.html#r-as-a-calculator",
+    "title": "R Basics",
+    "section": "R as a calculator",
+    "text": "R as a calculator\nR can evaluate different expressions in the console tab.\nTry the following:\n\n\\(4(4+2)/34\\)\n\\(6^3\\)\n\\(3-1\\)\n\\(4+4/3+45(32*34-54)\\)"
+  },
+  {
+    "objectID": "lectures/2a.html#r-functions",
+    "href": "lectures/2a.html#r-functions",
+    "title": "R Basics",
+    "section": "R Functions",
+    "text": "R Functions\nR functions performs tasks to specific data values.\nEvaluate the following values in R:\n\n\\(\\sqrt{3}\\)\n\\(e^3\\)\n\\(\\ln(53)\\)\n\\(\\log(324)\\)\n\\(\\sin(3)\\)\n\\(\\sin(3\\pi)\\)"
+  },
+  {
+    "objectID": "lectures/2a.html#types-of-data",
+    "href": "lectures/2a.html#types-of-data",
+    "title": "R Basics",
+    "section": "Types of Data",
+    "text": "Types of Data\n\nNumeric\nCharacter\nLogical\nMissing\n\nEvaluate the following code:\nis.numeric(1)\nis.numeric(\"1\")\nis.numeric(T)\nis.numeric(NA)"
+  },
+  {
+    "objectID": "lectures/2a.html#types-of-objects",
+    "href": "lectures/2a.html#types-of-objects",
+    "title": "R Basics",
+    "section": "Types of Objects",
+    "text": "Types of Objects\nIn R, an object contains a set of data. The most common types are vectors and matrix.\nRun this code and print out the objects in the console:\nx &lt;- 3:34\ny &lt;- matrix(1:20, nrow = 4)"
+  },
+  {
+    "objectID": "lectures/2a.html#data-frames",
+    "href": "lectures/2a.html#data-frames",
+    "title": "R Basics",
+    "section": "Data Frames",
+    "text": "Data Frames\nData frames can be thought of as R’s version of a data set.\nPlay around with mtcars:\n\nmtcars \n\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2"
+  },
+  {
+    "objectID": "lectures/2a.html#lists",
+    "href": "lectures/2a.html#lists",
+    "title": "R Basics",
+    "section": "Lists",
+    "text": "Lists\nList can be thought as an extended vector, but each element is a different R object.\nTry playing with this R object:\n\nlist_one &lt;- list(mtcars, rep(0, 4),\n                 diag(rep(1, 3)))\nlist_one\n\n#&gt; [[1]]\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n#&gt; \n#&gt; [[2]]\n#&gt; [1] 0 0 0 0\n#&gt; \n#&gt; [[3]]\n#&gt;      [,1] [,2] [,3]\n#&gt; [1,]    1    0    0\n#&gt; [2,]    0    1    0\n#&gt; [3,]    0    0    1"
+  },
+  {
+    "objectID": "lectures/2a.html#comparing-numbers-1",
+    "href": "lectures/2a.html#comparing-numbers-1",
+    "title": "R Basics",
+    "section": "Comparing Numbers",
+    "text": "Comparing Numbers\nYou can compare two numbers, or objects, that will result in a logical output."
+  },
+  {
+    "objectID": "lectures/2a.html#comparing-numbers-operators",
+    "href": "lectures/2a.html#comparing-numbers-operators",
+    "title": "R Basics",
+    "section": "Comparing Numbers Operators",
+    "text": "Comparing Numbers Operators\n\n\n\nOperator\nDescription\n\n\n\n\n&gt;\nGreater Than\n\n\n&lt;\nLess Than\n\n\n&gt;=\nGreater than or equal\n\n\n&lt;=\nLess than or equal\n\n\n==\nEquals\n\n\n!=\nNot Equals"
+  },
+  {
+    "objectID": "lectures/2a.html#labeled-lists-key-value",
+    "href": "lectures/2a.html#labeled-lists-key-value",
+    "title": "R Basics",
+    "section": "Labeled Lists (Key-Value)",
+    "text": "Labeled Lists (Key-Value)\n\nlist_two &lt;- list(data = mtcars, \n                 vector  = rep(0, 4),\n                 matricx = diag(rep(1, 3)))\nlist_two\n\n#&gt; $data\n#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb\n#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\n#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\n#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\n#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\n#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\n#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\n#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\n#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\n#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\n#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\n#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\n#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\n#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\n#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\n#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\n#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\n#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\n#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\n#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\n#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\n#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\n#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\n#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\n#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\n#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\n#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\n#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\n#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\n#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\n#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\n#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n#&gt; \n#&gt; $vector\n#&gt; [1] 0 0 0 0\n#&gt; \n#&gt; $matricx\n#&gt;      [,1] [,2] [,3]\n#&gt; [1,]    1    0    0\n#&gt; [2,]    0    1    0\n#&gt; [3,]    0    0    1\n\nlist_two$vector\n\n#&gt; [1] 0 0 0 0"
+  },
+  {
+    "objectID": "lectures/2a.html#resources-in-programming",
+    "href": "lectures/2a.html#resources-in-programming",
+    "title": "R Basics",
+    "section": "Resources in Programming",
+    "text": "Resources in Programming\nR Basics Material"
+  },
+  {
     "objectID": "lectures/2a.html#indexing-1",
     "href": "lectures/2a.html#indexing-1",
     "title": "R Basics",
@@ -84,15 +224,15 @@
     "text": "Matrices\nA matrix can be indexed by adding [] after the object’s name and specifying the number of each element. Separate the values by commas for specific indexes.\nx &lt;- matrix(1:40, nrow = 4)"
   },
   {
-    "objectID": "lectures/2a.html#data-frames",
-    "href": "lectures/2a.html#data-frames",
+    "objectID": "lectures/2a.html#data-frames-1",
+    "href": "lectures/2a.html#data-frames-1",
     "title": "R Basics",
     "section": "Data Frames",
     "text": "Data Frames\nData frames can be indexed using the $ operator and [].\nmtcars[,\"mpg\"]"
   },
   {
-    "objectID": "lectures/2a.html#lists",
-    "href": "lectures/2a.html#lists",
+    "objectID": "lectures/2a.html#lists-1",
+    "href": "lectures/2a.html#lists-1",
     "title": "R Basics",
     "section": "Lists",
     "text": "Lists\nLists can be indexed using the [[]] for a specific element of a list.\ntoy_list &lt;- list(x = letters,\n                 y = mtcars,\n                 z = list(x = diag(rep(1, 5),\n                          y = matrix(1:40, nrow = 5),\n                          z = band_members)))"

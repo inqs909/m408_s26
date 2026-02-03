@@ -44,6 +44,195 @@ editor: source
 library(tidyverse)
 ```
 
+# Class Setup
+
+## Class Setup Modifications 
+
+::: {.incremental}
+
+- Tuesday
+  - Lecture on Neural Networks
+- Thursday
+  - Work on Project
+  - Work on Goals that leads to the completion of your project.
+:::
+
+::: fragment
+This will begin next week.
+:::
+
+## Why the change
+
+This will help ensure projects get done, and students to learn at their own pace. 
+
+## Goals
+
+Every week, your homework is to create one SMART Goal and provide evidence that you reached that goal.
+
+::: fragment
+
+If you were not able to reach your goal, provide clear steps on how to achieve it the following week.
+
+:::
+
+## SMART Goals
+
+SMART goals are a structured way to set clear, achievable objectives.
+
+They help turn vague intentions into concrete plans.
+
+
+## What Does SMART Stand For?
+
+- **S**pecific: Be clear and focused.
+- **M**easurable: A criteria to track progress.
+- **A**chievable: Be realistic and attainable.
+- **R**elevant: Make it align with your priorities.
+- **T**ime-bound: Have a clear deadline.
+
+
+
+## Example (Not SMART)
+
+> I want to get better at R programming.
+
+
+## Example (SMART)
+
+> I will learn how to use `for` loops in R by writing at least one loop-based script in a week that performs tasks such as iterating over vectors and data frames.
+
+## Why Use SMART Goals?
+
+* Improves focus and motivation
+* Makes progress measurable
+* Increases likelihood of success
+* Reduces ambiguity
+
+## Homework 0
+
+Write a paragraph of what you want to achieve in this course, and create one smart goal to achieve by next Thursday.
+
+
+# Workspaces
+
+## Workspaces
+
+Workspaces allows you to create locations on your computer and set up a computing environment in one location.
+
+# R Basics
+
+## R as a calculator
+
+R can evaluate different expressions in the console tab.
+
+Try the following:
+
+1.  $4(4+2)/34$
+2.  $6^3$
+3.  $3-1$
+4.  $4+4/3+45(32*34-54)$
+
+
+## R Functions
+
+R functions performs tasks to specific data values.
+
+Evaluate the following values in R:
+
+1.  $\sqrt{3}$
+2.  $e^3$
+3.  $\ln(53)$
+4.  $\log(324)$
+5.  $\sin(3)$
+6.  $\sin(3\pi)$
+
+## Types of Data
+
+-   Numeric
+
+-   Character
+
+-   Logical
+
+-   Missing
+
+Evaluate the following code:
+
+```r
+is.numeric(1)
+is.numeric("1")
+is.numeric(T)
+is.numeric(NA)
+
+```
+
+## Types of Objects
+
+In R, an object contains a set of data. The most common types are `vectors` and `matrix`.
+
+Run this code and print out the objects in the console:
+
+```r
+x <- 3:34
+y <- matrix(1:20, nrow = 4)
+```
+
+
+## Data Frames
+
+Data frames can be thought of as R's version of a data set.
+
+Play around with mtcars:
+
+```{r}
+#| eval: true
+mtcars 
+```
+
+## Lists
+
+List can be thought as an extended vector, but each element is a different R object.
+
+Try playing with this R object:
+
+```{r}
+list_one <- list(mtcars, rep(0, 4),
+                 diag(rep(1, 3)))
+list_one
+```
+
+# Comparing Numbers
+
+## Comparing Numbers
+
+You can compare two numbers, or objects, that will result in a logical output.
+
+## Comparing Numbers Operators
+
+| Operator | Description           |
+|----------|-----------------------|
+| `>`      | Greater Than          |
+| `<`      | Less Than             |
+| `>=`     | Greater than or equal |
+| `<=`     | Less than or equal    |
+| `==`     | Equals                |
+| `!=`     | Not Equals            |
+
+## Labeled Lists (Key-Value)
+
+```{r}
+list_two <- list(data = mtcars, 
+                 vector  = rep(0, 4),
+                 matricx = diag(rep(1, 3)))
+list_two
+
+list_two$vector
+```
+
+## Resources in Programming
+
+[R Basics Material](https://www.inqs.info/stat_comp/r.html)
+
 # Indexing
 
 ## Indexing
