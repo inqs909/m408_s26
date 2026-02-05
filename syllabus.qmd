@@ -150,7 +150,7 @@ The following outline may be subject to change. Any changes will be announced in
 |:-----|:---------------------------------------------------|
 | 1    | Intro to Course/Computational Set Up               |
 | 2    | Programming in R                                   |
-| 3    | Data and Minimization                              |
+| 3    | Modeling Data                                      |
 | 4    | Neural Networks                                    |
 | 5    | Modules                                            |
 | 6    | Convolutional Neural Networks                      |
