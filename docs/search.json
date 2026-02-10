@@ -431,7 +431,7 @@
     "href": "index.html",
     "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
+    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "exc/exc_2.html",
@@ -1332,21 +1332,21 @@
   {
     "objectID": "posts/week_3.html",
     "href": "posts/week_3.html",
-    "title": "Week 2",
+    "title": "Week 3",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
     "objectID": "posts/week_3.html#learning-outcomes",
     "href": "posts/week_3.html#learning-outcomes",
-    "title": "Week 2",
+    "title": "Week 3",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
     "objectID": "posts/week_3.html#resources",
     "href": "posts/week_3.html#resources",
-    "title": "Week 2",
+    "title": "Week 3",
     "section": "Resources",
     "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\n\nNA"
   }

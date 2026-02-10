@@ -1,6 +1,6 @@
 ---
-title: "Week 2"
-date: 02-02-26
+title: "Week 3"
+date: 02-10-26
 description: This week looks at R basics in terms of functions and tensors.
 editor: source
 ---
