@@ -14,7 +14,7 @@
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>MATH 408 – Torch Basics</title>
+  <title>MATH 408 – Neural Networks</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -343,8 +343,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Torch Basics</h1>
-  <p class="subtitle">Datasets</p>
+  <h1 class="title">Neural Networks</h1>
+  <p class="subtitle">with Torch</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -353,62 +353,692 @@
 <section id="r-packages" class="slide level2">
 <h2>R Packages</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(torch)</span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(mvtnorm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># install.packages("torch")</span></span>
+<span id="cb1-2"><a></a><span class="co"># install.packages("luz")</span></span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(torch)</span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
+<span id="cb1-6"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
+<section id="data-in-python" class="slide level2">
+<h2>Data in Python</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> plotnine</span>
+<span id="cb2-2"><a></a><span class="im">from</span> plotnine.data <span class="im">import</span> penguins</span>
+<span id="cb2-3"><a></a>clean_penguins <span class="op">=</span> (</span>
+<span id="cb2-4"><a></a>    penguins</span>
+<span id="cb2-5"><a></a>        .dropna()</span>
+<span id="cb2-6"><a></a>        .drop(columns<span class="op">=</span>[<span class="st">"year"</span>])</span>
+<span id="cb2-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 <section>
-<section id="data" class="title-slide slide level1 agenda-slide center">
-<h1>Data</h1>
+<section id="machine-learning" class="title-slide slide level1 agenda-slide center">
+<h1>Machine Learning</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-active">
-<p>Data</p>
+<p>Machine Learning</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Linear Regression</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Neural Networks</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Other Topics</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Single-Layer Neural Network in R</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Training/Validating/Testing Data</p>
 </div></li>
 </ul>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>JohnsonJohnson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt;       Qtr1  Qtr2  Qtr3  Qtr4
-#&gt; 1960  0.71  0.63  0.85  0.44
-#&gt; 1961  0.61  0.69  0.92  0.55
-#&gt; 1962  0.72  0.77  0.92  0.60
-#&gt; 1963  0.83  0.80  1.00  0.77
-#&gt; 1964  0.92  1.00  1.24  1.00
-#&gt; 1965  1.16  1.30  1.45  1.25
-#&gt; 1966  1.26  1.38  1.86  1.56
-#&gt; 1967  1.53  1.59  1.83  1.86
-#&gt; 1968  1.53  2.07  2.34  2.25
-#&gt; 1969  2.16  2.43  2.70  2.25
-#&gt; 1970  2.79  3.42  3.69  3.60
-#&gt; 1971  3.60  4.32  4.32  4.05
-#&gt; 1972  4.86  5.04  5.04  4.41
-#&gt; 1973  5.58  5.85  6.57  5.31
-#&gt; 1974  6.03  6.39  6.93  5.85
-#&gt; 1975  6.93  7.74  7.83  6.12
-#&gt; 1976  7.74  8.91  8.28  6.84
-#&gt; 1977  9.54 10.26  9.54  8.73
-#&gt; 1978 11.88 12.06 12.15  8.91
-#&gt; 1979 14.04 12.96 14.85  9.99
-#&gt; 1980 16.20 14.67 16.02 11.61</code></pre>
+</section>
+<section id="what-is-machine-learning" class="slide level2">
+<h2>What is Machine Learning?</h2>
+<p>Machine Learning (ML) is the process of characterizing mathematical models, with the help of data, to predict outcomes of interest.</p>
+</section>
+<section id="machine-learning-model" class="slide level2">
+<h2>Machine Learning Model</h2>
+<p><span class="math display">\[
+Y = f(\boldsymbol X; \boldsymbol \theta)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Y\)</span>: is an outcome of interest that we are trying to predict</li>
+<li><span class="math inline">\(\boldsymbol X\)</span>: A vector of data points used to predict the outcome</li>
+<li><span class="math inline">\(f\)</span>: An unknown function that predicts the outcome</li>
+<li><span class="math inline">\(\boldsymbol \theta\)</span>: A vector of parameters to used to define the model</li>
+</ul>
+</section>
+<section id="what-is-going-on" class="slide level2">
+<h2>What is going on?</h2>
+<ul>
+<li>Data helps buil in a model</li>
+<li>Uses mathematical models to predict outcomes</li>
+<li>Uses probability theory to model randomness and loss</li>
+<li>Uses numerical algorithms to:
+<ul>
+<li>Find numerical values of parameters that minimize randomness</li>
+<li>Model unknown and nonlinear relationships</li>
+</ul></li>
+</ul>
+</section>
+<section id="main-types-of-machine-learning" class="slide level2">
+<h2>Main Types of Machine Learning</h2>
+<div class="columns">
+<div class="column">
+<h3 id="supervised-learning">Supervised Learning</h3>
+<ul>
+<li>Data includes <strong>inputs</strong> and <strong>outputs</strong></li>
+<li>ML Models learns to map inputs → outputs</li>
+</ul>
+</div><div class="column">
+<h3 id="unsupervised-learning">Unsupervised Learning</h3>
+<ul>
+<li>Data has <strong>no labels</strong></li>
+<li>Model discovers hidden patterns</li>
+</ul>
+</div></div>
+</section></section>
+<section>
+<section id="linear-regression" class="title-slide slide level1 agenda-slide center">
+<h1>Linear Regression</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Machine Learning</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Linear Regression</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Neural Networks</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Other Topics</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Single-Layer Neural Network in R</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Training/Validating/Testing Data</p>
+</div></li>
+</ul>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">torch_tensor</span>(JohnsonJohnson)<span class="sc">$</span>shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [1] 84</code></pre>
+</section>
+<section id="linear-regression-1" class="slide level2">
+<h2>Linear Regression</h2>
+<p>Linear Regression is a tool to predict continuous random variales that are known to follow a Normal Distribution, with a set of known predictor variables.</p>
+</section>
+<section id="simple-linear-regression" class="slide level2">
+<h2>Simple Linear Regression</h2>
+<p>Simple linear regression will model the association between one predictor variable and an outcome:</p>
+<p><span class="math display">\[
+\hat Y = \beta_0 + \beta_1 X
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\beta_0\)</span>: Intercept term</p></li>
+<li><p><span class="math inline">\(\beta_1\)</span>: Slope term</p></li>
+</ul>
+</section>
+<section id="mlr" class="slide level2">
+<h2>MLR</h2>
+<p>Multivariable linear regression models are used when more than one explanatory variable is used to explain the outcome of interest.</p>
+</section>
+<section id="additional-continuous-variable" class="slide level2">
+<h2>Additional Continuous Variable</h2>
+<p>To fit additional variable to the model, we will only need to add it to the model:</p>
+<p><span class="math display">\[
+\hat Y = \beta_0 +\beta_1 X_{1} + \beta_2 X_{2}
+\]</span></p>
+</section>
+<section id="categorical-variable" class="slide level2">
+<h2>Categorical Variable</h2>
+<p>A categorical variable can be included in a model, but a reference category must be specified.</p>
+</section>
+<section id="fitting-a-model-with-categorical-variables" class="slide level2">
+<h2>Fitting a model with categorical variables</h2>
+<p>To fit a model with categorical variables, we must utilize dummy (binary) variables that indicate which category is being referenced. We use <span class="math inline">\(C-1\)</span> dummy variables where <span class="math inline">\(C\)</span> indicates the number of categories. When coded correctly, each category will be represented by a combination of dummy variables.</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>If we have 4 categories, we will need 3 dummy variables:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Cat 1</th>
+<th>Cat 2</th>
+<th>Cat 3</th>
+<th>Cat 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dummy 1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Dummy 2</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Dummy 3</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Which one is the reference category?</p>
+</section>
+<section id="model-with-categorical-variables" class="slide level2">
+<h2>Model with categorical variables</h2>
+<p>Fitting an additional variable with 4 Categories</p>
+<p><span class="math display">\[
+\hat Y = \beta_0 +\beta_1 X_{1} + \beta_2 X_{2} + \beta_3 D_{1} + \beta_4 D_{2} + \beta_5  D_{3}
+\]</span></p>
+</section>
+<section id="sums-of-squared-errors" class="slide level2">
+<h2>Sums of Squared Errors</h2>
+<p>We find the values of <span class="math inline">\(\beta_1, \cdots, \beta_5\)</span> that minimizes the following function for <span class="math inline">\(i\)</span> data points:</p>
+<p><span class="math display">\[
+RSS = \sum^n_{i=1}(Y_i-\hat Y_i)^2
+\]</span></p>
+</section>
+<section id="matrix-formulation" class="slide level2">
+<h2>Matrix Formulation</h2>
+<p><span class="math display">\[
+Y_i = \boldsymbol X_i^\mathrm T \boldsymbol \beta + \epsilon_i
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(Y_i\)</span>: Outcome Variable</p></li>
+<li><p><span class="math inline">\(\boldsymbol X_i\)</span>: Predictors</p></li>
+<li><p><span class="math inline">\(\boldsymbol \beta\)</span>: Coefficients</p></li>
+<li><p><span class="math inline">\(\epsilon_i\)</span>: error term</p></li>
+</ul>
+</section>
+<section id="matrix-data-formulation" class="slide level2">
+<h2>Matrix Data Formulation</h2>
+<p><span class="math display">\[
+\boldsymbol\beta = (\boldsymbol X^\mathrm T \boldsymbol X)^{-1} \boldsymbol X^\mathrm T \boldsymbol Y
+\]</span></p>
+</section></section>
+<section>
+<section id="neural-networks" class="title-slide slide level1 agenda-slide center">
+<h1>Neural Networks</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Machine Learning</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Linear Regression</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Neural Networks</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Other Topics</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Single-Layer Neural Network in R</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Training/Validating/Testing Data</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="neural-networks-1" class="slide level2">
+<h2>Neural Networks</h2>
+<p>Neural networks are a type of machine learning algorithm that are designed to mimic the function of the human brain. They consist of interconnected nodes or “neurons” that process information and generate outputs based on the inputs they receive.</p>
+</section>
+<section id="uses" class="slide level2">
+<h2>Uses</h2>
+<p>Neural networks are typically used for tasks such as image recognition, natural language processing, and prediction. They are capable of learning from data and improving their performance over time, which makes them well-suited for complex and dynamic problems.</p>
+</section>
+<section id="neural-network" class="slide level2">
+<h2>Neural Network</h2>
+
+<img data-src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="neural-network-composition" class="slide level2">
+<h2>Neural Network Composition</h2>
+<ul>
+<li>Inputs: A set of characteristics in the data that we use to predict the outcome of interest</li>
+<li>Outputs: A set of variables (may be one) we wish to predict</li>
+<li>Hidden Layers: A set of functions that will transform the data such that it can better predict the outputs
+<ul>
+<li>Each hidden layer will has nodes that indicates the transformation</li>
+</ul></li>
+</ul>
+</section>
+<section id="single-layer-neural-network" class="slide level2">
+<h2>Single Layer Neural Network</h2>
+
+<img data-src="https://www.oreilly.com/api/v2/epubs/9781789808452/files/assets/290136cc-48f2-47b1-bb95-ffdb625b987d.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="model-setup" class="slide level2">
+<h2>Model Setup</h2>
+<p><span class="math display">\[
+Y = f(\boldsymbol X; \boldsymbol \theta)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol X\)</span>: a vector of predictor variables</li>
+<li><span class="math inline">\(\boldsymbol \theta\)</span>: a vector of parameters (<span class="math inline">\(\boldsymbol \beta, \boldsymbol \alpha\)</span>)</li>
+</ul>
+</section>
+<section id="single-layer-neural-networks" class="slide level2">
+<h2>Single Layer Neural Networks</h2>
+<p>A single layer neural networks can be formulated as linear function:</p>
+<p><span class="math display">\[
+f(\boldsymbol X; \boldsymbol \theta) = \beta_0 + \sum^K_{k=1}\beta_kh_k(\boldsymbol X)
+\]</span></p>
+<p>Where <span class="math inline">\(X\)</span> is a vector of inputs of length <span class="math inline">\(p\)</span> and <span class="math inline">\(K\)</span> is the number of nodes (neurons), <span class="math inline">\(\beta_j\)</span> are parameters</p>
+<p><span class="math display">\[
+h_k(\boldsymbol X) = g\left(\alpha_{k0} + \sum^p_{l=1}\alpha_{kl}X_{l}\right)
+\]</span></p>
+<p>with <span class="math inline">\(g(\cdot)\)</span> being a nonlinear activation function and <span class="math inline">\(\alpha_{kl}\)</span> are the weights (parameters).</p>
+</section>
+<section id="fitting-a-neural-network" class="slide level2">
+<h2>Fitting a Neural Network</h2>
+<p>Fitting a neural network is the process of taking input data (<span class="math inline">\(X\)</span>), finding the numerical values for the paramters that will minimize the following loss function, mean squared errors (MSE):</p>
+<p><span class="math display">\[
+\frac{1}{n}\sum^n_{i-1}\left\{Y_i-f(\boldsymbol X; \boldsymbol \theta)\right\}^2
+\]</span></p>
+</section></section>
+<section>
+<section id="other-topics" class="title-slide slide level1 agenda-slide center">
+<h1>Other Topics</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Machine Learning</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Linear Regression</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Neural Networks</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Other Topics</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Single-Layer Neural Network in R</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Training/Validating/Testing Data</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="nonlinear-activations-function-gcdot" class="slide level2">
+<h2>Nonlinear (Activations) Function <span class="math inline">\(g(\cdot)\)</span></h2>
+<p>Activation functions are used to create a nonlinear affect within the neural network. Common activation functions are</p>
+<ul>
+<li><p>Sigmoidal: <span class="math inline">\(g(z) = \frac{1}{1+e^{-z}}\)</span> (nn_sigmoidal)</p></li>
+<li><p>ReLU (rectified linear unit): <span class="math inline">\(g(z) = (z)_+ = zI(z\geq0)\)</span> (nn_relu)</p></li>
+<li><p>Hyperbolic Tangent: <span class="math inline">\(g(z) = \frac{\sinh(z)}{\cosh(z)} = \frac{\exp(z) - \exp(-z)} {\exp(z) + \exp(-z)}\)</span> (nn_tanh)</p></li>
+</ul>
+<p>Otherwise, the neural network is just an overparameterized linear model.</p>
+</section>
+<section id="optimizer" class="slide level2">
+<h2>Optimizer</h2>
+<p>The optimizer is the mathematical algorithm used to find the numerical values for the parameters <span class="math inline">\(\beta_j\)</span> and <span class="math inline">\(\alpha_{kl}\)</span>.</p>
+<div class="fragment">
+<p>The most basic algorithm used in gradient descent.</p>
+</div>
+</section></section>
+<section>
+<section id="single-layer-neural-network-in-r" class="title-slide slide level1 agenda-slide center">
+<h1>Single-Layer Neural Network in R</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Machine Learning</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Linear Regression</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Neural Networks</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Other Topics</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Single-Layer Neural Network in R</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Training/Validating/Testing Data</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="penguin-data" class="slide level2">
+<h2>Penguin Data</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Description</a></li><li><a href="#tabset-1-2">Data Prep</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p>Build a single-layer neural network that will predict <code>body_mass</code> with the remaining predictors. The hidden layer will contain 20 nodes, and the activation functions will be ReLU.</p>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a></a>penguins <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">drop_na</span>()</span>
+<span id="cb3-3"><a></a>px <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-6"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a>py <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb3-9"><a></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb3-10"><a></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-11"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
 </div>
 </div>
 </section>
-<section id="penguins" class="slide level2">
-<h2>Penguins</h2>
+<section id="model-description" class="slide level2">
+<h2>Model Description</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Overall</a></li><li><a href="#tabset-2-2">Initialize</a></li><li><a href="#tabset-2-3">Forward</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>modnn <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
+<span id="cb4-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(input_size) {</span>
+<span id="cb4-3"><a></a>    self<span class="sc">$</span>hidden <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(input_size, <span class="dv">20</span>)</span>
+<span id="cb4-4"><a></a>    self<span class="sc">$</span>activation <span class="ot">&lt;-</span> <span class="fu">nn_relu</span>()</span>
+<span id="cb4-5"><a></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="dv">20</span>, <span class="dv">1</span>)</span>
+<span id="cb4-6"><a></a>  },</span>
+<span id="cb4-7"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb4-8"><a></a>    x <span class="sc">|&gt;</span> </span>
+<span id="cb4-9"><a></a>      self<span class="sc">$</span><span class="fu">hidden</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb4-10"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb4-11"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
+<span id="cb4-12"><a></a>  }</span>
+<span id="cb4-13"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<p>Creates the functions needed to describe the details of each network.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>initialize <span class="ot">=</span> <span class="cf">function</span>(input_size) {</span>
+<span id="cb5-2"><a></a>    self<span class="sc">$</span>hidden <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(input_size, <span class="dv">50</span>)</span>
+<span id="cb5-3"><a></a>    self<span class="sc">$</span>activation <span class="ot">&lt;-</span> <span class="fu">nn_relu</span>()</span>
+<span id="cb5-4"><a></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="dv">50</span>, <span class="dv">1</span>)</span>
+<span id="cb5-5"><a></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-2-3">
+<p>Models the neural network.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>forward <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+<span id="cb6-2"><a></a>    x <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a></a>      self<span class="sc">$</span><span class="fu">hidden</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb6-4"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb6-5"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
+<span id="cb6-6"><a></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="optimizer-set-up" class="slide level2">
+<h2>Optimizer Set Up</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>modnn <span class="ot">&lt;-</span> modnn <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a></a>  <span class="fu">setup</span>(</span>
+<span id="cb7-3"><a></a>    <span class="at">loss =</span> <span class="fu">nn_mse_loss</span>(), <span class="co"># Used for numerical counts</span></span>
+<span id="cb7-4"><a></a>    <span class="at">optimizer =</span> optim_rmsprop</span>
+<span id="cb7-5"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a></a>  <span class="fu">set_hparams</span>(<span class="at">input_size =</span> <span class="fu">ncol</span>(px))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="fit-a-model" class="slide level2">
+<h2>Fit a Model</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Fit</a></li><li><a href="#tabset-3-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>fitted <span class="ot">&lt;-</span> modnn <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a></a>  <span class="fu">fit</span>(</span>
+<span id="cb8-3"><a></a>    <span class="at">data =</span> <span class="fu">list</span>(px, py),</span>
+<span id="cb8-4"><a></a>    <span class="at">epochs =</span> <span class="dv">200</span> <span class="co"># Can think as number of iterations</span></span>
+<span id="cb8-5"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">plot</span>(fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="trainingvalidatingtesting-data" class="title-slide slide level1 agenda-slide center">
+<h1>Training/Validating/Testing Data</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Machine Learning</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Linear Regression</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Neural Networks</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Other Topics</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Single-Layer Neural Network in R</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Training/Validating/Testing Data</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="error-rate" class="slide level2">
+<h2>Error Rate</h2>
+<p>When creating a model, we are interested in determining how effective the model will be in predicting a new data point, ie not in our training data.</p>
+<div class="fragment">
+<p>The error rate is a metric to determine how often will future data points be when using our model.</p>
+</div>
+<div class="fragment">
+<p>The problem is how can we get future data to validate our model?</p>
+</div>
+</section>
+<section id="trainingvalidatingtesting-data-1" class="slide level2">
+<h2>Training/Validating/Testing Data</h2>
+<p>The Training/Validating/Testing Data set is a way to take the original data set and split into 3 seperate data sets: training, validating, and testing.</p>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Training</a></li><li><a href="#tabset-4-2">Validating</a></li><li><a href="#tabset-4-3">Testing</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p>This is data used to create the model.</p>
+</div>
+<div id="tabset-4-2">
+<p>This is data used to evaluate the data during it’s creation. It is evaluate at each Iteration (Epoch)</p>
+</div>
+<div id="tabset-4-3">
+<p>This is data used to test the final model and compute the error rate.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="training-error-rate" class="slide level2">
+<h2>Training Error Rate</h2>
+<p>Training Error Rate is the error rate of the data used to create the model of interest. It describes how well the model predicts the data used to construct it.</p>
+</section>
+<section id="test-error-rate" class="slide level2">
+<h2>Test Error Rate</h2>
+<p>Test Error Rate is the error rate of predicting a new data point using the current established model.</p>
+</section>
+<section id="penguin-data-1" class="slide level2">
+<h2>Penguin Data</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Train/Test/Evaluation</a></li><li><a href="#tabset-5-2">Training</a></li><li><a href="#tabset-5-3">Validate</a></li><li><a href="#tabset-5-4">Testing</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>penguins <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">drop_na</span>()</span>
+<span id="cb10-2"><a></a>training <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">prop =</span> .<span class="dv">8</span>)</span>
+<span id="cb10-3"><a></a>pre <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">anti_join</span>(training)</span>
+<span id="cb10-4"><a></a>validate <span class="ot">&lt;-</span> pre <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">prop =</span>  <span class="fl">0.5</span>)</span>
+<span id="cb10-5"><a></a>testing <span class="ot">&lt;-</span> pre <span class="sc">|&gt;</span> <span class="fu">anti_join</span>(validate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-5-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>Xtraining <span class="ot">&lt;-</span> training <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
+<span id="cb11-5"><a></a></span>
+<span id="cb11-6"><a></a>Ytraining <span class="ot">&lt;-</span> training <span class="sc">|&gt;</span> </span>
+<span id="cb11-7"><a></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb11-8"><a></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb11-9"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-5-3">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>Xvalidate <span class="ot">&lt;-</span> validate <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb12-4"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
+<span id="cb12-5"><a></a></span>
+<span id="cb12-6"><a></a>Yvalidate <span class="ot">&lt;-</span> validate <span class="sc">|&gt;</span> </span>
+<span id="cb12-7"><a></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb12-8"><a></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb12-9"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-5-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>Xtesting <span class="ot">&lt;-</span> testing <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
+<span id="cb13-5"><a></a></span>
+<span id="cb13-6"><a></a>Ytesting <span class="ot">&lt;-</span> testing <span class="sc">|&gt;</span> </span>
+<span id="cb13-7"><a></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb13-8"><a></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb13-9"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="model-description-1" class="slide level2">
+<h2>Model Description</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>modnn <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
+<span id="cb14-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(input_size) {</span>
+<span id="cb14-3"><a></a>    self<span class="sc">$</span>hidden <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(input_size, <span class="dv">20</span>)</span>
+<span id="cb14-4"><a></a>    self<span class="sc">$</span>activation <span class="ot">&lt;-</span> <span class="fu">nn_relu</span>()</span>
+<span id="cb14-5"><a></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="dv">20</span>, <span class="dv">1</span>)</span>
+<span id="cb14-6"><a></a>  },</span>
+<span id="cb14-7"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb14-8"><a></a>    x <span class="sc">|&gt;</span> </span>
+<span id="cb14-9"><a></a>      self<span class="sc">$</span><span class="fu">hidden</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb14-10"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb14-11"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
+<span id="cb14-12"><a></a>  }</span>
+<span id="cb14-13"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="optimizer-set-up-1" class="slide level2">
+<h2>Optimizer Set Up</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>modnn <span class="ot">&lt;-</span> modnn <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a></a>  <span class="fu">setup</span>(</span>
+<span id="cb15-3"><a></a>    <span class="at">loss =</span> <span class="fu">nn_mse_loss</span>(), <span class="co"># Used for numerical counts</span></span>
+<span id="cb15-4"><a></a>    <span class="at">optimizer =</span> optim_rmsprop</span>
+<span id="cb15-5"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-6"><a></a>  <span class="fu">set_hparams</span>(<span class="at">input_size =</span> <span class="fu">ncol</span>(px))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="fit-a-model-1" class="slide level2">
+<h2>Fit a Model</h2>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Fit</a></li><li><a href="#tabset-7-2">Plot</a></li><li><a href="#tabset-7-3">Testing Model</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>fitted <span class="ot">&lt;-</span> modnn <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a></a>  <span class="fu">fit</span>(</span>
+<span id="cb16-3"><a></a>    <span class="at">data =</span> <span class="fu">list</span>(Xtraining, Ytraining),</span>
+<span id="cb16-4"><a></a>    <span class="at">epochs =</span> <span class="dv">200</span>, <span class="co"># Can think as number of iterations</span></span>
+<span id="cb16-5"><a></a>    <span class="at">valid_data =</span> <span class="fu">list</span>(Xvalidate, Yvalidate)</span>
+<span id="cb16-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-7-2">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">plot</span>(fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+<div id="tabset-7-3">
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Prediction</a></li><li><a href="#tabset-6-2">MAE</a></li><li><a href="#tabset-6-3">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>npred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fitted, Xtesting)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-6-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">mean</span>(<span class="fu">abs</span>(<span class="fu">as.matrix</span>(Ytesting) <span class="sc">-</span> <span class="fu">as.matrix</span>(npred)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-6-3">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">plot</span>(<span class="fu">as.matrix</span>(Ytesting), <span class="fu">as.matrix</span>(npred),</span>
+<span id="cb20-2"><a></a>     <span class="at">xlab =</span> <span class="st">"Truth"</span>,</span>
+<span id="cb20-3"><a></a>     <span class="at">ylab =</span> <span class="st">"Predicted"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+</div>
+</div>
 
 
+</div>
+</div>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>m408.inqs.info/lectures/1a</p>
+<p>m408.inqs.info/lectures/3a</p>
 </div>
 </div></div>
 

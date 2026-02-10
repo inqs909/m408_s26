@@ -1,12 +1,12 @@
 ---
-title: "Torch Basics"
-subtitle: "Datasets"
+title: "Neural Networks"
+subtitle: "with Torch"
 format:
   revealjs:
     width: 1200
     scrollable: false
     include-in-header: "math.html"
-    footer: m408.inqs.info/lectures/1a
+    footer: m408.inqs.info/lectures/3a
     theme: [default, styles.scss]
     preview-links: true
     navigation-mode: vertical
@@ -22,7 +22,7 @@ format:
 knitr:
   opts_chunk: 
     echo: true
-    eval: true
+    eval: false
     message: false
     warnings: false
     comment: "#>" 
@@ -41,21 +41,562 @@ editor: source
 ## R Packages
 
 ```{r}
-library(tidyverse)
+# install.packages("torch")
+# install.packages("luz")
+
 library(torch)
-library(mvtnorm)
+library(luz) # high-level interface for torch
+torch_manual_seed(13)
 ```
 
-# Data 
+## Data in Python
+
+```python
+import plotnine
+from plotnine.data import penguins
+clean_penguins = (
+    penguins
+        .dropna()
+        .drop(columns=["year"])
+)
+```
 
 
+# Machine Learning
+
+## What is Machine Learning?
+
+Machine Learning (ML) is the process of characterizing mathematical models, with the help of data, to predict outcomes of interest.
+
+
+## Machine Learning Model
+
+$$
+Y = f(\boldsymbol X; \boldsymbol \theta)
+$$
+
+- $Y$: is an outcome of interest that we are trying to predict
+- $\boldsymbol X$: A vector of data points used to predict the outcome
+- $f$: An unknown function that predicts the outcome
+- $\boldsymbol \theta$: A vector of parameters to used to define the model 
+
+## What is going on?
+
+- Data helps buil in a model
+- Uses mathematical models to predict outcomes
+- Uses probability theory to model randomness and loss
+- Uses numerical algorithms to:
+  - Find numerical values of parameters that minimize randomness
+  - Model unknown and nonlinear relationships
+
+## Main Types of Machine Learning
+
+::: {.columns}
+::: {.column}
+
+### Supervised Learning
+
+- Data includes **inputs** and **outputs**
+- ML Models learns to map inputs → outputs
+
+
+:::
+::: {.column}
+
+### Unsupervised Learning
+
+- Data has **no labels**
+- Model discovers hidden patterns
+
+
+:::
+:::
+
+
+
+# Linear Regression
+
+## Linear Regression
+
+Linear Regression is a tool to predict continuous random variales that are known to follow a Normal Distribution, with a set of known predictor variables. 
+
+## Simple Linear Regression
+
+Simple linear regression will model the association between one predictor variable and an outcome:
+
+$$
+\hat Y = \beta_0 + \beta_1 X 
+$$
+
+-   $\beta_0$: Intercept term
+
+-   $\beta_1$: Slope term
+
+
+## MLR
+
+Multivariable linear regression models are used when more than one explanatory variable is used to explain the outcome of interest.
+
+## Additional Continuous Variable
+
+To fit additional variable to the model, we will only need to add it to the model:
+
+$$
+\hat Y = \beta_0 +\beta_1 X_{1} + \beta_2 X_{2} 
+$$
+
+## Categorical Variable
+
+A categorical variable can be included in a model, but a reference category must be specified.
+
+## Fitting a model with categorical variables
+
+To fit a model with categorical variables, we must utilize dummy (binary) variables that indicate which category is being referenced. We use $C-1$ dummy variables where $C$ indicates the number of categories. When coded correctly, each category will be represented by a combination of dummy variables.
+
+## Example
+
+If we have 4 categories, we will need 3 dummy variables:
+
+|         | Cat 1 | Cat 2 | Cat 3 | Cat 4 |
+|---------|-------|-------|-------|-------|
+| Dummy 1 | 1     | 0     | 0     | 0     |
+| Dummy 2 | 0     | 1     | 0     | 0     |
+| Dummy 3 | 0     | 0     | 1     | 0     |
+
+Which one is the reference category?
+
+## Model with categorical variables
+
+Fitting an additional variable with 4 Categories 
+
+$$
+\hat Y = \beta_0 +\beta_1 X_{1} + \beta_2 X_{2} + \beta_3 D_{1} + \beta_4 D_{2} + \beta_5  D_{3}
+$$
+
+
+
+## Sums of Squared Errors
+
+We find the values of $\beta_1, \cdots, \beta_5$ that minimizes the following function for $i$ data points:
+
+$$
+RSS = \sum^n_{i=1}(Y_i-\hat Y_i)^2
+$$
+
+## Matrix Formulation
+
+
+$$
+Y_i = \boldsymbol X_i^\mathrm T \boldsymbol \beta + \epsilon_i
+$$
+
+-   $Y_i$: Outcome Variable
+
+-   $\boldsymbol X_i$: Predictors
+
+-   $\boldsymbol \beta$: Coefficients
+
+-   $\epsilon_i$: error term
+
+## Matrix Data Formulation
+
+
+$$
+\boldsymbol\beta = (\boldsymbol X^\mathrm T \boldsymbol X)^{-1} \boldsymbol X^\mathrm T \boldsymbol Y
+$$
+
+
+# Neural Networks
+
+## Neural Networks
+
+Neural networks are a type of machine learning algorithm that are designed to mimic the function of the human brain. They consist of interconnected nodes or "neurons" that process information and generate outputs based on the inputs they receive.
+
+## Uses
+
+Neural networks are typically used for tasks such as image recognition, natural language processing, and prediction. They are capable of learning from data and improving their performance over time, which makes them well-suited for complex and dynamic problems.
+
+## Neural Network
+
+![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png){fig-align="center"}
+
+## Neural Network Composition
+
+- Inputs: A set of characteristics in the data that we use to predict the outcome of interest
+- Outputs: A set of variables (may be one) we wish to predict 
+- Hidden Layers: A set of functions that will transform the data such that it can better predict the outputs
+    - Each hidden layer will has nodes that indicates the transformation
+
+
+## Single Layer Neural Network
+
+![](https://www.oreilly.com/api/v2/epubs/9781789808452/files/assets/290136cc-48f2-47b1-bb95-ffdb625b987d.png){fig-align="center"}
+
+
+## Model Setup
+
+$$
+Y = f(\boldsymbol X; \boldsymbol \theta)
+$$
+
+- $\boldsymbol X$: a vector of predictor variables
+- $\boldsymbol \theta$: a vector of parameters ($\boldsymbol \beta, \boldsymbol \alpha$)
+
+## Single Layer Neural Networks
+
+A single layer neural networks can be formulated as linear function:
+
+$$
+f(\boldsymbol X; \boldsymbol \theta) = \beta_0 + \sum^K_{k=1}\beta_kh_k(\boldsymbol X)
+$$
+
+Where $X$ is a vector of inputs of length $p$ and $K$ is the number of nodes (neurons), $\beta_j$ are parameters 
+
+$$
+h_k(\boldsymbol X) = g\left(\alpha_{k0} + \sum^p_{l=1}\alpha_{kl}X_{l}\right)
+$$
+
+with $g(\cdot)$ being a nonlinear activation function and $\alpha_{kl}$ are the weights (parameters).
+
+## Fitting a Neural Network
+
+Fitting a neural network is the process of taking input data ($X$), finding the numerical values for the paramters that will minimize the following loss function, mean squared errors (MSE):
+
+$$
+\frac{1}{n}\sum^n_{i-1}\left\{Y_i-f(\boldsymbol X; \boldsymbol \theta)\right\}^2
+$$
+
+# Other Topics
+
+## Nonlinear (Activations) Function $g(\cdot)$
+
+Activation functions are used to create a nonlinear affect within the neural network. Common activation functions are
+
+-   Sigmoidal: $g(z) = \frac{1}{1+e^{-z}}$ (nn_sigmoidal)
+
+-   ReLU (rectified linear unit): $g(z) = (z)_+ = zI(z\geq0)$ (nn_relu)
+
+-   Hyperbolic Tangent: $g(z) = \frac{\sinh(z)}{\cosh(z)} = \frac{\exp(z) - \exp(-z)} {\exp(z) + \exp(-z)}$ (nn_tanh)
+
+Otherwise, the neural network is just an overparameterized linear model.
+
+
+## Optimizer
+
+The optimizer is the mathematical algorithm used to find the numerical values for the parameters $\beta_j$ and $\alpha_{kl}$.
+
+::: {.fragment}
+The most basic algorithm used in gradient descent.
+:::
+
+
+# Single-Layer Neural Network in R
+
+## Penguin Data
+
+::: {.panel-tabset}
+
+## Description
+
+Build a single-layer neural network that will predict `body_mass` with the remaining predictors. The hidden layer will contain 20 nodes, and the activation functions will be ReLU.
+
+## Data Prep
+  
+```{r}
+library(tidyverse)
+penguins <- penguins |> drop_na()
+px <- penguins |>
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+py <- penguins |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+
+```
+  
+  
+:::
+
+
+## Model Description
+
+::: {.panel-tabset}
+### Overall
+  
+```{r}
+modnn <- nn_module(
+  initialize = function(input_size) {
+    self$hidden <- nn_linear(input_size, 20)
+    self$activation <- nn_relu()
+    self$output <- nn_linear(20, 1)
+  },
+  forward = function(x) {
+    x |> 
+      self$hidden() |>  
+      self$activation() |>  
+      self$output()
+  }
+)
+```
+  
+### Initialize
+
+Creates the functions needed to describe the details of each network.
 
 ```{r}
-JohnsonJohnson
-torch_tensor(JohnsonJohnson)$shape
+#| eval: false
+initialize = function(input_size) {
+    self$hidden <- nn_linear(input_size, 50)
+    self$activation <- nn_relu()
+    self$output <- nn_linear(50, 1)
+  }
 ```
 
-## Penguins
+
+### Forward
+
+Models the neural network. 
+
+```{r}
+#| eval: false
+forward = function(x) {
+    x |> 
+      self$hidden() |>  
+      self$activation() |>  
+      self$output()
+  }
+```
+
+
+:::
 
 
 
+## Optimizer Set Up
+
+```{r}
+modnn <- modnn |> 
+  setup(
+    loss = nn_mse_loss(), # Used for numerical counts
+    optimizer = optim_rmsprop
+  ) |>
+  set_hparams(input_size = ncol(px))
+```
+
+
+## Fit a Model
+
+::: {.panel-tabset}
+### Fit
+
+```{r}
+fitted <- modnn |> 
+  fit(
+    data = list(px, py),
+    epochs = 200 # Can think as number of iterations
+  )
+```
+
+### Plot
+
+```{r}
+#| code-fold: true
+plot(fitted)
+```
+
+:::
+
+
+# Training/Validating/Testing Data
+
+
+## Error Rate
+
+When creating a model, we are interested in determining how effective the model will be in predicting a new data point, ie not in our training data. 
+
+::: {.fragment}
+The error rate is a metric to determine how often will future data points be when using our model.
+:::
+
+::: {.fragment}
+The problem is how can we get future data to validate our model?
+:::
+
+## Training/Validating/Testing Data
+
+The Training/Validating/Testing Data set is a way to take the original data set and split into 3 seperate data sets: training, validating, and testing.
+
+::: {.panel-tabset}
+
+### Training
+
+This is data used to create the model. 
+
+### Validating
+
+This is data used to evaluate the data during it's creation. It is evaluate at each Iteration (Epoch)
+
+### Testing
+
+This is data used to test the final model and compute the error rate.
+
+:::
+
+
+## Training Error Rate
+
+Training Error Rate is the error rate of the data used to create the model of interest. It describes how well the model predicts the data used to construct it.
+
+## Test Error Rate
+
+Test Error Rate is the error rate of predicting a new data point using the current established model.
+
+
+
+
+## Penguin Data
+
+::: {.panel-tabset}
+
+### Train/Test/Evaluation
+  
+```{r}
+
+penguins <- penguins |> drop_na()
+training <- penguins |> slice_sample(prop = .8)
+pre <- penguins |> anti_join(training)
+validate <- pre |> slice_sample(prop =  0.5)
+testing <- pre |> anti_join(validate)
+```
+
+
+
+###  Training
+
+```{r}
+Xtraining <- training |> 
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+Ytraining <- training |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+
+```
+
+### Validate
+
+```{r}
+Xvalidate <- validate |> 
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+Yvalidate <- validate |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+```
+
+### Testing
+
+```{r}
+Xtesting <- testing |> 
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+Ytesting <- testing |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+```
+
+:::
+
+## Model Description
+
+ 
+```{r}
+modnn <- nn_module(
+  initialize = function(input_size) {
+    self$hidden <- nn_linear(input_size, 20)
+    self$activation <- nn_relu()
+    self$output <- nn_linear(20, 1)
+  },
+  forward = function(x) {
+    x |> 
+      self$hidden() |>  
+      self$activation() |>  
+      self$output()
+  }
+)
+```
+
+
+## Optimizer Set Up
+
+```{r}
+modnn <- modnn |> 
+  setup(
+    loss = nn_mse_loss(), # Used for numerical counts
+    optimizer = optim_rmsprop
+  ) |>
+  set_hparams(input_size = ncol(px))
+```
+
+
+## Fit a Model
+
+::: {.panel-tabset}
+## Fit
+
+```{r}
+fitted <- modnn |> 
+  fit(
+    data = list(Xtraining, Ytraining),
+    epochs = 200, # Can think as number of iterations
+    valid_data = list(Xvalidate, Yvalidate)
+  )
+```
+
+## Plot
+
+```{r}
+#| code-fold: true
+plot(fitted)
+```
+
+
+## Testing Model
+
+::: {.panel-tabset}
+
+## Prediction
+
+```{r}
+npred <- predict(fitted, Xtesting)
+```
+
+## MAE
+
+```{r}
+mean(abs(as.matrix(Ytesting) - as.matrix(npred)))
+```
+
+## Plot
+
+```{r}
+#| code-fold: true
+
+plot(as.matrix(Ytesting), as.matrix(npred),
+     xlab = "Truth",
+     ylab = "Predicted")
+```
+
+:::
