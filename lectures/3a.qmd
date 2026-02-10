@@ -600,3 +600,13 @@ plot(as.matrix(Ytesting), as.matrix(npred),
 ```
 
 :::
+
+
+# Thursday
+
+## Thursday
+
+Come perpared to work on your smart goal.
+
+Show evidence, either by submitting a word document, notebook, or other format, that you accomplished last week's smart goal.
+
