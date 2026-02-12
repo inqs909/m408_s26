@@ -29,4 +29,4 @@ editor: source
 | Lecture | Slides                   | Videos  |
 |---------|--------------------------|---------|
 | 1       | [Slides](../lectures/3a) | NA      |
-| 2       | | NA      |
+| 2       | [Slides](../lectures/3b) | NA      |
