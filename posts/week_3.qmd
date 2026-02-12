@@ -1,7 +1,7 @@
 ---
 title: "Week 3"
 date: 02-10-26
-description: This week looks at R basics in terms of functions and tensors.
+description: This week looks building basic neural networks.
 editor: source
 ---
 

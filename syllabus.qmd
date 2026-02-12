@@ -150,13 +150,13 @@ The following outline may be subject to change. Any changes will be announced in
 |:-----|:---------------------------------------------------|
 | 1    | Intro to Course/Computational Set Up               |
 | 2    | Programming in R                                   |
-| 3    | Modeling Data                                      |
-| 4    | Neural Networks                                    |
-| 5    | Modules                                            |
-| 6    | Convolutional Neural Networks                      |
-| 7    | Recurrent Neural Networks                          |
+| 3    | SL Neural Networks                                 |
+| 4    | ML Neural Networks                                 |
+| 5    | Classification                                     |
+| 6    | Generalizing Models                                |
+| 7    | Convolutional Neural Networks                      |
 | --   | Spring Break                                       |
-| 8    | Generalizing Models                                |
+| 8    | Recurrent Models                                   |
 | 9    | Image Classification                               |
 | 10   | Audio Classification                               |
 | 11   | Bayesian Analysis                                  |

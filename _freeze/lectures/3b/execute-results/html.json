@@ -1,9 +1,11 @@
 {
-  "hash": "c2579c7b31b86bc54d83a11e93781a58",
+  "hash": "c3fc3cc6bbd833137b4700abe7aa83ee",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Optimization\"\nformat:\n  revealjs:\n    width: 1200\n    scrollable: false\n    include-in-header: \"math.html\"\n    footer: m408.inqs.info/lectures/1a\n    theme: [default, styles.scss]\n    preview-links: true\n    navigation-mode: vertical\n    controls-layout: edges\n    controls-tutorial: true\n    slide-number: true\n    pointer:\n      pointerSize: 48\n    incremental: false \n    chalkboard:\n      theme: whiteboard\n      chalk-width: 4\nknitr:\n  opts_chunk: \n    echo: true\n    eval: true\n    message: false\n    warnings: false\n    comment: \"#>\" \n    \nrevealjs-plugins:\n  - pointer\n  - verticator\n  \nfilters: \n  - code-fullscreen\n  - reveal-auto-agenda\n\neditor: source\n---\n\n## R Packages\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(mvtnorm)\nlibrary(numDeriv)\n```\n:::\n\n\n## Simulated Data\n\n$$\nY_i = 3.85 + 12.3 X_1 - 9.7 X_2 + \\varepsilon_i\n$$\n\n$$\n\\varepsilon \\sim N(0, 2.4)\n$$\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nbeta <- c(3.85, 12.3, -9.7)\nx <- rmvnorm(500, c(3, 8))\nxx <- cbind(1, x)\ny <- xx%*%beta + rnorm(500, sd = sqrt(2.4))\n```\n:::\n\n\n# Optimization\n\n## Optimization\n\n# Gradient Descent\n\n## Gradient Descent\n\n## Alternative Versions\n\n# Stochastic Gradient Descent\n\n## Stochastic Gradient Descent\n\n# Newton-Raphson\n\n## Newton-Raphson Algorithm\n\n# Quasi-Newton\n\n\n\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Optimization\"\nformat:\n  revealjs:\n    width: 1200\n    scrollable: false\n    include-in-header: \"math.html\"\n    footer: m408.inqs.info/lectures/1a\n    theme: [default, styles.scss]\n    preview-links: true\n    navigation-mode: vertical\n    controls-layout: edges\n    controls-tutorial: true\n    slide-number: true\n    pointer:\n      pointerSize: 48\n    incremental: false \n    chalkboard:\n      theme: whiteboard\n      chalk-width: 4\nknitr:\n  opts_chunk: \n    echo: true\n    eval: true\n    message: false\n    warnings: false\n    comment: \"#>\" \n    \nrevealjs-plugins:\n  - pointer\n  - verticator\n  \nfilters: \n  - code-fullscreen\n  - reveal-auto-agenda\n\neditor: source\n---\n\n## Thursday\n\n\nWork on your new smart goal.\n\n\n## Assignment\n\nSubmit next week's SMART goal, by the end of class.\n\n::: {.fragment}\nStarting next week, you will submit evidence that you met your smart goal.\n:::\n\n\n\n",
+    "supporting": [
+      "3b_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

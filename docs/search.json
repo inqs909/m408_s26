@@ -4,14 +4,14 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Term: Spring 2026\nInstructor: Isaac Quintanilla Salinas\nContact: isaac.qs@csuci.edu\nOffice Location: Marin 2326\nOffice Hours:\n\nT/TH 1-2:30 PM\nWed 4-5 PM\n\nLecture: Gateway Hall 3501 T/TH 10:30 - 11:45 PM\nCourse Website: m408.inqs.info AND Canvas\n\n\n\nStudents will learn how to construct machine learning models using current data science programming languages. Topics will include nonparametric models, deep learning models, and neural networks. This is a programming intensive course.\n\n\n\n\nApply appropriate machine learning techniques given the data set and research goal.\nEvaluate model performance using standard methods such as cross-validation or simulation studies.\nDesign data workflows to execute machine learning algorithms using standard statistical software.\nBuild machine learning models to be used to predict outcomes from new observations of data.\n\n\n\n\nAll books should be available for free online:\n\nAn Introduction to Statistical Learning\n\nGareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani\nAvailable to download from the Broome Library\nwww.statlearning.com\n\nDeep Learning and Scientific Computing with R torch\n\nSigrid Keydana\nAvailable here: https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/\n\nPytorch Tutorials\n\nAvailable here: https://docs.pytorch.org/tutorials/index.html\n\nBayesian Statistical Modeling with Stan, R, and Python\n\nKentaro Matsuura\nAvailable for download from the Broome Library\n\nBayesian Data Analysis\n\nAndrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald Rubin\nAvailable here: https://sites.stat.columbia.edu/gelman/book/\n\nDeep Learning\n\nIan Goodfellow, Yoshua Bengio, and Aaron Courville\nAvailable here: https://www.deeplearningbook.org/\n\n\n\n\n\nFor this course, we will use several different statistical programs to analyze data and construct machine learning models. This course will primarily be taught and support R. However, students may complete assignments and projects in Python. Additionally, students are required to use Quarto, Torch, and Stan in the course. Lastly, students may use any IDE, but the course will only support Positron. All software is available for free. In class, we will download and setup your computing environment on your laptop with the following tools:\n\nQuarto is an open source scientific documentation system that allows you to embed code and text in one text file. More information can be found here: quarto.org\n\nWe will install this in class for R.\nComes Installed with Positron and RStudio\n\nStan is a Bayesian analysis software with Hamiltonian Monte Carlo Methods. More information can be found here: mc-stan.org\n\nWe will install this in class for R: cmdstanr.\nFor Python users: cmdstanpy\n\nTorch is a set of packages designed to develop and implement neural networks.\n\nWe will install this in class for R.\nMore information on torch for R: torch.mlverse.org\nMore information on torch for python: pytorch.org\n\n\n\n\n\nR (Recommended) is a statistical package that is available for download at: r-project.org.\nPython is a general programming langauge that is available to download at: python.org\n\nRecommend using tools to create python environments such as uv\n\n\n\n\n\n\nPositron (Recommended) provides free and open source tools for your data analysis in R and/or Python: positron.posit.co/download\n\nQuarto easily integrates with this IDE.\n\nRStudio provides free and open source tools for your data analysis in R: posit.co/download/rstudio-desktop/\nVS Code provides tools for software development as well as data analysis: code.visualstudio.com\nYou may use any other IDE that connects to R/Python, Torch, and Quarto.\n\n\n\n\n\n\n\n\nCategory\nPercentage\n\n\n\n\nAssignments\n50%\n\n\nFinal Project\n25%\n\n\nFinal Presentation\n25%\n\n\n\nAt the end of the quarter, course grades will be assigned according to the following scale:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA+\n98 – 100\nB+\n87 – &lt;90\nC+\n77 – &lt;80\nD+\n67 – &lt;70\n\n\n\n\nA\n93 – &lt;98\nB\n83 – &lt;87\nC\n73 – &lt;77\nD\n63 – &lt;67\nF\n&lt; 60\n\n\nA–\n90 - &lt;93\nB-\n80 – &lt;83\nC–\n70 – &lt;73\nD–\n60 – &lt;63\n\n\n\n\n\n\n\nAssignments will be assigned on a regular basis and posted here and Canvas. The homework is to help you practice the concepts learned in lecture and to help you study. You must turn in your own individual homework and show your understanding of the material. At the end of the semester, the two lowest homework grades will be dropped. Late work will be accepted, but with a 50% point penalty. The last day late work will be accepted is on DATE.\n\n\n\nThe final project and presentation will involve students to build a neural network to classify or predict an outcome of interest. You may use any data available to predict any outcome of interest. You may work individually or groups of 2. More information about the project and presentation will be available later in the semester.\n\n\n\nThere will be 3 extra credit opportunities worth a total of 5% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found here.\n\n\n\n\nThe following outline may be subject to change. Any changes will be announced in class.\n\n\n\nWeek\nTopic\n\n\n\n\n1\nIntro to Course/Computational Set Up\n\n\n2\nProgramming in R\n\n\n3\nModeling Data\n\n\n4\nNeural Networks\n\n\n5\nModules\n\n\n6\nConvolutional Neural Networks\n\n\n7\nRecurrent Neural Networks\n\n\n–\nSpring Break\n\n\n8\nGeneralizing Models\n\n\n9\nImage Classification\n\n\n10\nAudio Classification\n\n\n11\nBayesian Analysis\n\n\n12\nBayesian Linear Regression\n\n\n13\nBayesian Generalized Linear Models\n\n\n14\nBayesian Survival Analysis\n\n\n15\nFinal Presentation\n\n\n16\nFinal Presentation\n\n\n\n\n\n\nThe use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.\n\n\nYou may use AI for:\n\nObtain clarification\nBrainstorming ideas, examples, outlines, and strategies\nGenerating questions for practice or exploration\nIdentifying keywords or phrasing to match professional goals\n\n\n\n\nYou may not:\n\nSubmit AI-generated work\nUse AI to complete assignments, quizzes, exams, or other assessments meant to reflect your own work\nUse AI to generate code\n\nAny AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
+    "text": "Term: Spring 2026\nInstructor: Isaac Quintanilla Salinas\nContact: isaac.qs@csuci.edu\nOffice Location: Marin 2326\nOffice Hours:\n\nT/TH 1-2:30 PM\nWed 4-5 PM\n\nLecture: Gateway Hall 3501 T/TH 10:30 - 11:45 PM\nCourse Website: m408.inqs.info AND Canvas\n\n\n\nStudents will learn how to construct machine learning models using current data science programming languages. Topics will include nonparametric models, deep learning models, and neural networks. This is a programming intensive course.\n\n\n\n\nApply appropriate machine learning techniques given the data set and research goal.\nEvaluate model performance using standard methods such as cross-validation or simulation studies.\nDesign data workflows to execute machine learning algorithms using standard statistical software.\nBuild machine learning models to be used to predict outcomes from new observations of data.\n\n\n\n\nAll books should be available for free online:\n\nAn Introduction to Statistical Learning\n\nGareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani\nAvailable to download from the Broome Library\nwww.statlearning.com\n\nDeep Learning and Scientific Computing with R torch\n\nSigrid Keydana\nAvailable here: https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/\n\nPytorch Tutorials\n\nAvailable here: https://docs.pytorch.org/tutorials/index.html\n\nBayesian Statistical Modeling with Stan, R, and Python\n\nKentaro Matsuura\nAvailable for download from the Broome Library\n\nBayesian Data Analysis\n\nAndrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald Rubin\nAvailable here: https://sites.stat.columbia.edu/gelman/book/\n\nDeep Learning\n\nIan Goodfellow, Yoshua Bengio, and Aaron Courville\nAvailable here: https://www.deeplearningbook.org/\n\n\n\n\n\nFor this course, we will use several different statistical programs to analyze data and construct machine learning models. This course will primarily be taught and support R. However, students may complete assignments and projects in Python. Additionally, students are required to use Quarto, Torch, and Stan in the course. Lastly, students may use any IDE, but the course will only support Positron. All software is available for free. In class, we will download and setup your computing environment on your laptop with the following tools:\n\nQuarto is an open source scientific documentation system that allows you to embed code and text in one text file. More information can be found here: quarto.org\n\nWe will install this in class for R.\nComes Installed with Positron and RStudio\n\nStan is a Bayesian analysis software with Hamiltonian Monte Carlo Methods. More information can be found here: mc-stan.org\n\nWe will install this in class for R: cmdstanr.\nFor Python users: cmdstanpy\n\nTorch is a set of packages designed to develop and implement neural networks.\n\nWe will install this in class for R.\nMore information on torch for R: torch.mlverse.org\nMore information on torch for python: pytorch.org\n\n\n\n\n\nR (Recommended) is a statistical package that is available for download at: r-project.org.\nPython is a general programming langauge that is available to download at: python.org\n\nRecommend using tools to create python environments such as uv\n\n\n\n\n\n\nPositron (Recommended) provides free and open source tools for your data analysis in R and/or Python: positron.posit.co/download\n\nQuarto easily integrates with this IDE.\n\nRStudio provides free and open source tools for your data analysis in R: posit.co/download/rstudio-desktop/\nVS Code provides tools for software development as well as data analysis: code.visualstudio.com\nYou may use any other IDE that connects to R/Python, Torch, and Quarto.\n\n\n\n\n\n\n\n\nCategory\nPercentage\n\n\n\n\nAssignments\n50%\n\n\nFinal Project\n25%\n\n\nFinal Presentation\n25%\n\n\n\nAt the end of the quarter, course grades will be assigned according to the following scale:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA+\n98 – 100\nB+\n87 – &lt;90\nC+\n77 – &lt;80\nD+\n67 – &lt;70\n\n\n\n\nA\n93 – &lt;98\nB\n83 – &lt;87\nC\n73 – &lt;77\nD\n63 – &lt;67\nF\n&lt; 60\n\n\nA–\n90 - &lt;93\nB-\n80 – &lt;83\nC–\n70 – &lt;73\nD–\n60 – &lt;63\n\n\n\n\n\n\n\nAssignments will be assigned on a regular basis and posted here and Canvas. The homework is to help you practice the concepts learned in lecture and to help you study. You must turn in your own individual homework and show your understanding of the material. At the end of the semester, the two lowest homework grades will be dropped. Late work will be accepted, but with a 50% point penalty. The last day late work will be accepted is on DATE.\n\n\n\nThe final project and presentation will involve students to build a neural network to classify or predict an outcome of interest. You may use any data available to predict any outcome of interest. You may work individually or groups of 2. More information about the project and presentation will be available later in the semester.\n\n\n\nThere will be 3 extra credit opportunities worth a total of 5% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found here.\n\n\n\n\nThe following outline may be subject to change. Any changes will be announced in class.\n\n\n\nWeek\nTopic\n\n\n\n\n1\nIntro to Course/Computational Set Up\n\n\n2\nProgramming in R\n\n\n3\nSL Neural Networks\n\n\n4\nML Neural Networks\n\n\n5\nClassification\n\n\n6\nGeneralizing Models\n\n\n7\nConvolutional Neural Networks\n\n\n–\nSpring Break\n\n\n8\nRecurrent Models\n\n\n9\nImage Classification\n\n\n10\nAudio Classification\n\n\n11\nBayesian Analysis\n\n\n12\nBayesian Linear Regression\n\n\n13\nBayesian Generalized Linear Models\n\n\n14\nBayesian Survival Analysis\n\n\n15\nFinal Presentation\n\n\n16\nFinal Presentation\n\n\n\n\n\n\nThe use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.\n\n\nYou may use AI for:\n\nObtain clarification\nBrainstorming ideas, examples, outlines, and strategies\nGenerating questions for practice or exploration\nIdentifying keywords or phrasing to match professional goals\n\n\n\n\nYou may not:\n\nSubmit AI-generated work\nUse AI to complete assignments, quizzes, exams, or other assessments meant to reflect your own work\nUse AI to generate code\n\nAny AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
   },
   {
     "objectID": "syllabus.html#math-408-machine-learning",
     "href": "syllabus.html#math-408-machine-learning",
     "title": "Syllabus",
     "section": "",
-    "text": "Term: Spring 2026\nInstructor: Isaac Quintanilla Salinas\nContact: isaac.qs@csuci.edu\nOffice Location: Marin 2326\nOffice Hours:\n\nT/TH 1-2:30 PM\nWed 4-5 PM\n\nLecture: Gateway Hall 3501 T/TH 10:30 - 11:45 PM\nCourse Website: m408.inqs.info AND Canvas\n\n\n\nStudents will learn how to construct machine learning models using current data science programming languages. Topics will include nonparametric models, deep learning models, and neural networks. This is a programming intensive course.\n\n\n\n\nApply appropriate machine learning techniques given the data set and research goal.\nEvaluate model performance using standard methods such as cross-validation or simulation studies.\nDesign data workflows to execute machine learning algorithms using standard statistical software.\nBuild machine learning models to be used to predict outcomes from new observations of data.\n\n\n\n\nAll books should be available for free online:\n\nAn Introduction to Statistical Learning\n\nGareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani\nAvailable to download from the Broome Library\nwww.statlearning.com\n\nDeep Learning and Scientific Computing with R torch\n\nSigrid Keydana\nAvailable here: https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/\n\nPytorch Tutorials\n\nAvailable here: https://docs.pytorch.org/tutorials/index.html\n\nBayesian Statistical Modeling with Stan, R, and Python\n\nKentaro Matsuura\nAvailable for download from the Broome Library\n\nBayesian Data Analysis\n\nAndrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald Rubin\nAvailable here: https://sites.stat.columbia.edu/gelman/book/\n\nDeep Learning\n\nIan Goodfellow, Yoshua Bengio, and Aaron Courville\nAvailable here: https://www.deeplearningbook.org/\n\n\n\n\n\nFor this course, we will use several different statistical programs to analyze data and construct machine learning models. This course will primarily be taught and support R. However, students may complete assignments and projects in Python. Additionally, students are required to use Quarto, Torch, and Stan in the course. Lastly, students may use any IDE, but the course will only support Positron. All software is available for free. In class, we will download and setup your computing environment on your laptop with the following tools:\n\nQuarto is an open source scientific documentation system that allows you to embed code and text in one text file. More information can be found here: quarto.org\n\nWe will install this in class for R.\nComes Installed with Positron and RStudio\n\nStan is a Bayesian analysis software with Hamiltonian Monte Carlo Methods. More information can be found here: mc-stan.org\n\nWe will install this in class for R: cmdstanr.\nFor Python users: cmdstanpy\n\nTorch is a set of packages designed to develop and implement neural networks.\n\nWe will install this in class for R.\nMore information on torch for R: torch.mlverse.org\nMore information on torch for python: pytorch.org\n\n\n\n\n\nR (Recommended) is a statistical package that is available for download at: r-project.org.\nPython is a general programming langauge that is available to download at: python.org\n\nRecommend using tools to create python environments such as uv\n\n\n\n\n\n\nPositron (Recommended) provides free and open source tools for your data analysis in R and/or Python: positron.posit.co/download\n\nQuarto easily integrates with this IDE.\n\nRStudio provides free and open source tools for your data analysis in R: posit.co/download/rstudio-desktop/\nVS Code provides tools for software development as well as data analysis: code.visualstudio.com\nYou may use any other IDE that connects to R/Python, Torch, and Quarto.\n\n\n\n\n\n\n\n\nCategory\nPercentage\n\n\n\n\nAssignments\n50%\n\n\nFinal Project\n25%\n\n\nFinal Presentation\n25%\n\n\n\nAt the end of the quarter, course grades will be assigned according to the following scale:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA+\n98 – 100\nB+\n87 – &lt;90\nC+\n77 – &lt;80\nD+\n67 – &lt;70\n\n\n\n\nA\n93 – &lt;98\nB\n83 – &lt;87\nC\n73 – &lt;77\nD\n63 – &lt;67\nF\n&lt; 60\n\n\nA–\n90 - &lt;93\nB-\n80 – &lt;83\nC–\n70 – &lt;73\nD–\n60 – &lt;63\n\n\n\n\n\n\n\nAssignments will be assigned on a regular basis and posted here and Canvas. The homework is to help you practice the concepts learned in lecture and to help you study. You must turn in your own individual homework and show your understanding of the material. At the end of the semester, the two lowest homework grades will be dropped. Late work will be accepted, but with a 50% point penalty. The last day late work will be accepted is on DATE.\n\n\n\nThe final project and presentation will involve students to build a neural network to classify or predict an outcome of interest. You may use any data available to predict any outcome of interest. You may work individually or groups of 2. More information about the project and presentation will be available later in the semester.\n\n\n\nThere will be 3 extra credit opportunities worth a total of 5% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found here.\n\n\n\n\nThe following outline may be subject to change. Any changes will be announced in class.\n\n\n\nWeek\nTopic\n\n\n\n\n1\nIntro to Course/Computational Set Up\n\n\n2\nProgramming in R\n\n\n3\nModeling Data\n\n\n4\nNeural Networks\n\n\n5\nModules\n\n\n6\nConvolutional Neural Networks\n\n\n7\nRecurrent Neural Networks\n\n\n–\nSpring Break\n\n\n8\nGeneralizing Models\n\n\n9\nImage Classification\n\n\n10\nAudio Classification\n\n\n11\nBayesian Analysis\n\n\n12\nBayesian Linear Regression\n\n\n13\nBayesian Generalized Linear Models\n\n\n14\nBayesian Survival Analysis\n\n\n15\nFinal Presentation\n\n\n16\nFinal Presentation\n\n\n\n\n\n\nThe use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.\n\n\nYou may use AI for:\n\nObtain clarification\nBrainstorming ideas, examples, outlines, and strategies\nGenerating questions for practice or exploration\nIdentifying keywords or phrasing to match professional goals\n\n\n\n\nYou may not:\n\nSubmit AI-generated work\nUse AI to complete assignments, quizzes, exams, or other assessments meant to reflect your own work\nUse AI to generate code\n\nAny AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
+    "text": "Term: Spring 2026\nInstructor: Isaac Quintanilla Salinas\nContact: isaac.qs@csuci.edu\nOffice Location: Marin 2326\nOffice Hours:\n\nT/TH 1-2:30 PM\nWed 4-5 PM\n\nLecture: Gateway Hall 3501 T/TH 10:30 - 11:45 PM\nCourse Website: m408.inqs.info AND Canvas\n\n\n\nStudents will learn how to construct machine learning models using current data science programming languages. Topics will include nonparametric models, deep learning models, and neural networks. This is a programming intensive course.\n\n\n\n\nApply appropriate machine learning techniques given the data set and research goal.\nEvaluate model performance using standard methods such as cross-validation or simulation studies.\nDesign data workflows to execute machine learning algorithms using standard statistical software.\nBuild machine learning models to be used to predict outcomes from new observations of data.\n\n\n\n\nAll books should be available for free online:\n\nAn Introduction to Statistical Learning\n\nGareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani\nAvailable to download from the Broome Library\nwww.statlearning.com\n\nDeep Learning and Scientific Computing with R torch\n\nSigrid Keydana\nAvailable here: https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/\n\nPytorch Tutorials\n\nAvailable here: https://docs.pytorch.org/tutorials/index.html\n\nBayesian Statistical Modeling with Stan, R, and Python\n\nKentaro Matsuura\nAvailable for download from the Broome Library\n\nBayesian Data Analysis\n\nAndrew Gelman, John Carlin, Hal Stern, David Dunson, Aki Vehtari, and Donald Rubin\nAvailable here: https://sites.stat.columbia.edu/gelman/book/\n\nDeep Learning\n\nIan Goodfellow, Yoshua Bengio, and Aaron Courville\nAvailable here: https://www.deeplearningbook.org/\n\n\n\n\n\nFor this course, we will use several different statistical programs to analyze data and construct machine learning models. This course will primarily be taught and support R. However, students may complete assignments and projects in Python. Additionally, students are required to use Quarto, Torch, and Stan in the course. Lastly, students may use any IDE, but the course will only support Positron. All software is available for free. In class, we will download and setup your computing environment on your laptop with the following tools:\n\nQuarto is an open source scientific documentation system that allows you to embed code and text in one text file. More information can be found here: quarto.org\n\nWe will install this in class for R.\nComes Installed with Positron and RStudio\n\nStan is a Bayesian analysis software with Hamiltonian Monte Carlo Methods. More information can be found here: mc-stan.org\n\nWe will install this in class for R: cmdstanr.\nFor Python users: cmdstanpy\n\nTorch is a set of packages designed to develop and implement neural networks.\n\nWe will install this in class for R.\nMore information on torch for R: torch.mlverse.org\nMore information on torch for python: pytorch.org\n\n\n\n\n\nR (Recommended) is a statistical package that is available for download at: r-project.org.\nPython is a general programming langauge that is available to download at: python.org\n\nRecommend using tools to create python environments such as uv\n\n\n\n\n\n\nPositron (Recommended) provides free and open source tools for your data analysis in R and/or Python: positron.posit.co/download\n\nQuarto easily integrates with this IDE.\n\nRStudio provides free and open source tools for your data analysis in R: posit.co/download/rstudio-desktop/\nVS Code provides tools for software development as well as data analysis: code.visualstudio.com\nYou may use any other IDE that connects to R/Python, Torch, and Quarto.\n\n\n\n\n\n\n\n\nCategory\nPercentage\n\n\n\n\nAssignments\n50%\n\n\nFinal Project\n25%\n\n\nFinal Presentation\n25%\n\n\n\nAt the end of the quarter, course grades will be assigned according to the following scale:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA+\n98 – 100\nB+\n87 – &lt;90\nC+\n77 – &lt;80\nD+\n67 – &lt;70\n\n\n\n\nA\n93 – &lt;98\nB\n83 – &lt;87\nC\n73 – &lt;77\nD\n63 – &lt;67\nF\n&lt; 60\n\n\nA–\n90 - &lt;93\nB-\n80 – &lt;83\nC–\n70 – &lt;73\nD–\n60 – &lt;63\n\n\n\n\n\n\n\nAssignments will be assigned on a regular basis and posted here and Canvas. The homework is to help you practice the concepts learned in lecture and to help you study. You must turn in your own individual homework and show your understanding of the material. At the end of the semester, the two lowest homework grades will be dropped. Late work will be accepted, but with a 50% point penalty. The last day late work will be accepted is on DATE.\n\n\n\nThe final project and presentation will involve students to build a neural network to classify or predict an outcome of interest. You may use any data available to predict any outcome of interest. You may work individually or groups of 2. More information about the project and presentation will be available later in the semester.\n\n\n\nThere will be 3 extra credit opportunities worth a total of 5% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found here.\n\n\n\n\nThe following outline may be subject to change. Any changes will be announced in class.\n\n\n\nWeek\nTopic\n\n\n\n\n1\nIntro to Course/Computational Set Up\n\n\n2\nProgramming in R\n\n\n3\nSL Neural Networks\n\n\n4\nML Neural Networks\n\n\n5\nClassification\n\n\n6\nGeneralizing Models\n\n\n7\nConvolutional Neural Networks\n\n\n–\nSpring Break\n\n\n8\nRecurrent Models\n\n\n9\nImage Classification\n\n\n10\nAudio Classification\n\n\n11\nBayesian Analysis\n\n\n12\nBayesian Linear Regression\n\n\n13\nBayesian Generalized Linear Models\n\n\n14\nBayesian Survival Analysis\n\n\n15\nFinal Presentation\n\n\n16\nFinal Presentation\n\n\n\n\n\n\nThe use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.\n\n\nYou may use AI for:\n\nObtain clarification\nBrainstorming ideas, examples, outlines, and strategies\nGenerating questions for practice or exploration\nIdentifying keywords or phrasing to match professional goals\n\n\n\n\nYou may not:\n\nSubmit AI-generated work\nUse AI to complete assignments, quizzes, exams, or other assessments meant to reflect your own work\nUse AI to generate code\n\nAny AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
   },
   {
     "objectID": "syllabus.html#university-policies",
@@ -21,74 +21,249 @@
     "text": "University Policies\n\nSyllabus Policies and Assistance\nCSUCI’s Syllabus Policies and Assistance Website provides important details about academic policies, campus expectations, and student support services that are all highly applicable to your success as a student both in and outside of the classroom. Ensure that you review this site on a regular basis to stay informed about the policies and resources that support your success, as campus resources or policies may change semester to semester.\n\n\nAcademic Honesty\nConduct yourself with honesty and integrity. Do not submit others’ work as your own. Foassignments and quizzes that allow you to work with a group, only put your name on what the group submits if you genuinely contributed to the work. Work completely independently on exams, using only the materials that are indicated as allowed. Failure to observe academic honesty results in substantial penalties that can include failing the course.\n\n\nCSUCI Basic Need\nPlease use the link to the Basic Needs Program on the Syllabus Policies and Assistance website (&lt;go.csuci.edu/syllabuspolicies&gt;) for information on emergency food, housing accommodations, toiletries, and connections to critical resources.\n\n\nCSUCI Disability Statement\nIf you are a student with a disability requesting reasonable accommodations in this course, you need to contact Disability Accommodations and Support Services (DASS) located on the second floor of Arroyo Hall, via email accommodations@csuci.edu or call 805-437-3331. All requests for reasonable accommodations require registration with DASS in advance of need: https://www.csuci.edu/dass/students/apply-for-services.htm. Faculty, students and DASS will work together regarding classroom accommodations. You are encouraged to discuss approved.\n\n\nDisruption\n\nIf I Am Out: I will communicate via email and will hold classes asynchronously.\nIf You Are Out: Contact me as soon as possible to talk about your options. Reasonable accommodations will be provided for a brief absence. With proper documentation, extended accommodations will be provided."
   },
   {
-    "objectID": "posts/week_2.html",
-    "href": "posts/week_2.html",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html",
+    "href": "posts/week_3.html",
+    "title": "Week 3",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_2.html#learning-outcomes",
-    "href": "posts/week_2.html#learning-outcomes",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html#learning-outcomes",
+    "href": "posts/week_3.html#learning-outcomes",
+    "title": "Week 3",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_2.html#resources",
-    "href": "posts/week_2.html#resources",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html#resources",
+    "href": "posts/week_3.html#resources",
+    "title": "Week 3",
+    "section": "Resources",
+    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\n\nNA"
+  },
+  {
+    "objectID": "posts/week_1.html",
+    "href": "posts/week_1.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
+  },
+  {
+    "objectID": "posts/week_1.html#learning-outcomes",
+    "href": "posts/week_1.html#learning-outcomes",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
+  },
+  {
+    "objectID": "posts/week_1.html#resources",
+    "href": "posts/week_1.html#resources",
+    "title": "Week 1",
     "section": "Resources",
     "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
   },
   {
-    "objectID": "lectures/3b.html#r-packages",
-    "href": "lectures/3b.html#r-packages",
-    "title": "Optimization",
+    "objectID": "lectures/4a.html#r-packages",
+    "href": "lectures/4a.html#r-packages",
+    "title": "Neural Networks",
     "section": "R Packages",
-    "text": "R Packages\n\nlibrary(tidyverse)\nlibrary(mvtnorm)\nlibrary(numDeriv)"
+    "text": "R Packages\n\n# install.packages(\"torch\")\n# install.packages(\"luz\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\ntorch_manual_seed(13)"
   },
   {
-    "objectID": "lectures/3b.html#simulated-data",
-    "href": "lectures/3b.html#simulated-data",
-    "title": "Optimization",
-    "section": "Simulated Data",
-    "text": "Simulated Data\n\\[\nY_i = 3.85 + 12.3 X_1 - 9.7 X_2 + \\varepsilon_i\n\\]\n\\[\n\\varepsilon \\sim N(0, 2.4)\n\\]\n\nbeta &lt;- c(3.85, 12.3, -9.7)\nx &lt;- rmvnorm(500, c(3, 8))\nxx &lt;- cbind(1, x)\ny &lt;- xx%*%beta + rnorm(500, sd = sqrt(2.4))"
+    "objectID": "lectures/4a.html#data-in-python",
+    "href": "lectures/4a.html#data-in-python",
+    "title": "Neural Networks",
+    "section": "Data in Python",
+    "text": "Data in Python\nimport plotnine\nfrom plotnine.data import penguins\nclean_penguins = (\n    penguins\n        .dropna()\n        .drop(columns=[\"year\"])\n)"
   },
   {
-    "objectID": "lectures/3b.html#optimization-1",
-    "href": "lectures/3b.html#optimization-1",
-    "title": "Optimization",
-    "section": "Optimization",
-    "text": "Optimization"
+    "objectID": "lectures/4a.html#neural-network",
+    "href": "lectures/4a.html#neural-network",
+    "title": "Neural Networks",
+    "section": "Neural Network",
+    "text": "Neural Network"
   },
   {
-    "objectID": "lectures/3b.html#gradient-descent-1",
-    "href": "lectures/3b.html#gradient-descent-1",
-    "title": "Optimization",
-    "section": "Gradient Descent",
-    "text": "Gradient Descent"
+    "objectID": "lectures/4a.html#neural-network-composition",
+    "href": "lectures/4a.html#neural-network-composition",
+    "title": "Neural Networks",
+    "section": "Neural Network Composition",
+    "text": "Neural Network Composition\n\nInputs: A set of characteristics in the data that we use to predict the outcome of interest\nOutputs: A set of variables (may be one) we wish to predict\nHidden Layers: A set of functions that will transform the data such that it can better predict the outputs\n\nEach hidden layer will has nodes that indicates the transformation"
   },
   {
-    "objectID": "lectures/3b.html#alternative-versions",
-    "href": "lectures/3b.html#alternative-versions",
-    "title": "Optimization",
-    "section": "Alternative Versions",
-    "text": "Alternative Versions"
+    "objectID": "lectures/4a.html#multilayer-neural-network",
+    "href": "lectures/4a.html#multilayer-neural-network",
+    "title": "Neural Networks",
+    "section": "Multilayer Neural Network",
+    "text": "Multilayer Neural Network\nMultilayer Neural Networks create multiple hidden layers where each layer feeds into each other which will create a final outcome."
   },
   {
-    "objectID": "lectures/3b.html#stochastic-gradient-descent-1",
-    "href": "lectures/3b.html#stochastic-gradient-descent-1",
-    "title": "Optimization",
-    "section": "Stochastic Gradient Descent",
-    "text": "Stochastic Gradient Descent"
+    "objectID": "lectures/4a.html#model-setup",
+    "href": "lectures/4a.html#model-setup",
+    "title": "Neural Networks",
+    "section": "Model Setup",
+    "text": "Model Setup\n\\[\nY = f(\\boldsymbol X; \\boldsymbol \\theta)\n\\]\n\n\\(\\boldsymbol X\\): a vector of predictor variables\n\\(\\boldsymbol \\theta\\): a vector of parameters ( \\(\\boldsymbol \\alpha, \\boldsymbol \\beta, \\boldsymbol \\gamma, \\boldsymbol \\delta\\))"
   },
   {
-    "objectID": "lectures/3b.html#newton-raphson-algorithm",
-    "href": "lectures/3b.html#newton-raphson-algorithm",
+    "objectID": "lectures/4a.html#multilayer-neural-network-1",
+    "href": "lectures/4a.html#multilayer-neural-network-1",
+    "title": "Neural Networks",
+    "section": "Multilayer Neural Network",
+    "text": "Multilayer Neural Network"
+  },
+  {
+    "objectID": "lectures/4a.html#hidden-layer-1",
+    "href": "lectures/4a.html#hidden-layer-1",
+    "title": "Neural Networks",
+    "section": "Hidden Layer 1",
+    "text": "Hidden Layer 1\nWith \\(p\\) predictors of \\(X\\):\n\\[\nh^{(1)}_k(X) = H^{(1)}_k  = g\\left\\{\\alpha_{k0} + \\sum^p_{j=1}\\alpha_{kj}X_{j}\\right\\}\n\\] for \\(k = 1, \\cdots, K\\) nodes."
+  },
+  {
+    "objectID": "lectures/4a.html#hidden-layer-2",
+    "href": "lectures/4a.html#hidden-layer-2",
+    "title": "Neural Networks",
+    "section": "Hidden Layer 2",
+    "text": "Hidden Layer 2\n\\[\nh^{(2)}_l(X) = H^{(2)}_l = g\\left\\{\\beta_{l0} + \\sum^K_{k=1}\\beta_{lk}H^{(1)}_{k}\\right\\}\n\\] for \\(l = 1, \\cdots, L\\) nodes."
+  },
+  {
+    "objectID": "lectures/4a.html#hidden-layer-3",
+    "href": "lectures/4a.html#hidden-layer-3",
+    "title": "Neural Networks",
+    "section": "Hidden Layer 3 +",
+    "text": "Hidden Layer 3 +\n\\[\nh^{(3)}_m(X) = H^{(3)}_l = g\\left\\{\\gamma_{m0} + \\sum^L_{l=1}\\gamma_{ml}H^{(2)}_{l}\\right\\}\n\\] for \\(m = 1, \\cdots, M\\) nodes."
+  },
+  {
+    "objectID": "lectures/4a.html#output-layer",
+    "href": "lectures/4a.html#output-layer",
+    "title": "Neural Networks",
+    "section": "Output Layer",
+    "text": "Output Layer\n\\[\nf(X) = \\beta_{0} + \\sum^M_{m=1}\\beta_{m}H^{(3)}_m\n\\]"
+  },
+  {
+    "objectID": "lectures/4a.html#fitting-a-neural-network",
+    "href": "lectures/4a.html#fitting-a-neural-network",
+    "title": "Neural Networks",
+    "section": "Fitting a Neural Network",
+    "text": "Fitting a Neural Network\nFitting a neural network is the process of taking input data (\\(X\\)), finding the numerical values for the paramters that will minimize the following loss function, mean squared errors (MSE):\n\\[\n\\frac{1}{n}\\sum^n_{i-1}\\left\\{Y_i-f(\\boldsymbol X; \\boldsymbol \\theta)\\right\\}^2\n\\]"
+  },
+  {
+    "objectID": "lectures/4a.html#nonlinear-activations-function-gcdot",
+    "href": "lectures/4a.html#nonlinear-activations-function-gcdot",
+    "title": "Neural Networks",
+    "section": "Nonlinear (Activations) Function \\(g(\\cdot)\\)",
+    "text": "Nonlinear (Activations) Function \\(g(\\cdot)\\)\nActivation functions are used to create a nonlinear affect within the neural network. Common activation functions are\n\nSigmoidal: \\(g(z) = \\frac{1}{1+e^{-z}}\\) (nn_sigmoidal)\nReLU (rectified linear unit): \\(g(z) = (z)_+ = zI(z\\geq0)\\) (nn_relu)\nHyperbolic Tangent: \\(g(z) = \\frac{\\sinh(z)}{\\cosh(z)} = \\frac{\\exp(z) - \\exp(-z)} {\\exp(z) + \\exp(-z)}\\) (nn_tanh)\n\nOtherwise, the neural network is just an overparameterized linear model."
+  },
+  {
+    "objectID": "lectures/4a.html#optimizer",
+    "href": "lectures/4a.html#optimizer",
+    "title": "Neural Networks",
+    "section": "Optimizer",
+    "text": "Optimizer\nThe optimizer is the mathematical algorithm used to find the numerical values for the parameters \\(\\beta_j\\) and \\(\\alpha_{kl}\\).\n\nThe most basic algorithm used in gradient descent."
+  },
+  {
+    "objectID": "lectures/4a.html#penguin-data",
+    "href": "lectures/4a.html#penguin-data",
+    "title": "Neural Networks",
+    "section": "Penguin Data",
+    "text": "Penguin Data\n\nDescriptionData Prep\n\n\nBuild a single-layer neural network that will predict body_mass with the remaining predictors. The hidden layer will contain 20 nodes, and the activation functions will be ReLU.\n\n\n\nlibrary(tidyverse)\npenguins &lt;- penguins |&gt; drop_na()\npx &lt;- penguins |&gt;\n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\npy &lt;- penguins |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())"
+  },
+  {
+    "objectID": "lectures/4a.html#model-setup-1",
+    "href": "lectures/4a.html#model-setup-1",
+    "title": "Neural Networks",
+    "section": "Model Setup",
+    "text": "Model Setup\n\nmodelnn &lt;- nn_module(\n  initialize = function(input_size) {\n    self$hidden1 &lt;- nn_linear(in_features = input_size, \n                              out_features = 20)\n    self$hidden2 &lt;- nn_linear(in_features = 20, \n                              out_features = 10)\n    self$hidden3 &lt;- nn_linear(in_features = 10, \n                              out_features = 5)\n\n    self$output &lt;- nn_linear(in_features = 5, \n                             out_features = 1)\n        \n    self$activation &lt;- nn_relu()\n  },\n  forward = function(x) {\n    x |&gt;  \n      self$hidden1() |&gt;  \n      self$activation() |&gt;  \n      \n      self$hidden2() |&gt;  \n      self$activation() |&gt;  \n\n      self$hidden3() |&gt;  \n      self$activation() |&gt;  \n\n      self$output()\n  }\n)"
+  },
+  {
+    "objectID": "lectures/4a.html#setup",
+    "href": "lectures/4a.html#setup",
+    "title": "Neural Networks",
+    "section": "Setup",
+    "text": "Setup\n\nmodelnn &lt;- modelnn |&gt; \n  setup(loss = nn_mse_loss(),\n        optimizer = optim_rmsprop) |&gt;\n  set_hparams(input_size = ncol(px))"
+  },
+  {
+    "objectID": "lectures/4a.html#model-fitting",
+    "href": "lectures/4a.html#model-fitting",
+    "title": "Neural Networks",
+    "section": "Model Fitting",
+    "text": "Model Fitting\n\nFitPlot\n\n\n\nfitted &lt;- modelnn |&gt; \n  fit(data = list(px, py), \n      epochs = 50)\n\n\n\n\nplot(fitted)"
+  },
+  {
+    "objectID": "lectures/4a.html#error-rate",
+    "href": "lectures/4a.html#error-rate",
+    "title": "Neural Networks",
+    "section": "Error Rate",
+    "text": "Error Rate\nWhen creating a model, we are interested in determining how effective the model will be in predicting a new data point, ie not in our training data.\n\nThe error rate is a metric to determine how often willfuture data points be wrong when using our model.\n\n\nThe problem is how can we get future data to validate our model?"
+  },
+  {
+    "objectID": "lectures/4a.html#trainingvalidatingtesting-data-1",
+    "href": "lectures/4a.html#trainingvalidatingtesting-data-1",
+    "title": "Neural Networks",
+    "section": "Training/Validating/Testing Data",
+    "text": "Training/Validating/Testing Data\nThe Training/Validating/Testing Data set is a way to take the original data set and split into 3 seperate data sets: training, validating, and testing.\n\nTrainingValidatingTesting\n\n\nThis is data used to create the model.\n\n\nThis is data used to evaluate the data during it’s creation. It evaluates at each iteration (Epoch)\n\n\nThis is data used to test the final model and compute the error rate."
+  },
+  {
+    "objectID": "lectures/4a.html#trainingvalidatingtesting-proportions",
+    "href": "lectures/4a.html#trainingvalidatingtesting-proportions",
+    "title": "Neural Networks",
+    "section": "Training/Validating/Testing Proportions",
+    "text": "Training/Validating/Testing Proportions\n\n\n\\[\n80/10/10\n\\]\n\n\\[\n70/15/15\n\\]"
+  },
+  {
+    "objectID": "lectures/4a.html#training-error-rate",
+    "href": "lectures/4a.html#training-error-rate",
+    "title": "Neural Networks",
+    "section": "Training Error Rate",
+    "text": "Training Error Rate\nTraining Error Rate is the error rate of the data used to create the model of interest. It describes how well the model predicts the data used to construct it."
+  },
+  {
+    "objectID": "lectures/4a.html#test-error-rate",
+    "href": "lectures/4a.html#test-error-rate",
+    "title": "Neural Networks",
+    "section": "Test Error Rate",
+    "text": "Test Error Rate\nTest Error Rate is the error rate of predicting a new data point using the current established model."
+  },
+  {
+    "objectID": "lectures/4a.html#penguin-data-1",
+    "href": "lectures/4a.html#penguin-data-1",
+    "title": "Neural Networks",
+    "section": "Penguin Data",
+    "text": "Penguin Data\n\nTrain/Test/EvaluationTrainingValidateTesting\n\n\n\npenguins &lt;- penguins |&gt; drop_na()\ntraining &lt;- penguins |&gt; slice_sample(prop = .8)\npre &lt;- penguins |&gt; anti_join(training)\nvalidate &lt;- pre |&gt; slice_sample(prop =  0.5)\ntesting &lt;- pre |&gt; anti_join(validate)\n\n\n\n\nXtraining &lt;- training |&gt; \n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYtraining &lt;- training |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())\n\n\n\n\nXvalidate &lt;- validate |&gt; \n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYvalidate &lt;- validate |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())\n\n\n\n\nXtesting &lt;- testing |&gt; \n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYtesting &lt;- testing |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())"
+  },
+  {
+    "objectID": "lectures/4a.html#model-description",
+    "href": "lectures/4a.html#model-description",
+    "title": "Neural Networks",
+    "section": "Model Description",
+    "text": "Model Description\n\nmodelnn &lt;- nn_module(\n  initialize = function(input_size) {\n    self$hidden1 &lt;- nn_linear(in_features = input_size, \n                              out_features = 20)\n    self$hidden2 &lt;- nn_linear(in_features = 20, \n                              out_features = 10)\n    self$hidden3 &lt;- nn_linear(in_features = 10, \n                              out_features = 5)\n\n    self$output &lt;- nn_linear(in_features = 5, \n                             out_features = 1)\n        \n    self$activation &lt;- nn_relu()\n  },\n  forward = function(x) {\n    x |&gt;  \n      self$hidden1() |&gt;  \n      self$activation() |&gt;  \n      \n      self$hidden2() |&gt;  \n      self$activation() |&gt;  \n\n      self$hidden3() |&gt;  \n      self$activation() |&gt;  \n\n      self$output()\n  }\n)"
+  },
+  {
+    "objectID": "lectures/4a.html#optimizer-set-up",
+    "href": "lectures/4a.html#optimizer-set-up",
+    "title": "Neural Networks",
+    "section": "Optimizer Set Up",
+    "text": "Optimizer Set Up\n\nmodelnn &lt;- modelnn |&gt; \n  setup(\n    loss = nn_mse_loss(), # Used for numerical counts\n    optimizer = optim_rmsprop\n  ) |&gt;\n  set_hparams(input_size = ncol(px))"
+  },
+  {
+    "objectID": "lectures/4a.html#fit-a-model",
+    "href": "lectures/4a.html#fit-a-model",
+    "title": "Neural Networks",
+    "section": "Fit a Model",
+    "text": "Fit a Model\n\nFitPlotTesting ModelThursday\n\n\n\nfitted &lt;- modelnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 50, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)\n\n\n\n\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")\n\n\n\n\n\n\nThursday\n\n\n\nMultilayer Neural Networks\n\n\nOther Topics\n\n\nMulti-Layer Neural Network in R\n\n\nTraining/Validating/Testing Data\n\n\nThursday\n\n\n\n\n\n\n\nCome perpared to work on your smart goal.\nShow evidence, either by submitting a word document, notebook, or other format, that you accomplished last week’s smart goal."
+  },
+  {
+    "objectID": "lectures/3b.html#thursday",
+    "href": "lectures/3b.html#thursday",
     "title": "Optimization",
-    "section": "Newton-Raphson Algorithm",
-    "text": "Newton-Raphson Algorithm"
+    "section": "Thursday",
+    "text": "Thursday\nWork on your new smart goal."
+  },
+  {
+    "objectID": "lectures/3b.html#assignment",
+    "href": "lectures/3b.html#assignment",
+    "title": "Optimization",
+    "section": "Assignment",
+    "text": "Assignment\nSubmit next week’s SMART goal, by the end of class.\n\nStarting next week, you will submit evidence that you met your smart goal."
   },
   {
     "objectID": "lectures/2b.html#r-packages",
@@ -431,7 +606,7 @@
     "href": "index.html",
     "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
+    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks building multi-layer Neural Networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "exc/exc_2.html",
@@ -1082,7 +1257,7 @@
     "href": "lectures/3a.html#linear-regression-1",
     "title": "Neural Networks",
     "section": "Linear Regression",
-    "text": "Linear Regression\nLinear Regression is a tool to predict continuous random variales that are known to follow a Normal Distribution, with a set of known predictor variables."
+    "text": "Linear Regression\nLinear Regression is a tool to predict continuous random variables that are known to follow a Normal Distribution, with a set of known predictor variables."
   },
   {
     "objectID": "lectures/3a.html#simple-linear-regression",
@@ -1138,7 +1313,7 @@
     "href": "lectures/3a.html#sums-of-squared-errors",
     "title": "Neural Networks",
     "section": "Sums of Squared Errors",
-    "text": "Sums of Squared Errors\nWe find the values of \\(\\beta_1, \\cdots, \\beta_5\\) that minimizes the following function for \\(i\\) data points:\n\\[\nRSS = \\sum^n_{i=1}(Y_i-\\hat Y_i)^2\n\\]"
+    "text": "Sums of Squared Errors\nWe find the values of \\(\\beta_0, \\cdots, \\beta_5\\) that minimizes the following function for \\(i\\) data points:\n\\[\nRSS = \\sum^n_{i=1}(Y_i-\\hat Y_i)^2\n\\]"
   },
   {
     "objectID": "lectures/3a.html#matrix-formulation",
@@ -1309,45 +1484,157 @@
     "text": "Fit a Model\n\nFitPlotTesting ModelThursday\n\n\n\nfitted &lt;- modnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 200, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)\n\n\n\n\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")\n\n\n\n\n\n\nThursday\n\n\n\nMachine Learning\n\n\nLinear Regression\n\n\nNeural Networks\n\n\nOther Topics\n\n\nSingle-Layer Neural Network in R\n\n\nTraining/Validating/Testing Data\n\n\nThursday\n\n\n\n\n\n\n\nCome perpared to work on your smart goal.\nShow evidence, either by submitting a word document, notebook, or other format, that you accomplished last week’s smart goal."
   },
   {
-    "objectID": "posts/week_1.html",
-    "href": "posts/week_1.html",
-    "title": "Week 1",
+    "objectID": "lectures/3c.html#r-packages",
+    "href": "lectures/3c.html#r-packages",
+    "title": "Optimization",
+    "section": "R Packages",
+    "text": "R Packages\n\nlibrary(tidyverse)\nlibrary(mvtnorm)\nlibrary(numDeriv)"
+  },
+  {
+    "objectID": "lectures/3c.html#simulated-data",
+    "href": "lectures/3c.html#simulated-data",
+    "title": "Optimization",
+    "section": "Simulated Data",
+    "text": "Simulated Data\n\\[\nY_i = 3.85 + 12.3 X_1 - 9.7 X_2 + \\varepsilon_i\n\\]\n\\[\n\\varepsilon \\sim N(0, 2.4)\n\\]\n\nbeta &lt;- c(3.85, 12.3, -9.7)\nx &lt;- rmvnorm(500, c(3, 8))\nxx &lt;- cbind(1, x)\ny &lt;- xx%*%beta + rnorm(500, sd = sqrt(2.4))"
+  },
+  {
+    "objectID": "lectures/3c.html#optimization-1",
+    "href": "lectures/3c.html#optimization-1",
+    "title": "Optimization",
+    "section": "Optimization",
+    "text": "Optimization"
+  },
+  {
+    "objectID": "lectures/3c.html#gradient-descent-1",
+    "href": "lectures/3c.html#gradient-descent-1",
+    "title": "Optimization",
+    "section": "Gradient Descent",
+    "text": "Gradient Descent"
+  },
+  {
+    "objectID": "lectures/3c.html#alternative-versions",
+    "href": "lectures/3c.html#alternative-versions",
+    "title": "Optimization",
+    "section": "Alternative Versions",
+    "text": "Alternative Versions"
+  },
+  {
+    "objectID": "lectures/3c.html#stochastic-gradient-descent-1",
+    "href": "lectures/3c.html#stochastic-gradient-descent-1",
+    "title": "Optimization",
+    "section": "Stochastic Gradient Descent",
+    "text": "Stochastic Gradient Descent"
+  },
+  {
+    "objectID": "lectures/3c.html#newton-raphson-algorithm",
+    "href": "lectures/3c.html#newton-raphson-algorithm",
+    "title": "Optimization",
+    "section": "Newton-Raphson Algorithm",
+    "text": "Newton-Raphson Algorithm"
+  },
+  {
+    "objectID": "lectures/5a.html#r-packages",
+    "href": "lectures/5a.html#r-packages",
+    "title": "Neural Networks",
+    "section": "R Packages",
+    "text": "R Packages\n\n# install.packages(\"torch\")\n# install.packages(\"luz\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\ntorch_manual_seed(13)"
+  },
+  {
+    "objectID": "lectures/5a.html#data-in-python",
+    "href": "lectures/5a.html#data-in-python",
+    "title": "Neural Networks",
+    "section": "Data in Python",
+    "text": "Data in Python\nimport plotnine\nfrom plotnine.data import penguins\nclean_penguins = (\n    penguins\n        .dropna()\n        .drop(columns=[\"year\"])\n)"
+  },
+  {
+    "objectID": "lectures/5a.html#classification-1",
+    "href": "lectures/5a.html#classification-1",
+    "title": "Neural Networks",
+    "section": "Classification",
+    "text": "Classification\nClassification in statistical learning terms indicates predicting a categorical random variable."
+  },
+  {
+    "objectID": "lectures/5a.html#common-methods",
+    "href": "lectures/5a.html#common-methods",
+    "title": "Neural Networks",
+    "section": "Common Methods",
+    "text": "Common Methods\n\nNaive Bayes Classifier\nTree-based Methods\nSupport Vector Machines\nLogistic/Multinomial regression\nDiscriminant Analysis"
+  },
+  {
+    "objectID": "lectures/5a.html#neural-networks",
+    "href": "lectures/5a.html#neural-networks",
+    "title": "Neural Networks",
+    "section": "Neural Networks",
+    "text": "Neural Networks"
+  },
+  {
+    "objectID": "lectures/5a.html#loss-functions-1",
+    "href": "lectures/5a.html#loss-functions-1",
+    "title": "Neural Networks",
+    "section": "Loss Functions",
+    "text": "Loss Functions"
+  },
+  {
+    "objectID": "lectures/5a.html#penguin-data",
+    "href": "lectures/5a.html#penguin-data",
+    "title": "Neural Networks",
+    "section": "Penguin Data",
+    "text": "Penguin Data\n\nTrain/Test/EvaluationTrainingValidateTesting\n\n\n\npenguins &lt;- penguins |&gt; drop_na()\ntraining &lt;- penguins |&gt; slice_sample(prop = .8)\npre &lt;- penguins |&gt; anti_join(training)\nvalidate &lt;- pre |&gt; slice_sample(prop =  0.5)\ntesting &lt;- pre |&gt; anti_join(validate)\n\n\n\n\nXtraining &lt;- training |&gt; \n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYtraining &lt;- training |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())\n\n\n\n\nXvalidate &lt;- validate |&gt; \n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYvalidate &lt;- validate |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())\n\n\n\n\nXtesting &lt;- testing |&gt; \n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYtesting &lt;- testing |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())"
+  },
+  {
+    "objectID": "lectures/5a.html#model-description",
+    "href": "lectures/5a.html#model-description",
+    "title": "Neural Networks",
+    "section": "Model Description",
+    "text": "Model Description\n\nmodelnn &lt;- nn_module(\n  initialize = function(input_size) {\n    self$hidden1 &lt;- nn_linear(in_features = input_size, \n                              out_features = 20)\n    self$hidden2 &lt;- nn_linear(in_features = 20, \n                              out_features = 10)\n    self$hidden3 &lt;- nn_linear(in_features = 10, \n                              out_features = 5)\n\n    self$output &lt;- nn_linear(in_features = 5, \n                             out_features = 1)\n        \n    self$activation &lt;- nn_relu()\n  },\n  forward = function(x) {\n    x |&gt;  \n      self$hidden1() |&gt;  \n      self$activation() |&gt;  \n      \n      self$hidden2() |&gt;  \n      self$activation() |&gt;  \n\n      self$hidden3() |&gt;  \n      self$activation() |&gt;  \n\n      self$output()\n  }\n)"
+  },
+  {
+    "objectID": "lectures/5a.html#optimizer-set-up",
+    "href": "lectures/5a.html#optimizer-set-up",
+    "title": "Neural Networks",
+    "section": "Optimizer Set Up",
+    "text": "Optimizer Set Up\n\nmodelnn &lt;- modelnn |&gt; \n  setup(\n    loss = nn_mse_loss(), # Used for numerical counts\n    optimizer = optim_rmsprop\n  ) |&gt;\n  set_hparams(input_size = ncol(px))"
+  },
+  {
+    "objectID": "lectures/5a.html#fit-a-model",
+    "href": "lectures/5a.html#fit-a-model",
+    "title": "Neural Networks",
+    "section": "Fit a Model",
+    "text": "Fit a Model\n\nFitPlotTesting ModelThursday\n\n\n\nfitted &lt;- modelnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 50, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)\n\n\n\n\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")\n\n\n\n\n\n\nThursday\n\n\n\nClassification\n\n\nLoss Functions\n\n\nNeural Network\n\n\nIn R\n\n\n\n\n\nThursday\n\n\n\n\n\n\n\nCome perpared to work on your smart goal.\nShow evidence, either by submitting a word document, notebook, or other format, that you accomplished last week’s smart goal."
+  },
+  {
+    "objectID": "posts/week_2.html",
+    "href": "posts/week_2.html",
+    "title": "Week 2",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_1.html#learning-outcomes",
-    "href": "posts/week_1.html#learning-outcomes",
-    "title": "Week 1",
+    "objectID": "posts/week_2.html#learning-outcomes",
+    "href": "posts/week_2.html#learning-outcomes",
+    "title": "Week 2",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_1.html#resources",
-    "href": "posts/week_1.html#resources",
-    "title": "Week 1",
+    "objectID": "posts/week_2.html#resources",
+    "href": "posts/week_2.html#resources",
+    "title": "Week 2",
     "section": "Resources",
     "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
   },
   {
-    "objectID": "posts/week_3.html",
-    "href": "posts/week_3.html",
-    "title": "Week 3",
+    "objectID": "posts/week_4.html",
+    "href": "posts/week_4.html",
+    "title": "Week 4",
     "section": "",
-    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
+    "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_3.html#learning-outcomes",
-    "href": "posts/week_3.html#learning-outcomes",
-    "title": "Week 3",
+    "objectID": "posts/week_4.html#resources",
+    "href": "posts/week_4.html#resources",
+    "title": "Week 4",
     "section": "",
-    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
-  },
-  {
-    "objectID": "posts/week_3.html#resources",
-    "href": "posts/week_3.html#resources",
-    "title": "Week 3",
-    "section": "Resources",
-    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\n\nNA"
+    "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\n\nNA"
   }
 ]

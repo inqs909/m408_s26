@@ -37,19 +37,51 @@ filters:
 editor: source
 ---
 
-## Thursday
+## R Packages
+
+```{r}
+library(tidyverse)
+library(mvtnorm)
+library(numDeriv)
+```
+
+## Simulated Data
+
+$$
+Y_i = 3.85 + 12.3 X_1 - 9.7 X_2 + \varepsilon_i
+$$
+
+$$
+\varepsilon \sim N(0, 2.4)
+$$
 
 
-Work on your new smart goal.
+```{r}
+beta <- c(3.85, 12.3, -9.7)
+x <- rmvnorm(500, c(3, 8))
+xx <- cbind(1, x)
+y <- xx%*%beta + rnorm(500, sd = sqrt(2.4))
+```
 
+# Optimization
 
-## Assignment
+## Optimization
 
-Submit next week's SMART goal, by the end of class.
+# Gradient Descent
 
-::: {.fragment}
-Starting next week, you will submit evidence that you met your smart goal.
-:::
+## Gradient Descent
+
+## Alternative Versions
+
+# Stochastic Gradient Descent
+
+## Stochastic Gradient Descent
+
+# Newton-Raphson
+
+## Newton-Raphson Algorithm
+
+# Quasi-Newton
 
 
 

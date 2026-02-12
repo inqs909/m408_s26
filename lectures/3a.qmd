@@ -118,7 +118,7 @@ $$
 
 ## Linear Regression
 
-Linear Regression is a tool to predict continuous random variales that are known to follow a Normal Distribution, with a set of known predictor variables. 
+Linear Regression is a tool to predict continuous random variables that are known to follow a Normal Distribution, with a set of known predictor variables. 
 
 ## Simple Linear Regression
 
@@ -177,7 +177,7 @@ $$
 
 ## Sums of Squared Errors
 
-We find the values of $\beta_1, \cdots, \beta_5$ that minimizes the following function for $i$ data points:
+We find the values of $\beta_0, \cdots, \beta_5$ that minimizes the following function for $i$ data points:
 
 $$
 RSS = \sum^n_{i=1}(Y_i-\hat Y_i)^2

@@ -1,0 +1,261 @@
+---
+title: "Neural Networks"
+subtitle: "Classification"
+format:
+  revealjs:
+    width: 1200
+    scrollable: false
+    include-in-header: "math.html"
+    footer: m408.inqs.info/lectures/3a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: false
+    message: false
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## R Packages
+
+```{r}
+# install.packages("torch")
+# install.packages("luz")
+
+library(torch)
+library(luz) # high-level interface for torch
+torch_manual_seed(13)
+```
+
+## Data in Python
+
+```python
+import plotnine
+from plotnine.data import penguins
+clean_penguins = (
+    penguins
+        .dropna()
+        .drop(columns=["year"])
+)
+```
+
+# Classification
+
+## Classification
+
+Classification in statistical learning terms indicates predicting a categorical random variable.
+
+## Common Methods
+
+- Naive Bayes Classifier
+
+- Tree-based Methods
+
+- Support Vector Machines
+
+- Logistic/Multinomial regression
+
+- Discriminant Analysis
+
+## Neural Networks
+
+# Loss Functions
+
+## Loss Functions
+
+# Neural Network
+
+# In R
+
+# 
+
+## Penguin Data
+
+::: {.panel-tabset}
+
+### Train/Test/Evaluation
+  
+```{r}
+
+penguins <- penguins |> drop_na()
+training <- penguins |> slice_sample(prop = .8)
+pre <- penguins |> anti_join(training)
+validate <- pre |> slice_sample(prop =  0.5)
+testing <- pre |> anti_join(validate)
+```
+
+
+
+###  Training
+
+```{r}
+Xtraining <- training |> 
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+Ytraining <- training |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+
+```
+
+### Validate
+
+```{r}
+Xvalidate <- validate |> 
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+Yvalidate <- validate |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+```
+
+### Testing
+
+```{r}
+Xtesting <- testing |> 
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+Ytesting <- testing |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+```
+
+:::
+
+## Model Description
+
+ 
+```{r}
+modelnn <- nn_module(
+  initialize = function(input_size) {
+    self$hidden1 <- nn_linear(in_features = input_size, 
+                              out_features = 20)
+    self$hidden2 <- nn_linear(in_features = 20, 
+                              out_features = 10)
+    self$hidden3 <- nn_linear(in_features = 10, 
+                              out_features = 5)
+
+    self$output <- nn_linear(in_features = 5, 
+                             out_features = 1)
+        
+    self$activation <- nn_relu()
+  },
+  forward = function(x) {
+    x |>  
+      self$hidden1() |>  
+      self$activation() |>  
+      
+      self$hidden2() |>  
+      self$activation() |>  
+
+      self$hidden3() |>  
+      self$activation() |>  
+
+      self$output()
+  }
+)
+```
+
+
+## Optimizer Set Up
+
+```{r}
+modelnn <- modelnn |> 
+  setup(
+    loss = nn_mse_loss(), # Used for numerical counts
+    optimizer = optim_rmsprop
+  ) |>
+  set_hparams(input_size = ncol(px))
+```
+
+
+## Fit a Model
+
+::: {.panel-tabset}
+## Fit
+
+```{r}
+fitted <- modelnn |> 
+  fit(
+    data = list(Xtraining, Ytraining),
+    epochs = 50, # Can think as number of iterations
+    valid_data = list(Xvalidate, Yvalidate)
+  )
+```
+
+## Plot
+
+```{r}
+#| code-fold: true
+plot(fitted)
+```
+
+
+## Testing Model
+
+::: {.panel-tabset}
+
+## Prediction
+
+```{r}
+npred <- predict(fitted, Xtesting)
+```
+
+## MAE
+
+```{r}
+mean(abs(as.matrix(Ytesting) - as.matrix(npred)))
+```
+
+## Plot
+
+```{r}
+#| code-fold: true
+
+plot(as.matrix(Ytesting), as.matrix(npred),
+     xlab = "Truth",
+     ylab = "Predicted")
+```
+
+:::
+
+
+# Thursday
+
+## Thursday
+
+Come perpared to work on your smart goal.
+
+Show evidence, either by submitting a word document, notebook, or other format, that you accomplished last week's smart goal.
+

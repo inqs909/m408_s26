@@ -1,0 +1,491 @@
+---
+title: "Neural Networks"
+subtitle: "Multi-layer Neural networks"
+format:
+  revealjs:
+    width: 1200
+    scrollable: false
+    include-in-header: "math.html"
+    footer: m408.inqs.info/lectures/3a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: false
+    message: false
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## R Packages
+
+```{r}
+# install.packages("torch")
+# install.packages("luz")
+
+library(torch)
+library(luz) # high-level interface for torch
+torch_manual_seed(13)
+```
+
+## Data in Python
+
+```python
+import plotnine
+from plotnine.data import penguins
+clean_penguins = (
+    penguins
+        .dropna()
+        .drop(columns=["year"])
+)
+```
+
+
+# Multilayer Neural Networks
+
+
+## Neural Network
+
+![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png){fig-align="center"}
+
+## Neural Network Composition
+
+- Inputs: A set of characteristics in the data that we use to predict the outcome of interest
+- Outputs: A set of variables (may be one) we wish to predict 
+- Hidden Layers: A set of functions that will transform the data such that it can better predict the outputs
+    - Each hidden layer will has nodes that indicates the transformation
+
+
+## Multilayer Neural Network
+
+Multilayer Neural Networks create multiple hidden layers where each layer feeds into each other which will create a final outcome.
+
+## Model Setup
+
+$$
+Y = f(\boldsymbol X; \boldsymbol \theta)
+$$
+
+- $\boldsymbol X$: a vector of predictor variables
+- $\boldsymbol \theta$: a vector of parameters ( $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma, \boldsymbol \delta$)
+
+
+
+## Multilayer Neural Network
+
+![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png){fig-align="center"}
+
+## Hidden Layer 1
+
+With $p$ predictors of $X$:
+
+$$
+h^{(1)}_k(X) = H^{(1)}_k  = g\left\{\alpha_{k0} + \sum^p_{j=1}\alpha_{kj}X_{j}\right\}
+$$
+for $k = 1, \cdots, K$ nodes.
+
+## Hidden Layer 2
+
+$$
+h^{(2)}_l(X) = H^{(2)}_l = g\left\{\beta_{l0} + \sum^K_{k=1}\beta_{lk}H^{(1)}_{k}\right\}
+$$
+for $l = 1, \cdots, L$ nodes.
+
+
+## Hidden Layer 3 +
+
+$$
+h^{(3)}_m(X) = H^{(3)}_l = g\left\{\gamma_{m0} + \sum^L_{l=1}\gamma_{ml}H^{(2)}_{l}\right\}
+$$
+for $m = 1, \cdots, M$ nodes.
+
+## Output Layer
+
+$$
+f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
+$$
+
+
+
+## Fitting a Neural Network
+
+Fitting a neural network is the process of taking input data ($X$), finding the numerical values for the paramters that will minimize the following loss function, mean squared errors (MSE):
+
+$$
+\frac{1}{n}\sum^n_{i-1}\left\{Y_i-f(\boldsymbol X; \boldsymbol \theta)\right\}^2
+$$
+
+# Other Topics
+
+## Nonlinear (Activations) Function $g(\cdot)$
+
+Activation functions are used to create a nonlinear affect within the neural network. Common activation functions are
+
+-   Sigmoidal: $g(z) = \frac{1}{1+e^{-z}}$ (nn_sigmoidal)
+
+-   ReLU (rectified linear unit): $g(z) = (z)_+ = zI(z\geq0)$ (nn_relu)
+
+-   Hyperbolic Tangent: $g(z) = \frac{\sinh(z)}{\cosh(z)} = \frac{\exp(z) - \exp(-z)} {\exp(z) + \exp(-z)}$ (nn_tanh)
+
+Otherwise, the neural network is just an overparameterized linear model.
+
+
+## Optimizer
+
+The optimizer is the mathematical algorithm used to find the numerical values for the parameters $\beta_j$ and $\alpha_{kl}$.
+
+::: {.fragment}
+The most basic algorithm used in gradient descent.
+:::
+
+
+# Multi-Layer Neural Network in R
+
+## Penguin Data
+
+::: {.panel-tabset}
+
+### Description
+
+Build a single-layer neural network that will predict `body_mass` with the remaining predictors. The hidden layer will contain 20 nodes, and the activation functions will be ReLU.
+
+### Data Prep
+  
+```{r}
+library(tidyverse)
+penguins <- penguins |> drop_na()
+px <- penguins |>
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+py <- penguins |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+
+```
+  
+  
+:::
+
+## Model Setup
+
+
+```{r}
+modelnn <- nn_module(
+  initialize = function(input_size) {
+    self$hidden1 <- nn_linear(in_features = input_size, 
+                              out_features = 20)
+    self$hidden2 <- nn_linear(in_features = 20, 
+                              out_features = 10)
+    self$hidden3 <- nn_linear(in_features = 10, 
+                              out_features = 5)
+
+    self$output <- nn_linear(in_features = 5, 
+                             out_features = 1)
+        
+    self$activation <- nn_relu()
+  },
+  forward = function(x) {
+    x |>  
+      self$hidden1() |>  
+      self$activation() |>  
+      
+      self$hidden2() |>  
+      self$activation() |>  
+
+      self$hidden3() |>  
+      self$activation() |>  
+
+      self$output()
+  }
+)
+```
+
+
+## Setup
+
+```{r}
+modelnn <- modelnn |> 
+  setup(loss = nn_mse_loss(),
+        optimizer = optim_rmsprop) |>
+  set_hparams(input_size = ncol(px))
+```
+
+## Model Fitting
+
+::: {.panel-tabset}
+
+### Fit
+
+```{r}
+fitted <- modelnn |> 
+  fit(data = list(px, py), 
+      epochs = 50)
+```
+
+### Plot
+
+```{r}
+plot(fitted)
+```
+
+:::
+
+
+# Training/Validating/Testing Data
+
+
+## Error Rate
+
+When creating a model, we are interested in determining how effective the model will be in predicting a new data point, ie not in our training data. 
+
+::: {.fragment}
+The error rate is a metric to determine how often willfuture data points be wrong when using our model.
+:::
+
+::: {.fragment}
+The problem is how can we get future data to validate our model?
+:::
+
+## Training/Validating/Testing Data
+
+The Training/Validating/Testing Data set is a way to take the original data set and split into 3 seperate data sets: training, validating, and testing.
+
+::: {.panel-tabset}
+
+### Training
+
+This is data used to create the model. 
+
+### Validating
+
+This is data used to evaluate the data during it's creation. It evaluates at each iteration (Epoch)
+
+### Testing
+
+This is data used to test the final model and compute the error rate.
+
+:::
+
+## Training/Validating/Testing Proportions
+
+::: {.columns}
+::: {.column}
+
+$$
+80/10/10
+$$
+
+
+:::
+::: {.column}
+
+$$
+70/15/15
+$$
+
+:::
+:::
+
+## Training Error Rate
+
+Training Error Rate is the error rate of the data used to create the model of interest. It describes how well the model predicts the data used to construct it.
+
+## Test Error Rate
+
+Test Error Rate is the error rate of predicting a new data point using the current established model.
+
+
+
+
+## Penguin Data
+
+::: {.panel-tabset}
+
+### Train/Test/Evaluation
+  
+```{r}
+
+penguins <- penguins |> drop_na()
+training <- penguins |> slice_sample(prop = .8)
+pre <- penguins |> anti_join(training)
+validate <- pre |> slice_sample(prop =  0.5)
+testing <- pre |> anti_join(validate)
+```
+
+
+
+###  Training
+
+```{r}
+Xtraining <- training |> 
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+Ytraining <- training |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+
+```
+
+### Validate
+
+```{r}
+Xvalidate <- validate |> 
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+Yvalidate <- validate |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+```
+
+### Testing
+
+```{r}
+Xtesting <- testing |> 
+  model.matrix(body_mass ~ . - 1, data = _) |> 
+  scale() |> 
+  torch_tensor(dtype = torch_float())
+
+Ytesting <- testing |> 
+  select(body_mass) |> 
+  as.matrix() |> 
+  torch_tensor(dtype = torch_float())
+```
+
+:::
+
+## Model Description
+
+ 
+```{r}
+modelnn <- nn_module(
+  initialize = function(input_size) {
+    self$hidden1 <- nn_linear(in_features = input_size, 
+                              out_features = 20)
+    self$hidden2 <- nn_linear(in_features = 20, 
+                              out_features = 10)
+    self$hidden3 <- nn_linear(in_features = 10, 
+                              out_features = 5)
+
+    self$output <- nn_linear(in_features = 5, 
+                             out_features = 1)
+        
+    self$activation <- nn_relu()
+  },
+  forward = function(x) {
+    x |>  
+      self$hidden1() |>  
+      self$activation() |>  
+      
+      self$hidden2() |>  
+      self$activation() |>  
+
+      self$hidden3() |>  
+      self$activation() |>  
+
+      self$output()
+  }
+)
+```
+
+
+## Optimizer Set Up
+
+```{r}
+modelnn <- modelnn |> 
+  setup(
+    loss = nn_mse_loss(), # Used for numerical counts
+    optimizer = optim_rmsprop
+  ) |>
+  set_hparams(input_size = ncol(px))
+```
+
+
+## Fit a Model
+
+::: {.panel-tabset}
+## Fit
+
+```{r}
+fitted <- modelnn |> 
+  fit(
+    data = list(Xtraining, Ytraining),
+    epochs = 50, # Can think as number of iterations
+    valid_data = list(Xvalidate, Yvalidate)
+  )
+```
+
+## Plot
+
+```{r}
+#| code-fold: true
+plot(fitted)
+```
+
+
+## Testing Model
+
+::: {.panel-tabset}
+
+## Prediction
+
+```{r}
+npred <- predict(fitted, Xtesting)
+```
+
+## MAE
+
+```{r}
+mean(abs(as.matrix(Ytesting) - as.matrix(npred)))
+```
+
+## Plot
+
+```{r}
+#| code-fold: true
+
+plot(as.matrix(Ytesting), as.matrix(npred),
+     xlab = "Truth",
+     ylab = "Predicted")
+```
+
+:::
+
+
+# Thursday
+
+## Thursday
+
+Come perpared to work on your smart goal.
+
+Show evidence, either by submitting a word document, notebook, or other format, that you accomplished last week's smart goal.
+
