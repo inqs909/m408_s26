@@ -132,7 +132,7 @@ At the end of the quarter, course grades will be assigned according to the follo
 
 #### Assignments
 
-Assignments will be assigned on a regular basis and posted [here](hw.html) and Canvas. The homework is to help you practice the concepts learned in lecture and to help you study. You must turn in your own individual homework and show your understanding of the material. At the end of the semester, the two lowest homework grades will be dropped. Late work will be accepted, but with a 50% point penalty. The last day late work will be accepted is on DATE.
+Assignments will be assigned on a regular basis and posted [here](hw.html) and Canvas. The homework is to help you practice the concepts learned in lecture and to help you study. You must turn in your own individual homework and show your understanding of the material. At the end of the semester, the two lowest homework grades will be dropped. Late work will be accepted, but with a 50% point penalty.
 
 #### Final Project and Presentation
 
