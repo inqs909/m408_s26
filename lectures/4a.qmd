@@ -168,7 +168,7 @@ The most basic algorithm used in gradient descent.
 
 ### Description
 
-Build a single-layer neural network that will predict `body_mass` with the remaining predictors. The hidden layer will contain 20 nodes, and the activation functions will be ReLU.
+Build a multi-layer neural network that will predict `body_mass` with the remaining predictors. 
 
 ### Data Prep
   
@@ -263,7 +263,7 @@ plot(fitted)
 When creating a model, we are interested in determining how effective the model will be in predicting a new data point, ie not in our training data. 
 
 ::: {.fragment}
-The error rate is a metric to determine how often willfuture data points be wrong when using our model.
+The error rate is a metric to determine how often will future data points be wrong when using our model.
 :::
 
 ::: {.fragment}
@@ -433,7 +433,7 @@ modelnn <- modelnn |>
 ## Fit a Model
 
 ::: {.panel-tabset}
-## Fit
+### Fit
 
 ```{r}
 fitted <- modelnn |> 
@@ -444,31 +444,32 @@ fitted <- modelnn |>
   )
 ```
 
-## Plot
+### Plot
 
 ```{r}
 #| code-fold: true
 plot(fitted)
 ```
 
+:::
 
 ## Testing Model
 
 ::: {.panel-tabset}
 
-## Prediction
+### Prediction
 
 ```{r}
 npred <- predict(fitted, Xtesting)
 ```
 
-## MAE
+### MAE
 
 ```{r}
 mean(abs(as.matrix(Ytesting) - as.matrix(npred)))
 ```
 
-## Plot
+### Plot
 
 ```{r}
 #| code-fold: true
@@ -480,12 +481,4 @@ plot(as.matrix(Ytesting), as.matrix(npred),
 
 :::
 
-
-# Thursday
-
-## Thursday
-
-Come perpared to work on your smart goal.
-
-Show evidence, either by submitting a word document, notebook, or other format, that you accomplished last week's smart goal.
 

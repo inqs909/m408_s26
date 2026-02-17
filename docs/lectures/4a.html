@@ -388,9 +388,6 @@
 <li><div class="agenda-inactive agenda-post-active">
 <p>Training/Validating/Testing Data</p>
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -476,9 +473,6 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <li><div class="agenda-inactive agenda-post-active">
 <p>Training/Validating/Testing Data</p>
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -516,9 +510,6 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <li><div class="agenda-inactive agenda-post-active">
 <p>Training/Validating/Testing Data</p>
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -528,7 +519,7 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Description</a></li><li><a href="#tabset-1-2">Data Prep</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<p>Build a single-layer neural network that will predict <code>body_mass</code> with the remaining predictors. The hidden layer will contain 20 nodes, and the activation functions will be ReLU.</p>
+<p>Build a multi-layer neural network that will predict <code>body_mass</code> with the remaining predictors.</p>
 </div>
 <div id="tabset-1-2">
 <div class="cell">
@@ -627,9 +618,6 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <li><div class="agenda-active">
 <p>Training/Validating/Testing Data</p>
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -637,7 +625,7 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <h2>Error Rate</h2>
 <p>When creating a model, we are interested in determining how effective the model will be in predicting a new data point, ie not in our training data.</p>
 <div class="fragment">
-<p>The error rate is a metric to determine how often willfuture data points be wrong when using our model.</p>
+<p>The error rate is a metric to determine how often will future data points be wrong when using our model.</p>
 </div>
 <div class="fragment">
 <p>The problem is how can we get future data to validate our model?</p>
@@ -785,9 +773,9 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <section id="fit-a-model" class="slide level2">
 <h2>Fit a Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Fit</a></li><li><a href="#tabset-6-2">Plot</a></li><li><a href="#tabset-6-3">Testing Model</a></li><li><a href="#tabset-6-4">Thursday</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Fit</a></li><li><a href="#tabset-5-2">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-5-1">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>fitted <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span> </span>
 <span id="cb14-2"><a></a>  <span class="fu">fit</span>(</span>
@@ -797,7 +785,7 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <span id="cb14-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-5-2">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -805,21 +793,25 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 </details>
 </div>
 </div>
-<div id="tabset-6-3">
+</div>
+</div>
+</section>
+<section id="testing-model" class="slide level2">
+<h2>Testing Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Prediction</a></li><li><a href="#tabset-5-2">MAE</a></li><li><a href="#tabset-5-3">Plot</a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Prediction</a></li><li><a href="#tabset-6-2">MAE</a></li><li><a href="#tabset-6-3">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-6-1">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>npred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fitted, Xtesting)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-6-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">mean</span>(<span class="fu">abs</span>(<span class="fu">as.matrix</span>(Ytesting) <span class="sc">-</span> <span class="fu">as.matrix</span>(npred)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-5-3">
+<div id="tabset-6-3">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -831,38 +823,8 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 </div>
 </div>
 </div>
-<section id="thursday" class="title-slide slide level1 agenda-slide center">
-<h1>Thursday</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-active">
-<p>Multilayer Neural Networks</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Other Topics</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Multi-Layer Neural Network in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Training/Validating/Testing Data</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
-</ul>
-</div>
-</section>
-
-</div>
-<div id="tabset-6-4">
-<p>Come perpared to work on your smart goal.</p>
-<p>Show evidence, either by submitting a word document, notebook, or other format, that you accomplished last week’s smart goal.</p>
 
 
-</div>
-</div>
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

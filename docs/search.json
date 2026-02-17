@@ -165,7 +165,7 @@
     "href": "lectures/4a.html#penguin-data",
     "title": "Neural Networks",
     "section": "Penguin Data",
-    "text": "Penguin Data\n\nDescriptionData Prep\n\n\nBuild a single-layer neural network that will predict body_mass with the remaining predictors. The hidden layer will contain 20 nodes, and the activation functions will be ReLU.\n\n\n\nlibrary(tidyverse)\npenguins &lt;- penguins |&gt; drop_na()\npx &lt;- penguins |&gt;\n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\npy &lt;- penguins |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())"
+    "text": "Penguin Data\n\nDescriptionData Prep\n\n\nBuild a multi-layer neural network that will predict body_mass with the remaining predictors.\n\n\n\nlibrary(tidyverse)\npenguins &lt;- penguins |&gt; drop_na()\npx &lt;- penguins |&gt;\n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\npy &lt;- penguins |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())"
   },
   {
     "objectID": "lectures/4a.html#model-setup-1",
@@ -193,7 +193,7 @@
     "href": "lectures/4a.html#error-rate",
     "title": "Neural Networks",
     "section": "Error Rate",
-    "text": "Error Rate\nWhen creating a model, we are interested in determining how effective the model will be in predicting a new data point, ie not in our training data.\n\nThe error rate is a metric to determine how often willfuture data points be wrong when using our model.\n\n\nThe problem is how can we get future data to validate our model?"
+    "text": "Error Rate\nWhen creating a model, we are interested in determining how effective the model will be in predicting a new data point, ie not in our training data.\n\nThe error rate is a metric to determine how often will future data points be wrong when using our model.\n\n\nThe problem is how can we get future data to validate our model?"
   },
   {
     "objectID": "lectures/4a.html#trainingvalidatingtesting-data-1",
@@ -249,7 +249,14 @@
     "href": "lectures/4a.html#fit-a-model",
     "title": "Neural Networks",
     "section": "Fit a Model",
-    "text": "Fit a Model\n\nFitPlotTesting ModelThursday\n\n\n\nfitted &lt;- modelnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 50, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)\n\n\n\n\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")\n\n\n\n\n\n\nThursday\n\n\n\nMultilayer Neural Networks\n\n\nOther Topics\n\n\nMulti-Layer Neural Network in R\n\n\nTraining/Validating/Testing Data\n\n\nThursday\n\n\n\n\n\n\n\nCome perpared to work on your smart goal.\nShow evidence, either by submitting a word document, notebook, or other format, that you accomplished last week’s smart goal."
+    "text": "Fit a Model\n\nFitPlot\n\n\n\nfitted &lt;- modelnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 50, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)"
+  },
+  {
+    "objectID": "lectures/4a.html#testing-model",
+    "href": "lectures/4a.html#testing-model",
+    "title": "Neural Networks",
+    "section": "Testing Model",
+    "text": "Testing Model\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")"
   },
   {
     "objectID": "lectures/3b.html#thursday",
