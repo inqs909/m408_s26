@@ -1,6 +1,6 @@
 ---
 title: "Week 4"
-date: 02-10-26
+date: 02-16-26
 description: This week looks building multi-layer Neural Networks.
 editor: source
 ---
