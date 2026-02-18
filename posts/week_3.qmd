@@ -28,5 +28,5 @@ editor: source
 
 | Lecture | Slides                   | Videos  |
 |---------|--------------------------|---------|
-| 1       | [Slides](../lectures/3a) | NA      |
+| 1       | [Slides](../lectures/3a) | [Video](https://youtu.be/yVt75bMkvHg)      |
 | 2       | [Slides](../lectures/3b) | NA      |

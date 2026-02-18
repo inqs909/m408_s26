@@ -10,5 +10,5 @@ editor: source
 
 | Lecture | Slides                   | Videos  |
 |---------|--------------------------|---------|
-| 1       | [Slides](../lectures/4a) | NA      |
+| 1       | [Slides](../lectures/4a) | [Video](https://youtu.be/YCR8LSHmOcw)      |
 | 2       | | NA      |
