@@ -394,9 +394,6 @@
 <li><div class="agenda-inactive agenda-post-active">
 <p>Training/Validating/Testing Data</p>
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -468,9 +465,6 @@ Y = f(\boldsymbol X; \boldsymbol \theta)
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Training/Validating/Testing Data</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
 </div></li>
 </ul>
 </div>
@@ -603,9 +597,6 @@ Y_i = \boldsymbol X_i^\mathrm T \boldsymbol \beta + \epsilon_i
 <li><div class="agenda-inactive agenda-post-active">
 <p>Training/Validating/Testing Data</p>
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -688,9 +679,6 @@ h_k(\boldsymbol X) = g\left(\alpha_{k0} + \sum^p_{l=1}\alpha_{kl}X_{l}\right)
 <li><div class="agenda-inactive agenda-post-active">
 <p>Training/Validating/Testing Data</p>
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -733,9 +721,6 @@ h_k(\boldsymbol X) = g\left(\alpha_{k0} + \sum^p_{l=1}\alpha_{kl}X_{l}\right)
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Training/Validating/Testing Data</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
 </div></li>
 </ul>
 </div>
@@ -871,9 +856,6 @@ h_k(\boldsymbol X) = g\left(\alpha_{k0} + \sum^p_{l=1}\alpha_{kl}X_{l}\right)
 <li><div class="agenda-active">
 <p>Training/Validating/Testing Data</p>
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -1001,9 +983,9 @@ h_k(\boldsymbol X) = g\left(\alpha_{k0} + \sum^p_{l=1}\alpha_{kl}X_{l}\right)
 <section id="fit-a-model-1" class="slide level2">
 <h2>Fit a Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Fit</a></li><li><a href="#tabset-7-2">Plot</a></li><li><a href="#tabset-7-3">Testing Model</a></li><li><a href="#tabset-7-4">Thursday</a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Fit</a></li><li><a href="#tabset-6-2">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-7-1">
+<div id="tabset-6-1">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>fitted <span class="ot">&lt;-</span> modnn <span class="sc">|&gt;</span> </span>
 <span id="cb16-2"><a></a>  <span class="fu">fit</span>(</span>
@@ -1013,7 +995,7 @@ h_k(\boldsymbol X) = g\left(\alpha_{k0} + \sum^p_{l=1}\alpha_{kl}X_{l}\right)
 <span id="cb16-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-7-2">
+<div id="tabset-6-2">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1021,21 +1003,25 @@ h_k(\boldsymbol X) = g\left(\alpha_{k0} + \sum^p_{l=1}\alpha_{kl}X_{l}\right)
 </details>
 </div>
 </div>
-<div id="tabset-7-3">
+</div>
+</div>
+</section>
+<section id="testing-model" class="slide level2">
+<h2>Testing Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Prediction</a></li><li><a href="#tabset-6-2">MAE</a></li><li><a href="#tabset-6-3">Plot</a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Prediction</a></li><li><a href="#tabset-7-2">MAE</a></li><li><a href="#tabset-7-3">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-7-1">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>npred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fitted, Xtesting)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-7-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">mean</span>(<span class="fu">abs</span>(<span class="fu">as.matrix</span>(Ytesting) <span class="sc">-</span> <span class="fu">as.matrix</span>(npred)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-6-3">
+<div id="tabset-7-3">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1047,44 +1033,8 @@ h_k(\boldsymbol X) = g\left(\alpha_{k0} + \sum^p_{l=1}\alpha_{kl}X_{l}\right)
 </div>
 </div>
 </div>
-<section id="thursday" class="title-slide slide level1 agenda-slide center">
-<h1>Thursday</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-active">
-<p>Machine Learning</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Linear Regression</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Neural Networks</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Other Topics</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Single-Layer Neural Network in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Training/Validating/Testing Data</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
-</ul>
-</div>
-</section>
-
-</div>
-<div id="tabset-7-4">
-<p>Come perpared to work on your smart goal.</p>
-<p>Show evidence, either by submitting a word document, notebook, or other format, that you accomplished last week’s smart goal.</p>
 
 
-</div>
-</div>
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

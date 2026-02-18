@@ -391,9 +391,6 @@
 <li><div class="agenda-inactive agenda-post-active">
 
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -434,9 +431,6 @@
 <li><div class="agenda-inactive agenda-post-active">
 
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -462,9 +456,6 @@
 <li><div class="agenda-inactive agenda-post-active">
 
 </div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
 </ul>
 </div>
 </section>
@@ -487,9 +478,6 @@
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
 </div></li>
 </ul>
 </div>
@@ -514,9 +502,6 @@
 </div></li>
 <li><div class="agenda-active">
 
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
 </div></li>
 </ul>
 </div>
@@ -624,9 +609,9 @@
 <section id="fit-a-model" class="slide level2">
 <h2>Fit a Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Fit</a></li><li><a href="#tabset-3-2">Plot</a></li><li><a href="#tabset-3-3">Testing Model</a></li><li><a href="#tabset-3-4">Thursday</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Fit</a></li><li><a href="#tabset-2-2">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-2-1">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>fitted <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span> </span>
 <span id="cb9-2"><a></a>  <span class="fu">fit</span>(</span>
@@ -636,7 +621,7 @@
 <span id="cb9-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-2-2">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -644,21 +629,25 @@
 </details>
 </div>
 </div>
-<div id="tabset-3-3">
+</div>
+</div>
+</section>
+<section id="testing-model" class="slide level2">
+<h2>Testing Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Prediction</a></li><li><a href="#tabset-2-2">MAE</a></li><li><a href="#tabset-2-3">Plot</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Prediction</a></li><li><a href="#tabset-3-2">MAE</a></li><li><a href="#tabset-3-3">Plot</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-3-1">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>npred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fitted, Xtesting)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-2-2">
+<div id="tabset-3-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">mean</span>(<span class="fu">abs</span>(<span class="fu">as.matrix</span>(Ytesting) <span class="sc">-</span> <span class="fu">as.matrix</span>(npred)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-2-3">
+<div id="tabset-3-3">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -670,41 +659,8 @@
 </div>
 </div>
 </div>
-<section id="thursday" class="title-slide slide level1 agenda-slide center">
-<h1>Thursday</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-active">
-<p>Classification</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Loss Functions</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Neural Network</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>In R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thursday</p>
-</div></li>
-</ul>
-</div>
-</section>
-
-</div>
-<div id="tabset-3-4">
-<p>Come perpared to work on your smart goal.</p>
-<p>Show evidence, either by submitting a word document, notebook, or other format, that you accomplished last week’s smart goal.</p>
 
 
-</div>
-</div>
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

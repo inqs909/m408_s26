@@ -554,7 +554,8 @@ modnn <- modnn |>
 ## Fit a Model
 
 ::: {.panel-tabset}
-## Fit
+
+### Fit
 
 ```{r}
 fitted <- modnn |> 
@@ -565,31 +566,32 @@ fitted <- modnn |>
   )
 ```
 
-## Plot
+### Plot
 
 ```{r}
 #| code-fold: true
 plot(fitted)
 ```
 
+:::
 
 ## Testing Model
 
 ::: {.panel-tabset}
 
-## Prediction
+### Prediction
 
 ```{r}
 npred <- predict(fitted, Xtesting)
 ```
 
-## MAE
+### MAE
 
 ```{r}
 mean(abs(as.matrix(Ytesting) - as.matrix(npred)))
 ```
 
-## Plot
+### Plot
 
 ```{r}
 #| code-fold: true
@@ -601,12 +603,4 @@ plot(as.matrix(Ytesting), as.matrix(npred),
 
 :::
 
-
-# Thursday
-
-## Thursday
-
-Come perpared to work on your smart goal.
-
-Show evidence, either by submitting a word document, notebook, or other format, that you accomplished last week's smart goal.
 

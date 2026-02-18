@@ -1488,7 +1488,14 @@
     "href": "lectures/3a.html#fit-a-model-1",
     "title": "Neural Networks",
     "section": "Fit a Model",
-    "text": "Fit a Model\n\nFitPlotTesting ModelThursday\n\n\n\nfitted &lt;- modnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 200, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)\n\n\n\n\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")\n\n\n\n\n\n\nThursday\n\n\n\nMachine Learning\n\n\nLinear Regression\n\n\nNeural Networks\n\n\nOther Topics\n\n\nSingle-Layer Neural Network in R\n\n\nTraining/Validating/Testing Data\n\n\nThursday\n\n\n\n\n\n\n\nCome perpared to work on your smart goal.\nShow evidence, either by submitting a word document, notebook, or other format, that you accomplished last week’s smart goal."
+    "text": "Fit a Model\n\nFitPlot\n\n\n\nfitted &lt;- modnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 200, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)"
+  },
+  {
+    "objectID": "lectures/3a.html#testing-model",
+    "href": "lectures/3a.html#testing-model",
+    "title": "Neural Networks",
+    "section": "Testing Model",
+    "text": "Testing Model\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")"
   },
   {
     "objectID": "lectures/3c.html#r-packages",
@@ -1607,7 +1614,14 @@
     "href": "lectures/5a.html#fit-a-model",
     "title": "Neural Networks",
     "section": "Fit a Model",
-    "text": "Fit a Model\n\nFitPlotTesting ModelThursday\n\n\n\nfitted &lt;- modelnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 50, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)\n\n\n\n\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")\n\n\n\n\n\n\nThursday\n\n\n\nClassification\n\n\nLoss Functions\n\n\nNeural Network\n\n\nIn R\n\n\n\n\n\nThursday\n\n\n\n\n\n\n\nCome perpared to work on your smart goal.\nShow evidence, either by submitting a word document, notebook, or other format, that you accomplished last week’s smart goal."
+    "text": "Fit a Model\n\nFitPlot\n\n\n\nfitted &lt;- modelnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 50, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)"
+  },
+  {
+    "objectID": "lectures/5a.html#testing-model",
+    "href": "lectures/5a.html#testing-model",
+    "title": "Neural Networks",
+    "section": "Testing Model",
+    "text": "Testing Model\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")"
   },
   {
     "objectID": "posts/week_2.html",
