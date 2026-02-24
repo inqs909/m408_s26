@@ -1551,7 +1551,7 @@
     "href": "lectures/5a.html#r-packages",
     "title": "Neural Networks",
     "section": "R Packages",
-    "text": "R Packages\n\n# install.packages(\"torch\")\n# install.packages(\"luz\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\ntorch_manual_seed(13)"
+    "text": "R Packages\n\n# install.packages(\"torch\")\n# install.packages(\"luz\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(tidyverse)\ntorch_manual_seed(13)"
   },
   {
     "objectID": "lectures/5a.html#data-in-python",
@@ -1561,6 +1561,13 @@
     "text": "Data in Python\nimport plotnine\nfrom plotnine.data import penguins\nclean_penguins = (\n    penguins\n        .dropna()\n        .drop(columns=[\"year\"])\n)"
   },
   {
+    "objectID": "lectures/5a.html#penguins-data",
+    "href": "lectures/5a.html#penguins-data",
+    "title": "Neural Networks",
+    "section": "Penguins Data",
+    "text": "Penguins Data\n\npenguins &lt;- penguins |&gt; tidyr::drop_na()\ndplyr::glimpse(penguins)\n\n#&gt; Rows: 333\n#&gt; Columns: 8\n#&gt; $ species     &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ad…\n#&gt; $ island      &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Tor…\n#&gt; $ bill_len    &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.6, 34.6…\n#&gt; $ bill_dep    &lt;dbl&gt; 18.7, 17.4, 18.0, 19.3, 20.6, 17.8, 19.6, 17.6, 21.2, 21.1…\n#&gt; $ flipper_len &lt;int&gt; 181, 186, 195, 193, 190, 181, 195, 182, 191, 198, 185, 195…\n#&gt; $ body_mass   &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800, 4400…\n#&gt; $ sex         &lt;fct&gt; male, female, female, female, male, female, male, female, …\n#&gt; $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
+  },
+  {
     "objectID": "lectures/5a.html#classification-1",
     "href": "lectures/5a.html#classification-1",
     "title": "Neural Networks",
@@ -1568,60 +1575,249 @@
     "text": "Classification\nClassification in statistical learning terms indicates predicting a categorical random variable."
   },
   {
+    "objectID": "lectures/5a.html#example",
+    "href": "lectures/5a.html#example",
+    "title": "Neural Networks",
+    "section": "Example",
+    "text": "Example\nLet’s say we are interested in predicting the penguin species: Gentoo, Chinstrap, and Adelie.\n\n\\[\nY  = \\left\\{\n\\begin{array}{c}\nGentoo \\\\\nChinstrap \\\\\nAdelie\n\\end{array}\n\\right.\n\\]"
+  },
+  {
     "objectID": "lectures/5a.html#common-methods",
     "href": "lectures/5a.html#common-methods",
     "title": "Neural Networks",
     "section": "Common Methods",
-    "text": "Common Methods\n\nNaive Bayes Classifier\nTree-based Methods\nSupport Vector Machines\nLogistic/Multinomial regression\nDiscriminant Analysis"
+    "text": "Common Methods\n\nNaive Bayes Classifier\nTree-based Methods\nSupport Vector Machines\nLogistic/Multinomial regression\nDiscriminant Analysis\n\n\nWe are primarily going to use a logistic model approach."
+  },
+  {
+    "objectID": "lectures/5a.html#model",
+    "href": "lectures/5a.html#model",
+    "title": "Neural Networks",
+    "section": "Model",
+    "text": "Model\n\\[\nY = f(\\boldsymbol X; \\boldsymbol \\theta)\n\\]\n\n\\(\\boldsymbol X\\): a vector of predictor variables\n\\(\\boldsymbol \\theta\\): a vector of parameters\n\n\nHow do we model an outcome which is categorical, not a number?"
+  },
+  {
+    "objectID": "lectures/5a.html#modeling-probabilities",
+    "href": "lectures/5a.html#modeling-probabilities",
+    "title": "Neural Networks",
+    "section": "Modeling Probabilities",
+    "text": "Modeling Probabilities\nTo model categorical data, we will model the probability of oberving each specific category."
+  },
+  {
+    "objectID": "lectures/5a.html#neural-netork",
+    "href": "lectures/5a.html#neural-netork",
+    "title": "Neural Networks",
+    "section": "Neural Netork",
+    "text": "Neural Netork\nLet\n\\[\n\\bmcH(\\bX; \\btheta_G)\n\\]\n\\[\n\\bmcH(\\bX; \\btheta_A)\n\\]\n\\[\n\\bmcH(\\bX; \\btheta_C)\n\\]\nbe three functions related to neural networks."
+  },
+  {
+    "objectID": "lectures/5a.html#unnormalized-probability",
+    "href": "lectures/5a.html#unnormalized-probability",
+    "title": "Neural Networks",
+    "section": "Unnormalized Probability",
+    "text": "Unnormalized Probability\n\\[\n\\tilde P\\left(Y = Gentoo\\right) = exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_G)\\right\\}\n\\]\n\\[\n\\tilde P\\left(Y = Adelie\\right) = exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_A)\\right\\}\n\\]\n\\[\n\\tilde P\\left(Y = Chinstrap\\right) = exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_C)\\right\\}\n\\]"
+  },
+  {
+    "objectID": "lectures/5a.html#normalized-probability-softmax",
+    "href": "lectures/5a.html#normalized-probability-softmax",
+    "title": "Neural Networks",
+    "section": "Normalized Probability (softmax)",
+    "text": "Normalized Probability (softmax)\n\\[\nf_G(\\bX) = P\\left(Y = Gentoo\\right) = \\frac{exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_G)\\right\\}}{exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_G)\\right\\} + exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_A)\\right\\} + exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_C)\\right\\}}\n\\]\n\\[\nf_A(\\bX) = P\\left(Y = Adelie\\right) = \\frac{exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_A)\\right\\}}{exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_G)\\right\\} + exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_A)\\right\\} + exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_C)\\right\\}}\n\\]\n\\[\nf_C(\\bX) = P\\left(Y = Chinstrap\\right) = \\frac{exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_C)\\right\\}}{exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_G)\\right\\} + exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_A)\\right\\} + exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_C)\\right\\}}\n\\]"
+  },
+  {
+    "objectID": "lectures/5a.html#for-j-categories",
+    "href": "lectures/5a.html#for-j-categories",
+    "title": "Neural Networks",
+    "section": "For J Categories",
+    "text": "For J Categories\n\\[\nf_j(\\bX) = P\\left(Y = j\\right) = \\frac{exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_j)\\right\\}}{\\sum^J_{j=1}exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_j)\\right\\}}\n\\]"
   },
   {
     "objectID": "lectures/5a.html#neural-networks",
     "href": "lectures/5a.html#neural-networks",
     "title": "Neural Networks",
     "section": "Neural Networks",
-    "text": "Neural Networks"
+    "text": "Neural Networks\nNeural Networks are capable of classifying data by fitting"
   },
   {
-    "objectID": "lectures/5a.html#loss-functions-1",
-    "href": "lectures/5a.html#loss-functions-1",
+    "objectID": "lectures/5a.html#multilayer-neural-network",
+    "href": "lectures/5a.html#multilayer-neural-network",
     "title": "Neural Networks",
-    "section": "Loss Functions",
-    "text": "Loss Functions"
+    "section": "Multilayer Neural Network",
+    "text": "Multilayer Neural Network"
+  },
+  {
+    "objectID": "lectures/5a.html#hidden-layer-1",
+    "href": "lectures/5a.html#hidden-layer-1",
+    "title": "Neural Networks",
+    "section": "Hidden Layer 1",
+    "text": "Hidden Layer 1\nWith \\(p\\) predictors of \\(X\\):\n\\[\nh^{(1)}_k(X) = H^{(1)}_k  = g\\left\\{\\alpha_{k0} + \\sum^p_{j=1}\\alpha_{kj}X_{j}\\right\\}\n\\] for \\(k = 1, \\cdots, K\\) nodes."
+  },
+  {
+    "objectID": "lectures/5a.html#hidden-layer-2",
+    "href": "lectures/5a.html#hidden-layer-2",
+    "title": "Neural Networks",
+    "section": "Hidden Layer 2",
+    "text": "Hidden Layer 2\n\\[\nh^{(2)}_l(X) = H^{(2)}_l = g\\left\\{\\beta_{l0} + \\sum^K_{k=1}\\beta_{lk}H^{(1)}_{k}\\right\\}\n\\] for \\(l = 1, \\cdots, L\\) nodes."
+  },
+  {
+    "objectID": "lectures/5a.html#hidden-layer-3",
+    "href": "lectures/5a.html#hidden-layer-3",
+    "title": "Neural Networks",
+    "section": "Hidden Layer 3 +",
+    "text": "Hidden Layer 3 +\n\\[\nh^{(3)}_m(X) = H^{(3)}_l = g\\left\\{\\gamma_{m0} + \\sum^L_{l=1}\\gamma_{ml}H^{(2)}_{l}\\right\\}\n\\] for \\(m = 1, \\cdots, M\\) nodes."
+  },
+  {
+    "objectID": "lectures/5a.html#pre-output-layer",
+    "href": "lectures/5a.html#pre-output-layer",
+    "title": "Neural Networks",
+    "section": "Pre-Output Layer",
+    "text": "Pre-Output Layer\n\\[\n\\bmcH(X) = \\beta_{0} + \\sum^M_{m=1}\\beta_{m}H^{(3)}_m\n\\]"
+  },
+  {
+    "objectID": "lectures/5a.html#output-layer",
+    "href": "lectures/5a.html#output-layer",
+    "title": "Neural Networks",
+    "section": "Output Layer",
+    "text": "Output Layer\n\\[\nf_j(\\bX) = P\\left(Y = j\\right) = \\frac{exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_j)\\right\\}}{\\sum^k_{j=1}exp\\left\\{\\bmcH(\\boldsymbol X; \\boldsymbol \\theta_j)\\right\\}}\n\\]\nfor all J functions (categories)."
+  },
+  {
+    "objectID": "lectures/5a.html#fitting-model",
+    "href": "lectures/5a.html#fitting-model",
+    "title": "Neural Networks",
+    "section": "Fitting Model",
+    "text": "Fitting Model\nFitting a neural network is the process of taking input data (\\(X\\)), finding the numerical values for the paramters that will maximizing (or in this case minimizing) the log-likelihood function, and finding the maximum likelihood estimator via gradient descent."
+  },
+  {
+    "objectID": "lectures/5a.html#log-likelihood-function-1",
+    "href": "lectures/5a.html#log-likelihood-function-1",
+    "title": "Neural Networks",
+    "section": "Log-likelihood Function",
+    "text": "Log-likelihood Function\n\\[\n\\ell (\\btheta) = - \\sum^n_{i=1}\\sum^k_{j=1} Y_{ij}\\log\\left\\{f_j(\\bX_i;\\btheta)\\right\\}\n\\]\n\\[\nY_{ij} = \\left\\{\n\\begin{array}{cc}\n1 & j\\mrth\\ \\mathrm{category} \\\\\n0 & \\mathrm{otherwise}\n\\end{array}\n\\right.\n\\]\n\nAlso known as cross-entropy."
+  },
+  {
+    "objectID": "lectures/5a.html#penguins-data-1",
+    "href": "lectures/5a.html#penguins-data-1",
+    "title": "Neural Networks",
+    "section": "Penguins Data",
+    "text": "Penguins Data\n\\[\n\\ell (\\btheta) = - \\sum^{333}_{i=1}\\sum^3_{j=1} Y_{ij}\\log\\left\\{f_j(\\bX_i;\\btheta)\\right\\}\n\\]"
+  },
+  {
+    "objectID": "lectures/5a.html#single-layer-neural-network-1",
+    "href": "lectures/5a.html#single-layer-neural-network-1",
+    "title": "Neural Networks",
+    "section": "Single-Layer Neural Network",
+    "text": "Single-Layer Neural Network\nWe will predict penguin species with a single-layer containing 10 nodes, and predict each species (3). We will use a ReLU activation function."
   },
   {
     "objectID": "lectures/5a.html#penguin-data",
     "href": "lectures/5a.html#penguin-data",
     "title": "Neural Networks",
     "section": "Penguin Data",
-    "text": "Penguin Data\n\nTrain/Test/EvaluationTrainingValidateTesting\n\n\n\npenguins &lt;- penguins |&gt; drop_na()\ntraining &lt;- penguins |&gt; slice_sample(prop = .8)\npre &lt;- penguins |&gt; anti_join(training)\nvalidate &lt;- pre |&gt; slice_sample(prop =  0.5)\ntesting &lt;- pre |&gt; anti_join(validate)\n\n\n\n\nXtraining &lt;- training |&gt; \n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYtraining &lt;- training |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())\n\n\n\n\nXvalidate &lt;- validate |&gt; \n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYvalidate &lt;- validate |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())\n\n\n\n\nXtesting &lt;- testing |&gt; \n  model.matrix(body_mass ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYtesting &lt;- testing |&gt; \n  select(body_mass) |&gt; \n  as.matrix() |&gt; \n  torch_tensor(dtype = torch_float())"
+    "text": "Penguin Data\n\nTrain/Test/EvaluationTrainingValidateTesting\n\n\n\npenguins &lt;- penguins |&gt; drop_na()\ntraining &lt;- penguins |&gt; slice_sample(prop = .8)\npre &lt;- penguins |&gt; anti_join(training)\nvalidate &lt;- pre |&gt; slice_sample(prop =  0.5)\ntesting &lt;- pre |&gt; anti_join(validate)\n\n\n\n\nXtraining &lt;- training |&gt; \n  model.matrix(species ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYtraining &lt;- training |&gt; \n  select(species) |&gt; \n  as.matrix() |&gt;\n  as.factor() |&gt; \n  torch_tensor()\n\n\n\n\nXvalidate &lt;- validate |&gt; \n  model.matrix(species ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYvalidate &lt;- validate |&gt; \n  select(species) |&gt; \n  as.matrix() |&gt;\n  as.factor() |&gt; \n  torch_tensor()\n\n\n\n\nXtesting &lt;- testing |&gt; \n  model.matrix(species ~ . - 1, data = _) |&gt; \n  scale() |&gt; \n  torch_tensor(dtype = torch_float())\n\nYtesting &lt;- testing |&gt; \n  select(species) |&gt; \n  as.matrix() |&gt;\n  as.factor() |&gt; \n  torch_tensor(dtype = torch_float())"
   },
   {
     "objectID": "lectures/5a.html#model-description",
     "href": "lectures/5a.html#model-description",
     "title": "Neural Networks",
     "section": "Model Description",
-    "text": "Model Description\n\nmodelnn &lt;- nn_module(\n  initialize = function(input_size) {\n    self$hidden1 &lt;- nn_linear(in_features = input_size, \n                              out_features = 20)\n    self$hidden2 &lt;- nn_linear(in_features = 20, \n                              out_features = 10)\n    self$hidden3 &lt;- nn_linear(in_features = 10, \n                              out_features = 5)\n\n    self$output &lt;- nn_linear(in_features = 5, \n                             out_features = 1)\n        \n    self$activation &lt;- nn_relu()\n  },\n  forward = function(x) {\n    x |&gt;  \n      self$hidden1() |&gt;  \n      self$activation() |&gt;  \n      \n      self$hidden2() |&gt;  \n      self$activation() |&gt;  \n\n      self$hidden3() |&gt;  \n      self$activation() |&gt;  \n\n      self$output()\n  }\n)"
+    "text": "Model Description\n\nmodelnn &lt;- nn_module(\n  initialize = function(input_size) {\n    self$hidden1 &lt;- nn_linear(in_features = input_size, \n                              out_features = 10)\n    self$output &lt;- nn_linear(in_features = 10, \n                             out_features = 3)\n        \n    self$activation &lt;- nn_relu()\n  },\n  forward = function(x) {\n    x |&gt;  \n      self$hidden1() |&gt;  \n      self$activation() |&gt;  \n      self$output()\n  }\n)"
   },
   {
     "objectID": "lectures/5a.html#optimizer-set-up",
     "href": "lectures/5a.html#optimizer-set-up",
     "title": "Neural Networks",
     "section": "Optimizer Set Up",
-    "text": "Optimizer Set Up\n\nmodelnn &lt;- modelnn |&gt; \n  setup(\n    loss = nn_mse_loss(), # Used for numerical counts\n    optimizer = optim_rmsprop\n  ) |&gt;\n  set_hparams(input_size = ncol(px))"
+    "text": "Optimizer Set Up\n\nmodelnn &lt;- modelnn |&gt; \n  setup(\n    loss = nn_cross_entropy_loss(), # Used for numerical counts\n    optimizer = optim_rmsprop\n  ) |&gt;\n  set_hparams(input_size = ncol(Xtraining))"
   },
   {
     "objectID": "lectures/5a.html#fit-a-model",
     "href": "lectures/5a.html#fit-a-model",
     "title": "Neural Networks",
     "section": "Fit a Model",
-    "text": "Fit a Model\n\nFitPlot\n\n\n\nfitted &lt;- modelnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 50, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)"
+    "text": "Fit a Model\n\nFitPlotTesting\n\n\n\nfitted &lt;- modelnn |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 50, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\n\nCode\nplot(fitted)\n\n\n\n\n\nres &lt;- fitted |&gt;  \n  predict(Xtesting) |&gt;  \n  torch_argmax(dim = 2) |&gt;   \n  as_array() \n\nmean(as.numeric(Ytesting)==res)"
   },
   {
-    "objectID": "lectures/5a.html#testing-model",
-    "href": "lectures/5a.html#testing-model",
+    "objectID": "lectures/5a.html#multi-layer-neural-network-1",
+    "href": "lectures/5a.html#multi-layer-neural-network-1",
     "title": "Neural Networks",
-    "section": "Testing Model",
-    "text": "Testing Model\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")"
+    "section": "Multi-Layer Neural Network",
+    "text": "Multi-Layer Neural Network\nBuild a multi-layer neural network that will predict species with the remaining predictors and the following components:\n\n3 Hidden Layers\n\n20 nodes\n10 nodes\n5 nodes\n\noutput is 3 seperate functions\nUse ReLU activation"
+  },
+  {
+    "objectID": "lectures/5a.html#model-description-1",
+    "href": "lectures/5a.html#model-description-1",
+    "title": "Neural Networks",
+    "section": "Model Description",
+    "text": "Model Description\n\nmodelnn2 &lt;- nn_module(\n  initialize = function(input_size) {\n    self$hidden1 &lt;- nn_linear(in_features = input_size, \n                              out_features = 20)\n    self$hidden2 &lt;- nn_linear(in_features = 20, \n                              out_features = 10)\n    self$hidden3 &lt;- nn_linear(in_features = 10, \n                              out_features = 5)\n\n    self$output &lt;- nn_linear(in_features = 5, \n                             out_features = 3)\n        \n    self$activation &lt;- nn_relu()\n  },\n  forward = function(x) {\n    x |&gt;  \n      self$hidden1() |&gt;  \n      self$activation() |&gt;  \n      \n      self$hidden2() |&gt;  \n      self$activation() |&gt;  \n\n      self$hidden3() |&gt;  \n      self$activation() |&gt;  \n\n      self$output()\n  }\n)"
+  },
+  {
+    "objectID": "lectures/5a.html#optimizer-set-up-1",
+    "href": "lectures/5a.html#optimizer-set-up-1",
+    "title": "Neural Networks",
+    "section": "Optimizer Set Up",
+    "text": "Optimizer Set Up\n\nmodelnn2 &lt;- modelnn2 |&gt; \n  setup(\n    loss = nn_cross_entropy_loss(), # Used for numerical counts\n    optimizer = optim_rmsprop\n  ) |&gt;\n  set_hparams(input_size = ncol(Xtraining))"
+  },
+  {
+    "objectID": "lectures/5a.html#fit-a-model-1",
+    "href": "lectures/5a.html#fit-a-model-1",
+    "title": "Neural Networks",
+    "section": "Fit a Model",
+    "text": "Fit a Model\n\nFitPlotTesting\n\n\n\nfitted2 &lt;- modelnn2 |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 50, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\nplot(fitted2)\n\n\n\n\nres2 &lt;- fitted2 |&gt;  \n  predict(Xtesting) |&gt;  \n  torch_argmax(dim = 2) |&gt;   \n  as_array() \nmean(as.numeric(Ytesting)==res)\nmean(as.numeric(Ytesting)==res2)"
+  },
+  {
+    "objectID": "lectures/5a.html#overfitting",
+    "href": "lectures/5a.html#overfitting",
+    "title": "Neural Networks",
+    "section": "Overfitting",
+    "text": "Overfitting\nOverfitting is the concept where the model becomes to well in predicting the data. The fear is that the model can only predict the data it was trained on, and not any other data point. Therfore, it cannot be deployed.\n\nTherefore, we deploy three method to generalize the model:\n\nGet more data.\nDropout\nRegularization\nEarly Stopping"
+  },
+  {
+    "objectID": "lectures/5a.html#more-data",
+    "href": "lectures/5a.html#more-data",
+    "title": "Neural Networks",
+    "section": "More Data",
+    "text": "More Data\nOne of the best ways to prevent over fitting is get more data that is representative.\n\nThis ensures that the model is more generalizable."
+  },
+  {
+    "objectID": "lectures/5a.html#dropout",
+    "href": "lectures/5a.html#dropout",
+    "title": "Neural Networks",
+    "section": "Dropout",
+    "text": "Dropout\nDropout is the process where we randomly makes nodes into zero. This ensures that connections do not get to dependent on a critical node. It will need to rely on the other nodes to get better as well."
+  },
+  {
+    "objectID": "lectures/5a.html#dropout-1",
+    "href": "lectures/5a.html#dropout-1",
+    "title": "Neural Networks",
+    "section": "Dropout",
+    "text": "Dropout\n\nModel DescriptionOptimizer Set UpFitPlotTesting\n\n\n\nmodelnn3 &lt;- nn_module(\n  initialize = function(input_size) {\n    self$hidden1 &lt;- nn_linear(in_features = input_size, \n                              out_features = 20)\n    self$hidden2 &lt;- nn_linear(in_features = 20, \n                              out_features = 10)\n    self$hidden3 &lt;- nn_linear(in_features = 10, \n                              out_features = 5)\n\n    self$output &lt;- nn_linear(in_features = 5, \n                             out_features = 3)\n        \n    self$activation &lt;- nn_relu()\n    self$drop20 &lt;- nn_dropout(p = 0.2)\n    self$drop30 &lt;- nn_dropout(p = 0.3)\n\n  },\n  forward = function(x) {\n    x |&gt;  \n      self$hidden1() |&gt;  \n      self$activation() |&gt;  \n      self$drop20() |&gt; \n      \n      self$hidden2() |&gt;  \n      self$activation() |&gt;  \n      self$drop30() |&gt; \n      \n      self$hidden3() |&gt;  \n      self$activation() |&gt;  \n      \n      self$output()\n  }\n)\n\n\n\n\nmodelnn3 &lt;- modelnn3 |&gt; \n  setup(\n    loss = nn_cross_entropy_loss(), # Used for numerical counts\n    optimizer = optim_rmsprop\n  ) |&gt;\n  set_hparams(input_size = ncol(Xtraining))\n\n\n\n\nfitted3 &lt;- modelnn3 |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 50, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )\n\n\n\n\nplot(fitted3)\n\n\n\n\nres3 &lt;- fitted3 |&gt;  \n  predict(Xtesting) |&gt;  \n  torch_argmax(dim = 2) |&gt;   \n  as_array() \nmean(as.numeric(Ytesting)==res)\nmean(as.numeric(Ytesting)==res2)\nmean(as.numeric(Ytesting)==res3)"
+  },
+  {
+    "objectID": "lectures/5a.html#regularization",
+    "href": "lectures/5a.html#regularization",
+    "title": "Neural Networks",
+    "section": "Regularization",
+    "text": "Regularization\nRegularization is the process where we add a penalty term to all the parameters and when fitting the data. This will ensure that the certain parameters will go to zero.\n\n\\[\n\\ell (\\btheta) = - \\sum^n_{i=1}\\sum^k_{j=1} Y_{ij}\\log\\left\\{f_j(\\bX_i;\\btheta)\\right\\} - \\lambda \\sum_r |\\btheta_r|\n\\]"
+  },
+  {
+    "objectID": "lectures/5a.html#regularization-1",
+    "href": "lectures/5a.html#regularization-1",
+    "title": "Neural Networks",
+    "section": "Regularization",
+    "text": "Regularization\n\nmodelnn3 &lt;- modelnn3 |&gt; \n  setup(\n    loss = nn_cross_entropy_loss(), # Used for numerical counts\n    optimizer = optim_rmsprop\n  ) |&gt;\n  set_hparams(input_size = ncol(Xtraining)) |&gt; \n  set_opt_hparams(weight_decay = 0.000001)"
+  },
+  {
+    "objectID": "lectures/5a.html#early-stopping",
+    "href": "lectures/5a.html#early-stopping",
+    "title": "Neural Networks",
+    "section": "Early Stopping",
+    "text": "Early Stopping\nWe can reduce the number of epochs to train our model and so the parameters do not converge. This will allow the model to not fully explain the data, and in return, be more generalizable to new data."
+  },
+  {
+    "objectID": "lectures/5a.html#early-stopping-1",
+    "href": "lectures/5a.html#early-stopping-1",
+    "title": "Neural Networks",
+    "section": "Early Stopping",
+    "text": "Early Stopping\n\nfitted3 &lt;- modelnn3 |&gt; \n  fit(\n    data = list(Xtraining, Ytraining),\n    epochs = 5, # Can think as number of iterations\n    valid_data = list(Xvalidate, Yvalidate)\n  )"
   },
   {
     "objectID": "posts/week_2.html",

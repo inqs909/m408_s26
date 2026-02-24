@@ -6,7 +6,7 @@ format:
     width: 1200
     scrollable: false
     include-in-header: "math.html"
-    footer: m408.inqs.info/lectures/3a
+    footer: m408.inqs.info/lectures/5a
     theme: [default, styles.scss]
     preview-links: true
     navigation-mode: vertical
@@ -46,6 +46,7 @@ editor: source
 
 library(torch)
 library(luz) # high-level interface for torch
+library(tidyverse)
 torch_manual_seed(13)
 ```
 
@@ -61,11 +62,37 @@ clean_penguins = (
 )
 ```
 
+## Penguins Data
+
+```{r}
+#| eval: true
+penguins <- penguins |> tidyr::drop_na()
+dplyr::glimpse(penguins)
+```
+
+
 # Classification
 
 ## Classification
 
 Classification in statistical learning terms indicates predicting a categorical random variable.
+
+## Example
+
+Let's say we are interested in predicting the penguin species: Gentoo, Chinstrap, and Adelie. 
+
+::: {.fragment}
+$$
+Y  = \left\{
+\begin{array}{c}
+Gentoo \\
+Chinstrap \\
+Adelie
+\end{array}
+\right.
+$$
+:::
+
 
 ## Common Methods
 
@@ -79,20 +106,175 @@ Classification in statistical learning terms indicates predicting a categorical 
 
 - Discriminant Analysis
 
+::: {.fragment}
+We are primarily going to use a logistic model approach.
+:::
+
+
+## Model
+
+$$
+Y = f(\boldsymbol X; \boldsymbol \theta)
+$$
+
+- $\boldsymbol X$: a vector of predictor variables
+- $\boldsymbol \theta$: a vector of parameters
+
+::: {.fragment}
+How do we model an outcome which is categorical, not a number?
+:::
+
+
+
+## Modeling Probabilities
+
+To model categorical data, we will model the probability of oberving each specific category. 
+
+## Neural Netork
+
+Let 
+
+$$
+\bmcH(\bX; \btheta_G)
+$$
+
+$$
+\bmcH(\bX; \btheta_A)
+$$
+
+$$
+\bmcH(\bX; \btheta_C)
+$$
+
+be three functions related to neural networks.
+
+
+## Unnormalized Probability 
+
+$$
+\tilde P\left(Y = Gentoo\right) = exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_G)\right\}
+$$
+
+$$
+\tilde P\left(Y = Adelie\right) = exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_A)\right\}
+$$
+
+$$
+\tilde P\left(Y = Chinstrap\right) = exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_C)\right\}
+$$
+
+## Normalized Probability (softmax) {.smaller}
+
+
+$$
+f_G(\bX) = P\left(Y = Gentoo\right) = \frac{exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_G)\right\}}{exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_G)\right\} + exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_A)\right\} + exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_C)\right\}}
+$$
+
+$$
+f_A(\bX) = P\left(Y = Adelie\right) = \frac{exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_A)\right\}}{exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_G)\right\} + exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_A)\right\} + exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_C)\right\}}
+$$
+
+$$
+f_C(\bX) = P\left(Y = Chinstrap\right) = \frac{exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_C)\right\}}{exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_G)\right\} + exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_A)\right\} + exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_C)\right\}}
+$$
+
+## For **J** Categories
+
+$$
+f_j(\bX) = P\left(Y = j\right) = \frac{exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_j)\right\}}{\sum^J_{j=1}exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_j)\right\}}
+$$
+
+
+# Buliding Classifiers
+
 ## Neural Networks
 
-# Loss Functions
+Neural Networks are capable of classifying data by fitting 
 
-## Loss Functions
+## Multilayer Neural Network
+
+![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png){fig-align="center"}
+
+## Hidden Layer 1
+
+With $p$ predictors of $X$:
+
+$$
+h^{(1)}_k(X) = H^{(1)}_k  = g\left\{\alpha_{k0} + \sum^p_{j=1}\alpha_{kj}X_{j}\right\}
+$$
+for $k = 1, \cdots, K$ nodes.
+
+## Hidden Layer 2
+
+$$
+h^{(2)}_l(X) = H^{(2)}_l = g\left\{\beta_{l0} + \sum^K_{k=1}\beta_{lk}H^{(1)}_{k}\right\}
+$$
+for $l = 1, \cdots, L$ nodes.
+
+
+## Hidden Layer 3 +
+
+$$
+h^{(3)}_m(X) = H^{(3)}_l = g\left\{\gamma_{m0} + \sum^L_{l=1}\gamma_{ml}H^{(2)}_{l}\right\}
+$$
+for $m = 1, \cdots, M$ nodes.
+
+## Pre-Output Layer
+
+$$
+\bmcH(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
+$$
+
+## Output Layer
+
+$$
+f_j(\bX) = P\left(Y = j\right) = \frac{exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_j)\right\}}{\sum^k_{j=1}exp\left\{\bmcH(\boldsymbol X; \boldsymbol \theta_j)\right\}}
+$$
+
+for all **J** functions (categories).
 
 
 
+# Log-likelihood Function
 
-# Neural Network
+## Fitting Model
 
-# In R
+Fitting a neural network is the process of taking input data ($X$), finding the numerical values for the paramters that will maximizing (or in this case minimizing) the log-likelihood function, and finding the maximum likelihood estimator via gradient descent.
 
-# 
+## Log-likelihood Function
+
+$$
+\ell (\btheta) = - \sum^n_{i=1}\sum^k_{j=1} Y_{ij}\log\left\{f_j(\bX_i;\btheta)\right\}
+$$
+
+
+$$
+Y_{ij} = \left\{
+\begin{array}{cc}
+1 & j\mrth\ \mathrm{category} \\
+0 & \mathrm{otherwise}
+\end{array}
+\right.
+$$
+
+
+::: {.fragment}
+Also known as *cross-entropy*.
+:::
+
+
+## Penguins Data
+
+$$
+\ell (\btheta) = - \sum^{333}_{i=1}\sum^3_{j=1} Y_{ij}\log\left\{f_j(\bX_i;\btheta)\right\}
+$$
+
+
+# Single-Layer Neural Network
+
+## Single-Layer Neural Network
+
+We will predict penguin species with a single-layer containing 10 nodes, and predict each species (3). We will use a ReLU activation function.
 
 ## Penguin Data
 
@@ -115,14 +297,15 @@ testing <- pre |> anti_join(validate)
 
 ```{r}
 Xtraining <- training |> 
-  model.matrix(body_mass ~ . - 1, data = _) |> 
+  model.matrix(species ~ . - 1, data = _) |> 
   scale() |> 
   torch_tensor(dtype = torch_float())
 
 Ytraining <- training |> 
-  select(body_mass) |> 
-  as.matrix() |> 
-  torch_tensor(dtype = torch_float())
+  select(species) |> 
+  as.matrix() |>
+  as.factor() |> 
+  torch_tensor()
 
 ```
 
@@ -130,27 +313,29 @@ Ytraining <- training |>
 
 ```{r}
 Xvalidate <- validate |> 
-  model.matrix(body_mass ~ . - 1, data = _) |> 
+  model.matrix(species ~ . - 1, data = _) |> 
   scale() |> 
   torch_tensor(dtype = torch_float())
 
 Yvalidate <- validate |> 
-  select(body_mass) |> 
-  as.matrix() |> 
-  torch_tensor(dtype = torch_float())
+  select(species) |> 
+  as.matrix() |>
+  as.factor() |> 
+  torch_tensor()
 ```
 
 ### Testing
 
 ```{r}
 Xtesting <- testing |> 
-  model.matrix(body_mass ~ . - 1, data = _) |> 
+  model.matrix(species ~ . - 1, data = _) |> 
   scale() |> 
   torch_tensor(dtype = torch_float())
 
 Ytesting <- testing |> 
-  select(body_mass) |> 
-  as.matrix() |> 
+  select(species) |> 
+  as.matrix() |>
+  as.factor() |> 
   torch_tensor(dtype = torch_float())
 ```
 
@@ -163,14 +348,9 @@ Ytesting <- testing |>
 modelnn <- nn_module(
   initialize = function(input_size) {
     self$hidden1 <- nn_linear(in_features = input_size, 
-                              out_features = 20)
-    self$hidden2 <- nn_linear(in_features = 20, 
                               out_features = 10)
-    self$hidden3 <- nn_linear(in_features = 10, 
-                              out_features = 5)
-
-    self$output <- nn_linear(in_features = 5, 
-                             out_features = 1)
+    self$output <- nn_linear(in_features = 10, 
+                             out_features = 3)
         
     self$activation <- nn_relu()
   },
@@ -178,13 +358,6 @@ modelnn <- nn_module(
     x |>  
       self$hidden1() |>  
       self$activation() |>  
-      
-      self$hidden2() |>  
-      self$activation() |>  
-
-      self$hidden3() |>  
-      self$activation() |>  
-
       self$output()
   }
 )
@@ -196,10 +369,10 @@ modelnn <- nn_module(
 ```{r}
 modelnn <- modelnn |> 
   setup(
-    loss = nn_mse_loss(), # Used for numerical counts
+    loss = nn_cross_entropy_loss(), # Used for numerical counts
     optimizer = optim_rmsprop
   ) |>
-  set_hparams(input_size = ncol(px))
+  set_hparams(input_size = ncol(Xtraining))
 ```
 
 
@@ -224,34 +397,263 @@ fitted <- modelnn |>
 plot(fitted)
 ```
 
+
+### Testing
+
+```{r}
+res <- fitted |>  
+  predict(Xtesting) |>  
+  torch_argmax(dim = 2) |>   
+  as_array() 
+
+mean(as.numeric(Ytesting)==res)
+```
 :::
 
-## Testing Model
 
-::: {.panel-tabset}
+# Multi-Layer Neural Network
 
-### Prediction
+## Multi-Layer Neural Network
 
+Build a multi-layer neural network that will predict `species` with the remaining predictors and the following components:
+
+- 3 Hidden Layers 
+    - 20 nodes
+    - 10 nodes
+    - 5 nodes
+- output is 3 seperate functions
+- Use ReLU activation
+
+
+## Model Description
+
+ 
 ```{r}
-npred <- predict(fitted, Xtesting)
+modelnn2 <- nn_module(
+  initialize = function(input_size) {
+    self$hidden1 <- nn_linear(in_features = input_size, 
+                              out_features = 20)
+    self$hidden2 <- nn_linear(in_features = 20, 
+                              out_features = 10)
+    self$hidden3 <- nn_linear(in_features = 10, 
+                              out_features = 5)
+
+    self$output <- nn_linear(in_features = 5, 
+                             out_features = 3)
+        
+    self$activation <- nn_relu()
+  },
+  forward = function(x) {
+    x |>  
+      self$hidden1() |>  
+      self$activation() |>  
+      
+      self$hidden2() |>  
+      self$activation() |>  
+
+      self$hidden3() |>  
+      self$activation() |>  
+
+      self$output()
+  }
+)
 ```
 
-### MAE
+
+## Optimizer Set Up
 
 ```{r}
-mean(abs(as.matrix(Ytesting) - as.matrix(npred)))
+modelnn2 <- modelnn2 |> 
+  setup(
+    loss = nn_cross_entropy_loss(), # Used for numerical counts
+    optimizer = optim_rmsprop
+  ) |>
+  set_hparams(input_size = ncol(Xtraining))
+```
+
+
+## Fit a Model
+
+::: {.panel-tabset}
+### Fit
+
+```{r}
+fitted2 <- modelnn2 |> 
+  fit(
+    data = list(Xtraining, Ytraining),
+    epochs = 50, # Can think as number of iterations
+    valid_data = list(Xvalidate, Yvalidate)
+  )
 ```
 
 ### Plot
 
 ```{r}
-#| code-fold: true
+plot(fitted2)
+```
 
-plot(as.matrix(Ytesting), as.matrix(npred),
-     xlab = "Truth",
-     ylab = "Predicted")
+
+### Testing
+
+```{r}
+res2 <- fitted2 |>  
+  predict(Xtesting) |>  
+  torch_argmax(dim = 2) |>   
+  as_array() 
+mean(as.numeric(Ytesting)==res)
+mean(as.numeric(Ytesting)==res2)
+```
+:::
+
+
+# Generalizing Neural Networks
+
+## Overfitting
+
+Overfitting is the concept where the model becomes to well in predicting the data. The fear is that the model can only predict the data it was trained on, and not any other data point. Therfore, it cannot be deployed.
+
+::: {.fragment}
+Therefore, we deploy three method to generalize the model:
+
+- Get more data.
+- Dropout
+- Regularization
+- Early Stopping
+:::
+
+## More Data
+
+One of the best ways to prevent over fitting is get more data that is representative.
+
+::: {.fragment}
+This ensures that the model is more generalizable.
+:::
+
+## Dropout
+
+**Dropout** is the process where we randomly makes nodes into zero. This ensures that connections do not get to dependent on a critical node. It will need to rely on the other nodes to get better as well. 
+
+## Dropout
+
+::: panel-tabset
+
+### Model Description
+
+ 
+```{r}
+modelnn3 <- nn_module(
+  initialize = function(input_size) {
+    self$hidden1 <- nn_linear(in_features = input_size, 
+                              out_features = 20)
+    self$hidden2 <- nn_linear(in_features = 20, 
+                              out_features = 10)
+    self$hidden3 <- nn_linear(in_features = 10, 
+                              out_features = 5)
+
+    self$output <- nn_linear(in_features = 5, 
+                             out_features = 3)
+        
+    self$activation <- nn_relu()
+    self$drop20 <- nn_dropout(p = 0.2)
+    self$drop30 <- nn_dropout(p = 0.3)
+
+  },
+  forward = function(x) {
+    x |>  
+      self$hidden1() |>  
+      self$activation() |>  
+      self$drop20() |> 
+      
+      self$hidden2() |>  
+      self$activation() |>  
+      self$drop30() |> 
+      
+      self$hidden3() |>  
+      self$activation() |>  
+      
+      self$output()
+  }
+)
+```
+
+### Optimizer Set Up
+
+```{r}
+modelnn3 <- modelnn3 |> 
+  setup(
+    loss = nn_cross_entropy_loss(), # Used for numerical counts
+    optimizer = optim_rmsprop
+  ) |>
+  set_hparams(input_size = ncol(Xtraining))
+```
+
+### Fit
+
+```{r}
+fitted3 <- modelnn3 |> 
+  fit(
+    data = list(Xtraining, Ytraining),
+    epochs = 50, # Can think as number of iterations
+    valid_data = list(Xvalidate, Yvalidate)
+  )
+```
+
+### Plot
+
+```{r}
+plot(fitted3)
+```
+
+
+### Testing
+
+```{r}
+res3 <- fitted3 |>  
+  predict(Xtesting) |>  
+  torch_argmax(dim = 2) |>   
+  as_array() 
+mean(as.numeric(Ytesting)==res)
+mean(as.numeric(Ytesting)==res2)
+mean(as.numeric(Ytesting)==res3)
+
 ```
 
 :::
 
+## Regularization
 
+Regularization is the process where we add a penalty term to all the parameters and when fitting the data. This will ensure that the certain parameters will go to zero.
+
+::: {.fragment}
+$$
+\ell (\btheta) = - \sum^n_{i=1}\sum^k_{j=1} Y_{ij}\log\left\{f_j(\bX_i;\btheta)\right\} - \lambda \sum_r |\btheta_r|
+$$
+
+:::
+
+## Regularization
+
+```{r}
+modelnn3 <- modelnn3 |> 
+  setup(
+    loss = nn_cross_entropy_loss(), # Used for numerical counts
+    optimizer = optim_rmsprop
+  ) |>
+  set_hparams(input_size = ncol(Xtraining)) |> 
+  set_opt_hparams(weight_decay = 0.000001)
+```
+
+## Early Stopping
+
+We can reduce the number of epochs to train our model and so the parameters do not converge. This will allow the model to not fully explain the data, and in return, be more generalizable to new data.
+
+## Early Stopping 
+
+```{r}
+fitted3 <- modelnn3 |> 
+  fit(
+    data = list(Xtraining, Ytraining),
+    epochs = 5, # Can think as number of iterations
+    valid_data = list(Xvalidate, Yvalidate)
+  )
+```
