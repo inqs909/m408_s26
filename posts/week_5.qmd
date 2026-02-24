@@ -1,0 +1,14 @@
+---
+title: "Week 5"
+date: 02-23-26
+description: This week looks building Neural Network Classifiers.
+editor: source
+---
+
+
+## Resources
+
+| Lecture | Slides                   | Videos  |
+|---------|--------------------------|---------|
+| 1       | [Slides](../lectures/5a) | [Video]()      |
+| 2       | | NA      |
