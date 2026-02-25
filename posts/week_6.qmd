@@ -8,7 +8,6 @@ editor: source
 
 ## Resources
 
-| Lecture | Slides                   | Videos  |
-|---------|--------------------------|---------|
-| 1       | [Slides](../lectures/6a) | [Video]()      |
-| 2       | | NA      |
+| Lecture | Slides                   | Videos  | R Code Files |
+|---------|--------------------------|---------|----------|
+| 1       | [Slides](../lectures/6a) | [Video]() | [CIFAR-10] (../lectures/6a.R) [MNIST](../lectures/6b.R)  |
