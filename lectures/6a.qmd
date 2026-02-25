@@ -1,0 +1,427 @@
+---
+title: |
+  Convolutional \
+  Neural Networks
+subtitle: "Image Classification with CIFAR"
+format:
+  revealjs:
+    width: 1200
+    scrollable: false
+    include-in-header: "math.html"
+    footer: m408.inqs.info/lectures/6a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: false
+    message: false
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## R Packages
+
+```{r}
+# install.packages("tidyverse")
+# install.packages("torch")
+# install.packages("luz")
+# install.packages("torchvision")
+
+library(torch)
+library(luz) # high-level interface for torch
+library(tidyverse)
+library(torchvision) # for datasets and image transformation
+
+
+```
+
+## Python Data
+
+```python
+import torch
+import torchvision
+import torchvision.transforms as transforms
+
+transform = transforms.Compose(
+    [transforms.ToTensor(),
+     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+
+batch_size = 4
+
+trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
+                                        download=True, transform=transform)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
+                                          shuffle=True, num_workers=2)
+
+testset = torchvision.datasets.CIFAR10(root='./data', train=False,
+                                       download=True, transform=transform)
+testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
+                                         shuffle=False, num_workers=2)
+
+classes = ('plane', 'car', 'bird', 'cat',
+           'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
+
+```
+
+
+# Convolutional Neural Networks
+
+## Convolutional Neural Networks
+
+Convolutional Neural Networks were developed in terms of image analysis.
+
+::: fragment
+The idea is to mimic how a human minds will classify an image. (Knowledge from 1970's perspective)
+:::
+
+::: fragment
+A convolutional neural networks is trained by using a set of images that have been previously classfied.
+:::
+
+::: fragment
+Once the network is trained, we can give new types of images to be classified.
+:::
+
+## Convolutiona Neural Networks
+
+![](img/squirrel.jpg){fig-align="center"}
+
+## Convolutional Neural Networks
+
+A CNN will identify certain features, arrange them, and match them to what is closely is known.
+
+## CNN
+
+![Credit: ISLR2](img/islr2/Chapter10/10_6.jpg){fig-align="center"}
+
+# Layers
+
+## Convolution Filter
+
+A Convolution Filter will highlight certain features of an image.
+
+::: fragment
+The matching features will contain a large value.
+:::
+
+::: fragment
+Dismatching features will contain a smaller value.
+:::
+
+## Convolution Filter
+
+::: panel-tabset
+## Image
+
+$$
+\left(
+\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+g & h & i \\
+j & k & l 
+\end{array}
+\right)
+$$
+
+## Filter
+
+$$
+\left(
+\begin{array}{cc}
+\alpha & \beta \\
+\gamma & \delta
+\end{array}
+\right)
+$$
+
+## Both
+
+$$
+\left(
+\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+g & h & i \\
+j & k & l 
+\end{array}
+\right)
+*
+\left(
+\begin{array}{cc}
+\alpha & \beta \\
+\gamma & \delta
+\end{array}
+\right)
+$$
+
+## Results
+
+$$
+\left(
+\begin{array}{cc}
+a\alpha + b\beta + d\gamma + w\delta & b\alpha + c\beta + e\gamma + f\delta \\
+d\alpha + e\beta + g\gamma + h\delta & e\alpha + f\beta + h\gamma + i\delta \\
+g\alpha + h\beta + j\gamma + k\delta & h\alpha + i\beta + k\gamma + l\delta
+\end{array}
+\right)
+$$
+:::
+
+## Convolutional Layers
+
+Convolution layers are a set of filters in a hidden layers. We can have $K$ layers that an image is passed through.
+
+## Pooling Layers
+
+The act of summarizing a large matrix to a smaller matrix.
+
+## Max Pool
+
+$$
+\left[
+\begin{array}{cccc}
+1 & 3 & 9 & 5 \\
+6 & 2 & 3 & 4 \\
+1 & 0 & 6 & 4 \\
+8 & 4 & 2 & 7
+\end{array}
+\right] \rightarrow
+\left[
+\begin{array}{cc}
+6 & 9 \\
+8 & 7
+\end{array}
+\right]
+$$
+
+# Architecture
+
+## Architecture
+
+![](https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg){fig-align="center"}
+
+
+## MNIST Data Image
+
+
+
+## Convolve Image
+
+
+
+## Flattening
+
+Once the images has been pooled to a select pixels or features. The images are flattened to a set of inputs.
+
+::: fragment
+These inputs are used to a traditional neural network to classify an image.
+:::
+
+
+## Training
+
+The CNN is trained by supplying a set of pre-classified images.
+
+::: fragment
+The parameters in the convolution filters are estimated using standard techniques.
+:::
+
+
+# R MNIST Code
+
+## MNIST
+
+This is a database of handwritten digits.
+
+We will use to construct neural networks that will classify images.
+
+## Torch Packages in R
+
+```{r}
+
+library(torch)
+library(luz) # high-level interface for torch
+library(torchdatasets) # for datasets we are going to use
+library(zeallot)
+torch_manual_seed(13)
+
+```
+
+## MNIST
+
+```{r}
+
+###
+train_ds <- mnist_dataset(root = ".", train = TRUE, download = TRUE)
+test_ds <- mnist_dataset(root = ".", train = FALSE, download = TRUE)
+
+train_ds[1]
+# test_ds[2]
+
+```
+
+## Transforming Data
+
+In order to use torch, you must transform the data: - tensor - flatten - tensor divided by the potential values (255)
+
+```{r}
+
+ 
+###
+transform <- function(x) {
+  x |>
+    torch_tensor()  |>
+    torch_flatten() |>
+    torch_div(255)
+}
+train_ds <- mnist_dataset(
+  root = ".",
+  train = TRUE,
+  download = TRUE,
+  transform = transform
+)
+test_ds <- mnist_dataset(
+  root = ".",
+  train = FALSE,
+  download = TRUE,
+  transform = transform
+)
+
+```
+
+## Neural Network Model Set Up
+
+The `nn_module` will begin to setup the neural network. It requires the `initialize` and `forward` functions.
+
+::: fragment
+`initialize` is a function that describes the elements of the neural network, the layers.
+:::
+
+::: fragment
+`nn_linear` will construct a linear framework for the number of inputs, and the number of outputs in the neural network.
+:::
+
+::: fragment
+`nn_dropout` will randomly "zero" an input elements of a tensor with probability `p`.
+:::
+
+::: fragment
+`nn_relu` specifies the linear unit function
+:::
+
+::: fragment
+`forward` describes how the neural network is formatted using the values from the `initialize` function.
+:::
+
+```{r}
+
+###
+modelnn <- nn_module(
+  initialize = function() {
+    self$linear1 <- nn_linear(in_features = 28*28, out_features = 256)
+    self$linear2 <- nn_linear(in_features = 256, out_features = 128)
+    self$linear3 <- nn_linear(in_features = 128, out_features = 10)
+
+    self$drop1 <- nn_dropout(p = 0.4)
+    self$drop2 <- nn_dropout(p = 0.3)
+
+    self$activation <- nn_relu()
+  },
+  forward = function(x) {
+    x |>
+      self$linear1() |>
+      self$activation() |>
+      self$drop1() |>
+
+      self$linear2() |>
+      self$activation() |>
+      self$drop2() |>
+      self$linear3()
+  }
+)
+
+
+```
+
+## Set Up Neural Network
+
+Tells `luz` (`torch`) how to execute the neural network.
+
+```{r}
+
+
+modelnn <- modelnn |>
+  setup(
+    loss = nn_cross_entropy_loss(),
+    optimizer = optim_rmsprop,
+    metrics = list(luz_metric_accuracy())
+  )
+```
+
+## Fit the Neural Network
+
+::: panel-tabset
+## Fitting
+
+```{r}
+
+
+system.time(
+   fitted <- modelnn |>
+      fit(
+        data = train_ds,
+        epochs = 5,
+        valid_data = 0.2,
+        dataloader_options = list(batch_size = 256),
+        verbose = FALSE
+      )
+ )
+```
+
+## Plot
+
+```{r}
+plot(fitted)
+```
+:::
+
+## Test Efficiency of Neural Network
+
+```{r}
+
+accuracy <- function(pred, truth) {
+   mean(pred == truth) }
+
+# gets the true classes from all observations in test_ds.
+truth <- sapply(seq_along(test_ds), function(x) test_ds[x][[2]])
+
+fitted |>
+  predict(test_ds) |>
+  torch_argmax(dim = 2) |> # the predicted class is the one with higher 'logit'.
+  as_array() |>  # convert to an R object
+  accuracy(truth) # use function created
+
+```
+

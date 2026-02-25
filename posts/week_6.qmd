@@ -1,0 +1,14 @@
+---
+title: "Week 6"
+date: 03-03-26
+description: This week looks building Convolutional Neural Networks.
+editor: source
+---
+
+
+## Resources
+
+| Lecture | Slides                   | Videos  |
+|---------|--------------------------|---------|
+| 1       | [Slides](../lectures/6a) | [Video]()      |
+| 2       | | NA      |

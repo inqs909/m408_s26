@@ -21,37 +21,58 @@
     "text": "University Policies\n\nSyllabus Policies and Assistance\nCSUCI’s Syllabus Policies and Assistance Website provides important details about academic policies, campus expectations, and student support services that are all highly applicable to your success as a student both in and outside of the classroom. Ensure that you review this site on a regular basis to stay informed about the policies and resources that support your success, as campus resources or policies may change semester to semester.\n\n\nAcademic Honesty\nConduct yourself with honesty and integrity. Do not submit others’ work as your own. Foassignments and quizzes that allow you to work with a group, only put your name on what the group submits if you genuinely contributed to the work. Work completely independently on exams, using only the materials that are indicated as allowed. Failure to observe academic honesty results in substantial penalties that can include failing the course.\n\n\nCSUCI Basic Need\nPlease use the link to the Basic Needs Program on the Syllabus Policies and Assistance website (&lt;go.csuci.edu/syllabuspolicies&gt;) for information on emergency food, housing accommodations, toiletries, and connections to critical resources.\n\n\nCSUCI Disability Statement\nIf you are a student with a disability requesting reasonable accommodations in this course, you need to contact Disability Accommodations and Support Services (DASS) located on the second floor of Arroyo Hall, via email accommodations@csuci.edu or call 805-437-3331. All requests for reasonable accommodations require registration with DASS in advance of need: https://www.csuci.edu/dass/students/apply-for-services.htm. Faculty, students and DASS will work together regarding classroom accommodations. You are encouraged to discuss approved.\n\n\nDisruption\n\nIf I Am Out: I will communicate via email and will hold classes asynchronously.\nIf You Are Out: Contact me as soon as possible to talk about your options. Reasonable accommodations will be provided for a brief absence. With proper documentation, extended accommodations will be provided."
   },
   {
-    "objectID": "posts/week_4.html",
-    "href": "posts/week_4.html",
-    "title": "Week 4",
+    "objectID": "posts/week_5.html",
+    "href": "posts/week_5.html",
+    "title": "Week 5",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_4.html#resources",
-    "href": "posts/week_4.html#resources",
-    "title": "Week 4",
+    "objectID": "posts/week_5.html#resources",
+    "href": "posts/week_5.html#resources",
+    "title": "Week 5",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_2.html",
-    "href": "posts/week_2.html",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html",
+    "href": "posts/week_3.html",
+    "title": "Week 3",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_2.html#learning-outcomes",
-    "href": "posts/week_2.html#learning-outcomes",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html#learning-outcomes",
+    "href": "posts/week_3.html#learning-outcomes",
+    "title": "Week 3",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_2.html#resources",
-    "href": "posts/week_2.html#resources",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html#resources",
+    "href": "posts/week_3.html#resources",
+    "title": "Week 3",
+    "section": "Resources",
+    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\nSlides\nNA"
+  },
+  {
+    "objectID": "posts/week_1.html",
+    "href": "posts/week_1.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
+  },
+  {
+    "objectID": "posts/week_1.html#learning-outcomes",
+    "href": "posts/week_1.html#learning-outcomes",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
+  },
+  {
+    "objectID": "posts/week_1.html#resources",
+    "href": "posts/week_1.html#resources",
+    "title": "Week 1",
     "section": "Resources",
     "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
   },
@@ -1264,7 +1285,7 @@
     "href": "index.html",
     "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5\n\n\nThis week looks building Neural Network Classifiers.\n\n\n\n\n\nFeb 23, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks building multi-layer Neural Networks.\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
+    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 6\n\n\nThis week looks building Convolutional Neural Networks.\n\n\n\n\n\nMar 3, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nThis week looks building Neural Network Classifiers.\n\n\n\n\n\nFeb 23, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks building multi-layer Neural Networks.\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lectures/1b.html#r-programming",
@@ -1813,58 +1834,219 @@
     "text": "Testing Model\n\nPredictionMAEPlot\n\n\n\nnpred &lt;- predict(fitted, Xtesting)\n\n\n\n\nmean(abs(as.matrix(Ytesting) - as.matrix(npred)))\n\n\n\n\n\nCode\nplot(as.matrix(Ytesting), as.matrix(npred),\n     xlab = \"Truth\",\n     ylab = \"Predicted\")"
   },
   {
-    "objectID": "posts/week_1.html",
-    "href": "posts/week_1.html",
-    "title": "Week 1",
+    "objectID": "lectures/6a.html#r-packages",
+    "href": "lectures/6a.html#r-packages",
+    "title": "Convolutional\nNeural Networks",
+    "section": "R Packages",
+    "text": "R Packages\n\n# install.packages(\"tidyverse\")\n# install.packages(\"torch\")\n# install.packages(\"luz\")\n# install.packages(\"torchvision\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(tidyverse)\nlibrary(torchvision) # for datasets and image transformation"
+  },
+  {
+    "objectID": "lectures/6a.html#python-data",
+    "href": "lectures/6a.html#python-data",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Python Data",
+    "text": "Python Data\nimport torch\nimport torchvision\nimport torchvision.transforms as transforms\n\ntransform = transforms.Compose(\n    [transforms.ToTensor(),\n     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])\n\nbatch_size = 4\n\ntrainset = torchvision.datasets.CIFAR10(root='./data', train=True,\n                                        download=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,\n                                          shuffle=True, num_workers=2)\n\ntestset = torchvision.datasets.CIFAR10(root='./data', train=False,\n                                       download=True, transform=transform)\ntestloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,\n                                         shuffle=False, num_workers=2)\n\nclasses = ('plane', 'car', 'bird', 'cat',\n           'deer', 'dog', 'frog', 'horse', 'ship', 'truck')"
+  },
+  {
+    "objectID": "lectures/6a.html#convolutional-neural-networks-1",
+    "href": "lectures/6a.html#convolutional-neural-networks-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolutional Neural Networks",
+    "text": "Convolutional Neural Networks\nConvolutional Neural Networks were developed in terms of image analysis.\n\nThe idea is to mimic how a human minds will classify an image. (Knowledge from 1970’s perspective)\n\n\nA convolutional neural networks is trained by using a set of images that have been previously classfied.\n\n\nOnce the network is trained, we can give new types of images to be classified."
+  },
+  {
+    "objectID": "lectures/6a.html#convolutiona-neural-networks",
+    "href": "lectures/6a.html#convolutiona-neural-networks",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolutiona Neural Networks",
+    "text": "Convolutiona Neural Networks"
+  },
+  {
+    "objectID": "lectures/6a.html#convolutional-neural-networks-2",
+    "href": "lectures/6a.html#convolutional-neural-networks-2",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolutional Neural Networks",
+    "text": "Convolutional Neural Networks\nA CNN will identify certain features, arrange them, and match them to what is closely is known."
+  },
+  {
+    "objectID": "lectures/6a.html#cnn",
+    "href": "lectures/6a.html#cnn",
+    "title": "Convolutional\nNeural Networks",
+    "section": "CNN",
+    "text": "CNN\n\nCredit: ISLR2"
+  },
+  {
+    "objectID": "lectures/6a.html#convolution-filter",
+    "href": "lectures/6a.html#convolution-filter",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolution Filter",
+    "text": "Convolution Filter\nA Convolution Filter will highlight certain features of an image.\n\nThe matching features will contain a large value.\n\n\nDismatching features will contain a smaller value."
+  },
+  {
+    "objectID": "lectures/6a.html#convolution-filter-1",
+    "href": "lectures/6a.html#convolution-filter-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolution Filter",
+    "text": "Convolution Filter\n\nImageFilterBothResults\n\n\n\\[\n\\left(\n\\begin{array}{ccc}\na & b & c \\\\\nd & e & f \\\\\ng & h & i \\\\\nj & k & l\n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left(\n\\begin{array}{cc}\n\\alpha & \\beta \\\\\n\\gamma & \\delta\n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left(\n\\begin{array}{ccc}\na & b & c \\\\\nd & e & f \\\\\ng & h & i \\\\\nj & k & l\n\\end{array}\n\\right)\n*\n\\left(\n\\begin{array}{cc}\n\\alpha & \\beta \\\\\n\\gamma & \\delta\n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left(\n\\begin{array}{cc}\na\\alpha + b\\beta + d\\gamma + w\\delta & b\\alpha + c\\beta + e\\gamma + f\\delta \\\\\nd\\alpha + e\\beta + g\\gamma + h\\delta & e\\alpha + f\\beta + h\\gamma + i\\delta \\\\\ng\\alpha + h\\beta + j\\gamma + k\\delta & h\\alpha + i\\beta + k\\gamma + l\\delta\n\\end{array}\n\\right)\n\\]"
+  },
+  {
+    "objectID": "lectures/6a.html#convolutional-layers",
+    "href": "lectures/6a.html#convolutional-layers",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolutional Layers",
+    "text": "Convolutional Layers\nConvolution layers are a set of filters in a hidden layers. We can have \\(K\\) layers that an image is passed through."
+  },
+  {
+    "objectID": "lectures/6a.html#pooling-layers",
+    "href": "lectures/6a.html#pooling-layers",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Pooling Layers",
+    "text": "Pooling Layers\nThe act of summarizing a large matrix to a smaller matrix."
+  },
+  {
+    "objectID": "lectures/6a.html#max-pool",
+    "href": "lectures/6a.html#max-pool",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Max Pool",
+    "text": "Max Pool\n\\[\n\\left[\n\\begin{array}{cccc}\n1 & 3 & 9 & 5 \\\\\n6 & 2 & 3 & 4 \\\\\n1 & 0 & 6 & 4 \\\\\n8 & 4 & 2 & 7\n\\end{array}\n\\right] \\rightarrow\n\\left[\n\\begin{array}{cc}\n6 & 9 \\\\\n8 & 7\n\\end{array}\n\\right]\n\\]"
+  },
+  {
+    "objectID": "lectures/6a.html#architecture-1",
+    "href": "lectures/6a.html#architecture-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Architecture",
+    "text": "Architecture"
+  },
+  {
+    "objectID": "lectures/6a.html#mnist-data-image",
+    "href": "lectures/6a.html#mnist-data-image",
+    "title": "Convolutional\nNeural Networks",
+    "section": "MNIST Data Image",
+    "text": "MNIST Data Image"
+  },
+  {
+    "objectID": "lectures/6a.html#convolve-image",
+    "href": "lectures/6a.html#convolve-image",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolve Image",
+    "text": "Convolve Image"
+  },
+  {
+    "objectID": "lectures/6a.html#flattening",
+    "href": "lectures/6a.html#flattening",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Flattening",
+    "text": "Flattening\nOnce the images has been pooled to a select pixels or features. The images are flattened to a set of inputs.\n\nThese inputs are used to a traditional neural network to classify an image."
+  },
+  {
+    "objectID": "lectures/6a.html#training",
+    "href": "lectures/6a.html#training",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Training",
+    "text": "Training\nThe CNN is trained by supplying a set of pre-classified images.\n\nThe parameters in the convolution filters are estimated using standard techniques."
+  },
+  {
+    "objectID": "lectures/6a.html#mnist",
+    "href": "lectures/6a.html#mnist",
+    "title": "Convolutional\nNeural Networks",
+    "section": "MNIST",
+    "text": "MNIST\nThis is a database of handwritten digits.\nWe will use to construct neural networks that will classify images."
+  },
+  {
+    "objectID": "lectures/6a.html#torch-packages-in-r",
+    "href": "lectures/6a.html#torch-packages-in-r",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Torch Packages in R",
+    "text": "Torch Packages in R\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(torchdatasets) # for datasets we are going to use\nlibrary(zeallot)\ntorch_manual_seed(13)"
+  },
+  {
+    "objectID": "lectures/6a.html#mnist-1",
+    "href": "lectures/6a.html#mnist-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "MNIST",
+    "text": "MNIST\n\n###\ntrain_ds &lt;- mnist_dataset(root = \".\", train = TRUE, download = TRUE)\ntest_ds &lt;- mnist_dataset(root = \".\", train = FALSE, download = TRUE)\n\ntrain_ds[1]\n# test_ds[2]"
+  },
+  {
+    "objectID": "lectures/6a.html#transforming-data",
+    "href": "lectures/6a.html#transforming-data",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Transforming Data",
+    "text": "Transforming Data\nIn order to use torch, you must transform the data: - tensor - flatten - tensor divided by the potential values (255)\n\n###\ntransform &lt;- function(x) {\n  x |&gt;\n    torch_tensor()  |&gt;\n    torch_flatten() |&gt;\n    torch_div(255)\n}\ntrain_ds &lt;- mnist_dataset(\n  root = \".\",\n  train = TRUE,\n  download = TRUE,\n  transform = transform\n)\ntest_ds &lt;- mnist_dataset(\n  root = \".\",\n  train = FALSE,\n  download = TRUE,\n  transform = transform\n)"
+  },
+  {
+    "objectID": "lectures/6a.html#neural-network-model-set-up",
+    "href": "lectures/6a.html#neural-network-model-set-up",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Neural Network Model Set Up",
+    "text": "Neural Network Model Set Up\nThe nn_module will begin to setup the neural network. It requires the initialize and forward functions.\n\ninitialize is a function that describes the elements of the neural network, the layers.\n\n\nnn_linear will construct a linear framework for the number of inputs, and the number of outputs in the neural network.\n\n\nnn_dropout will randomly “zero” an input elements of a tensor with probability p.\n\n\nnn_relu specifies the linear unit function\n\n\nforward describes how the neural network is formatted using the values from the initialize function.\n\n\n###\nmodelnn &lt;- nn_module(\n  initialize = function() {\n    self$linear1 &lt;- nn_linear(in_features = 28*28, out_features = 256)\n    self$linear2 &lt;- nn_linear(in_features = 256, out_features = 128)\n    self$linear3 &lt;- nn_linear(in_features = 128, out_features = 10)\n\n    self$drop1 &lt;- nn_dropout(p = 0.4)\n    self$drop2 &lt;- nn_dropout(p = 0.3)\n\n    self$activation &lt;- nn_relu()\n  },\n  forward = function(x) {\n    x |&gt;\n      self$linear1() |&gt;\n      self$activation() |&gt;\n      self$drop1() |&gt;\n\n      self$linear2() |&gt;\n      self$activation() |&gt;\n      self$drop2() |&gt;\n      self$linear3()\n  }\n)"
+  },
+  {
+    "objectID": "lectures/6a.html#set-up-neural-network",
+    "href": "lectures/6a.html#set-up-neural-network",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Set Up Neural Network",
+    "text": "Set Up Neural Network\nTells luz (torch) how to execute the neural network.\n\nmodelnn &lt;- modelnn |&gt;\n  setup(\n    loss = nn_cross_entropy_loss(),\n    optimizer = optim_rmsprop,\n    metrics = list(luz_metric_accuracy())\n  )"
+  },
+  {
+    "objectID": "lectures/6a.html#fit-the-neural-network",
+    "href": "lectures/6a.html#fit-the-neural-network",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Fit the Neural Network",
+    "text": "Fit the Neural Network\n\nFittingPlot\n\n\n\nsystem.time(\n   fitted &lt;- modelnn |&gt;\n      fit(\n        data = train_ds,\n        epochs = 5,\n        valid_data = 0.2,\n        dataloader_options = list(batch_size = 256),\n        verbose = FALSE\n      )\n )\n\n\n\n\nplot(fitted)"
+  },
+  {
+    "objectID": "lectures/6a.html#test-efficiency-of-neural-network",
+    "href": "lectures/6a.html#test-efficiency-of-neural-network",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Test Efficiency of Neural Network",
+    "text": "Test Efficiency of Neural Network\n\naccuracy &lt;- function(pred, truth) {\n   mean(pred == truth) }\n\n# gets the true classes from all observations in test_ds.\ntruth &lt;- sapply(seq_along(test_ds), function(x) test_ds[x][[2]])\n\nfitted |&gt;\n  predict(test_ds) |&gt;\n  torch_argmax(dim = 2) |&gt; # the predicted class is the one with higher 'logit'.\n  as_array() |&gt;  # convert to an R object\n  accuracy(truth) # use function created"
+  },
+  {
+    "objectID": "posts/week_2.html",
+    "href": "posts/week_2.html",
+    "title": "Week 2",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_1.html#learning-outcomes",
-    "href": "posts/week_1.html#learning-outcomes",
-    "title": "Week 1",
+    "objectID": "posts/week_2.html#learning-outcomes",
+    "href": "posts/week_2.html#learning-outcomes",
+    "title": "Week 2",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_1.html#resources",
-    "href": "posts/week_1.html#resources",
-    "title": "Week 1",
+    "objectID": "posts/week_2.html#resources",
+    "href": "posts/week_2.html#resources",
+    "title": "Week 2",
     "section": "Resources",
     "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
   },
   {
-    "objectID": "posts/week_3.html",
-    "href": "posts/week_3.html",
-    "title": "Week 3",
-    "section": "",
-    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
-  },
-  {
-    "objectID": "posts/week_3.html#learning-outcomes",
-    "href": "posts/week_3.html#learning-outcomes",
-    "title": "Week 3",
-    "section": "",
-    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
-  },
-  {
-    "objectID": "posts/week_3.html#resources",
-    "href": "posts/week_3.html#resources",
-    "title": "Week 3",
-    "section": "Resources",
-    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\nSlides\nNA"
-  },
-  {
-    "objectID": "posts/week_5.html",
-    "href": "posts/week_5.html",
-    "title": "Week 5",
+    "objectID": "posts/week_4.html",
+    "href": "posts/week_4.html",
+    "title": "Week 4",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_5.html#resources",
-    "href": "posts/week_5.html#resources",
-    "title": "Week 5",
+    "objectID": "posts/week_4.html#resources",
+    "href": "posts/week_4.html#resources",
+    "title": "Week 4",
+    "section": "",
+    "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
+  },
+  {
+    "objectID": "posts/week_6.html",
+    "href": "posts/week_6.html",
+    "title": "Week 6",
+    "section": "",
+    "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
+  },
+  {
+    "objectID": "posts/week_6.html#resources",
+    "href": "posts/week_6.html#resources",
+    "title": "Week 6",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   }
