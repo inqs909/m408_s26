@@ -87,6 +87,8 @@ Sys.time() - first
 plot(fitted)
 
 
+## Used to build cnn
+
 b1 <- train_dl |>
   dataloader_make_iter() |> 
   dataloader_next()
@@ -102,3 +104,5 @@ b1$x |>
   # c4() |> 
   torch_flatten(start_dim = 2) |> 
   (\(x) x$shape)() 
+
+

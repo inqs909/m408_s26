@@ -11,22 +11,21 @@ transform <- function(x) {
 dir <- "../"
 
 
-train_ds <- cifar10_dataset(
-  root = dir,
+train_ds <- mnist_dataset(
+  root = dir, 
   train = TRUE, 
   download = TRUE, 
   transform = transform
 )
-
-test_ds <- cifar10_dataset(
-  dir, 
+test_ds <- mnist_dataset(
+  root = dir, 
   train = FALSE, 
   download = TRUE,
   transform = transform
 )
 
 train_dl <- dataloader(train_ds,
-  batch_size = 128,
+  batch_size = 1,
   shuffle = TRUE
 )
 
@@ -52,12 +51,12 @@ conv_block <- nn_module(
 model <- nn_module(
   initialize = function() {
     self$conv <- nn_sequential(
-      conv_block(3, 8),
+      conv_block(1, 8),
       conv_block(8, 16)
     )
     self$output <- nn_sequential(
       nn_dropout(0.5),
-      nn_linear(1024, 16),
+      nn_linear(49, 16),
       nn_relu(),
       nn_linear(16, 10)
     )
@@ -92,7 +91,7 @@ b1 <- train_dl |>
   dataloader_next()
 
 b1$x$shape
-c1 <- conv_block(3, 8)
+c1 <- conv_block(1, 8)
 c2 <- conv_block(8, 16)
 #l1 <- nn_linear(512, 16)
 b1$x |> 
@@ -102,3 +101,4 @@ b1$x |>
   # c4() |> 
   torch_flatten(start_dim = 2) |> 
   (\(x) x$shape)() 
+

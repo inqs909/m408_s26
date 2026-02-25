@@ -10,4 +10,4 @@ editor: source
 
 | Lecture | Slides                   | Videos  | R Code Files |
 |---------|--------------------------|---------|----------|
-| 1       | [Slides](../lectures/6a) | [Video]() | [CIFAR-10](../lectures/R/6a.R) [MNIST](../lectures/R/6b.R)  |
+| 1       | [Slides](../lectures/6a) | [Video]() | [CIFAR-10](../lectures/R/6a.R)  |
