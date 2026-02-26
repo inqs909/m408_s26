@@ -391,66 +391,136 @@ Neural Networks</p></h1>
 <span id="cb2-22"><a></a>           <span class="st">'deer'</span>, <span class="st">'dog'</span>, <span class="st">'frog'</span>, <span class="st">'horse'</span>, <span class="st">'ship'</span>, <span class="st">'truck'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section>
+<section id="image-classification" class="title-slide slide level1 agenda-slide center">
+<h1>Image Classification</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-active">
+<p>Image Classification</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Convolutional Neural Networks</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Input Data</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Convolutional Filter</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>R CIFAR Data Analysis</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="image-classification-1" class="slide level2">
+<h2>Image Classification</h2>
+<p>Image classification is the process of having a computer analyzse an image and classify it with a selected category.</p>
+</section>
+<section id="image-classification-2" class="slide level2">
+<h2>Image Classification</h2>
+<p>What is this a picture of?</p>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/squirrel.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="image-classification-3" class="slide level2">
+<h2>Image Classification</h2>
+<p>How did you know it was a squirrel?</p>
+</section></section>
+<section>
 <section id="convolutional-neural-networks" class="title-slide slide level1 agenda-slide center">
 <h1>Convolutional Neural Networks</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Image Classification</p>
+</div></li>
 <li><div class="agenda-active">
 <p>Convolutional Neural Networks</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Layers</p>
+<p>Input Data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Architecture</p>
+<p>Convolutional Filter</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R MNIST Code</p>
+<p>R CIFAR Data Analysis</p>
 </div></li>
 </ul>
 </div>
 </section>
 <section id="convolutional-neural-networks-1" class="slide level2">
 <h2>Convolutional Neural Networks</h2>
-<p>Convolutional Neural Networks were developed in terms of image analysis.</p>
+<p>Convolutional Neural Networks became popular in the 2010’s with the success of image classification.</p>
 <div class="fragment">
-<p>The idea is to mimic how a human minds will classify an image. (Knowledge from 1970’s perspective)</p>
+<p>The idea is to mimic how a human mind will classify an image. (From an old understanding of neurobiology.)</p>
 </div>
 <div class="fragment">
-<p>A convolutional neural networks is trained by using a set of images that have been previously classfied.</p>
+<p>With the use of convolutional filters, a convolutional neural networks is trained by using a set of images that have been previously classfied.</p>
 </div>
 <div class="fragment">
-<p>Once the network is trained, we can give new types of images to be classified.</p>
+<p>Once the network is trained, new images can be classified.</p>
 </div>
-</section>
-<section id="convolutiona-neural-networks" class="slide level2">
-<h2>Convolutiona Neural Networks</h2>
-
-<img data-src="img/squirrel.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="convolutional-neural-networks-2" class="slide level2">
-<h2>Convolutional Neural Networks</h2>
-<p>A CNN will identify certain features, arrange them, and match them to what is closely is known.</p>
 </section>
 <section id="cnn" class="slide level2">
 <h2>CNN</h2>
 
-<img data-src="img/islr2/Chapter10/10_6.jpg" class="r-stretch quarto-figure-center"><p class="caption">Credit: ISLR2</p></section></section>
+<img data-src="img/islr2/Chapter10/10_6.jpg" class="r-stretch quarto-figure-center"><p class="caption">Credit: ISLR2</p></section>
+<section id="architecture" class="slide level2">
+<h2>Architecture</h2>
+
+<img data-src="https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
-<section id="layers" class="title-slide slide level1 agenda-slide center">
-<h1>Layers</h1>
+<section id="input-data" class="title-slide slide level1 agenda-slide center">
+<h1>Input Data</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Image Classification</p>
+</div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Convolutional Neural Networks</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Layers</p>
+<p>Input Data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Architecture</p>
+<p>Convolutional Filter</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R MNIST Code</p>
+<p>R CIFAR Data Analysis</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="input-data-1" class="slide level2">
+<h2>Input Data</h2>
+</section></section>
+<section>
+<section id="convolutional-filter" class="title-slide slide level1 agenda-slide center">
+<h1>Convolutional Filter</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Image Classification</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Convolutional Neural Networks</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Input Data</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Convolutional Filter</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>R CIFAR Data Analysis</p>
 </div></li>
 </ul>
 </div>
@@ -551,33 +621,9 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 \end{array}
 \right]
 \]</span></p>
-</section></section>
-<section>
-<section id="architecture" class="title-slide slide level1 agenda-slide center">
-<h1>Architecture</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Convolutional Neural Networks</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Layers</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Architecture</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>R MNIST Code</p>
-</div></li>
-</ul>
-</div>
 </section>
-<section id="architecture-1" class="slide level2">
-<h2>Architecture</h2>
-
-<img data-src="https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="mnist-data-image" class="slide level2">
-<h2>MNIST Data Image</h2>
+<section id="cifar-data" class="slide level2">
+<h2>CIFAR Data</h2>
 </section>
 <section id="convolve-image" class="slide level2">
 <h2>Convolve Image</h2>
@@ -597,29 +643,30 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </div>
 </section></section>
 <section>
-<section id="r-mnist-code" class="title-slide slide level1 agenda-slide center">
-<h1>R MNIST Code</h1>
+<section id="r-cifar-data-analysis" class="title-slide slide level1 agenda-slide center">
+<h1>R CIFAR Data Analysis</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Image Classification</p>
+</div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Convolutional Neural Networks</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Layers</p>
+<p>Input Data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Architecture</p>
+<p>Convolutional Filter</p>
 </div></li>
 <li><div class="agenda-active">
-<p>R MNIST Code</p>
+<p>R CIFAR Data Analysis</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="mnist" class="slide level2">
-<h2>MNIST</h2>
-<p>This is a database of handwritten digits.</p>
-<p>We will use to construct neural networks that will classify images.</p>
+<section id="cifar-data-1" class="slide level2">
+<h2>CIFAR Data</h2>
 </section>
 <section id="torch-packages-in-r" class="slide level2">
 <h2>Torch Packages in R</h2>
@@ -631,141 +678,8 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <span id="cb3-5"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="mnist-1" class="slide level2">
-<h2>MNIST</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="do">###</span></span>
-<span id="cb4-2"><a></a>train_ds <span class="ot">&lt;-</span> <span class="fu">mnist_dataset</span>(<span class="at">root =</span> <span class="st">"."</span>, <span class="at">train =</span> <span class="cn">TRUE</span>, <span class="at">download =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb4-3"><a></a>test_ds <span class="ot">&lt;-</span> <span class="fu">mnist_dataset</span>(<span class="at">root =</span> <span class="st">"."</span>, <span class="at">train =</span> <span class="cn">FALSE</span>, <span class="at">download =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb4-4"><a></a></span>
-<span id="cb4-5"><a></a>train_ds[<span class="dv">1</span>]</span>
-<span id="cb4-6"><a></a><span class="co"># test_ds[2]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="transforming-data" class="slide level2">
-<h2>Transforming Data</h2>
-<p>In order to use torch, you must transform the data: - tensor - flatten - tensor divided by the potential values (255)</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="do">###</span></span>
-<span id="cb5-2"><a></a>transform <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb5-3"><a></a>  x <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a></a>    <span class="fu">torch_tensor</span>()  <span class="sc">|&gt;</span></span>
-<span id="cb5-5"><a></a>    <span class="fu">torch_flatten</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-6"><a></a>    <span class="fu">torch_div</span>(<span class="dv">255</span>)</span>
-<span id="cb5-7"><a></a>}</span>
-<span id="cb5-8"><a></a>train_ds <span class="ot">&lt;-</span> <span class="fu">mnist_dataset</span>(</span>
-<span id="cb5-9"><a></a>  <span class="at">root =</span> <span class="st">"."</span>,</span>
-<span id="cb5-10"><a></a>  <span class="at">train =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-11"><a></a>  <span class="at">download =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-12"><a></a>  <span class="at">transform =</span> transform</span>
-<span id="cb5-13"><a></a>)</span>
-<span id="cb5-14"><a></a>test_ds <span class="ot">&lt;-</span> <span class="fu">mnist_dataset</span>(</span>
-<span id="cb5-15"><a></a>  <span class="at">root =</span> <span class="st">"."</span>,</span>
-<span id="cb5-16"><a></a>  <span class="at">train =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb5-17"><a></a>  <span class="at">download =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-18"><a></a>  <span class="at">transform =</span> transform</span>
-<span id="cb5-19"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="neural-network-model-set-up" class="slide level2">
-<h2>Neural Network Model Set Up</h2>
-<p>The <code>nn_module</code> will begin to setup the neural network. It requires the <code>initialize</code> and <code>forward</code> functions.</p>
-<div class="fragment">
-<p><code>initialize</code> is a function that describes the elements of the neural network, the layers.</p>
-</div>
-<div class="fragment">
-<p><code>nn_linear</code> will construct a linear framework for the number of inputs, and the number of outputs in the neural network.</p>
-</div>
-<div class="fragment">
-<p><code>nn_dropout</code> will randomly “zero” an input elements of a tensor with probability <code>p</code>.</p>
-</div>
-<div class="fragment">
-<p><code>nn_relu</code> specifies the linear unit function</p>
-</div>
-<div class="fragment">
-<p><code>forward</code> describes how the neural network is formatted using the values from the <code>initialize</code> function.</p>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="do">###</span></span>
-<span id="cb6-2"><a></a>modelnn <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
-<span id="cb6-3"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>() {</span>
-<span id="cb6-4"><a></a>    self<span class="sc">$</span>linear1 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">28</span><span class="sc">*</span><span class="dv">28</span>, <span class="at">out_features =</span> <span class="dv">256</span>)</span>
-<span id="cb6-5"><a></a>    self<span class="sc">$</span>linear2 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">256</span>, <span class="at">out_features =</span> <span class="dv">128</span>)</span>
-<span id="cb6-6"><a></a>    self<span class="sc">$</span>linear3 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">128</span>, <span class="at">out_features =</span> <span class="dv">10</span>)</span>
-<span id="cb6-7"><a></a></span>
-<span id="cb6-8"><a></a>    self<span class="sc">$</span>drop1 <span class="ot">&lt;-</span> <span class="fu">nn_dropout</span>(<span class="at">p =</span> <span class="fl">0.4</span>)</span>
-<span id="cb6-9"><a></a>    self<span class="sc">$</span>drop2 <span class="ot">&lt;-</span> <span class="fu">nn_dropout</span>(<span class="at">p =</span> <span class="fl">0.3</span>)</span>
-<span id="cb6-10"><a></a></span>
-<span id="cb6-11"><a></a>    self<span class="sc">$</span>activation <span class="ot">&lt;-</span> <span class="fu">nn_relu</span>()</span>
-<span id="cb6-12"><a></a>  },</span>
-<span id="cb6-13"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
-<span id="cb6-14"><a></a>    x <span class="sc">|&gt;</span></span>
-<span id="cb6-15"><a></a>      self<span class="sc">$</span><span class="fu">linear1</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-16"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-17"><a></a>      self<span class="sc">$</span><span class="fu">drop1</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-18"><a></a></span>
-<span id="cb6-19"><a></a>      self<span class="sc">$</span><span class="fu">linear2</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-20"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-21"><a></a>      self<span class="sc">$</span><span class="fu">drop2</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-22"><a></a>      self<span class="sc">$</span><span class="fu">linear3</span>()</span>
-<span id="cb6-23"><a></a>  }</span>
-<span id="cb6-24"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="set-up-neural-network" class="slide level2">
-<h2>Set Up Neural Network</h2>
-<p>Tells <code>luz</code> (<code>torch</code>) how to execute the neural network.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>modelnn <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">setup</span>(</span>
-<span id="cb7-3"><a></a>    <span class="at">loss =</span> <span class="fu">nn_cross_entropy_loss</span>(),</span>
-<span id="cb7-4"><a></a>    <span class="at">optimizer =</span> optim_rmsprop,</span>
-<span id="cb7-5"><a></a>    <span class="at">metrics =</span> <span class="fu">list</span>(<span class="fu">luz_metric_accuracy</span>())</span>
-<span id="cb7-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="fit-the-neural-network" class="slide level2">
-<h2>Fit the Neural Network</h2>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Fitting</a></li><li><a href="#tabset-2-2">Plot</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">system.time</span>(</span>
-<span id="cb8-2"><a></a>   fitted <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a></a>      <span class="fu">fit</span>(</span>
-<span id="cb8-4"><a></a>        <span class="at">data =</span> train_ds,</span>
-<span id="cb8-5"><a></a>        <span class="at">epochs =</span> <span class="dv">5</span>,</span>
-<span id="cb8-6"><a></a>        <span class="at">valid_data =</span> <span class="fl">0.2</span>,</span>
-<span id="cb8-7"><a></a>        <span class="at">dataloader_options =</span> <span class="fu">list</span>(<span class="at">batch_size =</span> <span class="dv">256</span>),</span>
-<span id="cb8-8"><a></a>        <span class="at">verbose =</span> <span class="cn">FALSE</span></span>
-<span id="cb8-9"><a></a>      )</span>
-<span id="cb8-10"><a></a> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div id="tabset-2-2">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">plot</span>(fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="test-efficiency-of-neural-network" class="slide level2">
-<h2>Test Efficiency of Neural Network</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>accuracy <span class="ot">&lt;-</span> <span class="cf">function</span>(pred, truth) {</span>
-<span id="cb10-2"><a></a>   <span class="fu">mean</span>(pred <span class="sc">==</span> truth) }</span>
-<span id="cb10-3"><a></a></span>
-<span id="cb10-4"><a></a><span class="co"># gets the true classes from all observations in test_ds.</span></span>
-<span id="cb10-5"><a></a>truth <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">seq_along</span>(test_ds), <span class="cf">function</span>(x) test_ds[x][[<span class="dv">2</span>]])</span>
-<span id="cb10-6"><a></a></span>
-<span id="cb10-7"><a></a>fitted <span class="sc">|&gt;</span></span>
-<span id="cb10-8"><a></a>  <span class="fu">predict</span>(test_ds) <span class="sc">|&gt;</span></span>
-<span id="cb10-9"><a></a>  <span class="fu">torch_argmax</span>(<span class="at">dim =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> <span class="co"># the predicted class is the one with higher 'logit'.</span></span>
-<span id="cb10-10"><a></a>  <span class="fu">as_array</span>() <span class="sc">|&gt;</span>  <span class="co"># convert to an R object</span></span>
-<span id="cb10-11"><a></a>  <span class="fu">accuracy</span>(truth) <span class="co"># use function created</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<section id="cifar-10" class="slide level2">
+<h2>CIFAR-10</h2>
 
 
 </section></section>

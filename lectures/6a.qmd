@@ -58,7 +58,7 @@ library(torchvision) # for datasets and image transformation
 
 ## Python Data
 
-```python
+``` python
 import torch
 import torchvision
 import torchvision.transforms as transforms
@@ -81,41 +81,58 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
 
 classes = ('plane', 'car', 'bird', 'cat',
            'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-
 ```
 
+# Image Classification
+
+## Image Classification
+
+Image classification is the process of having a computer analyzse an image and classify it with a selected category.
+
+## Image Classification
+
+What is this a picture of?
+
+::: fragment
+![](img/squirrel.jpg){fig-align="center" width="500"}
+:::
+
+## Image Classification
+
+How did you know it was a squirrel?
 
 # Convolutional Neural Networks
 
 ## Convolutional Neural Networks
 
-Convolutional Neural Networks were developed in terms of image analysis.
+Convolutional Neural Networks became popular in the 2010's with the success of image classification.
 
 ::: fragment
-The idea is to mimic how a human minds will classify an image. (Knowledge from 1970's perspective)
+The idea is to mimic how a human mind will classify an image. (From an old understanding of neurobiology.)
 :::
 
 ::: fragment
-A convolutional neural networks is trained by using a set of images that have been previously classfied.
+With the use of convolutional filters, a convolutional neural networks is trained by using a set of images that have been previously classfied.
 :::
 
 ::: fragment
-Once the network is trained, we can give new types of images to be classified.
+Once the network is trained, new images can be classified.
 :::
-
-## Convolutiona Neural Networks
-
-![](img/squirrel.jpg){fig-align="center"}
-
-## Convolutional Neural Networks
-
-A CNN will identify certain features, arrange them, and match them to what is closely is known.
 
 ## CNN
 
 ![Credit: ISLR2](img/islr2/Chapter10/10_6.jpg){fig-align="center"}
 
-# Layers
+## Architecture
+
+![](https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg){fig-align="center"}
+
+
+# Input Data
+
+## Input Data
+
+# Convolutional Filter
 
 ## Convolution Filter
 
@@ -216,20 +233,10 @@ $$
 \right]
 $$
 
-# Architecture
 
-## Architecture
-
-![](https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg){fig-align="center"}
-
-
-## MNIST Data Image
-
-
+## CIFAR Data
 
 ## Convolve Image
-
-
 
 ## Flattening
 
@@ -239,7 +246,6 @@ Once the images has been pooled to a select pixels or features. The images are f
 These inputs are used to a traditional neural network to classify an image.
 :::
 
-
 ## Training
 
 The CNN is trained by supplying a set of pre-classified images.
@@ -248,14 +254,9 @@ The CNN is trained by supplying a set of pre-classified images.
 The parameters in the convolution filters are estimated using standard techniques.
 :::
 
+# R CIFAR Data Analysis
 
-# R MNIST Code
-
-## MNIST
-
-This is a database of handwritten digits.
-
-We will use to construct neural networks that will classify images.
+## CIFAR Data
 
 ## Torch Packages in R
 
@@ -269,159 +270,5 @@ torch_manual_seed(13)
 
 ```
 
-## MNIST
-
-```{r}
-
-###
-train_ds <- mnist_dataset(root = ".", train = TRUE, download = TRUE)
-test_ds <- mnist_dataset(root = ".", train = FALSE, download = TRUE)
-
-train_ds[1]
-# test_ds[2]
-
-```
-
-## Transforming Data
-
-In order to use torch, you must transform the data: - tensor - flatten - tensor divided by the potential values (255)
-
-```{r}
-
- 
-###
-transform <- function(x) {
-  x |>
-    torch_tensor()  |>
-    torch_flatten() |>
-    torch_div(255)
-}
-train_ds <- mnist_dataset(
-  root = ".",
-  train = TRUE,
-  download = TRUE,
-  transform = transform
-)
-test_ds <- mnist_dataset(
-  root = ".",
-  train = FALSE,
-  download = TRUE,
-  transform = transform
-)
-
-```
-
-## Neural Network Model Set Up
-
-The `nn_module` will begin to setup the neural network. It requires the `initialize` and `forward` functions.
-
-::: fragment
-`initialize` is a function that describes the elements of the neural network, the layers.
-:::
-
-::: fragment
-`nn_linear` will construct a linear framework for the number of inputs, and the number of outputs in the neural network.
-:::
-
-::: fragment
-`nn_dropout` will randomly "zero" an input elements of a tensor with probability `p`.
-:::
-
-::: fragment
-`nn_relu` specifies the linear unit function
-:::
-
-::: fragment
-`forward` describes how the neural network is formatted using the values from the `initialize` function.
-:::
-
-```{r}
-
-###
-modelnn <- nn_module(
-  initialize = function() {
-    self$linear1 <- nn_linear(in_features = 28*28, out_features = 256)
-    self$linear2 <- nn_linear(in_features = 256, out_features = 128)
-    self$linear3 <- nn_linear(in_features = 128, out_features = 10)
-
-    self$drop1 <- nn_dropout(p = 0.4)
-    self$drop2 <- nn_dropout(p = 0.3)
-
-    self$activation <- nn_relu()
-  },
-  forward = function(x) {
-    x |>
-      self$linear1() |>
-      self$activation() |>
-      self$drop1() |>
-
-      self$linear2() |>
-      self$activation() |>
-      self$drop2() |>
-      self$linear3()
-  }
-)
-
-
-```
-
-## Set Up Neural Network
-
-Tells `luz` (`torch`) how to execute the neural network.
-
-```{r}
-
-
-modelnn <- modelnn |>
-  setup(
-    loss = nn_cross_entropy_loss(),
-    optimizer = optim_rmsprop,
-    metrics = list(luz_metric_accuracy())
-  )
-```
-
-## Fit the Neural Network
-
-::: panel-tabset
-## Fitting
-
-```{r}
-
-
-system.time(
-   fitted <- modelnn |>
-      fit(
-        data = train_ds,
-        epochs = 5,
-        valid_data = 0.2,
-        dataloader_options = list(batch_size = 256),
-        verbose = FALSE
-      )
- )
-```
-
-## Plot
-
-```{r}
-plot(fitted)
-```
-:::
-
-## Test Efficiency of Neural Network
-
-```{r}
-
-accuracy <- function(pred, truth) {
-   mean(pred == truth) }
-
-# gets the true classes from all observations in test_ds.
-truth <- sapply(seq_along(test_ds), function(x) test_ds[x][[2]])
-
-fitted |>
-  predict(test_ds) |>
-  torch_argmax(dim = 2) |> # the predicted class is the one with higher 'logit'.
-  as_array() |>  # convert to an R object
-  accuracy(truth) # use function created
-
-```
+## CIFAR-10
 

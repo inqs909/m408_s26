@@ -1848,25 +1848,32 @@
     "text": "Python Data\nimport torch\nimport torchvision\nimport torchvision.transforms as transforms\n\ntransform = transforms.Compose(\n    [transforms.ToTensor(),\n     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])\n\nbatch_size = 4\n\ntrainset = torchvision.datasets.CIFAR10(root='./data', train=True,\n                                        download=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,\n                                          shuffle=True, num_workers=2)\n\ntestset = torchvision.datasets.CIFAR10(root='./data', train=False,\n                                       download=True, transform=transform)\ntestloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,\n                                         shuffle=False, num_workers=2)\n\nclasses = ('plane', 'car', 'bird', 'cat',\n           'deer', 'dog', 'frog', 'horse', 'ship', 'truck')"
   },
   {
+    "objectID": "lectures/6a.html#image-classification-1",
+    "href": "lectures/6a.html#image-classification-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Image Classification",
+    "text": "Image Classification\nImage classification is the process of having a computer analyzse an image and classify it with a selected category."
+  },
+  {
+    "objectID": "lectures/6a.html#image-classification-2",
+    "href": "lectures/6a.html#image-classification-2",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Image Classification",
+    "text": "Image Classification\nWhat is this a picture of?"
+  },
+  {
+    "objectID": "lectures/6a.html#image-classification-3",
+    "href": "lectures/6a.html#image-classification-3",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Image Classification",
+    "text": "Image Classification\nHow did you know it was a squirrel?"
+  },
+  {
     "objectID": "lectures/6a.html#convolutional-neural-networks-1",
     "href": "lectures/6a.html#convolutional-neural-networks-1",
     "title": "Convolutional\nNeural Networks",
     "section": "Convolutional Neural Networks",
-    "text": "Convolutional Neural Networks\nConvolutional Neural Networks were developed in terms of image analysis.\n\nThe idea is to mimic how a human minds will classify an image. (Knowledge from 1970’s perspective)\n\n\nA convolutional neural networks is trained by using a set of images that have been previously classfied.\n\n\nOnce the network is trained, we can give new types of images to be classified."
-  },
-  {
-    "objectID": "lectures/6a.html#convolutiona-neural-networks",
-    "href": "lectures/6a.html#convolutiona-neural-networks",
-    "title": "Convolutional\nNeural Networks",
-    "section": "Convolutiona Neural Networks",
-    "text": "Convolutiona Neural Networks"
-  },
-  {
-    "objectID": "lectures/6a.html#convolutional-neural-networks-2",
-    "href": "lectures/6a.html#convolutional-neural-networks-2",
-    "title": "Convolutional\nNeural Networks",
-    "section": "Convolutional Neural Networks",
-    "text": "Convolutional Neural Networks\nA CNN will identify certain features, arrange them, and match them to what is closely is known."
+    "text": "Convolutional Neural Networks\nConvolutional Neural Networks became popular in the 2010’s with the success of image classification.\n\nThe idea is to mimic how a human mind will classify an image. (From an old understanding of neurobiology.)\n\n\nWith the use of convolutional filters, a convolutional neural networks is trained by using a set of images that have been previously classfied.\n\n\nOnce the network is trained, new images can be classified."
   },
   {
     "objectID": "lectures/6a.html#cnn",
@@ -1874,6 +1881,20 @@
     "title": "Convolutional\nNeural Networks",
     "section": "CNN",
     "text": "CNN\n\nCredit: ISLR2"
+  },
+  {
+    "objectID": "lectures/6a.html#architecture",
+    "href": "lectures/6a.html#architecture",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Architecture",
+    "text": "Architecture"
+  },
+  {
+    "objectID": "lectures/6a.html#input-data-1",
+    "href": "lectures/6a.html#input-data-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Input Data",
+    "text": "Input Data"
   },
   {
     "objectID": "lectures/6a.html#convolution-filter",
@@ -1911,18 +1932,11 @@
     "text": "Max Pool\n\\[\n\\left[\n\\begin{array}{cccc}\n1 & 3 & 9 & 5 \\\\\n6 & 2 & 3 & 4 \\\\\n1 & 0 & 6 & 4 \\\\\n8 & 4 & 2 & 7\n\\end{array}\n\\right] \\rightarrow\n\\left[\n\\begin{array}{cc}\n6 & 9 \\\\\n8 & 7\n\\end{array}\n\\right]\n\\]"
   },
   {
-    "objectID": "lectures/6a.html#architecture-1",
-    "href": "lectures/6a.html#architecture-1",
+    "objectID": "lectures/6a.html#cifar-data",
+    "href": "lectures/6a.html#cifar-data",
     "title": "Convolutional\nNeural Networks",
-    "section": "Architecture",
-    "text": "Architecture"
-  },
-  {
-    "objectID": "lectures/6a.html#mnist-data-image",
-    "href": "lectures/6a.html#mnist-data-image",
-    "title": "Convolutional\nNeural Networks",
-    "section": "MNIST Data Image",
-    "text": "MNIST Data Image"
+    "section": "CIFAR Data",
+    "text": "CIFAR Data"
   },
   {
     "objectID": "lectures/6a.html#convolve-image",
@@ -1946,11 +1960,11 @@
     "text": "Training\nThe CNN is trained by supplying a set of pre-classified images.\n\nThe parameters in the convolution filters are estimated using standard techniques."
   },
   {
-    "objectID": "lectures/6a.html#mnist",
-    "href": "lectures/6a.html#mnist",
+    "objectID": "lectures/6a.html#cifar-data-1",
+    "href": "lectures/6a.html#cifar-data-1",
     "title": "Convolutional\nNeural Networks",
-    "section": "MNIST",
-    "text": "MNIST\nThis is a database of handwritten digits.\nWe will use to construct neural networks that will classify images."
+    "section": "CIFAR Data",
+    "text": "CIFAR Data"
   },
   {
     "objectID": "lectures/6a.html#torch-packages-in-r",
@@ -1960,46 +1974,11 @@
     "text": "Torch Packages in R\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(torchdatasets) # for datasets we are going to use\nlibrary(zeallot)\ntorch_manual_seed(13)"
   },
   {
-    "objectID": "lectures/6a.html#mnist-1",
-    "href": "lectures/6a.html#mnist-1",
+    "objectID": "lectures/6a.html#cifar-10",
+    "href": "lectures/6a.html#cifar-10",
     "title": "Convolutional\nNeural Networks",
-    "section": "MNIST",
-    "text": "MNIST\n\n###\ntrain_ds &lt;- mnist_dataset(root = \".\", train = TRUE, download = TRUE)\ntest_ds &lt;- mnist_dataset(root = \".\", train = FALSE, download = TRUE)\n\ntrain_ds[1]\n# test_ds[2]"
-  },
-  {
-    "objectID": "lectures/6a.html#transforming-data",
-    "href": "lectures/6a.html#transforming-data",
-    "title": "Convolutional\nNeural Networks",
-    "section": "Transforming Data",
-    "text": "Transforming Data\nIn order to use torch, you must transform the data: - tensor - flatten - tensor divided by the potential values (255)\n\n###\ntransform &lt;- function(x) {\n  x |&gt;\n    torch_tensor()  |&gt;\n    torch_flatten() |&gt;\n    torch_div(255)\n}\ntrain_ds &lt;- mnist_dataset(\n  root = \".\",\n  train = TRUE,\n  download = TRUE,\n  transform = transform\n)\ntest_ds &lt;- mnist_dataset(\n  root = \".\",\n  train = FALSE,\n  download = TRUE,\n  transform = transform\n)"
-  },
-  {
-    "objectID": "lectures/6a.html#neural-network-model-set-up",
-    "href": "lectures/6a.html#neural-network-model-set-up",
-    "title": "Convolutional\nNeural Networks",
-    "section": "Neural Network Model Set Up",
-    "text": "Neural Network Model Set Up\nThe nn_module will begin to setup the neural network. It requires the initialize and forward functions.\n\ninitialize is a function that describes the elements of the neural network, the layers.\n\n\nnn_linear will construct a linear framework for the number of inputs, and the number of outputs in the neural network.\n\n\nnn_dropout will randomly “zero” an input elements of a tensor with probability p.\n\n\nnn_relu specifies the linear unit function\n\n\nforward describes how the neural network is formatted using the values from the initialize function.\n\n\n###\nmodelnn &lt;- nn_module(\n  initialize = function() {\n    self$linear1 &lt;- nn_linear(in_features = 28*28, out_features = 256)\n    self$linear2 &lt;- nn_linear(in_features = 256, out_features = 128)\n    self$linear3 &lt;- nn_linear(in_features = 128, out_features = 10)\n\n    self$drop1 &lt;- nn_dropout(p = 0.4)\n    self$drop2 &lt;- nn_dropout(p = 0.3)\n\n    self$activation &lt;- nn_relu()\n  },\n  forward = function(x) {\n    x |&gt;\n      self$linear1() |&gt;\n      self$activation() |&gt;\n      self$drop1() |&gt;\n\n      self$linear2() |&gt;\n      self$activation() |&gt;\n      self$drop2() |&gt;\n      self$linear3()\n  }\n)"
-  },
-  {
-    "objectID": "lectures/6a.html#set-up-neural-network",
-    "href": "lectures/6a.html#set-up-neural-network",
-    "title": "Convolutional\nNeural Networks",
-    "section": "Set Up Neural Network",
-    "text": "Set Up Neural Network\nTells luz (torch) how to execute the neural network.\n\nmodelnn &lt;- modelnn |&gt;\n  setup(\n    loss = nn_cross_entropy_loss(),\n    optimizer = optim_rmsprop,\n    metrics = list(luz_metric_accuracy())\n  )"
-  },
-  {
-    "objectID": "lectures/6a.html#fit-the-neural-network",
-    "href": "lectures/6a.html#fit-the-neural-network",
-    "title": "Convolutional\nNeural Networks",
-    "section": "Fit the Neural Network",
-    "text": "Fit the Neural Network\n\nFittingPlot\n\n\n\nsystem.time(\n   fitted &lt;- modelnn |&gt;\n      fit(\n        data = train_ds,\n        epochs = 5,\n        valid_data = 0.2,\n        dataloader_options = list(batch_size = 256),\n        verbose = FALSE\n      )\n )\n\n\n\n\nplot(fitted)"
-  },
-  {
-    "objectID": "lectures/6a.html#test-efficiency-of-neural-network",
-    "href": "lectures/6a.html#test-efficiency-of-neural-network",
-    "title": "Convolutional\nNeural Networks",
-    "section": "Test Efficiency of Neural Network",
-    "text": "Test Efficiency of Neural Network\n\naccuracy &lt;- function(pred, truth) {\n   mean(pred == truth) }\n\n# gets the true classes from all observations in test_ds.\ntruth &lt;- sapply(seq_along(test_ds), function(x) test_ds[x][[2]])\n\nfitted |&gt;\n  predict(test_ds) |&gt;\n  torch_argmax(dim = 2) |&gt; # the predicted class is the one with higher 'logit'.\n  as_array() |&gt;  # convert to an R object\n  accuracy(truth) # use function created"
+    "section": "CIFAR-10",
+    "text": "CIFAR-10"
   },
   {
     "objectID": "posts/week_2.html",
