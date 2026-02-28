@@ -42,7 +42,7 @@ editor: source
 
 ## R Packages
 
-```{r}
+```r
 # install.packages("tidyverse")
 # install.packages("torch")
 # install.packages("luz")
@@ -128,11 +128,90 @@ Once the network is trained, new images can be classified.
 ![](https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg){fig-align="center"}
 
 
+
 # Input Data
 
 ## Input Data
 
-# Convolutional Filter
+```{r}
+#| eval: true
+#| echo: false
+
+
+library(torch)
+library(torchvision)
+
+train_ds <- cifar10_dataset(
+  root = "../../",
+  train = TRUE,
+  download = TRUE,
+  transform = transform_to_tensor
+)
+
+classes <- c("airplane","automobile","bird","cat","deer",
+             "dog","frog","horse","ship","truck")
+
+sample <- train_ds[1]
+img <- sample[[1]]$permute(c(2,3,1))
+label <- sample[[2]]
+
+plot(as.raster(as.array(img)))
+
+```
+
+## Channels
+ 
+```{r}
+#| eval: true
+#| echo: false
+
+
+red   <- img[,,1]
+green <- img[,,2]
+blue  <- img[,,3]
+
+# Convert to arrays
+red   <- as.array(red)
+green <- as.array(green)
+blue  <- as.array(blue)
+
+make_colored_channel <- function(channel_matrix, color_index) {
+  rgb_array <- array(0, dim = c(32, 32, 3))
+  rgb_array[,,color_index] <- channel_matrix
+  rgb_array
+}
+
+par(mfrow = c(1,3))
+
+plot(as.raster(make_colored_channel(red, 1)), main = "Red")
+
+plot(as.raster(make_colored_channel(green, 2)), main = "Green")
+
+plot(as.raster(make_colored_channel(blue, 3)), main = "Blue")
+
+par(mfrow = c(1,1))
+
+```
+
+## Data - Red
+
+```{r}
+#| eval: true
+#| echo: false
+
+sample$x[1,,] |> as.matrix()
+```
+
+
+# Convolutional Block
+
+## Convolutional Block
+
+A convolutional block (layer) is the process where a matrix (array) of data undergoes the following process.
+
+1. Apply a convolutional filter
+2. Fold the channels
+3. Pool the data
 
 ## Convolution Filter
 
@@ -206,13 +285,81 @@ g\alpha + h\beta + j\gamma + k\delta & h\alpha + i\beta + k\gamma + l\delta
 $$
 :::
 
-## Convolutional Layers
 
-Convolution layers are a set of filters in a hidden layers. We can have $K$ layers that an image is passed through.
+## Data Example
+
+$$
+\left(
+\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 
+\end{array}
+\right)
+*
+\left(
+\begin{array}{cc}
+1/2 & 1/3 \\
+1/3 & 1/2
+\end{array}
+\right)
+$$
+
+$$
+\left(
+\begin{array}{cc}
+1/2 + 2/3 + 4/3 + 5/2 & 1 + 1 + 5/3 + 3  \\
+2 + 5/3 + 7/3 + 4 & 5/2 + 2 + 8/3 + 9/2
+\end{array}
+\right)
+$$
+
+## Folding
+
+Folding is the process when we combine channels together.
+It is common to add the channels together once the convolution filter is applied to each one.
+
+## Folding Example
+
+
+$$
+\left(
+\begin{array}{cc}
+1 & 2  \\
+3 & 4 
+\end{array}
+\right)
++
+\left(
+\begin{array}{cc}
+5 & 6 \\
+7 & 8
+\end{array}
+\right)
++
+\left(
+\begin{array}{cc}
+9 & 10 \\
+11 & 12
+\end{array}
+\right)
+$$
+
+
+$$
+\left(
+\begin{array}{cc}
+15 & 18 \\
+21 & 24
+\end{array}
+\right)
+$$
+
 
 ## Pooling Layers
 
 The act of summarizing a large matrix to a smaller matrix.
+
 
 ## Max Pool
 
@@ -233,8 +380,157 @@ $$
 \right]
 $$
 
+## Overall
 
-## CIFAR Data
+::: panel-tabset
+
+### Input
+
+$$
+\left(
+\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9  
+\end{array}
+\right)
+$$
+
+$$
+\left(
+\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9  
+\end{array}
+\right)
+$$
+
+$$
+\left(
+\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9  
+\end{array}
+\right)
+$$
+
+
+### Filter
+
+$$
+\left(
+\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9  
+\end{array}
+\right)
+*
+\left(
+\begin{array}{cc}
+\alpha & \beta \\
+\gamma & \delta
+\end{array}
+\right)
+$$
+
+$$
+\left(
+\begin{array}{ccc}
+10 & 20 & 30 \\
+40 & 50 & 60 \\
+70 & 80 & 90  
+\end{array}
+\right)
+*
+\left(
+\begin{array}{cc}
+\alpha & \beta \\
+\gamma & \delta
+\end{array}
+\right)
+$$
+
+
+$$
+\left(
+\begin{array}{ccc}
+100 & 200 & 300 \\
+400 & 500 & 600 \\
+700 & 800 & 900  
+\end{array}
+\right)
+*
+\left(
+\begin{array}{cc}
+\alpha & \beta \\
+\gamma & \delta
+\end{array}
+\right)
+$$
+
+
+
+### Fold
+
+$$
+\left(
+\begin{array}{cc}
+1 & 2  \\
+3 & 4 
+\end{array}
+\right)
++
+\left(
+\begin{array}{cc}
+5 & 6 \\
+7 & 8
+\end{array}
+\right)
++
+\left(
+\begin{array}{cc}
+9 & 10 \\
+11 & 12
+\end{array}
+\right)
+$$
+
+
+$$
+\left(
+\begin{array}{cc}
+15 & 18 \\
+21 & 24
+\end{array}
+\right)
+$$
+
+### Pool
+
+$$
+\left[
+\begin{array}{cccc}
+1 & 3 & 9 & 5 \\
+6 & 2 & 3 & 4 \\
+1 & 0 & 6 & 4 \\
+8 & 4 & 2 & 7
+\end{array}
+\right] \rightarrow
+\left[
+\begin{array}{cc}
+6 & 9 \\
+8 & 7
+\end{array}
+\right]
+$$
+
+:::
+
+
+# CNN Architecture
 
 ## Convolve Image
 
@@ -256,19 +552,144 @@ The parameters in the convolution filters are estimated using standard technique
 
 # R CIFAR Data Analysis
 
-## CIFAR Data
+## CIFAR-10 Data
+
+The Canadian Institute for Advanced Research (CIFAR) provides a collection of 60,000 images that are classified in 10 categories. Each image has 32 by 32 pixels.
+
+## CIFAR-10 Classes
+
+::: {.columns}
+::: {.column}
+- airplanes
+- cars
+- birds
+- cats
+- deer
+:::
+::: {.column}
+- dogs
+- frogs
+- horses
+- ships
+- trucks
+:::
+:::
+
+## CIFAR-10 Example
+
+```{r}
+#| echo: false
+#| eval: true
+
+sample <- train_ds[39]
+img <- sample[[1]]$permute(c(2,3,1))
+label <- sample[[2]]
+
+plot(as.raster(as.array(img)))
+
+```
 
 ## Torch Packages in R
 
 ```{r}
 
+library(tidyverse)
 library(torch)
-library(luz) # high-level interface for torch
-library(torchdatasets) # for datasets we are going to use
-library(zeallot)
-torch_manual_seed(13)
+library(luz)
+library(torchvision)
+set.seed(909)
+torch_manual_seed(909)
 
 ```
 
-## CIFAR-10
+## CIFAR-10 Data
 
+```{r}
+dir <- "../"
+
+
+train_ds <- cifar10_dataset(
+  root = dir,
+  train = TRUE, 
+  download = TRUE, 
+  transform = transform_to_tensor
+)
+
+test_ds <- cifar10_dataset(
+  dir, 
+  train = FALSE, 
+  download = TRUE,
+  transform = transform_to_tensor
+)
+
+train_dl <- dataloader(train_ds,
+  batch_size = 128,
+  shuffle = TRUE
+)
+```
+
+## Convolutional Block
+
+
+```{r}
+conv_block <- nn_module(
+  initialize = function(in_channels, out_channels) {
+    self$conv <- nn_conv2d(
+      in_channels = in_channels, 
+      out_channels = out_channels, 
+      kernel_size = c(3,3), 
+      padding = "same"
+    )
+    self$relu <- nn_relu()
+    self$pool <- nn_max_pool2d(kernel_size = c(2,2))
+  },
+  forward = function(x) {
+    x |> 
+      self$conv() |> 
+      self$relu() |> 
+      self$pool()
+  }
+)
+```
+
+## Model
+
+
+```{r}
+model <- nn_module(
+  initialize = function() {
+    self$conv <- nn_sequential(
+      conv_block(3, 8),
+      conv_block(8, 16)
+    )
+    self$output <- nn_sequential(
+      nn_dropout(0.5),
+      nn_linear(1024, 16),
+      nn_relu(),
+      nn_linear(16, 10)
+    )
+  },
+  forward = function(x) {
+    x %>% 
+      self$conv() |> 
+      torch_flatten(start_dim = 2) |> 
+      self$output()
+  }
+)
+```
+
+## Fitting Model
+
+
+```{r}
+fitted <- model |> 
+  setup(
+    loss = nn_cross_entropy_loss(),
+    optimizer = optim_rmsprop, 
+  ) |> 
+  set_opt_hparams(lr = 0.001) |> 
+  fit(
+    train_dl,
+    epochs = 3
+  )
+```

@@ -1838,7 +1838,7 @@
     "href": "lectures/6a.html#r-packages",
     "title": "Convolutional\nNeural Networks",
     "section": "R Packages",
-    "text": "R Packages\n\n# install.packages(\"tidyverse\")\n# install.packages(\"torch\")\n# install.packages(\"luz\")\n# install.packages(\"torchvision\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(tidyverse)\nlibrary(torchvision) # for datasets and image transformation"
+    "text": "R Packages\n# install.packages(\"tidyverse\")\n# install.packages(\"torch\")\n# install.packages(\"luz\")\n# install.packages(\"torchvision\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(tidyverse)\nlibrary(torchvision) # for datasets and image transformation"
   },
   {
     "objectID": "lectures/6a.html#python-data",
@@ -1897,6 +1897,27 @@
     "text": "Input Data"
   },
   {
+    "objectID": "lectures/6a.html#channels",
+    "href": "lectures/6a.html#channels",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Channels",
+    "text": "Channels"
+  },
+  {
+    "objectID": "lectures/6a.html#data---red",
+    "href": "lectures/6a.html#data---red",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Data - Red",
+    "text": "Data - Red\n\n\n#&gt;             [,1]      [,2]       [,3]      [,4]      [,5]      [,6]      [,7]\n#&gt;  [1,] 0.23137255 0.1686275 0.19607843 0.2666667 0.3843137 0.4666667 0.5450981\n#&gt;  [2,] 0.06274510 0.0000000 0.07058824 0.2000000 0.3450980 0.4705882 0.5019608\n#&gt;  [3,] 0.09803922 0.0627451 0.19215687 0.3254902 0.4313726 0.5058824 0.5098040\n#&gt;  [4,] 0.12941177 0.1490196 0.34117648 0.4156863 0.4509804 0.4588235 0.4470588\n#&gt;  [5,] 0.19607843 0.2313726 0.40000001 0.4980392 0.4862745 0.4745098 0.4705882\n#&gt;  [6,] 0.27843139 0.3294118 0.43137255 0.5058824 0.5333334 0.5137255 0.5058824\n#&gt;  [7,] 0.38039216 0.4352941 0.48235294 0.5098040 0.5333334 0.5176471 0.4784314\n#&gt;  [8,] 0.45098040 0.4666667 0.50980395 0.5490196 0.5215687 0.4980392 0.5411765\n#&gt;  [9,] 0.53725493 0.5019608 0.51764709 0.5019608 0.4666667 0.4823529 0.5019608\n#&gt; [10,] 0.60392159 0.6039216 0.61176473 0.5490196 0.4823529 0.4901961 0.4941176\n#&gt; [11,] 0.60392159 0.6078432 0.61176473 0.5764706 0.5215687 0.5372549 0.5450981\n#&gt; [12,] 0.56862748 0.5725490 0.57254905 0.5294118 0.4980392 0.5058824 0.4588235\n#&gt; [13,] 0.55686277 0.5529412 0.54901963 0.5647059 0.5764706 0.4745098 0.3294118\n#&gt; [14,] 0.61960787 0.6039216 0.55686277 0.5607843 0.5176471 0.3529412 0.2823530\n#&gt; [15,] 0.56862748 0.5843138 0.57647061 0.5764706 0.5333334 0.3137255 0.3490196\n#&gt; [16,] 0.58039218 0.5725490 0.56862748 0.5764706 0.5215687 0.2470588 0.2588235\n#&gt; [17,] 0.58431375 0.5607843 0.56470591 0.5921569 0.5176471 0.2509804 0.3294118\n#&gt; [18,] 0.57647061 0.5254902 0.54901963 0.5803922 0.5294118 0.3921569 0.4235294\n#&gt; [19,] 0.59607846 0.4588235 0.44705883 0.4823529 0.4941176 0.4784314 0.3647059\n#&gt; [20,] 0.56862748 0.4980392 0.50196081 0.5215687 0.5176471 0.5294118 0.6705883\n#&gt; [21,] 0.56078434 0.4980392 0.50588238 0.5058824 0.5098040 0.5490196 0.8588235\n#&gt; [22,] 0.56078434 0.4901961 0.51372552 0.5019608 0.4823529 0.6000000 0.5803922\n#&gt; [23,] 0.55294120 0.5137255 0.54509807 0.5450981 0.5411765 0.5921569 0.5019608\n#&gt; [24,] 0.56078434 0.5450981 0.54117650 0.5843138 0.6274510 0.5882353 0.5764706\n#&gt; [25,] 0.58431375 0.5215687 0.53333336 0.5764706 0.5882353 0.6000000 0.6156863\n#&gt; [26,] 0.67450982 0.5647059 0.52941179 0.5333334 0.5294118 0.5450981 0.6000000\n#&gt; [27,] 0.79215688 0.7333333 0.59215689 0.5019608 0.4784314 0.5254902 0.5568628\n#&gt; [28,] 0.84705883 0.7568628 0.65882355 0.5921569 0.5137255 0.4941176 0.5411765\n#&gt; [29,] 0.86274511 0.7882353 0.72941178 0.6745098 0.6117647 0.5568628 0.5568628\n#&gt; [30,] 0.81568629 0.7882353 0.77647060 0.7490196 0.7176471 0.6705883 0.6235294\n#&gt; [31,] 0.70588237 0.6784314 0.72941178 0.7607843 0.7764706 0.7882353 0.7411765\n#&gt; [32,] 0.69411767 0.6588235 0.70196080 0.7372549 0.7921569 0.8549020 0.8549020\n#&gt;            [,8]      [,9]     [,10]     [,11]     [,12]     [,13]     [,14]\n#&gt;  [1,] 0.5686275 0.5843138 0.5843138 0.5137255 0.4901961 0.5568628 0.5647059\n#&gt;  [2,] 0.4980392 0.4941176 0.4549020 0.4156863 0.3960784 0.4117647 0.4431373\n#&gt;  [3,] 0.4745098 0.4431373 0.4392157 0.4392157 0.4156863 0.4117647 0.5019608\n#&gt;  [4,] 0.4117647 0.4196078 0.4745098 0.4901961 0.4274510 0.4431373 0.5725490\n#&gt;  [5,] 0.4470588 0.4196078 0.4901961 0.5058824 0.4156863 0.4235294 0.4862745\n#&gt;  [6,] 0.4666667 0.4235294 0.4784314 0.4823529 0.4117647 0.4196078 0.4352941\n#&gt;  [7,] 0.4745098 0.4980392 0.5411765 0.4862745 0.4705882 0.4196078 0.3137255\n#&gt;  [8,] 0.5372549 0.5137255 0.5215687 0.5254902 0.4235294 0.2823530 0.2000000\n#&gt;  [9,] 0.5098040 0.4745098 0.5372549 0.5137255 0.2901961 0.2117647 0.1960784\n#&gt; [10,] 0.4980392 0.5215687 0.5176471 0.3529412 0.2470588 0.2431373 0.2745098\n#&gt; [11,] 0.5254902 0.5529412 0.4745098 0.3137255 0.3803922 0.3529412 0.3843137\n#&gt; [12,] 0.4039216 0.5098040 0.4705882 0.4352941 0.5725490 0.5333334 0.6392157\n#&gt; [13,] 0.3450980 0.4274510 0.3960784 0.5411765 0.8352941 0.6980392 0.7490196\n#&gt; [14,] 0.3176471 0.3294118 0.4196078 0.6470588 0.8980392 0.7176471 0.7490196\n#&gt; [15,] 0.4117647 0.3764706 0.5058824 0.7529412 0.7254902 0.5686275 0.7960784\n#&gt; [16,] 0.3450980 0.4431373 0.7137255 0.8627451 0.5411765 0.6352941 0.8078431\n#&gt; [17,] 0.4392157 0.6392157 0.8745098 0.8078431 0.5686275 0.7686275 0.8000000\n#&gt; [18,] 0.5647059 0.8235294 0.9725490 0.6862745 0.6862745 0.8627451 0.8862745\n#&gt; [19,] 0.7019608 0.9333333 0.9725490 0.6666667 0.7254902 0.9450980 0.9019608\n#&gt; [20,] 0.9294118 0.9882353 0.8980392 0.6784314 0.6627451 0.8627451 0.7607843\n#&gt; [21,] 0.9568627 0.8235294 0.7568628 0.6509804 0.6000000 0.7490196 0.7019608\n#&gt; [22,] 0.6509804 0.7372549 0.7137255 0.6705883 0.6470588 0.7647059 0.7450981\n#&gt; [23,] 0.5333334 0.6862745 0.6784314 0.7411765 0.8039216 0.7882353 0.6588235\n#&gt; [24,] 0.5921569 0.6627451 0.6549020 0.7019608 0.8313726 0.7960784 0.8117647\n#&gt; [25,] 0.6352941 0.6862745 0.7450981 0.6509804 0.7921569 0.8784314 0.7725490\n#&gt; [26,] 0.6392157 0.6509804 0.7215686 0.6509804 0.5882353 0.7215686 0.6117647\n#&gt; [27,] 0.5882353 0.6000000 0.5803922 0.5294118 0.4980392 0.6000000 0.6509804\n#&gt; [28,] 0.5647059 0.5568628 0.5372549 0.4705882 0.5137255 0.5686275 0.5647059\n#&gt; [29,] 0.6000000 0.5882353 0.5450981 0.4941176 0.5333334 0.5803922 0.5529412\n#&gt; [30,] 0.5764706 0.5294118 0.5098040 0.5450981 0.5764706 0.5647059 0.5686275\n#&gt; [31,] 0.6784314 0.6117647 0.5450981 0.5568628 0.5686275 0.5529412 0.5529412\n#&gt; [32,] 0.8117647 0.7490196 0.6862745 0.6509804 0.6392157 0.6392157 0.6313726\n#&gt;           [,15]     [,16]     [,17]     [,18]     [,19]     [,20]     [,21]\n#&gt;  [1,] 0.5372549 0.5058824 0.5372549 0.5254902 0.4862745 0.5450981 0.5450981\n#&gt;  [2,] 0.4274510 0.4392157 0.4666667 0.4274510 0.4117647 0.4901961 0.4980392\n#&gt;  [3,] 0.4862745 0.5098040 0.4980392 0.4784314 0.4509804 0.4705882 0.5098040\n#&gt;  [4,] 0.5215687 0.4980392 0.4627451 0.4588235 0.4980392 0.4784314 0.5176471\n#&gt;  [5,] 0.4745098 0.4235294 0.3843137 0.4313726 0.4588235 0.4705882 0.5254902\n#&gt;  [6,] 0.4235294 0.3843137 0.3686275 0.3803922 0.3254902 0.3450980 0.4000000\n#&gt;  [7,] 0.2666667 0.2901961 0.3960784 0.4117647 0.2549020 0.2274510 0.2470588\n#&gt;  [8,] 0.1607843 0.2823530 0.7098039 0.8196079 0.4901961 0.2666667 0.2509804\n#&gt;  [9,] 0.1725490 0.3372549 0.7960784 0.8509804 0.6352941 0.3921569 0.3019608\n#&gt; [10,] 0.3098039 0.4039216 0.5960785 0.5803922 0.5529412 0.4745098 0.3960784\n#&gt; [11,] 0.5372549 0.5450981 0.5803922 0.5254902 0.5411765 0.5254902 0.5490196\n#&gt; [12,] 0.6627451 0.5960785 0.6313726 0.5803922 0.6941177 0.6313726 0.7647059\n#&gt; [13,] 0.8274510 0.7411765 0.8039216 0.8117647 0.8352941 0.7490196 0.7803922\n#&gt; [14,] 0.9372549 0.8588235 0.8941177 0.8823529 0.8392157 0.8470588 0.8235294\n#&gt; [15,] 0.8745098 0.9490196 0.9568627 0.9333333 0.9450980 0.8901961 0.8823529\n#&gt; [16,] 0.7686275 0.9686275 1.0000000 1.0000000 0.9607843 0.9254902 0.9019608\n#&gt; [17,] 0.8627451 0.9529412 0.9607843 0.9372549 0.9176471 0.9058824 0.7647059\n#&gt; [18,] 0.9019608 0.9137255 0.8784314 0.7882353 0.7215686 0.7098039 0.7450981\n#&gt; [19,] 0.7333333 0.7058824 0.6509804 0.5725490 0.5843138 0.6156863 0.7215686\n#&gt; [20,] 0.4823529 0.5294118 0.4980392 0.5921569 0.6470588 0.5176471 0.5921569\n#&gt; [21,] 0.5019608 0.5764706 0.5843138 0.6745098 0.5764706 0.5019608 0.5529412\n#&gt; [22,] 0.5960785 0.5607843 0.5960785 0.6000000 0.5568628 0.5529412 0.5294118\n#&gt; [23,] 0.5921569 0.5686275 0.5725490 0.5843138 0.6000000 0.5843138 0.5647059\n#&gt; [24,] 0.5843138 0.5450981 0.5647059 0.5372549 0.5921569 0.6078432 0.5960785\n#&gt; [25,] 0.7529412 0.7058824 0.5725490 0.4941176 0.5529412 0.6117647 0.6000000\n#&gt; [26,] 0.6196079 0.6588235 0.5843138 0.5294118 0.5098040 0.5176471 0.5019608\n#&gt; [27,] 0.5607843 0.5098040 0.5019608 0.5921569 0.5960785 0.5294118 0.5450981\n#&gt; [28,] 0.5372549 0.4980392 0.4941176 0.5450981 0.6000000 0.5843138 0.5490196\n#&gt; [29,] 0.5137255 0.4941176 0.4980392 0.5411765 0.5882353 0.6039216 0.5843138\n#&gt; [30,] 0.5372549 0.5333334 0.5372549 0.5803922 0.5960785 0.5882353 0.6078432\n#&gt; [31,] 0.5450981 0.5490196 0.5607843 0.5450981 0.5411765 0.5607843 0.5725490\n#&gt; [32,] 0.6000000 0.6235294 0.6352941 0.5843138 0.5490196 0.5803922 0.6313726\n#&gt;           [,22]     [,23]     [,24]     [,25]     [,26]     [,27]     [,28]\n#&gt;  [1,] 0.5215687 0.5333334 0.5450981 0.5960785 0.6392157 0.6588235 0.6235294\n#&gt;  [2,] 0.4784314 0.5137255 0.4862745 0.4745098 0.5137255 0.5176471 0.5215687\n#&gt;  [3,] 0.5137255 0.5450981 0.4980392 0.4941176 0.4980392 0.5098040 0.5568628\n#&gt;  [4,] 0.5372549 0.5333334 0.5137255 0.4862745 0.5098040 0.5176471 0.5294118\n#&gt;  [5,] 0.5490196 0.5137255 0.5529412 0.5294118 0.4980392 0.4745098 0.4666667\n#&gt;  [6,] 0.3803922 0.3450980 0.4627451 0.5490196 0.5333334 0.4705882 0.4196078\n#&gt;  [7,] 0.3058824 0.5333334 0.4784314 0.5450981 0.5921569 0.5058824 0.4235294\n#&gt;  [8,] 0.3215686 0.4823529 0.4392157 0.5294118 0.5921569 0.5372549 0.4470588\n#&gt;  [9,] 0.2941177 0.2901961 0.2980392 0.4196078 0.5294118 0.5294118 0.5058824\n#&gt; [10,] 0.3764706 0.3372549 0.2941177 0.3960784 0.5333334 0.5333334 0.5254902\n#&gt; [11,] 0.6862745 0.5568628 0.4000000 0.4235294 0.5294118 0.5137255 0.5215687\n#&gt; [12,] 0.8196079 0.7411765 0.4901961 0.4235294 0.5490196 0.5372549 0.5176471\n#&gt; [13,] 0.7372549 0.6313726 0.5098040 0.4862745 0.5137255 0.5098040 0.5137255\n#&gt; [14,] 0.7843137 0.7411765 0.6823530 0.6313726 0.5450981 0.5254902 0.4941176\n#&gt; [15,] 0.9215686 0.8588235 0.8784314 0.8431373 0.6117647 0.5019608 0.5058824\n#&gt; [16,] 0.8431373 0.9058824 0.9803922 0.9450980 0.6196079 0.4901961 0.4941176\n#&gt; [17,] 0.5882353 0.8156863 0.9803922 0.8901961 0.6392157 0.5686275 0.5607843\n#&gt; [18,] 0.6666667 0.7019608 0.9058824 0.8745098 0.6352941 0.5725490 0.5490196\n#&gt; [19,] 0.8470588 0.8313726 0.9254902 0.9254902 0.6509804 0.5333334 0.5254902\n#&gt; [20,] 0.7921569 0.9411765 0.9411765 0.8705882 0.6117647 0.4666667 0.4705882\n#&gt; [21,] 0.6784314 0.7921569 0.7450981 0.7764706 0.5960785 0.3921569 0.4274510\n#&gt; [22,] 0.5333334 0.5803922 0.5529412 0.5529412 0.5411765 0.4352941 0.4352941\n#&gt; [23,] 0.5647059 0.5686275 0.5607843 0.5058824 0.4823529 0.4862745 0.4431373\n#&gt; [24,] 0.5490196 0.4196078 0.3568628 0.3294118 0.4117647 0.5176471 0.4627451\n#&gt; [25,] 0.4509804 0.3019608 0.3098039 0.3647059 0.4941176 0.5215687 0.4666667\n#&gt; [26,] 0.4980392 0.5294118 0.5607843 0.5450981 0.5333334 0.4980392 0.4745098\n#&gt; [27,] 0.6078432 0.6313726 0.6039216 0.6039216 0.5607843 0.5098040 0.5176471\n#&gt; [28,] 0.5294118 0.5764706 0.5803922 0.5843138 0.5843138 0.5372549 0.5607843\n#&gt; [29,] 0.4862745 0.4941176 0.5529412 0.5686275 0.5764706 0.4980392 0.4470588\n#&gt; [30,] 0.5411765 0.4705882 0.5019608 0.5568628 0.5294118 0.3529412 0.1960784\n#&gt; [31,] 0.5294118 0.4588235 0.4392157 0.4784314 0.4078431 0.2274510 0.1333333\n#&gt; [32,] 0.5647059 0.4392157 0.4666667 0.5098040 0.4705882 0.3607843 0.4039216\n#&gt;           [,29]     [,30]     [,31]     [,32]\n#&gt;  [1,] 0.6196079 0.6196079 0.5960785 0.5803922\n#&gt;  [2,] 0.5215687 0.4823529 0.4666667 0.4784314\n#&gt;  [3,] 0.5098040 0.4627451 0.4705882 0.4274510\n#&gt;  [4,] 0.5098040 0.4901961 0.4745098 0.3686275\n#&gt;  [5,] 0.4039216 0.3411765 0.2941177 0.2627451\n#&gt;  [6,] 0.3450980 0.2627451 0.1372549 0.1254902\n#&gt;  [7,] 0.3725490 0.3764706 0.3490196 0.2588235\n#&gt;  [8,] 0.4117647 0.3960784 0.4941176 0.4000000\n#&gt;  [9,] 0.4980392 0.4666667 0.4901961 0.5254902\n#&gt; [10,] 0.5215687 0.5176471 0.5019608 0.5215687\n#&gt; [11,] 0.5411765 0.5333334 0.5098040 0.5254902\n#&gt; [12,] 0.5333334 0.5215687 0.5176471 0.5215687\n#&gt; [13,] 0.5254902 0.5294118 0.5333334 0.5215687\n#&gt; [14,] 0.5137255 0.5568628 0.5333334 0.5411765\n#&gt; [15,] 0.5137255 0.5215687 0.5019608 0.5098040\n#&gt; [16,] 0.4862745 0.4901961 0.4941176 0.4862745\n#&gt; [17,] 0.5490196 0.5333334 0.4745098 0.4470588\n#&gt; [18,] 0.5450981 0.5686275 0.5568628 0.5019608\n#&gt; [19,] 0.5098040 0.4980392 0.5372549 0.5921569\n#&gt; [20,] 0.4392157 0.3921569 0.3882353 0.5490196\n#&gt; [21,] 0.4666667 0.4745098 0.4235294 0.5333334\n#&gt; [22,] 0.4745098 0.5058824 0.5411765 0.7019608\n#&gt; [23,] 0.4235294 0.4431373 0.5803922 0.7803922\n#&gt; [24,] 0.3764706 0.4000000 0.6235294 0.7450981\n#&gt; [25,] 0.4431373 0.5490196 0.7333333 0.6039216\n#&gt; [26,] 0.5294118 0.7411765 0.8274510 0.5333334\n#&gt; [27,] 0.6705883 0.8431373 0.7294118 0.4588235\n#&gt; [28,] 0.7960784 0.8078431 0.4862745 0.2784314\n#&gt; [29,] 0.7294118 0.6784314 0.2196078 0.1294118\n#&gt; [30,] 0.5372549 0.6274510 0.2196078 0.2078431\n#&gt; [31,] 0.5137255 0.7215686 0.3803922 0.3254902\n#&gt; [32,] 0.6666667 0.8470588 0.5921569 0.4823529"
+  },
+  {
+    "objectID": "lectures/6a.html#convolutional-block-1",
+    "href": "lectures/6a.html#convolutional-block-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolutional Block",
+    "text": "Convolutional Block\nA convolutional block (layer) is the process where a matrix (array) of data undergoes the following process.\n\nApply a convolutional filter\nFold the channels\nPool the data"
+  },
+  {
     "objectID": "lectures/6a.html#convolution-filter",
     "href": "lectures/6a.html#convolution-filter",
     "title": "Convolutional\nNeural Networks",
@@ -1911,11 +1932,25 @@
     "text": "Convolution Filter\n\nImageFilterBothResults\n\n\n\\[\n\\left(\n\\begin{array}{ccc}\na & b & c \\\\\nd & e & f \\\\\ng & h & i \\\\\nj & k & l\n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left(\n\\begin{array}{cc}\n\\alpha & \\beta \\\\\n\\gamma & \\delta\n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left(\n\\begin{array}{ccc}\na & b & c \\\\\nd & e & f \\\\\ng & h & i \\\\\nj & k & l\n\\end{array}\n\\right)\n*\n\\left(\n\\begin{array}{cc}\n\\alpha & \\beta \\\\\n\\gamma & \\delta\n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left(\n\\begin{array}{cc}\na\\alpha + b\\beta + d\\gamma + w\\delta & b\\alpha + c\\beta + e\\gamma + f\\delta \\\\\nd\\alpha + e\\beta + g\\gamma + h\\delta & e\\alpha + f\\beta + h\\gamma + i\\delta \\\\\ng\\alpha + h\\beta + j\\gamma + k\\delta & h\\alpha + i\\beta + k\\gamma + l\\delta\n\\end{array}\n\\right)\n\\]"
   },
   {
-    "objectID": "lectures/6a.html#convolutional-layers",
-    "href": "lectures/6a.html#convolutional-layers",
+    "objectID": "lectures/6a.html#data-example",
+    "href": "lectures/6a.html#data-example",
     "title": "Convolutional\nNeural Networks",
-    "section": "Convolutional Layers",
-    "text": "Convolutional Layers\nConvolution layers are a set of filters in a hidden layers. We can have \\(K\\) layers that an image is passed through."
+    "section": "Data Example",
+    "text": "Data Example\n\\[\n\\left(\n\\begin{array}{ccc}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{array}\n\\right)\n*\n\\left(\n\\begin{array}{cc}\n1/2 & 1/3 \\\\\n1/3 & 1/2\n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{cc}\n1/2 + 2/3 + 4/3 + 5/2 & 1 + 1 + 5/3 + 3  \\\\\n2 + 5/3 + 7/3 + 4 & 5/2 + 2 + 8/3 + 9/2\n\\end{array}\n\\right)\n\\]"
+  },
+  {
+    "objectID": "lectures/6a.html#folding",
+    "href": "lectures/6a.html#folding",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Folding",
+    "text": "Folding\nFolding is the process when we combine channels together. It is common to add the channels together once the convolution filter is applied to each one."
+  },
+  {
+    "objectID": "lectures/6a.html#folding-example",
+    "href": "lectures/6a.html#folding-example",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Folding Example",
+    "text": "Folding Example\n\\[\n\\left(\n\\begin{array}{cc}\n1 & 2  \\\\\n3 & 4\n\\end{array}\n\\right)\n+\n\\left(\n\\begin{array}{cc}\n5 & 6 \\\\\n7 & 8\n\\end{array}\n\\right)\n+\n\\left(\n\\begin{array}{cc}\n9 & 10 \\\\\n11 & 12\n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{cc}\n15 & 18 \\\\\n21 & 24\n\\end{array}\n\\right)\n\\]"
   },
   {
     "objectID": "lectures/6a.html#pooling-layers",
@@ -1932,11 +1967,11 @@
     "text": "Max Pool\n\\[\n\\left[\n\\begin{array}{cccc}\n1 & 3 & 9 & 5 \\\\\n6 & 2 & 3 & 4 \\\\\n1 & 0 & 6 & 4 \\\\\n8 & 4 & 2 & 7\n\\end{array}\n\\right] \\rightarrow\n\\left[\n\\begin{array}{cc}\n6 & 9 \\\\\n8 & 7\n\\end{array}\n\\right]\n\\]"
   },
   {
-    "objectID": "lectures/6a.html#cifar-data",
-    "href": "lectures/6a.html#cifar-data",
+    "objectID": "lectures/6a.html#overall",
+    "href": "lectures/6a.html#overall",
     "title": "Convolutional\nNeural Networks",
-    "section": "CIFAR Data",
-    "text": "CIFAR Data"
+    "section": "Overall",
+    "text": "Overall\n\nInputFilterFoldPool\n\n\n\\[\n\\left(\n\\begin{array}{ccc}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9  \n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{ccc}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9  \n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{ccc}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9  \n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left(\n\\begin{array}{ccc}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9  \n\\end{array}\n\\right)\n*\n\\left(\n\\begin{array}{cc}\n\\alpha & \\beta \\\\\n\\gamma & \\delta\n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{ccc}\n10 & 20 & 30 \\\\\n40 & 50 & 60 \\\\\n70 & 80 & 90  \n\\end{array}\n\\right)\n*\n\\left(\n\\begin{array}{cc}\n\\alpha & \\beta \\\\\n\\gamma & \\delta\n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{ccc}\n100 & 200 & 300 \\\\\n400 & 500 & 600 \\\\\n700 & 800 & 900  \n\\end{array}\n\\right)\n*\n\\left(\n\\begin{array}{cc}\n\\alpha & \\beta \\\\\n\\gamma & \\delta\n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left(\n\\begin{array}{cc}\n1 & 2  \\\\\n3 & 4\n\\end{array}\n\\right)\n+\n\\left(\n\\begin{array}{cc}\n5 & 6 \\\\\n7 & 8\n\\end{array}\n\\right)\n+\n\\left(\n\\begin{array}{cc}\n9 & 10 \\\\\n11 & 12\n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{cc}\n15 & 18 \\\\\n21 & 24\n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left[\n\\begin{array}{cccc}\n1 & 3 & 9 & 5 \\\\\n6 & 2 & 3 & 4 \\\\\n1 & 0 & 6 & 4 \\\\\n8 & 4 & 2 & 7\n\\end{array}\n\\right] \\rightarrow\n\\left[\n\\begin{array}{cc}\n6 & 9 \\\\\n8 & 7\n\\end{array}\n\\right]\n\\]"
   },
   {
     "objectID": "lectures/6a.html#convolve-image",
@@ -1960,25 +1995,60 @@
     "text": "Training\nThe CNN is trained by supplying a set of pre-classified images.\n\nThe parameters in the convolution filters are estimated using standard techniques."
   },
   {
-    "objectID": "lectures/6a.html#cifar-data-1",
-    "href": "lectures/6a.html#cifar-data-1",
+    "objectID": "lectures/6a.html#cifar-10-data",
+    "href": "lectures/6a.html#cifar-10-data",
     "title": "Convolutional\nNeural Networks",
-    "section": "CIFAR Data",
-    "text": "CIFAR Data"
+    "section": "CIFAR-10 Data",
+    "text": "CIFAR-10 Data\nThe Canadian Institute for Advanced Research (CIFAR) provides a collection of 60,000 images that are classified in 10 categories. Each image has 32 by 32 pixels."
+  },
+  {
+    "objectID": "lectures/6a.html#cifar-10-classes",
+    "href": "lectures/6a.html#cifar-10-classes",
+    "title": "Convolutional\nNeural Networks",
+    "section": "CIFAR-10 Classes",
+    "text": "CIFAR-10 Classes\n\n\n\nairplanes\ncars\nbirds\ncats\ndeer\n\n\n\ndogs\nfrogs\nhorses\nships\ntrucks"
+  },
+  {
+    "objectID": "lectures/6a.html#cifar-10-example",
+    "href": "lectures/6a.html#cifar-10-example",
+    "title": "Convolutional\nNeural Networks",
+    "section": "CIFAR-10 Example",
+    "text": "CIFAR-10 Example"
   },
   {
     "objectID": "lectures/6a.html#torch-packages-in-r",
     "href": "lectures/6a.html#torch-packages-in-r",
     "title": "Convolutional\nNeural Networks",
     "section": "Torch Packages in R",
-    "text": "Torch Packages in R\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(torchdatasets) # for datasets we are going to use\nlibrary(zeallot)\ntorch_manual_seed(13)"
+    "text": "Torch Packages in R\n\nlibrary(tidyverse)\nlibrary(torch)\nlibrary(luz)\nlibrary(torchvision)\nset.seed(909)\ntorch_manual_seed(909)"
   },
   {
-    "objectID": "lectures/6a.html#cifar-10",
-    "href": "lectures/6a.html#cifar-10",
+    "objectID": "lectures/6a.html#cifar-10-data-1",
+    "href": "lectures/6a.html#cifar-10-data-1",
     "title": "Convolutional\nNeural Networks",
-    "section": "CIFAR-10",
-    "text": "CIFAR-10"
+    "section": "CIFAR-10 Data",
+    "text": "CIFAR-10 Data\n\ndir &lt;- \"../\"\n\n\ntrain_ds &lt;- cifar10_dataset(\n  root = dir,\n  train = TRUE, \n  download = TRUE, \n  transform = transform_to_tensor\n)\n\ntest_ds &lt;- cifar10_dataset(\n  dir, \n  train = FALSE, \n  download = TRUE,\n  transform = transform_to_tensor\n)\n\ntrain_dl &lt;- dataloader(train_ds,\n  batch_size = 128,\n  shuffle = TRUE\n)"
+  },
+  {
+    "objectID": "lectures/6a.html#convolutional-block-2",
+    "href": "lectures/6a.html#convolutional-block-2",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolutional Block",
+    "text": "Convolutional Block\n\nconv_block &lt;- nn_module(\n  initialize = function(in_channels, out_channels) {\n    self$conv &lt;- nn_conv2d(\n      in_channels = in_channels, \n      out_channels = out_channels, \n      kernel_size = c(3,3), \n      padding = \"same\"\n    )\n    self$relu &lt;- nn_relu()\n    self$pool &lt;- nn_max_pool2d(kernel_size = c(2,2))\n  },\n  forward = function(x) {\n    x |&gt; \n      self$conv() |&gt; \n      self$relu() |&gt; \n      self$pool()\n  }\n)"
+  },
+  {
+    "objectID": "lectures/6a.html#model",
+    "href": "lectures/6a.html#model",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Model",
+    "text": "Model\n\nmodel &lt;- nn_module(\n  initialize = function() {\n    self$conv &lt;- nn_sequential(\n      conv_block(3, 8),\n      conv_block(8, 16)\n    )\n    self$output &lt;- nn_sequential(\n      nn_dropout(0.5),\n      nn_linear(1024, 16),\n      nn_relu(),\n      nn_linear(16, 10)\n    )\n  },\n  forward = function(x) {\n    x %&gt;% \n      self$conv() |&gt; \n      torch_flatten(start_dim = 2) |&gt; \n      self$output()\n  }\n)"
+  },
+  {
+    "objectID": "lectures/6a.html#fitting-model",
+    "href": "lectures/6a.html#fitting-model",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Fitting Model",
+    "text": "Fitting Model\n\nfitted &lt;- model |&gt; \n  setup(\n    loss = nn_cross_entropy_loss(),\n    optimizer = optim_rmsprop, \n  ) |&gt; \n  set_opt_hparams(lr = 0.001) |&gt; \n  fit(\n    train_dl,\n    epochs = 3\n  )"
   },
   {
     "objectID": "posts/week_2.html",

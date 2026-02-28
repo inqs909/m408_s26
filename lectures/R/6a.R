@@ -1,11 +1,10 @@
+library(tidyverse)
 library(torch)
 library(luz)
 library(torchvision)
-set.seed(777)
-torch_manual_seed(777)
-transform <- function(x) {
-  transform_to_tensor(x)
-}
+set.seed(909)
+torch_manual_seed(909)
+
 
 # dir <- "./"
 dir <- "../"
@@ -15,14 +14,14 @@ train_ds <- cifar10_dataset(
   root = dir,
   train = TRUE, 
   download = TRUE, 
-  transform = transform
+  transform = transform_to_tensor
 )
 
 test_ds <- cifar10_dataset(
   dir, 
   train = FALSE, 
   download = TRUE,
-  transform = transform
+  transform = transform_to_tensor
 )
 
 train_dl <- dataloader(train_ds,
@@ -64,23 +63,22 @@ model <- nn_module(
   },
   forward = function(x) {
     x %>% 
-      self$conv() %>% 
-      torch_flatten(start_dim = 2) %>% 
+      self$conv() |> 
+      torch_flatten(start_dim = 2) |> 
       self$output()
   }
 )
 
 first <- Sys.time()
-fitted <- model %>% 
+fitted <- model |> 
   setup(
     loss = nn_cross_entropy_loss(),
     optimizer = optim_rmsprop, 
-    metrics = list(luz_metric_accuracy())
-  ) %>% 
-  set_opt_hparams(lr = 0.001) %>% 
+  ) |> 
+  set_opt_hparams(lr = 0.001) |> 
   fit(
     train_dl,
-    epochs = 5
+    epochs = 3
   )
 Sys.time() - first
 

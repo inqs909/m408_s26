@@ -353,8 +353,7 @@ Neural Networks</p></h1>
 </section>
 <section id="r-packages" class="slide level2">
 <h2>R Packages</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># install.packages("tidyverse")</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># install.packages("tidyverse")</span></span>
 <span id="cb1-2"><a></a><span class="co"># install.packages("torch")</span></span>
 <span id="cb1-3"><a></a><span class="co"># install.packages("luz")</span></span>
 <span id="cb1-4"><a></a><span class="co"># install.packages("torchvision")</span></span>
@@ -362,8 +361,8 @@ Neural Networks</p></h1>
 <span id="cb1-6"><a></a><span class="fu">library</span>(torch)</span>
 <span id="cb1-7"><a></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
 <span id="cb1-8"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-9"><a></a><span class="fu">library</span>(torchvision) <span class="co"># for datasets and image transformation</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<span id="cb1-9"><a></a><span class="fu">library</span>(torchvision) <span class="co"># for datasets and image transformation</span></span>
+<span id="cb1-10"><a></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="python-data" class="slide level2">
 <h2>Python Data</h2>
@@ -405,7 +404,10 @@ Neural Networks</p></h1>
 <p>Input Data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Convolutional Filter</p>
+<p>Convolutional Block</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>R CIFAR Data Analysis</p>
@@ -447,7 +449,10 @@ Neural Networks</p></h1>
 <p>Input Data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Convolutional Filter</p>
+<p>Convolutional Block</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>R CIFAR Data Analysis</p>
@@ -491,7 +496,10 @@ Neural Networks</p></h1>
 <p>Input Data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Convolutional Filter</p>
+<p>Convolutional Block</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>R CIFAR Data Analysis</p>
@@ -501,10 +509,187 @@ Neural Networks</p></h1>
 </section>
 <section id="input-data-1" class="slide level2">
 <h2>Input Data</h2>
+
+<img data-src="6a_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<section id="channels" class="slide level2">
+<h2>Channels</h2>
+
+<img data-src="6a_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="data---red" class="slide level2">
+<h2>Data - Red</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;             [,1]      [,2]       [,3]      [,4]      [,5]      [,6]      [,7]
+#&gt;  [1,] 0.23137255 0.1686275 0.19607843 0.2666667 0.3843137 0.4666667 0.5450981
+#&gt;  [2,] 0.06274510 0.0000000 0.07058824 0.2000000 0.3450980 0.4705882 0.5019608
+#&gt;  [3,] 0.09803922 0.0627451 0.19215687 0.3254902 0.4313726 0.5058824 0.5098040
+#&gt;  [4,] 0.12941177 0.1490196 0.34117648 0.4156863 0.4509804 0.4588235 0.4470588
+#&gt;  [5,] 0.19607843 0.2313726 0.40000001 0.4980392 0.4862745 0.4745098 0.4705882
+#&gt;  [6,] 0.27843139 0.3294118 0.43137255 0.5058824 0.5333334 0.5137255 0.5058824
+#&gt;  [7,] 0.38039216 0.4352941 0.48235294 0.5098040 0.5333334 0.5176471 0.4784314
+#&gt;  [8,] 0.45098040 0.4666667 0.50980395 0.5490196 0.5215687 0.4980392 0.5411765
+#&gt;  [9,] 0.53725493 0.5019608 0.51764709 0.5019608 0.4666667 0.4823529 0.5019608
+#&gt; [10,] 0.60392159 0.6039216 0.61176473 0.5490196 0.4823529 0.4901961 0.4941176
+#&gt; [11,] 0.60392159 0.6078432 0.61176473 0.5764706 0.5215687 0.5372549 0.5450981
+#&gt; [12,] 0.56862748 0.5725490 0.57254905 0.5294118 0.4980392 0.5058824 0.4588235
+#&gt; [13,] 0.55686277 0.5529412 0.54901963 0.5647059 0.5764706 0.4745098 0.3294118
+#&gt; [14,] 0.61960787 0.6039216 0.55686277 0.5607843 0.5176471 0.3529412 0.2823530
+#&gt; [15,] 0.56862748 0.5843138 0.57647061 0.5764706 0.5333334 0.3137255 0.3490196
+#&gt; [16,] 0.58039218 0.5725490 0.56862748 0.5764706 0.5215687 0.2470588 0.2588235
+#&gt; [17,] 0.58431375 0.5607843 0.56470591 0.5921569 0.5176471 0.2509804 0.3294118
+#&gt; [18,] 0.57647061 0.5254902 0.54901963 0.5803922 0.5294118 0.3921569 0.4235294
+#&gt; [19,] 0.59607846 0.4588235 0.44705883 0.4823529 0.4941176 0.4784314 0.3647059
+#&gt; [20,] 0.56862748 0.4980392 0.50196081 0.5215687 0.5176471 0.5294118 0.6705883
+#&gt; [21,] 0.56078434 0.4980392 0.50588238 0.5058824 0.5098040 0.5490196 0.8588235
+#&gt; [22,] 0.56078434 0.4901961 0.51372552 0.5019608 0.4823529 0.6000000 0.5803922
+#&gt; [23,] 0.55294120 0.5137255 0.54509807 0.5450981 0.5411765 0.5921569 0.5019608
+#&gt; [24,] 0.56078434 0.5450981 0.54117650 0.5843138 0.6274510 0.5882353 0.5764706
+#&gt; [25,] 0.58431375 0.5215687 0.53333336 0.5764706 0.5882353 0.6000000 0.6156863
+#&gt; [26,] 0.67450982 0.5647059 0.52941179 0.5333334 0.5294118 0.5450981 0.6000000
+#&gt; [27,] 0.79215688 0.7333333 0.59215689 0.5019608 0.4784314 0.5254902 0.5568628
+#&gt; [28,] 0.84705883 0.7568628 0.65882355 0.5921569 0.5137255 0.4941176 0.5411765
+#&gt; [29,] 0.86274511 0.7882353 0.72941178 0.6745098 0.6117647 0.5568628 0.5568628
+#&gt; [30,] 0.81568629 0.7882353 0.77647060 0.7490196 0.7176471 0.6705883 0.6235294
+#&gt; [31,] 0.70588237 0.6784314 0.72941178 0.7607843 0.7764706 0.7882353 0.7411765
+#&gt; [32,] 0.69411767 0.6588235 0.70196080 0.7372549 0.7921569 0.8549020 0.8549020
+#&gt;            [,8]      [,9]     [,10]     [,11]     [,12]     [,13]     [,14]
+#&gt;  [1,] 0.5686275 0.5843138 0.5843138 0.5137255 0.4901961 0.5568628 0.5647059
+#&gt;  [2,] 0.4980392 0.4941176 0.4549020 0.4156863 0.3960784 0.4117647 0.4431373
+#&gt;  [3,] 0.4745098 0.4431373 0.4392157 0.4392157 0.4156863 0.4117647 0.5019608
+#&gt;  [4,] 0.4117647 0.4196078 0.4745098 0.4901961 0.4274510 0.4431373 0.5725490
+#&gt;  [5,] 0.4470588 0.4196078 0.4901961 0.5058824 0.4156863 0.4235294 0.4862745
+#&gt;  [6,] 0.4666667 0.4235294 0.4784314 0.4823529 0.4117647 0.4196078 0.4352941
+#&gt;  [7,] 0.4745098 0.4980392 0.5411765 0.4862745 0.4705882 0.4196078 0.3137255
+#&gt;  [8,] 0.5372549 0.5137255 0.5215687 0.5254902 0.4235294 0.2823530 0.2000000
+#&gt;  [9,] 0.5098040 0.4745098 0.5372549 0.5137255 0.2901961 0.2117647 0.1960784
+#&gt; [10,] 0.4980392 0.5215687 0.5176471 0.3529412 0.2470588 0.2431373 0.2745098
+#&gt; [11,] 0.5254902 0.5529412 0.4745098 0.3137255 0.3803922 0.3529412 0.3843137
+#&gt; [12,] 0.4039216 0.5098040 0.4705882 0.4352941 0.5725490 0.5333334 0.6392157
+#&gt; [13,] 0.3450980 0.4274510 0.3960784 0.5411765 0.8352941 0.6980392 0.7490196
+#&gt; [14,] 0.3176471 0.3294118 0.4196078 0.6470588 0.8980392 0.7176471 0.7490196
+#&gt; [15,] 0.4117647 0.3764706 0.5058824 0.7529412 0.7254902 0.5686275 0.7960784
+#&gt; [16,] 0.3450980 0.4431373 0.7137255 0.8627451 0.5411765 0.6352941 0.8078431
+#&gt; [17,] 0.4392157 0.6392157 0.8745098 0.8078431 0.5686275 0.7686275 0.8000000
+#&gt; [18,] 0.5647059 0.8235294 0.9725490 0.6862745 0.6862745 0.8627451 0.8862745
+#&gt; [19,] 0.7019608 0.9333333 0.9725490 0.6666667 0.7254902 0.9450980 0.9019608
+#&gt; [20,] 0.9294118 0.9882353 0.8980392 0.6784314 0.6627451 0.8627451 0.7607843
+#&gt; [21,] 0.9568627 0.8235294 0.7568628 0.6509804 0.6000000 0.7490196 0.7019608
+#&gt; [22,] 0.6509804 0.7372549 0.7137255 0.6705883 0.6470588 0.7647059 0.7450981
+#&gt; [23,] 0.5333334 0.6862745 0.6784314 0.7411765 0.8039216 0.7882353 0.6588235
+#&gt; [24,] 0.5921569 0.6627451 0.6549020 0.7019608 0.8313726 0.7960784 0.8117647
+#&gt; [25,] 0.6352941 0.6862745 0.7450981 0.6509804 0.7921569 0.8784314 0.7725490
+#&gt; [26,] 0.6392157 0.6509804 0.7215686 0.6509804 0.5882353 0.7215686 0.6117647
+#&gt; [27,] 0.5882353 0.6000000 0.5803922 0.5294118 0.4980392 0.6000000 0.6509804
+#&gt; [28,] 0.5647059 0.5568628 0.5372549 0.4705882 0.5137255 0.5686275 0.5647059
+#&gt; [29,] 0.6000000 0.5882353 0.5450981 0.4941176 0.5333334 0.5803922 0.5529412
+#&gt; [30,] 0.5764706 0.5294118 0.5098040 0.5450981 0.5764706 0.5647059 0.5686275
+#&gt; [31,] 0.6784314 0.6117647 0.5450981 0.5568628 0.5686275 0.5529412 0.5529412
+#&gt; [32,] 0.8117647 0.7490196 0.6862745 0.6509804 0.6392157 0.6392157 0.6313726
+#&gt;           [,15]     [,16]     [,17]     [,18]     [,19]     [,20]     [,21]
+#&gt;  [1,] 0.5372549 0.5058824 0.5372549 0.5254902 0.4862745 0.5450981 0.5450981
+#&gt;  [2,] 0.4274510 0.4392157 0.4666667 0.4274510 0.4117647 0.4901961 0.4980392
+#&gt;  [3,] 0.4862745 0.5098040 0.4980392 0.4784314 0.4509804 0.4705882 0.5098040
+#&gt;  [4,] 0.5215687 0.4980392 0.4627451 0.4588235 0.4980392 0.4784314 0.5176471
+#&gt;  [5,] 0.4745098 0.4235294 0.3843137 0.4313726 0.4588235 0.4705882 0.5254902
+#&gt;  [6,] 0.4235294 0.3843137 0.3686275 0.3803922 0.3254902 0.3450980 0.4000000
+#&gt;  [7,] 0.2666667 0.2901961 0.3960784 0.4117647 0.2549020 0.2274510 0.2470588
+#&gt;  [8,] 0.1607843 0.2823530 0.7098039 0.8196079 0.4901961 0.2666667 0.2509804
+#&gt;  [9,] 0.1725490 0.3372549 0.7960784 0.8509804 0.6352941 0.3921569 0.3019608
+#&gt; [10,] 0.3098039 0.4039216 0.5960785 0.5803922 0.5529412 0.4745098 0.3960784
+#&gt; [11,] 0.5372549 0.5450981 0.5803922 0.5254902 0.5411765 0.5254902 0.5490196
+#&gt; [12,] 0.6627451 0.5960785 0.6313726 0.5803922 0.6941177 0.6313726 0.7647059
+#&gt; [13,] 0.8274510 0.7411765 0.8039216 0.8117647 0.8352941 0.7490196 0.7803922
+#&gt; [14,] 0.9372549 0.8588235 0.8941177 0.8823529 0.8392157 0.8470588 0.8235294
+#&gt; [15,] 0.8745098 0.9490196 0.9568627 0.9333333 0.9450980 0.8901961 0.8823529
+#&gt; [16,] 0.7686275 0.9686275 1.0000000 1.0000000 0.9607843 0.9254902 0.9019608
+#&gt; [17,] 0.8627451 0.9529412 0.9607843 0.9372549 0.9176471 0.9058824 0.7647059
+#&gt; [18,] 0.9019608 0.9137255 0.8784314 0.7882353 0.7215686 0.7098039 0.7450981
+#&gt; [19,] 0.7333333 0.7058824 0.6509804 0.5725490 0.5843138 0.6156863 0.7215686
+#&gt; [20,] 0.4823529 0.5294118 0.4980392 0.5921569 0.6470588 0.5176471 0.5921569
+#&gt; [21,] 0.5019608 0.5764706 0.5843138 0.6745098 0.5764706 0.5019608 0.5529412
+#&gt; [22,] 0.5960785 0.5607843 0.5960785 0.6000000 0.5568628 0.5529412 0.5294118
+#&gt; [23,] 0.5921569 0.5686275 0.5725490 0.5843138 0.6000000 0.5843138 0.5647059
+#&gt; [24,] 0.5843138 0.5450981 0.5647059 0.5372549 0.5921569 0.6078432 0.5960785
+#&gt; [25,] 0.7529412 0.7058824 0.5725490 0.4941176 0.5529412 0.6117647 0.6000000
+#&gt; [26,] 0.6196079 0.6588235 0.5843138 0.5294118 0.5098040 0.5176471 0.5019608
+#&gt; [27,] 0.5607843 0.5098040 0.5019608 0.5921569 0.5960785 0.5294118 0.5450981
+#&gt; [28,] 0.5372549 0.4980392 0.4941176 0.5450981 0.6000000 0.5843138 0.5490196
+#&gt; [29,] 0.5137255 0.4941176 0.4980392 0.5411765 0.5882353 0.6039216 0.5843138
+#&gt; [30,] 0.5372549 0.5333334 0.5372549 0.5803922 0.5960785 0.5882353 0.6078432
+#&gt; [31,] 0.5450981 0.5490196 0.5607843 0.5450981 0.5411765 0.5607843 0.5725490
+#&gt; [32,] 0.6000000 0.6235294 0.6352941 0.5843138 0.5490196 0.5803922 0.6313726
+#&gt;           [,22]     [,23]     [,24]     [,25]     [,26]     [,27]     [,28]
+#&gt;  [1,] 0.5215687 0.5333334 0.5450981 0.5960785 0.6392157 0.6588235 0.6235294
+#&gt;  [2,] 0.4784314 0.5137255 0.4862745 0.4745098 0.5137255 0.5176471 0.5215687
+#&gt;  [3,] 0.5137255 0.5450981 0.4980392 0.4941176 0.4980392 0.5098040 0.5568628
+#&gt;  [4,] 0.5372549 0.5333334 0.5137255 0.4862745 0.5098040 0.5176471 0.5294118
+#&gt;  [5,] 0.5490196 0.5137255 0.5529412 0.5294118 0.4980392 0.4745098 0.4666667
+#&gt;  [6,] 0.3803922 0.3450980 0.4627451 0.5490196 0.5333334 0.4705882 0.4196078
+#&gt;  [7,] 0.3058824 0.5333334 0.4784314 0.5450981 0.5921569 0.5058824 0.4235294
+#&gt;  [8,] 0.3215686 0.4823529 0.4392157 0.5294118 0.5921569 0.5372549 0.4470588
+#&gt;  [9,] 0.2941177 0.2901961 0.2980392 0.4196078 0.5294118 0.5294118 0.5058824
+#&gt; [10,] 0.3764706 0.3372549 0.2941177 0.3960784 0.5333334 0.5333334 0.5254902
+#&gt; [11,] 0.6862745 0.5568628 0.4000000 0.4235294 0.5294118 0.5137255 0.5215687
+#&gt; [12,] 0.8196079 0.7411765 0.4901961 0.4235294 0.5490196 0.5372549 0.5176471
+#&gt; [13,] 0.7372549 0.6313726 0.5098040 0.4862745 0.5137255 0.5098040 0.5137255
+#&gt; [14,] 0.7843137 0.7411765 0.6823530 0.6313726 0.5450981 0.5254902 0.4941176
+#&gt; [15,] 0.9215686 0.8588235 0.8784314 0.8431373 0.6117647 0.5019608 0.5058824
+#&gt; [16,] 0.8431373 0.9058824 0.9803922 0.9450980 0.6196079 0.4901961 0.4941176
+#&gt; [17,] 0.5882353 0.8156863 0.9803922 0.8901961 0.6392157 0.5686275 0.5607843
+#&gt; [18,] 0.6666667 0.7019608 0.9058824 0.8745098 0.6352941 0.5725490 0.5490196
+#&gt; [19,] 0.8470588 0.8313726 0.9254902 0.9254902 0.6509804 0.5333334 0.5254902
+#&gt; [20,] 0.7921569 0.9411765 0.9411765 0.8705882 0.6117647 0.4666667 0.4705882
+#&gt; [21,] 0.6784314 0.7921569 0.7450981 0.7764706 0.5960785 0.3921569 0.4274510
+#&gt; [22,] 0.5333334 0.5803922 0.5529412 0.5529412 0.5411765 0.4352941 0.4352941
+#&gt; [23,] 0.5647059 0.5686275 0.5607843 0.5058824 0.4823529 0.4862745 0.4431373
+#&gt; [24,] 0.5490196 0.4196078 0.3568628 0.3294118 0.4117647 0.5176471 0.4627451
+#&gt; [25,] 0.4509804 0.3019608 0.3098039 0.3647059 0.4941176 0.5215687 0.4666667
+#&gt; [26,] 0.4980392 0.5294118 0.5607843 0.5450981 0.5333334 0.4980392 0.4745098
+#&gt; [27,] 0.6078432 0.6313726 0.6039216 0.6039216 0.5607843 0.5098040 0.5176471
+#&gt; [28,] 0.5294118 0.5764706 0.5803922 0.5843138 0.5843138 0.5372549 0.5607843
+#&gt; [29,] 0.4862745 0.4941176 0.5529412 0.5686275 0.5764706 0.4980392 0.4470588
+#&gt; [30,] 0.5411765 0.4705882 0.5019608 0.5568628 0.5294118 0.3529412 0.1960784
+#&gt; [31,] 0.5294118 0.4588235 0.4392157 0.4784314 0.4078431 0.2274510 0.1333333
+#&gt; [32,] 0.5647059 0.4392157 0.4666667 0.5098040 0.4705882 0.3607843 0.4039216
+#&gt;           [,29]     [,30]     [,31]     [,32]
+#&gt;  [1,] 0.6196079 0.6196079 0.5960785 0.5803922
+#&gt;  [2,] 0.5215687 0.4823529 0.4666667 0.4784314
+#&gt;  [3,] 0.5098040 0.4627451 0.4705882 0.4274510
+#&gt;  [4,] 0.5098040 0.4901961 0.4745098 0.3686275
+#&gt;  [5,] 0.4039216 0.3411765 0.2941177 0.2627451
+#&gt;  [6,] 0.3450980 0.2627451 0.1372549 0.1254902
+#&gt;  [7,] 0.3725490 0.3764706 0.3490196 0.2588235
+#&gt;  [8,] 0.4117647 0.3960784 0.4941176 0.4000000
+#&gt;  [9,] 0.4980392 0.4666667 0.4901961 0.5254902
+#&gt; [10,] 0.5215687 0.5176471 0.5019608 0.5215687
+#&gt; [11,] 0.5411765 0.5333334 0.5098040 0.5254902
+#&gt; [12,] 0.5333334 0.5215687 0.5176471 0.5215687
+#&gt; [13,] 0.5254902 0.5294118 0.5333334 0.5215687
+#&gt; [14,] 0.5137255 0.5568628 0.5333334 0.5411765
+#&gt; [15,] 0.5137255 0.5215687 0.5019608 0.5098040
+#&gt; [16,] 0.4862745 0.4901961 0.4941176 0.4862745
+#&gt; [17,] 0.5490196 0.5333334 0.4745098 0.4470588
+#&gt; [18,] 0.5450981 0.5686275 0.5568628 0.5019608
+#&gt; [19,] 0.5098040 0.4980392 0.5372549 0.5921569
+#&gt; [20,] 0.4392157 0.3921569 0.3882353 0.5490196
+#&gt; [21,] 0.4666667 0.4745098 0.4235294 0.5333334
+#&gt; [22,] 0.4745098 0.5058824 0.5411765 0.7019608
+#&gt; [23,] 0.4235294 0.4431373 0.5803922 0.7803922
+#&gt; [24,] 0.3764706 0.4000000 0.6235294 0.7450981
+#&gt; [25,] 0.4431373 0.5490196 0.7333333 0.6039216
+#&gt; [26,] 0.5294118 0.7411765 0.8274510 0.5333334
+#&gt; [27,] 0.6705883 0.8431373 0.7294118 0.4588235
+#&gt; [28,] 0.7960784 0.8078431 0.4862745 0.2784314
+#&gt; [29,] 0.7294118 0.6784314 0.2196078 0.1294118
+#&gt; [30,] 0.5372549 0.6274510 0.2196078 0.2078431
+#&gt; [31,] 0.5137255 0.7215686 0.3803922 0.3254902
+#&gt; [32,] 0.6666667 0.8470588 0.5921569 0.4823529</code></pre>
+</div>
+</div>
 </section></section>
 <section>
-<section id="convolutional-filter" class="title-slide slide level1 agenda-slide center">
-<h1>Convolutional Filter</h1>
+<section id="convolutional-block" class="title-slide slide level1 agenda-slide center">
+<h1>Convolutional Block</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
@@ -517,13 +702,25 @@ Neural Networks</p></h1>
 <p>Input Data</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Convolutional Filter</p>
+<p>Convolutional Block</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>R CIFAR Data Analysis</p>
 </div></li>
 </ul>
 </div>
+</section>
+<section id="convolutional-block-1" class="slide level2">
+<h2>Convolutional Block</h2>
+<p>A convolutional block (layer) is the process where a matrix (array) of data undergoes the following process.</p>
+<ol type="1">
+<li>Apply a convolutional filter</li>
+<li>Fold the channels</li>
+<li>Pool the data</li>
+</ol>
 </section>
 <section id="convolution-filter" class="slide level2">
 <h2>Convolution Filter</h2>
@@ -595,9 +792,69 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </div>
 </div>
 </section>
-<section id="convolutional-layers" class="slide level2">
-<h2>Convolutional Layers</h2>
-<p>Convolution layers are a set of filters in a hidden layers. We can have <span class="math inline">\(K\)</span> layers that an image is passed through.</p>
+<section id="data-example" class="slide level2">
+<h2>Data Example</h2>
+<p><span class="math display">\[
+\left(
+\begin{array}{ccc}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{array}
+\right)
+*
+\left(
+\begin{array}{cc}
+1/2 &amp; 1/3 \\
+1/3 &amp; 1/2
+\end{array}
+\right)
+\]</span></p>
+<p><span class="math display">\[
+\left(
+\begin{array}{cc}
+1/2 + 2/3 + 4/3 + 5/2 &amp; 1 + 1 + 5/3 + 3  \\
+2 + 5/3 + 7/3 + 4 &amp; 5/2 + 2 + 8/3 + 9/2
+\end{array}
+\right)
+\]</span></p>
+</section>
+<section id="folding" class="slide level2">
+<h2>Folding</h2>
+<p>Folding is the process when we combine channels together. It is common to add the channels together once the convolution filter is applied to each one.</p>
+</section>
+<section id="folding-example" class="slide level2">
+<h2>Folding Example</h2>
+<p><span class="math display">\[
+\left(
+\begin{array}{cc}
+1 &amp; 2  \\
+3 &amp; 4
+\end{array}
+\right)
++
+\left(
+\begin{array}{cc}
+5 &amp; 6 \\
+7 &amp; 8
+\end{array}
+\right)
++
+\left(
+\begin{array}{cc}
+9 &amp; 10 \\
+11 &amp; 12
+\end{array}
+\right)
+\]</span></p>
+<p><span class="math display">\[
+\left(
+\begin{array}{cc}
+15 &amp; 18 \\
+21 &amp; 24
+\end{array}
+\right)
+\]</span></p>
 </section>
 <section id="pooling-layers" class="slide level2">
 <h2>Pooling Layers</h2>
@@ -622,8 +879,168 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 \right]
 \]</span></p>
 </section>
-<section id="cifar-data" class="slide level2">
-<h2>CIFAR Data</h2>
+<section id="overall" class="slide level2">
+<h2>Overall</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Input</a></li><li><a href="#tabset-2-2">Filter</a></li><li><a href="#tabset-2-3">Fold</a></li><li><a href="#tabset-2-4">Pool</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p><span class="math display">\[
+\left(
+\begin{array}{ccc}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9  
+\end{array}
+\right)
+\]</span></p>
+<p><span class="math display">\[
+\left(
+\begin{array}{ccc}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9  
+\end{array}
+\right)
+\]</span></p>
+<p><span class="math display">\[
+\left(
+\begin{array}{ccc}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9  
+\end{array}
+\right)
+\]</span></p>
+</div>
+<div id="tabset-2-2">
+<p><span class="math display">\[
+\left(
+\begin{array}{ccc}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9  
+\end{array}
+\right)
+*
+\left(
+\begin{array}{cc}
+\alpha &amp; \beta \\
+\gamma &amp; \delta
+\end{array}
+\right)
+\]</span></p>
+<p><span class="math display">\[
+\left(
+\begin{array}{ccc}
+10 &amp; 20 &amp; 30 \\
+40 &amp; 50 &amp; 60 \\
+70 &amp; 80 &amp; 90  
+\end{array}
+\right)
+*
+\left(
+\begin{array}{cc}
+\alpha &amp; \beta \\
+\gamma &amp; \delta
+\end{array}
+\right)
+\]</span></p>
+<p><span class="math display">\[
+\left(
+\begin{array}{ccc}
+100 &amp; 200 &amp; 300 \\
+400 &amp; 500 &amp; 600 \\
+700 &amp; 800 &amp; 900  
+\end{array}
+\right)
+*
+\left(
+\begin{array}{cc}
+\alpha &amp; \beta \\
+\gamma &amp; \delta
+\end{array}
+\right)
+\]</span></p>
+</div>
+<div id="tabset-2-3">
+<p><span class="math display">\[
+\left(
+\begin{array}{cc}
+1 &amp; 2  \\
+3 &amp; 4
+\end{array}
+\right)
++
+\left(
+\begin{array}{cc}
+5 &amp; 6 \\
+7 &amp; 8
+\end{array}
+\right)
++
+\left(
+\begin{array}{cc}
+9 &amp; 10 \\
+11 &amp; 12
+\end{array}
+\right)
+\]</span></p>
+<p><span class="math display">\[
+\left(
+\begin{array}{cc}
+15 &amp; 18 \\
+21 &amp; 24
+\end{array}
+\right)
+\]</span></p>
+</div>
+<div id="tabset-2-4">
+<p><span class="math display">\[
+\left[
+\begin{array}{cccc}
+1 &amp; 3 &amp; 9 &amp; 5 \\
+6 &amp; 2 &amp; 3 &amp; 4 \\
+1 &amp; 0 &amp; 6 &amp; 4 \\
+8 &amp; 4 &amp; 2 &amp; 7
+\end{array}
+\right] \rightarrow
+\left[
+\begin{array}{cc}
+6 &amp; 9 \\
+8 &amp; 7
+\end{array}
+\right]
+\]</span></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="cnn-architecture" class="title-slide slide level1 agenda-slide center">
+<h1>CNN Architecture</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Image Classification</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Convolutional Neural Networks</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Input Data</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Convolutional Block</p>
+</div></li>
+<li><div class="agenda-active">
+<p>CNN Architecture</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>R CIFAR Data Analysis</p>
+</div></li>
+</ul>
+</div>
 </section>
 <section id="convolve-image" class="slide level2">
 <h2>Convolve Image</h2>
@@ -657,7 +1074,10 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <p>Input Data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Convolutional Filter</p>
+<p>Convolutional Block</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-active">
 <p>R CIFAR Data Analysis</p>
@@ -665,21 +1085,134 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </ul>
 </div>
 </section>
-<section id="cifar-data-1" class="slide level2">
-<h2>CIFAR Data</h2>
+<section id="cifar-10-data" class="slide level2">
+<h2>CIFAR-10 Data</h2>
+<p>The Canadian Institute for Advanced Research (CIFAR) provides a collection of 60,000 images that are classified in 10 categories. Each image has 32 by 32 pixels.</p>
 </section>
+<section id="cifar-10-classes" class="slide level2">
+<h2>CIFAR-10 Classes</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>airplanes</li>
+<li>cars</li>
+<li>birds</li>
+<li>cats</li>
+<li>deer</li>
+</ul>
+</div><div class="column">
+<ul>
+<li>dogs</li>
+<li>frogs</li>
+<li>horses</li>
+<li>ships</li>
+<li>trucks</li>
+</ul>
+</div></div>
+</section>
+<section id="cifar-10-example" class="slide level2">
+<h2>CIFAR-10 Example</h2>
+
+<img data-src="6a_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="torch-packages-in-r" class="slide level2">
 <h2>Torch Packages in R</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(torch)</span>
-<span id="cb3-2"><a></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
-<span id="cb3-3"><a></a><span class="fu">library</span>(torchdatasets) <span class="co"># for datasets we are going to use</span></span>
-<span id="cb3-4"><a></a><span class="fu">library</span>(zeallot)</span>
-<span id="cb3-5"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a></a><span class="fu">library</span>(torch)</span>
+<span id="cb4-3"><a></a><span class="fu">library</span>(luz)</span>
+<span id="cb4-4"><a></a><span class="fu">library</span>(torchvision)</span>
+<span id="cb4-5"><a></a><span class="fu">set.seed</span>(<span class="dv">909</span>)</span>
+<span id="cb4-6"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">909</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="cifar-10" class="slide level2">
-<h2>CIFAR-10</h2>
+<section id="cifar-10-data-1" class="slide level2">
+<h2>CIFAR-10 Data</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>dir <span class="ot">&lt;-</span> <span class="st">"../"</span></span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a>train_ds <span class="ot">&lt;-</span> <span class="fu">cifar10_dataset</span>(</span>
+<span id="cb5-5"><a></a>  <span class="at">root =</span> dir,</span>
+<span id="cb5-6"><a></a>  <span class="at">train =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb5-7"><a></a>  <span class="at">download =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb5-8"><a></a>  <span class="at">transform =</span> transform_to_tensor</span>
+<span id="cb5-9"><a></a>)</span>
+<span id="cb5-10"><a></a></span>
+<span id="cb5-11"><a></a>test_ds <span class="ot">&lt;-</span> <span class="fu">cifar10_dataset</span>(</span>
+<span id="cb5-12"><a></a>  dir, </span>
+<span id="cb5-13"><a></a>  <span class="at">train =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb5-14"><a></a>  <span class="at">download =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-15"><a></a>  <span class="at">transform =</span> transform_to_tensor</span>
+<span id="cb5-16"><a></a>)</span>
+<span id="cb5-17"><a></a></span>
+<span id="cb5-18"><a></a>train_dl <span class="ot">&lt;-</span> <span class="fu">dataloader</span>(train_ds,</span>
+<span id="cb5-19"><a></a>  <span class="at">batch_size =</span> <span class="dv">128</span>,</span>
+<span id="cb5-20"><a></a>  <span class="at">shuffle =</span> <span class="cn">TRUE</span></span>
+<span id="cb5-21"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="convolutional-block-2" class="slide level2">
+<h2>Convolutional Block</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>conv_block <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
+<span id="cb6-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(in_channels, out_channels) {</span>
+<span id="cb6-3"><a></a>    self<span class="sc">$</span>conv <span class="ot">&lt;-</span> <span class="fu">nn_conv2d</span>(</span>
+<span id="cb6-4"><a></a>      <span class="at">in_channels =</span> in_channels, </span>
+<span id="cb6-5"><a></a>      <span class="at">out_channels =</span> out_channels, </span>
+<span id="cb6-6"><a></a>      <span class="at">kernel_size =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>), </span>
+<span id="cb6-7"><a></a>      <span class="at">padding =</span> <span class="st">"same"</span></span>
+<span id="cb6-8"><a></a>    )</span>
+<span id="cb6-9"><a></a>    self<span class="sc">$</span>relu <span class="ot">&lt;-</span> <span class="fu">nn_relu</span>()</span>
+<span id="cb6-10"><a></a>    self<span class="sc">$</span>pool <span class="ot">&lt;-</span> <span class="fu">nn_max_pool2d</span>(<span class="at">kernel_size =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb6-11"><a></a>  },</span>
+<span id="cb6-12"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb6-13"><a></a>    x <span class="sc">|&gt;</span> </span>
+<span id="cb6-14"><a></a>      self<span class="sc">$</span><span class="fu">conv</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb6-15"><a></a>      self<span class="sc">$</span><span class="fu">relu</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb6-16"><a></a>      self<span class="sc">$</span><span class="fu">pool</span>()</span>
+<span id="cb6-17"><a></a>  }</span>
+<span id="cb6-18"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="model" class="slide level2">
+<h2>Model</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>model <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
+<span id="cb7-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>() {</span>
+<span id="cb7-3"><a></a>    self<span class="sc">$</span>conv <span class="ot">&lt;-</span> <span class="fu">nn_sequential</span>(</span>
+<span id="cb7-4"><a></a>      <span class="fu">conv_block</span>(<span class="dv">3</span>, <span class="dv">8</span>),</span>
+<span id="cb7-5"><a></a>      <span class="fu">conv_block</span>(<span class="dv">8</span>, <span class="dv">16</span>)</span>
+<span id="cb7-6"><a></a>    )</span>
+<span id="cb7-7"><a></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_sequential</span>(</span>
+<span id="cb7-8"><a></a>      <span class="fu">nn_dropout</span>(<span class="fl">0.5</span>),</span>
+<span id="cb7-9"><a></a>      <span class="fu">nn_linear</span>(<span class="dv">1024</span>, <span class="dv">16</span>),</span>
+<span id="cb7-10"><a></a>      <span class="fu">nn_relu</span>(),</span>
+<span id="cb7-11"><a></a>      <span class="fu">nn_linear</span>(<span class="dv">16</span>, <span class="dv">10</span>)</span>
+<span id="cb7-12"><a></a>    )</span>
+<span id="cb7-13"><a></a>  },</span>
+<span id="cb7-14"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb7-15"><a></a>    x <span class="sc">%&gt;%</span> </span>
+<span id="cb7-16"><a></a>      self<span class="sc">$</span><span class="fu">conv</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-17"><a></a>      <span class="fu">torch_flatten</span>(<span class="at">start_dim =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-18"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
+<span id="cb7-19"><a></a>  }</span>
+<span id="cb7-20"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="fitting-model" class="slide level2">
+<h2>Fitting Model</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>fitted <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a></a>  <span class="fu">setup</span>(</span>
+<span id="cb8-3"><a></a>    <span class="at">loss =</span> <span class="fu">nn_cross_entropy_loss</span>(),</span>
+<span id="cb8-4"><a></a>    <span class="at">optimizer =</span> optim_rmsprop, </span>
+<span id="cb8-5"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb8-6"><a></a>  <span class="fu">set_opt_hparams</span>(<span class="at">lr =</span> <span class="fl">0.001</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-7"><a></a>  <span class="fu">fit</span>(</span>
+<span id="cb8-8"><a></a>    train_dl,</span>
+<span id="cb8-9"><a></a>    <span class="at">epochs =</span> <span class="dv">3</span></span>
+<span id="cb8-10"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 </section></section>

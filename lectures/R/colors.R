@@ -18,7 +18,6 @@ label <- sample[[2]]
 plot(as.raster(as.array(img)), axes = FALSE,
      main = classes[label + 1])
 
-par(mfrow = c(1,1))
 
 
 # Extract channels
