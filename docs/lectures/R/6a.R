@@ -62,7 +62,7 @@ model <- nn_module(
     )
   },
   forward = function(x) {
-    x %>% 
+    x |> 
       self$conv() |> 
       torch_flatten(start_dim = 2) |> 
       self$output()
@@ -73,7 +73,8 @@ first <- Sys.time()
 fitted <- model |> 
   setup(
     loss = nn_cross_entropy_loss(),
-    optimizer = optim_rmsprop, 
+    optimizer = optim_rmsprop,
+
   ) |> 
   set_opt_hparams(lr = 0.001) |> 
   fit(

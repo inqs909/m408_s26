@@ -361,8 +361,7 @@ Neural Networks</p></h1>
 <span id="cb1-6"><a></a><span class="fu">library</span>(torch)</span>
 <span id="cb1-7"><a></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
 <span id="cb1-8"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-9"><a></a><span class="fu">library</span>(torchvision) <span class="co"># for datasets and image transformation</span></span>
-<span id="cb1-10"><a></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-9"><a></a><span class="fu">library</span>(torchvision) <span class="co"># for datasets and image transformation</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="python-data" class="slide level2">
 <h2>Python Data</h2>
@@ -410,7 +409,7 @@ Neural Networks</p></h1>
 <p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R CIFAR Data Analysis</p>
+<p>R CIFAR</p>
 </div></li>
 </ul>
 </div>
@@ -455,7 +454,7 @@ Neural Networks</p></h1>
 <p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R CIFAR Data Analysis</p>
+<p>R CIFAR</p>
 </div></li>
 </ul>
 </div>
@@ -502,7 +501,7 @@ Neural Networks</p></h1>
 <p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R CIFAR Data Analysis</p>
+<p>R CIFAR</p>
 </div></li>
 </ul>
 </div>
@@ -708,7 +707,7 @@ Neural Networks</p></h1>
 <p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R CIFAR Data Analysis</p>
+<p>R CIFAR</p>
 </div></li>
 </ul>
 </div>
@@ -1037,13 +1036,20 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R CIFAR Data Analysis</p>
+<p>R CIFAR</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="convolve-image" class="slide level2">
-<h2>Convolve Image</h2>
+<section id="cnn-architecture-1" class="slide level2">
+<h2>CNN Architecture</h2>
+
+<img data-src="https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="convolutional-block-1-1" class="slide level2">
+<h2>Convolutional Block 1</h2>
+</section>
+<section id="convolutional-block-2" class="slide level2">
+<h2>Convolutional Block 2+</h2>
 </section>
 <section id="flattening" class="slide level2">
 <h2>Flattening</h2>
@@ -1052,16 +1058,22 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <p>These inputs are used to a traditional neural network to classify an image.</p>
 </div>
 </section>
+<section id="neural-network" class="slide level2">
+<h2>Neural Network</h2>
+</section>
+<section id="output-layer" class="slide level2">
+<h2>Output Layer</h2>
+</section>
 <section id="training" class="slide level2">
 <h2>Training</h2>
 <p>The CNN is trained by supplying a set of pre-classified images.</p>
 <div class="fragment">
-<p>The parameters in the convolution filters are estimated using standard techniques.</p>
+<p>The parameters in the convolution filters and are estimated using standard techniques.</p>
 </div>
 </section></section>
 <section>
-<section id="r-cifar-data-analysis" class="title-slide slide level1 agenda-slide center">
-<h1>R CIFAR Data Analysis</h1>
+<section id="r-cifar" class="title-slide slide level1 agenda-slide center">
+<h1>R CIFAR</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
@@ -1080,10 +1092,20 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <p>CNN Architecture</p>
 </div></li>
 <li><div class="agenda-active">
-<p>R CIFAR Data Analysis</p>
+<p>R CIFAR</p>
 </div></li>
 </ul>
 </div>
+</section>
+<section id="process" class="slide level2 incremental">
+<h2>Process</h2>
+<ul>
+<li>Load R Packages</li>
+<li>Load Data</li>
+<li>Define Convolutional Block</li>
+<li>Define Model</li>
+<li>Train Model</li>
+</ul>
 </section>
 <section id="cifar-10-data" class="slide level2">
 <h2>CIFAR-10 Data</h2>
@@ -1127,6 +1149,26 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </section>
 <section id="cifar-10-data-1" class="slide level2">
 <h2>CIFAR-10 Data</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Overview</a></li><li><a href="#tabset-3-2">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ul>
+<li>Define Directory
+<ul>
+<li>You may need to change it</li>
+<li>Try this <code>"."</code></li>
+</ul></li>
+<li>Load training CIFAR-10 Data</li>
+<li>Load testing CIFAR-10 Data</li>
+<li>Create Data Loader
+<ul>
+<li>Will create batches of data (128 images)</li>
+<li>Load each batch one at a time instead of the entire thing.</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-3-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>dir <span class="ot">&lt;-</span> <span class="st">"../"</span></span>
 <span id="cb5-2"><a></a></span>
@@ -1150,9 +1192,34 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <span id="cb5-20"><a></a>  <span class="at">shuffle =</span> <span class="cn">TRUE</span></span>
 <span id="cb5-21"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</div>
+</div>
+</div>
 </section>
-<section id="convolutional-block-2" class="slide level2">
+<section id="convolutional-block-3" class="slide level2">
 <h2>Convolutional Block</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Overview</a></li><li><a href="#tabset-4-2">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ul>
+<li>Define Convolutional Block
+<ul>
+<li>Indicate Kernel Filter Size
+<ul>
+<li><span class="math inline">\(3\times 3\)</span> Matrix</li>
+<li>Fold by adding</li>
+</ul></li>
+<li>Apply Rectified Linear Unit</li>
+<li>Pool Matrix
+<ul>
+<li>Max Function</li>
+<li>Window: <span class="math inline">\(3\times 3\)</span> Matrix</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-4-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>conv_block <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
 <span id="cb6-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(in_channels, out_channels) {</span>
@@ -1173,9 +1240,39 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <span id="cb6-17"><a></a>  }</span>
 <span id="cb6-18"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</div>
+</div>
+</div>
 </section>
 <section id="model" class="slide level2">
 <h2>Model</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Overview</a></li><li><a href="#tabset-5-2">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<ul>
+<li>Using the defined convolutional block
+<ul>
+<li>First Block
+<ul>
+<li>3 channels; 8 kernel filters</li>
+</ul></li>
+<li>Second Block
+<ul>
+<li>8 channels; 16 kernel filters</li>
+</ul></li>
+</ul></li>
+<li>Flatten matrices (1024 paremeters)</li>
+<li>Apply Neural Network
+<ul>
+<li>50% dropout</li>
+<li>Linear Model</li>
+<li>Rectified Linear Unit</li>
+</ul></li>
+<li>Output layer: 10 functions</li>
+</ul>
+</div>
+<div id="tabset-5-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>model <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
 <span id="cb7-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>() {</span>
@@ -1191,27 +1288,69 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <span id="cb7-12"><a></a>    )</span>
 <span id="cb7-13"><a></a>  },</span>
 <span id="cb7-14"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
-<span id="cb7-15"><a></a>    x <span class="sc">%&gt;%</span> </span>
+<span id="cb7-15"><a></a>    x <span class="sc">|&gt;</span> </span>
 <span id="cb7-16"><a></a>      self<span class="sc">$</span><span class="fu">conv</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb7-17"><a></a>      <span class="fu">torch_flatten</span>(<span class="at">start_dim =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb7-18"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
 <span id="cb7-19"><a></a>  }</span>
 <span id="cb7-20"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</div>
+</div>
+</div>
 </section>
 <section id="fitting-model" class="slide level2">
 <h2>Fitting Model</h2>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Overview</a></li><li><a href="#tabset-6-2">Code</a></li><li><a href="#tabset-6-3">While Training</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<ul>
+<li>Setup
+<ul>
+<li>Loss Function (Cross-Entropy)</li>
+<li>Optimizer</li>
+<li>Metrics</li>
+<li>Learning Rate</li>
+</ul></li>
+<li>Train the Model
+<ul>
+<li>Define Training Data</li>
+<li>Number of Epochs</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-6-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>fitted <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span> </span>
 <span id="cb8-2"><a></a>  <span class="fu">setup</span>(</span>
 <span id="cb8-3"><a></a>    <span class="at">loss =</span> <span class="fu">nn_cross_entropy_loss</span>(),</span>
 <span id="cb8-4"><a></a>    <span class="at">optimizer =</span> optim_rmsprop, </span>
-<span id="cb8-5"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb8-6"><a></a>  <span class="fu">set_opt_hparams</span>(<span class="at">lr =</span> <span class="fl">0.001</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb8-7"><a></a>  <span class="fu">fit</span>(</span>
-<span id="cb8-8"><a></a>    train_dl,</span>
-<span id="cb8-9"><a></a>    <span class="at">epochs =</span> <span class="dv">3</span></span>
-<span id="cb8-10"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-5"><a></a>    <span class="at">metrics =</span> <span class="fu">list</span>(<span class="fu">luz_metric_accuracy</span>())</span>
+<span id="cb8-6"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb8-7"><a></a>  <span class="fu">set_opt_hparams</span>(<span class="at">lr =</span> <span class="fl">0.001</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-8"><a></a>  <span class="fu">fit</span>(</span>
+<span id="cb8-9"><a></a>    train_dl,</span>
+<span id="cb8-10"><a></a>    <span class="at">epochs =</span> <span class="dv">10</span></span>
+<span id="cb8-11"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-6-3">
+<ul>
+<li>This may take +5 minutes</li>
+<li>Discuss with your table the convolutional block
+<ul>
+<li>Comment the code.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-loss" class="slide level2">
+<h2>Plot Loss</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">plot</span>(fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 

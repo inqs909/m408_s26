@@ -53,7 +53,6 @@ library(luz) # high-level interface for torch
 library(tidyverse)
 library(torchvision) # for datasets and image transformation
 
-
 ```
 
 ## Python Data
@@ -532,7 +531,15 @@ $$
 
 # CNN Architecture
 
-## Convolve Image
+## CNN Architecture
+
+![](https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg){fig-align="center"}
+
+
+## Convolutional Block 1
+
+## Convolutional Block 2+
+
 
 ## Flattening
 
@@ -542,15 +549,28 @@ Once the images has been pooled to a select pixels or features. The images are f
 These inputs are used to a traditional neural network to classify an image.
 :::
 
+## Neural Network
+
+## Output Layer
+
 ## Training
 
 The CNN is trained by supplying a set of pre-classified images.
 
 ::: fragment
-The parameters in the convolution filters are estimated using standard techniques.
+The parameters in the convolution filters and are estimated using standard techniques.
 :::
 
-# R CIFAR Data Analysis
+# R CIFAR 
+
+## Process {.incremental}
+
+- Load R Packages
+- Load Data
+- Define Convolutional Block
+- Define Model
+- Train Model
+
 
 ## CIFAR-10 Data
 
@@ -604,6 +624,22 @@ torch_manual_seed(909)
 
 ## CIFAR-10 Data
 
+::: panel-tabset
+
+### Overview
+
+- Define Directory
+    - You may need to change it
+    - Try this `"."`
+- Load training CIFAR-10 Data
+- Load testing CIFAR-10 Data
+- Create Data Loader
+    - Will create batches of data (128 images)
+    - Load each batch one at a time instead of the entire thing.
+
+
+### Code
+
 ```{r}
 dir <- "../"
 
@@ -628,8 +664,24 @@ train_dl <- dataloader(train_ds,
 )
 ```
 
+:::
+
 ## Convolutional Block
 
+::: panel-tabset
+
+### Overview
+
+- Define Convolutional Block
+    - Indicate Kernel Filter Size
+        - $3\times 3$ Matrix
+        - Fold by adding
+    - Apply Rectified Linear Unit
+    - Pool Matrix
+        - Max Function
+        - Window: $3\times 3$ Matrix
+
+### Code
 
 ```{r}
 conv_block <- nn_module(
@@ -652,8 +704,32 @@ conv_block <- nn_module(
 )
 ```
 
+
+:::
+
 ## Model
 
+
+::: panel-tabset
+
+### Overview
+
+- Using the defined convolutional block
+    - First Block
+        - 3 channels; 8 kernel filters 
+    - Second Block
+        - 8 channels; 16 kernel filters
+- Flatten matrices (1024 paremeters)
+- Apply Neural Network
+  - 50% dropout
+  - Linear Model
+  - Rectified Linear Unit
+- Output layer: 10 functions
+  
+
+
+
+### Code
 
 ```{r}
 model <- nn_module(
@@ -670,7 +746,7 @@ model <- nn_module(
     )
   },
   forward = function(x) {
-    x %>% 
+    x |> 
       self$conv() |> 
       torch_flatten(start_dim = 2) |> 
       self$output()
@@ -678,18 +754,49 @@ model <- nn_module(
 )
 ```
 
+:::
+
 ## Fitting Model
 
+::: panel-tabset
+
+### Overview
+
+- Setup
+    - Loss Function (Cross-Entropy)
+    - Optimizer
+    - Metrics
+    - Learning Rate
+- Train the Model
+    - Define Training Data
+    - Number of Epochs
+
+### Code
 
 ```{r}
 fitted <- model |> 
   setup(
     loss = nn_cross_entropy_loss(),
     optimizer = optim_rmsprop, 
+    metrics = list(luz_metric_accuracy())
   ) |> 
   set_opt_hparams(lr = 0.001) |> 
   fit(
     train_dl,
-    epochs = 3
+    epochs = 10
   )
+```
+
+### While Training
+
+- This may take +5 minutes
+- Discuss with your table the convolutional block
+    - Comment the code.
+:::
+
+## Plot Loss
+
+
+```{r}
+plot(fitted)
 ```

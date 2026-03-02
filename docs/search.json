@@ -1974,11 +1974,25 @@
     "text": "Overall\n\nInputFilterFoldPool\n\n\n\\[\n\\left(\n\\begin{array}{ccc}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9  \n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{ccc}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9  \n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{ccc}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9  \n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left(\n\\begin{array}{ccc}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9  \n\\end{array}\n\\right)\n*\n\\left(\n\\begin{array}{cc}\n\\alpha & \\beta \\\\\n\\gamma & \\delta\n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{ccc}\n10 & 20 & 30 \\\\\n40 & 50 & 60 \\\\\n70 & 80 & 90  \n\\end{array}\n\\right)\n*\n\\left(\n\\begin{array}{cc}\n\\alpha & \\beta \\\\\n\\gamma & \\delta\n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{ccc}\n100 & 200 & 300 \\\\\n400 & 500 & 600 \\\\\n700 & 800 & 900  \n\\end{array}\n\\right)\n*\n\\left(\n\\begin{array}{cc}\n\\alpha & \\beta \\\\\n\\gamma & \\delta\n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left(\n\\begin{array}{cc}\n1 & 2  \\\\\n3 & 4\n\\end{array}\n\\right)\n+\n\\left(\n\\begin{array}{cc}\n5 & 6 \\\\\n7 & 8\n\\end{array}\n\\right)\n+\n\\left(\n\\begin{array}{cc}\n9 & 10 \\\\\n11 & 12\n\\end{array}\n\\right)\n\\]\n\\[\n\\left(\n\\begin{array}{cc}\n15 & 18 \\\\\n21 & 24\n\\end{array}\n\\right)\n\\]\n\n\n\\[\n\\left[\n\\begin{array}{cccc}\n1 & 3 & 9 & 5 \\\\\n6 & 2 & 3 & 4 \\\\\n1 & 0 & 6 & 4 \\\\\n8 & 4 & 2 & 7\n\\end{array}\n\\right] \\rightarrow\n\\left[\n\\begin{array}{cc}\n6 & 9 \\\\\n8 & 7\n\\end{array}\n\\right]\n\\]"
   },
   {
-    "objectID": "lectures/6a.html#convolve-image",
-    "href": "lectures/6a.html#convolve-image",
+    "objectID": "lectures/6a.html#cnn-architecture-1",
+    "href": "lectures/6a.html#cnn-architecture-1",
     "title": "Convolutional\nNeural Networks",
-    "section": "Convolve Image",
-    "text": "Convolve Image"
+    "section": "CNN Architecture",
+    "text": "CNN Architecture"
+  },
+  {
+    "objectID": "lectures/6a.html#convolutional-block-1-1",
+    "href": "lectures/6a.html#convolutional-block-1-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolutional Block 1",
+    "text": "Convolutional Block 1"
+  },
+  {
+    "objectID": "lectures/6a.html#convolutional-block-2",
+    "href": "lectures/6a.html#convolutional-block-2",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolutional Block 2+",
+    "text": "Convolutional Block 2+"
   },
   {
     "objectID": "lectures/6a.html#flattening",
@@ -1988,11 +2002,32 @@
     "text": "Flattening\nOnce the images has been pooled to a select pixels or features. The images are flattened to a set of inputs.\n\nThese inputs are used to a traditional neural network to classify an image."
   },
   {
+    "objectID": "lectures/6a.html#neural-network",
+    "href": "lectures/6a.html#neural-network",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Neural Network",
+    "text": "Neural Network"
+  },
+  {
+    "objectID": "lectures/6a.html#output-layer",
+    "href": "lectures/6a.html#output-layer",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Output Layer",
+    "text": "Output Layer"
+  },
+  {
     "objectID": "lectures/6a.html#training",
     "href": "lectures/6a.html#training",
     "title": "Convolutional\nNeural Networks",
     "section": "Training",
-    "text": "Training\nThe CNN is trained by supplying a set of pre-classified images.\n\nThe parameters in the convolution filters are estimated using standard techniques."
+    "text": "Training\nThe CNN is trained by supplying a set of pre-classified images.\n\nThe parameters in the convolution filters and are estimated using standard techniques."
+  },
+  {
+    "objectID": "lectures/6a.html#process",
+    "href": "lectures/6a.html#process",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Process",
+    "text": "Process\n\nLoad R Packages\nLoad Data\nDefine Convolutional Block\nDefine Model\nTrain Model"
   },
   {
     "objectID": "lectures/6a.html#cifar-10-data",
@@ -2027,28 +2062,35 @@
     "href": "lectures/6a.html#cifar-10-data-1",
     "title": "Convolutional\nNeural Networks",
     "section": "CIFAR-10 Data",
-    "text": "CIFAR-10 Data\n\ndir &lt;- \"../\"\n\n\ntrain_ds &lt;- cifar10_dataset(\n  root = dir,\n  train = TRUE, \n  download = TRUE, \n  transform = transform_to_tensor\n)\n\ntest_ds &lt;- cifar10_dataset(\n  dir, \n  train = FALSE, \n  download = TRUE,\n  transform = transform_to_tensor\n)\n\ntrain_dl &lt;- dataloader(train_ds,\n  batch_size = 128,\n  shuffle = TRUE\n)"
+    "text": "CIFAR-10 Data\n\nOverviewCode\n\n\n\nDefine Directory\n\nYou may need to change it\nTry this \".\"\n\nLoad training CIFAR-10 Data\nLoad testing CIFAR-10 Data\nCreate Data Loader\n\nWill create batches of data (128 images)\nLoad each batch one at a time instead of the entire thing.\n\n\n\n\n\ndir &lt;- \"../\"\n\n\ntrain_ds &lt;- cifar10_dataset(\n  root = dir,\n  train = TRUE, \n  download = TRUE, \n  transform = transform_to_tensor\n)\n\ntest_ds &lt;- cifar10_dataset(\n  dir, \n  train = FALSE, \n  download = TRUE,\n  transform = transform_to_tensor\n)\n\ntrain_dl &lt;- dataloader(train_ds,\n  batch_size = 128,\n  shuffle = TRUE\n)"
   },
   {
-    "objectID": "lectures/6a.html#convolutional-block-2",
-    "href": "lectures/6a.html#convolutional-block-2",
+    "objectID": "lectures/6a.html#convolutional-block-3",
+    "href": "lectures/6a.html#convolutional-block-3",
     "title": "Convolutional\nNeural Networks",
     "section": "Convolutional Block",
-    "text": "Convolutional Block\n\nconv_block &lt;- nn_module(\n  initialize = function(in_channels, out_channels) {\n    self$conv &lt;- nn_conv2d(\n      in_channels = in_channels, \n      out_channels = out_channels, \n      kernel_size = c(3,3), \n      padding = \"same\"\n    )\n    self$relu &lt;- nn_relu()\n    self$pool &lt;- nn_max_pool2d(kernel_size = c(2,2))\n  },\n  forward = function(x) {\n    x |&gt; \n      self$conv() |&gt; \n      self$relu() |&gt; \n      self$pool()\n  }\n)"
+    "text": "Convolutional Block\n\nOverviewCode\n\n\n\nDefine Convolutional Block\n\nIndicate Kernel Filter Size\n\n\\(3\\times 3\\) Matrix\nFold by adding\n\nApply Rectified Linear Unit\nPool Matrix\n\nMax Function\nWindow: \\(3\\times 3\\) Matrix\n\n\n\n\n\n\nconv_block &lt;- nn_module(\n  initialize = function(in_channels, out_channels) {\n    self$conv &lt;- nn_conv2d(\n      in_channels = in_channels, \n      out_channels = out_channels, \n      kernel_size = c(3,3), \n      padding = \"same\"\n    )\n    self$relu &lt;- nn_relu()\n    self$pool &lt;- nn_max_pool2d(kernel_size = c(2,2))\n  },\n  forward = function(x) {\n    x |&gt; \n      self$conv() |&gt; \n      self$relu() |&gt; \n      self$pool()\n  }\n)"
   },
   {
     "objectID": "lectures/6a.html#model",
     "href": "lectures/6a.html#model",
     "title": "Convolutional\nNeural Networks",
     "section": "Model",
-    "text": "Model\n\nmodel &lt;- nn_module(\n  initialize = function() {\n    self$conv &lt;- nn_sequential(\n      conv_block(3, 8),\n      conv_block(8, 16)\n    )\n    self$output &lt;- nn_sequential(\n      nn_dropout(0.5),\n      nn_linear(1024, 16),\n      nn_relu(),\n      nn_linear(16, 10)\n    )\n  },\n  forward = function(x) {\n    x %&gt;% \n      self$conv() |&gt; \n      torch_flatten(start_dim = 2) |&gt; \n      self$output()\n  }\n)"
+    "text": "Model\n\nOverviewCode\n\n\n\nUsing the defined convolutional block\n\nFirst Block\n\n3 channels; 8 kernel filters\n\nSecond Block\n\n8 channels; 16 kernel filters\n\n\nFlatten matrices (1024 paremeters)\nApply Neural Network\n\n50% dropout\nLinear Model\nRectified Linear Unit\n\nOutput layer: 10 functions\n\n\n\n\nmodel &lt;- nn_module(\n  initialize = function() {\n    self$conv &lt;- nn_sequential(\n      conv_block(3, 8),\n      conv_block(8, 16)\n    )\n    self$output &lt;- nn_sequential(\n      nn_dropout(0.5),\n      nn_linear(1024, 16),\n      nn_relu(),\n      nn_linear(16, 10)\n    )\n  },\n  forward = function(x) {\n    x |&gt; \n      self$conv() |&gt; \n      torch_flatten(start_dim = 2) |&gt; \n      self$output()\n  }\n)"
   },
   {
     "objectID": "lectures/6a.html#fitting-model",
     "href": "lectures/6a.html#fitting-model",
     "title": "Convolutional\nNeural Networks",
     "section": "Fitting Model",
-    "text": "Fitting Model\n\nfitted &lt;- model |&gt; \n  setup(\n    loss = nn_cross_entropy_loss(),\n    optimizer = optim_rmsprop, \n  ) |&gt; \n  set_opt_hparams(lr = 0.001) |&gt; \n  fit(\n    train_dl,\n    epochs = 3\n  )"
+    "text": "Fitting Model\n\nOverviewCodeWhile Training\n\n\n\nSetup\n\nLoss Function (Cross-Entropy)\nOptimizer\nMetrics\nLearning Rate\n\nTrain the Model\n\nDefine Training Data\nNumber of Epochs\n\n\n\n\n\nfitted &lt;- model |&gt; \n  setup(\n    loss = nn_cross_entropy_loss(),\n    optimizer = optim_rmsprop, \n    metrics = list(luz_metric_accuracy())\n  ) |&gt; \n  set_opt_hparams(lr = 0.001) |&gt; \n  fit(\n    train_dl,\n    epochs = 10\n  )\n\n\n\n\nThis may take +5 minutes\nDiscuss with your table the convolutional block\n\nComment the code."
+  },
+  {
+    "objectID": "lectures/6a.html#plot-loss",
+    "href": "lectures/6a.html#plot-loss",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Plot Loss",
+    "text": "Plot Loss\n\nplot(fitted)"
   },
   {
     "objectID": "posts/week_2.html",
