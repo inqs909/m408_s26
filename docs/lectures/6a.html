@@ -1047,9 +1047,99 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <img data-src="https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="convolutional-block-1-1" class="slide level2">
 <h2>Convolutional Block 1</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Process</a></li><li><a href="#tabset-3-2">Define</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ul>
+<li>Given an 3 channels (3 matrix)
+<ul>
+<li>Apply a <span class="math inline">\(k_1 \times k_1\)</span> convolutional filter for each individual channel</li>
+<li>Add up the results for each channel by convolutional filter</li>
+<li>Apply a activation function</li>
+<li>Pool the data using a <span class="math inline">\(\varrho_1 \times \varrho_1\)</span> window matrix</li>
+</ul></li>
+<li>Repeat the process for the remaining <span class="math inline">\(\varkappa_1\)</span> filters</li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<ul>
+<li>The number of channels available as input</li>
+<li>The size of the convolutional filter (<span class="math inline">\(k_1\)</span>)</li>
+<li>The activation function</li>
+<li>The pooling mechanism
+<ul>
+<li>Define the size of the window matrix (<span class="math inline">\(\varrho_h\)</span>)</li>
+</ul></li>
+<li>Define how many convolutional filters will be used (<span class="math inline">\(\varkappa_1\)</span>)</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-<section id="convolutional-block-2" class="slide level2">
-<h2>Convolutional Block 2+</h2>
+<section id="convolutional-block-2-h2" class="slide level2">
+<h2>Convolutional Block 2 (h=2)</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Process</a></li><li><a href="#tabset-4-2">Define</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ul>
+<li>Use the number of channels from the previous block (<span class="math inline">\(\varkappa_1\)</span>)
+<ul>
+<li>Apply a <span class="math inline">\(k_2 \times k_2\)</span> convolutional filter for each individual channel</li>
+<li>Add up the results for each channel by convolutional filter</li>
+<li>Apply a activation function</li>
+<li>Pool the data using a <span class="math inline">\(\varrho_2 \times \varrho_2\)</span> window matrix</li>
+</ul></li>
+<li>Repeat the process for the remaining <span class="math inline">\(\varkappa_2\)</span> filters</li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li>The number of channels available as input</li>
+<li>The size of the convolutional filter (<span class="math inline">\(k_2\)</span>)</li>
+<li>The activation function</li>
+<li>The pooling mechanism
+<ul>
+<li>Define the size of the window matrix (<span class="math inline">\(\varrho_h\)</span>)</li>
+</ul></li>
+<li>Define how many convolutional filters will be used (<span class="math inline">\(\varkappa_2\)</span>)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="convolutional-block-2-hh" class="slide level2">
+<h2>Convolutional Block 2+ (h=h)</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Process</a></li><li><a href="#tabset-5-2">Define</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<ul>
+<li>Use the number of channels from the previous block (<span class="math inline">\(\varkappa_{h-1}\)</span>)
+<ul>
+<li>Apply a <span class="math inline">\(k_h \times k_h\)</span> convolutional filter for each individual channel</li>
+<li>Add up the results for each channel by convolutional filter</li>
+<li>Apply a activation function</li>
+<li>Pool the data using a <span class="math inline">\(\varrho_h \times \varrho_h\)</span> window matrix</li>
+</ul></li>
+<li>Repeat the process for the remaining <span class="math inline">\(\varkappa_h\)</span> filters</li>
+</ul>
+</div>
+<div id="tabset-5-2">
+<ul>
+<li>The number of channels available as input</li>
+<li>The size of the convolutional filter (<span class="math inline">\(k_h\)</span>)</li>
+<li>The activation function</li>
+<li>The pooling mechanism
+<ul>
+<li>Define the size of the window matrix (<span class="math inline">\(\varrho_h\)</span>)</li>
+</ul></li>
+<li>Define how many convolutional filters will be used (<span class="math inline">\(\varkappa_h\)</span>)</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="flattening" class="slide level2">
 <h2>Flattening</h2>
@@ -1058,17 +1148,40 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <p>These inputs are used to a traditional neural network to classify an image.</p>
 </div>
 </section>
+<section id="hidden-layers" class="slide level2">
+<h2>Hidden Layers</h2>
+
+<img data-src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="neural-network" class="slide level2">
 <h2>Neural Network</h2>
-</section>
-<section id="output-layer" class="slide level2">
-<h2>Output Layer</h2>
+
+<img data-src="https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="loss-function" class="slide level2">
+<h2>Loss Function</h2>
+<div class="columns">
+<div class="column">
+<h3 id="mean-squared-error">Mean Squared Error</h3>
+<p><span class="math display">\[
+\frac{1}{n}\sum^n_{i-1}\left\{Y_i-f(\boldsymbol X; \boldsymbol \theta)\right\}^2
+\]</span></p>
+</div><div class="column">
+<h3 id="cross-entropy">Cross-Entropy</h3>
+<p><span class="math display">\[
+- \sum^n_{i=1}\sum^k_{j=1} Y_{ij}\log\left\{f_j(\bX_i;\btheta)\right\}
+\]</span></p>
+</div></div>
+<p><span class="math inline">\(\btheta\)</span> represents all the parameters in the convolutional filters and hidden layers.</p>
 </section>
 <section id="training" class="slide level2">
 <h2>Training</h2>
 <p>The CNN is trained by supplying a set of pre-classified images.</p>
 <div class="fragment">
-<p>The parameters in the convolution filters and are estimated using standard techniques.</p>
+<p>The parameters in the convolution filters and are estimated using standard techniques:</p>
+</div>
+<div class="fragment">
+<ul>
+<li>Stochastic Gradient Descent</li>
+</ul>
 </div>
 </section></section>
 <section>
@@ -1097,7 +1210,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </ul>
 </div>
 </section>
-<section id="process" class="slide level2 incremental">
+<section id="process-3" class="slide level2 incremental">
 <h2>Process</h2>
 <ul>
 <li>Load R Packages</li>
@@ -1150,9 +1263,9 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <section id="cifar-10-data-1" class="slide level2">
 <h2>CIFAR-10 Data</h2>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Overview</a></li><li><a href="#tabset-3-2">Code</a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Overview</a></li><li><a href="#tabset-6-2">Code</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-6-1">
 <ul>
 <li>Define Directory
 <ul>
@@ -1168,7 +1281,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </ul></li>
 </ul>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-6-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>dir <span class="ot">&lt;-</span> <span class="st">"../"</span></span>
 <span id="cb5-2"><a></a></span>
@@ -1196,12 +1309,12 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </div>
 </div>
 </section>
-<section id="convolutional-block-3" class="slide level2">
+<section id="convolutional-block-2" class="slide level2">
 <h2>Convolutional Block</h2>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Overview</a></li><li><a href="#tabset-4-2">Code</a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Overview</a></li><li><a href="#tabset-7-2">Code</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-7-1">
 <ul>
 <li>Define Convolutional Block
 <ul>
@@ -1219,7 +1332,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </ul></li>
 </ul>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-7-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>conv_block <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
 <span id="cb6-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(in_channels, out_channels) {</span>
@@ -1247,9 +1360,9 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <section id="model" class="slide level2">
 <h2>Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Overview</a></li><li><a href="#tabset-5-2">Code</a></li></ul>
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Overview</a></li><li><a href="#tabset-8-2">Code</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-8-1">
 <ul>
 <li>Using the defined convolutional block
 <ul>
@@ -1272,7 +1385,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <li>Output layer: 10 functions</li>
 </ul>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-8-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>model <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
 <span id="cb7-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>() {</span>
@@ -1302,9 +1415,9 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <section id="fitting-model" class="slide level2">
 <h2>Fitting Model</h2>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Overview</a></li><li><a href="#tabset-6-2">Code</a></li><li><a href="#tabset-6-3">While Training</a></li></ul>
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Overview</a></li><li><a href="#tabset-9-2">Code</a></li><li><a href="#tabset-9-3">While Training</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-9-1">
 <ul>
 <li>Setup
 <ul>
@@ -1320,7 +1433,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </ul></li>
 </ul>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-9-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>fitted <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span> </span>
 <span id="cb8-2"><a></a>  <span class="fu">setup</span>(</span>
@@ -1335,7 +1448,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <span id="cb8-11"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-6-3">
+<div id="tabset-9-3">
 <ul>
 <li>This may take +5 minutes</li>
 <li>Discuss with your table the convolutional block

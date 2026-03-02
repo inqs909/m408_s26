@@ -1985,14 +1985,21 @@
     "href": "lectures/6a.html#convolutional-block-1-1",
     "title": "Convolutional\nNeural Networks",
     "section": "Convolutional Block 1",
-    "text": "Convolutional Block 1"
+    "text": "Convolutional Block 1\n\nProcessDefine\n\n\n\nGiven an 3 channels (3 matrix)\n\nApply a \\(k_1 \\times k_1\\) convolutional filter for each individual channel\nAdd up the results for each channel by convolutional filter\nApply a activation function\nPool the data using a \\(\\varrho_1 \\times \\varrho_1\\) window matrix\n\nRepeat the process for the remaining \\(\\varkappa_1\\) filters\n\n\n\n\nThe number of channels available as input\nThe size of the convolutional filter (\\(k_1\\))\nThe activation function\nThe pooling mechanism\n\nDefine the size of the window matrix (\\(\\varrho_h\\))\n\nDefine how many convolutional filters will be used (\\(\\varkappa_1\\))"
   },
   {
-    "objectID": "lectures/6a.html#convolutional-block-2",
-    "href": "lectures/6a.html#convolutional-block-2",
+    "objectID": "lectures/6a.html#convolutional-block-2-h2",
+    "href": "lectures/6a.html#convolutional-block-2-h2",
     "title": "Convolutional\nNeural Networks",
-    "section": "Convolutional Block 2+",
-    "text": "Convolutional Block 2+"
+    "section": "Convolutional Block 2 (h=2)",
+    "text": "Convolutional Block 2 (h=2)\n\nProcessDefine\n\n\n\nUse the number of channels from the previous block (\\(\\varkappa_1\\))\n\nApply a \\(k_2 \\times k_2\\) convolutional filter for each individual channel\nAdd up the results for each channel by convolutional filter\nApply a activation function\nPool the data using a \\(\\varrho_2 \\times \\varrho_2\\) window matrix\n\nRepeat the process for the remaining \\(\\varkappa_2\\) filters\n\n\n\n\nThe number of channels available as input\nThe size of the convolutional filter (\\(k_2\\))\nThe activation function\nThe pooling mechanism\n\nDefine the size of the window matrix (\\(\\varrho_h\\))\n\nDefine how many convolutional filters will be used (\\(\\varkappa_2\\))"
+  },
+  {
+    "objectID": "lectures/6a.html#convolutional-block-2-hh",
+    "href": "lectures/6a.html#convolutional-block-2-hh",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolutional Block 2+ (h=h)",
+    "text": "Convolutional Block 2+ (h=h)\n\nProcessDefine\n\n\n\nUse the number of channels from the previous block (\\(\\varkappa_{h-1}\\))\n\nApply a \\(k_h \\times k_h\\) convolutional filter for each individual channel\nAdd up the results for each channel by convolutional filter\nApply a activation function\nPool the data using a \\(\\varrho_h \\times \\varrho_h\\) window matrix\n\nRepeat the process for the remaining \\(\\varkappa_h\\) filters\n\n\n\n\nThe number of channels available as input\nThe size of the convolutional filter (\\(k_h\\))\nThe activation function\nThe pooling mechanism\n\nDefine the size of the window matrix (\\(\\varrho_h\\))\n\nDefine how many convolutional filters will be used (\\(\\varkappa_h\\))"
   },
   {
     "objectID": "lectures/6a.html#flattening",
@@ -2002,6 +2009,13 @@
     "text": "Flattening\nOnce the images has been pooled to a select pixels or features. The images are flattened to a set of inputs.\n\nThese inputs are used to a traditional neural network to classify an image."
   },
   {
+    "objectID": "lectures/6a.html#hidden-layers",
+    "href": "lectures/6a.html#hidden-layers",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Hidden Layers",
+    "text": "Hidden Layers"
+  },
+  {
     "objectID": "lectures/6a.html#neural-network",
     "href": "lectures/6a.html#neural-network",
     "title": "Convolutional\nNeural Networks",
@@ -2009,22 +2023,22 @@
     "text": "Neural Network"
   },
   {
-    "objectID": "lectures/6a.html#output-layer",
-    "href": "lectures/6a.html#output-layer",
+    "objectID": "lectures/6a.html#loss-function",
+    "href": "lectures/6a.html#loss-function",
     "title": "Convolutional\nNeural Networks",
-    "section": "Output Layer",
-    "text": "Output Layer"
+    "section": "Loss Function",
+    "text": "Loss Function\n\n\nMean Squared Error\n\\[\n\\frac{1}{n}\\sum^n_{i-1}\\left\\{Y_i-f(\\boldsymbol X; \\boldsymbol \\theta)\\right\\}^2\n\\]\n\nCross-Entropy\n\\[\n- \\sum^n_{i=1}\\sum^k_{j=1} Y_{ij}\\log\\left\\{f_j(\\bX_i;\\btheta)\\right\\}\n\\]\n\n\\(\\btheta\\) represents all the parameters in the convolutional filters and hidden layers."
   },
   {
     "objectID": "lectures/6a.html#training",
     "href": "lectures/6a.html#training",
     "title": "Convolutional\nNeural Networks",
     "section": "Training",
-    "text": "Training\nThe CNN is trained by supplying a set of pre-classified images.\n\nThe parameters in the convolution filters and are estimated using standard techniques."
+    "text": "Training\nThe CNN is trained by supplying a set of pre-classified images.\n\nThe parameters in the convolution filters and are estimated using standard techniques:\n\n\n\nStochastic Gradient Descent"
   },
   {
-    "objectID": "lectures/6a.html#process",
-    "href": "lectures/6a.html#process",
+    "objectID": "lectures/6a.html#process-3",
+    "href": "lectures/6a.html#process-3",
     "title": "Convolutional\nNeural Networks",
     "section": "Process",
     "text": "Process\n\nLoad R Packages\nLoad Data\nDefine Convolutional Block\nDefine Model\nTrain Model"
@@ -2065,8 +2079,8 @@
     "text": "CIFAR-10 Data\n\nOverviewCode\n\n\n\nDefine Directory\n\nYou may need to change it\nTry this \".\"\n\nLoad training CIFAR-10 Data\nLoad testing CIFAR-10 Data\nCreate Data Loader\n\nWill create batches of data (128 images)\nLoad each batch one at a time instead of the entire thing.\n\n\n\n\n\ndir &lt;- \"../\"\n\n\ntrain_ds &lt;- cifar10_dataset(\n  root = dir,\n  train = TRUE, \n  download = TRUE, \n  transform = transform_to_tensor\n)\n\ntest_ds &lt;- cifar10_dataset(\n  dir, \n  train = FALSE, \n  download = TRUE,\n  transform = transform_to_tensor\n)\n\ntrain_dl &lt;- dataloader(train_ds,\n  batch_size = 128,\n  shuffle = TRUE\n)"
   },
   {
-    "objectID": "lectures/6a.html#convolutional-block-3",
-    "href": "lectures/6a.html#convolutional-block-3",
+    "objectID": "lectures/6a.html#convolutional-block-2",
+    "href": "lectures/6a.html#convolutional-block-2",
     "title": "Convolutional\nNeural Networks",
     "section": "Convolutional Block",
     "text": "Convolutional Block\n\nOverviewCode\n\n\n\nDefine Convolutional Block\n\nIndicate Kernel Filter Size\n\n\\(3\\times 3\\) Matrix\nFold by adding\n\nApply Rectified Linear Unit\nPool Matrix\n\nMax Function\nWindow: \\(3\\times 3\\) Matrix\n\n\n\n\n\n\nconv_block &lt;- nn_module(\n  initialize = function(in_channels, out_channels) {\n    self$conv &lt;- nn_conv2d(\n      in_channels = in_channels, \n      out_channels = out_channels, \n      kernel_size = c(3,3), \n      padding = \"same\"\n    )\n    self$relu &lt;- nn_relu()\n    self$pool &lt;- nn_max_pool2d(kernel_size = c(2,2))\n  },\n  forward = function(x) {\n    x |&gt; \n      self$conv() |&gt; \n      self$relu() |&gt; \n      self$pool()\n  }\n)"
