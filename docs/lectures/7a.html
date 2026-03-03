@@ -346,7 +346,7 @@
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title"><p>Convolutional<br>
 Neural Networks</p></h1>
-  <p class="subtitle">Image Classification with CIFAR</p>
+  <p class="subtitle">Model Building</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -389,16 +389,12 @@ Neural Networks</p></h1>
 <span id="cb2-21"><a></a>classes <span class="op">=</span> (<span class="st">'plane'</span>, <span class="st">'car'</span>, <span class="st">'bird'</span>, <span class="st">'cat'</span>,</span>
 <span id="cb2-22"><a></a>           <span class="st">'deer'</span>, <span class="st">'dog'</span>, <span class="st">'frog'</span>, <span class="st">'horse'</span>, <span class="st">'ship'</span>, <span class="st">'truck'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section>
-<section id="image-classification" class="title-slide slide level1 agenda-slide center">
-<h1>Image Classification</h1>
+<section id="building-cnns" class="title-slide slide level1 agenda-slide center">
+<h1>Building CNNs</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-active">
-<p>Image Classification</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Convolutional Neural Networks</p>
+<p>Building CNNs</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Input Data</p>
@@ -415,82 +411,14 @@ Neural Networks</p></h1>
 </ul>
 </div>
 </section>
-<section id="image-classification-1" class="slide level2">
-<h2>Image Classification</h2>
-<p>Image classification is the process of having a computer analyzse an image and classify it with a selected category.</p>
-</section>
-<section id="image-classification-2" class="slide level2">
-<h2>Image Classification</h2>
-<p>What is this a picture of?</p>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/squirrel.jpg" class="quarto-figure quarto-figure-center" width="400"></p>
-</figure>
-</div>
-</div>
-</section>
-<section id="image-classification-3" class="slide level2">
-<h2>Image Classification</h2>
-<p>How did you know it was a squirrel?</p>
-</section></section>
-<section>
-<section id="convolutional-neural-networks" class="title-slide slide level1 agenda-slide center">
-<h1>Convolutional Neural Networks</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Image Classification</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Convolutional Neural Networks</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Input Data</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Convolutional Block</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>CNN Architecture</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>R CIFAR</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="convolutional-neural-networks-1" class="slide level2">
-<h2>Convolutional Neural Networks</h2>
-<p>Convolutional Neural Networks became popular in the 2010’s with the success of image classification.</p>
-<div class="fragment">
-<p>The idea is to mimic how a human mind will classify an image. (From an old understanding of neurobiology.)</p>
-</div>
-<div class="fragment">
-<p>With the use of convolutional filters, a convolutional neural networks is trained by using a set of images that have been previously classfied.</p>
-</div>
-<div class="fragment">
-<p>Once the network is trained, new images can be classified.</p>
-</div>
-</section>
-<section id="cnn" class="slide level2">
-<h2>CNN</h2>
 
-<img data-src="img/islr2/Chapter10/10_6.jpg" class="r-stretch quarto-figure-center"><p class="caption">Credit: ISLR2</p></section>
-<section id="architecture" class="slide level2">
-<h2>Architecture</h2>
-
-<img data-src="https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
 <section id="input-data" class="title-slide slide level1 agenda-slide center">
 <h1>Input Data</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Image Classification</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Convolutional Neural Networks</p>
+<p>Building CNNs</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Input Data</p>
@@ -510,11 +438,11 @@ Neural Networks</p></h1>
 <section id="input-data-1" class="slide level2">
 <h2>Input Data</h2>
 
-<img data-src="6a_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<img data-src="7a_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
 <section id="channels" class="slide level2">
 <h2>Channels</h2>
 
-<img data-src="6a_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<img data-src="7a_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="data---red" class="slide level2">
 <h2>Data - Red</h2>
 <div class="cell">
@@ -693,10 +621,7 @@ Neural Networks</p></h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Image Classification</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Convolutional Neural Networks</p>
+<p>Building CNNs</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Input Data</p>
@@ -782,7 +707,7 @@ j &amp; k &amp; l
 <p><span class="math display">\[
 \left(
 \begin{array}{cc}
-a\alpha + b\beta + d\gamma + e\delta &amp; b\alpha + c\beta + e\gamma + f\delta \\
+a\alpha + b\beta + d\gamma + w\delta &amp; b\alpha + c\beta + e\gamma + f\delta \\
 d\alpha + e\beta + g\gamma + h\delta &amp; e\alpha + f\beta + h\gamma + i\delta \\
 g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 \end{array}
@@ -821,7 +746,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </section>
 <section id="folding" class="slide level2">
 <h2>Folding</h2>
-<p>Folding is the process when we combine the channels together. It is common to add the channels together once the convolution filter is applied to each one.</p>
+<p>Folding is the process when we combine channels together. It is common to add the channels together once the convolution filter is applied to each one.</p>
 </section>
 <section id="folding-example" class="slide level2">
 <h2>Folding Example</h2>
@@ -1022,10 +947,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Image Classification</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Convolutional Neural Networks</p>
+<p>Building CNNs</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Input Data</p>
@@ -1191,10 +1113,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Image Classification</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Convolutional Neural Networks</p>
+<p>Building CNNs</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Input Data</p>
@@ -1223,7 +1142,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </section>
 <section id="cifar-10-data" class="slide level2">
 <h2>CIFAR-10 Data</h2>
-<p>The Canadian Institute for Advanced Research (CIFAR) provides a collection of 60,000 images that are classified into 10 categories. Each image has 32 by 32 pixels.</p>
+<p>The Canadian Institute for Advanced Research (CIFAR) provides a collection of 60,000 images that are classified in 10 categories. Each image has 32 by 32 pixels.</p>
 </section>
 <section id="cifar-10-classes" class="slide level2">
 <h2>CIFAR-10 Classes</h2>
@@ -1249,7 +1168,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 <section id="cifar-10-example" class="slide level2">
 <h2>CIFAR-10 Example</h2>
 
-<img data-src="6a_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="7a_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="torch-packages-in-r" class="slide level2">
 <h2>Torch Packages in R</h2>
 <div class="cell">
@@ -1451,7 +1370,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
 </div>
 <div id="tabset-9-3">
 <ul>
-<li>This may take +10 minutes</li>
+<li>This may take +5 minutes</li>
 <li>Discuss with your table the convolutional block
 <ul>
 <li>Comment the code.</li>
@@ -1472,7 +1391,7 @@ g\alpha + h\beta + j\gamma + k\delta &amp; h\alpha + i\beta + k\gamma + l\delta
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>m408.inqs.info/lectures/6a</p>
+<p>m408.inqs.info/lectures/7a</p>
 </div>
 </div></div>
 

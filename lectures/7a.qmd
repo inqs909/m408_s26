@@ -2,13 +2,13 @@
 title: |
   Convolutional \
   Neural Networks
-subtitle: "Image Classification with CIFAR"
+subtitle: "Model Building"
 format:
   revealjs:
     width: 1200
     scrollable: true
     include-in-header: "math.html"
-    footer: m408.inqs.info/lectures/6a
+    footer: m408.inqs.info/lectures/7a
     theme: [default, styles.scss]
     preview-links: true
     navigation-mode: vertical
@@ -82,51 +82,7 @@ classes = ('plane', 'car', 'bird', 'cat',
            'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 ```
 
-# Image Classification
-
-## Image Classification
-
-Image classification is the process of having a computer analyzse an image and classify it with a selected category.
-
-## Image Classification
-
-What is this a picture of?
-
-::: fragment
-![](img/squirrel.jpg){fig-align="center" width="400"}
-:::
-
-## Image Classification
-
-How did you know it was a squirrel?
-
-# Convolutional Neural Networks
-
-## Convolutional Neural Networks
-
-Convolutional Neural Networks became popular in the 2010's with the success of image classification.
-
-::: fragment
-The idea is to mimic how a human mind will classify an image. (From an old understanding of neurobiology.)
-:::
-
-::: fragment
-With the use of convolutional filters, a convolutional neural networks is trained by using a set of images that have been previously classfied.
-:::
-
-::: fragment
-Once the network is trained, new images can be classified.
-:::
-
-## CNN
-
-![Credit: ISLR2](img/islr2/Chapter10/10_6.jpg){fig-align="center"}
-
-## Architecture
-
-![](https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg){fig-align="center"}
-
-
+# Building CNNs
 
 # Input Data
 
@@ -276,7 +232,7 @@ $$
 $$
 \left(
 \begin{array}{cc}
-a\alpha + b\beta + d\gamma + e\delta & b\alpha + c\beta + e\gamma + f\delta \\
+a\alpha + b\beta + d\gamma + w\delta & b\alpha + c\beta + e\gamma + f\delta \\
 d\alpha + e\beta + g\gamma + h\delta & e\alpha + f\beta + h\gamma + i\delta \\
 g\alpha + h\beta + j\gamma + k\delta & h\alpha + i\beta + k\gamma + l\delta
 \end{array}
@@ -315,7 +271,7 @@ $$
 
 ## Folding
 
-Folding is the process when we combine the channels together.
+Folding is the process when we combine channels together.
 It is common to add the channels together once the convolution filter is applied to each one.
 
 ## Folding Example
@@ -682,7 +638,7 @@ The parameters in the convolution filters and are estimated using standard techn
 
 ## CIFAR-10 Data
 
-The Canadian Institute for Advanced Research (CIFAR) provides a collection of 60,000 images that are classified into 10 categories. Each image has 32 by 32 pixels.
+The Canadian Institute for Advanced Research (CIFAR) provides a collection of 60,000 images that are classified in 10 categories. Each image has 32 by 32 pixels.
 
 ## CIFAR-10 Classes
 
@@ -897,7 +853,7 @@ fitted <- model |>
 
 ### While Training
 
-- This may take +10 minutes
+- This may take +5 minutes
 - Discuss with your table the convolutional block
     - Comment the code.
 :::
