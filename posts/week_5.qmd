@@ -1,7 +1,7 @@
 ---
 title: "Week 5"
 date: 02-23-26
-description: This week looks building Neural Network Classifiers.
+description: This week looks at building Neural Network Classifiers.
 editor: source
 ---
 

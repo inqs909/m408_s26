@@ -1,7 +1,7 @@
 ---
 title: "Week 6"
 date: 03-03-26
-description: This week looks building Convolutional Neural Networks.
+description: This week looks provides an overview of Convolutional Neural Networks.
 editor: source
 ---
 
