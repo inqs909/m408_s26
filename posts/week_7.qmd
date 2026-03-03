@@ -1,6 +1,6 @@
 ---
-title: "Week 6"
-date: 03-03-26
+title: "Week 7"
+date: 03-08-26
 description: This week looks building Convolutional Neural Networks.
 editor: source
 ---
@@ -10,4 +10,4 @@ editor: source
 
 | Lecture | Slides                   | Videos  | R Code Files |
 |---------|--------------------------|---------|----------|
-| 1       | [Slides](../lectures/6a) | [Video](https://youtu.be/SMlcHXJXdSQ) | [CIFAR-10](../lectures/R/6a.R)  |
+| 1       | [Slides](../lectures/7a) | [Video]() | [CIFAR-10](../lectures/R/7a.R)  |

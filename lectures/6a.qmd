@@ -6,7 +6,7 @@ subtitle: "Image Classification with CIFAR"
 format:
   revealjs:
     width: 1200
-    scrollable: false
+    scrollable: true
     include-in-header: "math.html"
     footer: m408.inqs.info/lectures/6a
     theme: [default, styles.scss]
@@ -903,7 +903,6 @@ fitted <- model |>
 :::
 
 ## Plot Loss
-
 
 ```{r}
 plot(fitted)
