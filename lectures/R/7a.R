@@ -6,55 +6,35 @@ set.seed(909)
 torch_manual_seed(909)
 
 
+
 # dir <- "./"
 dir <- "../"
 
 
-train_ds <- tiny_imagenet_dataset(
-  dir,
-  download = TRUE,
-  transform = function(x) {
-    x %>%
-      transform_to_tensor() 
-  }
+train_ds <- cifar10_dataset(
+  root = dir,
+  train = TRUE, 
+  download = TRUE, 
+  transform = transform_to_tensor
 )
 
-valid_ds <- tiny_imagenet_dataset(
-  dir,
-  split = "val",
-  transform = function(x) {
-    x %>%
-      transform_to_tensor()
-  }
+test_ds <- cifar10_dataset(
+  dir, 
+  train = FALSE, 
+  download = TRUE,
+  transform = transform_to_tensor
 )
 
 train_dl <- dataloader(train_ds,
   batch_size = 128,
   shuffle = TRUE
 )
-valid_dl <- dataloader(valid_ds, batch_size = 128)
 
 ## Used to build cnn
 
 b1 <- train_dl |>
   dataloader_make_iter() |> 
   dataloader_next()
-
-b1$x$shape
-c1 <- conv_block(3, 8)
-c2 <- conv_block(8, 16)
-#l1 <- nn_linear(512, 16)
-b1$x |> 
-  c1() |> 
-  c2() |> 
-  # c3() |> 
-  # c4() |> 
-  torch_flatten(start_dim = 2) |> 
-  (\(x) x$shape)() 
-
-
-
-
 
 
 conv_block <- nn_module(
@@ -76,7 +56,20 @@ conv_block <- nn_module(
   }
 )
 
-model <- nn_module(
+b1$x$shape
+c1 <- conv_block(3, 8)
+c2 <- conv_block(8, 16)
+#l1 <- nn_linear(512, 16)
+b1$x |> 
+  c1() |> 
+  c2() |> 
+  # c3() |> 
+  # c4() |> 
+  torch_flatten(start_dim = 2) |> 
+  (\(x) x$shape)() 
+
+
+model1 <- nn_module(
   initialize = function() {
     self$conv <- nn_sequential(
       conv_block(3, 8),
@@ -84,9 +77,9 @@ model <- nn_module(
     )
     self$output <- nn_sequential(
       nn_dropout(0.5),
-      nn_linear(4096, 16),
+      nn_linear(1024, 16),
       nn_relu(),
-      nn_linear(16, 200)
+      nn_linear(16, 10)
     )
   },
   forward = function(x) {
@@ -98,11 +91,56 @@ model <- nn_module(
 )
 
 first <- Sys.time()
-fitted <- model |> 
+fitted1 <- model1 |> 
   setup(
     loss = nn_cross_entropy_loss(),
     optimizer = optim_rmsprop,
+    metrics = list(
+      luz_metric_accuracy()
+    )
+  ) |> 
+  set_opt_hparams(lr = 0.001) |> 
+  fit(
+    train_dl,
+    epochs = 3
+  )
+Sys.time() - first
 
+plot(fitted)
+
+## Batch Normalization
+
+model2 <- nn_module(
+  initialize = function() {
+    self$conv <- nn_sequential(
+      conv_block(3, 8),
+      nn_batch_norm2d(8),
+      conv_block(8, 16)
+    )
+    self$output <- nn_sequential(
+      nn_dropout(0.5),
+      nn_linear(1024, 16),
+      nn_relu(),
+      nn_linear(16, 10)
+    )    
+  },
+  forward = function(x) {
+    x |> 
+      self$conv() |> 
+      torch_flatten(start_dim = 2) |> 
+      self$output()
+  }
+)
+
+
+first <- Sys.time()
+fitted2 <- model2 |> 
+  setup(
+    loss = nn_cross_entropy_loss(),
+    optimizer = optim_rmsprop,
+    metrics = list(
+      luz_metric_accuracy()
+    )
   ) |> 
   set_opt_hparams(lr = 0.001) |> 
   fit(
@@ -114,3 +152,38 @@ Sys.time() - first
 plot(fitted)
 
 
+## Transfer Learning
+
+resnet <- model_resnet18(pretrained = TRUE)
+resnet
+resnet$fc
+
+convnet <- nn_module(
+  initialize = function() {
+    self$model <- model_resnet18(pretrained = TRUE)
+    for (par in self$parameters) {
+      par$requires_grad_(FALSE)
+    }
+    self$model$fc <- nn_sequential(
+      nn_linear(self$model$fc$in_features, 10)
+    )
+  },
+  forward = function(x) {
+    self$model(x)
+  }
+)
+
+model <- convnet %>%
+  setup(
+    loss = nn_cross_entropy_loss(),
+    optimizer = optim_adam,
+    metrics = list(
+      luz_metric_accuracy()
+    )
+  ) 
+
+
+first <- Sys.time()
+fitted <- model %>%
+  fit(train_dl, epochs = 5)
+Sys.time() - first
