@@ -196,7 +196,7 @@ plot(fitted3)
 
 resnet <- model_resnet18(pretrained = TRUE)
 resnet
-resnet$fc
+resnet$fc$in_features
 
 convnet <- nn_module(
   initialize = function() {
@@ -205,7 +205,7 @@ convnet <- nn_module(
       par$requires_grad_(FALSE)
     }
     self$model$fc <- nn_sequential(
-      nn_linear(self$model$fc$in_features, 10)
+      nn_linear(512, 10)
     )
   },
   forward = function(x) {

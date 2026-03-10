@@ -354,3 +354,35 @@ We will add the following code to `fit()` function:
 The idea of transfer learning models is to utilize pre-built models "knowledge" and transfer it to your own neural network that will be trained with your data.
 
 ## Transfer Learning
+
+1. Download a pre-trained model.
+2. Identify the last layer of the model.
+3. Set all parameters (weights) not be trained.
+4. Replace the last layer of the model with your neural network needs.
+5. Train the model.
+
+## Transfer Learning
+
+::: panel-tabset
+
+### Download
+
+```r
+resnet <- model_resnet18(pretrained = TRUE)
+resnet
+resnet$fc
+```
+
+### Adjustments
+
+```r
+self$model <- model_resnet18(pretrained = TRUE)
+for (par in self$parameters) {
+  par$requires_grad_(FALSE)
+}
+self$model$fc <- nn_sequential(
+  nn_linear(self$model$fc$in_features, 10)
+)
+```
+
+:::

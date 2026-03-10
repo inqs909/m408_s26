@@ -214,7 +214,14 @@
     "href": "lectures/7a.html#transfer-learning-2",
     "title": "Convolutional\nNeural Networks",
     "section": "Transfer Learning",
-    "text": "Transfer Learning"
+    "text": "Transfer Learning\n\nDownload a pre-trained model.\nIdentify the last layer of the model.\nSet all parameters (weights) not be trained.\nReplace the last layer of the model with your neural network needs.\nTrain the model."
+  },
+  {
+    "objectID": "lectures/7a.html#transfer-learning-3",
+    "href": "lectures/7a.html#transfer-learning-3",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Transfer Learning",
+    "text": "Transfer Learning\n\nDownloadAdjustments\n\n\nresnet &lt;- model_resnet18(pretrained = TRUE)\nresnet\nresnet$fc\n\n\nself$model &lt;- model_resnet18(pretrained = TRUE)\nfor (par in self$parameters) {\n  par$requires_grad_(FALSE)\n}\nself$model$fc &lt;- nn_sequential(\n  nn_linear(self$model$fc$in_features, 10)\n)"
   },
   {
     "objectID": "lectures/5a.html#r-packages",
