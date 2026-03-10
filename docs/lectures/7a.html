@@ -455,16 +455,180 @@ Neural Networks</p></h1>
 </ul>
 </div>
 </section>
-<section id="building-cnn" class="slide level2">
-<h2>Building CNN</h2>
-<p>A CNN is a combination of convolutional and hidden layers.</p>
-<div class="fragment">
-<p>We tend to chain these layers together to predict a</p>
+<section id="cnn-architecture" class="slide level2">
+<h2>CNN Architecture</h2>
+
+<img data-src="https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="convolutional-block-1" class="slide level2">
+<h2>Convolutional Block 1</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Process</a></li><li><a href="#tabset-1-2">Define</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li>Given an 3 channels (3 matrix)
+<ul>
+<li>Apply a <span class="math inline">\(k_1 \times k_1\)</span> convolutional filter for each individual channel</li>
+<li>Add up the results for each channel by convolutional filter</li>
+<li>Apply a activation function</li>
+<li>Pool the data using a <span class="math inline">\(\varrho_1 \times \varrho_1\)</span> window matrix</li>
+</ul></li>
+<li>Repeat the process for the remaining <span class="math inline">\(\varkappa_1\)</span> filters</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li>The number of channels available as input</li>
+<li>The size of the convolutional filter (<span class="math inline">\(k_1\)</span>)</li>
+<li>The activation function</li>
+<li>The pooling mechanism
+<ul>
+<li>Define the size of the window matrix (<span class="math inline">\(\varrho_h\)</span>)</li>
+</ul></li>
+<li>Define how many convolutional filters will be used (<span class="math inline">\(\varkappa_1\)</span>)</li>
+</ul>
+</div>
+</div>
 </div>
 </section>
-<section id="convolutional-block" class="slide level2">
-<h2>Convolutional Block</h2>
-<p>With the convolutional block</p>
+<section id="convolutional-block-2-hh" class="slide level2">
+<h2>Convolutional Block 2+ (h=h)</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Process</a></li><li><a href="#tabset-2-2">Define</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ul>
+<li>Use the number of channels from the previous block (<span class="math inline">\(\varkappa_{h-1}\)</span>)
+<ul>
+<li>Apply a <span class="math inline">\(k_h \times k_h\)</span> convolutional filter for each individual channel</li>
+<li>Add up the results for each channel by convolutional filter</li>
+<li>Apply a activation function</li>
+<li>Pool the data using a <span class="math inline">\(\varrho_h \times \varrho_h\)</span> window matrix</li>
+</ul></li>
+<li>Repeat the process for the remaining <span class="math inline">\(\varkappa_h\)</span> filters</li>
+</ul>
+</div>
+<div id="tabset-2-2">
+<ul>
+<li>The number of channels available as input</li>
+<li>The size of the convolutional filter (<span class="math inline">\(k_h\)</span>)</li>
+<li>The activation function</li>
+<li>The pooling mechanism
+<ul>
+<li>Define the size of the window matrix (<span class="math inline">\(\varrho_h\)</span>)</li>
+</ul></li>
+<li>Define how many convolutional filters will be used (<span class="math inline">\(\varkappa_h\)</span>)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="flattening" class="slide level2">
+<h2>Flattening</h2>
+<p>Once the images has been pooled to a select pixels or features. The images are flattened to a set of inputs.</p>
+<div class="fragment">
+<p>These inputs are used to a traditional neural network to classify an image.</p>
+</div>
+</section>
+<section id="hidden-layers" class="slide level2">
+<h2>Hidden Layers</h2>
+
+<img data-src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="neural-network" class="slide level2">
+<h2>Neural Network</h2>
+
+<img data-src="https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="cifar-analysis" class="slide level2">
+<h2>CIFAR Analysis</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a></a><span class="fu">library</span>(torch)</span>
+<span id="cb4-3"><a></a><span class="fu">library</span>(luz)</span>
+<span id="cb4-4"><a></a><span class="fu">library</span>(torchvision)</span>
+<span id="cb4-5"><a></a><span class="fu">set.seed</span>(<span class="dv">909</span>)</span>
+<span id="cb4-6"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">909</span>)</span>
+<span id="cb4-7"><a></a></span>
+<span id="cb4-8"><a></a></span>
+<span id="cb4-9"><a></a><span class="co"># dir &lt;- "./"</span></span>
+<span id="cb4-10"><a></a>dir <span class="ot">&lt;-</span> <span class="st">"../"</span></span>
+<span id="cb4-11"><a></a></span>
+<span id="cb4-12"><a></a></span>
+<span id="cb4-13"><a></a>train_ds <span class="ot">&lt;-</span> <span class="fu">cifar10_dataset</span>(</span>
+<span id="cb4-14"><a></a>  <span class="co"># root = dir,</span></span>
+<span id="cb4-15"><a></a>  <span class="at">train =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb4-16"><a></a>  <span class="at">download =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb4-17"><a></a>  <span class="at">transform =</span> transform_to_tensor</span>
+<span id="cb4-18"><a></a>)</span>
+<span id="cb4-19"><a></a></span>
+<span id="cb4-20"><a></a>test_ds <span class="ot">&lt;-</span> <span class="fu">cifar10_dataset</span>(</span>
+<span id="cb4-21"><a></a>  <span class="co"># dir, </span></span>
+<span id="cb4-22"><a></a>  <span class="at">train =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb4-23"><a></a>  <span class="at">download =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-24"><a></a>  <span class="at">transform =</span> transform_to_tensor</span>
+<span id="cb4-25"><a></a>)</span>
+<span id="cb4-26"><a></a></span>
+<span id="cb4-27"><a></a>train_dl <span class="ot">&lt;-</span> <span class="fu">dataloader</span>(train_ds,</span>
+<span id="cb4-28"><a></a>  <span class="at">batch_size =</span> <span class="dv">128</span>,</span>
+<span id="cb4-29"><a></a>  <span class="at">shuffle =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-30"><a></a>)</span>
+<span id="cb4-31"><a></a></span>
+<span id="cb4-32"><a></a>conv_block <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
+<span id="cb4-33"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(in_channels, out_channels) {</span>
+<span id="cb4-34"><a></a>    self<span class="sc">$</span>conv <span class="ot">&lt;-</span> <span class="fu">nn_conv2d</span>(</span>
+<span id="cb4-35"><a></a>      <span class="at">in_channels =</span> in_channels, </span>
+<span id="cb4-36"><a></a>      <span class="at">out_channels =</span> out_channels, </span>
+<span id="cb4-37"><a></a>      <span class="at">kernel_size =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>), </span>
+<span id="cb4-38"><a></a>      <span class="at">padding =</span> <span class="st">"same"</span></span>
+<span id="cb4-39"><a></a>    )</span>
+<span id="cb4-40"><a></a>    self<span class="sc">$</span>relu <span class="ot">&lt;-</span> <span class="fu">nn_relu</span>()</span>
+<span id="cb4-41"><a></a>    self<span class="sc">$</span>pool <span class="ot">&lt;-</span> <span class="fu">nn_max_pool2d</span>(<span class="at">kernel_size =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb4-42"><a></a>  },</span>
+<span id="cb4-43"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb4-44"><a></a>    x <span class="sc">|&gt;</span> </span>
+<span id="cb4-45"><a></a>      self<span class="sc">$</span><span class="fu">conv</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-46"><a></a>      self<span class="sc">$</span><span class="fu">relu</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-47"><a></a>      self<span class="sc">$</span><span class="fu">pool</span>()</span>
+<span id="cb4-48"><a></a>  }</span>
+<span id="cb4-49"><a></a>)</span>
+<span id="cb4-50"><a></a></span>
+<span id="cb4-51"><a></a>model <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
+<span id="cb4-52"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>() {</span>
+<span id="cb4-53"><a></a>    self<span class="sc">$</span>conv <span class="ot">&lt;-</span> <span class="fu">nn_sequential</span>(</span>
+<span id="cb4-54"><a></a>      <span class="fu">conv_block</span>(<span class="dv">3</span>, <span class="dv">8</span>),</span>
+<span id="cb4-55"><a></a>      <span class="fu">conv_block</span>(<span class="dv">8</span>, <span class="dv">16</span>)</span>
+<span id="cb4-56"><a></a>    )</span>
+<span id="cb4-57"><a></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_sequential</span>(</span>
+<span id="cb4-58"><a></a>      <span class="fu">nn_dropout</span>(<span class="fl">0.5</span>),</span>
+<span id="cb4-59"><a></a>      <span class="fu">nn_linear</span>(<span class="dv">1024</span>, <span class="dv">16</span>),</span>
+<span id="cb4-60"><a></a>      <span class="fu">nn_relu</span>(),</span>
+<span id="cb4-61"><a></a>      <span class="fu">nn_linear</span>(<span class="dv">16</span>, <span class="dv">10</span>)</span>
+<span id="cb4-62"><a></a>    )</span>
+<span id="cb4-63"><a></a>  },</span>
+<span id="cb4-64"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb4-65"><a></a>    x <span class="sc">|&gt;</span> </span>
+<span id="cb4-66"><a></a>      self<span class="sc">$</span><span class="fu">conv</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-67"><a></a>      <span class="fu">torch_flatten</span>(<span class="at">start_dim =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-68"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
+<span id="cb4-69"><a></a>  }</span>
+<span id="cb4-70"><a></a>)</span>
+<span id="cb4-71"><a></a></span>
+<span id="cb4-72"><a></a>first <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb4-73"><a></a>fitted <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span> </span>
+<span id="cb4-74"><a></a>  <span class="fu">setup</span>(</span>
+<span id="cb4-75"><a></a>    <span class="at">loss =</span> <span class="fu">nn_cross_entropy_loss</span>(),</span>
+<span id="cb4-76"><a></a>    <span class="at">optimizer =</span> optim_rmsprop,</span>
+<span id="cb4-77"><a></a></span>
+<span id="cb4-78"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb4-79"><a></a>  <span class="fu">set_opt_hparams</span>(<span class="at">lr =</span> <span class="fl">0.001</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-80"><a></a>  <span class="fu">fit</span>(</span>
+<span id="cb4-81"><a></a>    train_dl,</span>
+<span id="cb4-82"><a></a>    <span class="at">epochs =</span> <span class="dv">3</span></span>
+<span id="cb4-83"><a></a>  )</span>
+<span id="cb4-84"><a></a><span class="fu">Sys.time</span>() <span class="sc">-</span> first</span>
+<span id="cb4-85"><a></a></span>
+<span id="cb4-86"><a></a><span class="fu">plot</span>(fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lets-build-larger-models" class="slide level2">
+<h2>Let’s Build Larger Models</h2>
 </section></section>
 <section>
 <section id="speed-up-training" class="title-slide slide level1 agenda-slide center">
@@ -488,9 +652,16 @@ Neural Networks</p></h1>
 </section>
 <section id="speed-up-training-1" class="slide level2">
 <h2>Speed Up Training</h2>
+<ul>
+<li>GPU computing</li>
+<li>Batch Normalization</li>
+<li>Learning Rate</li>
+<li>Transfer Learning</li>
+</ul>
 </section>
 <section id="batch-normalization" class="slide level2">
 <h2>Batch Normalization</h2>
+<p><strong>Batch Normalization</strong> is the process where we scale the output of a convolutional block by the mean and standard deviation, which are parameters to be trained. This will allow</p>
 </section>
 <section id="learning-rate" class="slide level2">
 <h2>Learning Rate</h2>
@@ -517,6 +688,7 @@ Neural Networks</p></h1>
 </section>
 <section id="transfer-learning-1" class="slide level2">
 <h2>Transfer Learning</h2>
+<p>The idea of transfer learning models is to utilize pre-built models</p>
 
 
 </section></section>

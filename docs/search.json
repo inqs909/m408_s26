@@ -91,32 +91,74 @@
     "text": "Loading Data\n\n# dir &lt;- \"./\"\ndir &lt;- \"../\"\n\n\ntrain_ds &lt;- tiny_imagenet_dataset(\n  dir,\n  download = TRUE,\n  transform = function(x) {\n    x %&gt;%\n      transform_to_tensor() \n  }\n)\n\nvalid_ds &lt;- tiny_imagenet_dataset(\n  dir,\n  split = \"val\",\n  transform = function(x) {\n    x %&gt;%\n      transform_to_tensor()\n  }\n)"
   },
   {
-    "objectID": "lectures/7a.html#building-cnn",
-    "href": "lectures/7a.html#building-cnn",
+    "objectID": "lectures/7a.html#cnn-architecture",
+    "href": "lectures/7a.html#cnn-architecture",
     "title": "Convolutional\nNeural Networks",
-    "section": "Building CNN",
-    "text": "Building CNN\nA CNN is a combination of convolutional and hidden layers.\n\nWe tend to chain these layers together to predict a"
+    "section": "CNN Architecture",
+    "text": "CNN Architecture"
   },
   {
-    "objectID": "lectures/7a.html#convolutional-block",
-    "href": "lectures/7a.html#convolutional-block",
+    "objectID": "lectures/7a.html#convolutional-block-1",
+    "href": "lectures/7a.html#convolutional-block-1",
     "title": "Convolutional\nNeural Networks",
-    "section": "Convolutional Block",
-    "text": "Convolutional Block\nWith the convolutional block"
+    "section": "Convolutional Block 1",
+    "text": "Convolutional Block 1\n\nProcessDefine\n\n\n\nGiven an 3 channels (3 matrix)\n\nApply a \\(k_1 \\times k_1\\) convolutional filter for each individual channel\nAdd up the results for each channel by convolutional filter\nApply a activation function\nPool the data using a \\(\\varrho_1 \\times \\varrho_1\\) window matrix\n\nRepeat the process for the remaining \\(\\varkappa_1\\) filters\n\n\n\n\nThe number of channels available as input\nThe size of the convolutional filter (\\(k_1\\))\nThe activation function\nThe pooling mechanism\n\nDefine the size of the window matrix (\\(\\varrho_h\\))\n\nDefine how many convolutional filters will be used (\\(\\varkappa_1\\))"
+  },
+  {
+    "objectID": "lectures/7a.html#convolutional-block-2-hh",
+    "href": "lectures/7a.html#convolutional-block-2-hh",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Convolutional Block 2+ (h=h)",
+    "text": "Convolutional Block 2+ (h=h)\n\nProcessDefine\n\n\n\nUse the number of channels from the previous block (\\(\\varkappa_{h-1}\\))\n\nApply a \\(k_h \\times k_h\\) convolutional filter for each individual channel\nAdd up the results for each channel by convolutional filter\nApply a activation function\nPool the data using a \\(\\varrho_h \\times \\varrho_h\\) window matrix\n\nRepeat the process for the remaining \\(\\varkappa_h\\) filters\n\n\n\n\nThe number of channels available as input\nThe size of the convolutional filter (\\(k_h\\))\nThe activation function\nThe pooling mechanism\n\nDefine the size of the window matrix (\\(\\varrho_h\\))\n\nDefine how many convolutional filters will be used (\\(\\varkappa_h\\))"
+  },
+  {
+    "objectID": "lectures/7a.html#flattening",
+    "href": "lectures/7a.html#flattening",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Flattening",
+    "text": "Flattening\nOnce the images has been pooled to a select pixels or features. The images are flattened to a set of inputs.\n\nThese inputs are used to a traditional neural network to classify an image."
+  },
+  {
+    "objectID": "lectures/7a.html#hidden-layers",
+    "href": "lectures/7a.html#hidden-layers",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Hidden Layers",
+    "text": "Hidden Layers"
+  },
+  {
+    "objectID": "lectures/7a.html#neural-network",
+    "href": "lectures/7a.html#neural-network",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Neural Network",
+    "text": "Neural Network"
+  },
+  {
+    "objectID": "lectures/7a.html#cifar-analysis",
+    "href": "lectures/7a.html#cifar-analysis",
+    "title": "Convolutional\nNeural Networks",
+    "section": "CIFAR Analysis",
+    "text": "CIFAR Analysis\nlibrary(tidyverse)\nlibrary(torch)\nlibrary(luz)\nlibrary(torchvision)\nset.seed(909)\ntorch_manual_seed(909)\n\n\n# dir &lt;- \"./\"\ndir &lt;- \"../\"\n\n\ntrain_ds &lt;- cifar10_dataset(\n  # root = dir,\n  train = TRUE, \n  download = TRUE, \n  transform = transform_to_tensor\n)\n\ntest_ds &lt;- cifar10_dataset(\n  # dir, \n  train = FALSE, \n  download = TRUE,\n  transform = transform_to_tensor\n)\n\ntrain_dl &lt;- dataloader(train_ds,\n  batch_size = 128,\n  shuffle = TRUE\n)\n\nconv_block &lt;- nn_module(\n  initialize = function(in_channels, out_channels) {\n    self$conv &lt;- nn_conv2d(\n      in_channels = in_channels, \n      out_channels = out_channels, \n      kernel_size = c(3,3), \n      padding = \"same\"\n    )\n    self$relu &lt;- nn_relu()\n    self$pool &lt;- nn_max_pool2d(kernel_size = c(2,2))\n  },\n  forward = function(x) {\n    x |&gt; \n      self$conv() |&gt; \n      self$relu() |&gt; \n      self$pool()\n  }\n)\n\nmodel &lt;- nn_module(\n  initialize = function() {\n    self$conv &lt;- nn_sequential(\n      conv_block(3, 8),\n      conv_block(8, 16)\n    )\n    self$output &lt;- nn_sequential(\n      nn_dropout(0.5),\n      nn_linear(1024, 16),\n      nn_relu(),\n      nn_linear(16, 10)\n    )\n  },\n  forward = function(x) {\n    x |&gt; \n      self$conv() |&gt; \n      torch_flatten(start_dim = 2) |&gt; \n      self$output()\n  }\n)\n\nfirst &lt;- Sys.time()\nfitted &lt;- model |&gt; \n  setup(\n    loss = nn_cross_entropy_loss(),\n    optimizer = optim_rmsprop,\n\n  ) |&gt; \n  set_opt_hparams(lr = 0.001) |&gt; \n  fit(\n    train_dl,\n    epochs = 3\n  )\nSys.time() - first\n\nplot(fitted)"
+  },
+  {
+    "objectID": "lectures/7a.html#lets-build-larger-models",
+    "href": "lectures/7a.html#lets-build-larger-models",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Let’s Build Larger Models",
+    "text": "Let’s Build Larger Models"
   },
   {
     "objectID": "lectures/7a.html#speed-up-training-1",
     "href": "lectures/7a.html#speed-up-training-1",
     "title": "Convolutional\nNeural Networks",
     "section": "Speed Up Training",
-    "text": "Speed Up Training"
+    "text": "Speed Up Training\n\nGPU computing\nBatch Normalization\nLearning Rate\nTransfer Learning"
   },
   {
     "objectID": "lectures/7a.html#batch-normalization",
     "href": "lectures/7a.html#batch-normalization",
     "title": "Convolutional\nNeural Networks",
     "section": "Batch Normalization",
-    "text": "Batch Normalization"
+    "text": "Batch Normalization\nBatch Normalization is the process where we scale the output of a convolutional block by the mean and standard deviation, which are parameters to be trained. This will allow"
   },
   {
     "objectID": "lectures/7a.html#learning-rate",
@@ -130,7 +172,7 @@
     "href": "lectures/7a.html#transfer-learning-1",
     "title": "Convolutional\nNeural Networks",
     "section": "Transfer Learning",
-    "text": "Transfer Learning"
+    "text": "Transfer Learning\nThe idea of transfer learning models is to utilize pre-built models"
   },
   {
     "objectID": "lectures/5a.html#r-packages",

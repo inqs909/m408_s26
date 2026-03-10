@@ -59,12 +59,15 @@ conv_block <- nn_module(
 b1$x$shape
 c1 <- conv_block(3, 8)
 c2 <- conv_block(8, 16)
+c3 <- conv_block(16, 32)
+c4 <- conv_block(32, 64)
+
 #l1 <- nn_linear(512, 16)
 b1$x |> 
   c1() |> 
   c2() |> 
-  # c3() |> 
-  # c4() |> 
+  c3() |> 
+  c4() |> 
   torch_flatten(start_dim = 2) |> 
   (\(x) x$shape)() 
 
@@ -73,11 +76,13 @@ model1 <- nn_module(
   initialize = function() {
     self$conv <- nn_sequential(
       conv_block(3, 8),
-      conv_block(8, 16)
+      conv_block(8, 16),
+      conv_block(16, 32),
+      conv_block(32, 64)
     )
     self$output <- nn_sequential(
       nn_dropout(0.5),
-      nn_linear(1024, 16),
+      nn_linear(256, 16),
       nn_relu(),
       nn_linear(16, 10)
     )
@@ -106,7 +111,7 @@ fitted1 <- model1 |>
   )
 Sys.time() - first
 
-plot(fitted)
+plot(fitted1)
 
 ## Batch Normalization
 
@@ -115,11 +120,15 @@ model2 <- nn_module(
     self$conv <- nn_sequential(
       conv_block(3, 8),
       nn_batch_norm2d(8),
-      conv_block(8, 16)
+      conv_block(8, 16),
+      nn_batch_norm2d(16),
+      conv_block(16, 32),
+      nn_batch_norm2d(32),
+      conv_block(32, 64)
     )
     self$output <- nn_sequential(
       nn_dropout(0.5),
-      nn_linear(1024, 16),
+      nn_linear(256, 16),
       nn_relu(),
       nn_linear(16, 10)
     )    
@@ -149,8 +158,39 @@ fitted2 <- model2 |>
   )
 Sys.time() - first
 
-plot(fitted)
+plot(fitted2)
 
+## Dynamic Learning Rate
+
+model3 <- model2 |> 
+  setup(
+    loss = nn_cross_entropy_loss(),
+    optimizer = optim_rmsprop,
+    metrics = list(
+      luz_metric_accuracy()
+    )
+  )
+
+rates <- model3 |> lr_finder(train_dl, start_lr = 0.000001, end_lr = 0.3)
+plot(rates)
+
+
+first <- Sys.time()
+fitted3 <- model3 |> 
+  fit(train_dl, 
+      epochs = 3,
+      callbacks = list(
+        luz_callback_lr_scheduler(
+          lr_one_cycle,
+          max_lr = 0.001,
+          epochs = 5,
+          steps_per_epoch = length(train_dl),
+          call_on = "on_batch_end"
+        )
+      )
+  )
+Sys.time() - first
+plot(fitted3)
 
 ## Transfer Learning
 
@@ -173,7 +213,7 @@ convnet <- nn_module(
   }
 )
 
-model <- convnet %>%
+model4 <- convnet |> 
   setup(
     loss = nn_cross_entropy_loss(),
     optimizer = optim_adam,
@@ -184,6 +224,6 @@ model <- convnet %>%
 
 
 first <- Sys.time()
-fitted <- model %>%
-  fit(train_dl, epochs = 5)
+fitted4 <- model4 |> 
+  fit(train_dl, epochs = 3)
 Sys.time() - first

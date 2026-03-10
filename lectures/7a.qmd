@@ -116,27 +116,190 @@ valid_ds <- tiny_imagenet_dataset(
 
 # Building CNNs
 
-## Building CNN
 
-A CNN is a combination of convolutional and hidden layers. 
+## CNN Architecture
 
-::: {.fragment}
-We tend to chain these layers together to predict a 
+![](https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg){fig-align="center"}
+
+
+## Convolutional Block 1
+
+::: panel-tabset
+
+### Process
+
+- Given an 3 channels (3 matrix)
+    - Apply a $k_1 \times k_1$ convolutional filter for each individual channel
+    - Add up the results for each channel by convolutional filter
+    - Apply a activation function
+    - Pool the data using a $\varrho_1 \times \varrho_1$ window matrix
+- Repeat the process for the remaining $\varkappa_1$ filters 
+
+### Define
+
+- The number of channels available as input
+- The size of the convolutional filter ($k_1$)
+- The activation function
+- The pooling mechanism
+    - Define the size of the window matrix ($\varrho_h$)
+- Define how many convolutional filters will be used ($\varkappa_1$)
+
 :::
 
-## Convolutional Block
+## Convolutional Block 2+ (h=h)
 
-With the convolutional block 
+::: panel-tabset
+
+### Process
+
+- Use the number of channels from the previous block ($\varkappa_{h-1}$)
+    - Apply a $k_h \times k_h$ convolutional filter for each individual channel
+    - Add up the results for each channel by convolutional filter
+    - Apply a activation function
+    - Pool the data using a $\varrho_h \times \varrho_h$ window matrix
+- Repeat the process for the remaining $\varkappa_h$ filters 
+
+### Define
+
+- The number of channels available as input
+- The size of the convolutional filter ($k_h$)
+- The activation function
+- The pooling mechanism
+    - Define the size of the window matrix ($\varrho_h$)
+- Define how many convolutional filters will be used ($\varkappa_h$)
+
+:::
+
+
+## Flattening
+
+Once the images has been pooled to a select pixels or features. The images are flattened to a set of inputs.
+
+::: fragment
+These inputs are used to a traditional neural network to classify an image.
+:::
+
+## Hidden Layers
+
+![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png){fig-align="center"}
+
+## Neural Network
+
+![](https://www.embedded.com/wp-content/uploads/2023/06/23026adi-cnn1_f03_thumb.jpg){fig-align="center"}
+
+
+## CIFAR Analysis
+
+```r
+library(tidyverse)
+library(torch)
+library(luz)
+library(torchvision)
+set.seed(909)
+torch_manual_seed(909)
+
+
+# dir <- "./"
+dir <- "../"
+
+
+train_ds <- cifar10_dataset(
+  # root = dir,
+  train = TRUE, 
+  download = TRUE, 
+  transform = transform_to_tensor
+)
+
+test_ds <- cifar10_dataset(
+  # dir, 
+  train = FALSE, 
+  download = TRUE,
+  transform = transform_to_tensor
+)
+
+train_dl <- dataloader(train_ds,
+  batch_size = 128,
+  shuffle = TRUE
+)
+
+conv_block <- nn_module(
+  initialize = function(in_channels, out_channels) {
+    self$conv <- nn_conv2d(
+      in_channels = in_channels, 
+      out_channels = out_channels, 
+      kernel_size = c(3,3), 
+      padding = "same"
+    )
+    self$relu <- nn_relu()
+    self$pool <- nn_max_pool2d(kernel_size = c(2,2))
+  },
+  forward = function(x) {
+    x |> 
+      self$conv() |> 
+      self$relu() |> 
+      self$pool()
+  }
+)
+
+model <- nn_module(
+  initialize = function() {
+    self$conv <- nn_sequential(
+      conv_block(3, 8),
+      conv_block(8, 16)
+    )
+    self$output <- nn_sequential(
+      nn_dropout(0.5),
+      nn_linear(1024, 16),
+      nn_relu(),
+      nn_linear(16, 10)
+    )
+  },
+  forward = function(x) {
+    x |> 
+      self$conv() |> 
+      torch_flatten(start_dim = 2) |> 
+      self$output()
+  }
+)
+
+first <- Sys.time()
+fitted <- model |> 
+  setup(
+    loss = nn_cross_entropy_loss(),
+    optimizer = optim_rmsprop,
+
+  ) |> 
+  set_opt_hparams(lr = 0.001) |> 
+  fit(
+    train_dl,
+    epochs = 3
+  )
+Sys.time() - first
+
+plot(fitted)
+
+```
+## Let's Build Larger Models
+
 
 
 # Speed Up Training
 
 ## Speed Up Training
 
+- GPU computing
+- Batch Normalization
+- Learning Rate
+- Transfer Learning
+
 ## Batch Normalization
+
+**Batch Normalization** is the process where we scale the output of a convolutional block by the mean and standard deviation, which are parameters to be trained. This will allow 
 
 ## Learning Rate
 
 # Transfer Learning
 
 ## Transfer Learning
+
+The idea of transfer learning models is to utilize pre-built models 
