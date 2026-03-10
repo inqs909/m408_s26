@@ -629,6 +629,9 @@ Neural Networks</p></h1>
 </section>
 <section id="lets-build-larger-models" class="slide level2">
 <h2>Let’s Build Larger Models</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>b1 <span class="ot">&lt;-</span> train_dl <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">dataloader_make_iter</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a></a>  <span class="fu">dataloader_next</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="speed-up-training" class="title-slide slide level1 agenda-slide center">
@@ -693,15 +696,15 @@ Neural Networks</p></h1>
 <section id="learning-rate-scheduler" class="slide level2">
 <h2>Learning Rate Scheduler</h2>
 <p>We will add the following code to <code>fit()</code> function:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>    callbacks <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb5-2"><a></a>      <span class="fu">luz_callback_lr_scheduler</span>(</span>
-<span id="cb5-3"><a></a>        lr_one_cycle,</span>
-<span id="cb5-4"><a></a>        <span class="at">max_lr =</span> <span class="fl">0.01</span>,</span>
-<span id="cb5-5"><a></a>        <span class="at">epochs =</span> <span class="dv">5</span>,</span>
-<span id="cb5-6"><a></a>        <span class="at">steps_per_epoch =</span> <span class="fu">length</span>(train_dl),</span>
-<span id="cb5-7"><a></a>        <span class="at">call_on =</span> <span class="st">"on_batch_end"</span></span>
-<span id="cb5-8"><a></a>      )</span>
-<span id="cb5-9"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>    callbacks <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb6-2"><a></a>      <span class="fu">luz_callback_lr_scheduler</span>(</span>
+<span id="cb6-3"><a></a>        lr_one_cycle,</span>
+<span id="cb6-4"><a></a>        <span class="at">max_lr =</span> <span class="fl">0.01</span>,</span>
+<span id="cb6-5"><a></a>        <span class="at">epochs =</span> <span class="dv">5</span>,</span>
+<span id="cb6-6"><a></a>        <span class="at">steps_per_epoch =</span> <span class="fu">length</span>(train_dl),</span>
+<span id="cb6-7"><a></a>        <span class="at">call_on =</span> <span class="st">"on_batch_end"</span></span>
+<span id="cb6-8"><a></a>      )</span>
+<span id="cb6-9"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="transfer-learning" class="title-slide slide level1 agenda-slide center">
@@ -743,18 +746,18 @@ Neural Networks</p></h1>
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Download</a></li><li><a href="#tabset-3-2">Adjustments</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>resnet <span class="ot">&lt;-</span> <span class="fu">model_resnet18</span>(<span class="at">pretrained =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-2"><a></a>resnet</span>
-<span id="cb6-3"><a></a>resnet<span class="sc">$</span>fc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>resnet <span class="ot">&lt;-</span> <span class="fu">model_resnet18</span>(<span class="at">pretrained =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-2"><a></a>resnet</span>
+<span id="cb7-3"><a></a>resnet<span class="sc">$</span>fc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-3-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>self<span class="sc">$</span>model <span class="ot">&lt;-</span> <span class="fu">model_resnet18</span>(<span class="at">pretrained =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-2"><a></a><span class="cf">for</span> (par <span class="cf">in</span> self<span class="sc">$</span>parameters) {</span>
-<span id="cb7-3"><a></a>  par<span class="sc">$</span><span class="fu">requires_grad_</span>(<span class="cn">FALSE</span>)</span>
-<span id="cb7-4"><a></a>}</span>
-<span id="cb7-5"><a></a>self<span class="sc">$</span>model<span class="sc">$</span>fc <span class="ot">&lt;-</span> <span class="fu">nn_sequential</span>(</span>
-<span id="cb7-6"><a></a>  <span class="fu">nn_linear</span>(self<span class="sc">$</span>model<span class="sc">$</span>fc<span class="sc">$</span>in_features, <span class="dv">10</span>)</span>
-<span id="cb7-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>self<span class="sc">$</span>model <span class="ot">&lt;-</span> <span class="fu">model_resnet18</span>(<span class="at">pretrained =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-2"><a></a><span class="cf">for</span> (par <span class="cf">in</span> self<span class="sc">$</span>parameters) {</span>
+<span id="cb8-3"><a></a>  par<span class="sc">$</span><span class="fu">requires_grad_</span>(<span class="cn">FALSE</span>)</span>
+<span id="cb8-4"><a></a>}</span>
+<span id="cb8-5"><a></a>self<span class="sc">$</span>model<span class="sc">$</span>fc <span class="ot">&lt;-</span> <span class="fu">nn_sequential</span>(</span>
+<span id="cb8-6"><a></a>  <span class="fu">nn_linear</span>(self<span class="sc">$</span>model<span class="sc">$</span>fc<span class="sc">$</span>in_features, <span class="dv">10</span>)</span>
+<span id="cb8-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>

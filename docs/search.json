@@ -144,7 +144,7 @@
     "href": "lectures/7a.html#lets-build-larger-models",
     "title": "Convolutional\nNeural Networks",
     "section": "Let’s Build Larger Models",
-    "text": "Let’s Build Larger Models"
+    "text": "Let’s Build Larger Models\nb1 &lt;- train_dl |&gt;\n  dataloader_make_iter() |&gt; \n  dataloader_next()"
   },
   {
     "objectID": "lectures/7a.html#speed-up-training-1",

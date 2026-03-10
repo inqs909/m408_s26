@@ -281,7 +281,11 @@ plot(fitted)
 ```
 ## Let's Build Larger Models
 
-
+```r
+b1 <- train_dl |>
+  dataloader_make_iter() |> 
+  dataloader_next()
+```
 
 # Speed Up Training
 
