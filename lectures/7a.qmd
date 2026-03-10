@@ -294,12 +294,63 @@ plot(fitted)
 
 ## Batch Normalization
 
-**Batch Normalization** is the process where we scale the output of a convolutional block by the mean and standard deviation, which are parameters to be trained. This will allow 
+**Batch Normalization** is the process where we scale the output of a convolutional block by the mean and standard deviation, which are parameters to be trained. This will allow the inputs for each layer to maintain the same units.
 
-## Learning Rate
+## Adding Batch Normalization
+
+We add `nn_batch_norm2d()` after each convolutional block.
+
+## Dynamic Learning Rate
+
+**Dynamic Learning Rate** is the process where the neural network will changes the step size it will learn at each iteration. This will ensure that it will take large or smaller steps when it needs to.
+
+## Step Size
+
+::: {.columns}
+::: {.column}
+
+### Small Step Sizes
+
+It will get to the minimum at a snail space, but it will get there.
+
+:::
+::: {.column}
+
+### Large Step Sizes
+
+It may skip the minimum at each time.
+
+:::
+:::
+
+## Learning Rate Finder
+
+The idea is to choose a rate that ensure the loss function is being minimized. 
+
+## Learning Rate Finder in R
+
+We will use the `lr_finder()` to compute loss at different functions, and then plot them.
+
+## Learning Rate Scheduler
+
+We will add the following code to `fit()` function:
+
+```r
+    callbacks = list(
+      luz_callback_lr_scheduler(
+        lr_one_cycle,
+        max_lr = 0.01,
+        epochs = 5,
+        steps_per_epoch = length(train_dl),
+        call_on = "on_batch_end"
+      )
+    )
+```
 
 # Transfer Learning
 
 ## Transfer Learning
 
-The idea of transfer learning models is to utilize pre-built models 
+The idea of transfer learning models is to utilize pre-built models "knowledge" and transfer it to your own neural network that will be trained with your data.
+
+## Transfer Learning

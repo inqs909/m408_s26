@@ -661,10 +661,47 @@ Neural Networks</p></h1>
 </section>
 <section id="batch-normalization" class="slide level2">
 <h2>Batch Normalization</h2>
-<p><strong>Batch Normalization</strong> is the process where we scale the output of a convolutional block by the mean and standard deviation, which are parameters to be trained. This will allow</p>
+<p><strong>Batch Normalization</strong> is the process where we scale the output of a convolutional block by the mean and standard deviation, which are parameters to be trained. This will allow the inputs for each layer to maintain the same units.</p>
 </section>
-<section id="learning-rate" class="slide level2">
-<h2>Learning Rate</h2>
+<section id="adding-batch-normalization" class="slide level2">
+<h2>Adding Batch Normalization</h2>
+<p>We add <code>nn_batch_norm2d()</code> after each convolutional block.</p>
+</section>
+<section id="dynamic-learning-rate" class="slide level2">
+<h2>Dynamic Learning Rate</h2>
+<p><strong>Dynamic Learning Rate</strong> is the process where the neural network will changes the step size it will learn at each iteration. This will ensure that it will take large or smaller steps when it needs to.</p>
+</section>
+<section id="step-size" class="slide level2">
+<h2>Step Size</h2>
+<div class="columns">
+<div class="column">
+<h3 id="small-step-sizes">Small Step Sizes</h3>
+<p>It will get to the minimum at a snail space, but it will get there.</p>
+</div><div class="column">
+<h3 id="large-step-sizes">Large Step Sizes</h3>
+<p>It may skip the minimum at each time.</p>
+</div></div>
+</section>
+<section id="learning-rate-finder" class="slide level2">
+<h2>Learning Rate Finder</h2>
+<p>The idea is to choose a rate that ensure the loss function is being minimized.</p>
+</section>
+<section id="learning-rate-finder-in-r" class="slide level2">
+<h2>Learning Rate Finder in R</h2>
+<p>We will use the <code>lr_finder()</code> to compute loss at different functions, and then plot them.</p>
+</section>
+<section id="learning-rate-scheduler" class="slide level2">
+<h2>Learning Rate Scheduler</h2>
+<p>We will add the following code to <code>fit()</code> function:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>    callbacks <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb5-2"><a></a>      <span class="fu">luz_callback_lr_scheduler</span>(</span>
+<span id="cb5-3"><a></a>        lr_one_cycle,</span>
+<span id="cb5-4"><a></a>        <span class="at">max_lr =</span> <span class="fl">0.01</span>,</span>
+<span id="cb5-5"><a></a>        <span class="at">epochs =</span> <span class="dv">5</span>,</span>
+<span id="cb5-6"><a></a>        <span class="at">steps_per_epoch =</span> <span class="fu">length</span>(train_dl),</span>
+<span id="cb5-7"><a></a>        <span class="at">call_on =</span> <span class="st">"on_batch_end"</span></span>
+<span id="cb5-8"><a></a>      )</span>
+<span id="cb5-9"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="transfer-learning" class="title-slide slide level1 agenda-slide center">
@@ -688,7 +725,10 @@ Neural Networks</p></h1>
 </section>
 <section id="transfer-learning-1" class="slide level2">
 <h2>Transfer Learning</h2>
-<p>The idea of transfer learning models is to utilize pre-built models</p>
+<p>The idea of transfer learning models is to utilize pre-built models “knowledge” and transfer it to your own neural network that will be trained with your data.</p>
+</section>
+<section id="transfer-learning-2" class="slide level2">
+<h2>Transfer Learning</h2>
 
 
 </section></section>

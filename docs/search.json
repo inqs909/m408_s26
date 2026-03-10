@@ -158,21 +158,63 @@
     "href": "lectures/7a.html#batch-normalization",
     "title": "Convolutional\nNeural Networks",
     "section": "Batch Normalization",
-    "text": "Batch Normalization\nBatch Normalization is the process where we scale the output of a convolutional block by the mean and standard deviation, which are parameters to be trained. This will allow"
+    "text": "Batch Normalization\nBatch Normalization is the process where we scale the output of a convolutional block by the mean and standard deviation, which are parameters to be trained. This will allow the inputs for each layer to maintain the same units."
   },
   {
-    "objectID": "lectures/7a.html#learning-rate",
-    "href": "lectures/7a.html#learning-rate",
+    "objectID": "lectures/7a.html#adding-batch-normalization",
+    "href": "lectures/7a.html#adding-batch-normalization",
     "title": "Convolutional\nNeural Networks",
-    "section": "Learning Rate",
-    "text": "Learning Rate"
+    "section": "Adding Batch Normalization",
+    "text": "Adding Batch Normalization\nWe add nn_batch_norm2d() after each convolutional block."
+  },
+  {
+    "objectID": "lectures/7a.html#dynamic-learning-rate",
+    "href": "lectures/7a.html#dynamic-learning-rate",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Dynamic Learning Rate",
+    "text": "Dynamic Learning Rate\nDynamic Learning Rate is the process where the neural network will changes the step size it will learn at each iteration. This will ensure that it will take large or smaller steps when it needs to."
+  },
+  {
+    "objectID": "lectures/7a.html#step-size",
+    "href": "lectures/7a.html#step-size",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Step Size",
+    "text": "Step Size\n\n\nSmall Step Sizes\nIt will get to the minimum at a snail space, but it will get there.\n\nLarge Step Sizes\nIt may skip the minimum at each time."
+  },
+  {
+    "objectID": "lectures/7a.html#learning-rate-finder",
+    "href": "lectures/7a.html#learning-rate-finder",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Learning Rate Finder",
+    "text": "Learning Rate Finder\nThe idea is to choose a rate that ensure the loss function is being minimized."
+  },
+  {
+    "objectID": "lectures/7a.html#learning-rate-finder-in-r",
+    "href": "lectures/7a.html#learning-rate-finder-in-r",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Learning Rate Finder in R",
+    "text": "Learning Rate Finder in R\nWe will use the lr_finder() to compute loss at different functions, and then plot them."
+  },
+  {
+    "objectID": "lectures/7a.html#learning-rate-scheduler",
+    "href": "lectures/7a.html#learning-rate-scheduler",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Learning Rate Scheduler",
+    "text": "Learning Rate Scheduler\nWe will add the following code to fit() function:\n    callbacks = list(\n      luz_callback_lr_scheduler(\n        lr_one_cycle,\n        max_lr = 0.01,\n        epochs = 5,\n        steps_per_epoch = length(train_dl),\n        call_on = \"on_batch_end\"\n      )\n    )"
   },
   {
     "objectID": "lectures/7a.html#transfer-learning-1",
     "href": "lectures/7a.html#transfer-learning-1",
     "title": "Convolutional\nNeural Networks",
     "section": "Transfer Learning",
-    "text": "Transfer Learning\nThe idea of transfer learning models is to utilize pre-built models"
+    "text": "Transfer Learning\nThe idea of transfer learning models is to utilize pre-built models “knowledge” and transfer it to your own neural network that will be trained with your data."
+  },
+  {
+    "objectID": "lectures/7a.html#transfer-learning-2",
+    "href": "lectures/7a.html#transfer-learning-2",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Transfer Learning",
+    "text": "Transfer Learning"
   },
   {
     "objectID": "lectures/5a.html#r-packages",

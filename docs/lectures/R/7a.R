@@ -107,7 +107,7 @@ fitted1 <- model1 |>
   set_opt_hparams(lr = 0.001) |> 
   fit(
     train_dl,
-    epochs = 3
+    epochs = 5
   )
 Sys.time() - first
 
@@ -154,7 +154,7 @@ fitted2 <- model2 |>
   set_opt_hparams(lr = 0.001) |> 
   fit(
     train_dl,
-    epochs = 3
+    epochs = 5
   )
 Sys.time() - first
 
@@ -225,5 +225,5 @@ model4 <- convnet |>
 
 first <- Sys.time()
 fitted4 <- model4 |> 
-  fit(train_dl, epochs = 3)
+  fit(train_dl, epochs = 5)
 Sys.time() - first
