@@ -21,51 +21,72 @@
     "text": "University Policies\n\nSyllabus Policies and Assistance\nCSUCI’s Syllabus Policies and Assistance Website provides important details about academic policies, campus expectations, and student support services that are all highly applicable to your success as a student both in and outside of the classroom. Ensure that you review this site on a regular basis to stay informed about the policies and resources that support your success, as campus resources or policies may change semester to semester.\n\n\nAcademic Honesty\nConduct yourself with honesty and integrity. Do not submit others’ work as your own. Foassignments and quizzes that allow you to work with a group, only put your name on what the group submits if you genuinely contributed to the work. Work completely independently on exams, using only the materials that are indicated as allowed. Failure to observe academic honesty results in substantial penalties that can include failing the course.\n\n\nCSUCI Basic Need\nPlease use the link to the Basic Needs Program on the Syllabus Policies and Assistance website (&lt;go.csuci.edu/syllabuspolicies&gt;) for information on emergency food, housing accommodations, toiletries, and connections to critical resources.\n\n\nCSUCI Disability Statement\nIf you are a student with a disability requesting reasonable accommodations in this course, you need to contact Disability Accommodations and Support Services (DASS) located on the second floor of Arroyo Hall, via email accommodations@csuci.edu or call 805-437-3331. All requests for reasonable accommodations require registration with DASS in advance of need: https://www.csuci.edu/dass/students/apply-for-services.htm. Faculty, students and DASS will work together regarding classroom accommodations. You are encouraged to discuss approved.\n\n\nDisruption\n\nIf I Am Out: I will communicate via email and will hold classes asynchronously.\nIf You Are Out: Contact me as soon as possible to talk about your options. Reasonable accommodations will be provided for a brief absence. With proper documentation, extended accommodations will be provided."
   },
   {
-    "objectID": "posts/week_6.html",
-    "href": "posts/week_6.html",
-    "title": "Week 6",
+    "objectID": "posts/week_7.html",
+    "href": "posts/week_7.html",
+    "title": "Week 7",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nCIFAR-10"
   },
   {
-    "objectID": "posts/week_6.html#resources",
-    "href": "posts/week_6.html#resources",
-    "title": "Week 6",
+    "objectID": "posts/week_7.html#resources",
+    "href": "posts/week_7.html#resources",
+    "title": "Week 7",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nCIFAR-10"
   },
   {
-    "objectID": "posts/week_4.html",
-    "href": "posts/week_4.html",
-    "title": "Week 4",
+    "objectID": "posts/week_5.html",
+    "href": "posts/week_5.html",
+    "title": "Week 5",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_4.html#resources",
-    "href": "posts/week_4.html#resources",
-    "title": "Week 4",
+    "objectID": "posts/week_5.html#resources",
+    "href": "posts/week_5.html#resources",
+    "title": "Week 5",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_2.html",
-    "href": "posts/week_2.html",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html",
+    "href": "posts/week_3.html",
+    "title": "Week 3",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_2.html#learning-outcomes",
-    "href": "posts/week_2.html#learning-outcomes",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html#learning-outcomes",
+    "href": "posts/week_3.html#learning-outcomes",
+    "title": "Week 3",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_2.html#resources",
-    "href": "posts/week_2.html#resources",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html#resources",
+    "href": "posts/week_3.html#resources",
+    "title": "Week 3",
+    "section": "Resources",
+    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\nSlides\nNA"
+  },
+  {
+    "objectID": "posts/week_1.html",
+    "href": "posts/week_1.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
+  },
+  {
+    "objectID": "posts/week_1.html#learning-outcomes",
+    "href": "posts/week_1.html#learning-outcomes",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
+  },
+  {
+    "objectID": "posts/week_1.html#resources",
+    "href": "posts/week_1.html#resources",
+    "title": "Week 1",
     "section": "Resources",
     "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
   },
@@ -1432,7 +1453,7 @@
     "href": "index.html",
     "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 7\n\n\nThis week looks at building Convolutional Neural Networks.\n\n\n\n\n\nMar 8, 2026\n\n\n\n\n\n\n\nWeek 6\n\n\nThis week provides an overview of Convolutional Neural Networks.\n\n\n\n\n\nMar 3, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nThis week looks at building Neural Network Classifiers.\n\n\n\n\n\nFeb 23, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks at building multi-layer Neural Networks.\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks at building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
+    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 8\n\n\nThis week looks at building Recurrent Neural Networks.\n\n\n\n\n\nMar 21, 2026\n\n\n\n\n\n\n\nWeek 7\n\n\nThis week looks at building Convolutional Neural Networks.\n\n\n\n\n\nMar 8, 2026\n\n\n\n\n\n\n\nWeek 6\n\n\nThis week provides an overview of Convolutional Neural Networks.\n\n\n\n\n\nMar 3, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nThis week looks at building Neural Network Classifiers.\n\n\n\n\n\nFeb 23, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks at building multi-layer Neural Networks.\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks at building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lectures/1b.html#r-programming",
@@ -2254,73 +2275,227 @@
     "text": "Plot Loss\n\nplot(fitted)"
   },
   {
-    "objectID": "posts/week_1.html",
-    "href": "posts/week_1.html",
-    "title": "Week 1",
+    "objectID": "lectures/8a.html#r-packages",
+    "href": "lectures/8a.html#r-packages",
+    "title": "Convolutional\nNeural Networks",
+    "section": "R Packages",
+    "text": "R Packages"
+  },
+  {
+    "objectID": "lectures/8a.html#r-packages-1",
+    "href": "lectures/8a.html#r-packages-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "R Packages",
+    "text": "R Packages\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(torchdatasets) # for datasets we are going to use\nlibrary(zeallot)\ntorch_manual_seed(909)"
+  },
+  {
+    "objectID": "lectures/8a.html#python-data",
+    "href": "lectures/8a.html#python-data",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Python Data",
+    "text": "Python Data\nimport torch\nimport torchvision\nimport torchvision.transforms as transforms\n\ntransform = transforms.Compose(\n    [transforms.ToTensor(),\n     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])\n\nbatch_size = 4\n\ntrainset = torchvision.datasets.CIFAR10(root='./data', train=True,\n                                        download=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,\n                                          shuffle=True, num_workers=2)\n\ntestset = torchvision.datasets.CIFAR10(root='./data', train=False,\n                                       download=True, transform=transform)\ntestloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,\n                                         shuffle=False, num_workers=2)\n\nclasses = ('plane', 'car', 'bird', 'cat',\n           'deer', 'dog', 'frog', 'horse', 'ship', 'truck')"
+  },
+  {
+    "objectID": "lectures/8a.html#sequential-data-1",
+    "href": "lectures/8a.html#sequential-data-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Sequential Data",
+    "text": "Sequential Data\nSequential data is data that is obtained in a series:\n\\[\nX_{(0)}\\rightarrow\nX_{(1)}\\rightarrow\nX_{(2)}\\rightarrow\nX_{(3)}\\rightarrow\n\\cdots\\rightarrow\nX_{(J-1)}\\rightarrow\nX_{(J)}\n\\]"
+  },
+  {
+    "objectID": "lectures/8a.html#stochastic-procceses",
+    "href": "lectures/8a.html#stochastic-procceses",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Stochastic Procceses",
+    "text": "Stochastic Procceses\nA stochastic process is a collection of random variables, that can be indexed by a parameters. Sequential data can be thought of as a stochastic process.\n\nThe generation of a variable \\(X_{(j)}\\) may or may not be dependent of the previous values."
+  },
+  {
+    "objectID": "lectures/8a.html#examples-of-sequential-data",
+    "href": "lectures/8a.html#examples-of-sequential-data",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Examples of Sequential Data",
+    "text": "Examples of Sequential Data\n\nDocuments and Books\nTemperature\nStock Prices\nSpeech/Recordings\nHandwriting"
+  },
+  {
+    "objectID": "lectures/8a.html#rnn",
+    "href": "lectures/8a.html#rnn",
+    "title": "Convolutional\nNeural Networks",
+    "section": "RNN",
+    "text": "RNN\nRecurrent Neural Networks are designed to analyze input data that is sequential data.\n\nAn RNN can accounts for the position of a data point in the sequence as well as the distance it has to other data points.\n\n\nUsing the data sequence, we can predict and outcome \\(Y\\)."
+  },
+  {
+    "objectID": "lectures/8a.html#rnn-1",
+    "href": "lectures/8a.html#rnn-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "RNN",
+    "text": "RNN\n\nSource: ISLR2"
+  },
+  {
+    "objectID": "lectures/8a.html#rnn-inputs",
+    "href": "lectures/8a.html#rnn-inputs",
+    "title": "Convolutional\nNeural Networks",
+    "section": "RNN Inputs",
+    "text": "RNN Inputs\n\\[\n\\boldsymbol X = (\\boldsymbol x_0, \\boldsymbol x_1, \\boldsymbol x_2, \\cdots, \\boldsymbol x_{J-1}, \\boldsymbol x_J)\n\\]\nwhere\n\\[\n\\boldsymbol x_{j} = (x_{j1},x_{j1}, \\cdots, x_{jK})\n\\]"
+  },
+  {
+    "objectID": "lectures/8a.html#hidden-layer",
+    "href": "lectures/8a.html#hidden-layer",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Hidden Layer",
+    "text": "Hidden Layer\n\\[\nh_{j} = f(\\bbeta_{hx}\\boldsymbol x_{j} + \\bbeta_{hh}h_{j-1} + b_h)\n\\]\n\n\\(\\bbeta_{hx}\\) and \\(\\bbeta_{hh}\\) are weight vectors for input-to-hidden, and hidden-to-hidden connections respectively."
+  },
+  {
+    "objectID": "lectures/8a.html#output-layer",
+    "href": "lectures/8a.html#output-layer",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Output Layer",
+    "text": "Output Layer\n\\[\ny_{j} = g(\\bbeta_{hy}h_{j} + b_y)\n\\]"
+  },
+  {
+    "objectID": "lectures/8a.html#document-classification-1",
+    "href": "lectures/8a.html#document-classification-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Document Classification",
+    "text": "Document Classification\nDocument Classification is the process of classifying documents to different categories."
+  },
+  {
+    "objectID": "lectures/8a.html#corpus",
+    "href": "lectures/8a.html#corpus",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Corpus",
+    "text": "Corpus\nA corpus refers to a large and structured collection of texts, typically stored electronically, and used for linguistic analysis, natural language processing (NLP), and other computational linguistics tasks."
+  },
+  {
+    "objectID": "lectures/8a.html#corpus-1",
+    "href": "lectures/8a.html#corpus-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Corpus",
+    "text": "Corpus\nThe texts in a corpus can vary widely in nature, ranging from written documents, such as books, articles, and websites, to transcribed speech and social media posts"
+  },
+  {
+    "objectID": "lectures/8a.html#one-hot-encoding",
+    "href": "lectures/8a.html#one-hot-encoding",
+    "title": "Convolutional\nNeural Networks",
+    "section": "One-Hot Encoding",
+    "text": "One-Hot Encoding\nOne-hot encoding converts categorical variables into a binary format where each category is represented by a binary vector. In this representation, each category corresponds to a unique index in the vector, and only one element in the vector is 1 (hot), while all other elements are 0 (cold)."
+  },
+  {
+    "objectID": "lectures/8a.html#one-hot-encoding-1",
+    "href": "lectures/8a.html#one-hot-encoding-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "One-Hot Encoding",
+    "text": "One-Hot Encoding"
+  },
+  {
+    "objectID": "lectures/8a.html#bag-of-words-model",
+    "href": "lectures/8a.html#bag-of-words-model",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Bag-of-words Model",
+    "text": "Bag-of-words Model\nThe Bag of Words model is a simple and fundamental technique in natural language processing (NLP). It represents text data as a collection of words, disregarding grammar and word order. Each document is represented by a vector where each dimension corresponds to a unique word in the entire corpus, and the value indicates the frequency of that word in the document. This model is widely used for tasks like text classification and sentiment analysis."
+  },
+  {
+    "objectID": "lectures/8a.html#text-mining",
+    "href": "lectures/8a.html#text-mining",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Text Mining",
+    "text": "Text Mining"
+  },
+  {
+    "objectID": "lectures/8a.html#rnn-2",
+    "href": "lectures/8a.html#rnn-2",
+    "title": "Convolutional\nNeural Networks",
+    "section": "RNN",
+    "text": "RNN\nA recurrent neural network can be used to account the sequential order of the words.\n\nSource: ISLR2"
+  },
+  {
+    "objectID": "lectures/8a.html#time-series-1",
+    "href": "lectures/8a.html#time-series-1",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Time Series",
+    "text": "Time Series\nA time series is a sequence of data points collected or recorded at successive, evenly spaced intervals of time. These data points can represent any variable that is observed or measured over time, such as temperature readings, stock prices, sales figures, or sensor data."
+  },
+  {
+    "objectID": "lectures/8a.html#autocorrelation",
+    "href": "lectures/8a.html#autocorrelation",
+    "title": "Convolutional\nNeural Networks",
+    "section": "Autocorrelation",
+    "text": "Autocorrelation\n\\[\nX_{(0)}\\rightarrow\nX_{(1)}\\rightarrow\nX_{(2)}\\rightarrow\nX_{(3)}\\rightarrow\n\\cdots\\rightarrow\nX_{(J-1)}\\rightarrow\nX_{(J)}\n\\]"
+  },
+  {
+    "objectID": "lectures/8a.html#more-information",
+    "href": "lectures/8a.html#more-information",
+    "title": "Convolutional\nNeural Networks",
+    "section": "More Information",
+    "text": "More Information"
+  },
+  {
+    "objectID": "lectures/8a.html#rnn-3",
+    "href": "lectures/8a.html#rnn-3",
+    "title": "Convolutional\nNeural Networks",
+    "section": "RNN",
+    "text": "RNN\nA recurrent neural network can be used to account the sequential order of each measurement.\n\nSource: ISLR2"
+  },
+  {
+    "objectID": "posts/week_2.html",
+    "href": "posts/week_2.html",
+    "title": "Week 2",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_1.html#learning-outcomes",
-    "href": "posts/week_1.html#learning-outcomes",
-    "title": "Week 1",
+    "objectID": "posts/week_2.html#learning-outcomes",
+    "href": "posts/week_2.html#learning-outcomes",
+    "title": "Week 2",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_1.html#resources",
-    "href": "posts/week_1.html#resources",
-    "title": "Week 1",
+    "objectID": "posts/week_2.html#resources",
+    "href": "posts/week_2.html#resources",
+    "title": "Week 2",
     "section": "Resources",
     "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
   },
   {
-    "objectID": "posts/week_3.html",
-    "href": "posts/week_3.html",
-    "title": "Week 3",
-    "section": "",
-    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
-  },
-  {
-    "objectID": "posts/week_3.html#learning-outcomes",
-    "href": "posts/week_3.html#learning-outcomes",
-    "title": "Week 3",
-    "section": "",
-    "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
-  },
-  {
-    "objectID": "posts/week_3.html#resources",
-    "href": "posts/week_3.html#resources",
-    "title": "Week 3",
-    "section": "Resources",
-    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\nSlides\nNA"
-  },
-  {
-    "objectID": "posts/week_5.html",
-    "href": "posts/week_5.html",
-    "title": "Week 5",
+    "objectID": "posts/week_4.html",
+    "href": "posts/week_4.html",
+    "title": "Week 4",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_5.html#resources",
-    "href": "posts/week_5.html#resources",
-    "title": "Week 5",
+    "objectID": "posts/week_4.html#resources",
+    "href": "posts/week_4.html#resources",
+    "title": "Week 4",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_7.html",
-    "href": "posts/week_7.html",
-    "title": "Week 7",
+    "objectID": "posts/week_6.html",
+    "href": "posts/week_6.html",
+    "title": "Week 6",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nCIFAR-10"
   },
   {
-    "objectID": "posts/week_7.html#resources",
-    "href": "posts/week_7.html#resources",
-    "title": "Week 7",
+    "objectID": "posts/week_6.html#resources",
+    "href": "posts/week_6.html#resources",
+    "title": "Week 6",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nCIFAR-10"
+  },
+  {
+    "objectID": "posts/week_8.html",
+    "href": "posts/week_8.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nRNN"
+  },
+  {
+    "objectID": "posts/week_8.html#resources",
+    "href": "posts/week_8.html#resources",
+    "title": "Week 8",
+    "section": "",
+    "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nRNN"
   }
 ]

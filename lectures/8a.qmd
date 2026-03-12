@@ -1,0 +1,230 @@
+---
+title: |
+  Convolutional \
+  Neural Networks
+subtitle: "Model Building"
+format:
+  revealjs:
+    width: 1200
+    scrollable: true
+    include-in-header: "math.html"
+    footer: m408.inqs.info/lectures/7a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: false
+    message: false
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## R Packages
+
+## R Packages
+
+```r
+library(torch)
+library(luz) # high-level interface for torch
+library(torchdatasets) # for datasets we are going to use
+library(zeallot)
+torch_manual_seed(909)
+```
+
+## Python Data
+
+```python
+import torch
+import torchvision
+import torchvision.transforms as transforms
+
+transform = transforms.Compose(
+    [transforms.ToTensor(),
+     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+
+batch_size = 4
+
+trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
+                                        download=True, transform=transform)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
+                                          shuffle=True, num_workers=2)
+
+testset = torchvision.datasets.CIFAR10(root='./data', train=False,
+                                       download=True, transform=transform)
+testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
+                                         shuffle=False, num_workers=2)
+
+classes = ('plane', 'car', 'bird', 'cat',
+           'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
+```
+
+# Sequential Data
+
+## Sequential Data
+
+Sequential data is data that is obtained in a series:
+
+$$
+X_{(0)}\rightarrow
+X_{(1)}\rightarrow
+X_{(2)}\rightarrow
+X_{(3)}\rightarrow
+\cdots\rightarrow
+X_{(J-1)}\rightarrow
+X_{(J)}
+$$
+
+## Stochastic Procceses
+
+A stochastic process is a collection of random variables, that can be indexed by a parameters. Sequential data can be thought of as a stochastic process.
+
+::: fragment
+The generation of a variable $X_{(j)}$ may or may not be dependent of the previous values.
+:::
+
+## Examples of Sequential Data
+
+-   Documents and Books
+
+-   Temperature
+
+-   Stock Prices
+
+-   Speech/Recordings
+
+-   Handwriting
+
+# Recurrent Neural Networks
+
+## RNN
+
+Recurrent Neural Networks are designed to analyze input data that is sequential data.
+
+::: fragment
+An RNN can accounts for the position of a data point in the sequence as well as the distance it has to other data points.
+:::
+
+::: fragment
+Using the data sequence, we can predict and outcome $Y$.
+:::
+
+## RNN
+
+![Source: ISLR2](img/islr2/Chapter10/10_12.png)
+
+## RNN Inputs
+
+$$
+\boldsymbol X = (\boldsymbol x_0, \boldsymbol x_1, \boldsymbol x_2, \cdots, \boldsymbol x_{J-1}, \boldsymbol x_J)
+$$ 
+
+where
+
+$$
+\boldsymbol x_{j} = (x_{j1},x_{j1}, \cdots, x_{jK})
+$$
+
+## Hidden Layer
+
+$$
+h_{j} = f(\bbeta_{hx}\boldsymbol x_{j} + \bbeta_{hh}h_{j-1} + b_h)
+$$
+
+-   $\bbeta_{hx}$ and $\bbeta_{hh}$ are weight vectors for input-to-hidden, and hidden-to-hidden connections respectively.
+
+## Output Layer
+
+$$
+y_{j} = g(\bbeta_{hy}h_{j} + b_y)
+$$
+
+# Document Classification
+
+## Document Classification
+
+Document Classification is the process of classifying documents to different categories.
+
+## Corpus
+
+A corpus refers to a large and structured collection of texts, typically stored electronically, and used for linguistic analysis, natural language processing (NLP), and other computational linguistics tasks.
+
+## Corpus
+
+The texts in a corpus can vary widely in nature, ranging from written documents, such as books, articles, and websites, to transcribed speech and social media posts
+
+## One-Hot Encoding
+
+One-hot encoding converts categorical variables into a binary format where each category is represented by a binary vector. In this representation, each category corresponds to a unique index in the vector, and only one element in the vector is 1 (hot), while all other elements are 0 (cold).
+
+## One-Hot Encoding
+
+![](https://www.researchgate.net/publication/354354484/figure/fig8/AS:1080214163587113@1634554534870/Illustration-of-the-one-hot-encoding-and-word-embeddings-a-One-hot-encoding-and-b.jpg)
+
+## Bag-of-words Model
+
+The Bag of Words model is a simple and fundamental technique in natural language processing (NLP). It represents text data as a collection of words, disregarding grammar and word order. Each document is represented by a vector where each dimension corresponds to a unique word in the entire corpus, and the value indicates the frequency of that word in the document. This model is widely used for tasks like text classification and sentiment analysis.
+
+## Text Mining
+
+[![](https://www.tidytextmining.com/images/cover.png)](https://www.tidytextmining.com/)
+
+## RNN
+
+A recurrent neural network can be used to account the sequential order of the words.
+
+![Source: ISLR2](img/islr2/Chapter10/10_12.png)
+
+# Time Series
+
+## Time Series
+
+A time series is a sequence of data points collected or recorded at successive, evenly spaced intervals of time. These data points can represent any variable that is observed or measured over time, such as temperature readings, stock prices, sales figures, or sensor data.
+
+## Autocorrelation
+
+
+$$
+X_{(0)}\rightarrow
+X_{(1)}\rightarrow
+X_{(2)}\rightarrow
+X_{(3)}\rightarrow
+\cdots\rightarrow
+X_{(J-1)}\rightarrow
+X_{(J)}
+$$
+
+## More Information
+
+![](img/ts_408.png)
+
+## RNN
+
+A recurrent neural network can be used to account the sequential order of each measurement.
+
+![Source: ISLR2](img/islr2/Chapter10/10_12.png)
+
+
+# R Code Document Classification 
+
+
