@@ -153,12 +153,12 @@ The following outline may be subject to change. Any changes will be announced in
 | 3    | SL Neural Networks                                 |
 | 4    | ML Neural Networks                                 |
 | 5    | Classification                                     |
-| 6    | Generalizing Models                                |
+| 6    | Convolutional Neural Networks                      |
 | 7    | Convolutional Neural Networks                      |
 | --   | Spring Break                                       |
 | 8    | Recurrent Models                                   |
-| 9    | Image Classification                               |
-| 10   | Audio Classification                               |
+| 9    | Long Short-term Memory                             |
+| 10   | Document Classification                            |
 | 11   | Bayesian Analysis                                  |
 | 12   | Bayesian Linear Regression                         |
 | 13   | Bayesian Generalized Linear Models                 |
