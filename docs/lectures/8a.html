@@ -14,7 +14,7 @@
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>MATH 408 – Convolutional Neural Networks</title>
+  <title>MATH 408 – Recurrent Neural Networks</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -344,9 +344,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title"><p>Convolutional<br>
+  <h1 class="title"><p>Recurrent<br>
 Neural Networks</p></h1>
-  <p class="subtitle">Model Building</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -357,36 +356,21 @@ Neural Networks</p></h1>
 </section>
 <section id="r-packages-1" class="slide level2">
 <h2>R Packages</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(torch)</span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(torchdatasets) <span class="co"># for datasets we are going to use</span></span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(zeallot)</span>
-<span id="cb1-5"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">909</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># install.packages("tsibble")</span></span>
+<span id="cb1-2"><a></a><span class="co"># install.packages("tsibbledata")</span></span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(torch)</span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(tsibble)</span>
+<span id="cb1-7"><a></a><span class="fu">library</span>(tsibbledata)</span>
+<span id="cb1-8"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">909</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="python-data" class="slide level2">
 <h2>Python Data</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> torch</span>
-<span id="cb2-2"><a></a><span class="im">import</span> torchvision</span>
-<span id="cb2-3"><a></a><span class="im">import</span> torchvision.transforms <span class="im">as</span> transforms</span>
-<span id="cb2-4"><a></a></span>
-<span id="cb2-5"><a></a>transform <span class="op">=</span> transforms.Compose(</span>
-<span id="cb2-6"><a></a>    [transforms.ToTensor(),</span>
-<span id="cb2-7"><a></a>     transforms.Normalize((<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>), (<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>))])</span>
-<span id="cb2-8"><a></a></span>
-<span id="cb2-9"><a></a>batch_size <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb2-10"><a></a></span>
-<span id="cb2-11"><a></a>trainset <span class="op">=</span> torchvision.datasets.CIFAR10(root<span class="op">=</span><span class="st">'./data'</span>, train<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb2-12"><a></a>                                        download<span class="op">=</span><span class="va">True</span>, transform<span class="op">=</span>transform)</span>
-<span id="cb2-13"><a></a>trainloader <span class="op">=</span> torch.utils.data.DataLoader(trainset, batch_size<span class="op">=</span>batch_size,</span>
-<span id="cb2-14"><a></a>                                          shuffle<span class="op">=</span><span class="va">True</span>, num_workers<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb2-15"><a></a></span>
-<span id="cb2-16"><a></a>testset <span class="op">=</span> torchvision.datasets.CIFAR10(root<span class="op">=</span><span class="st">'./data'</span>, train<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb2-17"><a></a>                                       download<span class="op">=</span><span class="va">True</span>, transform<span class="op">=</span>transform)</span>
-<span id="cb2-18"><a></a>testloader <span class="op">=</span> torch.utils.data.DataLoader(testset, batch_size<span class="op">=</span>batch_size,</span>
-<span id="cb2-19"><a></a>                                         shuffle<span class="op">=</span><span class="va">False</span>, num_workers<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb2-20"><a></a></span>
-<span id="cb2-21"><a></a>classes <span class="op">=</span> (<span class="st">'plane'</span>, <span class="st">'car'</span>, <span class="st">'bird'</span>, <span class="st">'cat'</span>,</span>
-<span id="cb2-22"><a></a>           <span class="st">'deer'</span>, <span class="st">'dog'</span>, <span class="st">'frog'</span>, <span class="st">'horse'</span>, <span class="st">'ship'</span>, <span class="st">'truck'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a></span>
+<span id="cb2-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a>vic_elec <span class="op">&lt;-</span> pd.read_csv()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section>
 <section id="sequential-data" class="title-slide slide level1 agenda-slide center">
@@ -400,13 +384,10 @@ Neural Networks</p></h1>
 <p>Recurrent Neural Networks</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Document Classification</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
 <p>Time Series</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R Code Document Classification</p>
+<p>Predicting Electricity</p>
 </div></li>
 </ul>
 </div>
@@ -453,13 +434,10 @@ X_{(J)}
 <p>Recurrent Neural Networks</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Document Classification</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
 <p>Time Series</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R Code Document Classification</p>
+<p>Predicting Electricity</p>
 </div></li>
 </ul>
 </div>
@@ -504,62 +482,6 @@ y_{j} = g(\bbeta_{hy}h_{j} + b_y)
 \]</span></p>
 </section></section>
 <section>
-<section id="document-classification" class="title-slide slide level1 agenda-slide center">
-<h1>Document Classification</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Sequential Data</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Recurrent Neural Networks</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Document Classification</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Time Series</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>R Code Document Classification</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="document-classification-1" class="slide level2">
-<h2>Document Classification</h2>
-<p>Document Classification is the process of classifying documents to different categories.</p>
-</section>
-<section id="corpus" class="slide level2">
-<h2>Corpus</h2>
-<p>A corpus refers to a large and structured collection of texts, typically stored electronically, and used for linguistic analysis, natural language processing (NLP), and other computational linguistics tasks.</p>
-</section>
-<section id="corpus-1" class="slide level2">
-<h2>Corpus</h2>
-<p>The texts in a corpus can vary widely in nature, ranging from written documents, such as books, articles, and websites, to transcribed speech and social media posts</p>
-</section>
-<section id="one-hot-encoding" class="slide level2">
-<h2>One-Hot Encoding</h2>
-<p>One-hot encoding converts categorical variables into a binary format where each category is represented by a binary vector. In this representation, each category corresponds to a unique index in the vector, and only one element in the vector is 1 (hot), while all other elements are 0 (cold).</p>
-</section>
-<section id="one-hot-encoding-1" class="slide level2">
-<h2>One-Hot Encoding</h2>
-
-<img data-src="https://www.researchgate.net/publication/354354484/figure/fig8/AS:1080214163587113@1634554534870/Illustration-of-the-one-hot-encoding-and-word-embeddings-a-One-hot-encoding-and-b.jpg" class="r-stretch"></section>
-<section id="bag-of-words-model" class="slide level2">
-<h2>Bag-of-words Model</h2>
-<p>The Bag of Words model is a simple and fundamental technique in natural language processing (NLP). It represents text data as a collection of words, disregarding grammar and word order. Each document is represented by a vector where each dimension corresponds to a unique word in the entire corpus, and the value indicates the frequency of that word in the document. This model is widely used for tasks like text classification and sentiment analysis.</p>
-</section>
-<section id="text-mining" class="slide level2">
-<h2>Text Mining</h2>
-<p><a href="https://www.tidytextmining.com/"><img data-src="https://www.tidytextmining.com/images/cover.png"></a></p>
-</section>
-<section id="rnn-2" class="slide level2">
-<h2>RNN</h2>
-<p>A recurrent neural network can be used to account the sequential order of the words.</p>
-
-<img data-src="img/islr2/Chapter10/10_12.png" class="r-stretch quarto-figure-center"><p class="caption">Source: ISLR2</p></section></section>
-<section>
 <section id="time-series" class="title-slide slide level1 agenda-slide center">
 <h1>Time Series</h1>
 <div class="agenda">
@@ -570,14 +492,11 @@ y_{j} = g(\bbeta_{hy}h_{j} + b_y)
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Recurrent Neural Networks</p>
 </div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Document Classification</p>
-</div></li>
 <li><div class="agenda-active">
 <p>Time Series</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>R Code Document Classification</p>
+<p>Predicting Electricity</p>
 </div></li>
 </ul>
 </div>
@@ -602,13 +521,14 @@ X_{(J)}
 <h2>More Information</h2>
 
 <img data-src="img/ts_408.png" class="r-stretch"></section>
-<section id="rnn-3" class="slide level2">
+<section id="rnn-2" class="slide level2">
 <h2>RNN</h2>
 <p>A recurrent neural network can be used to account the sequential order of each measurement.</p>
 
 <img data-src="img/islr2/Chapter10/10_12.png" class="r-stretch quarto-figure-center"><p class="caption">Source: ISLR2</p></section></section>
-<section id="r-code-document-classification" class="title-slide slide level1 agenda-slide center">
-<h1>R Code Document Classification</h1>
+<section>
+<section id="predicting-electricity" class="title-slide slide level1 agenda-slide center">
+<h1>Predicting Electricity</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
@@ -618,19 +538,19 @@ X_{(J)}
 <p>Recurrent Neural Networks</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Document Classification</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
 <p>Time Series</p>
 </div></li>
 <li><div class="agenda-active">
-<p>R Code Document Classification</p>
+<p>Predicting Electricity</p>
 </div></li>
 </ul>
 </div>
-
-
 </section>
+<section id="data-set" class="slide level2">
+<h2>Data Set</h2>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

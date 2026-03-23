@@ -1,8 +1,7 @@
 ---
 title: |
-  Convolutional \
+  Recurrent \
   Neural Networks
-subtitle: "Model Building"
 format:
   revealjs:
     width: 1200
@@ -45,38 +44,25 @@ editor: source
 ## R Packages
 
 ```r
+# install.packages("tsibble")
+# install.packages("tsibbledata")
+
 library(torch)
 library(luz) # high-level interface for torch
-library(torchdatasets) # for datasets we are going to use
-library(zeallot)
+library(tsibble)
+library(tsibbledata)
 torch_manual_seed(909)
 ```
 
 ## Python Data
 
+
 ```python
-import torch
-import torchvision
-import torchvision.transforms as transforms
 
-transform = transforms.Compose(
-    [transforms.ToTensor(),
-     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+import pandas as pd
 
-batch_size = 4
+vic_elec <- pd.read_csv()
 
-trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
-                                        download=True, transform=transform)
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
-                                          shuffle=True, num_workers=2)
-
-testset = torchvision.datasets.CIFAR10(root='./data', train=False,
-                                       download=True, transform=transform)
-testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
-                                         shuffle=False, num_workers=2)
-
-classes = ('plane', 'car', 'bird', 'cat',
-           'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 ```
 
 # Sequential Data
@@ -159,42 +145,6 @@ $$
 y_{j} = g(\bbeta_{hy}h_{j} + b_y)
 $$
 
-# Document Classification
-
-## Document Classification
-
-Document Classification is the process of classifying documents to different categories.
-
-## Corpus
-
-A corpus refers to a large and structured collection of texts, typically stored electronically, and used for linguistic analysis, natural language processing (NLP), and other computational linguistics tasks.
-
-## Corpus
-
-The texts in a corpus can vary widely in nature, ranging from written documents, such as books, articles, and websites, to transcribed speech and social media posts
-
-## One-Hot Encoding
-
-One-hot encoding converts categorical variables into a binary format where each category is represented by a binary vector. In this representation, each category corresponds to a unique index in the vector, and only one element in the vector is 1 (hot), while all other elements are 0 (cold).
-
-## One-Hot Encoding
-
-![](https://www.researchgate.net/publication/354354484/figure/fig8/AS:1080214163587113@1634554534870/Illustration-of-the-one-hot-encoding-and-word-embeddings-a-One-hot-encoding-and-b.jpg)
-
-## Bag-of-words Model
-
-The Bag of Words model is a simple and fundamental technique in natural language processing (NLP). It represents text data as a collection of words, disregarding grammar and word order. Each document is represented by a vector where each dimension corresponds to a unique word in the entire corpus, and the value indicates the frequency of that word in the document. This model is widely used for tasks like text classification and sentiment analysis.
-
-## Text Mining
-
-[![](https://www.tidytextmining.com/images/cover.png)](https://www.tidytextmining.com/)
-
-## RNN
-
-A recurrent neural network can be used to account the sequential order of the words.
-
-![Source: ISLR2](img/islr2/Chapter10/10_12.png)
-
 # Time Series
 
 ## Time Series
@@ -225,6 +175,8 @@ A recurrent neural network can be used to account the sequential order of each m
 ![Source: ISLR2](img/islr2/Chapter10/10_12.png)
 
 
-# R Code Document Classification 
+# Predicting Electricity
+
+## Data Set
 
 
