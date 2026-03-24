@@ -2279,13 +2279,6 @@
     "href": "lectures/8a.html#r-packages",
     "title": "Recurrent\nNeural Networks",
     "section": "R Packages",
-    "text": "R Packages"
-  },
-  {
-    "objectID": "lectures/8a.html#r-packages-1",
-    "href": "lectures/8a.html#r-packages-1",
-    "title": "Recurrent\nNeural Networks",
-    "section": "R Packages",
     "text": "R Packages\n# install.packages(\"tsibble\")\n# install.packages(\"tsibbledata\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(tsibble)\nlibrary(tsibbledata)\ntorch_manual_seed(909)"
   },
   {
@@ -2293,7 +2286,7 @@
     "href": "lectures/8a.html#python-data",
     "title": "Recurrent\nNeural Networks",
     "section": "Python Data",
-    "text": "Python Data\n\nimport pandas as pd\n\nvic_elec &lt;- pd.read_csv()"
+    "text": "Python Data\nimport pandas as pd\nvic_elec = pd.read_csv(\"https://raw.githubusercontent.com/inqs909/m408_s26/refs/heads/main/lectures/data/vic_elec.csv\")"
   },
   {
     "objectID": "lectures/8a.html#sequential-data-1",
@@ -2331,25 +2324,32 @@
     "text": "RNN\n\nSource: ISLR2"
   },
   {
+    "objectID": "lectures/8a.html#rnn-neuron",
+    "href": "lectures/8a.html#rnn-neuron",
+    "title": "Recurrent\nNeural Networks",
+    "section": "RNN Neuron",
+    "text": "RNN Neuron\n\nRNN Neuron"
+  },
+  {
     "objectID": "lectures/8a.html#rnn-inputs",
     "href": "lectures/8a.html#rnn-inputs",
     "title": "Recurrent\nNeural Networks",
     "section": "RNN Inputs",
-    "text": "RNN Inputs\n\\[\n\\boldsymbol X = (\\boldsymbol x_0, \\boldsymbol x_1, \\boldsymbol x_2, \\cdots, \\boldsymbol x_{J-1}, \\boldsymbol x_J)\n\\]\nwhere\n\\[\n\\boldsymbol x_{j} = (x_{j1},x_{j1}, \\cdots, x_{jK})\n\\]"
+    "text": "RNN Inputs\n\\[\n\\boldsymbol X = (\\boldsymbol x_0, \\boldsymbol x_1, \\boldsymbol x_2, \\cdots, \\boldsymbol x_{L-1}, \\boldsymbol x_L)\n\\]\nwhere\n\\[\n\\boldsymbol x_{l} = (x_{l1},x_{l1}, \\cdots, x_{lK})\n\\]"
   },
   {
     "objectID": "lectures/8a.html#hidden-layer",
     "href": "lectures/8a.html#hidden-layer",
     "title": "Recurrent\nNeural Networks",
     "section": "Hidden Layer",
-    "text": "Hidden Layer\n\\[\nh_{j} = f(\\bbeta_{hx}\\boldsymbol x_{j} + \\bbeta_{hh}h_{j-1} + b_h)\n\\]\n\n\\(\\bbeta_{hx}\\) and \\(\\bbeta_{hh}\\) are weight vectors for input-to-hidden, and hidden-to-hidden connections respectively."
+    "text": "Hidden Layer\n\\[\nA_{lj} = f(\\sum_k\\beta_{jk}\\boldsymbol x_{lk} + \\sum_m\\bbeta_{jm}A_{(l-1)m} + \\beta_{0j})\n\\]\n\n\\(l\\): Indexes the recurrent neuron\n\\(j\\): Indexes the node within the RNN neuron\n\\(k\\): Indexes the \\(X\\) input\n\\(m\\): Indexes the node of the previous RNN neuron"
   },
   {
     "objectID": "lectures/8a.html#output-layer",
     "href": "lectures/8a.html#output-layer",
     "title": "Recurrent\nNeural Networks",
     "section": "Output Layer",
-    "text": "Output Layer\n\\[\ny_{j} = g(\\bbeta_{hy}h_{j} + b_y)\n\\]"
+    "text": "Output Layer\n\\[\nO_{l} = g(\\sum_j\\gamma_{lj}A_{lj} + \\gamma_{0l})\n\\]"
   },
   {
     "objectID": "lectures/8a.html#time-series-1",
@@ -2359,18 +2359,11 @@
     "text": "Time Series\nA time series is a sequence of data points collected or recorded at successive, evenly spaced intervals of time. These data points can represent any variable that is observed or measured over time, such as temperature readings, stock prices, sales figures, or sensor data."
   },
   {
-    "objectID": "lectures/8a.html#autocorrelation",
-    "href": "lectures/8a.html#autocorrelation",
+    "objectID": "lectures/8a.html#data",
+    "href": "lectures/8a.html#data",
     "title": "Recurrent\nNeural Networks",
-    "section": "Autocorrelation",
-    "text": "Autocorrelation\n\\[\nX_{(0)}\\rightarrow\nX_{(1)}\\rightarrow\nX_{(2)}\\rightarrow\nX_{(3)}\\rightarrow\n\\cdots\\rightarrow\nX_{(J-1)}\\rightarrow\nX_{(J)}\n\\]"
-  },
-  {
-    "objectID": "lectures/8a.html#more-information",
-    "href": "lectures/8a.html#more-information",
-    "title": "Recurrent\nNeural Networks",
-    "section": "More Information",
-    "text": "More Information"
+    "section": "Data",
+    "text": "Data\n\\[\nX_{(0)}\\rightarrow\nX_{(1)}\\rightarrow\nX_{(2)}\\rightarrow\nX_{(3)}\\rightarrow\n\\cdots\\rightarrow\nX_{(J-1)}\\rightarrow\nX_{(J)}\n\\]"
   },
   {
     "objectID": "lectures/8a.html#rnn-2",
@@ -2380,11 +2373,116 @@
     "text": "RNN\nA recurrent neural network can be used to account the sequential order of each measurement.\n\nSource: ISLR2"
   },
   {
+    "objectID": "lectures/8a.html#inputs-and-outputs",
+    "href": "lectures/8a.html#inputs-and-outputs",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Inputs and Outputs",
+    "text": "Inputs and Outputs\n\nWith Time-Series data, the data acts as both inputs and outputs.\nTHere is a usually a lead-up in the input before we get an output."
+  },
+  {
+    "objectID": "lectures/8a.html#given-the-data",
+    "href": "lectures/8a.html#given-the-data",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Given the Data",
+    "text": "Given the Data\n\\[\nX_{(0)}\\rightarrow\nX_{(1)}\\rightarrow\nX_{(2)}\\rightarrow\nX_{(3)}\\rightarrow\n\\cdots\\rightarrow\nX_{(J-1)}\\rightarrow\nX_{(J)}\n\\]"
+  },
+  {
+    "objectID": "lectures/8a.html#data-point-1",
+    "href": "lectures/8a.html#data-point-1",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Data Point 1",
+    "text": "Data Point 1\n\n\nInput\n\\[\nX_{(0)},\nX_{(1)},\nX_{(2)},\nX_{(3)},\nX_{(4)},\nX_{(5)}\n\\]\n\nOutput\n\\[\nX_{(6)}\n\\]"
+  },
+  {
+    "objectID": "lectures/8a.html#data-point-2",
+    "href": "lectures/8a.html#data-point-2",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Data Point 2",
+    "text": "Data Point 2\n\n\nInput\n\\[\nX_{(1)},\nX_{(2)},\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)}\n\\]\n\nOutput\n\\[\nX_{(7)}\n\\]"
+  },
+  {
+    "objectID": "lectures/8a.html#data-point-3",
+    "href": "lectures/8a.html#data-point-3",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Data Point 3",
+    "text": "Data Point 3\n\n\nInput\n\\[\nX_{(2)},\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)},\nX_{(7)}\n\\]\n\nOutput\n\\[\nX_{(8)}\n\\]"
+  },
+  {
+    "objectID": "lectures/8a.html#data-point-4",
+    "href": "lectures/8a.html#data-point-4",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Data Point 4",
+    "text": "Data Point 4\n\n\nInput\n\\[\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)},\nX_{(7)},\nX_{(8)}\n\\]\n\nOutput\n\\[\nX_{(9)}\n\\]"
+  },
+  {
+    "objectID": "lectures/8a.html#data-point-5",
+    "href": "lectures/8a.html#data-point-5",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Data Point 5",
+    "text": "Data Point 5\n\n\nInput\n\\[\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)},\nX_{(7)},\nX_{(8)}\n\\]\n\nOutput\n\\[\nX_{(9)}\n\\]"
+  },
+  {
+    "objectID": "lectures/8a.html#time-series-data-analysis",
+    "href": "lectures/8a.html#time-series-data-analysis",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Time-Series Data Analysis",
+    "text": "Time-Series Data Analysis\nMost time-series data analysis is to understand cyclical trends and prediction."
+  },
+  {
+    "objectID": "lectures/8a.html#more-information",
+    "href": "lectures/8a.html#more-information",
+    "title": "Recurrent\nNeural Networks",
+    "section": "More Information",
+    "text": "More Information"
+  },
+  {
+    "objectID": "lectures/8a.html#predicting-electricity-demand-1",
+    "href": "lectures/8a.html#predicting-electricity-demand-1",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Predicting Electricity Demand",
+    "text": "Predicting Electricity Demand\nWe will use the vic_elec data set to be able to predict what the demand will be in a future time point."
+  },
+  {
     "objectID": "lectures/8a.html#data-set",
     "href": "lectures/8a.html#data-set",
     "title": "Recurrent\nNeural Networks",
     "section": "Data Set",
-    "text": "Data Set"
+    "text": "Data Set\nIn order to fit a model with Torch, we need to provide a data set funcion that provides 2 values, a set of input and set of output. With Sequential data, values may be both outputs and inputs. We will use the dataset() to ensure that values can be used as both output and input."
+  },
+  {
+    "objectID": "lectures/8a.html#rnn-neuron-1",
+    "href": "lectures/8a.html#rnn-neuron-1",
+    "title": "Recurrent\nNeural Networks",
+    "section": "RNN Neuron",
+    "text": "RNN Neuron\nInstead of the standard RNN Neuron, we will implement the Long Short-Term Memory Neuron."
+  },
+  {
+    "objectID": "lectures/8a.html#data-set-1",
+    "href": "lectures/8a.html#data-set-1",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Data Set",
+    "text": "Data Set\n\nDatadataset()PrepFinal\n\n\n\n# install.packages(\"torchdatasets\")\n# install.packages(\"feasts\")\n\nlibrary(tidyverse)\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\n\ntorch_manual_seed(909)\nlibrary(tsibble)\nlibrary(tsibbledata)\nvic_ele\n\n\n\n\ndemand_dataset &lt;- dataset(\n  name = \"demand_dataset\",\n  initialize = function(x, n_timesteps, sample_frac = 1) {\n    self$n_timesteps &lt;- n_timesteps\n    self$x &lt;- torch_tensor((x - train_mean) / train_sd)\n\n    n &lt;- length(self$x) - self$n_timesteps\n\n    self$starts &lt;- sort(sample.int(\n      n = n,\n      size = n * sample_frac\n    ))\n  },\n  .getitem = function(i) {\n    start &lt;- self$starts[i]\n    end &lt;- start + self$n_timesteps - 1\n\n    list(\n      x = self$x[start:end],\n      y = self$x[end + 1]\n    )\n  },\n  .length = function() {\n    length(self$starts)\n  }\n)\n\n\n\n\ndemand_hourly &lt;- vic_elec |&gt; \n  index_by(Hour = floor_date(Time, \"hour\")) |&gt; \n  summarise(\n    Demand = sum(Demand))\n\ndemand_train &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2012) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ndemand_valid &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2013) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ndemand_test &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2014) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ntrain_mean &lt;- mean(demand_train)\ntrain_sd &lt;- sd(demand_train)\n\nn_timesteps &lt;- 7 * 24\n\n\n\n\ntrain_ds &lt;- demand_dataset(demand_train, n_timesteps)\nvalid_ds &lt;- demand_dataset(demand_valid, n_timesteps)\ntest_ds &lt;- demand_dataset(demand_test, n_timesteps)"
+  },
+  {
+    "objectID": "lectures/8a.html#model",
+    "href": "lectures/8a.html#model",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Model",
+    "text": "Model\n\nModelInitializeForward\n\n\n\nmodel &lt;- nn_module(\n  initialize = function(input_size,\n                        hidden_size,\n                        dropout = 0.2,\n                        num_layers = 1,\n                        rec_dropout = 0) {\n    self$num_layers &lt;- num_layers\n\n    self$rnn &lt;- nn_lstm(\n      input_size = input_size,\n      hidden_size = hidden_size,\n      num_layers = num_layers,\n      dropout = rec_dropout,\n      batch_first = TRUE\n    )\n\n    self$dropout &lt;- nn_dropout(dropout)\n    self$output &lt;- nn_linear(hidden_size, 1)\n  },\n  forward = function(x) {\n    (x |&gt; \n      self$rnn())[[1]][, dim(x)[2], ] |&gt; \n      self$dropout() |&gt; \n      self$output()\n  }\n)\n\n\n\n\n  initialize = function(input_size,\n                        hidden_size,\n                        dropout = 0.2,\n                        num_layers = 1,\n                        rec_dropout = 0) {\n    self$num_layers &lt;- num_layers\n\n    self$rnn &lt;- nn_lstm(\n      input_size = input_size,\n      hidden_size = hidden_size,\n      num_layers = num_layers,\n      dropout = rec_dropout,\n      batch_first = TRUE\n    )\n\n    self$dropout &lt;- nn_dropout(dropout)\n    self$output &lt;- nn_linear(hidden_size, 1)\n  }\n\n\n\n\n  forward = function(x) {\n    (x |&gt; \n      self$rnn())[[1]][, dim(x)[2], ] |&gt; \n      self$dropout() |&gt; \n      self$output()\n  }"
+  },
+  {
+    "objectID": "lectures/8a.html#training",
+    "href": "lectures/8a.html#training",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Training",
+    "text": "Training\n\nSetupTrainEvaluate\n\n\n\ninput_size &lt;- 1\nhidden_size &lt;- 32\nnum_layers &lt;- 2\nrec_dropout &lt;- 0.2\n\nmodel &lt;- model |&gt; \n  setup(optimizer = optim_adam, loss = nn_mse_loss()) |&gt; \n  set_hparams(\n    input_size = input_size,\n    hidden_size = hidden_size,\n    num_layers = num_layers,\n    rec_dropout = rec_dropout\n  )\n\n\n\n\nfitted &lt;- model |&gt; \n  fit(train_dl, epochs = 15, valid_data = valid_dl,\n      callbacks = list(\n        luz_callback_early_stopping(patience = 3)\n      ),\n      verbose = TRUE)\n\n\n\n\nplot(fitted)\n\nevaluate(fitted, test_dl)"
+  },
+  {
+    "objectID": "lectures/8a.html#predict-and-visualize",
+    "href": "lectures/8a.html#predict-and-visualize",
+    "title": "Recurrent\nNeural Networks",
+    "section": "Predict and Visualize",
+    "text": "Predict and Visualize\n\ndemand_viz &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2014, month(Hour) == 12)\n\ndemand_viz_matrix &lt;- demand_viz |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\nviz_ds &lt;- demand_dataset(demand_viz_matrix, n_timesteps)\nviz_dl &lt;- viz_ds |&gt; dataloader(batch_size = length(viz_ds))\n\npreds &lt;- predict(fitted, viz_dl)\npreds &lt;- preds$to(device = \"cpu\") |&gt; as.matrix()\npreds &lt;- c(rep(NA, n_timesteps), preds)\n\npred_ts &lt;- demand_viz |&gt; \n  add_column(forecast = preds * train_sd + train_mean) |&gt; \n  pivot_longer(-Hour) |&gt; \n  update_tsibble(key = name) |&gt; \n  as_tibble()\n\npred_ts |&gt; \n  ggplot(aes(Hour, value, color = name)) +\n  geom_line() +\n  scale_colour_manual(values = c(\"#08c5d1\", \"#00353f\")) +\n  theme_minimal() +\n  theme(legend.position = \"None\")"
   },
   {
     "objectID": "posts/week_2.html",

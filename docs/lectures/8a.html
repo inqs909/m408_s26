@@ -353,9 +353,6 @@ Neural Networks</p></h1>
 </section>
 <section id="r-packages" class="slide level2">
 <h2>R Packages</h2>
-</section>
-<section id="r-packages-1" class="slide level2">
-<h2>R Packages</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># install.packages("tsibble")</span></span>
 <span id="cb1-2"><a></a><span class="co"># install.packages("tsibbledata")</span></span>
 <span id="cb1-3"><a></a></span>
@@ -367,10 +364,8 @@ Neural Networks</p></h1>
 </section>
 <section id="python-data" class="slide level2">
 <h2>Python Data</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a></span>
-<span id="cb2-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a>vic_elec <span class="op">&lt;-</span> pd.read_csv()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a></a>vic_elec <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/inqs909/m408_s26/refs/heads/main/lectures/data/vic_elec.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section>
 <section id="sequential-data" class="title-slide slide level1 agenda-slide center">
@@ -387,7 +382,7 @@ Neural Networks</p></h1>
 <p>Time Series</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Predicting Electricity</p>
+<p>Predicting Electricity Demand</p>
 </div></li>
 </ul>
 </div>
@@ -437,7 +432,7 @@ X_{(J)}
 <p>Time Series</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Predicting Electricity</p>
+<p>Predicting Electricity Demand</p>
 </div></li>
 </ul>
 </div>
@@ -456,29 +451,36 @@ X_{(J)}
 <h2>RNN</h2>
 
 <img data-src="img/islr2/Chapter10/10_12.png" class="r-stretch quarto-figure-center"><p class="caption">Source: ISLR2</p></section>
+<section id="rnn-neuron" class="slide level2">
+<h2>RNN Neuron</h2>
+
+<img data-src="img/Neuron.svg" class="r-stretch quarto-figure-center"><p class="caption">RNN Neuron</p></section>
 <section id="rnn-inputs" class="slide level2">
 <h2>RNN Inputs</h2>
 <p><span class="math display">\[
-\boldsymbol X = (\boldsymbol x_0, \boldsymbol x_1, \boldsymbol x_2, \cdots, \boldsymbol x_{J-1}, \boldsymbol x_J)
+\boldsymbol X = (\boldsymbol x_0, \boldsymbol x_1, \boldsymbol x_2, \cdots, \boldsymbol x_{L-1}, \boldsymbol x_L)
 \]</span></p>
 <p>where</p>
 <p><span class="math display">\[
-\boldsymbol x_{j} = (x_{j1},x_{j1}, \cdots, x_{jK})
+\boldsymbol x_{l} = (x_{l1},x_{l1}, \cdots, x_{lK})
 \]</span></p>
 </section>
 <section id="hidden-layer" class="slide level2">
 <h2>Hidden Layer</h2>
 <p><span class="math display">\[
-h_{j} = f(\bbeta_{hx}\boldsymbol x_{j} + \bbeta_{hh}h_{j-1} + b_h)
+A_{lj} = f(\sum_k\beta_{jk}\boldsymbol x_{lk} + \sum_m\bbeta_{jm}A_{(l-1)m} + \beta_{0j})
 \]</span></p>
 <ul>
-<li><span class="math inline">\(\bbeta_{hx}\)</span> and <span class="math inline">\(\bbeta_{hh}\)</span> are weight vectors for input-to-hidden, and hidden-to-hidden connections respectively.</li>
+<li><span class="math inline">\(l\)</span>: Indexes the recurrent neuron</li>
+<li><span class="math inline">\(j\)</span>: Indexes the node within the RNN neuron</li>
+<li><span class="math inline">\(k\)</span>: Indexes the <span class="math inline">\(X\)</span> input</li>
+<li><span class="math inline">\(m\)</span>: Indexes the node of the previous RNN neuron</li>
 </ul>
 </section>
 <section id="output-layer" class="slide level2">
 <h2>Output Layer</h2>
 <p><span class="math display">\[
-y_{j} = g(\bbeta_{hy}h_{j} + b_y)
+O_{l} = g(\sum_j\gamma_{lj}A_{lj} + \gamma_{0l})
 \]</span></p>
 </section></section>
 <section>
@@ -496,7 +498,7 @@ y_{j} = g(\bbeta_{hy}h_{j} + b_y)
 <p>Time Series</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Predicting Electricity</p>
+<p>Predicting Electricity Demand</p>
 </div></li>
 </ul>
 </div>
@@ -505,8 +507,8 @@ y_{j} = g(\bbeta_{hy}h_{j} + b_y)
 <h2>Time Series</h2>
 <p>A time series is a sequence of data points collected or recorded at successive, evenly spaced intervals of time. These data points can represent any variable that is observed or measured over time, such as temperature readings, stock prices, sales figures, or sensor data.</p>
 </section>
-<section id="autocorrelation" class="slide level2">
-<h2>Autocorrelation</h2>
+<section id="data" class="slide level2">
+<h2>Data</h2>
 <p><span class="math display">\[
 X_{(0)}\rightarrow
 X_{(1)}\rightarrow
@@ -517,18 +519,141 @@ X_{(J-1)}\rightarrow
 X_{(J)}
 \]</span></p>
 </section>
-<section id="more-information" class="slide level2">
-<h2>More Information</h2>
-
-<img data-src="img/ts_408.png" class="r-stretch"></section>
 <section id="rnn-2" class="slide level2">
 <h2>RNN</h2>
 <p>A recurrent neural network can be used to account the sequential order of each measurement.</p>
 
-<img data-src="img/islr2/Chapter10/10_12.png" class="r-stretch quarto-figure-center"><p class="caption">Source: ISLR2</p></section></section>
+<img data-src="img/islr2/Chapter10/10_12.png" class="r-stretch quarto-figure-center"><p class="caption">Source: ISLR2</p></section>
+<section id="inputs-and-outputs" class="slide level2">
+<h2>Inputs and Outputs</h2>
+<ul>
+<li>With Time-Series data, the data acts as both inputs and outputs.</li>
+<li>THere is a usually a lead-up in the input before we get an output.</li>
+</ul>
+</section>
+<section id="given-the-data" class="slide level2">
+<h2>Given the Data</h2>
+<p><span class="math display">\[
+X_{(0)}\rightarrow
+X_{(1)}\rightarrow
+X_{(2)}\rightarrow
+X_{(3)}\rightarrow
+\cdots\rightarrow
+X_{(J-1)}\rightarrow
+X_{(J)}
+\]</span></p>
+</section>
+<section id="data-point-1" class="slide level2">
+<h2>Data Point 1</h2>
+<div class="columns">
+<div class="column">
+<h3 id="input">Input</h3>
+<p><span class="math display">\[
+X_{(0)},
+X_{(1)},
+X_{(2)},
+X_{(3)},
+X_{(4)},
+X_{(5)}
+\]</span></p>
+</div><div class="column">
+<h3 id="output">Output</h3>
+<p><span class="math display">\[
+X_{(6)}
+\]</span></p>
+</div></div>
+</section>
+<section id="data-point-2" class="slide level2">
+<h2>Data Point 2</h2>
+<div class="columns">
+<div class="column">
+<h3 id="input-1">Input</h3>
+<p><span class="math display">\[
+X_{(1)},
+X_{(2)},
+X_{(3)},
+X_{(4)},
+X_{(5)},
+X_{(6)}
+\]</span></p>
+</div><div class="column">
+<h3 id="output-1">Output</h3>
+<p><span class="math display">\[
+X_{(7)}
+\]</span></p>
+</div></div>
+</section>
+<section id="data-point-3" class="slide level2">
+<h2>Data Point 3</h2>
+<div class="columns">
+<div class="column">
+<h3 id="input-2">Input</h3>
+<p><span class="math display">\[
+X_{(2)},
+X_{(3)},
+X_{(4)},
+X_{(5)},
+X_{(6)},
+X_{(7)}
+\]</span></p>
+</div><div class="column">
+<h3 id="output-2">Output</h3>
+<p><span class="math display">\[
+X_{(8)}
+\]</span></p>
+</div></div>
+</section>
+<section id="data-point-4" class="slide level2">
+<h2>Data Point 4</h2>
+<div class="columns">
+<div class="column">
+<h3 id="input-3">Input</h3>
+<p><span class="math display">\[
+X_{(3)},
+X_{(4)},
+X_{(5)},
+X_{(6)},
+X_{(7)},
+X_{(8)}
+\]</span></p>
+</div><div class="column">
+<h3 id="output-3">Output</h3>
+<p><span class="math display">\[
+X_{(9)}
+\]</span></p>
+</div></div>
+</section>
+<section id="data-point-5" class="slide level2">
+<h2>Data Point 5</h2>
+<div class="columns">
+<div class="column">
+<h3 id="input-4">Input</h3>
+<p><span class="math display">\[
+X_{(3)},
+X_{(4)},
+X_{(5)},
+X_{(6)},
+X_{(7)},
+X_{(8)}
+\]</span></p>
+</div><div class="column">
+<h3 id="output-4">Output</h3>
+<p><span class="math display">\[
+X_{(9)}
+\]</span></p>
+</div></div>
+</section>
+<section id="time-series-data-analysis" class="slide level2">
+<h2>Time-Series Data Analysis</h2>
+<p>Most time-series data analysis is to understand cyclical trends and prediction.</p>
+</section>
+<section id="more-information" class="slide level2">
+<h2>More Information</h2>
+
+<img data-src="img/ts_408.png" class="r-stretch"></section></section>
 <section>
-<section id="predicting-electricity" class="title-slide slide level1 agenda-slide center">
-<h1>Predicting Electricity</h1>
+<section id="predicting-electricity-demand" class="title-slide slide level1 agenda-slide center">
+<h1>Predicting Electricity Demand</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
@@ -541,13 +666,257 @@ X_{(J)}
 <p>Time Series</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Predicting Electricity</p>
+<p>Predicting Electricity Demand</p>
 </div></li>
 </ul>
 </div>
 </section>
+<section id="predicting-electricity-demand-1" class="slide level2">
+<h2>Predicting Electricity Demand</h2>
+<p>We will use the <code>vic_elec</code> data set to be able to predict what the demand will be in a future time point.</p>
+</section>
 <section id="data-set" class="slide level2">
 <h2>Data Set</h2>
+<p>In order to fit a model with Torch, we need to provide a data set funcion that provides 2 values, a set of input and set of output. With Sequential data, values may be both outputs and inputs. We will use the <code>dataset()</code> to ensure that values can be used as both output and input.</p>
+</section>
+<section id="rnn-neuron-1" class="slide level2">
+<h2>RNN Neuron</h2>
+<p>Instead of the standard RNN Neuron, we will implement the <em>Long Short-Term Memory</em> Neuron.</p>
+</section>
+<section id="data-set-1" class="slide level2">
+<h2>Data Set</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Data</a></li><li><a href="#tabset-1-2"><code>dataset()</code></a></li><li><a href="#tabset-1-3">Prep</a></li><li><a href="#tabset-1-4">Final</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># install.packages("torchdatasets")</span></span>
+<span id="cb3-2"><a></a><span class="co"># install.packages("feasts")</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-5"><a></a><span class="fu">library</span>(torch)</span>
+<span id="cb3-6"><a></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">909</span>)</span>
+<span id="cb3-9"><a></a><span class="fu">library</span>(tsibble)</span>
+<span id="cb3-10"><a></a><span class="fu">library</span>(tsibbledata)</span>
+<span id="cb3-11"><a></a>vic_ele</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>demand_dataset <span class="ot">&lt;-</span> <span class="fu">dataset</span>(</span>
+<span id="cb4-2"><a></a>  <span class="at">name =</span> <span class="st">"demand_dataset"</span>,</span>
+<span id="cb4-3"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(x, n_timesteps, <span class="at">sample_frac =</span> <span class="dv">1</span>) {</span>
+<span id="cb4-4"><a></a>    self<span class="sc">$</span>n_timesteps <span class="ot">&lt;-</span> n_timesteps</span>
+<span id="cb4-5"><a></a>    self<span class="sc">$</span>x <span class="ot">&lt;-</span> <span class="fu">torch_tensor</span>((x <span class="sc">-</span> train_mean) <span class="sc">/</span> train_sd)</span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a>    n <span class="ot">&lt;-</span> <span class="fu">length</span>(self<span class="sc">$</span>x) <span class="sc">-</span> self<span class="sc">$</span>n_timesteps</span>
+<span id="cb4-8"><a></a></span>
+<span id="cb4-9"><a></a>    self<span class="sc">$</span>starts <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">sample.int</span>(</span>
+<span id="cb4-10"><a></a>      <span class="at">n =</span> n,</span>
+<span id="cb4-11"><a></a>      <span class="at">size =</span> n <span class="sc">*</span> sample_frac</span>
+<span id="cb4-12"><a></a>    ))</span>
+<span id="cb4-13"><a></a>  },</span>
+<span id="cb4-14"><a></a>  <span class="at">.getitem =</span> <span class="cf">function</span>(i) {</span>
+<span id="cb4-15"><a></a>    start <span class="ot">&lt;-</span> self<span class="sc">$</span>starts[i]</span>
+<span id="cb4-16"><a></a>    end <span class="ot">&lt;-</span> start <span class="sc">+</span> self<span class="sc">$</span>n_timesteps <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb4-17"><a></a></span>
+<span id="cb4-18"><a></a>    <span class="fu">list</span>(</span>
+<span id="cb4-19"><a></a>      <span class="at">x =</span> self<span class="sc">$</span>x[start<span class="sc">:</span>end],</span>
+<span id="cb4-20"><a></a>      <span class="at">y =</span> self<span class="sc">$</span>x[end <span class="sc">+</span> <span class="dv">1</span>]</span>
+<span id="cb4-21"><a></a>    )</span>
+<span id="cb4-22"><a></a>  },</span>
+<span id="cb4-23"><a></a>  <span class="at">.length =</span> <span class="cf">function</span>() {</span>
+<span id="cb4-24"><a></a>    <span class="fu">length</span>(self<span class="sc">$</span>starts)</span>
+<span id="cb4-25"><a></a>  }</span>
+<span id="cb4-26"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>demand_hourly <span class="ot">&lt;-</span> vic_elec <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a></a>  <span class="fu">index_by</span>(<span class="at">Hour =</span> <span class="fu">floor_date</span>(Time, <span class="st">"hour"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb5-4"><a></a>    <span class="at">Demand =</span> <span class="fu">sum</span>(Demand))</span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a>demand_train <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
+<span id="cb5-7"><a></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2012</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-8"><a></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-9"><a></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
+<span id="cb5-10"><a></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb5-11"><a></a></span>
+<span id="cb5-12"><a></a>demand_valid <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
+<span id="cb5-13"><a></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2013</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-14"><a></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-15"><a></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
+<span id="cb5-16"><a></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb5-17"><a></a></span>
+<span id="cb5-18"><a></a>demand_test <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
+<span id="cb5-19"><a></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2014</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-20"><a></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-21"><a></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
+<span id="cb5-22"><a></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb5-23"><a></a></span>
+<span id="cb5-24"><a></a>train_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(demand_train)</span>
+<span id="cb5-25"><a></a>train_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(demand_train)</span>
+<span id="cb5-26"><a></a></span>
+<span id="cb5-27"><a></a>n_timesteps <span class="ot">&lt;-</span> <span class="dv">7</span> <span class="sc">*</span> <span class="dv">24</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-1-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>train_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(demand_train, n_timesteps)</span>
+<span id="cb6-2"><a></a>valid_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(demand_valid, n_timesteps)</span>
+<span id="cb6-3"><a></a>test_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(demand_test, n_timesteps)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="model" class="slide level2">
+<h2>Model</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Model</a></li><li><a href="#tabset-2-2">Initialize</a></li><li><a href="#tabset-2-3">Forward</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>model <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
+<span id="cb7-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(input_size,</span>
+<span id="cb7-3"><a></a>                        hidden_size,</span>
+<span id="cb7-4"><a></a>                        <span class="at">dropout =</span> <span class="fl">0.2</span>,</span>
+<span id="cb7-5"><a></a>                        <span class="at">num_layers =</span> <span class="dv">1</span>,</span>
+<span id="cb7-6"><a></a>                        <span class="at">rec_dropout =</span> <span class="dv">0</span>) {</span>
+<span id="cb7-7"><a></a>    self<span class="sc">$</span>num_layers <span class="ot">&lt;-</span> num_layers</span>
+<span id="cb7-8"><a></a></span>
+<span id="cb7-9"><a></a>    self<span class="sc">$</span>rnn <span class="ot">&lt;-</span> <span class="fu">nn_lstm</span>(</span>
+<span id="cb7-10"><a></a>      <span class="at">input_size =</span> input_size,</span>
+<span id="cb7-11"><a></a>      <span class="at">hidden_size =</span> hidden_size,</span>
+<span id="cb7-12"><a></a>      <span class="at">num_layers =</span> num_layers,</span>
+<span id="cb7-13"><a></a>      <span class="at">dropout =</span> rec_dropout,</span>
+<span id="cb7-14"><a></a>      <span class="at">batch_first =</span> <span class="cn">TRUE</span></span>
+<span id="cb7-15"><a></a>    )</span>
+<span id="cb7-16"><a></a></span>
+<span id="cb7-17"><a></a>    self<span class="sc">$</span>dropout <span class="ot">&lt;-</span> <span class="fu">nn_dropout</span>(dropout)</span>
+<span id="cb7-18"><a></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(hidden_size, <span class="dv">1</span>)</span>
+<span id="cb7-19"><a></a>  },</span>
+<span id="cb7-20"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb7-21"><a></a>    (x <span class="sc">|&gt;</span> </span>
+<span id="cb7-22"><a></a>      self<span class="sc">$</span><span class="fu">rnn</span>())[[<span class="dv">1</span>]][, <span class="fu">dim</span>(x)[<span class="dv">2</span>], ] <span class="sc">|&gt;</span> </span>
+<span id="cb7-23"><a></a>      self<span class="sc">$</span><span class="fu">dropout</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-24"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
+<span id="cb7-25"><a></a>  }</span>
+<span id="cb7-26"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>  initialize <span class="ot">=</span> <span class="cf">function</span>(input_size,</span>
+<span id="cb8-2"><a></a>                        hidden_size,</span>
+<span id="cb8-3"><a></a>                        <span class="at">dropout =</span> <span class="fl">0.2</span>,</span>
+<span id="cb8-4"><a></a>                        <span class="at">num_layers =</span> <span class="dv">1</span>,</span>
+<span id="cb8-5"><a></a>                        <span class="at">rec_dropout =</span> <span class="dv">0</span>) {</span>
+<span id="cb8-6"><a></a>    self<span class="sc">$</span>num_layers <span class="ot">&lt;-</span> num_layers</span>
+<span id="cb8-7"><a></a></span>
+<span id="cb8-8"><a></a>    self<span class="sc">$</span>rnn <span class="ot">&lt;-</span> <span class="fu">nn_lstm</span>(</span>
+<span id="cb8-9"><a></a>      <span class="at">input_size =</span> input_size,</span>
+<span id="cb8-10"><a></a>      <span class="at">hidden_size =</span> hidden_size,</span>
+<span id="cb8-11"><a></a>      <span class="at">num_layers =</span> num_layers,</span>
+<span id="cb8-12"><a></a>      <span class="at">dropout =</span> rec_dropout,</span>
+<span id="cb8-13"><a></a>      <span class="at">batch_first =</span> <span class="cn">TRUE</span></span>
+<span id="cb8-14"><a></a>    )</span>
+<span id="cb8-15"><a></a></span>
+<span id="cb8-16"><a></a>    self<span class="sc">$</span>dropout <span class="ot">&lt;-</span> <span class="fu">nn_dropout</span>(dropout)</span>
+<span id="cb8-17"><a></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(hidden_size, <span class="dv">1</span>)</span>
+<span id="cb8-18"><a></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>  forward <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+<span id="cb9-2"><a></a>    (x <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a></a>      self<span class="sc">$</span><span class="fu">rnn</span>())[[<span class="dv">1</span>]][, <span class="fu">dim</span>(x)[<span class="dv">2</span>], ] <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a></a>      self<span class="sc">$</span><span class="fu">dropout</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
+<span id="cb9-6"><a></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="training" class="slide level2">
+<h2>Training</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Setup</a></li><li><a href="#tabset-3-2">Train</a></li><li><a href="#tabset-3-3">Evaluate</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>input_size <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb10-2"><a></a>hidden_size <span class="ot">&lt;-</span> <span class="dv">32</span></span>
+<span id="cb10-3"><a></a>num_layers <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb10-4"><a></a>rec_dropout <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb10-5"><a></a></span>
+<span id="cb10-6"><a></a>model <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span> </span>
+<span id="cb10-7"><a></a>  <span class="fu">setup</span>(<span class="at">optimizer =</span> optim_adam, <span class="at">loss =</span> <span class="fu">nn_mse_loss</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb10-8"><a></a>  <span class="fu">set_hparams</span>(</span>
+<span id="cb10-9"><a></a>    <span class="at">input_size =</span> input_size,</span>
+<span id="cb10-10"><a></a>    <span class="at">hidden_size =</span> hidden_size,</span>
+<span id="cb10-11"><a></a>    <span class="at">num_layers =</span> num_layers,</span>
+<span id="cb10-12"><a></a>    <span class="at">rec_dropout =</span> rec_dropout</span>
+<span id="cb10-13"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>fitted <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a></a>  <span class="fu">fit</span>(train_dl, <span class="at">epochs =</span> <span class="dv">15</span>, <span class="at">valid_data =</span> valid_dl,</span>
+<span id="cb11-3"><a></a>      <span class="at">callbacks =</span> <span class="fu">list</span>(</span>
+<span id="cb11-4"><a></a>        <span class="fu">luz_callback_early_stopping</span>(<span class="at">patience =</span> <span class="dv">3</span>)</span>
+<span id="cb11-5"><a></a>      ),</span>
+<span id="cb11-6"><a></a>      <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-3-3">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">plot</span>(fitted)</span>
+<span id="cb12-2"><a></a></span>
+<span id="cb12-3"><a></a><span class="fu">evaluate</span>(fitted, test_dl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="predict-and-visualize" class="slide level2">
+<h2>Predict and Visualize</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>demand_viz <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2014</span>, <span class="fu">month</span>(Hour) <span class="sc">==</span> <span class="dv">12</span>)</span>
+<span id="cb13-3"><a></a></span>
+<span id="cb13-4"><a></a>demand_viz_matrix <span class="ot">&lt;-</span> demand_viz <span class="sc">|&gt;</span> </span>
+<span id="cb13-5"><a></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb13-6"><a></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
+<span id="cb13-7"><a></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb13-8"><a></a></span>
+<span id="cb13-9"><a></a>viz_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(demand_viz_matrix, n_timesteps)</span>
+<span id="cb13-10"><a></a>viz_dl <span class="ot">&lt;-</span> viz_ds <span class="sc">|&gt;</span> <span class="fu">dataloader</span>(<span class="at">batch_size =</span> <span class="fu">length</span>(viz_ds))</span>
+<span id="cb13-11"><a></a></span>
+<span id="cb13-12"><a></a>preds <span class="ot">&lt;-</span> <span class="fu">predict</span>(fitted, viz_dl)</span>
+<span id="cb13-13"><a></a>preds <span class="ot">&lt;-</span> preds<span class="sc">$</span><span class="fu">to</span>(<span class="at">device =</span> <span class="st">"cpu"</span>) <span class="sc">|&gt;</span> <span class="fu">as.matrix</span>()</span>
+<span id="cb13-14"><a></a>preds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, n_timesteps), preds)</span>
+<span id="cb13-15"><a></a></span>
+<span id="cb13-16"><a></a>pred_ts <span class="ot">&lt;-</span> demand_viz <span class="sc">|&gt;</span> </span>
+<span id="cb13-17"><a></a>  <span class="fu">add_column</span>(<span class="at">forecast =</span> preds <span class="sc">*</span> train_sd <span class="sc">+</span> train_mean) <span class="sc">|&gt;</span> </span>
+<span id="cb13-18"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Hour) <span class="sc">|&gt;</span> </span>
+<span id="cb13-19"><a></a>  <span class="fu">update_tsibble</span>(<span class="at">key =</span> name) <span class="sc">|&gt;</span> </span>
+<span id="cb13-20"><a></a>  <span class="fu">as_tibble</span>()</span>
+<span id="cb13-21"><a></a></span>
+<span id="cb13-22"><a></a>pred_ts <span class="sc">|&gt;</span> </span>
+<span id="cb13-23"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Hour, value, <span class="at">color =</span> name)) <span class="sc">+</span></span>
+<span id="cb13-24"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb13-25"><a></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#08c5d1"</span>, <span class="st">"#00353f"</span>)) <span class="sc">+</span></span>
+<span id="cb13-26"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-27"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"None"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 </section></section>

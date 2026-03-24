@@ -41,7 +41,6 @@ demand_dataset <- dataset(
 )
 
 
-
 demand_hourly <- vic_elec |> 
   index_by(Hour = floor_date(Time, "hour")) |> 
   summarise(
@@ -95,6 +94,20 @@ dim(b$x)
 dim(b$y)
 
 
+input_size <- 1
+hidden_size <- 32
+num_layers <- 2
+rec_dropout <- 0.2
+
+t1 <- nn_lstm(
+      input_size = input_size,
+      hidden_size = hidden_size,
+      num_layers = num_layers,
+      dropout = rec_dropout,
+      batch_first = TRUE
+    )
+
+t1(b[[1]])[[1]][, dim(b[[1]])[2], ] |> dim()
 model <- nn_module(
   initialize = function(input_size,
                         hidden_size,

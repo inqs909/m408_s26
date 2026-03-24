@@ -41,7 +41,6 @@ editor: source
 
 ## R Packages
 
-## R Packages
 
 ```r
 # install.packages("tsibble")
@@ -58,10 +57,8 @@ torch_manual_seed(909)
 
 
 ```python
-
 import pandas as pd
-
-vic_elec <- pd.read_csv()
+vic_elec = pd.read_csv("https://raw.githubusercontent.com/inqs909/m408_s26/refs/heads/main/lectures/data/vic_elec.csv")
 
 ```
 
@@ -119,30 +116,37 @@ Using the data sequence, we can predict and outcome $Y$.
 
 ![Source: ISLR2](img/islr2/Chapter10/10_12.png)
 
+## RNN Neuron
+
+![RNN Neuron](img/Neuron.svg)
+
 ## RNN Inputs
 
 $$
-\boldsymbol X = (\boldsymbol x_0, \boldsymbol x_1, \boldsymbol x_2, \cdots, \boldsymbol x_{J-1}, \boldsymbol x_J)
+\boldsymbol X = (\boldsymbol x_0, \boldsymbol x_1, \boldsymbol x_2, \cdots, \boldsymbol x_{L-1}, \boldsymbol x_L)
 $$ 
 
 where
 
 $$
-\boldsymbol x_{j} = (x_{j1},x_{j1}, \cdots, x_{jK})
+\boldsymbol x_{l} = (x_{l1},x_{l1}, \cdots, x_{lK})
 $$
 
 ## Hidden Layer
 
 $$
-h_{j} = f(\bbeta_{hx}\boldsymbol x_{j} + \bbeta_{hh}h_{j-1} + b_h)
+A_{lj} = f(\sum_k\beta_{jk}\boldsymbol x_{lk} + \sum_m\bbeta_{jm}A_{(l-1)m} + \beta_{0j})
 $$
 
--   $\bbeta_{hx}$ and $\bbeta_{hh}$ are weight vectors for input-to-hidden, and hidden-to-hidden connections respectively.
+- $l$: Indexes the recurrent neuron
+- $j$: Indexes the node within the RNN neuron
+- $k$: Indexes the $X$ input
+- $m$: Indexes the node of the previous RNN neuron
 
 ## Output Layer
 
 $$
-y_{j} = g(\bbeta_{hy}h_{j} + b_y)
+O_{l} = g(\sum_j\gamma_{lj}A_{lj} + \gamma_{0l})
 $$
 
 # Time Series
@@ -151,7 +155,7 @@ $$
 
 A time series is a sequence of data points collected or recorded at successive, evenly spaced intervals of time. These data points can represent any variable that is observed or measured over time, such as temperature readings, stock prices, sales figures, or sensor data.
 
-## Autocorrelation
+## Data
 
 
 $$
@@ -164,9 +168,6 @@ X_{(J-1)}\rightarrow
 X_{(J)}
 $$
 
-## More Information
-
-![](img/ts_408.png)
 
 ## RNN
 
@@ -174,9 +175,450 @@ A recurrent neural network can be used to account the sequential order of each m
 
 ![Source: ISLR2](img/islr2/Chapter10/10_12.png)
 
+## Inputs and Outputs
 
-# Predicting Electricity
+- With Time-Series data, the data acts as both inputs and outputs.
+- THere is a usually a lead-up in the input before we get an output.
+
+## Given the Data
+
+$$
+X_{(0)}\rightarrow
+X_{(1)}\rightarrow
+X_{(2)}\rightarrow
+X_{(3)}\rightarrow
+\cdots\rightarrow
+X_{(J-1)}\rightarrow
+X_{(J)}
+$$
+
+## Data Point 1
+
+::: {.columns}
+::: {.column}
+
+### Input
+
+$$
+X_{(0)},
+X_{(1)},
+X_{(2)},
+X_{(3)},
+X_{(4)},
+X_{(5)}
+$$
+
+
+
+:::
+::: {.column}
+
+### Output
+
+$$
+X_{(6)}
+$$
+
+:::
+:::
+
+## Data Point 2
+
+::: {.columns}
+::: {.column}
+
+### Input
+
+$$
+X_{(1)},
+X_{(2)},
+X_{(3)},
+X_{(4)},
+X_{(5)},
+X_{(6)}
+$$
+
+
+
+:::
+::: {.column}
+
+### Output
+
+$$
+X_{(7)}
+$$
+
+:::
+:::
+
+## Data Point 3
+
+::: {.columns}
+::: {.column}
+
+### Input
+
+$$
+X_{(2)},
+X_{(3)},
+X_{(4)},
+X_{(5)},
+X_{(6)},
+X_{(7)}
+$$
+
+
+
+:::
+::: {.column}
+
+### Output
+
+$$
+X_{(8)}
+$$
+
+:::
+:::
+
+## Data Point 4
+
+::: {.columns}
+::: {.column}
+
+### Input
+
+$$
+X_{(3)},
+X_{(4)},
+X_{(5)},
+X_{(6)},
+X_{(7)},
+X_{(8)}
+$$
+
+
+
+:::
+::: {.column}
+
+### Output
+
+$$
+X_{(9)}
+$$
+
+:::
+:::
+
+## Data Point 5
+
+::: {.columns}
+::: {.column}
+
+### Input
+
+$$
+X_{(3)},
+X_{(4)},
+X_{(5)},
+X_{(6)},
+X_{(7)},
+X_{(8)}
+$$
+
+
+
+:::
+::: {.column}
+
+### Output
+
+$$
+X_{(9)}
+$$
+
+:::
+:::
+
+## Time-Series Data Analysis
+
+Most time-series data analysis is to understand cyclical trends and prediction.
+
+## More Information
+
+![](img/ts_408.png)
+
+
+
+# Predicting Electricity Demand
+
+## Predicting Electricity Demand
+
+We will use the `vic_elec` data set to be able to predict what the demand will be in a future time point.
 
 ## Data Set
 
+In order to fit a model with Torch, we need to provide a data set funcion that provides 2 values, a set of input and set of output. With Sequential data, values may be both outputs and inputs. We will use the `dataset()` to ensure that values can be used as both output and input.
 
+## RNN Neuron
+
+Instead of the standard RNN Neuron, we will implement the *Long Short-Term Memory* Neuron.
+
+## Data Set
+
+::: panel-tabset
+
+### Data
+
+```{r}
+# install.packages("torchdatasets")
+# install.packages("feasts")
+
+library(tidyverse)
+library(torch)
+library(luz) # high-level interface for torch
+
+torch_manual_seed(909)
+library(tsibble)
+library(tsibbledata)
+vic_ele
+```
+
+
+### `dataset()`
+
+```{r}
+demand_dataset <- dataset(
+  name = "demand_dataset",
+  initialize = function(x, n_timesteps, sample_frac = 1) {
+    self$n_timesteps <- n_timesteps
+    self$x <- torch_tensor((x - train_mean) / train_sd)
+
+    n <- length(self$x) - self$n_timesteps
+
+    self$starts <- sort(sample.int(
+      n = n,
+      size = n * sample_frac
+    ))
+  },
+  .getitem = function(i) {
+    start <- self$starts[i]
+    end <- start + self$n_timesteps - 1
+
+    list(
+      x = self$x[start:end],
+      y = self$x[end + 1]
+    )
+  },
+  .length = function() {
+    length(self$starts)
+  }
+)
+```
+
+### Prep
+
+```{r}
+demand_hourly <- vic_elec |> 
+  index_by(Hour = floor_date(Time, "hour")) |> 
+  summarise(
+    Demand = sum(Demand))
+
+demand_train <- demand_hourly |> 
+  filter(year(Hour) == 2012) |> 
+  as_tibble() |> 
+  select(Demand) |> 
+  as.matrix()
+
+demand_valid <- demand_hourly |> 
+  filter(year(Hour) == 2013) |> 
+  as_tibble() |> 
+  select(Demand) |> 
+  as.matrix()
+
+demand_test <- demand_hourly |> 
+  filter(year(Hour) == 2014) |> 
+  as_tibble() |> 
+  select(Demand) |> 
+  as.matrix()
+
+train_mean <- mean(demand_train)
+train_sd <- sd(demand_train)
+
+n_timesteps <- 7 * 24
+
+```
+
+
+### Final
+
+```{r}
+train_ds <- demand_dataset(demand_train, n_timesteps)
+valid_ds <- demand_dataset(demand_valid, n_timesteps)
+test_ds <- demand_dataset(demand_test, n_timesteps)
+```
+
+
+:::
+
+## Model
+
+::: panel-tabset
+
+### Model
+
+```{r}
+
+
+model <- nn_module(
+  initialize = function(input_size,
+                        hidden_size,
+                        dropout = 0.2,
+                        num_layers = 1,
+                        rec_dropout = 0) {
+    self$num_layers <- num_layers
+
+    self$rnn <- nn_lstm(
+      input_size = input_size,
+      hidden_size = hidden_size,
+      num_layers = num_layers,
+      dropout = rec_dropout,
+      batch_first = TRUE
+    )
+
+    self$dropout <- nn_dropout(dropout)
+    self$output <- nn_linear(hidden_size, 1)
+  },
+  forward = function(x) {
+    (x |> 
+      self$rnn())[[1]][, dim(x)[2], ] |> 
+      self$dropout() |> 
+      self$output()
+  }
+)
+```
+
+### Initialize
+
+
+```{r}
+  initialize = function(input_size,
+                        hidden_size,
+                        dropout = 0.2,
+                        num_layers = 1,
+                        rec_dropout = 0) {
+    self$num_layers <- num_layers
+
+    self$rnn <- nn_lstm(
+      input_size = input_size,
+      hidden_size = hidden_size,
+      num_layers = num_layers,
+      dropout = rec_dropout,
+      batch_first = TRUE
+    )
+
+    self$dropout <- nn_dropout(dropout)
+    self$output <- nn_linear(hidden_size, 1)
+  }
+```
+
+### Forward
+
+
+```{r}
+  forward = function(x) {
+    (x |> 
+      self$rnn())[[1]][, dim(x)[2], ] |> 
+      self$dropout() |> 
+      self$output()
+  }
+```
+
+:::
+
+## Training
+
+::: panel-tabset
+
+### Setup
+
+
+```{r}
+input_size <- 1
+hidden_size <- 32
+num_layers <- 2
+rec_dropout <- 0.2
+
+model <- model |> 
+  setup(optimizer = optim_adam, loss = nn_mse_loss()) |> 
+  set_hparams(
+    input_size = input_size,
+    hidden_size = hidden_size,
+    num_layers = num_layers,
+    rec_dropout = rec_dropout
+  )
+
+```
+
+
+### Train
+
+```{r}
+fitted <- model |> 
+  fit(train_dl, epochs = 15, valid_data = valid_dl,
+      callbacks = list(
+        luz_callback_early_stopping(patience = 3)
+      ),
+      verbose = TRUE)
+
+```
+
+### Evaluate
+
+
+```{r}
+
+plot(fitted)
+
+evaluate(fitted, test_dl)
+```
+
+:::
+
+
+## Predict and Visualize
+
+
+```{r}
+
+demand_viz <- demand_hourly |> 
+  filter(year(Hour) == 2014, month(Hour) == 12)
+
+demand_viz_matrix <- demand_viz |> 
+  as_tibble() |> 
+  select(Demand) |> 
+  as.matrix()
+
+viz_ds <- demand_dataset(demand_viz_matrix, n_timesteps)
+viz_dl <- viz_ds |> dataloader(batch_size = length(viz_ds))
+
+preds <- predict(fitted, viz_dl)
+preds <- preds$to(device = "cpu") |> as.matrix()
+preds <- c(rep(NA, n_timesteps), preds)
+
+pred_ts <- demand_viz |> 
+  add_column(forecast = preds * train_sd + train_mean) |> 
+  pivot_longer(-Hour) |> 
+  update_tsibble(key = name) |> 
+  as_tibble()
+
+pred_ts |> 
+  ggplot(aes(Hour, value, color = name)) +
+  geom_line() +
+  scale_colour_manual(values = c("#08c5d1", "#00353f")) +
+  theme_minimal() +
+  theme(legend.position = "None")
+
+```
