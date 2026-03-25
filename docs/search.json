@@ -21,53 +21,67 @@
     "text": "University Policies\n\nSyllabus Policies and Assistance\nCSUCI’s Syllabus Policies and Assistance Website provides important details about academic policies, campus expectations, and student support services that are all highly applicable to your success as a student both in and outside of the classroom. Ensure that you review this site on a regular basis to stay informed about the policies and resources that support your success, as campus resources or policies may change semester to semester.\n\n\nAcademic Honesty\nConduct yourself with honesty and integrity. Do not submit others’ work as your own. Foassignments and quizzes that allow you to work with a group, only put your name on what the group submits if you genuinely contributed to the work. Work completely independently on exams, using only the materials that are indicated as allowed. Failure to observe academic honesty results in substantial penalties that can include failing the course.\n\n\nCSUCI Basic Need\nPlease use the link to the Basic Needs Program on the Syllabus Policies and Assistance website (&lt;go.csuci.edu/syllabuspolicies&gt;) for information on emergency food, housing accommodations, toiletries, and connections to critical resources.\n\n\nCSUCI Disability Statement\nIf you are a student with a disability requesting reasonable accommodations in this course, you need to contact Disability Accommodations and Support Services (DASS) located on the second floor of Arroyo Hall, via email accommodations@csuci.edu or call 805-437-3331. All requests for reasonable accommodations require registration with DASS in advance of need: https://www.csuci.edu/dass/students/apply-for-services.htm. Faculty, students and DASS will work together regarding classroom accommodations. You are encouraged to discuss approved.\n\n\nDisruption\n\nIf I Am Out: I will communicate via email and will hold classes asynchronously.\nIf You Are Out: Contact me as soon as possible to talk about your options. Reasonable accommodations will be provided for a brief absence. With proper documentation, extended accommodations will be provided."
   },
   {
-    "objectID": "posts/week_7.html",
-    "href": "posts/week_7.html",
-    "title": "Week 7",
+    "objectID": "posts/week_8.html",
+    "href": "posts/week_8.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nRNN"
+  },
+  {
+    "objectID": "posts/week_8.html#resources",
+    "href": "posts/week_8.html#resources",
+    "title": "Week 8",
+    "section": "",
+    "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nRNN"
+  },
+  {
+    "objectID": "posts/week_6.html",
+    "href": "posts/week_6.html",
+    "title": "Week 6",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nCIFAR-10"
   },
   {
-    "objectID": "posts/week_7.html#resources",
-    "href": "posts/week_7.html#resources",
-    "title": "Week 7",
+    "objectID": "posts/week_6.html#resources",
+    "href": "posts/week_6.html#resources",
+    "title": "Week 6",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nCIFAR-10"
   },
   {
-    "objectID": "posts/week_5.html",
-    "href": "posts/week_5.html",
-    "title": "Week 5",
+    "objectID": "posts/week_4.html",
+    "href": "posts/week_4.html",
+    "title": "Week 4",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_5.html#resources",
-    "href": "posts/week_5.html#resources",
-    "title": "Week 5",
+    "objectID": "posts/week_4.html#resources",
+    "href": "posts/week_4.html#resources",
+    "title": "Week 4",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_3.html",
-    "href": "posts/week_3.html",
-    "title": "Week 3",
+    "objectID": "posts/week_2.html",
+    "href": "posts/week_2.html",
+    "title": "Week 2",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_3.html#learning-outcomes",
-    "href": "posts/week_3.html#learning-outcomes",
-    "title": "Week 3",
+    "objectID": "posts/week_2.html#learning-outcomes",
+    "href": "posts/week_2.html#learning-outcomes",
+    "title": "Week 2",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_3.html#resources",
-    "href": "posts/week_3.html#resources",
-    "title": "Week 3",
+    "objectID": "posts/week_2.html#resources",
+    "href": "posts/week_2.html#resources",
+    "title": "Week 2",
     "section": "Resources",
-    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\nSlides\nNA"
+    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
   },
   {
     "objectID": "posts/week_1.html",
@@ -1337,18 +1351,25 @@
     "text": "Extra Credits\n\nExtra Credit 1\nExtra Credit 2\nExtra Credit 3"
   },
   {
-    "objectID": "exc/exc_3.html",
-    "href": "exc/exc_3.html",
-    "title": "Extra Credit 3",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use is visual aids, such as a powerpoint presentation, to highlight your main findings. All books should be available through the Broome Library.\nMATH 453 STUDENTS: You must choose a different book from Math 453 in order to receive credit.\nBooks:\n\nEmpire of AI\n\nKaren Hao\n\nThe Last Human Job\n\nAllison Pugh\n\nThe Book of Why\n\nJudea Pearl\n\nAlgorithms of Oppression\n\nSafiya Umoja Noble\n\nData Feminism\n\nCatherine D’Ignazio and Lauren Klein\n\nWeapons of Math Destruction\n\nCathy O’Niel\n\nInvisible Women: Data bias in a world designed for men\n\nCaroline Criado Perez\n\nFactfulness: Ten Reasons We’re Wrong About the World… and Why Things are Better Than You Think\n\nHans Rosling\n\nArtificial Unintelligence: How Computers Misunderstand the World\n\nMerideth Broussard\n\nTechnically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech\n\nSara Wachter-Boettcher\n\nUnmasking AI\n\nJoy Buolamwini\n\nRace After Technology\n\nRuha Benjamin\n\nCloud Ethics\n\nLouise Amoore\n\nMore than a Glitch\n\nMeridith Broussard\n\nDigitizing Race\n\nLisa Nakamura\n\nData Action\n\nSarah Williams\n\nOR ANY Book Approved By Me (Deadline for Approval by March 29, 2026)\n\nVideo Essay Guidelines:\n\n10 Minutes Long\nUse of visual aids\nNarrated by your own voice\nDue 5/15/2026\n\nWorth 2 final grade percentage points."
+    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10\n\n\nThis week looks at Long Short-Term Memory.\n\n\n\n\n\nApr 4, 2026\n\n\n\n\n\n\n\nWeek 8\n\n\nThis week looks at building Recurrent Neural Networks.\n\n\n\n\n\nMar 21, 2026\n\n\n\n\n\n\n\nWeek 9\n\n\nThis is a holiday this week. Meet on Thursday to work on your projects.\n\n\n\n\n\nMar 20, 2026\n\n\n\n\n\n\n\nWeek 7\n\n\nThis week looks at building Convolutional Neural Networks.\n\n\n\n\n\nMar 8, 2026\n\n\n\n\n\n\n\nWeek 6\n\n\nThis week provides an overview of Convolutional Neural Networks.\n\n\n\n\n\nMar 3, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nThis week looks at building Neural Network Classifiers.\n\n\n\n\n\nFeb 23, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks at building multi-layer Neural Networks.\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks at building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "exc/exc_1.html",
-    "href": "exc/exc_1.html",
-    "title": "Extra Credit 1",
+    "objectID": "exc/exc_2.html",
+    "href": "exc/exc_2.html",
+    "title": "Extra Credit 2",
     "section": "",
-    "text": "Write a 2-page report practices related to self care. As you move on through college and your future careers, it is important to practice self care. For this extra credit assignments, write about what are some practices you will do to for your well being.\nWorth 1 percent points.\nReport guidelines\n\n2 Pages\nDouble Spaced\n12 point font\nDue 02/15/2026"
+    "text": "After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use visual aids, such as a powerpoint presentation, to highlight your main findings, and how it relates to your own life. All books should be available through the Broome Library.\nBooks:\n\nMake it Stick: The Science of Successful Learning\n\nPeter Brown\n\nTeach Yourself How to Learn: Strategies you can use to ace any course\n\nSaundra McGuire\n\nLimitless Mind\n\nJo Boaler\n\nHappiness: A Guide to Developing Life’s\n\nMatthieu Ricard\n\nGrit: The Power of Passion and Perserverance\n\nAngela Duckworth\n\nMindset: The New Psychology of Success\n\nCarol Dweck\n\n\nVideo Essay Guidelines:\n\n10 Minutes Long\nUse of visual aids\nNarrated by your own voice\nDue 5/15/2026\n\nWorth 2 final grade percentage points."
+  },
+  {
+    "objectID": "exc.html",
+    "href": "exc.html",
+    "title": "Extra Credit",
+    "section": "",
+    "text": "Extra Credit is designed to expand on different topics that related to Machine Learning, but are not necessarily required for the course. Additionally, these opportunities provide students relief when unexpected situations occur during the semester. While it is not required, I encourage everyone to attempt each opportunity.\nBelow is more information on each assignment.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 1\n\n\nInstructions for extra credit one.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 2\n\n\nInstructions for extra credit two.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 3\n\n\nInstructions for extra credit three.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "books.html",
@@ -1435,25 +1456,228 @@
     "text": "Study Desing and Causal Inference\n\nCausal Inference What IF\n\nHernán and Robins\n\nDesign of Observational Studies\n\nRosenbaum\n\n\nBolded Titles, I have read thoroughly."
   },
   {
-    "objectID": "exc.html",
-    "href": "exc.html",
-    "title": "Extra Credit",
+    "objectID": "exc/exc_1.html",
+    "href": "exc/exc_1.html",
+    "title": "Extra Credit 1",
     "section": "",
-    "text": "Extra Credit is designed to expand on different topics that related to Machine Learning, but are not necessarily required for the course. Additionally, these opportunities provide students relief when unexpected situations occur during the semester. While it is not required, I encourage everyone to attempt each opportunity.\nBelow is more information on each assignment.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 1\n\n\nInstructions for extra credit one.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 2\n\n\nInstructions for extra credit two.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nExtra Credit 3\n\n\nInstructions for extra credit three.\n\n\n\n\n\nJan 15, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Write a 2-page report practices related to self care. As you move on through college and your future careers, it is important to practice self care. For this extra credit assignments, write about what are some practices you will do to for your well being.\nWorth 1 percent points.\nReport guidelines\n\n2 Pages\nDouble Spaced\n12 point font\nDue 02/15/2026"
   },
   {
-    "objectID": "exc/exc_2.html",
-    "href": "exc/exc_2.html",
-    "title": "Extra Credit 2",
+    "objectID": "exc/exc_3.html",
+    "href": "exc/exc_3.html",
+    "title": "Extra Credit 3",
     "section": "",
-    "text": "After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use visual aids, such as a powerpoint presentation, to highlight your main findings, and how it relates to your own life. All books should be available through the Broome Library.\nBooks:\n\nMake it Stick: The Science of Successful Learning\n\nPeter Brown\n\nTeach Yourself How to Learn: Strategies you can use to ace any course\n\nSaundra McGuire\n\nLimitless Mind\n\nJo Boaler\n\nHappiness: A Guide to Developing Life’s\n\nMatthieu Ricard\n\nGrit: The Power of Passion and Perserverance\n\nAngela Duckworth\n\nMindset: The New Psychology of Success\n\nCarol Dweck\n\n\nVideo Essay Guidelines:\n\n10 Minutes Long\nUse of visual aids\nNarrated by your own voice\nDue 5/15/2026\n\nWorth 2 final grade percentage points."
+    "text": "After reading one book below, create a video essay that summarizes the book, provide a brief analysis in supporting or opposing the book, and connect key elements of the book to your every day life. The video essay should be 10 minutes being narrated by your own voice. Use is visual aids, such as a powerpoint presentation, to highlight your main findings. All books should be available through the Broome Library.\nMATH 453 STUDENTS: You must choose a different book from Math 453 in order to receive credit.\nBooks:\n\nEmpire of AI\n\nKaren Hao\n\nThe Last Human Job\n\nAllison Pugh\n\nThe Book of Why\n\nJudea Pearl\n\nAlgorithms of Oppression\n\nSafiya Umoja Noble\n\nData Feminism\n\nCatherine D’Ignazio and Lauren Klein\n\nWeapons of Math Destruction\n\nCathy O’Niel\n\nInvisible Women: Data bias in a world designed for men\n\nCaroline Criado Perez\n\nFactfulness: Ten Reasons We’re Wrong About the World… and Why Things are Better Than You Think\n\nHans Rosling\n\nArtificial Unintelligence: How Computers Misunderstand the World\n\nMerideth Broussard\n\nTechnically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech\n\nSara Wachter-Boettcher\n\nUnmasking AI\n\nJoy Buolamwini\n\nRace After Technology\n\nRuha Benjamin\n\nCloud Ethics\n\nLouise Amoore\n\nMore than a Glitch\n\nMeridith Broussard\n\nDigitizing Race\n\nLisa Nakamura\n\nData Action\n\nSarah Williams\n\nOR ANY Book Approved By Me (Deadline for Approval by March 29, 2026)\n\nVideo Essay Guidelines:\n\n10 Minutes Long\nUse of visual aids\nNarrated by your own voice\nDue 5/15/2026\n\nWorth 2 final grade percentage points."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to Machine Learning!",
-    "section": "",
-    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 8\n\n\nThis week looks at building Recurrent Neural Networks.\n\n\n\n\n\nMar 21, 2026\n\n\n\n\n\n\n\nWeek 7\n\n\nThis week looks at building Convolutional Neural Networks.\n\n\n\n\n\nMar 8, 2026\n\n\n\n\n\n\n\nWeek 6\n\n\nThis week provides an overview of Convolutional Neural Networks.\n\n\n\n\n\nMar 3, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nThis week looks at building Neural Network Classifiers.\n\n\n\n\n\nFeb 23, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks at building multi-layer Neural Networks.\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks at building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
+    "objectID": "lectures/10a.html#r-packages",
+    "href": "lectures/10a.html#r-packages",
+    "title": "Long Short-term\nMemory",
+    "section": "R Packages",
+    "text": "R Packages\n# install.packages(\"tsibble\")\n# install.packages(\"tsibbledata\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(tsibble)\nlibrary(tsibbledata)\ntorch_manual_seed(909)"
+  },
+  {
+    "objectID": "lectures/10a.html#python-data",
+    "href": "lectures/10a.html#python-data",
+    "title": "Long Short-term\nMemory",
+    "section": "Python Data",
+    "text": "Python Data\nimport pandas as pd\nvic_elec = pd.read_csv(\"https://raw.githubusercontent.com/inqs909/m408_s26/refs/heads/main/lectures/data/vic_elec.csv\")"
+  },
+  {
+    "objectID": "lectures/10a.html#sequential-data-1",
+    "href": "lectures/10a.html#sequential-data-1",
+    "title": "Long Short-term\nMemory",
+    "section": "Sequential Data",
+    "text": "Sequential Data\nSequential data is data that is obtained in a series:\n\\[\nX_{(0)}\\rightarrow\nX_{(1)}\\rightarrow\nX_{(2)}\\rightarrow\nX_{(3)}\\rightarrow\n\\cdots\\rightarrow\nX_{(J-1)}\\rightarrow\nX_{(J)}\n\\]"
+  },
+  {
+    "objectID": "lectures/10a.html#stochastic-procceses",
+    "href": "lectures/10a.html#stochastic-procceses",
+    "title": "Long Short-term\nMemory",
+    "section": "Stochastic Procceses",
+    "text": "Stochastic Procceses\nA stochastic process is a collection of random variables, that can be indexed by a parameters. Sequential data can be thought of as a stochastic process.\n\nThe generation of a variable \\(X_{(j)}\\) may or may not be dependent of the previous values."
+  },
+  {
+    "objectID": "lectures/10a.html#examples-of-sequential-data",
+    "href": "lectures/10a.html#examples-of-sequential-data",
+    "title": "Long Short-term\nMemory",
+    "section": "Examples of Sequential Data",
+    "text": "Examples of Sequential Data\n\nDocuments and Books\nTemperature\nStock Prices\nSpeech/Recordings\nHandwriting"
+  },
+  {
+    "objectID": "lectures/10a.html#rnn",
+    "href": "lectures/10a.html#rnn",
+    "title": "Long Short-term\nMemory",
+    "section": "RNN",
+    "text": "RNN\nRecurrent Neural Networks are designed to analyze input data that is sequential data.\n\nAn RNN can accounts for the position of a data point in the sequence as well as the distance it has to other data points.\n\n\nUsing the data sequence, we can predict and outcome \\(Y\\)."
+  },
+  {
+    "objectID": "lectures/10a.html#rnn-1",
+    "href": "lectures/10a.html#rnn-1",
+    "title": "Long Short-term\nMemory",
+    "section": "RNN",
+    "text": "RNN\n\nSource: ISLR2"
+  },
+  {
+    "objectID": "lectures/10a.html#rnn-neuron",
+    "href": "lectures/10a.html#rnn-neuron",
+    "title": "Long Short-term\nMemory",
+    "section": "RNN Neuron",
+    "text": "RNN Neuron\n\nRNN Neuron"
+  },
+  {
+    "objectID": "lectures/10a.html#rnn-inputs",
+    "href": "lectures/10a.html#rnn-inputs",
+    "title": "Long Short-term\nMemory",
+    "section": "RNN Inputs",
+    "text": "RNN Inputs\n\\[\n\\boldsymbol X = (\\boldsymbol x_0, \\boldsymbol x_1, \\boldsymbol x_2, \\cdots, \\boldsymbol x_{L-1}, \\boldsymbol x_L)\n\\]\nwhere\n\\[\n\\boldsymbol x_{l} = (x_{l1},x_{l1}, \\cdots, x_{lK})\n\\]"
+  },
+  {
+    "objectID": "lectures/10a.html#hidden-layer",
+    "href": "lectures/10a.html#hidden-layer",
+    "title": "Long Short-term\nMemory",
+    "section": "Hidden Layer",
+    "text": "Hidden Layer\n\\[\nA_{lj} = f(\\sum_k\\beta_{jk}\\boldsymbol x_{lk} + \\sum_m\\bbeta_{jm}A_{(l-1)m} + \\beta_{0j})\n\\]\n\n\\(l\\): Indexes the recurrent neuron\n\\(j\\): Indexes the node within the RNN neuron\n\\(k\\): Indexes the \\(X\\) input\n\\(m\\): Indexes the node of the previous RNN neuron"
+  },
+  {
+    "objectID": "lectures/10a.html#output-layer",
+    "href": "lectures/10a.html#output-layer",
+    "title": "Long Short-term\nMemory",
+    "section": "Output Layer",
+    "text": "Output Layer\n\\[\nO_{l} = g(\\sum_j\\gamma_{lj}A_{lj} + \\gamma_{0l})\n\\]"
+  },
+  {
+    "objectID": "lectures/10a.html#time-series-1",
+    "href": "lectures/10a.html#time-series-1",
+    "title": "Long Short-term\nMemory",
+    "section": "Time Series",
+    "text": "Time Series\nA time series is a sequence of data points collected or recorded at successive, evenly spaced intervals of time. These data points can represent any variable that is observed or measured over time, such as temperature readings, stock prices, sales figures, or sensor data."
+  },
+  {
+    "objectID": "lectures/10a.html#data",
+    "href": "lectures/10a.html#data",
+    "title": "Long Short-term\nMemory",
+    "section": "Data",
+    "text": "Data\n\\[\nX_{(0)}\\rightarrow\nX_{(1)}\\rightarrow\nX_{(2)}\\rightarrow\nX_{(3)}\\rightarrow\n\\cdots\\rightarrow\nX_{(J-1)}\\rightarrow\nX_{(J)}\n\\]"
+  },
+  {
+    "objectID": "lectures/10a.html#rnn-2",
+    "href": "lectures/10a.html#rnn-2",
+    "title": "Long Short-term\nMemory",
+    "section": "RNN",
+    "text": "RNN\nA recurrent neural network can be used to account the sequential order of each measurement.\n\nSource: ISLR2"
+  },
+  {
+    "objectID": "lectures/10a.html#inputs-and-outputs",
+    "href": "lectures/10a.html#inputs-and-outputs",
+    "title": "Long Short-term\nMemory",
+    "section": "Inputs and Outputs",
+    "text": "Inputs and Outputs\n\nWith Time-Series data, the data acts as both inputs and outputs.\nTHere is a usually a lead-up in the input before we get an output."
+  },
+  {
+    "objectID": "lectures/10a.html#given-the-data",
+    "href": "lectures/10a.html#given-the-data",
+    "title": "Long Short-term\nMemory",
+    "section": "Given the Data",
+    "text": "Given the Data\n\\[\nX_{(0)}\\rightarrow\nX_{(1)}\\rightarrow\nX_{(2)}\\rightarrow\nX_{(3)}\\rightarrow\n\\cdots\\rightarrow\nX_{(J-1)}\\rightarrow\nX_{(J)}\n\\]"
+  },
+  {
+    "objectID": "lectures/10a.html#data-point-1",
+    "href": "lectures/10a.html#data-point-1",
+    "title": "Long Short-term\nMemory",
+    "section": "Data Point 1",
+    "text": "Data Point 1\n\n\nInput\n\\[\nX_{(0)},\nX_{(1)},\nX_{(2)},\nX_{(3)},\nX_{(4)},\nX_{(5)}\n\\]\n\nOutput\n\\[\nX_{(6)}\n\\]"
+  },
+  {
+    "objectID": "lectures/10a.html#data-point-2",
+    "href": "lectures/10a.html#data-point-2",
+    "title": "Long Short-term\nMemory",
+    "section": "Data Point 2",
+    "text": "Data Point 2\n\n\nInput\n\\[\nX_{(1)},\nX_{(2)},\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)}\n\\]\n\nOutput\n\\[\nX_{(7)}\n\\]"
+  },
+  {
+    "objectID": "lectures/10a.html#data-point-3",
+    "href": "lectures/10a.html#data-point-3",
+    "title": "Long Short-term\nMemory",
+    "section": "Data Point 3",
+    "text": "Data Point 3\n\n\nInput\n\\[\nX_{(2)},\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)},\nX_{(7)}\n\\]\n\nOutput\n\\[\nX_{(8)}\n\\]"
+  },
+  {
+    "objectID": "lectures/10a.html#data-point-4",
+    "href": "lectures/10a.html#data-point-4",
+    "title": "Long Short-term\nMemory",
+    "section": "Data Point 4",
+    "text": "Data Point 4\n\n\nInput\n\\[\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)},\nX_{(7)},\nX_{(8)}\n\\]\n\nOutput\n\\[\nX_{(9)}\n\\]"
+  },
+  {
+    "objectID": "lectures/10a.html#data-point-5",
+    "href": "lectures/10a.html#data-point-5",
+    "title": "Long Short-term\nMemory",
+    "section": "Data Point 5",
+    "text": "Data Point 5\n\n\nInput\n\\[\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)},\nX_{(7)},\nX_{(8)}\n\\]\n\nOutput\n\\[\nX_{(9)}\n\\]"
+  },
+  {
+    "objectID": "lectures/10a.html#time-series-data-analysis",
+    "href": "lectures/10a.html#time-series-data-analysis",
+    "title": "Long Short-term\nMemory",
+    "section": "Time-Series Data Analysis",
+    "text": "Time-Series Data Analysis\nMost time-series data analysis is to understand cyclical trends and prediction."
+  },
+  {
+    "objectID": "lectures/10a.html#more-information",
+    "href": "lectures/10a.html#more-information",
+    "title": "Long Short-term\nMemory",
+    "section": "More Information",
+    "text": "More Information"
+  },
+  {
+    "objectID": "lectures/10a.html#predicting-electricity-demand-1",
+    "href": "lectures/10a.html#predicting-electricity-demand-1",
+    "title": "Long Short-term\nMemory",
+    "section": "Predicting Electricity Demand",
+    "text": "Predicting Electricity Demand\nWe will use the vic_elec data set to be able to predict what the demand will be in a future time point."
+  },
+  {
+    "objectID": "lectures/10a.html#data-set",
+    "href": "lectures/10a.html#data-set",
+    "title": "Long Short-term\nMemory",
+    "section": "Data Set",
+    "text": "Data Set\nIn order to fit a model with Torch, we need to provide a data set funcion that provides 2 values, a set of input and set of output. With Sequential data, values may be both outputs and inputs. We will use the dataset() to ensure that values can be used as both output and input."
+  },
+  {
+    "objectID": "lectures/10a.html#rnn-neuron-1",
+    "href": "lectures/10a.html#rnn-neuron-1",
+    "title": "Long Short-term\nMemory",
+    "section": "RNN Neuron",
+    "text": "RNN Neuron\nInstead of the standard RNN Neuron, we will implement the Long Short-Term Memory Neuron."
+  },
+  {
+    "objectID": "lectures/10a.html#data-set-1",
+    "href": "lectures/10a.html#data-set-1",
+    "title": "Long Short-term\nMemory",
+    "section": "Data Set",
+    "text": "Data Set\n\nDatadataset()PrepFinal\n\n\n\n# install.packages(\"torchdatasets\")\n# install.packages(\"feasts\")\n\nlibrary(tidyverse)\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\n\ntorch_manual_seed(909)\nlibrary(tsibble)\nlibrary(tsibbledata)\nvic_ele\n\n\n\n\ndemand_dataset &lt;- dataset(\n  name = \"demand_dataset\",\n  initialize = function(x, n_timesteps, sample_frac = 1) {\n    self$n_timesteps &lt;- n_timesteps\n    self$x &lt;- torch_tensor((x - train_mean) / train_sd)\n\n    n &lt;- length(self$x) - self$n_timesteps\n\n    self$starts &lt;- sort(sample.int(\n      n = n,\n      size = n * sample_frac\n    ))\n  },\n  .getitem = function(i) {\n    start &lt;- self$starts[i]\n    end &lt;- start + self$n_timesteps - 1\n\n    list(\n      x = self$x[start:end],\n      y = self$x[end + 1]\n    )\n  },\n  .length = function() {\n    length(self$starts)\n  }\n)\n\n\n\n\ndemand_hourly &lt;- vic_elec |&gt; \n  index_by(Hour = floor_date(Time, \"hour\")) |&gt; \n  summarise(\n    Demand = sum(Demand))\n\ndemand_train &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2012) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ndemand_valid &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2013) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ndemand_test &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2014) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ntrain_mean &lt;- mean(demand_train)\ntrain_sd &lt;- sd(demand_train)\n\nn_timesteps &lt;- 7 * 24\n\n\n\n\ntrain_ds &lt;- demand_dataset(demand_train, n_timesteps)\nvalid_ds &lt;- demand_dataset(demand_valid, n_timesteps)\ntest_ds &lt;- demand_dataset(demand_test, n_timesteps)"
+  },
+  {
+    "objectID": "lectures/10a.html#model",
+    "href": "lectures/10a.html#model",
+    "title": "Long Short-term\nMemory",
+    "section": "Model",
+    "text": "Model\n\nModelInitializeForward\n\n\n\nmodel &lt;- nn_module(\n  initialize = function(input_size,\n                        hidden_size,\n                        dropout = 0.2,\n                        num_layers = 1,\n                        rec_dropout = 0) {\n    self$num_layers &lt;- num_layers\n\n    self$rnn &lt;- nn_lstm(\n      input_size = input_size,\n      hidden_size = hidden_size,\n      num_layers = num_layers,\n      dropout = rec_dropout,\n      batch_first = TRUE\n    )\n\n    self$dropout &lt;- nn_dropout(dropout)\n    self$output &lt;- nn_linear(hidden_size, 1)\n  },\n  forward = function(x) {\n    (x |&gt; \n      self$rnn())[[1]][, dim(x)[2], ] |&gt; \n      self$dropout() |&gt; \n      self$output()\n  }\n)\n\n\n\n\n  initialize = function(input_size,\n                        hidden_size,\n                        dropout = 0.2,\n                        num_layers = 1,\n                        rec_dropout = 0) {\n    self$num_layers &lt;- num_layers\n\n    self$rnn &lt;- nn_lstm(\n      input_size = input_size,\n      hidden_size = hidden_size,\n      num_layers = num_layers,\n      dropout = rec_dropout,\n      batch_first = TRUE\n    )\n\n    self$dropout &lt;- nn_dropout(dropout)\n    self$output &lt;- nn_linear(hidden_size, 1)\n  }\n\n\n\n\n  forward = function(x) {\n    (x |&gt; \n      self$rnn())[[1]][, dim(x)[2], ] |&gt; \n      self$dropout() |&gt; \n      self$output()\n  }"
+  },
+  {
+    "objectID": "lectures/10a.html#training",
+    "href": "lectures/10a.html#training",
+    "title": "Long Short-term\nMemory",
+    "section": "Training",
+    "text": "Training\n\nSetupTrainEvaluate\n\n\n\ninput_size &lt;- 1\nhidden_size &lt;- 32\nnum_layers &lt;- 2\nrec_dropout &lt;- 0.2\n\nmodel &lt;- model |&gt; \n  setup(optimizer = optim_adam, loss = nn_mse_loss()) |&gt; \n  set_hparams(\n    input_size = input_size,\n    hidden_size = hidden_size,\n    num_layers = num_layers,\n    rec_dropout = rec_dropout\n  )\n\n\n\n\nfitted &lt;- model |&gt; \n  fit(train_dl, epochs = 15, valid_data = valid_dl,\n      callbacks = list(\n        luz_callback_early_stopping(patience = 3)\n      ),\n      verbose = TRUE)\n\n\n\n\nplot(fitted)\n\nevaluate(fitted, test_dl)"
+  },
+  {
+    "objectID": "lectures/10a.html#predict-and-visualize",
+    "href": "lectures/10a.html#predict-and-visualize",
+    "title": "Long Short-term\nMemory",
+    "section": "Predict and Visualize",
+    "text": "Predict and Visualize\n\ndemand_viz &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2014, month(Hour) == 12)\n\ndemand_viz_matrix &lt;- demand_viz |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\nviz_ds &lt;- demand_dataset(demand_viz_matrix, n_timesteps)\nviz_dl &lt;- viz_ds |&gt; dataloader(batch_size = length(viz_ds))\n\npreds &lt;- predict(fitted, viz_dl)\npreds &lt;- preds$to(device = \"cpu\") |&gt; as.matrix()\npreds &lt;- c(rep(NA, n_timesteps), preds)\n\npred_ts &lt;- demand_viz |&gt; \n  add_column(forecast = preds * train_sd + train_mean) |&gt; \n  pivot_longer(-Hour) |&gt; \n  update_tsibble(key = name) |&gt; \n  as_tibble()\n\npred_ts |&gt; \n  ggplot(aes(Hour, value, color = name)) +\n  geom_line() +\n  scale_colour_manual(values = c(\"#08c5d1\", \"#00353f\")) +\n  theme_minimal() +\n  theme(legend.position = \"None\")"
   },
   {
     "objectID": "lectures/1b.html#r-programming",
@@ -2485,66 +2709,66 @@
     "text": "Predict and Visualize\n\ndemand_viz &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2014, month(Hour) == 12)\n\ndemand_viz_matrix &lt;- demand_viz |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\nviz_ds &lt;- demand_dataset(demand_viz_matrix, n_timesteps)\nviz_dl &lt;- viz_ds |&gt; dataloader(batch_size = length(viz_ds))\n\npreds &lt;- predict(fitted, viz_dl)\npreds &lt;- preds$to(device = \"cpu\") |&gt; as.matrix()\npreds &lt;- c(rep(NA, n_timesteps), preds)\n\npred_ts &lt;- demand_viz |&gt; \n  add_column(forecast = preds * train_sd + train_mean) |&gt; \n  pivot_longer(-Hour) |&gt; \n  update_tsibble(key = name) |&gt; \n  as_tibble()\n\npred_ts |&gt; \n  ggplot(aes(Hour, value, color = name)) +\n  geom_line() +\n  scale_colour_manual(values = c(\"#08c5d1\", \"#00353f\")) +\n  theme_minimal() +\n  theme(legend.position = \"None\")"
   },
   {
-    "objectID": "posts/week_2.html",
-    "href": "posts/week_2.html",
-    "title": "Week 2",
+    "objectID": "posts/week_10.html",
+    "href": "posts/week_10.html",
+    "title": "Week 10",
+    "section": "",
+    "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nRNN"
+  },
+  {
+    "objectID": "posts/week_10.html#resources",
+    "href": "posts/week_10.html#resources",
+    "title": "Week 10",
+    "section": "",
+    "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nRNN"
+  },
+  {
+    "objectID": "posts/week_3.html",
+    "href": "posts/week_3.html",
+    "title": "Week 3",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_2.html#learning-outcomes",
-    "href": "posts/week_2.html#learning-outcomes",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html#learning-outcomes",
+    "href": "posts/week_3.html#learning-outcomes",
+    "title": "Week 3",
     "section": "",
     "text": "Welcome to the course!\n\n\n\n\n\nInstalling R and RStudio\nScripts\nR Calculator\nR Objects\nR Packages"
   },
   {
-    "objectID": "posts/week_2.html#resources",
-    "href": "posts/week_2.html#resources",
-    "title": "Week 2",
+    "objectID": "posts/week_3.html#resources",
+    "href": "posts/week_3.html#resources",
+    "title": "Week 3",
     "section": "Resources",
-    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nNA\n\n\n2\nSlides\nNA"
+    "text": "Resources\n\n\n\nLecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\nSlides\nNA"
   },
   {
-    "objectID": "posts/week_4.html",
-    "href": "posts/week_4.html",
-    "title": "Week 4",
+    "objectID": "posts/week_5.html",
+    "href": "posts/week_5.html",
+    "title": "Week 5",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_4.html#resources",
-    "href": "posts/week_4.html#resources",
-    "title": "Week 4",
+    "objectID": "posts/week_5.html#resources",
+    "href": "posts/week_5.html#resources",
+    "title": "Week 5",
     "section": "",
     "text": "Lecture\nSlides\nVideos\n\n\n\n\n1\nSlides\nVideo\n\n\n2\n\nNA"
   },
   {
-    "objectID": "posts/week_6.html",
-    "href": "posts/week_6.html",
-    "title": "Week 6",
+    "objectID": "posts/week_7.html",
+    "href": "posts/week_7.html",
+    "title": "Week 7",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nCIFAR-10"
   },
   {
-    "objectID": "posts/week_6.html#resources",
-    "href": "posts/week_6.html#resources",
-    "title": "Week 6",
+    "objectID": "posts/week_7.html#resources",
+    "href": "posts/week_7.html#resources",
+    "title": "Week 7",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nCIFAR-10"
-  },
-  {
-    "objectID": "posts/week_8.html",
-    "href": "posts/week_8.html",
-    "title": "Week 8",
-    "section": "",
-    "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nRNN"
-  },
-  {
-    "objectID": "posts/week_8.html#resources",
-    "href": "posts/week_8.html#resources",
-    "title": "Week 8",
-    "section": "",
-    "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nRNN"
   }
 ]

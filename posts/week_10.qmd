@@ -1,0 +1,13 @@
+---
+title: "Week 10"
+date: 04-04-26
+description: This week looks at Long Short-Term Memory.
+editor: source
+---
+
+
+## Resources
+
+| Lecture | Slides                   | Videos  | R Code Files |
+|---------|--------------------------|---------|----------|
+| 1       | [Slides](../lectures/10a) | [Video]() | [RNN](../lectures/R/10a.R)  |

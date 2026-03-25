@@ -1,13 +1,13 @@
 ---
 title: |
-  Recurrent \
-  Neural Networks
+  Long Short-term \
+  Memory
 format:
   revealjs:
     width: 1200
     scrollable: true
     include-in-header: "math.html"
-    footer: m408.inqs.info/lectures/8a
+    footer: m408.inqs.info/lectures/10a
     theme: [default, styles.scss]
     preview-links: true
     navigation-mode: vertical
