@@ -177,7 +177,7 @@ model <- model |>
 
 
 fitted <- model |> 
-  fit(train_dl, epochs = 25, valid_data = valid_dl,
+  fit(train_dl, epochs = 30, valid_data = valid_dl,
       verbose = TRUE)
 
 plot(fitted)
