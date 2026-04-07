@@ -53,6 +53,8 @@ library(tsibbledata)
 torch_manual_seed(909)
 ```
 
+Here is the complete [R Code File](https://m408.inqs.info/lectures/R/10a.R)
+
 ## Python Data
 
 
@@ -98,7 +100,7 @@ The generation of a variable $X_{(j)}$ may or may not be dependent of the previo
 
 -   Handwriting
 
-# Recurrent Neural Networks
+# Long Short-term Memory
 
 ## RNN
 
@@ -120,237 +122,96 @@ Using the data sequence, we can predict and outcome $Y$.
 
 ![RNN Neuron](img/Neuron.svg)
 
-## RNN Inputs
+## Problems with RNN
 
-$$
-\boldsymbol X = (\boldsymbol x_0, \boldsymbol x_1, \boldsymbol x_2, \cdots, \boldsymbol x_{L-1}, \boldsymbol x_L)
-$$ 
+- Recurrent Neural Networks suffer from exploding or disappearing gradient due the unfolding.
 
-where
+## LSTM
 
-$$
-\boldsymbol x_{l} = (x_{l1},x_{l1}, \cdots, x_{lK})
-$$
+The **Long Short-Term Memory** approach is used to conteract the issues with gradients by adding a "memory" structure to the nuerons. 
 
-## Hidden Layer
-
-$$
-A_{lj} = f(\sum_k\beta_{jk}\boldsymbol x_{lk} + \sum_m\bbeta_{jm}A_{(l-1)m} + \beta_{0j})
-$$
-
-- $l$: Indexes the recurrent neuron
-- $j$: Indexes the node within the RNN neuron
-- $k$: Indexes the $X$ input
-- $m$: Indexes the node of the previous RNN neuron
-
-## Output Layer
-
-$$
-O_{l} = g(\sum_j\gamma_{lj}A_{lj} + \gamma_{0l})
-$$
-
-# Time Series
-
-## Time Series
-
-A time series is a sequence of data points collected or recorded at successive, evenly spaced intervals of time. These data points can represent any variable that is observed or measured over time, such as temperature readings, stock prices, sales figures, or sensor data.
-
-## Data
-
-
-$$
-X_{(0)}\rightarrow
-X_{(1)}\rightarrow
-X_{(2)}\rightarrow
-X_{(3)}\rightarrow
-\cdots\rightarrow
-X_{(J-1)}\rightarrow
-X_{(J)}
-$$
-
-
-## RNN
-
-A recurrent neural network can be used to account the sequential order of each measurement.
-
-![Source: ISLR2](img/islr2/Chapter10/10_12.png)
-
-## Inputs and Outputs
-
-- With Time-Series data, the data acts as both inputs and outputs.
-- THere is a usually a lead-up in the input before we get an output.
-
-## Given the Data
-
-$$
-X_{(0)}\rightarrow
-X_{(1)}\rightarrow
-X_{(2)}\rightarrow
-X_{(3)}\rightarrow
-\cdots\rightarrow
-X_{(J-1)}\rightarrow
-X_{(J)}
-$$
-
-## Data Point 1
-
-::: {.columns}
-::: {.column}
-
-### Input
-
-$$
-X_{(0)},
-X_{(1)},
-X_{(2)},
-X_{(3)},
-X_{(4)},
-X_{(5)}
-$$
-
-
-
-:::
-::: {.column}
-
-### Output
-
-$$
-X_{(6)}
-$$
-
-:::
+::: {.fragment}
+This is done by incorporating 2 pathways, a long-term and short-term pathway.
 :::
 
-## Data Point 2
+## LSTM Components
 
-::: {.columns}
-::: {.column}
+The creation of the 2 pathways are constructed using 3 "gates":
 
-### Input
+- Input Gate
+- Output Gate
+- Forget Gate
 
-$$
-X_{(1)},
-X_{(2)},
-X_{(3)},
-X_{(4)},
-X_{(5)},
-X_{(6)}
-$$
-
-
-
-:::
-::: {.column}
-
-### Output
-
-$$
-X_{(7)}
-$$
-
-:::
+::: {.fragment}
+Additionally, LSTM uses sigmoid and hyperbolic tangent activation functions to see what values will be incorporated into the pathways. 
 :::
 
-## Data Point 3
+## LSTM Neuron
 
-::: {.columns}
-::: {.column}
 
-### Input
+![LSTM Neuron](img/LSTM.svg)
 
+## LSTM Architecture
+
+![LSTM Architecture](img/LSTM_2.svg)
+
+
+
+## Forget Gate
+
+The **forget gate** decides what information is useful from the long-term memory, and what information should be forgotten. The function below states what percent of the long-term memory should be remembered.
 $$
-X_{(2)},
-X_{(3)},
-X_{(4)},
-X_{(5)},
-X_{(6)},
-X_{(7)}
-$$
-
-
-
-:::
-::: {.column}
-
-### Output
-
-$$
-X_{(8)}
+f_t = \sigma\left(\boldsymbol W_f [h_{t-1}, x_t] + b_f\right)
 $$
 
-:::
-:::
+- $W_f$ is the weighting matrix full of parameters
+- $b_f$ is the bias term
 
-## Data Point 4
+## Input Gate
 
-::: {.columns}
-::: {.column}
-
-### Input
-
+The **input gate** controls how the long term memory should be modified based on both the short-term memory and the new input. The $i_t$ function tells us what percent should be remembered, and $j_t$ tells us what to remember.
 $$
-X_{(3)},
-X_{(4)},
-X_{(5)},
-X_{(6)},
-X_{(7)},
-X_{(8)}
+i_t = \sigma\left(\boldsymbol W_i [h_{t-1}, x_t] + b_i\right)
 $$
 
-
-
-:::
-::: {.column}
-
-### Output
-
 $$
-X_{(9)}
+j_t = \tanh\left(\boldsymbol W_j [h_{t-1}, x_t] + b_j\right)
 $$
 
-:::
-:::
-
-## Data Point 5
-
-::: {.columns}
-::: {.column}
-
-### Input
-
-$$
-X_{(3)},
-X_{(4)},
-X_{(5)},
-X_{(6)},
-X_{(7)},
-X_{(8)}
-$$
+- $W_i$ and $W_j$ is the weighting matrix full of parameters
+- $b_i$ and $b_j$ is the bias term
 
 
 
-:::
-::: {.column}
+## Long-term Memory
 
-### Output
+This is how the long-term memory is modified
 
 $$
-X_{(9)}
+C_t = f_t \bigodot C_{t-1} + i_t \bigodot j_t
 $$
 
-:::
-:::
+- $\bigodot$ is the element-wise multiplication of the vectors
 
-## Time-Series Data Analysis
+## Output Gate
 
-Most time-series data analysis is to understand cyclical trends and prediction.
+The **output gate** tells us how is the short-term memory is updated. This is dony by figuring out what percent will be used from the new long-term memory.
 
-## More Information
+$$
+o_t = \sigma\left(\boldsymbol W_o [h_{t-1}, x_t] + b_o\right)
+$$
 
-![](img/ts_408.png)
+- $W_o$ is the weighting matrix full of parameters
+- $b_o$ is the bias term
 
+## Short-term Memory
 
+The short-term memory is costructed by combining the output gate and new long-term memory.
+$$
+h_t = o_t\tanh\left(C_t\right)
+$$
+
+This is also the new predicted value.
 
 # Predicting Electricity Demand
 
@@ -392,11 +253,16 @@ vic_ele
 ```{r}
 demand_dataset <- dataset(
   name = "demand_dataset",
-  initialize = function(x, n_timesteps, sample_frac = 1) {
+  initialize = function(x,
+                        n_timesteps,
+                        n_forecast,
+                        sample_frac = 1) {
     self$n_timesteps <- n_timesteps
+    self$n_forecast <- n_forecast
     self$x <- torch_tensor((x - train_mean) / train_sd)
 
-    n <- length(self$x) - self$n_timesteps
+    n <- length(self$x) -
+      self$n_timesteps - self$n_forecast + 1
 
     self$starts <- sort(sample.int(
       n = n,
@@ -409,13 +275,15 @@ demand_dataset <- dataset(
 
     list(
       x = self$x[start:end],
-      y = self$x[end + 1]
+      y = self$x[(end + 1):(end + self$n_forecast)]$
+        squeeze(2)
     )
   },
   .length = function() {
     length(self$starts)
   }
 )
+
 ```
 
 ### Prep
@@ -448,18 +316,44 @@ train_mean <- mean(demand_train)
 train_sd <- sd(demand_train)
 
 n_timesteps <- 7 * 24
-
+n_forecast <- 7 * 24
 ```
 
 
 ### Final
 
 ```{r}
-train_ds <- demand_dataset(demand_train, n_timesteps)
-valid_ds <- demand_dataset(demand_valid, n_timesteps)
-test_ds <- demand_dataset(demand_test, n_timesteps)
+train_ds <- demand_dataset(
+  demand_train,
+  n_timesteps,
+  n_forecast,
+  sample_frac = 1
+)
+valid_ds <- demand_dataset(
+  demand_valid,
+  n_timesteps,
+  n_forecast,
+  sample_frac = 1
+)
+test_ds <- demand_dataset(
+  demand_test,
+  n_timesteps,
+  n_forecast
+)
 ```
 
+
+### Batches
+
+```{r}
+batch_size <- 128
+train_dl <- train_ds |> 
+  dataloader(batch_size = batch_size, shuffle = TRUE)
+valid_dl <- valid_ds |> 
+  dataloader(batch_size = batch_size)
+test_dl <- test_ds |> 
+  dataloader(batch_size = length(test_ds))
+```
 
 :::
 
@@ -475,6 +369,8 @@ test_ds <- demand_dataset(demand_test, n_timesteps)
 model <- nn_module(
   initialize = function(input_size,
                         hidden_size,
+                        linear_size,
+                        output_size,
                         dropout = 0.2,
                         num_layers = 1,
                         rec_dropout = 0) {
@@ -489,13 +385,16 @@ model <- nn_module(
     )
 
     self$dropout <- nn_dropout(dropout)
-    self$output <- nn_linear(hidden_size, 1)
+    self$mlp <- nn_sequential(
+      nn_linear(hidden_size, linear_size),
+      nn_relu(),
+      nn_dropout(dropout),
+      nn_linear(linear_size, output_size)
+    )
   },
   forward = function(x) {
-    (x |> 
-      self$rnn())[[1]][, dim(x)[2], ] |> 
-      self$dropout() |> 
-      self$output()
+    x <- self$rnn(x)[[2]][[1]][self$num_layers, , ] |> 
+      self$mlp()
   }
 )
 ```
@@ -548,6 +447,8 @@ model <- nn_module(
 ```{r}
 input_size <- 1
 hidden_size <- 32
+linear_size <- 512
+dropout <- 0.5
 num_layers <- 2
 rec_dropout <- 0.2
 
@@ -556,9 +457,14 @@ model <- model |>
   set_hparams(
     input_size = input_size,
     hidden_size = hidden_size,
+    linear_size = linear_size,
+    output_size = n_forecast,
     num_layers = num_layers,
     rec_dropout = rec_dropout
   )
+
+
+
 
 ```
 
@@ -567,10 +473,7 @@ model <- model |>
 
 ```{r}
 fitted <- model |> 
-  fit(train_dl, epochs = 15, valid_data = valid_dl,
-      callbacks = list(
-        luz_callback_early_stopping(patience = 3)
-      ),
+  fit(train_dl, epochs = 30, valid_data = valid_dl,
       verbose = TRUE)
 
 ```
@@ -601,24 +504,54 @@ demand_viz_matrix <- demand_viz |>
   select(Demand) |> 
   as.matrix()
 
-viz_ds <- demand_dataset(demand_viz_matrix, n_timesteps)
-viz_dl <- viz_ds |> dataloader(batch_size = length(viz_ds))
+n_obs <- nrow(demand_viz_matrix)
+
+viz_ds <- demand_dataset(
+  demand_viz_matrix,
+  n_timesteps,
+  n_forecast
+)
+viz_dl <- viz_ds |> 
+  dataloader(batch_size = length(viz_ds))
 
 preds <- predict(fitted, viz_dl)
-preds <- preds$to(device = "cpu") |> as.matrix()
-preds <- c(rep(NA, n_timesteps), preds)
+preds <- preds$to(device = "cpu") |> 
+  as.matrix()
+
+example_preds <- vector(mode = "list", length = 3)
+example_indices <- c(1, 201, 401)
+
+for (i in seq_along(example_indices)) {
+  cur_obs <- example_indices[i]
+  example_preds[[i]] <- c(
+    rep(NA, n_timesteps + cur_obs - 1),
+    preds[cur_obs, ],
+    rep(
+      NA,
+      n_obs - cur_obs + 1 - n_timesteps - n_forecast
+    )
+  )
+}
 
 pred_ts <- demand_viz |> 
-  add_column(forecast = preds * train_sd + train_mean) |> 
+  select(Demand) |> 
+  add_column(
+    p1 = example_preds[[1]] * train_sd + train_mean,
+    p2 = example_preds[[2]] * train_sd + train_mean,
+    p3 = example_preds[[3]] * train_sd + train_mean) |> 
   pivot_longer(-Hour) |> 
-  update_tsibble(key = name) |> 
-  as_tibble()
+  update_tsibble(key = name)
 
 pred_ts |> 
-  ggplot(aes(Hour, value, color = name)) +
-  geom_line() +
-  scale_colour_manual(values = c("#08c5d1", "#00353f")) +
+    ggplot(aes(Hour, value, color = name)) +
+      geom_line() +
+  scale_colour_manual(
+    values = c(
+      "#08c5d1", "#00353f", "#ffbf66", "#d46f4d"
+    )
+  ) +
   theme_minimal() +
   theme(legend.position = "None")
+
 
 ```

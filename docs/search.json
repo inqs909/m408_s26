@@ -1355,7 +1355,7 @@
     "href": "index.html",
     "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10\n\n\nThis week looks at Long Short-Term Memory.\n\n\n\n\n\nApr 4, 2026\n\n\n\n\n\n\n\nWeek 9\n\n\nThis is a holiday this week. Meet on Thursday to work on your projects.\n\n\n\n\n\nMar 30, 2026\n\n\n\n\n\n\n\nWeek 8\n\n\nThis week looks at building Recurrent Neural Networks.\n\n\n\n\n\nMar 21, 2026\n\n\n\n\n\n\n\nWeek 7\n\n\nThis week looks at building Convolutional Neural Networks.\n\n\n\n\n\nMar 8, 2026\n\n\n\n\n\n\n\nWeek 6\n\n\nThis week provides an overview of Convolutional Neural Networks.\n\n\n\n\n\nMar 3, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nThis week looks at building Neural Network Classifiers.\n\n\n\n\n\nFeb 23, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks at building multi-layer Neural Networks.\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks at building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
+    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10\n\n\nThis week looks at Long Short-Term Memory.\n\n\n\n\n\nApr 4, 2026\n\n\n\n\n\n\n\nWeek 9\n\n\nThere is a holiday this week. Meet on Thursday to work on your projects.\n\n\n\n\n\nMar 30, 2026\n\n\n\n\n\n\n\nWeek 8\n\n\nThis week looks at building Recurrent Neural Networks.\n\n\n\n\n\nMar 21, 2026\n\n\n\n\n\n\n\nWeek 7\n\n\nThis week looks at building Convolutional Neural Networks.\n\n\n\n\n\nMar 8, 2026\n\n\n\n\n\n\n\nWeek 6\n\n\nThis week provides an overview of Convolutional Neural Networks.\n\n\n\n\n\nMar 3, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nThis week looks at building Neural Network Classifiers.\n\n\n\n\n\nFeb 23, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks at building multi-layer Neural Networks.\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks at building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "exc/exc_2.html",
@@ -1474,7 +1474,7 @@
     "href": "lectures/10a.html#r-packages",
     "title": "Long Short-term\nMemory",
     "section": "R Packages",
-    "text": "R Packages\n# install.packages(\"tsibble\")\n# install.packages(\"tsibbledata\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(tsibble)\nlibrary(tsibbledata)\ntorch_manual_seed(909)"
+    "text": "R Packages\n# install.packages(\"tsibble\")\n# install.packages(\"tsibbledata\")\n\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\nlibrary(tsibble)\nlibrary(tsibbledata)\ntorch_manual_seed(909)\nHere is the complete R Code File"
   },
   {
     "objectID": "lectures/10a.html#python-data",
@@ -1526,109 +1526,74 @@
     "text": "RNN Neuron\n\nRNN Neuron"
   },
   {
-    "objectID": "lectures/10a.html#rnn-inputs",
-    "href": "lectures/10a.html#rnn-inputs",
+    "objectID": "lectures/10a.html#problems-with-rnn",
+    "href": "lectures/10a.html#problems-with-rnn",
     "title": "Long Short-term\nMemory",
-    "section": "RNN Inputs",
-    "text": "RNN Inputs\n\\[\n\\boldsymbol X = (\\boldsymbol x_0, \\boldsymbol x_1, \\boldsymbol x_2, \\cdots, \\boldsymbol x_{L-1}, \\boldsymbol x_L)\n\\]\nwhere\n\\[\n\\boldsymbol x_{l} = (x_{l1},x_{l1}, \\cdots, x_{lK})\n\\]"
+    "section": "Problems with RNN",
+    "text": "Problems with RNN\n\nRecurrent Neural Networks suffer from exploding or disappearing gradient due the unfolding."
   },
   {
-    "objectID": "lectures/10a.html#hidden-layer",
-    "href": "lectures/10a.html#hidden-layer",
+    "objectID": "lectures/10a.html#lstm",
+    "href": "lectures/10a.html#lstm",
     "title": "Long Short-term\nMemory",
-    "section": "Hidden Layer",
-    "text": "Hidden Layer\n\\[\nA_{lj} = f(\\sum_k\\beta_{jk}\\boldsymbol x_{lk} + \\sum_m\\bbeta_{jm}A_{(l-1)m} + \\beta_{0j})\n\\]\n\n\\(l\\): Indexes the recurrent neuron\n\\(j\\): Indexes the node within the RNN neuron\n\\(k\\): Indexes the \\(X\\) input\n\\(m\\): Indexes the node of the previous RNN neuron"
+    "section": "LSTM",
+    "text": "LSTM\nThe Long Short-Term Memory approach is used to conteract the issues with gradients by adding a “memory” structure to the nuerons.\n\nThis is done by incorporating 2 pathways, a long-term and short-term pathway."
   },
   {
-    "objectID": "lectures/10a.html#output-layer",
-    "href": "lectures/10a.html#output-layer",
+    "objectID": "lectures/10a.html#lstm-components",
+    "href": "lectures/10a.html#lstm-components",
     "title": "Long Short-term\nMemory",
-    "section": "Output Layer",
-    "text": "Output Layer\n\\[\nO_{l} = g(\\sum_j\\gamma_{lj}A_{lj} + \\gamma_{0l})\n\\]"
+    "section": "LSTM Components",
+    "text": "LSTM Components\nThe creation of the 2 pathways are constructed using 3 “gates”:\n\nInput Gate\nOutput Gate\nForget Gate\n\n\nAdditionally, LSTM uses sigmoid and hyperbolic tangent activation functions to see what values will be incorporated into the pathways."
   },
   {
-    "objectID": "lectures/10a.html#time-series-1",
-    "href": "lectures/10a.html#time-series-1",
+    "objectID": "lectures/10a.html#lstm-neuron",
+    "href": "lectures/10a.html#lstm-neuron",
     "title": "Long Short-term\nMemory",
-    "section": "Time Series",
-    "text": "Time Series\nA time series is a sequence of data points collected or recorded at successive, evenly spaced intervals of time. These data points can represent any variable that is observed or measured over time, such as temperature readings, stock prices, sales figures, or sensor data."
+    "section": "LSTM Neuron",
+    "text": "LSTM Neuron\n\nLSTM Neuron"
   },
   {
-    "objectID": "lectures/10a.html#data",
-    "href": "lectures/10a.html#data",
+    "objectID": "lectures/10a.html#lstm-architecture",
+    "href": "lectures/10a.html#lstm-architecture",
     "title": "Long Short-term\nMemory",
-    "section": "Data",
-    "text": "Data\n\\[\nX_{(0)}\\rightarrow\nX_{(1)}\\rightarrow\nX_{(2)}\\rightarrow\nX_{(3)}\\rightarrow\n\\cdots\\rightarrow\nX_{(J-1)}\\rightarrow\nX_{(J)}\n\\]"
+    "section": "LSTM Architecture",
+    "text": "LSTM Architecture\n\nLSTM Architecture"
   },
   {
-    "objectID": "lectures/10a.html#rnn-2",
-    "href": "lectures/10a.html#rnn-2",
+    "objectID": "lectures/10a.html#forget-gate",
+    "href": "lectures/10a.html#forget-gate",
     "title": "Long Short-term\nMemory",
-    "section": "RNN",
-    "text": "RNN\nA recurrent neural network can be used to account the sequential order of each measurement.\n\nSource: ISLR2"
+    "section": "Forget Gate",
+    "text": "Forget Gate\nThe forget gate decides what information is useful from the long-term memory, and what information should be forgotten. The function below states what percent of the long-term memory should be remembered. \\[\nf_t = \\sigma\\left(\\boldsymbol W_f [h_{t-1}, x_t] + b_f\\right)\n\\]\n\n\\(W_f\\) is the weighting matrix full of parameters\n\\(b_f\\) is the bias term"
   },
   {
-    "objectID": "lectures/10a.html#inputs-and-outputs",
-    "href": "lectures/10a.html#inputs-and-outputs",
+    "objectID": "lectures/10a.html#input-gate",
+    "href": "lectures/10a.html#input-gate",
     "title": "Long Short-term\nMemory",
-    "section": "Inputs and Outputs",
-    "text": "Inputs and Outputs\n\nWith Time-Series data, the data acts as both inputs and outputs.\nTHere is a usually a lead-up in the input before we get an output."
+    "section": "Input Gate",
+    "text": "Input Gate\nThe input gate controls how the long term memory should be modified based on both the short-term memory and the new input. The \\(i_t\\) function tells us what percent should be remembered, and \\(j_t\\) tells us what to remember. \\[\ni_t = \\sigma\\left(\\boldsymbol W_i [h_{t-1}, x_t] + b_i\\right)\n\\]\n\\[\nj_t = \\tanh\\left(\\boldsymbol W_j [h_{t-1}, x_t] + b_j\\right)\n\\]\n\n\\(W_i\\) and \\(W_j\\) is the weighting matrix full of parameters\n\\(b_i\\) and \\(b_j\\) is the bias term"
   },
   {
-    "objectID": "lectures/10a.html#given-the-data",
-    "href": "lectures/10a.html#given-the-data",
+    "objectID": "lectures/10a.html#long-term-memory",
+    "href": "lectures/10a.html#long-term-memory",
     "title": "Long Short-term\nMemory",
-    "section": "Given the Data",
-    "text": "Given the Data\n\\[\nX_{(0)}\\rightarrow\nX_{(1)}\\rightarrow\nX_{(2)}\\rightarrow\nX_{(3)}\\rightarrow\n\\cdots\\rightarrow\nX_{(J-1)}\\rightarrow\nX_{(J)}\n\\]"
+    "section": "Long-term Memory",
+    "text": "Long-term Memory\nThis is how the long-term memory is modified\n\\[\nC_t = f_t \\bigodot C_{t-1} + i_t \\bigodot j_t\n\\]\n\n\\(\\bigodot\\) is the element-wise multiplication of the vectors"
   },
   {
-    "objectID": "lectures/10a.html#data-point-1",
-    "href": "lectures/10a.html#data-point-1",
+    "objectID": "lectures/10a.html#output-gate",
+    "href": "lectures/10a.html#output-gate",
     "title": "Long Short-term\nMemory",
-    "section": "Data Point 1",
-    "text": "Data Point 1\n\n\nInput\n\\[\nX_{(0)},\nX_{(1)},\nX_{(2)},\nX_{(3)},\nX_{(4)},\nX_{(5)}\n\\]\n\nOutput\n\\[\nX_{(6)}\n\\]"
+    "section": "Output Gate",
+    "text": "Output Gate\nThe output gate tells us how is the short-term memory is updated. This is dony by figuring out what percent will be used from the new long-term memory.\n\\[\no_t = \\sigma\\left(\\boldsymbol W_o [h_{t-1}, x_t] + b_o\\right)\n\\]\n\n\\(W_o\\) is the weighting matrix full of parameters\n\\(b_o\\) is the bias term"
   },
   {
-    "objectID": "lectures/10a.html#data-point-2",
-    "href": "lectures/10a.html#data-point-2",
+    "objectID": "lectures/10a.html#short-term-memory",
+    "href": "lectures/10a.html#short-term-memory",
     "title": "Long Short-term\nMemory",
-    "section": "Data Point 2",
-    "text": "Data Point 2\n\n\nInput\n\\[\nX_{(1)},\nX_{(2)},\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)}\n\\]\n\nOutput\n\\[\nX_{(7)}\n\\]"
-  },
-  {
-    "objectID": "lectures/10a.html#data-point-3",
-    "href": "lectures/10a.html#data-point-3",
-    "title": "Long Short-term\nMemory",
-    "section": "Data Point 3",
-    "text": "Data Point 3\n\n\nInput\n\\[\nX_{(2)},\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)},\nX_{(7)}\n\\]\n\nOutput\n\\[\nX_{(8)}\n\\]"
-  },
-  {
-    "objectID": "lectures/10a.html#data-point-4",
-    "href": "lectures/10a.html#data-point-4",
-    "title": "Long Short-term\nMemory",
-    "section": "Data Point 4",
-    "text": "Data Point 4\n\n\nInput\n\\[\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)},\nX_{(7)},\nX_{(8)}\n\\]\n\nOutput\n\\[\nX_{(9)}\n\\]"
-  },
-  {
-    "objectID": "lectures/10a.html#data-point-5",
-    "href": "lectures/10a.html#data-point-5",
-    "title": "Long Short-term\nMemory",
-    "section": "Data Point 5",
-    "text": "Data Point 5\n\n\nInput\n\\[\nX_{(3)},\nX_{(4)},\nX_{(5)},\nX_{(6)},\nX_{(7)},\nX_{(8)}\n\\]\n\nOutput\n\\[\nX_{(9)}\n\\]"
-  },
-  {
-    "objectID": "lectures/10a.html#time-series-data-analysis",
-    "href": "lectures/10a.html#time-series-data-analysis",
-    "title": "Long Short-term\nMemory",
-    "section": "Time-Series Data Analysis",
-    "text": "Time-Series Data Analysis\nMost time-series data analysis is to understand cyclical trends and prediction."
-  },
-  {
-    "objectID": "lectures/10a.html#more-information",
-    "href": "lectures/10a.html#more-information",
-    "title": "Long Short-term\nMemory",
-    "section": "More Information",
-    "text": "More Information"
+    "section": "Short-term Memory",
+    "text": "Short-term Memory\nThe short-term memory is costructed by combining the output gate and new long-term memory. \\[\nh_t = o_t\\tanh\\left(C_t\\right)\n\\]\nThis is also the new predicted value."
   },
   {
     "objectID": "lectures/10a.html#predicting-electricity-demand-1",
@@ -1656,28 +1621,28 @@
     "href": "lectures/10a.html#data-set-1",
     "title": "Long Short-term\nMemory",
     "section": "Data Set",
-    "text": "Data Set\n\nDatadataset()PrepFinal\n\n\n\n# install.packages(\"torchdatasets\")\n# install.packages(\"feasts\")\n\nlibrary(tidyverse)\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\n\ntorch_manual_seed(909)\nlibrary(tsibble)\nlibrary(tsibbledata)\nvic_ele\n\n\n\n\ndemand_dataset &lt;- dataset(\n  name = \"demand_dataset\",\n  initialize = function(x, n_timesteps, sample_frac = 1) {\n    self$n_timesteps &lt;- n_timesteps\n    self$x &lt;- torch_tensor((x - train_mean) / train_sd)\n\n    n &lt;- length(self$x) - self$n_timesteps\n\n    self$starts &lt;- sort(sample.int(\n      n = n,\n      size = n * sample_frac\n    ))\n  },\n  .getitem = function(i) {\n    start &lt;- self$starts[i]\n    end &lt;- start + self$n_timesteps - 1\n\n    list(\n      x = self$x[start:end],\n      y = self$x[end + 1]\n    )\n  },\n  .length = function() {\n    length(self$starts)\n  }\n)\n\n\n\n\ndemand_hourly &lt;- vic_elec |&gt; \n  index_by(Hour = floor_date(Time, \"hour\")) |&gt; \n  summarise(\n    Demand = sum(Demand))\n\ndemand_train &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2012) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ndemand_valid &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2013) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ndemand_test &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2014) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ntrain_mean &lt;- mean(demand_train)\ntrain_sd &lt;- sd(demand_train)\n\nn_timesteps &lt;- 7 * 24\n\n\n\n\ntrain_ds &lt;- demand_dataset(demand_train, n_timesteps)\nvalid_ds &lt;- demand_dataset(demand_valid, n_timesteps)\ntest_ds &lt;- demand_dataset(demand_test, n_timesteps)"
+    "text": "Data Set\n\nDatadataset()PrepFinalBatches\n\n\n\n# install.packages(\"torchdatasets\")\n# install.packages(\"feasts\")\n\nlibrary(tidyverse)\nlibrary(torch)\nlibrary(luz) # high-level interface for torch\n\ntorch_manual_seed(909)\nlibrary(tsibble)\nlibrary(tsibbledata)\nvic_ele\n\n\n\n\ndemand_dataset &lt;- dataset(\n  name = \"demand_dataset\",\n  initialize = function(x,\n                        n_timesteps,\n                        n_forecast,\n                        sample_frac = 1) {\n    self$n_timesteps &lt;- n_timesteps\n    self$n_forecast &lt;- n_forecast\n    self$x &lt;- torch_tensor((x - train_mean) / train_sd)\n\n    n &lt;- length(self$x) -\n      self$n_timesteps - self$n_forecast + 1\n\n    self$starts &lt;- sort(sample.int(\n      n = n,\n      size = n * sample_frac\n    ))\n  },\n  .getitem = function(i) {\n    start &lt;- self$starts[i]\n    end &lt;- start + self$n_timesteps - 1\n\n    list(\n      x = self$x[start:end],\n      y = self$x[(end + 1):(end + self$n_forecast)]$\n        squeeze(2)\n    )\n  },\n  .length = function() {\n    length(self$starts)\n  }\n)\n\n\n\n\ndemand_hourly &lt;- vic_elec |&gt; \n  index_by(Hour = floor_date(Time, \"hour\")) |&gt; \n  summarise(\n    Demand = sum(Demand))\n\ndemand_train &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2012) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ndemand_valid &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2013) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ndemand_test &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2014) |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\ntrain_mean &lt;- mean(demand_train)\ntrain_sd &lt;- sd(demand_train)\n\nn_timesteps &lt;- 7 * 24\nn_forecast &lt;- 7 * 24\n\n\n\n\ntrain_ds &lt;- demand_dataset(\n  demand_train,\n  n_timesteps,\n  n_forecast,\n  sample_frac = 1\n)\nvalid_ds &lt;- demand_dataset(\n  demand_valid,\n  n_timesteps,\n  n_forecast,\n  sample_frac = 1\n)\ntest_ds &lt;- demand_dataset(\n  demand_test,\n  n_timesteps,\n  n_forecast\n)\n\n\n\n\nbatch_size &lt;- 128\ntrain_dl &lt;- train_ds |&gt; \n  dataloader(batch_size = batch_size, shuffle = TRUE)\nvalid_dl &lt;- valid_ds |&gt; \n  dataloader(batch_size = batch_size)\ntest_dl &lt;- test_ds |&gt; \n  dataloader(batch_size = length(test_ds))"
   },
   {
     "objectID": "lectures/10a.html#model",
     "href": "lectures/10a.html#model",
     "title": "Long Short-term\nMemory",
     "section": "Model",
-    "text": "Model\n\nModelInitializeForward\n\n\n\nmodel &lt;- nn_module(\n  initialize = function(input_size,\n                        hidden_size,\n                        dropout = 0.2,\n                        num_layers = 1,\n                        rec_dropout = 0) {\n    self$num_layers &lt;- num_layers\n\n    self$rnn &lt;- nn_lstm(\n      input_size = input_size,\n      hidden_size = hidden_size,\n      num_layers = num_layers,\n      dropout = rec_dropout,\n      batch_first = TRUE\n    )\n\n    self$dropout &lt;- nn_dropout(dropout)\n    self$output &lt;- nn_linear(hidden_size, 1)\n  },\n  forward = function(x) {\n    (x |&gt; \n      self$rnn())[[1]][, dim(x)[2], ] |&gt; \n      self$dropout() |&gt; \n      self$output()\n  }\n)\n\n\n\n\n  initialize = function(input_size,\n                        hidden_size,\n                        dropout = 0.2,\n                        num_layers = 1,\n                        rec_dropout = 0) {\n    self$num_layers &lt;- num_layers\n\n    self$rnn &lt;- nn_lstm(\n      input_size = input_size,\n      hidden_size = hidden_size,\n      num_layers = num_layers,\n      dropout = rec_dropout,\n      batch_first = TRUE\n    )\n\n    self$dropout &lt;- nn_dropout(dropout)\n    self$output &lt;- nn_linear(hidden_size, 1)\n  }\n\n\n\n\n  forward = function(x) {\n    (x |&gt; \n      self$rnn())[[1]][, dim(x)[2], ] |&gt; \n      self$dropout() |&gt; \n      self$output()\n  }"
+    "text": "Model\n\nModelInitializeForward\n\n\n\nmodel &lt;- nn_module(\n  initialize = function(input_size,\n                        hidden_size,\n                        linear_size,\n                        output_size,\n                        dropout = 0.2,\n                        num_layers = 1,\n                        rec_dropout = 0) {\n    self$num_layers &lt;- num_layers\n\n    self$rnn &lt;- nn_lstm(\n      input_size = input_size,\n      hidden_size = hidden_size,\n      num_layers = num_layers,\n      dropout = rec_dropout,\n      batch_first = TRUE\n    )\n\n    self$dropout &lt;- nn_dropout(dropout)\n    self$mlp &lt;- nn_sequential(\n      nn_linear(hidden_size, linear_size),\n      nn_relu(),\n      nn_dropout(dropout),\n      nn_linear(linear_size, output_size)\n    )\n  },\n  forward = function(x) {\n    x &lt;- self$rnn(x)[[2]][[1]][self$num_layers, , ] |&gt; \n      self$mlp()\n  }\n)\n\n\n\n\n  initialize = function(input_size,\n                        hidden_size,\n                        dropout = 0.2,\n                        num_layers = 1,\n                        rec_dropout = 0) {\n    self$num_layers &lt;- num_layers\n\n    self$rnn &lt;- nn_lstm(\n      input_size = input_size,\n      hidden_size = hidden_size,\n      num_layers = num_layers,\n      dropout = rec_dropout,\n      batch_first = TRUE\n    )\n\n    self$dropout &lt;- nn_dropout(dropout)\n    self$output &lt;- nn_linear(hidden_size, 1)\n  }\n\n\n\n\n  forward = function(x) {\n    (x |&gt; \n      self$rnn())[[1]][, dim(x)[2], ] |&gt; \n      self$dropout() |&gt; \n      self$output()\n  }"
   },
   {
     "objectID": "lectures/10a.html#training",
     "href": "lectures/10a.html#training",
     "title": "Long Short-term\nMemory",
     "section": "Training",
-    "text": "Training\n\nSetupTrainEvaluate\n\n\n\ninput_size &lt;- 1\nhidden_size &lt;- 32\nnum_layers &lt;- 2\nrec_dropout &lt;- 0.2\n\nmodel &lt;- model |&gt; \n  setup(optimizer = optim_adam, loss = nn_mse_loss()) |&gt; \n  set_hparams(\n    input_size = input_size,\n    hidden_size = hidden_size,\n    num_layers = num_layers,\n    rec_dropout = rec_dropout\n  )\n\n\n\n\nfitted &lt;- model |&gt; \n  fit(train_dl, epochs = 15, valid_data = valid_dl,\n      callbacks = list(\n        luz_callback_early_stopping(patience = 3)\n      ),\n      verbose = TRUE)\n\n\n\n\nplot(fitted)\n\nevaluate(fitted, test_dl)"
+    "text": "Training\n\nSetupTrainEvaluate\n\n\n\ninput_size &lt;- 1\nhidden_size &lt;- 32\nlinear_size &lt;- 512\ndropout &lt;- 0.5\nnum_layers &lt;- 2\nrec_dropout &lt;- 0.2\n\nmodel &lt;- model |&gt; \n  setup(optimizer = optim_adam, loss = nn_mse_loss()) |&gt; \n  set_hparams(\n    input_size = input_size,\n    hidden_size = hidden_size,\n    linear_size = linear_size,\n    output_size = n_forecast,\n    num_layers = num_layers,\n    rec_dropout = rec_dropout\n  )\n\n\n\n\nfitted &lt;- model |&gt; \n  fit(train_dl, epochs = 30, valid_data = valid_dl,\n      verbose = TRUE)\n\n\n\n\nplot(fitted)\n\nevaluate(fitted, test_dl)"
   },
   {
     "objectID": "lectures/10a.html#predict-and-visualize",
     "href": "lectures/10a.html#predict-and-visualize",
     "title": "Long Short-term\nMemory",
     "section": "Predict and Visualize",
-    "text": "Predict and Visualize\n\ndemand_viz &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2014, month(Hour) == 12)\n\ndemand_viz_matrix &lt;- demand_viz |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\nviz_ds &lt;- demand_dataset(demand_viz_matrix, n_timesteps)\nviz_dl &lt;- viz_ds |&gt; dataloader(batch_size = length(viz_ds))\n\npreds &lt;- predict(fitted, viz_dl)\npreds &lt;- preds$to(device = \"cpu\") |&gt; as.matrix()\npreds &lt;- c(rep(NA, n_timesteps), preds)\n\npred_ts &lt;- demand_viz |&gt; \n  add_column(forecast = preds * train_sd + train_mean) |&gt; \n  pivot_longer(-Hour) |&gt; \n  update_tsibble(key = name) |&gt; \n  as_tibble()\n\npred_ts |&gt; \n  ggplot(aes(Hour, value, color = name)) +\n  geom_line() +\n  scale_colour_manual(values = c(\"#08c5d1\", \"#00353f\")) +\n  theme_minimal() +\n  theme(legend.position = \"None\")"
+    "text": "Predict and Visualize\n\ndemand_viz &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2014, month(Hour) == 12)\n\ndemand_viz_matrix &lt;- demand_viz |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\nn_obs &lt;- nrow(demand_viz_matrix)\n\nviz_ds &lt;- demand_dataset(\n  demand_viz_matrix,\n  n_timesteps,\n  n_forecast\n)\nviz_dl &lt;- viz_ds |&gt; \n  dataloader(batch_size = length(viz_ds))\n\npreds &lt;- predict(fitted, viz_dl)\npreds &lt;- preds$to(device = \"cpu\") |&gt; \n  as.matrix()\n\nexample_preds &lt;- vector(mode = \"list\", length = 3)\nexample_indices &lt;- c(1, 201, 401)\n\nfor (i in seq_along(example_indices)) {\n  cur_obs &lt;- example_indices[i]\n  example_preds[[i]] &lt;- c(\n    rep(NA, n_timesteps + cur_obs - 1),\n    preds[cur_obs, ],\n    rep(\n      NA,\n      n_obs - cur_obs + 1 - n_timesteps - n_forecast\n    )\n  )\n}\n\npred_ts &lt;- demand_viz |&gt; \n  select(Demand) |&gt; \n  add_column(\n    p1 = example_preds[[1]] * train_sd + train_mean,\n    p2 = example_preds[[2]] * train_sd + train_mean,\n    p3 = example_preds[[3]] * train_sd + train_mean) |&gt; \n  pivot_longer(-Hour) |&gt; \n  update_tsibble(key = name)\n\npred_ts |&gt; \n    ggplot(aes(Hour, value, color = name)) +\n      geom_line() +\n  scale_colour_manual(\n    values = c(\n      \"#08c5d1\", \"#00353f\", \"#ffbf66\", \"#d46f4d\"\n    )\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"None\")"
   },
   {
     "objectID": "lectures/1b.html#r-programming",
