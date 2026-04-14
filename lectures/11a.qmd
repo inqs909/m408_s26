@@ -40,6 +40,10 @@ editor: source
 ---
 
 
+## Neural Network
+
+![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png){fig-align="center"}
+
 
 
 ## Phrase
@@ -49,6 +53,7 @@ All Models are Wrong, some are useful!
 ::: {.fragment}
 How do we input this into a neural network?
 :::
+
 
 
 ## StatQuest
