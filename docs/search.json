@@ -1152,7 +1152,7 @@
     "href": "index.html",
     "title": "Welcome to Machine Learning!",
     "section": "",
-    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10\n\n\nThis week looks at Long Short-Term Memory.\n\n\n\n\n\nApr 4, 2026\n\n\n\n\n\n\n\nWeek 10\n\n\nThis week looks at Long Short-Term Memory.\n\n\n\n\n\nApr 4, 2026\n\n\n\n\n\n\n\nWeek 9\n\n\nThere is a holiday this week. Meet on Thursday to work on your projects.\n\n\n\n\n\nMar 30, 2026\n\n\n\n\n\n\n\nWeek 8\n\n\nThis week looks at building Recurrent Neural Networks.\n\n\n\n\n\nMar 21, 2026\n\n\n\n\n\n\n\nWeek 7\n\n\nThis week looks at building Convolutional Neural Networks.\n\n\n\n\n\nMar 8, 2026\n\n\n\n\n\n\n\nWeek 6\n\n\nThis week provides an overview of Convolutional Neural Networks.\n\n\n\n\n\nMar 3, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nThis week looks at building Neural Network Classifiers.\n\n\n\n\n\nFeb 23, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks at building multi-layer Neural Networks.\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks at building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
+    "text": "NoteBrief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu.\n\n\n\n\n\n\n\n\n\nNoteQuarto Template for HW\n\n\n\n\n\nquarto use template inqs909/qs_hw\n\n\n\n\n\n\n\n\n\nNoteDiscord Server\n\n\n\n\n\nWill post if class creates one.\n\n\n\n\n\n\n\n\n\nNoteIntroduction to Statistics Book\n\n\n\n\n\nhttps://openintro-ims.netlify.app/\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 11\n\n\nThis week looks at Word Embeddings.\n\n\n\n\n\nApr 14, 2026\n\n\n\n\n\n\n\nWeek 10\n\n\nThis week looks at Long Short-Term Memory.\n\n\n\n\n\nApr 4, 2026\n\n\n\n\n\n\n\nWeek 9\n\n\nThere is a holiday this week. Meet on Thursday to work on your projects.\n\n\n\n\n\nMar 30, 2026\n\n\n\n\n\n\n\nWeek 8\n\n\nThis week looks at building Recurrent Neural Networks.\n\n\n\n\n\nMar 21, 2026\n\n\n\n\n\n\n\nWeek 7\n\n\nThis week looks at building Convolutional Neural Networks.\n\n\n\n\n\nMar 8, 2026\n\n\n\n\n\n\n\nWeek 6\n\n\nThis week provides an overview of Convolutional Neural Networks.\n\n\n\n\n\nMar 3, 2026\n\n\n\n\n\n\n\nWeek 5\n\n\nThis week looks at building Neural Network Classifiers.\n\n\n\n\n\nFeb 23, 2026\n\n\n\n\n\n\n\nWeek 4\n\n\nThis week looks at building multi-layer Neural Networks.\n\n\n\n\n\nFeb 16, 2026\n\n\n\n\n\n\n\nWeek 3\n\n\nThis week looks at building basic neural networks.\n\n\n\n\n\nFeb 10, 2026\n\n\n\n\n\n\n\nWeek 2\n\n\nThis week looks at R basics in terms of functions and tensors.\n\n\n\n\n\nFeb 2, 2026\n\n\n\n\n\n\n\nWeek 1\n\n\nThis week is designed to be an introduction week. We will briefly discuss topics related to the course. Then we will look at installing R, Positron, Torch, and Stan.\n\n\n\n\n\nJan 26, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "exc/exc_2.html",
@@ -2711,14 +2711,14 @@
   {
     "objectID": "posts/week_11.html",
     "href": "posts/week_11.html",
-    "title": "Week 10",
+    "title": "Week 11",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nRNN"
   },
   {
     "objectID": "posts/week_11.html#resources",
     "href": "posts/week_11.html#resources",
-    "title": "Week 10",
+    "title": "Week 11",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nRNN"
   },

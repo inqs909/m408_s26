@@ -1,7 +1,7 @@
 ---
-title: "Week 10"
-date: 04-04-26
-description: This week looks at Long Short-Term Memory.
+title: "Week 11"
+date: 04-14-26
+description: This week looks at Word Embeddings.
 editor: source
 ---
 
