@@ -10,4 +10,4 @@ editor: source
 
 | Lecture | Slides                   | Videos  | R Code Files |
 |---------|--------------------------|---------|----------|
-| 1       | [Slides](../lectures/10a) | [Video]() | [RNN](../lectures/R/10a.R)  |
+| 1       | [Slides](../lectures/10a) | [Video](https://youtu.be/uO_HDEp8n2Q) | [RNN](../lectures/R/10a.R)  |

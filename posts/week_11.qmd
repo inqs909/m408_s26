@@ -8,6 +8,6 @@ editor: source
 
 ## Resources
 
-| Lecture | Slides                   | Videos  | R Code Files |
-|---------|--------------------------|---------|----------|
-| 1       | [Slides](../lectures/11a) | [Video]() | [RNN](../lectures/R/11a.R)  |
+| Lecture | Slides                   |
+|---------|--------------------------|
+| 1       | [Slides](../lectures/11a) | 
