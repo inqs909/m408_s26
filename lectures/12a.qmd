@@ -1,0 +1,61 @@
+---
+title: |
+  Word \
+  Embeddings
+format:
+  revealjs:
+    width: 1200
+    scrollable: true
+    include-in-header: "math.html"
+    footer: m408.inqs.info/lectures/11a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: false
+    message: false
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+
+## Neural Network
+
+![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png){fig-align="center"}
+
+
+
+## Phrase
+
+All Models are Wrong, some are useful!
+
+::: {.fragment}
+How do we input this into a neural network?
+:::
+
+
+
+## StatQuest
+
+[Youtube Video](https://youtu.be/viZrOnJclY0?si=Ps760604vEUJp9dA)

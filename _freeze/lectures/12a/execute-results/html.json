@@ -1,0 +1,19 @@
+{
+  "hash": "fb9f833bf434009eeabd373b6baf23f5",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: |\n  Word \\\n  Embeddings\nformat:\n  revealjs:\n    width: 1200\n    scrollable: true\n    include-in-header: \"math.html\"\n    footer: m408.inqs.info/lectures/11a\n    theme: [default, styles.scss]\n    preview-links: true\n    navigation-mode: vertical\n    controls-layout: edges\n    controls-tutorial: true\n    slide-number: true\n    pointer:\n      pointerSize: 48\n    incremental: false \n    chalkboard:\n      theme: whiteboard\n      chalk-width: 4\nknitr:\n  opts_chunk: \n    echo: true\n    eval: false\n    message: false\n    warnings: false\n    comment: \"#>\" \n    \nrevealjs-plugins:\n  - pointer\n  - verticator\n  \nfilters: \n  - code-fullscreen\n  - reveal-auto-agenda\n\neditor: source\n---\n\n\n## Neural Network\n\n![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png){fig-align=\"center\"}\n\n\n\n## Phrase\n\nAll Models are Wrong, some are useful!\n\n::: {.fragment}\nHow do we input this into a neural network?\n:::\n\n\n\n## StatQuest\n\n[Youtube Video](https://youtu.be/viZrOnJclY0?si=Ps760604vEUJp9dA)",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

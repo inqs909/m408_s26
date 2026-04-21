@@ -1,0 +1,13 @@
+---
+title: "Week 12"
+date: 04-21-26
+description: This week looks at Encoder-Decoder Models.
+editor: source
+---
+
+
+## Resources
+
+| Lecture | Slides                   |
+|---------|--------------------------|
+| 1       | [Slides](../lectures/12a) | 
