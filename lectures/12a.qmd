@@ -7,7 +7,7 @@ format:
     width: 1200
     scrollable: true
     include-in-header: "math.html"
-    footer: m408.inqs.info/lectures/11a
+    footer: m408.inqs.info/lectures/12a
     theme: [default, styles.scss]
     preview-links: true
     navigation-mode: vertical
