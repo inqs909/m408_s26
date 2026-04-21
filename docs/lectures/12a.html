@@ -8,13 +8,10 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
-<script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
-<link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>MATH 408 – Word Embeddings</title>
+  <title>MATH 408 – Encode-Decoder Models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -40,7 +37,6 @@
   <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/verticator/verticator.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -278,27 +274,73 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title"><p>Word<br>
-Embeddings</p></h1>
+  <h1 class="title"><p>Encode-Decoder<br>
+Models</p></h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="neural-network" class="slide level2">
-<h2>Neural Network</h2>
-
-<img data-src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="phrase" class="slide level2">
-<h2>Phrase</h2>
-<p>All Models are Wrong, some are useful!</p>
+<section id="translation" class="slide level2">
+<h2>Translation</h2>
+<p>How do we translate the following phrase to a different language?</p>
 <div class="fragment">
-<p>How do we input this into a neural network?</p>
+<p>All models are wrong, some are useful.</p>
 </div>
+</section>
+<section id="example-translations" class="slide level2">
+<h2>Example Translations</h2>
+<p>Todos los modelos son incorrectos, algunos son útiles.</p>
+</section>
+<section id="protein-sequences" class="slide level2">
+<h2>Protein Sequences</h2>
+<div class="columns">
+<div class="column">
+<h3 id="amino-acid-sequences">Amino Acid Sequences</h3>
+<p>AASAHFTGCPWVURDYU</p>
+</div><div class="column">
+<h3 id="structures">Structures</h3>
+<ul>
+<li>Secondary Structures Structures
+<ul>
+<li><span class="math inline">\(\alpha\)</span>-helices</li>
+<li><span class="math inline">\(\beta\)</span>-sheets</li>
+</ul></li>
+<li>Tertiary Structures
+<ul>
+<li>Structures</li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section id="translations" class="slide level2">
+<h2>Translations</h2>
+<p>How would a computer translate for one sequence to another?</p>
+<p>What are the important things that a computer must know?</p>
+</section>
+<section id="encoder-decoder-models" class="slide level2">
+<h2>Encoder-Decoder Models</h2>
+<p>Encoder-Decoder models is designed to take in a sequence, conduct mathematical functions, and transform it to a new sequence. Commonly known as <a href="https://en.wikipedia.org/wiki/Seq2seq">seq2seq</a> problems.</p>
+</section>
+<section id="encoder" class="slide level2">
+<h2>Encoder</h2>
+<ul>
+<li><p>The <strong>Encoder</strong> component is designed to handle the input sequence and model it with numerical values.</p></li>
+<li><p>The numerical values are stored in both long-term and short-term memories, LSTM cells.</p></li>
+</ul>
+</section>
+<section id="decoder" class="slide level2">
+<h2>Decoder</h2>
+<ul>
+<li><p>The <strong>Decoder</strong> component takes the inputs from the long-term and short-term memory of the encoder component and inputs it into a new LSTM cell</p></li>
+<li><p>The LSTM cell will then predict the first value (word) of a sequence.</p></li>
+<li><p>The word perdicted will then be used for a new LSTM cell to predict the next word.</p></li>
+<li><p>The process continues until an <code>&lt;EOS&gt;</code> token (end of sequence) is produced.</p></li>
+</ul>
 </section>
 <section id="statquest" class="slide level2">
 <h2>StatQuest</h2>
-<p><a href="https://youtu.be/viZrOnJclY0?si=Ps760604vEUJp9dA">Youtube Video</a></p>
+<p><a href="https://youtu.be/L8HKweZIOmg?si=gWrSq5bKTZsxh7G6">Youtube Video</a></p>
 
 
 </section>
@@ -318,7 +360,6 @@ Embeddings</p></h1>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
-  <script src="../site_libs/revealjs/plugin/verticator/verticator.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -343,7 +384,6 @@ Embeddings</p></h1>
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
 'pointer': {"key":"q","color":"red","pointerSize":48,"alwaysVisible":false},
-'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -514,7 +554,7 @@ Embeddings</p></h1>
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, Verticator, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
 
           RevealMath,
           RevealNotes,

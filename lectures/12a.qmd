@@ -1,7 +1,7 @@
 ---
 title: |
-  Word \
-  Embeddings
+  Encode-Decoder \
+  Models
 format:
   revealjs:
     width: 1200
@@ -30,32 +30,84 @@ knitr:
     
 revealjs-plugins:
   - pointer
-  - verticator
   
 filters: 
-  - code-fullscreen
   - reveal-auto-agenda
 
 editor: source
 ---
 
+## Translation
 
-## Neural Network
+How do we translate the following phrase to a different language?
 
-![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230602113310/Neural-Networks-Architecture.png){fig-align="center"}
-
-
-
-## Phrase
-
-All Models are Wrong, some are useful!
 
 ::: {.fragment}
-How do we input this into a neural network?
+
+All models are wrong, some are useful.
+
 :::
 
 
+## Example Translations
+
+Todos los modelos son incorrectos, algunos son útiles.
+
+## Protein Sequences
+
+
+::: {.columns}
+
+::: {.column}
+
+### Amino Acid Sequences
+
+AASAHFTGCPWVURDYU
+
+:::
+
+::: {.column}
+
+### Structures
+
+- Secondary Structures Structures
+    - $\alpha$-helices
+    - $\beta$-sheets
+- Tertiary Structures
+    - Structures
+
+
+:::
+
+:::
+
+## Translations
+
+How would a computer translate for one sequence to another?
+
+What are the important things that a computer must know?
+
+
+## Encoder-Decoder Models
+
+Encoder-Decoder models is designed to take in a sequence, conduct mathematical functions, and transform it to a new sequence. Commonly known as [seq2seq](https://en.wikipedia.org/wiki/Seq2seq) problems.
+
+## Encoder
+
+- The **Encoder** component is designed to handle the input sequence and model it with numerical values.
+
+- The numerical values are stored in both long-term and short-term memories, LSTM cells.
+
+## Decoder
+
+- The **Decoder** component takes the inputs from the long-term and short-term memory of the encoder component and inputs it into a new LSTM cell
+
+- The LSTM cell will then predict the first value (word) of a sequence.
+
+- The word perdicted will then be used for a new LSTM cell to predict the next word.
+
+- The process continues until an `<EOS>` token (end of sequence) is produced.
 
 ## StatQuest
 
-[Youtube Video](https://youtu.be/viZrOnJclY0?si=Ps760604vEUJp9dA)
+[Youtube Video](https://youtu.be/L8HKweZIOmg?si=gWrSq5bKTZsxh7G6)

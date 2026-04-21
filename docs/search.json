@@ -1680,23 +1680,58 @@
     "text": "Predict and Visualize\n\ndemand_viz &lt;- demand_hourly |&gt; \n  filter(year(Hour) == 2014, month(Hour) == 12)\n\ndemand_viz_matrix &lt;- demand_viz |&gt; \n  as_tibble() |&gt; \n  select(Demand) |&gt; \n  as.matrix()\n\nn_obs &lt;- nrow(demand_viz_matrix)\n\nviz_ds &lt;- demand_dataset(\n  demand_viz_matrix,\n  n_timesteps,\n  n_forecast\n)\nviz_dl &lt;- viz_ds |&gt; \n  dataloader(batch_size = length(viz_ds))\n\npreds &lt;- predict(fitted, viz_dl)\npreds &lt;- preds$to(device = \"cpu\") |&gt; \n  as.matrix()\n\nexample_preds &lt;- vector(mode = \"list\", length = 3)\nexample_indices &lt;- c(1, 201, 401)\n\nfor (i in seq_along(example_indices)) {\n  cur_obs &lt;- example_indices[i]\n  example_preds[[i]] &lt;- c(\n    rep(NA, n_timesteps + cur_obs - 1),\n    preds[cur_obs, ],\n    rep(\n      NA,\n      n_obs - cur_obs + 1 - n_timesteps - n_forecast\n    )\n  )\n}\n\npred_ts &lt;- demand_viz |&gt; \n  select(Demand) |&gt; \n  add_column(\n    p1 = example_preds[[1]] * train_sd + train_mean,\n    p2 = example_preds[[2]] * train_sd + train_mean,\n    p3 = example_preds[[3]] * train_sd + train_mean) |&gt; \n  pivot_longer(-Hour) |&gt; \n  update_tsibble(key = name)\n\npred_ts |&gt; \n    ggplot(aes(Hour, value, color = name)) +\n      geom_line() +\n  scale_colour_manual(\n    values = c(\n      \"#08c5d1\", \"#00353f\", \"#ffbf66\", \"#d46f4d\"\n    )\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"None\")"
   },
   {
-    "objectID": "lectures/12a.html#neural-network",
-    "href": "lectures/12a.html#neural-network",
-    "title": "Word\nEmbeddings",
-    "section": "Neural Network",
-    "text": "Neural Network"
+    "objectID": "lectures/12a.html#translation",
+    "href": "lectures/12a.html#translation",
+    "title": "Encode-Decoder\nModels",
+    "section": "Translation",
+    "text": "Translation\nHow do we translate the following phrase to a different language?\n\nAll models are wrong, some are useful."
   },
   {
-    "objectID": "lectures/12a.html#phrase",
-    "href": "lectures/12a.html#phrase",
-    "title": "Word\nEmbeddings",
-    "section": "Phrase",
-    "text": "Phrase\nAll Models are Wrong, some are useful!\n\nHow do we input this into a neural network?"
+    "objectID": "lectures/12a.html#example-translations",
+    "href": "lectures/12a.html#example-translations",
+    "title": "Encode-Decoder\nModels",
+    "section": "Example Translations",
+    "text": "Example Translations\nTodos los modelos son incorrectos, algunos son útiles."
+  },
+  {
+    "objectID": "lectures/12a.html#protein-sequences",
+    "href": "lectures/12a.html#protein-sequences",
+    "title": "Encode-Decoder\nModels",
+    "section": "Protein Sequences",
+    "text": "Protein Sequences\n\n\nAmino Acid Sequences\nAASAHFTGCPWVURDYU\n\nStructures\n\nSecondary Structures Structures\n\n\\(\\alpha\\)-helices\n\\(\\beta\\)-sheets\n\nTertiary Structures\n\nStructures"
+  },
+  {
+    "objectID": "lectures/12a.html#translations",
+    "href": "lectures/12a.html#translations",
+    "title": "Encode-Decoder\nModels",
+    "section": "Translations",
+    "text": "Translations\nHow would a computer translate for one sequence to another?\nWhat are the important things that a computer must know?"
+  },
+  {
+    "objectID": "lectures/12a.html#encoder-decoder-models",
+    "href": "lectures/12a.html#encoder-decoder-models",
+    "title": "Encode-Decoder\nModels",
+    "section": "Encoder-Decoder Models",
+    "text": "Encoder-Decoder Models\nEncoder-Decoder models is designed to take in a sequence, conduct mathematical functions, and transform it to a new sequence. Commonly known as seq2seq problems."
+  },
+  {
+    "objectID": "lectures/12a.html#encoder",
+    "href": "lectures/12a.html#encoder",
+    "title": "Encode-Decoder\nModels",
+    "section": "Encoder",
+    "text": "Encoder\n\nThe Encoder component is designed to handle the input sequence and model it with numerical values.\nThe numerical values are stored in both long-term and short-term memories, LSTM cells."
+  },
+  {
+    "objectID": "lectures/12a.html#decoder",
+    "href": "lectures/12a.html#decoder",
+    "title": "Encode-Decoder\nModels",
+    "section": "Decoder",
+    "text": "Decoder\n\nThe Decoder component takes the inputs from the long-term and short-term memory of the encoder component and inputs it into a new LSTM cell\nThe LSTM cell will then predict the first value (word) of a sequence.\nThe word perdicted will then be used for a new LSTM cell to predict the next word.\nThe process continues until an &lt;EOS&gt; token (end of sequence) is produced."
   },
   {
     "objectID": "lectures/12a.html#statquest",
     "href": "lectures/12a.html#statquest",
-    "title": "Word\nEmbeddings",
+    "title": "Encode-Decoder\nModels",
     "section": "StatQuest",
     "text": "StatQuest\nYoutube Video"
   },
