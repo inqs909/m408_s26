@@ -1,0 +1,13 @@
+---
+title: "Week 13"
+date: 04-24-26
+description: This week looks at Attention Models.
+editor: source
+---
+
+
+## Resources
+
+| Lecture | Slides                   |
+|---------|--------------------------|
+| 1       | [Slides](../lectures/13a) | 

@@ -2840,5 +2840,75 @@
     "title": "Week 7",
     "section": "",
     "text": "Lecture\nSlides\nVideos\nR Code Files\n\n\n\n\n1\nSlides\nVideo\nCIFAR-10"
+  },
+  {
+    "objectID": "lectures/13a.html#writing",
+    "href": "lectures/13a.html#writing",
+    "title": "Attention\nModels",
+    "section": "Writing",
+    "text": "Writing\nWhat are the most important components when you write a 5-paragraph essay?\n\nWhat are some things you do not want to see in an essay?"
+  },
+  {
+    "objectID": "lectures/13a.html#translation",
+    "href": "lectures/13a.html#translation",
+    "title": "Attention\nModels",
+    "section": "Translation",
+    "text": "Translation\nWhat are the most important words this sentence for translation?\n\nSimpson’s paradox is a phenomenon in probability and statistics in which a trend appears in several groups of data but disappears or reverses when the groups are combined."
+  },
+  {
+    "objectID": "lectures/13a.html#attention-models-1",
+    "href": "lectures/13a.html#attention-models-1",
+    "title": "Attention\nModels",
+    "section": "Attention Models",
+    "text": "Attention Models\nAttention models modify the Encoder-Decoder model by incorporating what is known as attention in the model.\n\nAttention is defined as incorporating the inputs short-term memory from the encoder model to the decoders inputs."
+  },
+  {
+    "objectID": "lectures/13a.html#encoder-decoder",
+    "href": "lectures/13a.html#encoder-decoder",
+    "title": "Attention\nModels",
+    "section": "Encoder-Decoder",
+    "text": "Encoder-Decoder"
+  },
+  {
+    "objectID": "lectures/13a.html#attention-model",
+    "href": "lectures/13a.html#attention-model",
+    "title": "Attention\nModels",
+    "section": "Attention Model",
+    "text": "Attention Model"
+  },
+  {
+    "objectID": "lectures/13a.html#attention-model-1",
+    "href": "lectures/13a.html#attention-model-1",
+    "title": "Attention\nModels",
+    "section": "Attention Model",
+    "text": "Attention Model"
+  },
+  {
+    "objectID": "lectures/13a.html#attention-model-2",
+    "href": "lectures/13a.html#attention-model-2",
+    "title": "Attention\nModels",
+    "section": "Attention Model",
+    "text": "Attention Model"
+  },
+  {
+    "objectID": "lectures/13a.html#attention-model-3",
+    "href": "lectures/13a.html#attention-model-3",
+    "title": "Attention\nModels",
+    "section": "Attention Model",
+    "text": "Attention Model"
+  },
+  {
+    "objectID": "lectures/13a.html#statquest",
+    "href": "lectures/13a.html#statquest",
+    "title": "Attention\nModels",
+    "section": "StatQuest",
+    "text": "StatQuest\nYoutube Video"
+  },
+  {
+    "objectID": "lectures/13a.html#lstm-cell",
+    "href": "lectures/13a.html#lstm-cell",
+    "title": "Attention\nModels",
+    "section": "LSTM Cell",
+    "text": "LSTM Cell"
   }
 ]

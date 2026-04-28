@@ -1,0 +1,97 @@
+---
+title: |
+  Attention \
+  Models
+format:
+  revealjs:
+    width: 1200
+    scrollable: true
+    include-in-header: "math.html"
+    footer: m408.inqs.info/lectures/13a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: false
+    message: false
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  
+filters: 
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## Writing
+
+What are the most important components when you write a 5-paragraph essay?
+
+::: fragment
+What are some things you do not want to see in an essay?
+:::
+
+## Translation
+
+What are the most important words this sentence for translation?
+
+::: {.fragment}
+Simpson's paradox is a phenomenon in probability and statistics in which a trend appears in several groups of data but disappears or reverses when the groups are combined. 
+:::
+
+# Attention Models
+
+## Attention Models
+
+*Attention* models modify the *Encoder-Decoder* model by incorporating what is known as **attention** in the model.
+
+::: {.fragment}
+
+**Attention** is defined as incorporating the inputs short-term memory from the encoder model to the decoders inputs.
+
+:::
+
+
+## Encoder-Decoder
+
+![](img/Encoder-Decoder.svg){fig-alt="An image displaying the Encoder-Decoder Architecture with corresponding LSTM cells."}
+
+## LSTM Cell
+
+![](img/lstm.svg){fig-alt="An image displaying the three gates of a long short-term memory (LSTM) cell."}
+
+## Attention Model
+
+![](img/attention_1.svg){fig-alt="An image displaying an Encoder-Decoder architecture with attention being incorporated to the first (and only) LSTM cell."}
+
+## Attention Model
+
+![](img/attention_2.svg){fig-alt="An image displaying an Encoder-Decoder architecture with attention being incorporated to the second LSTM cell."}
+
+## Attention Model
+
+![](img/attentio_3.svg){fig-alt="An image displaying an Encoder-Decoder architecture with attention being incorporated to the third LSTM cell."}
+
+## Attention Model
+
+![](img/attention.svg){fig-alt="An image displaying an Encoder-Decoder architecture with attention being incorporated to the third LSTM cell."}
+
+## StatQuest
+
+[Youtube Video](https://youtu.be/PSs6nxngL6k?si=dLkr-F36OTnSKAcV&t=50)
+
+
