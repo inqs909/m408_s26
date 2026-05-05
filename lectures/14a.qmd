@@ -60,3 +60,8 @@ Go onine and complete the Student Ratings of Teaching.
 [Attention in Transformers](https://youtu.be/eMlx5fFNoYc?si=zWpn2cWxVlWpMHLe)
 
 [Memory in LLMs](https://youtu.be/9-Jl0dxWQs8?si=OXNsgtxUFiySD7dF)
+
+
+## Math Videos
+
+[www.inqs.info/dsmath](https://www.inqs.info/dsmath/)

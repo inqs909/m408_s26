@@ -1,9 +1,11 @@
 {
-  "hash": "6693227a4c3ddffff59e5372acbefb79",
+  "hash": "2dc06e1849195400153cb434c3486876",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: |\n  Transformer \\\n  Models\nformat:\n  revealjs:\n    width: 1200\n    scrollable: true\n    include-in-header: \"math.html\"\n    footer: m408.inqs.info/lectures/14a\n    theme: [default, styles.scss]\n    preview-links: true\n    navigation-mode: vertical\n    controls-layout: edges\n    controls-tutorial: true\n    slide-number: true\n    pointer:\n      pointerSize: 48\n    incremental: false \n    chalkboard:\n      theme: whiteboard\n      chalk-width: 4\nknitr:\n  opts_chunk: \n    echo: true\n    eval: false\n    message: false\n    warnings: false\n    comment: \"#>\" \n    \nrevealjs-plugins:\n  - pointer\n  \nfilters: \n  - reveal-auto-agenda\n\neditor: source\n---\n\n\n\n## SRT\n\nGo onine and complete the Student Ratings of Teaching.\n\n## Work on Projects\n\n## StatQuest\n\n[Encoder-Decoder Transformers](https://youtu.be/zxQyTK8quyY?si=2UUpkuYSD1brmwVE)\n\n[Decoder-Only Transformers](https://youtu.be/bQ5BoolX9Ag?si=hbcNT_xsFeQQof-9)\n\n[Encoder-Only Transformers](https://youtu.be/GDN649X_acE?si=xQemj_QkToGk0IDX)\n\n## 3Blue1Brown\n\n[Transformers](https://youtu.be/wjZofJX0v4M?si=rSJntNT_TZtJ7Ru2)\n\n[Attention in Transformers](https://youtu.be/eMlx5fFNoYc?si=zWpn2cWxVlWpMHLe)\n\n[Memory in LLMs](https://youtu.be/9-Jl0dxWQs8?si=OXNsgtxUFiySD7dF)",
-    "supporting": [],
+    "markdown": "---\ntitle: |\n  Transformer \\\n  Models\nformat:\n  revealjs:\n    width: 1200\n    scrollable: true\n    include-in-header: \"math.html\"\n    footer: m408.inqs.info/lectures/14a\n    theme: [default, styles.scss]\n    preview-links: true\n    navigation-mode: vertical\n    controls-layout: edges\n    controls-tutorial: true\n    slide-number: true\n    pointer:\n      pointerSize: 48\n    incremental: false \n    chalkboard:\n      theme: whiteboard\n      chalk-width: 4\nknitr:\n  opts_chunk: \n    echo: true\n    eval: false\n    message: false\n    warnings: false\n    comment: \"#>\" \n    \nrevealjs-plugins:\n  - pointer\n  \nfilters: \n  - reveal-auto-agenda\n\neditor: source\n---\n\n\n\n## SRT\n\nGo onine and complete the Student Ratings of Teaching.\n\n## Work on Projects\n\n## StatQuest\n\n[Encoder-Decoder Transformers](https://youtu.be/zxQyTK8quyY?si=2UUpkuYSD1brmwVE)\n\n[Decoder-Only Transformers](https://youtu.be/bQ5BoolX9Ag?si=hbcNT_xsFeQQof-9)\n\n[Encoder-Only Transformers](https://youtu.be/GDN649X_acE?si=xQemj_QkToGk0IDX)\n\n## 3Blue1Brown\n\n[Transformers](https://youtu.be/wjZofJX0v4M?si=rSJntNT_TZtJ7Ru2)\n\n[Attention in Transformers](https://youtu.be/eMlx5fFNoYc?si=zWpn2cWxVlWpMHLe)\n\n[Memory in LLMs](https://youtu.be/9-Jl0dxWQs8?si=OXNsgtxUFiySD7dF)\n\n\n## Math Videos\n\n[www.inqs.info/dsmath](https://www.inqs.info/dsmath/)",
+    "supporting": [
+      "14a_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
