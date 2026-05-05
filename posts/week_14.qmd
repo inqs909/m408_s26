@@ -10,4 +10,4 @@ editor: source
 
 | Lecture | Slides                   |
 |---------|--------------------------|
-| 1       | [Slides](../lectures/13a) | 
+| 1       | [Slides](../lectures/14a) | 
