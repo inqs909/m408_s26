@@ -1,0 +1,19 @@
+{
+  "hash": "6693227a4c3ddffff59e5372acbefb79",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: |\n  Transformer \\\n  Models\nformat:\n  revealjs:\n    width: 1200\n    scrollable: true\n    include-in-header: \"math.html\"\n    footer: m408.inqs.info/lectures/14a\n    theme: [default, styles.scss]\n    preview-links: true\n    navigation-mode: vertical\n    controls-layout: edges\n    controls-tutorial: true\n    slide-number: true\n    pointer:\n      pointerSize: 48\n    incremental: false \n    chalkboard:\n      theme: whiteboard\n      chalk-width: 4\nknitr:\n  opts_chunk: \n    echo: true\n    eval: false\n    message: false\n    warnings: false\n    comment: \"#>\" \n    \nrevealjs-plugins:\n  - pointer\n  \nfilters: \n  - reveal-auto-agenda\n\neditor: source\n---\n\n\n\n## SRT\n\nGo onine and complete the Student Ratings of Teaching.\n\n## Work on Projects\n\n## StatQuest\n\n[Encoder-Decoder Transformers](https://youtu.be/zxQyTK8quyY?si=2UUpkuYSD1brmwVE)\n\n[Decoder-Only Transformers](https://youtu.be/bQ5BoolX9Ag?si=hbcNT_xsFeQQof-9)\n\n[Encoder-Only Transformers](https://youtu.be/GDN649X_acE?si=xQemj_QkToGk0IDX)\n\n## 3Blue1Brown\n\n[Transformers](https://youtu.be/wjZofJX0v4M?si=rSJntNT_TZtJ7Ru2)\n\n[Attention in Transformers](https://youtu.be/eMlx5fFNoYc?si=zWpn2cWxVlWpMHLe)\n\n[Memory in LLMs](https://youtu.be/9-Jl0dxWQs8?si=OXNsgtxUFiySD7dF)",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

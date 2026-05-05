@@ -1,0 +1,62 @@
+---
+title: |
+  Transformer \
+  Models
+format:
+  revealjs:
+    width: 1200
+    scrollable: true
+    include-in-header: "math.html"
+    footer: m408.inqs.info/lectures/14a
+    theme: [default, styles.scss]
+    preview-links: true
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: false
+    message: false
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  
+filters: 
+  - reveal-auto-agenda
+
+editor: source
+---
+
+
+
+## SRT
+
+Go onine and complete the Student Ratings of Teaching.
+
+## Work on Projects
+
+## StatQuest
+
+[Encoder-Decoder Transformers](https://youtu.be/zxQyTK8quyY?si=2UUpkuYSD1brmwVE)
+
+[Decoder-Only Transformers](https://youtu.be/bQ5BoolX9Ag?si=hbcNT_xsFeQQof-9)
+
+[Encoder-Only Transformers](https://youtu.be/GDN649X_acE?si=xQemj_QkToGk0IDX)
+
+## 3Blue1Brown
+
+[Transformers](https://youtu.be/wjZofJX0v4M?si=rSJntNT_TZtJ7Ru2)
+
+[Attention in Transformers](https://youtu.be/eMlx5fFNoYc?si=zWpn2cWxVlWpMHLe)
+
+[Memory in LLMs](https://youtu.be/9-Jl0dxWQs8?si=OXNsgtxUFiySD7dF)

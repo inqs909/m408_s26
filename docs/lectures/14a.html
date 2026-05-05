@@ -11,7 +11,7 @@
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <title>MATH 408 – Encode-Decoder Models</title>
+  <title>MATH 408 – Transformer Models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -277,80 +277,38 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title"><p>Encode-Decoder<br>
+  <h1 class="title"><p>Transformer<br>
 Models</p></h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="translation" class="slide level2">
-<h2>Translation</h2>
-<p>How do we translate the following phrase to a different language?</p>
-<div class="fragment">
-<p>All models are wrong, some are useful.</p>
-</div>
+<section id="srt" class="slide level2">
+<h2>SRT</h2>
+<p>Go onine and complete the Student Ratings of Teaching.</p>
 </section>
-<section id="example-translations" class="slide level2">
-<h2>Example Translations</h2>
-<p>Todos los modelos son incorrectos, algunos son útiles.</p>
-</section>
-<section id="protein-sequences" class="slide level2">
-<h2>Protein Sequences</h2>
-<div class="columns">
-<div class="column">
-<h3 id="amino-acid-sequences">Amino Acid Sequences</h3>
-<p>AASAHFTGCPWVURDYU</p>
-</div><div class="column">
-<h3 id="structures">Structures</h3>
-<ul>
-<li>Secondary Structures Structures
-<ul>
-<li><span class="math inline">\(\alpha\)</span>-helices</li>
-<li><span class="math inline">\(\beta\)</span>-sheets</li>
-</ul></li>
-<li>Tertiary Structures
-<ul>
-<li>Structures</li>
-</ul></li>
-</ul>
-</div></div>
-</section>
-<section id="translations" class="slide level2">
-<h2>Translations</h2>
-<p>How would a computer translate for one sequence to another?</p>
-<p>What are the important things that a computer must know?</p>
-</section>
-<section id="encoder-decoder-models" class="slide level2">
-<h2>Encoder-Decoder Models</h2>
-<p>Encoder-Decoder models is designed to take in a sequence, conduct mathematical functions, and transform it to a new sequence. Commonly known as <a href="https://en.wikipedia.org/wiki/Seq2seq">seq2seq</a> problems.</p>
-</section>
-<section id="encoder" class="slide level2">
-<h2>Encoder</h2>
-<ul>
-<li><p>The <strong>Encoder</strong> component is designed to handle the input sequence and model it with numerical values.</p></li>
-<li><p>The numerical values are stored in both long-term and short-term memories, LSTM cells.</p></li>
-</ul>
-</section>
-<section id="decoder" class="slide level2">
-<h2>Decoder</h2>
-<ul>
-<li><p>The <strong>Decoder</strong> component takes the inputs from the long-term and short-term memory of the encoder component and inputs it into a new LSTM cell</p></li>
-<li><p>The LSTM cell will then predict the first value (word) of a sequence.</p></li>
-<li><p>The word perdicted will then be used for a new LSTM cell to predict the next word.</p></li>
-<li><p>The process continues until an <code>&lt;EOS&gt;</code> token (end of sequence) is produced.</p></li>
-</ul>
+<section id="work-on-projects" class="slide level2">
+<h2>Work on Projects</h2>
 </section>
 <section id="statquest" class="slide level2">
 <h2>StatQuest</h2>
-<p><a href="https://youtu.be/L8HKweZIOmg?si=gWrSq5bKTZsxh7G6">Youtube Video</a></p>
+<p><a href="https://youtu.be/zxQyTK8quyY?si=2UUpkuYSD1brmwVE">Encoder-Decoder Transformers</a></p>
+<p><a href="https://youtu.be/bQ5BoolX9Ag?si=hbcNT_xsFeQQof-9">Decoder-Only Transformers</a></p>
+<p><a href="https://youtu.be/GDN649X_acE?si=xQemj_QkToGk0IDX">Encoder-Only Transformers</a></p>
+</section>
+<section id="blue1brown" class="slide level2">
+<h2>3Blue1Brown</h2>
+<p><a href="https://youtu.be/wjZofJX0v4M?si=rSJntNT_TZtJ7Ru2">Transformers</a></p>
+<p><a href="https://youtu.be/eMlx5fFNoYc?si=zWpn2cWxVlWpMHLe">Attention in Transformers</a></p>
+<p><a href="https://youtu.be/9-Jl0dxWQs8?si=OXNsgtxUFiySD7dF">Memory in LLMs</a></p>
 
 
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>m408.inqs.info/lectures/12a</p>
+<p>m408.inqs.info/lectures/14a</p>
 </div>
 </div></div>
 
