@@ -7,12 +7,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+  <meta name="generator" content="quarto-1.10.18">
 
   <title>MATH 408 – Neural Networks</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -356,23 +359,23 @@
 <section id="r-packages" class="slide level2">
 <h2>R Packages</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># install.packages("torch")</span></span>
-<span id="cb1-2"><a></a><span class="co"># install.packages("luz")</span></span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(torch)</span>
-<span id="cb1-5"><a></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
-<span id="cb1-6"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="co"># install.packages("torch")</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="co"># install.packages("luz")</span></span>
+<span id="cb1-3"><a aria-label="3"></a></span>
+<span id="cb1-4"><a aria-label="4"></a><span class="fu">library</span>(torch)</span>
+<span id="cb1-5"><a aria-label="5"></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
+<span id="cb1-6"><a aria-label="6"></a><span class="fu">torch_manual_seed</span>(<span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="data-in-python" class="slide level2">
 <h2>Data in Python</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> plotnine</span>
-<span id="cb2-2"><a></a><span class="im">from</span> plotnine.data <span class="im">import</span> penguins</span>
-<span id="cb2-3"><a></a>clean_penguins <span class="op">=</span> (</span>
-<span id="cb2-4"><a></a>    penguins</span>
-<span id="cb2-5"><a></a>        .dropna()</span>
-<span id="cb2-6"><a></a>        .drop(columns<span class="op">=</span>[<span class="st">"year"</span>])</span>
-<span id="cb2-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a><span class="im">import</span> plotnine</span>
+<span id="cb2-2"><a aria-label="2"></a><span class="im">from</span> plotnine.data <span class="im">import</span> penguins</span>
+<span id="cb2-3"><a aria-label="3"></a>clean_penguins <span class="op">=</span> (</span>
+<span id="cb2-4"><a aria-label="4"></a>    penguins</span>
+<span id="cb2-5"><a aria-label="5"></a>        .dropna()</span>
+<span id="cb2-6"><a aria-label="6"></a>        .drop(columns<span class="op">=</span>[<span class="st">"year"</span>])</span>
+<span id="cb2-7"><a aria-label="7"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section>
 <section id="multilayer-neural-networks" class="title-slide slide level1 agenda-slide center">
@@ -526,17 +529,17 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a></a>penguins <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">drop_na</span>()</span>
-<span id="cb3-3"><a></a>px <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
-<span id="cb3-5"><a></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb3-6"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
-<span id="cb3-7"><a></a></span>
-<span id="cb3-8"><a></a>py <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
-<span id="cb3-9"><a></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb3-10"><a></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb3-11"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a aria-label="2"></a>penguins <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">drop_na</span>()</span>
+<span id="cb3-3"><a aria-label="3"></a>px <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a aria-label="4"></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a aria-label="5"></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-6"><a aria-label="6"></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
+<span id="cb3-7"><a aria-label="7"></a></span>
+<span id="cb3-8"><a aria-label="8"></a>py <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb3-9"><a aria-label="9"></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb3-10"><a aria-label="10"></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-11"><a aria-label="11"></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -545,43 +548,43 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <section id="model-setup-1" class="slide level2">
 <h2>Model Setup</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>modelnn <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
-<span id="cb4-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(input_size) {</span>
-<span id="cb4-3"><a></a>    self<span class="sc">$</span>hidden1 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> input_size, </span>
-<span id="cb4-4"><a></a>                              <span class="at">out_features =</span> <span class="dv">20</span>)</span>
-<span id="cb4-5"><a></a>    self<span class="sc">$</span>hidden2 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">20</span>, </span>
-<span id="cb4-6"><a></a>                              <span class="at">out_features =</span> <span class="dv">10</span>)</span>
-<span id="cb4-7"><a></a>    self<span class="sc">$</span>hidden3 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">10</span>, </span>
-<span id="cb4-8"><a></a>                              <span class="at">out_features =</span> <span class="dv">5</span>)</span>
-<span id="cb4-9"><a></a></span>
-<span id="cb4-10"><a></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">5</span>, </span>
-<span id="cb4-11"><a></a>                             <span class="at">out_features =</span> <span class="dv">1</span>)</span>
-<span id="cb4-12"><a></a>        </span>
-<span id="cb4-13"><a></a>    self<span class="sc">$</span>activation <span class="ot">&lt;-</span> <span class="fu">nn_relu</span>()</span>
-<span id="cb4-14"><a></a>  },</span>
-<span id="cb4-15"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
-<span id="cb4-16"><a></a>    x <span class="sc">|&gt;</span>  </span>
-<span id="cb4-17"><a></a>      self<span class="sc">$</span><span class="fu">hidden1</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb4-18"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb4-19"><a></a>      </span>
-<span id="cb4-20"><a></a>      self<span class="sc">$</span><span class="fu">hidden2</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb4-21"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb4-22"><a></a></span>
-<span id="cb4-23"><a></a>      self<span class="sc">$</span><span class="fu">hidden3</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb4-24"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb4-25"><a></a></span>
-<span id="cb4-26"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
-<span id="cb4-27"><a></a>  }</span>
-<span id="cb4-28"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>modelnn <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
+<span id="cb4-2"><a aria-label="2"></a>  <span class="at">initialize =</span> <span class="cf">function</span>(input_size) {</span>
+<span id="cb4-3"><a aria-label="3"></a>    self<span class="sc">$</span>hidden1 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> input_size, </span>
+<span id="cb4-4"><a aria-label="4"></a>                              <span class="at">out_features =</span> <span class="dv">20</span>)</span>
+<span id="cb4-5"><a aria-label="5"></a>    self<span class="sc">$</span>hidden2 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">20</span>, </span>
+<span id="cb4-6"><a aria-label="6"></a>                              <span class="at">out_features =</span> <span class="dv">10</span>)</span>
+<span id="cb4-7"><a aria-label="7"></a>    self<span class="sc">$</span>hidden3 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">10</span>, </span>
+<span id="cb4-8"><a aria-label="8"></a>                              <span class="at">out_features =</span> <span class="dv">5</span>)</span>
+<span id="cb4-9"><a aria-label="9"></a></span>
+<span id="cb4-10"><a aria-label="10"></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">5</span>, </span>
+<span id="cb4-11"><a aria-label="11"></a>                             <span class="at">out_features =</span> <span class="dv">1</span>)</span>
+<span id="cb4-12"><a aria-label="12"></a>        </span>
+<span id="cb4-13"><a aria-label="13"></a>    self<span class="sc">$</span>activation <span class="ot">&lt;-</span> <span class="fu">nn_relu</span>()</span>
+<span id="cb4-14"><a aria-label="14"></a>  },</span>
+<span id="cb4-15"><a aria-label="15"></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb4-16"><a aria-label="16"></a>    x <span class="sc">|&gt;</span>  </span>
+<span id="cb4-17"><a aria-label="17"></a>      self<span class="sc">$</span><span class="fu">hidden1</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb4-18"><a aria-label="18"></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb4-19"><a aria-label="19"></a>      </span>
+<span id="cb4-20"><a aria-label="20"></a>      self<span class="sc">$</span><span class="fu">hidden2</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb4-21"><a aria-label="21"></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb4-22"><a aria-label="22"></a></span>
+<span id="cb4-23"><a aria-label="23"></a>      self<span class="sc">$</span><span class="fu">hidden3</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb4-24"><a aria-label="24"></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb4-25"><a aria-label="25"></a></span>
+<span id="cb4-26"><a aria-label="26"></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
+<span id="cb4-27"><a aria-label="27"></a>  }</span>
+<span id="cb4-28"><a aria-label="28"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="setup" class="slide level2">
 <h2>Setup</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>modelnn <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">setup</span>(<span class="at">loss =</span> <span class="fu">nn_mse_loss</span>(),</span>
-<span id="cb5-3"><a></a>        <span class="at">optimizer =</span> optim_rmsprop) <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a></a>  <span class="fu">set_hparams</span>(<span class="at">input_size =</span> <span class="fu">ncol</span>(px))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>modelnn <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a aria-label="2"></a>  <span class="fu">setup</span>(<span class="at">loss =</span> <span class="fu">nn_mse_loss</span>(),</span>
+<span id="cb5-3"><a aria-label="3"></a>        <span class="at">optimizer =</span> optim_rmsprop) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a aria-label="4"></a>  <span class="fu">set_hparams</span>(<span class="at">input_size =</span> <span class="fu">ncol</span>(px))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="model-fitting" class="slide level2">
@@ -591,14 +594,14 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>fitted <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a></a>  <span class="fu">fit</span>(<span class="at">data =</span> <span class="fu">list</span>(px, py), </span>
-<span id="cb6-3"><a></a>      <span class="at">epochs =</span> <span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>fitted <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a aria-label="2"></a>  <span class="fu">fit</span>(<span class="at">data =</span> <span class="fu">list</span>(px, py), </span>
+<span id="cb6-3"><a aria-label="3"></a>      <span class="at">epochs =</span> <span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">plot</span>(fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a><span class="fu">plot</span>(fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -680,50 +683,50 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>penguins <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">drop_na</span>()</span>
-<span id="cb8-2"><a></a>training <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">prop =</span> .<span class="dv">8</span>)</span>
-<span id="cb8-3"><a></a>pre <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">anti_join</span>(training)</span>
-<span id="cb8-4"><a></a>validate <span class="ot">&lt;-</span> pre <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">prop =</span>  <span class="fl">0.5</span>)</span>
-<span id="cb8-5"><a></a>testing <span class="ot">&lt;-</span> pre <span class="sc">|&gt;</span> <span class="fu">anti_join</span>(validate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>penguins <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">drop_na</span>()</span>
+<span id="cb8-2"><a aria-label="2"></a>training <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">prop =</span> .<span class="dv">8</span>)</span>
+<span id="cb8-3"><a aria-label="3"></a>pre <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">anti_join</span>(training)</span>
+<span id="cb8-4"><a aria-label="4"></a>validate <span class="ot">&lt;-</span> pre <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">prop =</span>  <span class="fl">0.5</span>)</span>
+<span id="cb8-5"><a aria-label="5"></a>testing <span class="ot">&lt;-</span> pre <span class="sc">|&gt;</span> <span class="fu">anti_join</span>(validate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-4-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>Xtraining <span class="ot">&lt;-</span> training <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
-<span id="cb9-3"><a></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb9-4"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
-<span id="cb9-5"><a></a></span>
-<span id="cb9-6"><a></a>Ytraining <span class="ot">&lt;-</span> training <span class="sc">|&gt;</span> </span>
-<span id="cb9-7"><a></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb9-8"><a></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb9-9"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a>Xtraining <span class="ot">&lt;-</span> training <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a aria-label="2"></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a aria-label="3"></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a aria-label="4"></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
+<span id="cb9-5"><a aria-label="5"></a></span>
+<span id="cb9-6"><a aria-label="6"></a>Ytraining <span class="ot">&lt;-</span> training <span class="sc">|&gt;</span> </span>
+<span id="cb9-7"><a aria-label="7"></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb9-8"><a aria-label="8"></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-9"><a aria-label="9"></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-4-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>Xvalidate <span class="ot">&lt;-</span> validate <span class="sc">|&gt;</span> </span>
-<span id="cb10-2"><a></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
-<span id="cb10-3"><a></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb10-4"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
-<span id="cb10-5"><a></a></span>
-<span id="cb10-6"><a></a>Yvalidate <span class="ot">&lt;-</span> validate <span class="sc">|&gt;</span> </span>
-<span id="cb10-7"><a></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb10-8"><a></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb10-9"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>Xvalidate <span class="ot">&lt;-</span> validate <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a aria-label="2"></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a aria-label="3"></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a aria-label="4"></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
+<span id="cb10-5"><a aria-label="5"></a></span>
+<span id="cb10-6"><a aria-label="6"></a>Yvalidate <span class="ot">&lt;-</span> validate <span class="sc">|&gt;</span> </span>
+<span id="cb10-7"><a aria-label="7"></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb10-8"><a aria-label="8"></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb10-9"><a aria-label="9"></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-4-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>Xtesting <span class="ot">&lt;-</span> testing <span class="sc">|&gt;</span> </span>
-<span id="cb11-2"><a></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
-<span id="cb11-3"><a></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb11-4"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
-<span id="cb11-5"><a></a></span>
-<span id="cb11-6"><a></a>Ytesting <span class="ot">&lt;-</span> testing <span class="sc">|&gt;</span> </span>
-<span id="cb11-7"><a></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
-<span id="cb11-8"><a></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb11-9"><a></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-label="1"></a>Xtesting <span class="ot">&lt;-</span> testing <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a aria-label="2"></a>  <span class="fu">model.matrix</span>(body_mass <span class="sc">~</span> . <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> _) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a aria-label="3"></a>  <span class="fu">scale</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a aria-label="4"></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span>
+<span id="cb11-5"><a aria-label="5"></a></span>
+<span id="cb11-6"><a aria-label="6"></a>Ytesting <span class="ot">&lt;-</span> testing <span class="sc">|&gt;</span> </span>
+<span id="cb11-7"><a aria-label="7"></a>  <span class="fu">select</span>(body_mass) <span class="sc">|&gt;</span> </span>
+<span id="cb11-8"><a aria-label="8"></a>  <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb11-9"><a aria-label="9"></a>  <span class="fu">torch_tensor</span>(<span class="at">dtype =</span> <span class="fu">torch_float</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -732,45 +735,45 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <section id="model-description" class="slide level2">
 <h2>Model Description</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>modelnn <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
-<span id="cb12-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(input_size) {</span>
-<span id="cb12-3"><a></a>    self<span class="sc">$</span>hidden1 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> input_size, </span>
-<span id="cb12-4"><a></a>                              <span class="at">out_features =</span> <span class="dv">20</span>)</span>
-<span id="cb12-5"><a></a>    self<span class="sc">$</span>hidden2 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">20</span>, </span>
-<span id="cb12-6"><a></a>                              <span class="at">out_features =</span> <span class="dv">10</span>)</span>
-<span id="cb12-7"><a></a>    self<span class="sc">$</span>hidden3 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">10</span>, </span>
-<span id="cb12-8"><a></a>                              <span class="at">out_features =</span> <span class="dv">5</span>)</span>
-<span id="cb12-9"><a></a></span>
-<span id="cb12-10"><a></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">5</span>, </span>
-<span id="cb12-11"><a></a>                             <span class="at">out_features =</span> <span class="dv">1</span>)</span>
-<span id="cb12-12"><a></a>        </span>
-<span id="cb12-13"><a></a>    self<span class="sc">$</span>activation <span class="ot">&lt;-</span> <span class="fu">nn_relu</span>()</span>
-<span id="cb12-14"><a></a>  },</span>
-<span id="cb12-15"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
-<span id="cb12-16"><a></a>    x <span class="sc">|&gt;</span>  </span>
-<span id="cb12-17"><a></a>      self<span class="sc">$</span><span class="fu">hidden1</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb12-18"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb12-19"><a></a>      </span>
-<span id="cb12-20"><a></a>      self<span class="sc">$</span><span class="fu">hidden2</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb12-21"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb12-22"><a></a></span>
-<span id="cb12-23"><a></a>      self<span class="sc">$</span><span class="fu">hidden3</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb12-24"><a></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb12-25"><a></a></span>
-<span id="cb12-26"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
-<span id="cb12-27"><a></a>  }</span>
-<span id="cb12-28"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>modelnn <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
+<span id="cb12-2"><a aria-label="2"></a>  <span class="at">initialize =</span> <span class="cf">function</span>(input_size) {</span>
+<span id="cb12-3"><a aria-label="3"></a>    self<span class="sc">$</span>hidden1 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> input_size, </span>
+<span id="cb12-4"><a aria-label="4"></a>                              <span class="at">out_features =</span> <span class="dv">20</span>)</span>
+<span id="cb12-5"><a aria-label="5"></a>    self<span class="sc">$</span>hidden2 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">20</span>, </span>
+<span id="cb12-6"><a aria-label="6"></a>                              <span class="at">out_features =</span> <span class="dv">10</span>)</span>
+<span id="cb12-7"><a aria-label="7"></a>    self<span class="sc">$</span>hidden3 <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">10</span>, </span>
+<span id="cb12-8"><a aria-label="8"></a>                              <span class="at">out_features =</span> <span class="dv">5</span>)</span>
+<span id="cb12-9"><a aria-label="9"></a></span>
+<span id="cb12-10"><a aria-label="10"></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(<span class="at">in_features =</span> <span class="dv">5</span>, </span>
+<span id="cb12-11"><a aria-label="11"></a>                             <span class="at">out_features =</span> <span class="dv">1</span>)</span>
+<span id="cb12-12"><a aria-label="12"></a>        </span>
+<span id="cb12-13"><a aria-label="13"></a>    self<span class="sc">$</span>activation <span class="ot">&lt;-</span> <span class="fu">nn_relu</span>()</span>
+<span id="cb12-14"><a aria-label="14"></a>  },</span>
+<span id="cb12-15"><a aria-label="15"></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb12-16"><a aria-label="16"></a>    x <span class="sc">|&gt;</span>  </span>
+<span id="cb12-17"><a aria-label="17"></a>      self<span class="sc">$</span><span class="fu">hidden1</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb12-18"><a aria-label="18"></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb12-19"><a aria-label="19"></a>      </span>
+<span id="cb12-20"><a aria-label="20"></a>      self<span class="sc">$</span><span class="fu">hidden2</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb12-21"><a aria-label="21"></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb12-22"><a aria-label="22"></a></span>
+<span id="cb12-23"><a aria-label="23"></a>      self<span class="sc">$</span><span class="fu">hidden3</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb12-24"><a aria-label="24"></a>      self<span class="sc">$</span><span class="fu">activation</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb12-25"><a aria-label="25"></a></span>
+<span id="cb12-26"><a aria-label="26"></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
+<span id="cb12-27"><a aria-label="27"></a>  }</span>
+<span id="cb12-28"><a aria-label="28"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="optimizer-set-up" class="slide level2">
 <h2>Optimizer Set Up</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>modelnn <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a></a>  <span class="fu">setup</span>(</span>
-<span id="cb13-3"><a></a>    <span class="at">loss =</span> <span class="fu">nn_mse_loss</span>(), <span class="co"># Used for numerical counts</span></span>
-<span id="cb13-4"><a></a>    <span class="at">optimizer =</span> optim_rmsprop</span>
-<span id="cb13-5"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb13-6"><a></a>  <span class="fu">set_hparams</span>(<span class="at">input_size =</span> <span class="fu">ncol</span>(px))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-label="1"></a>modelnn <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a aria-label="2"></a>  <span class="fu">setup</span>(</span>
+<span id="cb13-3"><a aria-label="3"></a>    <span class="at">loss =</span> <span class="fu">nn_mse_loss</span>(), <span class="co"># Used for numerical counts</span></span>
+<span id="cb13-4"><a aria-label="4"></a>    <span class="at">optimizer =</span> optim_rmsprop</span>
+<span id="cb13-5"><a aria-label="5"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb13-6"><a aria-label="6"></a>  <span class="fu">set_hparams</span>(<span class="at">input_size =</span> <span class="fu">ncol</span>(px))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="fit-a-model" class="slide level2">
@@ -780,19 +783,19 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <div class="tab-content">
 <div id="tabset-5-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>fitted <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a></a>  <span class="fu">fit</span>(</span>
-<span id="cb14-3"><a></a>    <span class="at">data =</span> <span class="fu">list</span>(Xtraining, Ytraining),</span>
-<span id="cb14-4"><a></a>    <span class="at">epochs =</span> <span class="dv">50</span>, <span class="co"># Can think as number of iterations</span></span>
-<span id="cb14-5"><a></a>    <span class="at">valid_data =</span> <span class="fu">list</span>(Xvalidate, Yvalidate)</span>
-<span id="cb14-6"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-label="1"></a>fitted <span class="ot">&lt;-</span> modelnn <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a aria-label="2"></a>  <span class="fu">fit</span>(</span>
+<span id="cb14-3"><a aria-label="3"></a>    <span class="at">data =</span> <span class="fu">list</span>(Xtraining, Ytraining),</span>
+<span id="cb14-4"><a aria-label="4"></a>    <span class="at">epochs =</span> <span class="dv">50</span>, <span class="co"># Can think as number of iterations</span></span>
+<span id="cb14-5"><a aria-label="5"></a>    <span class="at">valid_data =</span> <span class="fu">list</span>(Xvalidate, Yvalidate)</span>
+<span id="cb14-6"><a aria-label="6"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-5-2">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">plot</span>(fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-label="1"></a><span class="fu">plot</span>(fitted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -806,21 +809,21 @@ f(X) = \beta_{0} + \sum^M_{m=1}\beta_{m}H^{(3)}_m
 <div class="tab-content">
 <div id="tabset-6-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>npred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fitted, Xtesting)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-label="1"></a>npred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fitted, Xtesting)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-6-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">mean</span>(<span class="fu">abs</span>(<span class="fu">as.matrix</span>(Ytesting) <span class="sc">-</span> <span class="fu">as.matrix</span>(npred)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-label="1"></a><span class="fu">mean</span>(<span class="fu">abs</span>(<span class="fu">as.matrix</span>(Ytesting) <span class="sc">-</span> <span class="fu">as.matrix</span>(npred)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-6-3">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">plot</span>(<span class="fu">as.matrix</span>(Ytesting), <span class="fu">as.matrix</span>(npred),</span>
-<span id="cb18-2"><a></a>     <span class="at">xlab =</span> <span class="st">"Truth"</span>,</span>
-<span id="cb18-3"><a></a>     <span class="at">ylab =</span> <span class="st">"Predicted"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-label="1"></a><span class="fu">plot</span>(<span class="fu">as.matrix</span>(Ytesting), <span class="fu">as.matrix</span>(npred),</span>
+<span id="cb18-2"><a aria-label="2"></a>     <span class="at">xlab =</span> <span class="st">"Truth"</span>,</span>
+<span id="cb18-3"><a aria-label="3"></a>     <span class="at">ylab =</span> <span class="st">"Predicted"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>

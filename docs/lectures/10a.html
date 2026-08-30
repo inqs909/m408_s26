@@ -7,12 +7,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+  <meta name="generator" content="quarto-1.10.18">
 
   <title>MATH 408 – Long Short-term Memory</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -356,20 +359,20 @@ Memory</p></h1>
 </section>
 <section id="r-packages" class="slide level2">
 <h2>R Packages</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># install.packages("tsibble")</span></span>
-<span id="cb1-2"><a></a><span class="co"># install.packages("tsibbledata")</span></span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(torch)</span>
-<span id="cb1-5"><a></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
-<span id="cb1-6"><a></a><span class="fu">library</span>(tsibble)</span>
-<span id="cb1-7"><a></a><span class="fu">library</span>(tsibbledata)</span>
-<span id="cb1-8"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">909</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="co"># install.packages("tsibble")</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="co"># install.packages("tsibbledata")</span></span>
+<span id="cb1-3"><a aria-label="3"></a></span>
+<span id="cb1-4"><a aria-label="4"></a><span class="fu">library</span>(torch)</span>
+<span id="cb1-5"><a aria-label="5"></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
+<span id="cb1-6"><a aria-label="6"></a><span class="fu">library</span>(tsibble)</span>
+<span id="cb1-7"><a aria-label="7"></a><span class="fu">library</span>(tsibbledata)</span>
+<span id="cb1-8"><a aria-label="8"></a><span class="fu">torch_manual_seed</span>(<span class="dv">909</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Here is the complete <a href="https://m408.inqs.info/lectures/R/10a.R">R Code File</a></p>
 </section>
 <section id="python-data" class="slide level2">
 <h2>Python Data</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a></a>vic_elec <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/inqs909/m408_s26/refs/heads/main/lectures/data/vic_elec.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a aria-label="2"></a>vic_elec <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/inqs909/m408_s26/refs/heads/main/lectures/data/vic_elec.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section>
 <section id="sequential-data" class="title-slide slide level1 agenda-slide center">
@@ -573,117 +576,117 @@ h_t = o_t\tanh\left(C_t\right)
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># install.packages("torchdatasets")</span></span>
-<span id="cb3-2"><a></a><span class="co"># install.packages("feasts")</span></span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-5"><a></a><span class="fu">library</span>(torch)</span>
-<span id="cb3-6"><a></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
-<span id="cb3-7"><a></a></span>
-<span id="cb3-8"><a></a><span class="fu">torch_manual_seed</span>(<span class="dv">909</span>)</span>
-<span id="cb3-9"><a></a><span class="fu">library</span>(tsibble)</span>
-<span id="cb3-10"><a></a><span class="fu">library</span>(tsibbledata)</span>
-<span id="cb3-11"><a></a>vic_ele</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a><span class="co"># install.packages("torchdatasets")</span></span>
+<span id="cb3-2"><a aria-label="2"></a><span class="co"># install.packages("feasts")</span></span>
+<span id="cb3-3"><a aria-label="3"></a></span>
+<span id="cb3-4"><a aria-label="4"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-5"><a aria-label="5"></a><span class="fu">library</span>(torch)</span>
+<span id="cb3-6"><a aria-label="6"></a><span class="fu">library</span>(luz) <span class="co"># high-level interface for torch</span></span>
+<span id="cb3-7"><a aria-label="7"></a></span>
+<span id="cb3-8"><a aria-label="8"></a><span class="fu">torch_manual_seed</span>(<span class="dv">909</span>)</span>
+<span id="cb3-9"><a aria-label="9"></a><span class="fu">library</span>(tsibble)</span>
+<span id="cb3-10"><a aria-label="10"></a><span class="fu">library</span>(tsibbledata)</span>
+<span id="cb3-11"><a aria-label="11"></a>vic_ele</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>demand_dataset <span class="ot">&lt;-</span> <span class="fu">dataset</span>(</span>
-<span id="cb4-2"><a></a>  <span class="at">name =</span> <span class="st">"demand_dataset"</span>,</span>
-<span id="cb4-3"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(x,</span>
-<span id="cb4-4"><a></a>                        n_timesteps,</span>
-<span id="cb4-5"><a></a>                        n_forecast,</span>
-<span id="cb4-6"><a></a>                        <span class="at">sample_frac =</span> <span class="dv">1</span>) {</span>
-<span id="cb4-7"><a></a>    self<span class="sc">$</span>n_timesteps <span class="ot">&lt;-</span> n_timesteps</span>
-<span id="cb4-8"><a></a>    self<span class="sc">$</span>n_forecast <span class="ot">&lt;-</span> n_forecast</span>
-<span id="cb4-9"><a></a>    self<span class="sc">$</span>x <span class="ot">&lt;-</span> <span class="fu">torch_tensor</span>((x <span class="sc">-</span> train_mean) <span class="sc">/</span> train_sd)</span>
-<span id="cb4-10"><a></a></span>
-<span id="cb4-11"><a></a>    n <span class="ot">&lt;-</span> <span class="fu">length</span>(self<span class="sc">$</span>x) <span class="sc">-</span></span>
-<span id="cb4-12"><a></a>      self<span class="sc">$</span>n_timesteps <span class="sc">-</span> self<span class="sc">$</span>n_forecast <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb4-13"><a></a></span>
-<span id="cb4-14"><a></a>    self<span class="sc">$</span>starts <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">sample.int</span>(</span>
-<span id="cb4-15"><a></a>      <span class="at">n =</span> n,</span>
-<span id="cb4-16"><a></a>      <span class="at">size =</span> n <span class="sc">*</span> sample_frac</span>
-<span id="cb4-17"><a></a>    ))</span>
-<span id="cb4-18"><a></a>  },</span>
-<span id="cb4-19"><a></a>  <span class="at">.getitem =</span> <span class="cf">function</span>(i) {</span>
-<span id="cb4-20"><a></a>    start <span class="ot">&lt;-</span> self<span class="sc">$</span>starts[i]</span>
-<span id="cb4-21"><a></a>    end <span class="ot">&lt;-</span> start <span class="sc">+</span> self<span class="sc">$</span>n_timesteps <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb4-22"><a></a></span>
-<span id="cb4-23"><a></a>    <span class="fu">list</span>(</span>
-<span id="cb4-24"><a></a>      <span class="at">x =</span> self<span class="sc">$</span>x[start<span class="sc">:</span>end],</span>
-<span id="cb4-25"><a></a>      <span class="at">y =</span> self<span class="sc">$</span>x[(end <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>(end <span class="sc">+</span> self<span class="sc">$</span>n_forecast)]<span class="sc">$</span></span>
-<span id="cb4-26"><a></a>        <span class="fu">squeeze</span>(<span class="dv">2</span>)</span>
-<span id="cb4-27"><a></a>    )</span>
-<span id="cb4-28"><a></a>  },</span>
-<span id="cb4-29"><a></a>  <span class="at">.length =</span> <span class="cf">function</span>() {</span>
-<span id="cb4-30"><a></a>    <span class="fu">length</span>(self<span class="sc">$</span>starts)</span>
-<span id="cb4-31"><a></a>  }</span>
-<span id="cb4-32"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>demand_dataset <span class="ot">&lt;-</span> <span class="fu">dataset</span>(</span>
+<span id="cb4-2"><a aria-label="2"></a>  <span class="at">name =</span> <span class="st">"demand_dataset"</span>,</span>
+<span id="cb4-3"><a aria-label="3"></a>  <span class="at">initialize =</span> <span class="cf">function</span>(x,</span>
+<span id="cb4-4"><a aria-label="4"></a>                        n_timesteps,</span>
+<span id="cb4-5"><a aria-label="5"></a>                        n_forecast,</span>
+<span id="cb4-6"><a aria-label="6"></a>                        <span class="at">sample_frac =</span> <span class="dv">1</span>) {</span>
+<span id="cb4-7"><a aria-label="7"></a>    self<span class="sc">$</span>n_timesteps <span class="ot">&lt;-</span> n_timesteps</span>
+<span id="cb4-8"><a aria-label="8"></a>    self<span class="sc">$</span>n_forecast <span class="ot">&lt;-</span> n_forecast</span>
+<span id="cb4-9"><a aria-label="9"></a>    self<span class="sc">$</span>x <span class="ot">&lt;-</span> <span class="fu">torch_tensor</span>((x <span class="sc">-</span> train_mean) <span class="sc">/</span> train_sd)</span>
+<span id="cb4-10"><a aria-label="10"></a></span>
+<span id="cb4-11"><a aria-label="11"></a>    n <span class="ot">&lt;-</span> <span class="fu">length</span>(self<span class="sc">$</span>x) <span class="sc">-</span></span>
+<span id="cb4-12"><a aria-label="12"></a>      self<span class="sc">$</span>n_timesteps <span class="sc">-</span> self<span class="sc">$</span>n_forecast <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb4-13"><a aria-label="13"></a></span>
+<span id="cb4-14"><a aria-label="14"></a>    self<span class="sc">$</span>starts <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">sample.int</span>(</span>
+<span id="cb4-15"><a aria-label="15"></a>      <span class="at">n =</span> n,</span>
+<span id="cb4-16"><a aria-label="16"></a>      <span class="at">size =</span> n <span class="sc">*</span> sample_frac</span>
+<span id="cb4-17"><a aria-label="17"></a>    ))</span>
+<span id="cb4-18"><a aria-label="18"></a>  },</span>
+<span id="cb4-19"><a aria-label="19"></a>  <span class="at">.getitem =</span> <span class="cf">function</span>(i) {</span>
+<span id="cb4-20"><a aria-label="20"></a>    start <span class="ot">&lt;-</span> self<span class="sc">$</span>starts[i]</span>
+<span id="cb4-21"><a aria-label="21"></a>    end <span class="ot">&lt;-</span> start <span class="sc">+</span> self<span class="sc">$</span>n_timesteps <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb4-22"><a aria-label="22"></a></span>
+<span id="cb4-23"><a aria-label="23"></a>    <span class="fu">list</span>(</span>
+<span id="cb4-24"><a aria-label="24"></a>      <span class="at">x =</span> self<span class="sc">$</span>x[start<span class="sc">:</span>end],</span>
+<span id="cb4-25"><a aria-label="25"></a>      <span class="at">y =</span> self<span class="sc">$</span>x[(end <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>(end <span class="sc">+</span> self<span class="sc">$</span>n_forecast)]<span class="sc">$</span></span>
+<span id="cb4-26"><a aria-label="26"></a>        <span class="fu">squeeze</span>(<span class="dv">2</span>)</span>
+<span id="cb4-27"><a aria-label="27"></a>    )</span>
+<span id="cb4-28"><a aria-label="28"></a>  },</span>
+<span id="cb4-29"><a aria-label="29"></a>  <span class="at">.length =</span> <span class="cf">function</span>() {</span>
+<span id="cb4-30"><a aria-label="30"></a>    <span class="fu">length</span>(self<span class="sc">$</span>starts)</span>
+<span id="cb4-31"><a aria-label="31"></a>  }</span>
+<span id="cb4-32"><a aria-label="32"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>demand_hourly <span class="ot">&lt;-</span> vic_elec <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">index_by</span>(<span class="at">Hour =</span> <span class="fu">floor_date</span>(Time, <span class="st">"hour"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a></a>  <span class="fu">summarise</span>(</span>
-<span id="cb5-4"><a></a>    <span class="at">Demand =</span> <span class="fu">sum</span>(Demand))</span>
-<span id="cb5-5"><a></a></span>
-<span id="cb5-6"><a></a>demand_train <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
-<span id="cb5-7"><a></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2012</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-8"><a></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-9"><a></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
-<span id="cb5-10"><a></a>  <span class="fu">as.matrix</span>()</span>
-<span id="cb5-11"><a></a></span>
-<span id="cb5-12"><a></a>demand_valid <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
-<span id="cb5-13"><a></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2013</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-14"><a></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-15"><a></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
-<span id="cb5-16"><a></a>  <span class="fu">as.matrix</span>()</span>
-<span id="cb5-17"><a></a></span>
-<span id="cb5-18"><a></a>demand_test <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
-<span id="cb5-19"><a></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2014</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-20"><a></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-21"><a></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
-<span id="cb5-22"><a></a>  <span class="fu">as.matrix</span>()</span>
-<span id="cb5-23"><a></a></span>
-<span id="cb5-24"><a></a>train_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(demand_train)</span>
-<span id="cb5-25"><a></a>train_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(demand_train)</span>
-<span id="cb5-26"><a></a></span>
-<span id="cb5-27"><a></a>n_timesteps <span class="ot">&lt;-</span> <span class="dv">7</span> <span class="sc">*</span> <span class="dv">24</span></span>
-<span id="cb5-28"><a></a>n_forecast <span class="ot">&lt;-</span> <span class="dv">7</span> <span class="sc">*</span> <span class="dv">24</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>demand_hourly <span class="ot">&lt;-</span> vic_elec <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a aria-label="2"></a>  <span class="fu">index_by</span>(<span class="at">Hour =</span> <span class="fu">floor_date</span>(Time, <span class="st">"hour"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a aria-label="3"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb5-4"><a aria-label="4"></a>    <span class="at">Demand =</span> <span class="fu">sum</span>(Demand))</span>
+<span id="cb5-5"><a aria-label="5"></a></span>
+<span id="cb5-6"><a aria-label="6"></a>demand_train <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
+<span id="cb5-7"><a aria-label="7"></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2012</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-8"><a aria-label="8"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-9"><a aria-label="9"></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
+<span id="cb5-10"><a aria-label="10"></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb5-11"><a aria-label="11"></a></span>
+<span id="cb5-12"><a aria-label="12"></a>demand_valid <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
+<span id="cb5-13"><a aria-label="13"></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2013</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-14"><a aria-label="14"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-15"><a aria-label="15"></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
+<span id="cb5-16"><a aria-label="16"></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb5-17"><a aria-label="17"></a></span>
+<span id="cb5-18"><a aria-label="18"></a>demand_test <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
+<span id="cb5-19"><a aria-label="19"></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2014</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-20"><a aria-label="20"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb5-21"><a aria-label="21"></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
+<span id="cb5-22"><a aria-label="22"></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb5-23"><a aria-label="23"></a></span>
+<span id="cb5-24"><a aria-label="24"></a>train_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(demand_train)</span>
+<span id="cb5-25"><a aria-label="25"></a>train_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(demand_train)</span>
+<span id="cb5-26"><a aria-label="26"></a></span>
+<span id="cb5-27"><a aria-label="27"></a>n_timesteps <span class="ot">&lt;-</span> <span class="dv">7</span> <span class="sc">*</span> <span class="dv">24</span></span>
+<span id="cb5-28"><a aria-label="28"></a>n_forecast <span class="ot">&lt;-</span> <span class="dv">7</span> <span class="sc">*</span> <span class="dv">24</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>train_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(</span>
-<span id="cb6-2"><a></a>  demand_train,</span>
-<span id="cb6-3"><a></a>  n_timesteps,</span>
-<span id="cb6-4"><a></a>  n_forecast,</span>
-<span id="cb6-5"><a></a>  <span class="at">sample_frac =</span> <span class="dv">1</span></span>
-<span id="cb6-6"><a></a>)</span>
-<span id="cb6-7"><a></a>valid_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(</span>
-<span id="cb6-8"><a></a>  demand_valid,</span>
-<span id="cb6-9"><a></a>  n_timesteps,</span>
-<span id="cb6-10"><a></a>  n_forecast,</span>
-<span id="cb6-11"><a></a>  <span class="at">sample_frac =</span> <span class="dv">1</span></span>
-<span id="cb6-12"><a></a>)</span>
-<span id="cb6-13"><a></a>test_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(</span>
-<span id="cb6-14"><a></a>  demand_test,</span>
-<span id="cb6-15"><a></a>  n_timesteps,</span>
-<span id="cb6-16"><a></a>  n_forecast</span>
-<span id="cb6-17"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>train_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(</span>
+<span id="cb6-2"><a aria-label="2"></a>  demand_train,</span>
+<span id="cb6-3"><a aria-label="3"></a>  n_timesteps,</span>
+<span id="cb6-4"><a aria-label="4"></a>  n_forecast,</span>
+<span id="cb6-5"><a aria-label="5"></a>  <span class="at">sample_frac =</span> <span class="dv">1</span></span>
+<span id="cb6-6"><a aria-label="6"></a>)</span>
+<span id="cb6-7"><a aria-label="7"></a>valid_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(</span>
+<span id="cb6-8"><a aria-label="8"></a>  demand_valid,</span>
+<span id="cb6-9"><a aria-label="9"></a>  n_timesteps,</span>
+<span id="cb6-10"><a aria-label="10"></a>  n_forecast,</span>
+<span id="cb6-11"><a aria-label="11"></a>  <span class="at">sample_frac =</span> <span class="dv">1</span></span>
+<span id="cb6-12"><a aria-label="12"></a>)</span>
+<span id="cb6-13"><a aria-label="13"></a>test_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(</span>
+<span id="cb6-14"><a aria-label="14"></a>  demand_test,</span>
+<span id="cb6-15"><a aria-label="15"></a>  n_timesteps,</span>
+<span id="cb6-16"><a aria-label="16"></a>  n_forecast</span>
+<span id="cb6-17"><a aria-label="17"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-5">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>batch_size <span class="ot">&lt;-</span> <span class="dv">128</span></span>
-<span id="cb7-2"><a></a>train_dl <span class="ot">&lt;-</span> train_ds <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a></a>  <span class="fu">dataloader</span>(<span class="at">batch_size =</span> batch_size, <span class="at">shuffle =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-4"><a></a>valid_dl <span class="ot">&lt;-</span> valid_ds <span class="sc">|&gt;</span> </span>
-<span id="cb7-5"><a></a>  <span class="fu">dataloader</span>(<span class="at">batch_size =</span> batch_size)</span>
-<span id="cb7-6"><a></a>test_dl <span class="ot">&lt;-</span> test_ds <span class="sc">|&gt;</span> </span>
-<span id="cb7-7"><a></a>  <span class="fu">dataloader</span>(<span class="at">batch_size =</span> <span class="fu">length</span>(test_ds))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a>batch_size <span class="ot">&lt;-</span> <span class="dv">128</span></span>
+<span id="cb7-2"><a aria-label="2"></a>train_dl <span class="ot">&lt;-</span> train_ds <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a aria-label="3"></a>  <span class="fu">dataloader</span>(<span class="at">batch_size =</span> batch_size, <span class="at">shuffle =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-4"><a aria-label="4"></a>valid_dl <span class="ot">&lt;-</span> valid_ds <span class="sc">|&gt;</span> </span>
+<span id="cb7-5"><a aria-label="5"></a>  <span class="fu">dataloader</span>(<span class="at">batch_size =</span> batch_size)</span>
+<span id="cb7-6"><a aria-label="6"></a>test_dl <span class="ot">&lt;-</span> test_ds <span class="sc">|&gt;</span> </span>
+<span id="cb7-7"><a aria-label="7"></a>  <span class="fu">dataloader</span>(<span class="at">batch_size =</span> <span class="fu">length</span>(test_ds))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -696,69 +699,69 @@ h_t = o_t\tanh\left(C_t\right)
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>model <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
-<span id="cb8-2"><a></a>  <span class="at">initialize =</span> <span class="cf">function</span>(input_size,</span>
-<span id="cb8-3"><a></a>                        hidden_size,</span>
-<span id="cb8-4"><a></a>                        linear_size,</span>
-<span id="cb8-5"><a></a>                        output_size,</span>
-<span id="cb8-6"><a></a>                        <span class="at">dropout =</span> <span class="fl">0.2</span>,</span>
-<span id="cb8-7"><a></a>                        <span class="at">num_layers =</span> <span class="dv">1</span>,</span>
-<span id="cb8-8"><a></a>                        <span class="at">rec_dropout =</span> <span class="dv">0</span>) {</span>
-<span id="cb8-9"><a></a>    self<span class="sc">$</span>num_layers <span class="ot">&lt;-</span> num_layers</span>
-<span id="cb8-10"><a></a></span>
-<span id="cb8-11"><a></a>    self<span class="sc">$</span>rnn <span class="ot">&lt;-</span> <span class="fu">nn_lstm</span>(</span>
-<span id="cb8-12"><a></a>      <span class="at">input_size =</span> input_size,</span>
-<span id="cb8-13"><a></a>      <span class="at">hidden_size =</span> hidden_size,</span>
-<span id="cb8-14"><a></a>      <span class="at">num_layers =</span> num_layers,</span>
-<span id="cb8-15"><a></a>      <span class="at">dropout =</span> rec_dropout,</span>
-<span id="cb8-16"><a></a>      <span class="at">batch_first =</span> <span class="cn">TRUE</span></span>
-<span id="cb8-17"><a></a>    )</span>
-<span id="cb8-18"><a></a></span>
-<span id="cb8-19"><a></a>    self<span class="sc">$</span>dropout <span class="ot">&lt;-</span> <span class="fu">nn_dropout</span>(dropout)</span>
-<span id="cb8-20"><a></a>    self<span class="sc">$</span>mlp <span class="ot">&lt;-</span> <span class="fu">nn_sequential</span>(</span>
-<span id="cb8-21"><a></a>      <span class="fu">nn_linear</span>(hidden_size, linear_size),</span>
-<span id="cb8-22"><a></a>      <span class="fu">nn_relu</span>(),</span>
-<span id="cb8-23"><a></a>      <span class="fu">nn_dropout</span>(dropout),</span>
-<span id="cb8-24"><a></a>      <span class="fu">nn_linear</span>(linear_size, output_size)</span>
-<span id="cb8-25"><a></a>    )</span>
-<span id="cb8-26"><a></a>  },</span>
-<span id="cb8-27"><a></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
-<span id="cb8-28"><a></a>    x <span class="ot">&lt;-</span> self<span class="sc">$</span><span class="fu">rnn</span>(x)[[<span class="dv">2</span>]][[<span class="dv">1</span>]][self<span class="sc">$</span>num_layers, , ] <span class="sc">|&gt;</span> </span>
-<span id="cb8-29"><a></a>      self<span class="sc">$</span><span class="fu">mlp</span>()</span>
-<span id="cb8-30"><a></a>  }</span>
-<span id="cb8-31"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>model <span class="ot">&lt;-</span> <span class="fu">nn_module</span>(</span>
+<span id="cb8-2"><a aria-label="2"></a>  <span class="at">initialize =</span> <span class="cf">function</span>(input_size,</span>
+<span id="cb8-3"><a aria-label="3"></a>                        hidden_size,</span>
+<span id="cb8-4"><a aria-label="4"></a>                        linear_size,</span>
+<span id="cb8-5"><a aria-label="5"></a>                        output_size,</span>
+<span id="cb8-6"><a aria-label="6"></a>                        <span class="at">dropout =</span> <span class="fl">0.2</span>,</span>
+<span id="cb8-7"><a aria-label="7"></a>                        <span class="at">num_layers =</span> <span class="dv">1</span>,</span>
+<span id="cb8-8"><a aria-label="8"></a>                        <span class="at">rec_dropout =</span> <span class="dv">0</span>) {</span>
+<span id="cb8-9"><a aria-label="9"></a>    self<span class="sc">$</span>num_layers <span class="ot">&lt;-</span> num_layers</span>
+<span id="cb8-10"><a aria-label="10"></a></span>
+<span id="cb8-11"><a aria-label="11"></a>    self<span class="sc">$</span>rnn <span class="ot">&lt;-</span> <span class="fu">nn_lstm</span>(</span>
+<span id="cb8-12"><a aria-label="12"></a>      <span class="at">input_size =</span> input_size,</span>
+<span id="cb8-13"><a aria-label="13"></a>      <span class="at">hidden_size =</span> hidden_size,</span>
+<span id="cb8-14"><a aria-label="14"></a>      <span class="at">num_layers =</span> num_layers,</span>
+<span id="cb8-15"><a aria-label="15"></a>      <span class="at">dropout =</span> rec_dropout,</span>
+<span id="cb8-16"><a aria-label="16"></a>      <span class="at">batch_first =</span> <span class="cn">TRUE</span></span>
+<span id="cb8-17"><a aria-label="17"></a>    )</span>
+<span id="cb8-18"><a aria-label="18"></a></span>
+<span id="cb8-19"><a aria-label="19"></a>    self<span class="sc">$</span>dropout <span class="ot">&lt;-</span> <span class="fu">nn_dropout</span>(dropout)</span>
+<span id="cb8-20"><a aria-label="20"></a>    self<span class="sc">$</span>mlp <span class="ot">&lt;-</span> <span class="fu">nn_sequential</span>(</span>
+<span id="cb8-21"><a aria-label="21"></a>      <span class="fu">nn_linear</span>(hidden_size, linear_size),</span>
+<span id="cb8-22"><a aria-label="22"></a>      <span class="fu">nn_relu</span>(),</span>
+<span id="cb8-23"><a aria-label="23"></a>      <span class="fu">nn_dropout</span>(dropout),</span>
+<span id="cb8-24"><a aria-label="24"></a>      <span class="fu">nn_linear</span>(linear_size, output_size)</span>
+<span id="cb8-25"><a aria-label="25"></a>    )</span>
+<span id="cb8-26"><a aria-label="26"></a>  },</span>
+<span id="cb8-27"><a aria-label="27"></a>  <span class="at">forward =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb8-28"><a aria-label="28"></a>    x <span class="ot">&lt;-</span> self<span class="sc">$</span><span class="fu">rnn</span>(x)[[<span class="dv">2</span>]][[<span class="dv">1</span>]][self<span class="sc">$</span>num_layers, , ] <span class="sc">|&gt;</span> </span>
+<span id="cb8-29"><a aria-label="29"></a>      self<span class="sc">$</span><span class="fu">mlp</span>()</span>
+<span id="cb8-30"><a aria-label="30"></a>  }</span>
+<span id="cb8-31"><a aria-label="31"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>  initialize <span class="ot">=</span> <span class="cf">function</span>(input_size,</span>
-<span id="cb9-2"><a></a>                        hidden_size,</span>
-<span id="cb9-3"><a></a>                        <span class="at">dropout =</span> <span class="fl">0.2</span>,</span>
-<span id="cb9-4"><a></a>                        <span class="at">num_layers =</span> <span class="dv">1</span>,</span>
-<span id="cb9-5"><a></a>                        <span class="at">rec_dropout =</span> <span class="dv">0</span>) {</span>
-<span id="cb9-6"><a></a>    self<span class="sc">$</span>num_layers <span class="ot">&lt;-</span> num_layers</span>
-<span id="cb9-7"><a></a></span>
-<span id="cb9-8"><a></a>    self<span class="sc">$</span>rnn <span class="ot">&lt;-</span> <span class="fu">nn_lstm</span>(</span>
-<span id="cb9-9"><a></a>      <span class="at">input_size =</span> input_size,</span>
-<span id="cb9-10"><a></a>      <span class="at">hidden_size =</span> hidden_size,</span>
-<span id="cb9-11"><a></a>      <span class="at">num_layers =</span> num_layers,</span>
-<span id="cb9-12"><a></a>      <span class="at">dropout =</span> rec_dropout,</span>
-<span id="cb9-13"><a></a>      <span class="at">batch_first =</span> <span class="cn">TRUE</span></span>
-<span id="cb9-14"><a></a>    )</span>
-<span id="cb9-15"><a></a></span>
-<span id="cb9-16"><a></a>    self<span class="sc">$</span>dropout <span class="ot">&lt;-</span> <span class="fu">nn_dropout</span>(dropout)</span>
-<span id="cb9-17"><a></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(hidden_size, <span class="dv">1</span>)</span>
-<span id="cb9-18"><a></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a>  initialize <span class="ot">=</span> <span class="cf">function</span>(input_size,</span>
+<span id="cb9-2"><a aria-label="2"></a>                        hidden_size,</span>
+<span id="cb9-3"><a aria-label="3"></a>                        <span class="at">dropout =</span> <span class="fl">0.2</span>,</span>
+<span id="cb9-4"><a aria-label="4"></a>                        <span class="at">num_layers =</span> <span class="dv">1</span>,</span>
+<span id="cb9-5"><a aria-label="5"></a>                        <span class="at">rec_dropout =</span> <span class="dv">0</span>) {</span>
+<span id="cb9-6"><a aria-label="6"></a>    self<span class="sc">$</span>num_layers <span class="ot">&lt;-</span> num_layers</span>
+<span id="cb9-7"><a aria-label="7"></a></span>
+<span id="cb9-8"><a aria-label="8"></a>    self<span class="sc">$</span>rnn <span class="ot">&lt;-</span> <span class="fu">nn_lstm</span>(</span>
+<span id="cb9-9"><a aria-label="9"></a>      <span class="at">input_size =</span> input_size,</span>
+<span id="cb9-10"><a aria-label="10"></a>      <span class="at">hidden_size =</span> hidden_size,</span>
+<span id="cb9-11"><a aria-label="11"></a>      <span class="at">num_layers =</span> num_layers,</span>
+<span id="cb9-12"><a aria-label="12"></a>      <span class="at">dropout =</span> rec_dropout,</span>
+<span id="cb9-13"><a aria-label="13"></a>      <span class="at">batch_first =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-14"><a aria-label="14"></a>    )</span>
+<span id="cb9-15"><a aria-label="15"></a></span>
+<span id="cb9-16"><a aria-label="16"></a>    self<span class="sc">$</span>dropout <span class="ot">&lt;-</span> <span class="fu">nn_dropout</span>(dropout)</span>
+<span id="cb9-17"><a aria-label="17"></a>    self<span class="sc">$</span>output <span class="ot">&lt;-</span> <span class="fu">nn_linear</span>(hidden_size, <span class="dv">1</span>)</span>
+<span id="cb9-18"><a aria-label="18"></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>  forward <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
-<span id="cb10-2"><a></a>    (x <span class="sc">|&gt;</span> </span>
-<span id="cb10-3"><a></a>      self<span class="sc">$</span><span class="fu">rnn</span>())[[<span class="dv">1</span>]][, <span class="fu">dim</span>(x)[<span class="dv">2</span>], ] <span class="sc">|&gt;</span> </span>
-<span id="cb10-4"><a></a>      self<span class="sc">$</span><span class="fu">dropout</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb10-5"><a></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
-<span id="cb10-6"><a></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>  forward <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+<span id="cb10-2"><a aria-label="2"></a>    (x <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a aria-label="3"></a>      self<span class="sc">$</span><span class="fu">rnn</span>())[[<span class="dv">1</span>]][, <span class="fu">dim</span>(x)[<span class="dv">2</span>], ] <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a aria-label="4"></a>      self<span class="sc">$</span><span class="fu">dropout</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb10-5"><a aria-label="5"></a>      self<span class="sc">$</span><span class="fu">output</span>()</span>
+<span id="cb10-6"><a aria-label="6"></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -771,37 +774,37 @@ h_t = o_t\tanh\left(C_t\right)
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>input_size <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb11-2"><a></a>hidden_size <span class="ot">&lt;-</span> <span class="dv">32</span></span>
-<span id="cb11-3"><a></a>linear_size <span class="ot">&lt;-</span> <span class="dv">512</span></span>
-<span id="cb11-4"><a></a>dropout <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb11-5"><a></a>num_layers <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb11-6"><a></a>rec_dropout <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
-<span id="cb11-7"><a></a></span>
-<span id="cb11-8"><a></a>model <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span> </span>
-<span id="cb11-9"><a></a>  <span class="fu">setup</span>(<span class="at">optimizer =</span> optim_adam, <span class="at">loss =</span> <span class="fu">nn_mse_loss</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb11-10"><a></a>  <span class="fu">set_hparams</span>(</span>
-<span id="cb11-11"><a></a>    <span class="at">input_size =</span> input_size,</span>
-<span id="cb11-12"><a></a>    <span class="at">hidden_size =</span> hidden_size,</span>
-<span id="cb11-13"><a></a>    <span class="at">linear_size =</span> linear_size,</span>
-<span id="cb11-14"><a></a>    <span class="at">output_size =</span> n_forecast,</span>
-<span id="cb11-15"><a></a>    <span class="at">num_layers =</span> num_layers,</span>
-<span id="cb11-16"><a></a>    <span class="at">rec_dropout =</span> rec_dropout</span>
-<span id="cb11-17"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-label="1"></a>input_size <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb11-2"><a aria-label="2"></a>hidden_size <span class="ot">&lt;-</span> <span class="dv">32</span></span>
+<span id="cb11-3"><a aria-label="3"></a>linear_size <span class="ot">&lt;-</span> <span class="dv">512</span></span>
+<span id="cb11-4"><a aria-label="4"></a>dropout <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb11-5"><a aria-label="5"></a>num_layers <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb11-6"><a aria-label="6"></a>rec_dropout <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb11-7"><a aria-label="7"></a></span>
+<span id="cb11-8"><a aria-label="8"></a>model <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span> </span>
+<span id="cb11-9"><a aria-label="9"></a>  <span class="fu">setup</span>(<span class="at">optimizer =</span> optim_adam, <span class="at">loss =</span> <span class="fu">nn_mse_loss</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb11-10"><a aria-label="10"></a>  <span class="fu">set_hparams</span>(</span>
+<span id="cb11-11"><a aria-label="11"></a>    <span class="at">input_size =</span> input_size,</span>
+<span id="cb11-12"><a aria-label="12"></a>    <span class="at">hidden_size =</span> hidden_size,</span>
+<span id="cb11-13"><a aria-label="13"></a>    <span class="at">linear_size =</span> linear_size,</span>
+<span id="cb11-14"><a aria-label="14"></a>    <span class="at">output_size =</span> n_forecast,</span>
+<span id="cb11-15"><a aria-label="15"></a>    <span class="at">num_layers =</span> num_layers,</span>
+<span id="cb11-16"><a aria-label="16"></a>    <span class="at">rec_dropout =</span> rec_dropout</span>
+<span id="cb11-17"><a aria-label="17"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-3-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>fitted <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a></a>  <span class="fu">fit</span>(train_dl, <span class="at">epochs =</span> <span class="dv">30</span>, <span class="at">valid_data =</span> valid_dl,</span>
-<span id="cb12-3"><a></a>      <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>fitted <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a aria-label="2"></a>  <span class="fu">fit</span>(train_dl, <span class="at">epochs =</span> <span class="dv">30</span>, <span class="at">valid_data =</span> valid_dl,</span>
+<span id="cb12-3"><a aria-label="3"></a>      <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-3-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">plot</span>(fitted)</span>
-<span id="cb13-2"><a></a></span>
-<span id="cb13-3"><a></a><span class="fu">evaluate</span>(fitted, test_dl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-label="1"></a><span class="fu">plot</span>(fitted)</span>
+<span id="cb13-2"><a aria-label="2"></a></span>
+<span id="cb13-3"><a aria-label="3"></a><span class="fu">evaluate</span>(fitted, test_dl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -810,62 +813,62 @@ h_t = o_t\tanh\left(C_t\right)
 <section id="predict-and-visualize" class="slide level2">
 <h2>Predict and Visualize</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>demand_viz <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2014</span>, <span class="fu">month</span>(Hour) <span class="sc">==</span> <span class="dv">12</span>)</span>
-<span id="cb14-3"><a></a></span>
-<span id="cb14-4"><a></a>demand_viz_matrix <span class="ot">&lt;-</span> demand_viz <span class="sc">|&gt;</span> </span>
-<span id="cb14-5"><a></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb14-6"><a></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
-<span id="cb14-7"><a></a>  <span class="fu">as.matrix</span>()</span>
-<span id="cb14-8"><a></a></span>
-<span id="cb14-9"><a></a>n_obs <span class="ot">&lt;-</span> <span class="fu">nrow</span>(demand_viz_matrix)</span>
-<span id="cb14-10"><a></a></span>
-<span id="cb14-11"><a></a>viz_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(</span>
-<span id="cb14-12"><a></a>  demand_viz_matrix,</span>
-<span id="cb14-13"><a></a>  n_timesteps,</span>
-<span id="cb14-14"><a></a>  n_forecast</span>
-<span id="cb14-15"><a></a>)</span>
-<span id="cb14-16"><a></a>viz_dl <span class="ot">&lt;-</span> viz_ds <span class="sc">|&gt;</span> </span>
-<span id="cb14-17"><a></a>  <span class="fu">dataloader</span>(<span class="at">batch_size =</span> <span class="fu">length</span>(viz_ds))</span>
-<span id="cb14-18"><a></a></span>
-<span id="cb14-19"><a></a>preds <span class="ot">&lt;-</span> <span class="fu">predict</span>(fitted, viz_dl)</span>
-<span id="cb14-20"><a></a>preds <span class="ot">&lt;-</span> preds<span class="sc">$</span><span class="fu">to</span>(<span class="at">device =</span> <span class="st">"cpu"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb14-21"><a></a>  <span class="fu">as.matrix</span>()</span>
-<span id="cb14-22"><a></a></span>
-<span id="cb14-23"><a></a>example_preds <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"list"</span>, <span class="at">length =</span> <span class="dv">3</span>)</span>
-<span id="cb14-24"><a></a>example_indices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">201</span>, <span class="dv">401</span>)</span>
-<span id="cb14-25"><a></a></span>
-<span id="cb14-26"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(example_indices)) {</span>
-<span id="cb14-27"><a></a>  cur_obs <span class="ot">&lt;-</span> example_indices[i]</span>
-<span id="cb14-28"><a></a>  example_preds[[i]] <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb14-29"><a></a>    <span class="fu">rep</span>(<span class="cn">NA</span>, n_timesteps <span class="sc">+</span> cur_obs <span class="sc">-</span> <span class="dv">1</span>),</span>
-<span id="cb14-30"><a></a>    preds[cur_obs, ],</span>
-<span id="cb14-31"><a></a>    <span class="fu">rep</span>(</span>
-<span id="cb14-32"><a></a>      <span class="cn">NA</span>,</span>
-<span id="cb14-33"><a></a>      n_obs <span class="sc">-</span> cur_obs <span class="sc">+</span> <span class="dv">1</span> <span class="sc">-</span> n_timesteps <span class="sc">-</span> n_forecast</span>
-<span id="cb14-34"><a></a>    )</span>
-<span id="cb14-35"><a></a>  )</span>
-<span id="cb14-36"><a></a>}</span>
-<span id="cb14-37"><a></a></span>
-<span id="cb14-38"><a></a>pred_ts <span class="ot">&lt;-</span> demand_viz <span class="sc">|&gt;</span> </span>
-<span id="cb14-39"><a></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
-<span id="cb14-40"><a></a>  <span class="fu">add_column</span>(</span>
-<span id="cb14-41"><a></a>    <span class="at">p1 =</span> example_preds[[<span class="dv">1</span>]] <span class="sc">*</span> train_sd <span class="sc">+</span> train_mean,</span>
-<span id="cb14-42"><a></a>    <span class="at">p2 =</span> example_preds[[<span class="dv">2</span>]] <span class="sc">*</span> train_sd <span class="sc">+</span> train_mean,</span>
-<span id="cb14-43"><a></a>    <span class="at">p3 =</span> example_preds[[<span class="dv">3</span>]] <span class="sc">*</span> train_sd <span class="sc">+</span> train_mean) <span class="sc">|&gt;</span> </span>
-<span id="cb14-44"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Hour) <span class="sc">|&gt;</span> </span>
-<span id="cb14-45"><a></a>  <span class="fu">update_tsibble</span>(<span class="at">key =</span> name)</span>
-<span id="cb14-46"><a></a></span>
-<span id="cb14-47"><a></a>pred_ts <span class="sc">|&gt;</span> </span>
-<span id="cb14-48"><a></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(Hour, value, <span class="at">color =</span> name)) <span class="sc">+</span></span>
-<span id="cb14-49"><a></a>      <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb14-50"><a></a>  <span class="fu">scale_colour_manual</span>(</span>
-<span id="cb14-51"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb14-52"><a></a>      <span class="st">"#08c5d1"</span>, <span class="st">"#00353f"</span>, <span class="st">"#ffbf66"</span>, <span class="st">"#d46f4d"</span></span>
-<span id="cb14-53"><a></a>    )</span>
-<span id="cb14-54"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb14-55"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb14-56"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"None"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-label="1"></a>demand_viz <span class="ot">&lt;-</span> demand_hourly <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a aria-label="2"></a>  <span class="fu">filter</span>(<span class="fu">year</span>(Hour) <span class="sc">==</span> <span class="dv">2014</span>, <span class="fu">month</span>(Hour) <span class="sc">==</span> <span class="dv">12</span>)</span>
+<span id="cb14-3"><a aria-label="3"></a></span>
+<span id="cb14-4"><a aria-label="4"></a>demand_viz_matrix <span class="ot">&lt;-</span> demand_viz <span class="sc">|&gt;</span> </span>
+<span id="cb14-5"><a aria-label="5"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb14-6"><a aria-label="6"></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
+<span id="cb14-7"><a aria-label="7"></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb14-8"><a aria-label="8"></a></span>
+<span id="cb14-9"><a aria-label="9"></a>n_obs <span class="ot">&lt;-</span> <span class="fu">nrow</span>(demand_viz_matrix)</span>
+<span id="cb14-10"><a aria-label="10"></a></span>
+<span id="cb14-11"><a aria-label="11"></a>viz_ds <span class="ot">&lt;-</span> <span class="fu">demand_dataset</span>(</span>
+<span id="cb14-12"><a aria-label="12"></a>  demand_viz_matrix,</span>
+<span id="cb14-13"><a aria-label="13"></a>  n_timesteps,</span>
+<span id="cb14-14"><a aria-label="14"></a>  n_forecast</span>
+<span id="cb14-15"><a aria-label="15"></a>)</span>
+<span id="cb14-16"><a aria-label="16"></a>viz_dl <span class="ot">&lt;-</span> viz_ds <span class="sc">|&gt;</span> </span>
+<span id="cb14-17"><a aria-label="17"></a>  <span class="fu">dataloader</span>(<span class="at">batch_size =</span> <span class="fu">length</span>(viz_ds))</span>
+<span id="cb14-18"><a aria-label="18"></a></span>
+<span id="cb14-19"><a aria-label="19"></a>preds <span class="ot">&lt;-</span> <span class="fu">predict</span>(fitted, viz_dl)</span>
+<span id="cb14-20"><a aria-label="20"></a>preds <span class="ot">&lt;-</span> preds<span class="sc">$</span><span class="fu">to</span>(<span class="at">device =</span> <span class="st">"cpu"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-21"><a aria-label="21"></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb14-22"><a aria-label="22"></a></span>
+<span id="cb14-23"><a aria-label="23"></a>example_preds <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"list"</span>, <span class="at">length =</span> <span class="dv">3</span>)</span>
+<span id="cb14-24"><a aria-label="24"></a>example_indices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">201</span>, <span class="dv">401</span>)</span>
+<span id="cb14-25"><a aria-label="25"></a></span>
+<span id="cb14-26"><a aria-label="26"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(example_indices)) {</span>
+<span id="cb14-27"><a aria-label="27"></a>  cur_obs <span class="ot">&lt;-</span> example_indices[i]</span>
+<span id="cb14-28"><a aria-label="28"></a>  example_preds[[i]] <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb14-29"><a aria-label="29"></a>    <span class="fu">rep</span>(<span class="cn">NA</span>, n_timesteps <span class="sc">+</span> cur_obs <span class="sc">-</span> <span class="dv">1</span>),</span>
+<span id="cb14-30"><a aria-label="30"></a>    preds[cur_obs, ],</span>
+<span id="cb14-31"><a aria-label="31"></a>    <span class="fu">rep</span>(</span>
+<span id="cb14-32"><a aria-label="32"></a>      <span class="cn">NA</span>,</span>
+<span id="cb14-33"><a aria-label="33"></a>      n_obs <span class="sc">-</span> cur_obs <span class="sc">+</span> <span class="dv">1</span> <span class="sc">-</span> n_timesteps <span class="sc">-</span> n_forecast</span>
+<span id="cb14-34"><a aria-label="34"></a>    )</span>
+<span id="cb14-35"><a aria-label="35"></a>  )</span>
+<span id="cb14-36"><a aria-label="36"></a>}</span>
+<span id="cb14-37"><a aria-label="37"></a></span>
+<span id="cb14-38"><a aria-label="38"></a>pred_ts <span class="ot">&lt;-</span> demand_viz <span class="sc">|&gt;</span> </span>
+<span id="cb14-39"><a aria-label="39"></a>  <span class="fu">select</span>(Demand) <span class="sc">|&gt;</span> </span>
+<span id="cb14-40"><a aria-label="40"></a>  <span class="fu">add_column</span>(</span>
+<span id="cb14-41"><a aria-label="41"></a>    <span class="at">p1 =</span> example_preds[[<span class="dv">1</span>]] <span class="sc">*</span> train_sd <span class="sc">+</span> train_mean,</span>
+<span id="cb14-42"><a aria-label="42"></a>    <span class="at">p2 =</span> example_preds[[<span class="dv">2</span>]] <span class="sc">*</span> train_sd <span class="sc">+</span> train_mean,</span>
+<span id="cb14-43"><a aria-label="43"></a>    <span class="at">p3 =</span> example_preds[[<span class="dv">3</span>]] <span class="sc">*</span> train_sd <span class="sc">+</span> train_mean) <span class="sc">|&gt;</span> </span>
+<span id="cb14-44"><a aria-label="44"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Hour) <span class="sc">|&gt;</span> </span>
+<span id="cb14-45"><a aria-label="45"></a>  <span class="fu">update_tsibble</span>(<span class="at">key =</span> name)</span>
+<span id="cb14-46"><a aria-label="46"></a></span>
+<span id="cb14-47"><a aria-label="47"></a>pred_ts <span class="sc">|&gt;</span> </span>
+<span id="cb14-48"><a aria-label="48"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(Hour, value, <span class="at">color =</span> name)) <span class="sc">+</span></span>
+<span id="cb14-49"><a aria-label="49"></a>      <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb14-50"><a aria-label="50"></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb14-51"><a aria-label="51"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb14-52"><a aria-label="52"></a>      <span class="st">"#08c5d1"</span>, <span class="st">"#00353f"</span>, <span class="st">"#ffbf66"</span>, <span class="st">"#d46f4d"</span></span>
+<span id="cb14-53"><a aria-label="53"></a>    )</span>
+<span id="cb14-54"><a aria-label="54"></a>  ) <span class="sc">+</span></span>
+<span id="cb14-55"><a aria-label="55"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-56"><a aria-label="56"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"None"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
